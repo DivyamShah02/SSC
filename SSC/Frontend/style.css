@@ -1,0 +1,422 @@
+body {
+    font-family: 'Roboto', 'Nunito', sans-serif;
+    padding-bottom: 60px;
+    /* Space for the fixed bottom bar */
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.section {
+    margin-top: 55px !important;
+    margin-bottom: 55px !important;
+}
+
+.ssc-images {
+    overflow: hidden;
+    /* Ensures the zoomed image stays within its container */
+}
+
+.ssc-images img {
+    width: 100%;
+    height: auto;
+    transition: transform 1.2s ease-in-out;
+    /* Smooth transition for the zoom effect */
+}
+
+.ssc-images img:hover {
+    transform: scale(1.1);
+    /* Zoom the image by 10% */
+}
+
+.primary-images {
+    position: relative;
+}
+
+.primary-images img {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.primary-images .overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    border-radius: 5px;
+}
+
+/* Style for the golden badge */
+.golden-badge {
+    position: absolute;
+    top: 10px;
+    /* Adjust as needed */
+    left: 10px;
+    /* Adjust as needed */
+    background-color: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 10;
+    /* Ensure it's above other elements */
+}
+
+.ssc-images.primary-images {
+    position: relative;
+    /* Required for absolute positioning of the badge */
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.secondary-images-one img {
+    border-top-right-radius: 15px;
+}
+
+.secondary-images-two img {
+    border-bottom-right-radius: 15px;
+}
+
+.text-links {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 992px) {
+
+    .secondary-images-one,
+    .secondary-images-two {
+        display: none;
+    }
+
+    .primary-images img {
+        border-radius: 15px;
+    }
+}
+
+/* Fixed bottom bar */
+.fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.fixed-bottom-bar .bar-content {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.fixed-bottom-bar h5,
+.fixed-bottom-bar p {
+    margin: 0;
+}
+
+.rating-text {
+    font-weight: bold;
+}
+
+.rating-stars {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.rating-desc {
+    color: gray;
+}
+
+.progress-bar-yellow {
+    background-color: gold;
+}
+
+.progress-bar-green {
+    background-color: #00b300;
+}
+
+.driver-score {
+    font-weight: bold;
+}
+
+.divider {
+    border-left: 1px solid lightgray;
+    height: 100%;
+}
+
+.property-price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.property-meta {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.meta-label {
+    color: gray;
+    font-weight: normal;
+}
+
+.property-buttons .btn {
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.facilities-section {
+    padding: 40px 0;
+}
+
+.facility-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.facility-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1.5/1;
+    /* Maintaining the 16:9 aspect ratio */
+    border-radius: 15px;
+    transition: transform 1.2s ease-in-out;
+}
+
+.facility-card img:hover {
+    transform: scale(1.1);
+}
+
+.facility-card .overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    border-radius: 5px;
+}
+
+.facility-description {
+    padding-left: 20px;
+}
+
+.facility-description h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.facility-description p {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .facility-description {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .facility-card img {
+        aspect-ratio: 1.5;
+    }
+
+    .facility-description h5 {
+        font-size: 1.2rem;
+    }
+
+    .facility-description p {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* Top Bar Styles */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.top-bar .navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler {
+    border: none;
+    /* Remove border */
+    box-shadow: none;
+    /* Remove any shadow effect */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    /* Remove outline when focused or active */
+    box-shadow: none;
+    /* Ensure no shadow effect */
+    border: none;
+    /* Ensure no border */
+}
+
+.top-bar .best-property {
+    font-size: 16px;
+}
+
+/* Left Menu Styles */
+.left-menu {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+.left-menu.show {
+    left: 0;
+}
+
+.left-menu .card {
+    margin-bottom: 15px;
+}
+
+.left-menu .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Menu Card Styles */
+.left-menu .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container.section {
+    margin-top: 70px !important;
+}
+
+.meta-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+@media (max-width: 767px) {
+
+    .justify-content-md-start,
+    .justify-content-md-center,
+    .justify-content-md-end {
+        justify-content: flex-start !important;
+    }
+}
+
+
+.floor-plan-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #b2b2b2;
+    text-transform: uppercase;
+    padding: 18px 61px;
+    position: relative;
+    border-top: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+.floor-plan-btn:hover {
+    color: #000;
+}
+
+.map-one {
+    position: relative;
+}
+
+.map-one_map iframe {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    border-radius: 8px !important;
+    border: 2px solid black !important;
+}
+
+.modal-dialog.custom-size {
+    max-width: 90vw;
+    /* Adjust width as needed */
+    max-height: 90vh;
+    /* Adjust height as needed */
+}
+
+.modal-body {
+    padding: 0;
+    /* Remove padding around the image */
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    /* Ensure aspect ratio is maintained */
+}
+
+.pricing-section {
+    padding: 2rem;
+}
+
+.pricing-item {
+    margin-bottom: 1rem;
+}
+
+.pricing-item .price {
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.total-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: #6c757d;
+    --bs-tooltip-color: #fff;
+}

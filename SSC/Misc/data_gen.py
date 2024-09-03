@@ -73,25 +73,31 @@ def generate_building_details():
             "co_working_space": random.choice([True, False]),
             "terrace_amenities": random.choice([True, False])
         }
-        building['unit_details'] = {
-            "building_id": building['building_details']["building_id"],
-            "unit_configuration": f"{random.randint(1, 4)}BHK",
-            "unit_type": random.choice(["Standard", "Premium", "Luxury"]),
-            "no_of_units_per_floor": random.randint(2, 6),
-            "no_of_lifts_per_floor": random.randint(1, 3),
-            "private_lifts": random.choice([True, False]),
-            "common_terrace_accessible": random.choice([True, False]),
-            "size_of_private_terrace": round(random.uniform(100.00, 300.00), 2) if random.choice([True, False]) else None,
-            "size_of_unit": round(random.uniform(800.00, 1500.00), 2),
-            "carpet_area_rera": round(random.uniform(600.00, 1200.00), 2),
-            "jodi_possible": random.choice([True, False]),
-            "no_of_attached_bathrooms": random.randint(1, 3),
-            "servant_room_available": random.choice([True, False]),
-            "separate_puja_room_available": random.choice([True, False]),
-            "no_of_balconies": random.randint(1, 3),
-            "no_of_parking_allotted": random.randint(0, 2),
-            "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2)
-        }
+        
+        building['unit_details'] = []
+        unit_number = random.randint(1, 6)
+        for i in range(unit_number):    
+            temp_dict = {
+                "building_id": building['building_details']["building_id"],
+                "unit_configuration": f"{random.randint(1, 4)}BHK",
+                "unit_type": random.choice(["Simplex", "Duplex", "Pent House"]),
+                "no_of_units_per_floor": random.randint(2, 6),
+                "no_of_lifts_per_floor": random.randint(1, 3),
+                "private_lifts": random.choice([True, False]),
+                "common_terrace_accessible": random.choice([True, False]),
+                "size_of_private_terrace": round(random.uniform(100.00, 300.00), 2) if random.choice([True, False]) else None,
+                "size_of_unit": round(random.uniform(800.00, 1500.00), 2),
+                "carpet_area_rera": round(random.uniform(600.00, 1200.00), 2),
+                "jodi_possible": random.choice([True, False]),
+                "no_of_attached_bathrooms": random.randint(1, 3),
+                "servant_room_available": random.choice([True, False]),
+                "separate_puja_room_available": random.choice([True, False]),
+                "no_of_balconies": random.randint(1, 3),
+                "no_of_parking_allotted": random.randint(0, 2),
+                "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2)
+            }
+            building['unit_details'].append(temp_dict)
+        
         building_details.append(building)
     
     return building_details
@@ -114,4 +120,3 @@ filename = generate_file_name(folder=folder, file_name='data.json')
 with open(filename, 'w') as json_file:
     json.dump(building_details, json_file, indent=4)
 print(f'Data save to {filename}')
-

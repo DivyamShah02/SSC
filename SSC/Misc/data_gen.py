@@ -6,6 +6,27 @@ def generate_building_details():
         building_name = f"{random.choice(['Skyline', 'Star', 'Galaxy', 'Urban']) } {random.choice(['Residency', 'Heights', 'Towers', 'Apartments'])}"
         group_name = f"Group {chr(65+i)}"
         building = {}
+        bhks = []
+
+        min_bhk = random.randint(2, 6)
+
+        while True:
+            max_bhk = random.randint(2, 6)
+            if max_bhk >= min_bhk:
+                break
+        
+        for j in range(7):
+            if j >= min_bhk and j <= max_bhk:
+                bhks.append(f'{j}BHK')
+
+
+        # for i in range(3):
+        #     bhk = random.randint(2, 6)
+        #     if bhk not in bhks:
+        #         bhks.append(str(bhk))
+        
+        type_of_apartments = ' | '.join(bhks)
+
         building['building_details'] = {
             "building_id": f"BD{i+1:03}",
             "group_name": group_name,  # Group names A-J
@@ -23,7 +44,8 @@ def generate_building_details():
             "location_of_project": f"{random.randint(100, 999)} {random.choice(['Street', 'Avenue', 'Road'])}",
             "google_pin": "https://maps.app.goo.gl/FxcQVyRjHuTiwx9f6",
             "type_of_project": "Residential",
-            "type_of_apartments": f"{random.randint(1, 4)}BHK",  # 1-4 BHK options
+            "type_of_apartments": type_of_apartments,  # 1-4 BHK options
+            # "type_of_apartments": f"{random.randint(1, 4)}BHK",  # 1-4 BHK options
             "age_of_property_developer": random.randint(10, 50),
             "age_of_property_rera": random.randint(5, 20),
             "plot_area": f"{random.randint(10000, 50000)} sq ft",

@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from Property.models import BuildingDetails, UnitDetails, Amenities
 import json
 
-def temp_data(request):
-    json_file = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data.json'
+def temp_datat(request):
+    json_file = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data_1.json'
     with open(json_file, 'r') as file:
         # Parse JSON content and convert it to a dictionary
         data = json.load(file)
@@ -58,26 +58,27 @@ def temp_data(request):
         ) 
         new_building.save()
 
-        new_unit = UnitDetails(
-            building_id = building['unit_details']["building_id"],
-            unit_configuration = building['unit_details']["unit_configuration"],
-            unit_type = building['unit_details']["unit_type"],
-            no_of_units_per_floor = building['unit_details']["no_of_units_per_floor"],
-            no_of_lifts_per_floor = building['unit_details']["no_of_lifts_per_floor"],
-            private_lifts = building['unit_details']["private_lifts"],
-            common_terrace_accessible = building['unit_details']["common_terrace_accessible"],
-            size_of_private_terrace = building['unit_details']["size_of_private_terrace"],
-            size_of_unit = building['unit_details']["size_of_unit"],
-            carpet_area_rera = building['unit_details']["carpet_area_rera"],
-            jodi_possible = building['unit_details']["jodi_possible"],
-            no_of_attached_bathrooms = building['unit_details']["no_of_attached_bathrooms"],
-            servant_room_available = building['unit_details']["servant_room_available"],
-            separate_puja_room_available = building['unit_details']["separate_puja_room_available"],
-            no_of_balconies = building['unit_details']["no_of_balconies"],
-            no_of_parking_allotted = building['unit_details']["no_of_parking_allotted"],
-            per_sqft_rate_saleable = building['unit_details']["per_sqft_rate_saleable"],
-        )
-        new_unit.save()
+        for unit in building['unit_details']:
+            new_unit = UnitDetails(
+                building_id = unit["building_id"],
+                unit_configuration = unit["unit_configuration"],
+                unit_type = unit["unit_type"],
+                no_of_units_per_floor = unit["no_of_units_per_floor"],
+                no_of_lifts_per_floor = unit["no_of_lifts_per_floor"],
+                private_lifts = unit["private_lifts"],
+                common_terrace_accessible = unit["common_terrace_accessible"],
+                size_of_private_terrace = unit["size_of_private_terrace"],
+                size_of_unit = unit["size_of_unit"],
+                carpet_area_rera = unit["carpet_area_rera"],
+                jodi_possible = unit["jodi_possible"],
+                no_of_attached_bathrooms = unit["no_of_attached_bathrooms"],
+                servant_room_available = unit["servant_room_available"],
+                separate_puja_room_available = unit["separate_puja_room_available"],
+                no_of_balconies = unit["no_of_balconies"],
+                no_of_parking_allotted = unit["no_of_parking_allotted"],
+                per_sqft_rate_saleable = unit["per_sqft_rate_saleable"],
+            )
+            new_unit.save()
 
         ammenties = Amenities(
             building_id = building['amenities']["building_id"],
@@ -105,4 +106,22 @@ def temp_data(request):
         )
         ammenties.save()
 
+    return HttpResponse('Data uploaded')
+
+
+def temp_data(request):
+    search_string = '3BHK'  # You can replace this with the string you're searching for
+    min_carpet_area = '1300'
+    budget_min = 10000000
+    budget_max = 15000000
+    matching_properties = BuildingDetails.objects.filter(type_of_apartments__icontains=search_string)
+    for match_ in matching_properties:
+        print(f'Property - {match_.building_id}')
+        property_unit_matched = UnitDetails.objects.filter(building_id=match_.building_id, unit_configuration__icontains=search_string, size_of_unit__gte=min_carpet_area)
+        if len(property_unit_matched) !=0:
+            print(property_unit_matched[0].building_id, property_unit_matched[0].id)
+            unit_price = property_unit_matched[0].size_of_unit * property_unit_matched[0].per_sqft_rate_saleable
+            if budget_min <= unit_price and budget_max >= unit_price:
+                print(unit_price)
+    
     return HttpResponse('Data uploaded')

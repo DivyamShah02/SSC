@@ -64,7 +64,7 @@ class BuildingDetails(models.Model):
 
 
 class UnitDetails(models.Model):
-    building_id = models.CharField(max_length=255, unique=True)
+    building_id = models.CharField(max_length=255)
 
     unit_configuration = models.CharField(max_length=255)
     unit_type = models.CharField(max_length=255)

@@ -2,7 +2,7 @@ import os, json, random
 
 def generate_building_details():
     building_details = []
-    for i in range(10):
+    for i in range(100):
         building_name = f"{random.choice(['Skyline', 'Star', 'Galaxy', 'Urban']) } {random.choice(['Residency', 'Heights', 'Towers', 'Apartments'])}"
         group_name = f"Group {chr(65+i)}"
         building = {}
@@ -101,7 +101,7 @@ def generate_building_details():
         for i in range(unit_number):    
             temp_dict = {
                 "building_id": building['building_details']["building_id"],
-                "unit_configuration": f"{random.randint(1, 4)}BHK",
+                "unit_configuration": f"{random.randint(min_bhk, max_bhk)}BHK",
                 "unit_type": random.choice(["Simplex", "Duplex", "Pent House"]),
                 "no_of_units_per_floor": random.randint(2, 6),
                 "no_of_lifts_per_floor": random.randint(1, 3),

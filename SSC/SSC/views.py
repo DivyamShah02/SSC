@@ -4,7 +4,7 @@ from Property.models import BuildingDetails, UnitDetails, Amenities
 import json
 
 def temp_datat(request):
-    json_file = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data_1.json'
+    json_file = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data_2.json'
     with open(json_file, 'r') as file:
         # Parse JSON content and convert it to a dictionary
         data = json.load(file)
@@ -112,16 +112,20 @@ def temp_datat(request):
 def temp_data(request):
     search_string = '3BHK'  # You can replace this with the string you're searching for
     min_carpet_area = '1300'
-    budget_min = 10000000
-    budget_max = 15000000
+    budget_min = 1000000
+    budget_max = 16000000
+    unit_type = 'Simplex'
     matching_properties = BuildingDetails.objects.filter(type_of_apartments__icontains=search_string)
     for match_ in matching_properties:
-        print(f'Property - {match_.building_id}')
-        property_unit_matched = UnitDetails.objects.filter(building_id=match_.building_id, unit_configuration__icontains=search_string, size_of_unit__gte=min_carpet_area)
+        property_unit_matched = UnitDetails.objects.filter(building_id=match_.building_id, unit_configuration__icontains=search_string, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)
         if len(property_unit_matched) !=0:
-            print(property_unit_matched[0].building_id, property_unit_matched[0].id)
-            unit_price = property_unit_matched[0].size_of_unit * property_unit_matched[0].per_sqft_rate_saleable
-            if budget_min <= unit_price and budget_max >= unit_price:
-                print(unit_price)
-    
+            for property in property_unit_matched:
+                unit_price = property.size_of_unit * property.per_sqft_rate_saleable
+                if budget_min <= unit_price and budget_max >= unit_price:
+                    print(f'Property - {match_.building_id}')
+                    print(property.id)
+                    print(unit_price)
+                    print(f'bathroom - {property.no_of_attached_bathrooms}')
+                    print('----------------------------')
+                
     return HttpResponse('Data uploaded')

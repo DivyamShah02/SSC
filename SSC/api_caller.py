@@ -14,5 +14,17 @@ def sorter_api_call():
 
     print(response.text)
 
+def property_api_call():
+    url_endpoint = 'view-properties/'
 
-sorter_api_call()
+    url = base_url + url_endpoint
+    data = {
+        'id':1
+    }
+    response = requests.post(url=url, data=data)
+
+    print(response.text)
+
+
+
+property_api_call()

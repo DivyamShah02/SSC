@@ -1,8 +1,8 @@
 import os
 from django.db.models import Q
 from .library.Config import Config
-from Property.models import BuildingDetails, UnitDetails
-from Property.serializers import UnitDetailsSerializer, BuildingDetailsSerializer
+from Property.models import BuildingDetails, UnitDetails, Amenities
+from Property.serializers import UnitDetailsSerializer, BuildingDetailsSerializer, AmenitiesSerializer
 from ClientDetail.models import PropertyInquiry
 from ClientDetail.serializers import PropertyInquirySerializer
 from SSC.settings import BASE_DIR
@@ -88,13 +88,28 @@ class Sorter:
             print(f"Error fetching pre-validated properties: {e}")
             raise ValueError(f"Error in property validation: {str(e)}")
 
+    def generate_property_list(self, updated_client_data, validated_properties):
+        scored_units = []
+        for property in validated_properties:
+            scored_properties = self.calculate_property_score(client_preferences=updated_client_data, unit_id=property)
+            scored_units.append(scored_properties)
+
+        sorted_data = sorted(scored_units, key=lambda x: x['score'], reverse=True)
+        return sorted_data
+
+
+
     def calculate_property_score(self, client_preferences, unit_id):
         score = 0
 
         unit_data_obg = get_object_or_404(UnitDetails, id=unit_id)
-        property_data_obj = get_object_or_404(BuildingDetails, building_id=unit_data_obg.building_id)
         unit_data = UnitDetailsSerializer(unit_data_obg).data
-        property_data = PropertyInquirySerializer(property_data_obj).data
+
+        property_data_obj = get_object_or_404(BuildingDetails, building_id=unit_data_obg.building_id)
+        property_data = BuildingDetailsSerializer(property_data_obj).data
+
+        amenties_data_obj = get_object_or_404(Amenities, building_id=unit_data_obg.building_id)
+        amenties_data = AmenitiesSerializer(amenties_data_obj).data
 
         # 1. Attached Washrooms
         client_washrooms = int(client_preferences.get('attached_washrooms', 0))
@@ -126,17 +141,15 @@ class Sorter:
         #     score += int(self.config.scoring.society_type_exact)
         # else:
         #     score += int(self.config.scoring.society_type_other)
-        
-        # TODO
+
         # 5. Flat Preference on 1 Floor
-        client_flat_preference = int(str(client_preferences.get('flats_per_floor', 0)).split('-')[-1])
-        property_flats_per_floor = int(unit_data.get('no_of_units_per_floor', 0))
-        if client_flat_preference == property_flats_per_floor:
-            score += int(self.config.scoring.flat_preference_exact)
-        elif property_flats_per_floor < client_flat_preference:
-            score += int(self.config.scoring.flat_preference_less)
-        else:
-            score += int(self.config.scoring.flat_preference_more)
+        client_flat_preference_lst = str(client_preferences.get('flats_per_floor', '')).split('-')
+        if len(client_flat_preference_lst) == 2:
+            property_units_per_floor = int(property_data.get('no_of_units_per_floor', 0))
+            if property_units_per_floor >= int(client_flat_preference_lst[0]) and property_units_per_floor <= int(client_flat_preference_lst[1]):
+                score += int(self.config.scoring.flat_preference_exact)
+            else:
+                score += int(self.config.scoring.flat_preference_less)
 
         # 6. Religious Place
         if client_preferences.get('religious_preference') in str(property_data.get('spiritual_or_religious_attraction')):
@@ -179,12 +192,12 @@ class Sorter:
             score += int(self.config.scoring.stack_parking_other)
 
         # 11. Amenities
-        # client_amenities = set(client_preferences.get('amenities', '').split(', '))
-        # property_amenities = set(unit_data.get('amenities', '').split(', '))
-        # matching_amenities = client_amenities.intersection(property_amenities)
-        # score += len(matching_amenities) * int(self.config.scoring.amenities_per_match)
+        client_amenities = set(client_preferences.get('amenities', '').split(', '))
+        for amenities in client_amenities:
+            if amenties_data.get(amenities, False):
+                score += int(self.config.scoring.amenities_per_match)
 
-        return {unit_id:score}
+        return {'unit_id':unit_id, 'score':score}
 
 if __name__ == '__main__':
     inquiry_id = 2

@@ -26,5 +26,5 @@ def property_api_call():
     print(response.text)
 
 
-
+sorter_api_call()
 property_api_call()

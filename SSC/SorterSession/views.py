@@ -8,6 +8,7 @@ from .serializers import ShortlistedPropertySerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.exceptions import NotFound, ParseError
 from django.shortcuts import get_object_or_404
 import json
 
@@ -66,64 +67,143 @@ class SorterViewSet(viewsets.ViewSet):
 
 class PropertyViewset(viewsets.ViewSet):
     def list(self, request):
-        session_id = request.GET.get('id')
+        try:
+            session_id = request.GET.get('id')
 
-        session_data_obj = get_object_or_404(ShortlistedProperty, id=session_id)
-        session_data = ShortlistedPropertySerializer(session_data_obj).data
+            if not session_id:
+                raise ParseError("Session ID is required.")
 
-        properties_data = session_data.get('properties', '').replace("'", '"')
-        properties_data = json.loads(properties_data)
+            # Fetch session data
+            session_data_obj = get_object_or_404(ShortlistedProperty, id=session_id)
+            session_data = ShortlistedPropertySerializer(session_data_obj).data
 
-        all_properties = []
-        for property in properties_data:
-            unit_id = property['unit_id']
-            unit_data_obj = get_object_or_404(UnitDetails, id=unit_id)
-            unit_data = UnitDetailsSerializer(unit_data_obj).data
+            # Parse properties from session data
+            properties_data_str = session_data.get('properties', '')
+            if not properties_data_str:
+                raise ParseError("No properties found in session data.")
+            
+            try:
+                properties_data = json.loads(properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
 
-            building_data_obj = get_object_or_404(BuildingDetails, building_id=unit_data.get('building_id', 0))
-            building_data = BuildingDetailsSerializer(building_data_obj).data
+            if not isinstance(properties_data, list):
+                raise ParseError("Properties data must be a list.")
 
-            property_details={
-                'unit_id': unit_id,
-                'unit_details': unit_data,
-                'building_id': unit_data.get('building_id', 0),
-                'building_details':building_data,
-                'score': property['score']
-            }
+            all_properties = []
+            for property in properties_data[0:15]:
+                unit_id = property.get('unit_id')
+                if not unit_id:
+                    raise ParseError("Unit ID is missing in property data.")
 
-            all_properties.append(property_details)
+                # Fetch unit data
+                try:
+                    unit_data_obj = UnitDetails.objects.get(id=unit_id)
+                except UnitDetails.DoesNotExist:
+                    raise NotFound(f"Unit with id {unit_id} not found.")
+                
+                unit_data = UnitDetailsSerializer(unit_data_obj).data
 
-        return Response({'success':True, 'all_properties':all_properties})
+                # Fetch building data
+                building_id = unit_data.get('building_id')
+                try:
+                    building_data_obj = BuildingDetails.objects.get(building_id=building_id)
+                except BuildingDetails.DoesNotExist:
+                    raise NotFound(f"Building with id {building_id} not found.")
+                
+                building_data = BuildingDetailsSerializer(building_data_obj).data
 
+                # Create property details
+                property_details = {
+                    'unit_id': unit_id,
+                    'unit_details': unit_data,
+                    'building_id': building_id,
+                    'building_details': building_data,
+                    'score': property.get('score', 0)  # Default to 0 if score is missing
+                }
+
+                all_properties.append(property_details)
+
+            return Response({'success': True, 'total_properties':len(all_properties), 'all_properties': all_properties})
+
+        except ParseError as e:
+            return Response({'success': False, 'error': str(e)}, status=400)
+
+        except NotFound as e:
+            return Response({'success': False, 'error': str(e)}, status=404)
+
+        except Exception as e:
+            # Catch any other unforeseen errors
+            return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
     def create(self, request):
-        data = request.data
-        session_id = data.get('id')
+        try:
+            data = request.data
+            session_id = data.get('id')
 
-        session_data_obj = get_object_or_404(ShortlistedProperty, id=session_id)
-        session_data = ShortlistedPropertySerializer(session_data_obj).data
+            if not session_id:
+                raise ParseError("Session ID is required.")
 
-        properties_data = session_data.get('properties', '').replace("'", '"')
-        properties_data = json.loads(properties_data)
+            # Fetch session data
+            session_data_obj = get_object_or_404(ShortlistedProperty, id=session_id)
+            session_data = ShortlistedPropertySerializer(session_data_obj).data
 
-        all_properties = []
-        for property in properties_data:
-            unit_id = property['unit_id']
-            unit_data_obj = get_object_or_404(UnitDetails, id=unit_id)
-            unit_data = UnitDetailsSerializer(unit_data_obj).data
+            # Parse properties from session data
+            properties_data_str = session_data.get('properties', '')
+            if not properties_data_str:
+                raise ParseError("No properties found in session data.")
+            
+            try:
+                properties_data = json.loads(properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
 
-            building_data_obj = get_object_or_404(BuildingDetails, building_id=unit_data.get('building_id', 0))
-            building_data = BuildingDetailsSerializer(building_data_obj).data
+            if not isinstance(properties_data, list):
+                raise ParseError("Properties data must be a list.")
 
-            property_details={
-                'unit_id': unit_id,
-                'unit_details': unit_data,
-                'building_id': unit_data.get('building_id', 0),
-                'building_details':building_data,
-                'score': property['score']
-            }
+            all_properties = []
+            for property in properties_data:
+                unit_id = property.get('unit_id')
+                if not unit_id:
+                    raise ParseError("Unit ID is missing in property data.")
 
-            all_properties.append(property_details)
+                # Fetch unit data
+                try:
+                    unit_data_obj = UnitDetails.objects.get(id=unit_id)
+                except UnitDetails.DoesNotExist:
+                    raise NotFound(f"Unit with id {unit_id} not found.")
+                
+                unit_data = UnitDetailsSerializer(unit_data_obj).data
 
-        return Response({'success':True, 'all_properties':all_properties})
+                # Fetch building data
+                building_id = unit_data.get('building_id')
+                try:
+                    building_data_obj = BuildingDetails.objects.get(building_id=building_id)
+                except BuildingDetails.DoesNotExist:
+                    raise NotFound(f"Building with id {building_id} not found.")
+                
+                building_data = BuildingDetailsSerializer(building_data_obj).data
+
+                # Create property details
+                property_details = {
+                    'unit_id': unit_id,
+                    'unit_details': unit_data,
+                    'building_id': building_id,
+                    'building_details': building_data,
+                    'score': property.get('score', 0)  # Default to 0 if score is missing
+                }
+
+                all_properties.append(property_details)
+
+            return Response({'success': True, 'total_properties':len(all_properties), 'all_properties': all_properties})
+
+        except ParseError as e:
+            return Response({'success': False, 'error': str(e)}, status=400)
+
+        except NotFound as e:
+            return Response({'success': False, 'error': str(e)}, status=404)
+
+        except Exception as e:
+            # Catch any other unforeseen errors
+            return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 

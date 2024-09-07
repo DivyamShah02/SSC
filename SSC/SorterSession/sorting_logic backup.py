@@ -1,4 +1,5 @@
 import os
+from django.db.models import Q
 from .library.Config import Config
 from Property.models import BuildingDetails, UnitDetails, Amenities
 from Property.serializers import UnitDetailsSerializer, BuildingDetailsSerializer, AmenitiesSerializer
@@ -6,8 +7,7 @@ from ClientDetail.models import PropertyInquiry
 from ClientDetail.serializers import PropertyInquirySerializer
 from SSC.settings import BASE_DIR
 from django.shortcuts import get_object_or_404
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.exceptions import NotFound
+
 
 
 class Sorter:
@@ -70,7 +70,7 @@ class Sorter:
             min_carpet_area = updated_client_data.get('min_carpet_area', 0)
             budget_min = updated_client_data.get('budget_min', 0)
             budget_max = updated_client_data.get('budget_max', 0)
-            unit_type = 'Simplex'
+            unit_type = 'simplex'
 
             validated_property = []
             for bedroom in bedrooms:
@@ -91,137 +91,110 @@ class Sorter:
     def generate_property_list(self, updated_client_data, validated_properties):
         scored_units = []
         for property in validated_properties:
-            try:
-                scored_properties = self.calculate_property_score(
-                    client_preferences=updated_client_data, unit_id=property
-                )
-                scored_units.append(scored_properties)
-            except Exception as e:
-                # Log the exception and continue with next property
-                print(f"Error scoring property {property}: {str(e)}")
-        
+            scored_properties = self.calculate_property_score(client_preferences=updated_client_data, unit_id=property)
+            scored_units.append(scored_properties)
+
         sorted_data = sorted(scored_units, key=lambda x: x['score'], reverse=True)
         return sorted_data
+
+
 
     def calculate_property_score(self, client_preferences, unit_id):
         score = 0
 
-        try:
-            unit_data_obg = UnitDetails.objects.get(id=unit_id)
-        except ObjectDoesNotExist:
-            raise NotFound(f"Unit with id {unit_id} not found.")
-        
+        unit_data_obg = get_object_or_404(UnitDetails, id=unit_id)
         unit_data = UnitDetailsSerializer(unit_data_obg).data
-        
-        try:
-            property_data_obj = BuildingDetails.objects.get(building_id=unit_data_obg.building_id)
-        except ObjectDoesNotExist:
-            raise NotFound(f"Building with id {unit_data_obg.building_id} not found.")
-        
+
+        property_data_obj = get_object_or_404(BuildingDetails, building_id=unit_data_obg.building_id)
         property_data = BuildingDetailsSerializer(property_data_obj).data
 
-        try:
-            amenities_data_obj = Amenities.objects.get(building_id=unit_data_obg.building_id)
-        except ObjectDoesNotExist:
-            amenities_data = {}
-        else:
-            amenities_data = AmenitiesSerializer(amenities_data_obj).data
+        amenties_data_obj = get_object_or_404(Amenities, building_id=unit_data_obg.building_id)
+        amenties_data = AmenitiesSerializer(amenties_data_obj).data
 
-        score += self._score_attached_washrooms(client_preferences, unit_data)
-        score += self._score_floor_preference(client_preferences, property_data)
-        score += self._score_servant_room(unit_data)
-        score += self._score_flat_preference(client_preferences, property_data)
-        score += self._score_religious_place(client_preferences, property_data)
-        score += self._score_private_elevator(unit_data)
-        score += self._score_central_ac(client_preferences, property_data)
-        score += self._score_parking(client_preferences, unit_data)
-        score += self._score_stack_parking(client_preferences, property_data)
-        score += self._score_amenities(client_preferences, amenities_data)
-
-        return {'unit_id': unit_id, 'score': score}
-
-    def _score_attached_washrooms(self, client_preferences, unit_data):
+        # 1. Attached Washrooms
         client_washrooms = int(client_preferences.get('attached_washrooms', 0))
         property_washrooms = int(unit_data.get('no_of_attached_bathrooms', 0))
-        
         if property_washrooms == client_washrooms:
-            return int(self.config.scoring.attached_washroom_exact)
+            score += int(self.config.scoring.attached_washroom_exact)
         elif property_washrooms > client_washrooms:
-            return int(self.config.scoring.attached_washroom_more)
+            score += int(self.config.scoring.attached_washroom_more)
         else:
-            return int(self.config.scoring.attached_washroom_less)
+            score += int(self.config.scoring.attached_washroom_less)
 
-    def _score_floor_preference(self, client_preferences, property_data):
-        client_floor_range = client_preferences.get('floor_preference', '').split('-')
-        property_total_floors = int(property_data.get('no_of_floors', 0))
-        
-        if len(client_floor_range) == 2:
-            if property_total_floors >= int(client_floor_range[0]) and property_total_floors <= int(client_floor_range[1]):
-                return int(self.config.scoring.floor_preference_exact)
+        # 2. Floor Preference
+        client_floor_preference_lst = str(client_preferences.get('floor_preference', '')).split('-')
+        if len(client_floor_preference_lst) == 2:
+            property_total_floors = int(property_data.get('no_of_floors', 0))
+            if property_total_floors >= int(client_floor_preference_lst[0]) and property_total_floors <= int(client_floor_preference_lst[1]):
+                score += int(self.config.scoring.floor_preference_exact)
             else:
-                return int(self.config.scoring.floor_preference_other)
-        return 0
+                score += int(self.config.scoring.floor_preference_other)
 
-    def _score_servant_room(self, unit_data):
-        return int(self.config.scoring.servant_room) if unit_data.get('servant_room_available') else 0
+        # 3. Servant Room
+        if unit_data.get('servant_room_available'):
+            score += int(self.config.scoring.servant_room)
 
-    def _score_society_preference(self, client_preferences, unit_data):
-        client_society_type = client_preferences.get('society_type', '')
-        property_society_type = unit_data.get('society_type', '')
-        if client_society_type == property_society_type:
-            return int(self.config.scoring.society_type_exact)
+        # 4. Type of Society
+        # client_society_type = client_preferences.get('society_type', '')
+        # property_society_type = unit_data.get('society_type', '')
+        # if client_society_type == property_society_type:
+        #     score += int(self.config.scoring.society_type_exact)
+        # else:
+        #     score += int(self.config.scoring.society_type_other)
+
+        # 5. Flat Preference on 1 Floor
+        client_flat_preference_lst = str(client_preferences.get('flats_per_floor', '')).split('-')
+        if len(client_flat_preference_lst) == 2:
+            property_units_per_floor = int(property_data.get('no_of_units_per_floor', 0))
+            if property_units_per_floor >= int(client_flat_preference_lst[0]) and property_units_per_floor <= int(client_flat_preference_lst[1]):
+                score += int(self.config.scoring.flat_preference_exact)
+            else:
+                score += int(self.config.scoring.flat_preference_less)
+
+        # 6. Religious Place
+        if client_preferences.get('religious_preference') in str(property_data.get('spiritual_or_religious_attraction')):
+            score += int(self.config.scoring.religious_place_match)
         else:
-            return int(self.config.scoring.society_type_other)
+            score += int(self.config.scoring.religious_place_no_match)
 
-    def _score_flat_preference(self, client_preferences, property_data):
-        client_flat_range = client_preferences.get('flats_per_floor', '').split('-')
-        property_units_per_floor = int(property_data.get('no_of_units_per_floor', 0))
-        
-        if len(client_flat_range) == 2:
-            if property_units_per_floor >= int(client_flat_range[0]) and property_units_per_floor <= int(client_flat_range[1]):
-                return int(self.config.scoring.flat_preference_exact)
-            return int(self.config.scoring.flat_preference_less)
-        return 0
+        # 7. Private Elevator
+        if unit_data.get('private_lifts'):
+            score += int(self.config.scoring.private_elevator_exists)
+        else:
+            score += int(self.config.scoring.private_elevator_no)
 
-    def _score_religious_place(self, client_preferences, property_data):
-        return int(self.config.scoring.religious_place_match) if client_preferences.get('religious_preference') in property_data.get('spiritual_or_religious_attraction', '') else 0
-
-    def _score_private_elevator(self, unit_data):
-        return int(self.config.scoring.private_elevator_exists) if unit_data.get('private_lifts') else int(self.config.scoring.private_elevator_no)
-
-    def _score_central_ac(self, client_preferences, property_data):
+        # 8. Central AC
         client_ac = client_preferences.get('central_air_conditioning', 'Maybe')
         property_ac = property_data.get('central_air_conditioning', False)
-
         if client_ac == 'Yes' and property_ac:
-            return int(self.config.scoring.central_ac_match_yes_yes)
+            score += int(self.config.scoring.central_ac_match_yes_yes)
         elif client_ac == 'No' and not property_ac:
-            return int(self.config.scoring.central_ac_match_no_no)
+            score += int(self.config.scoring.central_ac_match_no_no)
         else:
-            return int(self.config.scoring.central_ac_other)
+            score += int(self.config.scoring.central_ac_other)
 
-    def _score_parking(self, client_preferences, unit_data):
+        # 9. Parking
         client_parking = int(client_preferences.get('min_parking_slots', 0))
         property_parking = int(unit_data.get('no_of_parking_allotted', 0))
-        
         if property_parking >= client_parking:
-            return int(self.config.scoring.parking_exact_or_more)
+            score += int(self.config.scoring.parking_exact_or_more)
         elif property_parking == client_parking - 1:
-            return int(self.config.scoring.parking_one_less)
-        return int(self.config.scoring.parking_two_or_more_less)
+            score += int(self.config.scoring.parking_one_less)
+        else:
+            score += int(self.config.scoring.parking_two_or_more_less)
 
-    def _score_stack_parking(self, client_preferences, property_data):
+        # 10. Stack Parking
         client_stack_parking = client_preferences.get('stack_parking', 'Maybe')
         property_stack_parking = property_data.get('type_of_parking', 'No')
-        
         if client_stack_parking == property_stack_parking:
-            return int(self.config.scoring.stack_parking_exact)
-        return int(self.config.scoring.stack_parking_other)
+            score += int(self.config.scoring.stack_parking_exact)
+        else:
+            score += int(self.config.scoring.stack_parking_other)
 
-    def _score_amenities(self, client_preferences, amenities_data):
+        # 11. Amenities
         client_amenities = set(client_preferences.get('amenities', '').split(', '))
-        score = 0
-        for amenity in client_amenities:
-            if amenities_data.get(amenity, False):
+        for amenities in client_amenities:
+            if amenties_data.get(amenities, False):
                 score += int(self.config.scoring.amenities_per_match)
-        return score
+
+        return {'unit_id':unit_id, 'score':score}

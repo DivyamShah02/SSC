@@ -1,3 +1,8 @@
 ## --- 3/9/24 --- ##
--> In type_of_apartments in 'building_details' can we directly add 3BHK | 4BHK | 5BHK (Seperated by '|')
 -> what is type of society?
+
+
+
+Disscussion points:
+-> need to add unit_type in cleint form (simplex, duplex like that)
+-> google maps api

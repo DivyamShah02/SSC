@@ -1,0 +1,2 @@
+final properties to be distinguish in premium budget and cheap logic
+google maps api to get location

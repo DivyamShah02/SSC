@@ -181,6 +181,7 @@ class Sorter:
             if property_units_per_floor >= int(client_flat_range[0]) and property_units_per_floor <= int(client_flat_range[1]):
                 return int(self.config.scoring.flat_preference_exact)
             return int(self.config.scoring.flat_preference_less)
+        # TODO more floors
         return 0
 
     def _score_religious_place(self, client_preferences, property_data):

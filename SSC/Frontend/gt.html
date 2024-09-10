@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Information Form</title>
+    <title>Family Demographics and Lifestyle Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for the form header */
         .form-header {
             background-color: #073763;
             color: white;
@@ -19,11 +18,6 @@
             align-items: center;
         }
 
-        .form-header i {
-            font-size: 1.2rem;
-        }
-
-        /* Custom style for input underline */
         .form-control {
             border: none;
             border-bottom: 2px solid #ccc;
@@ -35,92 +29,12 @@
             border-bottom: 2px solid #f39c12;
         }
 
-        /* Additional margin for spacing between fields */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
         .required {
             color: #f39c12;
         }
     </style>
 </head>
 <body>
-
-<div class="container py-5">
-    <!-- Form header -->
-    <div class="form-header">
-        <span>Personal Information</span>
-        <i class="bi bi-plus"></i> <!-- Use FontAwesome or Bootstrap Icons for the "+" -->
-    </div>
-
-    <!-- Form body -->
-    <form class="p-4 border border-top-0 rounded-bottom">
-        <div class="row">
-            <!-- Customer Name -->
-            <div class="col-md-4 form-group">
-                <label for="customerName" class="form-label">
-                    Customer Name<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="customerName" placeholder="Enter name">
-            </div>
-
-            <!-- Mobile Number -->
-            <div class="col-md-4 form-group">
-                <label for="mobileNumber" class="form-label">
-                    Number<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile number">
-            </div>
-
-            <!-- WhatsApp Number -->
-            <div class="col-md-4 form-group">
-                <label for="whatsappNumber" class="form-label">
-                    WhatsApp<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="whatsappNumber" placeholder="WhatsApp number">
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Email Address -->
-            <div class="col-md-4 form-group">
-                <label for="emailAddress" class="form-label">
-                    Email Address<span class="required">*</span>
-                </label>
-                <input type="email" class="form-control" id="emailAddress" placeholder="e.g. abc@website.com">
-            </div>
-
-            <!-- Profession -->
-            <div class="col-md-4 form-group">
-                <label for="profession" class="form-label">
-                    Profession<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="profession" placeholder="Enter Profession">
-            </div>
-
-            <!-- Current Residence -->
-            <div class="col-md-4 form-group">
-                <label for="currentResidence" class="form-label">
-                    Current Residence<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="currentResidence" placeholder="Local area, Society">
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Reference -->
-            <div class="col-md-4 form-group">
-                <label for="reference" class="form-label">
-                    Reference<span class="required">*</span>
-                </label>
-                <input type="text" class="form-control" id="reference" placeholder="Reference person name">
-            </div>
-        </div>
-        
-    </form>
-</div>
-
 
 <div class="container py-5">
     <!-- Form header -->
@@ -239,7 +153,6 @@
         </div>
     </form>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

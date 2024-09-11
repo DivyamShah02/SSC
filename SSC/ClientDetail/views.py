@@ -19,6 +19,7 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
         serializer = PropertyInquirySerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"message": "Inquiry submitted successfully!"}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            print(serializer.data)
+            return Response({"success":True,"message": "Inquiry submitted successfully!", "client_id":serializer.data['id']}, status=status.HTTP_201_CREATED)
+        return Response({"success":False,"message":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 

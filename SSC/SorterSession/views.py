@@ -54,15 +54,15 @@ class SorterViewSet(viewsets.ViewSet):
                  session_id = new_session.id
 
             return Response({
-                'status': True,
+                'success': True,
                 'session_id': session_id
             }, status=status.HTTP_200_OK)
 
         except PropertyInquiry.DoesNotExist:
-            return Response({'status': False, 'error': 'Property Inquiry not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'success': False, 'error': 'Property Inquiry not found'}, status=status.HTTP_404_NOT_FOUND)
         
         except Exception as e:
-            return Response({'status': False, 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({'success': False, 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class PropertyViewset(viewsets.ViewSet):

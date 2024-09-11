@@ -8,7 +8,7 @@ def sorter_api_call():
 
     url = base_url + url_endpoint
     data = {
-        'id':2
+        'id':12
     }
     response = requests.post(url=url, data=data)
 
@@ -27,4 +27,4 @@ def property_api_call():
 
 
 sorter_api_call()
-property_api_call()
+# property_api_call()

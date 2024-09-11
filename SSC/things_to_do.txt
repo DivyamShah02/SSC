@@ -1,9 +1,9 @@
 final properties to be distinguish in premium budget and cheap logic
 google maps api to get location
+AIzaSyBA-rFepT2GibAWyk6qc6qdltN6G2poPcs
 
 type of society
 Outcome - Small low rise (40 to 60 units ) - Single block high end (70 - 100 units) - Mid sized gated community (120 to 300 units) - Large gated community (350 to 800 units) - Township
 
 add a field of selected property to the sorted property
 
-AIzaSyBA-rFepT2GibAWyk6qc6qdltN6G2poPcs

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+        }
+
+        .form-section h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="questionForm">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="tel" class="form-control" id="number" name="number" placeholder="Enter your phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="whatsapp" class="form-label">Whatsapp No (if different)</label>
+                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="Enter your Whatsapp number">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="profession" class="form-label">Profession</label>
+                    <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter your profession">
+                </div>
+                <div class="mb-3">
+                    <label for="residence" class="form-label">Current Residence</label>
+                    <input type="text" class="form-control" id="residence" name="residence" placeholder="Enter your current residence">
+                </div>
+                <div class="mb-3">
+                    <label for="reference" class="form-label">Reference</label>
+                    <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference (if any)">
+                </div>
+            </div>
+
+            <!-- Family Demographics and Lifestyle Section -->
+            <div class="form-section">
+                <h3>Family Demographics and Lifestyle</h3>
+                <div class="mb-3">
+                    <label class="form-label">Why do you want to buy a house?</label>
+                    <select class="form-select" name="why_buy_house">
+                        <option value="lifestyle_upgrade">Lifestyle upgrade</option>
+                        <option value="investment">Investment</option>
+                        <option value="second_home">Second home</option>
+                        <option value="relocation">Relocation</option>
+                        <option value="downsizing">Downsizing</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">How many members are going to stay in the house?</label>
+                    <div class="mb-2">
+                        <label class="form-label">Adults</label>
+                        <input type="number" class="form-control" value="0" name="adults" placeholder="Enter number of adults">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Children</label>
+                        <input type="number" class="form-control" value="0" name="children" placeholder="Enter number of children">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Senior Citizens</label>
+                        <input type="number" class="form-control" value="0" name="senior_citizens" placeholder="Enter number of senior citizens">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you have pets?</label>
+                    <select class="form-select" name="have_pets">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What is the carpet area of your current residence?</label>
+                    <input type="text" class="form-control" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you prefer derasar / mandir / gurudwara near your house?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="derasar" name="religious_preference" value="derasar">
+                        <label class="form-check-label" for="derasar">Derasar</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mandir" name="religious_preference" value="mandir">
+                        <label class="form-check-label" for="mandir">Mandir</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gurudwara" name="religious_preference" value="gurudwara">
+                        <label class="form-check-label" for="gurudwara">Gurudwara</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="maybe" name="religious_preference" value="maybe">
+                        <label class="form-check-label" for="maybe">Maybe</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">In which area is your workplace?</label>
+                    <input type="text" class="form-control" id="workplace" name="workplace_area" placeholder="Enter area" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">In which area do your children go to school?</label>
+                    <input type="text" class="form-control" id="schoolArea" name="school_area" placeholder="Enter area" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What are your top 3 preferred locations?</label>
+                    <input type="text" class="form-control" id="preferredLocations" name="preferred_locations" placeholder="Enter preferred locations" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you want your home buying decision to be budget driven or choice driven?</label>
+                    <select class="form-select" name="decision_driven_by">
+                        <option value="budget_driven">Budget driven</option>
+                        <option value="choice_driven">Choice driven</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Is this purchase dependent on the sale of another property you own?</label>
+                    <select class="form-select" name="dependent_on_sale">
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Since how long are you looking for a house?</label>
+                    <select class="form-select" name="looking_since">
+                        <option value="just_started">Just started</option>
+                        <option value="6_to_12_months">6 - 12 months</option>
+                        <option value="12_to_24_months">12 to 24 months</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">In how much time do you want to seal the deal?</label>
+                    <input type="text" class="form-control" name="time_to_seal_deal" placeholder="Enter number of days">
+                </div>
+            </div>
+
+            <!-- House Specifications Section -->
+            <div class="form-section">
+                <h3>House Specifications</h3>
+                <div class="mb-3">
+                    <label class="form-label">How many bedrooms do you need?</label>
+                    <select class="form-select" name="bedrooms" multiple>
+                        <option value="3_bhk">3 BHK</option>
+                        <option value="4_bhk">4 BHK</option>
+                        <option value="5_bhk">5 BHK</option>
+                        <option value="5_bhk">6 BHK</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">How many attached washrooms should your house have?</label><br>
+                    <select class="form-select" multiple name="attached_washrooms">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Are you looking for a house with a servant room?</label><br>
+                    <select class="form-select" name="servant_room">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you want a separate puja room?</label><br>
+                    <select class="form-select" name="puja_room">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What should be the minimum Carpet area of the new property?</label>
+                    <input type="text" class="form-control" name="min_carpet_area" placeholder="Enter area range in Sq. Ft.">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Any vastu preferences?</label>
+                    <input type="text" class="form-control" name="vastu_preferences" placeholder="Enter vastu preferences">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">How many flats do you prefer on one floor?</label><br>
+                    <select class="form-select" name="flats_per_floor" multiple>
+                        <option value="1-2">1 - 2</option>
+                        <option value="3-4">3 - 4</option>
+                        <option value="5+">5+</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What is your floor preference?</label><br>
+                    <select class="form-select" name="floor_preference" multiple>
+                        <option value="1-5">1 to 5</option>
+                        <option value="6-12">6 to 12</option>
+                        <option value="13-20">13 to 20</option>
+                        <option value="above_21">Above 21</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you need a private elevator outside your residence?</label><br>
+                    <select class="form-select" name="private_elevator">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Are you looking for a home with central air conditioning?</label><br>
+                    <select class="form-select" name="central_air_conditioning">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What are the min. no. of parking slots required?</label><br>
+                    <select class="form-select" name="min_parking_slots">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Are you comfortable with stack parking?</label><br>
+                    <select class="form-select" name="stack_parking">
+                        <option value="yes_if_valet">Yes if valet is available</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <!-- Building Preferences Section -->
+            <div class="form-section">
+                <h3>Building Preferences</h3>
+                <div class="mb-3">
+                    <label class="form-label">What should be the age of property that you are looking for?</label><br>
+                    <select class="form-select" name="property_age" multiple>
+                        <option value="12_to_36_months_old">12 to 36 months old</option>
+                        <option value="0_to_12_months_old">0 to 12 months old</option>
+                        <option value="upcoming_6_12_months">Upcoming 6 - 12 months</option>
+                        <option value="upcoming_12_to_36_months">Upcoming 12 to 36 months</option>
+                        <option value="36_to_48_months">36 to 48 months</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What type of society do you prefer?</label><br>
+                    <select class="form-select" name="society_type" multiple>
+                        <option value="small_low_rise">Small low rise (40 to 60 units)</option>
+                        <option value="single_block_high_end">Single block high end (70 - 100 units)</option>
+                        <option value="mid_sized_gated_community">Mid-sized gated community (120 to 300 units)</option>
+                        <option value="large_gated_community">Large gated community (350 to 800 units)</option>
+                        <option value="township">Township</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">What are the 5 must-have amenities?</label><br>
+                    <select class="form-select" name="amenities" multiple>
+                        <option value="swimming_pool">Swimming pool</option>
+                        <option value="gym_fitness_center">Gym/Fitness Center</option>
+                        <option value="clubhouse">Clubhouse</option>
+                        <option value="children_play_area">Children's play area</option>
+                        <option value="sports_facilities">Sports facilities</option>
+                        <option value="jogging_walking_tracks">Jogging/Walking tracks</option>
+                        <option value="common_gardens">Common gardens</option>
+                        <option value="community_hall">Community hall</option>
+                        <option value="24_7_security">24/7 Security</option>
+                        <option value="cctv_surveillance">CCTV surveillance</option>
+                        <option value="power_backup">Power backup</option>
+                        <option value="waste_management">Waste management</option>
+                        <option value="concierge">Concierge</option>
+                        <option value="reading_room">Reading room</option>
+                        <option value="home_theatre">Home theatre</option>
+                        <option value="internet_connectivity">Internet connectivity</option>
+                        <option value="guest_rooms">Guest rooms</option>
+                        <option value="pet_friendly_areas">Pet-friendly areas</option>
+                        <option value="spa_salon">Spa/Salon</option>
+                        <option value="co_working_space">Co-working space</option>
+                        <option value="terrace_amenities">Terrace amenities</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Finance and Timeline Section -->
+            <div class="form-section">
+                <h3>Finance</h3>
+                <div class="mb-3">
+                    <label class="form-label">What is your budget range for a house excluding interior cost and govt. charges?</label>
+                    <input type="text" class="form-control" name="budget_min" placeholder="Min. __ Cr">
+                    <input type="text" class="form-control mt-2" name="budget_max" placeholder="Max. __ Cr">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">How much down payment will you be able to make in % from the maximum range?</label>
+                    <input type="text" class="form-control" name="down_payment_percentage" placeholder="Enter percentage">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Are you going to avail a home loan for this deal? What is the approved amount?</label>
+                    <input type="text" class="form-control" name="loan_approved_amount" placeholder="Enter approved loan amount">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Are there any other specific needs or preferences that we have not covered?</label>
+                    <textarea class="form-control" name="specific_needs" rows="4" placeholder="Enter your needs or preferences"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you have any concerns or deal breakers that we should be aware of?</label>
+                    <textarea class="form-control" name="concerns" rows="4" placeholder="Enter your concerns"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="button" id="submitForm" class="btn btn-primary">Submit</button>
+            </div>
+        
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('submitForm').addEventListener('click', function() {
+            // Collect form data
+            var formData = new FormData(document.getElementById('questionForm'));
+
+            // Convert FormData to JSON
+            var object = {};
+            formData.forEach((value, key) => {
+                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                    object[key] = value;
+                    return;
+                }
+                if (!Array.isArray(object[key])) {
+                    object[key] = [object[key]];
+                }
+                object[key].push(value);
+            });
+
+            // Send data to the API
+            fetch("{% url 'property-inquiry-list' %}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{csrf_token}}'
+                },
+                body: JSON.stringify(object)
+            })
+            .then(response => {
+                console.log(response.json())
+                if (response.ok) {
+                    // alert('Form submitted successfully!');
+                } else {
+                    // alert('There was an error submitting the form.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+    </script>
+
+</body>
+</html>

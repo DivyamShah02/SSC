@@ -5,13 +5,16 @@ from django.shortcuts import render
 from .serializers import PropertyInquirySerializer
 from .models import PropertyInquiry
 import json
+import time
 
 class PropertyInquiryViewSet(viewsets.ViewSet):
     def list(self, request):
         return render(request, 'property_inquiry_form.html')
 
     def create(self, request):
+        time.sleep(5)
         data = request.data
+
         for key in data.keys():
             if type(data[key]) == list:
                 data[key] = ', '.join(data[key])

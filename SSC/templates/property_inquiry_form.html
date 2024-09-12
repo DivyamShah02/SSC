@@ -94,7 +94,7 @@
                         <label for="name" class="form-label">
                             Customer Name<span class="required"> *</span>
                         </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" autofocus>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" autofocus required>
                     </div>
     
                     <!-- Mobile Number -->
@@ -549,76 +549,131 @@
                     <label class="form-label primary">What are the 5 must-have amenities?</label>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Swimming pool" id="amenity1">
-                            <label class="form-check-label" for="amenity1">Swimming pool</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="swimming_pool" id="amenity1">
+                            <label class="form-check-label" for="amenity1">Swimming Pool</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Gym/Fitness Center" id="amenity2">
-                            <label class="form-check-label" for="amenity2">Gym/Fitness Center</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="gym_fitness_center" id="amenity2">
+                            <label class="form-check-label" for="amenity2">Gym Fitness Center</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" id="amenity3">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="clubhouse" id="amenity3">
                             <label class="form-check-label" for="amenity3">Clubhouse</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Children's play area" id="amenity4">
-                            <label class="form-check-label" for="amenity4">Children's play area</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="children_play_area" id="amenity4">
+                            <label class="form-check-label" for="amenity4">Children Play Area</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Community hall" id="amenity5">
-                            <label class="form-check-label" for="amenity5">Community hall</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="sports_facilities" id="amenity5">
+                            <label class="form-check-label" for="amenity5">Sports Facilities</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="CCTV surveillance" id="amenity6">
-                            <label class="form-check-label" for="amenity6">CCTV surveillance</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="jogging_walking_tracks" id="amenity6">
+                            <label class="form-check-label" for="amenity6">Jogging Walking Tracks</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Power backup" id="amenity7">
-                            <label class="form-check-label" for="amenity7">Power backup</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="common_gardens" id="amenity7">
+                            <label class="form-check-label" for="amenity7">Common Gardens</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="24/7 Security" id="amenity8">
-                            <label class="form-check-label" for="amenity8">24/7 Security</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="community_hall" id="amenity8">
+                            <label class="form-check-label" for="amenity8">Community Hall</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Sports facilities" id="amenity9">
-                            <label class="form-check-label" for="amenity9">Sports facilities</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="security_24_7" id="amenity9">
+                            <label class="form-check-label" for="amenity9">Security 24X7</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Jogging/Walking tracks" id="amenity10">
-                            <label class="form-check-label" for="amenity10">Jogging/Walking tracks</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="cctv_surveillance" id="amenity10">
+                            <label class="form-check-label" for="amenity10">CCTV Surveillance</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Waste management" id="amenity11">
-                            <label class="form-check-label" for="amenity11">Waste management</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="power_backup" id="amenity11">
+                            <label class="form-check-label" for="amenity11">Power Backup</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="amenities" value="Concierge" id="amenity12">
-                            <label class="form-check-label" for="amenity12">Concierge</label>
+                            <input class="form-check-input" type="checkbox" name="amenities" value="waste_management" id="amenity12">
+                            <label class="form-check-label" for="amenity12">Waste Management</label>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="concierge" id="amenity13">
+                            <label class="form-check-label" for="amenity13">Concierge</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="reading_room" id="amenity14">
+                            <label class="form-check-label" for="amenity14">Reading Room</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="home_theatre" id="amenity15">
+                            <label class="form-check-label" for="amenity15">Home Theatre</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="internet_connectivity" id="amenity16">
+                            <label class="form-check-label" for="amenity16">Internet Connectivity</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="guest_rooms" id="amenity17">
+                            <label class="form-check-label" for="amenity17">Guest Rooms</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="pet_friendly_areas" id="amenity18">
+                            <label class="form-check-label" for="amenity18">Pet Friendly Areas</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="spa_salon" id="amenity19">
+                            <label class="form-check-label" for="amenity19">Spa Salon</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="co_working_space" id="amenity20">
+                            <label class="form-check-label" for="amenity20">Co-Working Space</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="terrace_amenities" id="amenity21">
+                            <label class="form-check-label" for="amenity21">Terrace Amenities</label>
+                        </div>
+                    </div>
+                    
                 </div>
             </form>
     
@@ -688,96 +743,120 @@ crossorigin="anonymous"></script>
 
 <script>
     async function submit_inquiry_form() {
-        var form_personal_information = new FormData(document.getElementById('personal_information'));
-        var form_family_demographics = new FormData(document.getElementById('family_demographics'));
-        var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
-        var form_building_preferences = new FormData(document.getElementById('building_preferences'));
-        var form_finance = new FormData(document.getElementById('finance'));
+        toggle_loader()
+        var personal_information_form = document.getElementById('personal_information');
+        var family_demographics_form = document.getElementById('family_demographics');
+        var house_specificaiton_form = document.getElementById('house_specificaiton');
+        var building_preferences_form = document.getElementById('building_preferences');
+        var finance_form = document.getElementById('finance');
 
-        // Convert FormData to JSON
-        var object = {};
+        if (personal_information_form.reportValidity()){
+            if (family_demographics_form.reportValidity()){
+                if (house_specificaiton_form.reportValidity()){
+                    if (building_preferences_form.reportValidity()){
+                        if (finance_form.reportValidity()){
+                            var form_personal_information = new FormData(document.getElementById('personal_information'));
+                            var form_family_demographics = new FormData(document.getElementById('family_demographics'));
+                            var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
+                            var form_building_preferences = new FormData(document.getElementById('building_preferences'));
+                            var form_finance = new FormData(document.getElementById('finance'));
+                    
+                            // Convert FormData to JSON
+                            var object = {};
+                            
+                            form_personal_information.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                    object[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(object[key])) {
+                                    object[key] = [object[key]];
+                                }
+                                object[key].push(value);
+                            });
+                    
+                            form_family_demographics.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                    object[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(object[key])) {
+                                    object[key] = [object[key]];
+                                }
+                                object[key].push(value);
+                            });
+                    
+                            form_house_specificaiton.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                    object[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(object[key])) {
+                                    object[key] = [object[key]];
+                                }
+                                object[key].push(value);
+                            });
+                    
+                            form_building_preferences.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                    object[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(object[key])) {
+                                    object[key] = [object[key]];
+                                }
+                                object[key].push(value);
+                            });
+                    
+                            form_finance.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                    object[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(object[key])) {
+                                    object[key] = [object[key]];
+                                }
+                                object[key].push(value);
+                            });
+                    
+                            console.log(JSON.stringify(object))
+                            try{
+                                const response = await fetch("{% url 'property-inquiry-list' %}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRFToken': '{{csrf_token}}'
+                                    },
+                                    body: JSON.stringify(object)
+                                });
+                                    
+                                const data = await response.json();
+                                console.log(JSON.stringify(data, null, 2))
+                                if (data.success == true){
+                                    console.log(data.client_id)
+                                    const cleint_id = data.client_id
+                                    sort_property(cleint_id)
+                                }
+                                else{
+                    
+                                }
+                    
+                            }
+                            catch (error) {
+                                console.log(error.message)
+                            }
+                            
+                        }
+            
+                    }
         
-        form_personal_information.forEach((value, key) => {
-            if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                object[key] = value;
-                return;
-            }
-            if (!Array.isArray(object[key])) {
-                object[key] = [object[key]];
-            }
-            object[key].push(value);
-        });
-
-        form_family_demographics.forEach((value, key) => {
-            if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                object[key] = value;
-                return;
-            }
-            if (!Array.isArray(object[key])) {
-                object[key] = [object[key]];
-            }
-            object[key].push(value);
-        });
-
-        form_house_specificaiton.forEach((value, key) => {
-            if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                object[key] = value;
-                return;
-            }
-            if (!Array.isArray(object[key])) {
-                object[key] = [object[key]];
-            }
-            object[key].push(value);
-        });
-
-        form_building_preferences.forEach((value, key) => {
-            if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                object[key] = value;
-                return;
-            }
-            if (!Array.isArray(object[key])) {
-                object[key] = [object[key]];
-            }
-            object[key].push(value);
-        });
-
-        form_finance.forEach((value, key) => {
-            if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                object[key] = value;
-                return;
-            }
-            if (!Array.isArray(object[key])) {
-                object[key] = [object[key]];
-            }
-            object[key].push(value);
-        });
-
-        console.log(JSON.stringify(object))
-        try{
-            const response = await fetch("{% url 'property-inquiry-list' %}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{csrf_token}}'
-                },
-                body: JSON.stringify(object)
-            });
+                }
                 
-            const data = await response.json();
-            console.log(JSON.stringify(data, null, 2))
-            if (data.success == true){
-                console.log(data.client_id)
-                const cleint_id = data.client_id
-                sort_property(cleint_id)
-            }
-            else{
-
             }
 
         }
-        catch (error) {
-            console.log(error.message)
-        }
+
+        toggle_loader()
 
     }
 

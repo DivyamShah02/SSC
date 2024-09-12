@@ -2,6 +2,7 @@
     --body-background: #fffcf3;
     --nav-background: #fff2e2;
     --primary-color: #113e59;
+    --primary-color-faded: #113d59a9;
     --secondary-color: #f6931e;
     --secondary-color-faded: #f6951e9b;
     --light-text-color: #bababa;
@@ -294,4 +295,49 @@ label{
     color: white;
     border: none;
     font-weight: 500;
+}
+
+.btn-custom-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+.btn-custom-primary:hover {
+    box-shadow: 1px 1px 4px 4px var(--primary-color-faded);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-custom-outline-primary{
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-custom-outline-primary:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.fixed-bottom-bar .bar-content {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.fixed-bottom-bar h5,
+.fixed-bottom-bar p {
+    margin: 0;
 }

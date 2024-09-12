@@ -36,29 +36,35 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">All Properties</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    {% for menu_property in menu_properties %}
-                        {% if menu_property.active_property == True %}
-                            <div class="card mb-3 ssc-images primary-images" onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;" style="border: 4px black solid; cursor: pointer;">
-                        {% else %}
-                            <div class="card mb-3 ssc-images primary-images" onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;" style="cursor: pointer;">
-                        {% endif %}
-                                <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
-                                    alt="Property Image"
-                                    style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
-                                <div class="golden-badge">Premium Property</div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><u>{{menu_property.property_name}}</u></h5>
-                                    <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
-                                </div>
-                            </div>
-                    {% endfor %}
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-custom-outline-primary" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -68,7 +74,7 @@
 
     <!-- Best result start -->
     <div class="py-2 pt-3 text-center best-results" style="margin-top: 68px !important;">
-        Showing best property for <b class="text-primary-ssc"><u>{{client_data.name}}</u></b>
+        Showing best property for <b class="text-primary-ssc"><u>Divyam Shah</u></b>
     </div>
     <!-- Best result end -->
 
@@ -76,15 +82,15 @@
     <div class="mt-3 container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <span class="property-name">{{main_property.building_id}} - {{main_property.name}}</span>
+                <span class="property-name">Mount Solitaire Vista</span>
                 <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
             </div>
             <div class="col-12 col-md-6 text-start text-md-end">
-                <div class="developer-name">By - {{main_property.group_name}}</div>
+                <div class="developer-name">By Ganesh Housing Corporation Ltd.</div>
             </div>
 
             <div class="col-12 col-md-6">
-                <div class="property-location"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.location_of_project}}</div>
+                <div class="property-location">Shantigram, Ahmedabad</div>
             </div>
             <div class="col-12 col-md-6 text-start text-md-end">
                 <div class="icon-bar">
@@ -101,7 +107,7 @@
                 <div class="col-lg-8 ssc-images primary-images p-0 position-relative">
                     <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
                         alt="Main Project Image">
-                    <div class="overlay-text">{{main_property.name}}</div>
+                    <div class="overlay-text">Ambrosia</div>
                     <!-- Golden Badge -->
                     <div class="golden-badge">Premium Property</div>
                 </div>
@@ -142,7 +148,7 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{unit_data.unit_configuration}}</b></h5>
+                            <h5 class="card-title text-primary-ssc"><b>4 - 5 BHK</b></h5>
                             <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -156,11 +162,9 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Price Range</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>₹{{property_unit_price}} Cr</b></h5>
-                            <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft</b></p>
-
-                            <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
-                                Starts at ₹60.5 K)</span></b></p> -->
+                            <h5 class="card-title text-primary-ssc"><b>₹1.5 Cr - ₹2.1 Cr</b></h5>
+                            <p class="card-text text-light-ssc"><b>₹6.5 K/Sq.Ft <span class="text-primary-ssc">(EMI
+                                        Starts at ₹60.5 K)</span></b></p>
                         </div>
                     </div>
                 </div>
@@ -173,8 +177,8 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
-                            <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span
+                            <h5 class="card-title text-primary-ssc"><b>166.09 - 191.92 Sq. Mtrs.</b></h5>
+                            <p class="card-text text-light-ssc"><b>1,784.8 - 2.065.B Sq. Ft<span
                                         class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -188,7 +192,7 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Total Units</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{main_property.no_of_units}}</b></h5>
+                            <h5 class="card-title text-primary-ssc"><b>1050</b></h5>
                             <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -202,7 +206,7 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Units per floor</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_units_per_floor}}</b></h5>
+                            <h5 class="card-title text-primary-ssc"><b>2-3</b></h5>
                             <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -216,7 +220,7 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Parking</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_parking_allotted}}</b></h5>
+                            <h5 class="card-title text-primary-ssc"><b>1 Covered - 2 Open</b></h5>
                             <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -244,7 +248,7 @@
                         </div>
                         <div class="col-10">
                             <p class="card-text text-light-ssc m-0"><b>Lift</b></p>
-                            <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_lifts_per_floor}}</b></h5>
+                            <h5 class="card-title text-primary-ssc"><b>1 Private Lift</b></h5>
                             <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                         </div>
                     </div>
@@ -258,8 +262,8 @@
         <div style="background-color: transparent !important;">
             <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link floor-plan-btn active" id="location-tab" data-bs-toggle="tab" href="#location"
-                        role="tab" aria-controls="location" aria-selected="false"><b>Location</b></a>
+                    <a class="nav-link floor-plan-btn active" id="overview-tab" data-bs-toggle="tab" href="#overview"
+                        role="tab" aria-controls="overview" aria-selected="true"><b>Overview</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link floor-plan-btn" id="amenties-tab" data-bs-toggle="tab" href="#amenties"
@@ -270,40 +274,84 @@
                         role="tab" aria-controls="floor_plan" aria-selected="false"><b>Floor Plan</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
+                    <a class="nav-link floor-plan-btn" id="location-tab" data-bs-toggle="tab" href="#location"
+                        role="tab" aria-controls="location" aria-selected="false"><b>Location</b></a>
+                </li>
+                <li class="nav-item" role="presentation">
                     <a class="nav-link floor-plan-btn" id="price_information-tab" data-bs-toggle="tab"
                         href="#price_information" role="tab" aria-controls="price_information"
                         aria-selected="false"><b>Price Information</b></a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link floor-plan-btn" id="overview-tab" data-bs-toggle="tab" href="#overview"
-                        role="tab" aria-controls="overview" aria-selected="true"><b>Overview</b></a>
                 </li>
             </ul>
             <!-- Tabs navs -->
 
             <!-- Tabs content -->
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="location" role="tabpanel" aria-labelledby="location-tab">
-                    <!-- Location start -->
-                    <div class="scc-section container mt-5">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <!-- More details start -->
+                    <div class="scc-section container">
                         <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                            <h4>Location</h4>
+                            <h4>More Details</h4>
                         </div>
-                        <div class="pt-3" style="background-color: white !important;">
-                            <div class="mb-3">
-                                <div class="map-one_map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
-                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
-                                        <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-striped">
+                            <!-- <thead>
+                            <tr>
+                                <th>Price Breakup</th>
+                                <th>₹1.5 Cr - ₹2.1 Cr</th>
+                            </tr>
+                            </thead> -->
+                            <tbody class="">
+                                <tr>
+                                    <td class="px-3">Price Breakup</td>
+                                    <th>₹1.5 Cr - ₹2.1 Cr</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">RERA ID</td>
+                                    <th>Lorem ipsum</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Location</td>
+                                    <th>Shantigram, Ahmedabad - North, Gujarat</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Furnishing</td>
+                                    <th>Unfurnished</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Water Availability</td>
+                                    <th>24 Hours Available</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Status of Electricity</td>
+                                    <th>No/Rare Powercut</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Floors allowed for construction</td>
+                                    <th>14</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Lift</td>
+                                    <th>2-3</th>
+                                </tr>
+                                <tr>
+                                    <td class="px-3">Loan Offered</td>
+                                    <th>Estimated EMI Starting: ₹1,00,000 &nbsp;<i
+                                            class="fas fa-circle-info text-secondary-ssc"></i>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b>Description</b> Lorem ipsum dolor sit amet consectetur. Tellus
+                                        sed nulla ac eu
+                                        sit fames pellentesque elit urna. Feugiat fusce tortor varius ipsum amet sed
+                                        pretium. Purus nisi
+                                        aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet
+                                        neque egestas.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- Location end -->
-
+                    <!-- More details end -->
                 </div>
 
                 <div class="tab-pane fade" id="amenties" role="tabpanel" aria-labelledby="amenties-tab">
@@ -313,20 +361,7 @@
                             <h4>Amenties</h4>
                         </div>
                         <div class="px-5 row pt-3" style="background-color: white !important;">
-                            {% for client_amenity in client_prefered_amenities %}
                             <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{client_amenity}}</b></p>
-                            </div>
-                            {% endfor %}
-                            <hr>
-
-                            {% for other_amenity in other_amenities %}
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{other_amenity}}</b></p>
-                            </div>
-                            {% endfor %}
-                            
-                            <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
                                 <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
                             </div>
                             <div class="col-12 col-md-4 col-lg-3 p-2">
@@ -394,7 +429,7 @@
                             </div>
                             <div class="col-12 col-md-4 col-lg-3 p-2">
                                 <p><i class="fas fa-person-running text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Jogging Track</b></p>
-                            </div> -->
+                            </div>
                             
                         </div>
                     </div>
@@ -513,6 +548,29 @@
 
                 </div>
 
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <!-- Location start -->
+                    <div class="scc-section container mt-5">
+                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                            <h4>Location</h4>
+                        </div>
+                        <div class="pt-3" style="background-color: white !important;">
+                            <div class="mb-3">
+                                <div class="map-one_map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
+                                        <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Location end -->
+
+                </div>
+
                 <div class="tab-pane fade" id="price_information" role="tabpanel" aria-labelledby="price_information-tab">
                     <!-- Price start -->
                     <div class="scc-section container">
@@ -560,109 +618,316 @@
 
                 </div>
 
-                <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                    <!-- More details start -->
-                    <div class="scc-section container">
-                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                            <h4>More Details</h4>
-                        </div>
-                        <table class="table table-striped">
-                            <!-- <thead>
-                            <tr>
-                                <th>Price Breakup</th>
-                                <th>₹1.5 Cr - ₹2.1 Cr</th>
-                            </tr>
-                            </thead> -->
-                            <tbody class="">
-                                <tr>
-                                    <td class="px-3">Price Breakup</td>
-                                    <th>₹1.5 Cr - ₹2.1 Cr</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">RERA ID</td>
-                                    <th>Lorem ipsum</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Location</td>
-                                    <th>Shantigram, Ahmedabad - North, Gujarat</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Furnishing</td>
-                                    <th>Unfurnished</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Water Availability</td>
-                                    <th>24 Hours Available</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Status of Electricity</td>
-                                    <th>No/Rare Powercut</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Floors allowed for construction</td>
-                                    <th>14</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Lift</td>
-                                    <th>2-3</th>
-                                </tr>
-                                <tr>
-                                    <td class="px-3">Loan Offered</td>
-                                    <th>Estimated EMI Starting: ₹1,00,000 &nbsp;<i
-                                            class="fas fa-circle-info text-secondary-ssc"></i>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><b>Description</b> Lorem ipsum dolor sit amet consectetur. Tellus
-                                        sed nulla ac eu
-                                        sit fames pellentesque elit urna. Feugiat fusce tortor varius ipsum amet sed
-                                        pretium. Purus nisi
-                                        aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet
-                                        neque egestas.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- More details end -->
-                </div>
-
+                
             </div>
 
         </div>
     </div>
 
-    <!-- Fixed Bottom Bar -->
-    <div class="fixed-bottom-bar">
-        <div class="row m-0">
-            <div class="col-1 p-0">
-                {% if prev_ind == False %}
-                <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                    class="fa fa-arrow-left"></i></button>
-                {% else %}
-                <button onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;" class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                        class="fa fa-arrow-left"></i></button>
-                {% endif %}
-
-                {% if next_ind == False %}
-                <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                    class="fa fa-arrow-right"></i></button>
-                {% else %}
-                <button onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;" class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                        class="fa fa-arrow-right"></i></button>
-                {% endif %}
+    <div style="display: none;">
+        <!-- More details start -->
+        <div class="scc-section container">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>More Details</h4>
             </div>
-            <div class="col-5 text-start p-0">
-                <h5 class="text-primary-ssc"><b>{{main_property.building_id}} - {{main_property.name}}</b></h5>
-                <p><b>{{unit_data.unit_configuration}}</b></p>
+            <table class="table table-striped">
+                <!-- <thead>
+                  <tr>
+                    <th>Price Breakup</th>
+                    <th>₹1.5 Cr - ₹2.1 Cr</th>
+                  </tr>
+                </thead> -->
+                <tbody class="">
+                    <tr>
+                        <td class="px-3">Price Breakup</td>
+                        <th>₹1.5 Cr - ₹2.1 Cr</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">RERA ID</td>
+                        <th>Lorem ipsum</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Location</td>
+                        <th>Shantigram, Ahmedabad - North, Gujarat</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Furnishing</td>
+                        <th>Unfurnished</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Water Availability</td>
+                        <th>24 Hours Available</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Status of Electricity</td>
+                        <th>No/Rare Powercut</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Floors allowed for construction</td>
+                        <th>14</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Lift</td>
+                        <th>2-3</th>
+                    </tr>
+                    <tr>
+                        <td class="px-3">Loan Offered</td>
+                        <th>Estimated EMI Starting: ₹1,00,000 &nbsp;<i class="fas fa-circle-info text-secondary-ssc"></i>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><b>Description</b> Lorem ipsum dolor sit amet consectetur. Tellus sed nulla ac eu
+                            sit fames pellentesque elit urna. Feugiat fusce tortor varius ipsum amet sed pretium. Purus nisi
+                            aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet neque egestas.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- More details end -->
+    
+        <!-- Amenties start -->
+        <div class="scc-section container">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Amenties</h4>
             </div>
-            <div class="col-6 text-end">
-                <a href="#" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
-                        class="fas fa-arrow-up-from-bracket"></i> Share</a>
-                <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
-                <a href="#" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
+            <div class="px-5 row pt-3" style="background-color: white !important;">
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-fan text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Air Conditioning</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-sink text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Modern Kitchen Appliances</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-wifi text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>High-Speed Internet</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-hands-bubbles text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>In-Unit Washer and Dryer</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-door-closed text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Secure Entry</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Built-In-Wardrobes</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-grip-lines text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Balcony or Terrace</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-dumbbell text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Fitness Center</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-car text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Parking Space</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-person-swimming text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Swimming Pool</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-umbrella-beach text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Landscaped Garden</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-dice text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Indoor Games</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-volleyball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Club House</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-table-tennis-paddle-ball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Kids Play Area</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-video text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>24×7 Security</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-futbol text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Sports Ground</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-bolt text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Full Power Backup</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Banquet Hall</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-dumpster text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Community Hall</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-film text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Theater</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-book text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Library</b></p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 p-2">
+                    <p><i class="fas fa-person-running text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Jogging Track</b></p>
+                </div>
+                
             </div>
         </div>
+        <!-- Amenties end -->
+
+        <!-- Floor plan start -->
+        <div class="scc-section container">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Floor Plan</h4>
+            </div>
+    
+            <div style="background-color: white !important;">
+                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link floor-plan-btn active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">4 BHK Typical Floor Plan Deluxe</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link floor-plan-btn" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">4 BHK Typical Floor Plan Classic</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link floor-plan-btn" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
+                            aria-controls="contact" aria-selected="false">4 BHK Unit Plan Wing B</a>
+                    </li>
+                </ul>
+                <!-- Tabs navs -->
+    
+                <!-- Tabs content -->
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <img class="img-fluid"
+                            src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg"
+                            alt="Tab 1 Image" width="100%" data-bs-toggle="modal" data-bs-target="#tab-modal1">
+                    </div>
+                    <div class="modal fade" id="tab-modal1" tabindex="-1" aria-labelledby="tab-modal1Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tab-modal1Label">4 BHK Typical Floor Plan Deluxe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Full-size Image -->
+                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg"
+                                        alt="Full Size Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Classic.jpg"
+                            alt="Tab 2 Image" width="100%" data-bs-toggle="modal" data-bs-target="#tab-modal2">
+                    </div>
+                    <div class="modal fade" id="tab-modal2" tabindex="-1" aria-labelledby="tab-modal2Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tab-modal2Label">4 BHK Typical Floor Plan Classic</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Full-size Image -->
+                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Classic.jpg"
+                                        alt="Full Size Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Unit-Plan-_-Wing-B.jpg"
+                            alt="Tab 3 Image" width="100%" data-bs-toggle="modal" data-bs-target="#tab-modal3">
+                    </div>
+                    <div class="modal fade" id="tab-modal3" tabindex="-1" aria-labelledby="tab-modal3Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tab-modal3Label">4 BHK Unit Plan Wing B</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Full-size Image -->
+                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Unit-Plan-_-Wing-B.jpg"
+                                        alt="Full Size Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <!-- Floor plan end -->
+    
+        <!-- Location start -->
+        <div class="scc-section container mt-5">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Location</h4>
+            </div>
+            <div class="pt-3" style="background-color: white !important;">
+                <div class="mb-3">
+                    <div class="map-one_map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
+                            <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Location end -->
+    
+        <!-- Price start -->
+        <div class="scc-section container">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Price Information</h4>
+            </div>
+            <table class="table table-striped">
+                <!-- <thead>
+                    <tr>
+                    <th>Price Breakup</th>
+                    <th>₹1.5 Cr - ₹2.1 Cr</th>
+                    </tr>
+                </thead> -->
+                <tbody class="">
+                    <tr>
+                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc"></i></td>
+                        <th class="text-end py-3 px-4">₹2.1 Cr</th>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Parking Cost</td>
+                        <th class="text-end py-3 px-4">₹2 L</th>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Municipalty Tax</td>
+                        <th class="text-end py-3 px-4">₹1.5 L</th>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Corporation Tax</td>
+                        <th class="text-end py-3 px-4">₹1.5 L</th>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Additional Tax</td>
+                        <th class="text-end py-3 px-4">₹1 L</th>
+                    </tr>
+                    <tr>
+                        <th class="px-4 py-3">Grand Total</td>
+                        <th class="text-end py-3 px-4">
+                            <h5 class="text-primary-ssc"><b>₹2.16 CR</b></h5>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Price end -->        
     </div>
 
     <div class="container">

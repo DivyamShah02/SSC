@@ -257,11 +257,12 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     building_data = BuildingDetails.objects.get(building_id=building_id)
                     
                     property_name = f'{building_id} - {building_data.name}'
+                    property_group_name = building_data.group_name
                     active_property = False
                     
                     if i == ind-1:
                         active_property = True
-                    menu_properties.append({'property_name':property_name, 'active_property':active_property, 'ind':i+1})
+                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1})
                 
                 except Exception as e:
                     print(e)
@@ -277,8 +278,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 unit_data_obj = UnitDetails.objects.get(id=unit_id)
             except UnitDetails.DoesNotExist:
                 raise NotFound(f"Unit with id {unit_id} not found.")
-            
             unit_data = UnitDetailsSerializer(unit_data_obj).data
+
 
             # Fetch building data
             building_id = unit_data.get('building_id')
@@ -286,17 +287,48 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 building_data_obj = BuildingDetails.objects.get(building_id=building_id)
             except BuildingDetails.DoesNotExist:
                 raise NotFound(f"Building with id {building_id} not found.")
-            
             building_data = BuildingDetailsSerializer(building_data_obj).data
 
+
+            # Fetch amenties data
             try:
                 amenities_obj = Amenities.objects.get(building_id=building_id)
             except Amenities.DoesNotExist:
                 raise NotFound(f"Amenties for building : {building_id} not found.")
-            
             amenties_data = AmenitiesSerializer(amenities_obj).data
 
-            property_unit_price = round((float(unit_data.get('size_of_unit')) * float(unit_data.get('per_sqft_rate_saleable'))) / 10000000, 2)
+
+            # Fetch client data
+            client_id = session_data.get('client_id')
+            try:
+                client_obj = PropertyInquiry.objects.get(id=client_id)
+            except PropertyInquiry.DoesNotExist:
+                raise NotFound(f"Client with id : {client_id} not found.")
+            client_data = PropertyInquirySerializer(client_obj).data
+
+            client_amenities = client_data.get('amenities')
+
+            client_prefered_amenities = []
+            other_amenities = []
+            for amenity in amenties_data.keys():
+                if amenties_data[amenity] == True:
+                    if amenity in client_amenities:
+                        amenity = str(amenity).replace('_', ' ').title()
+                        client_prefered_amenities.append(amenity)
+                    else:
+                        amenity = str(amenity).replace('_', ' ').title()
+                        other_amenities.append(amenity)
+
+            print(client_prefered_amenities)
+            print(other_amenities)
+
+            size_of_unit = float(unit_data.get('size_of_unit'))
+            property_unit_price = round((size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))) / 10000000, 2)
+
+
+            size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
+
+            per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable')) / 1000, 2)
 
             prev_ind = False
             if ind-1 != 0:
@@ -314,12 +346,17 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'session_id':session_id,
                 'amenties_data':amenties_data,
                 'property_unit_price':property_unit_price,
+                'per_sqft_rate_saleable':per_sqft_rate_saleable,
+                'size_of_unit_mtrs':size_of_unit_mtrs,
                 'menu_properties':menu_properties, 
                 'main_property': building_data,
                 'unit_data':unit_data,
+                'client_data':client_data,
+                'client_prefered_amenities':client_prefered_amenities,
+                'other_amenities':other_amenities,
                 }
             
-            return render(request, 'property_detail.html', data)
+            return render(request, 'property_detail_design.html', data)
             return Response(data)
         
 

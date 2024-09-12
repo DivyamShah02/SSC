@@ -8,667 +8,677 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
     <title>Property Inquiry Form</title>
-    
 </head>
+
+
 <body>
+    <!-- <div class="spinner"></div> -->
+    <div id="spinner">
+        <div class="spinner"></div>
+        <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
+     </div>
 
-    <!-- Navigation bar start -->
-    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
-        <div class="container">
-            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
-            <a class="navbar-brand" href="#">
-                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
-            </a>
-            <div class="row">
-                <div class="col-6">
-                    <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
-                </div>
-                <div class="col-6">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+     <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+         <div class="container">
+             <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+             <a class="navbar-brand" href="#">
+                 <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+             </a>
+             <div class="row">
+                 <div class="col-6">
+                     <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
+                 </div>
+                 <div class="col-6">
+                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                         aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                     </button>
+                 </div>
+             </div>
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                 <div class="offcanvas-header">
+                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 </div>
+                 <div class="offcanvas-body">
+                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                         <li class="nav-item">
+                             <a class="nav-link active" aria-current="page" href="#">Home</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="#">Link</a>
+                         </li>
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                                 Dropdown
+                             </a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Action</a></li>
+                                 <li><a class="dropdown-item" href="#">Another action</a></li>
+                                 <li>
+                                     <hr class="dropdown-divider">
+                                 </li>
+                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                     <form class="d-flex mt-3" role="search">
+                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                         <button class="btn btn-outline-success" type="submit">Search</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </nav>
+     
+    <div id="main-content">
+        <!-- Navigation bar start -->
+        <!-- Navigation bar end -->
+    
+        <!-- Personal Infomation start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Personal Information</h4>
             </div>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    
+            <!-- Form body -->
+            <form id="personal_information" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Customer Name -->
+                    <div class="col-md-4 form-group">
+                        <label for="name" class="form-label">
+                            Customer Name<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" autofocus>
+                    </div>
+    
+                    <!-- Mobile Number -->
+                    <div class="col-md-4 form-group">
+                        <label for="number" class="form-label">
+                            Number<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="Mobile number">
+                    </div>
+    
+                    <!-- WhatsApp Number -->
+                    <div class="col-md-4 form-group">
+                        <label for="whatsapp" class="form-label">
+                            WhatsApp<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">
+                    </div>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+    
+                <div class="row">
+                    <!-- Email Address -->
+                    <div class="col-md-4 form-group">
+                        <label for="email" class="form-label">
+                            Email Address<span class="required"> *</span>
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="e.g. abc@website.com">
+                    </div>
+    
+                    <!-- Profession -->
+                    <div class="col-md-4 form-group">
+                        <label for="profession" class="form-label">
+                            Profession<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter Profession">
+                    </div>
+    
+                    <!-- Current Residence -->
+                    <div class="col-md-4 form-group">
+                        <label for="residence" class="form-label">
+                            Current Residence<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="residence" name="residence" placeholder="Local area, Society">
+                    </div>
                 </div>
-            </div>
+    
+                <div class="row">
+                    <!-- Reference -->
+                    <div class="col-md-4 form-group">
+                        <label for="reference" class="form-label">
+                            Reference<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference person name">
+                    </div>
+                </div>
+                
+            </form>
+    
         </div>
-    </nav>
-    <!-- Navigation bar end -->
-
-    <!-- Personal Infomation start -->
-    <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
-        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-            <h4>Personal Information</h4>
+        <!-- Personal Infomation end -->
+    
+        <!-- Family Demographics start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Family Demographics and Lifestyle</h4>
+            </div>
+    
+            <!-- Form body -->
+            <form id="family_demographics" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Why do you want to buy a house? -->
+                    <div class="col-md-12 form-group">
+                        <label for="why_buy_house" class="form-label primary">Why do you want to buy a house?</label>
+                        <!-- <br> -->
+                        <!-- <label for="why_buy_house" class="form-label">Select<span class="required"> *</span></label> -->
+                        <select id="why_buy_house" class="form-select" name="why_buy_house">
+                            <option value="lifestyle_upgrade">Lifestyle upgrade</option>
+                            <option value="investment">Investment</option>
+                            <option value="second_home">Second home</option>
+                            <option value="relocation">Relocation</option>
+                            <option value="downsizing">Downsizing</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-12">
+                        <label class="form-label primary">How many members are going to stay in the house?</label>
+                    </div>
+                    <!-- Adults -->
+                    <div class="col-md-4 form-group">
+                        <label for="adults" class="form-label">Adults<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="adults" value="0" name="adults" placeholder="02">
+                    </div>
+                    <!-- Children -->
+                    <div class="col-md-4 form-group">
+                        <label for="children" class="form-label">Children<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="children" value="0" name="children" placeholder="01">
+                    </div>
+                    <!-- Senior Citizens -->
+                    <div class="col-md-4 form-group">
+                        <label for="senior_citizens" class="form-label">Senior Citizens<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="senior_citizens" value="0" name="senior_citizens" placeholder="02">
+                    </div>
+    
+                    <!-- Do you have pets? -->
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Do you have pets?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="have_pets" id="petsYes" value="yes">
+                            <label class="form-check-label" for="petsYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="have_pets" id="petsNo" value="no">
+                            <label class="form-check-label" for="petsNo">No</label>
+                        </div>
+                    </div>
+    
+                    <!-- Carpet Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="current_residence_area" class="form-label primary">What is the carpet area of your current residence?</label>
+                        <input type="text" class="form-control" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
+                    </div>
+        
+                    <!-- Religious Place Preference -->
+                    <div class="col-md-12 form-group">
+                        <label class="form-label primary">Do you prefer derasar / mandir / gurudwara near your house?</label><br>
+                        <div class="row">
+                            <div class="col-3 form-check">
+                                <input class="form-check-input" type="checkbox" id="derasar" name="religious_preference" value="derasar">
+                                <label class="form-check-label ml-1" for="derasar">Derasar</label>
+                            </div>
+                            <div class="col-3 form-check">
+                                <input class="form-check-input" type="checkbox" id="mandir" name="religious_preference" value="mandir">
+                                <label class="form-check-label ml-1" for="mandir">Mandir</label>
+                            </div>
+                            <div class="col-3 form-check">
+                                <input class="form-check-input" type="checkbox" id="gurudwara" name="religious_preference" value="gurudwara">
+                                <label class="form-check-label ml-1" for="gurudwara">Gurudwara</label>
+                            </div>
+                            <div class="col-3 form-check">
+                                <input class="form-check-input" type="checkbox" id="maybe" name="religious_preference" value="maybe">
+                                <label class="form-check-label ml-1" for="maybe">Maybe</label>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Workplace Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="workplace_area" class="form-label primary">In which area is your workplace?</label>
+                        <input type="text" class="form-control" id="workplace_area" name="workplace_area" placeholder="Enter area">
+                    </div>
+    
+                    <!-- Children School Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="school_area" class="form-label primary">In which area do your children go to school?</label>
+                        <input type="text" class="form-control" id="school_area" name="school_area" placeholder="Enter area">
+                    </div>
+    
+                    <!-- Top 3 Preferred Locations -->
+                    <div class="col-md-6 form-group">
+                        <label for="preferred_locations" class="form-label primary">What are your top 3 preferred locations?</label>
+                        <input type="text" class="form-control" id="preferred_locations" name="preferred_locations" placeholder="Enter locations (e.g., Bopal, Shilaj)">
+                    </div>
+        
+                    <!-- Property Buying Decision -->
+                    <div class="col-md-6 form-group">
+                        <label for="decision_driven_by" class="form-label primary">Property buying decision driven by?</label>
+                        <select id="decision_driven_by" class="form-select" name="decision_driven_by">
+                            <option value="budget_driven">Budget driven</option>
+                            <option value="choice_driven">Choice driven</option>
+                        </select>
+                    </div>
+    
+                    <!-- Sell of old property? -->
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Is this purchase dependent on the sell of another property you own?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="dependent_on_sale" id="sellPropertyYes" value="yes">
+                            <label class="form-check-label" for="sellPropertyYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="dependent_on_sale" id="sellPropertyNo" value="no">
+                            <label class="form-check-label" for="sellPropertyNo">No</label>
+                        </div>
+                    </div>
+    
+                    <!-- How long are you looking for house -->
+                    <div class="col-md-6 form-group">
+                        <label for="looking_since" class="form-label primary">Since how long are you looking for a house?</label>
+                        <select id="looking_since" class="form-select" name="looking_since">
+                            <option value="just_started">Just started</option>
+                            <option value="6_to_12_months">6 - 12 months</option>
+                            <option value="12_to_24_months">12 to 24 months</option>
+                        </select>
+                    </div>    
+                    
+                    <!-- Children School Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="time_to_seal_deal" class="form-label primary">In how much time do you want to seal the deal?</label>
+                        <br>
+                        <label for="time_to_seal_deal" class="form-label">Timeline<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control" id="time_to_seal_deal" name="time_to_seal_deal" placeholder="Enter number of days">
+                    </div>
+                                    
+                </div>
+            </form>
+    
         </div>
-
-        <!-- Form body -->
-        <form id="personal_information" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-            <div class="row">
-                <!-- Customer Name -->
-                <div class="col-md-4 form-group">
-                    <label for="name" class="form-label">
-                        Customer Name<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" autofocus>
-                </div>
-
-                <!-- Mobile Number -->
-                <div class="col-md-4 form-group">
-                    <label for="number" class="form-label">
-                        Number<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="number" name="number" placeholder="Mobile number">
-                </div>
-
-                <!-- WhatsApp Number -->
-                <div class="col-md-4 form-group">
-                    <label for="whatsapp" class="form-label">
-                        WhatsApp<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">
-                </div>
+        <!-- Family Demographics end -->
+    
+        <!-- House Specifications start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>House Specifications</h4>
             </div>
-
-            <div class="row">
-                <!-- Email Address -->
-                <div class="col-md-4 form-group">
-                    <label for="email" class="form-label">
-                        Email Address<span class="required"> *</span>
-                    </label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="e.g. abc@website.com">
+    
+            <form id="house_specificaiton" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Bedrooms and Washrooms -->
+                    <div class="col-md-6 form-group">
+                        <label for="bedrooms" class="form-label primary">How many bedrooms do you need?</label>
+                        <select id="bedrooms" name="bedrooms" class="form-select">
+                            <option value="1_bhk">1 BHK</option>
+                            <option value="2_bhk">2 BHK</option>
+                            <option value="3_bhk">3 BHK</option>
+                            <option value="4_bhk">4 BHK</option>
+                            <option value="5_bhk">5 BHK</option>
+                            <option value="6_bhk">6 BHK</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label for="attached_washrooms" class="form-label primary">How many attached washrooms should your house have?</label>
+                        <select id="attached_washrooms" name="attached_washrooms" class="form-select">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+    
+                    <!-- Servant room and Puja room -->
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Are you looking for a house with a servant room?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="servant_room" id="servantRoomYes" value="yes">
+                            <label class="form-check-label" for="servantRoomYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="servant_room" id="servantRoomNo" value="no">
+                            <label class="form-check-label" for="servantRoomNo">No</label>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Do you want a separate puja room?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomYes" value="yes">
+                            <label class="form-check-label" for="pujaRoomYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomNo" value="no">
+                            <label class="form-check-label" for="pujaRoomNo">No</label>
+                        </div>
+                    </div>
+    
+                    <!-- Carpet Area and Vastu Preferences -->
+                    <div class="col-md-6 form-group">
+                        <label for="min_carpet_area" class="form-label primary">What should be the minimum carpet area of the new property?</label>
+                        <input type="text" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft.">
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label for="vastu_preferences" class="form-label primary">Any Vastu preferences?</label>
+                        <input type="text" class="form-control" id="vastu_preferences" name="vastu_preferences" placeholder="Enter text">
+                    </div>
+    
+                    <!-- Flats and Floor Preference -->
+                    <div class="col-md-6 form-group">
+                        <label for="flats_per_floor" class="form-label primary">How many flats do you prefer on one floor? <span class="required">*</span></label>
+                        <select id="flats_per_floor" name="flats_per_floor" class="form-select">
+                            <option value="1-2">1 - 2</option>
+                            <option value="3-4">3 - 4</option>
+                            <option value="5+">5+</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label for="floor_preference" class="form-label primary">What is your floor preference?</label>
+                        <select id="floor_preference" name="floor_preference" class="form-select">
+                            <option value="1-5">1 to 5</option>
+                            <option value="6-12">6 to 12</option>
+                            <option value="13-20">13 to 20</option>
+                            <option value="above_21">Above 21</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+    
+                    <!-- Private Elevator and Central AC -->
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Do you need a private elevator outside your residence?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="private_elevator" id="elevatorYes" value="yes">
+                            <label class="form-check-label" for="elevatorYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="private_elevator" id="elevatorNo" value="no">
+                            <label class="form-check-label" for="elevatorNo">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="private_elevator" id="elevatorMaybe" value="maybe">
+                            <label class="form-check-label" for="elevatorMaybe">Maybe</label>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Are you looking for a home with central air conditioning?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="acYes" value="yes">
+                            <label class="form-check-label" for="acYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="acNo" value="no">
+                            <label class="form-check-label" for="acNo">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="acMaybe" value="maybe">
+                            <label class="form-check-label" for="acMaybe">Maybe</label>
+                        </div>
+                    </div>
+    
+                    <!-- Parking Slots and Stack Parking -->
+                    <div class="col-md-6 form-group">
+                        <label for="parkingSlots" class="form-label primary">What are the minimum number of parking slots required?</label>
+                        <select id="parkingSlots" class="form-select" name="min_parking_slots">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">Are you comfortable with stack parking?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stack_parking" id="stackYes" value="yes">
+                            <label class="form-check-label" for="stackYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stack_parking" id="stackNo" value="no">
+                            <label class="form-check-label" for="stackNo">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stack_parking" id="stackMaybe" value="maybe">
+                            <label class="form-check-label" for="stackMaybe">Maybe</label>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Profession -->
-                <div class="col-md-4 form-group">
-                    <label for="profession" class="form-label">
-                        Profession<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter Profession">
-                </div>
-
-                <!-- Current Residence -->
-                <div class="col-md-4 form-group">
-                    <label for="residence" class="form-label">
-                        Current Residence<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="residence" name="residence" placeholder="Local area, Society">
-                </div>
+            </form>
+    
+        </div>
+        <!-- House Specifications end -->
+    
+        <!-- Building Preferences start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Building Preferences</h4>
             </div>
-
-            <div class="row">
-                <!-- Reference -->
-                <div class="col-md-4 form-group">
-                    <label for="reference" class="form-label">
-                        Reference<span class="required"> *</span>
-                    </label>
-                    <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference person name">
+    
+            <form id="building_preferences" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row mb-4">
+                    <label class="form-label primary">What should be the age of property that you are looking for?</label>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="12 to 36 months old" id="age1">
+                            <label class="form-check-label" for="age1">12 to 36 months old</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="0 to 12 months old" id="age2">
+                            <label class="form-check-label" for="age2">0 to 12 months old</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 6 - 12 months" id="age3">
+                            <label class="form-check-label" for="age3">Upcoming 6 - 12 months</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 12 to 36 months" id="age4">
+                            <label class="form-check-label" for="age4">Upcoming 12 to 36 months</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="36 to 48 months" id="age5">
+                            <label class="form-check-label" for="age5">36 to 48 months</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="Flexible" id="age6">
+                            <label class="form-check-label" for="age6">Flexible</label>
+                        </div>
+                    </div>
                 </div>
+    
+                <div class="row mb-4">
+                    <label class="form-label primary">What type of society do you prefer?</label>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Small low rise (40 to 60 units)" id="society1">
+                            <label class="form-check-label" for="society1">Small low rise (40 to 60 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Single block high end (70 - 100 units)" id="society2">
+                            <label class="form-check-label" for="society2">Single block high end (70 - 100 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Mid-sized gated community (120 to 300 units)" id="society3">
+                            <label class="form-check-label" for="society3">Mid-sized gated community (120 to 300 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Large gated community (350 to 800 units)" id="society4">
+                            <label class="form-check-label" for="society4">Large gated community (350 to 800 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Township" id="society5">
+                            <label class="form-check-label" for="society5">Township</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Enter text" id="society6">
+                            <label class="form-check-label" for="society6">Enter text</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row mb-4">
+                    <label class="form-label primary">What are the 5 must-have amenities?</label>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Swimming pool" id="amenity1">
+                            <label class="form-check-label" for="amenity1">Swimming pool</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Gym/Fitness Center" id="amenity2">
+                            <label class="form-check-label" for="amenity2">Gym/Fitness Center</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" id="amenity3">
+                            <label class="form-check-label" for="amenity3">Clubhouse</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Children's play area" id="amenity4">
+                            <label class="form-check-label" for="amenity4">Children's play area</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Community hall" id="amenity5">
+                            <label class="form-check-label" for="amenity5">Community hall</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="CCTV surveillance" id="amenity6">
+                            <label class="form-check-label" for="amenity6">CCTV surveillance</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Power backup" id="amenity7">
+                            <label class="form-check-label" for="amenity7">Power backup</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="24/7 Security" id="amenity8">
+                            <label class="form-check-label" for="amenity8">24/7 Security</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Sports facilities" id="amenity9">
+                            <label class="form-check-label" for="amenity9">Sports facilities</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Jogging/Walking tracks" id="amenity10">
+                            <label class="form-check-label" for="amenity10">Jogging/Walking tracks</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Waste management" id="amenity11">
+                            <label class="form-check-label" for="amenity11">Waste management</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="Concierge" id="amenity12">
+                            <label class="form-check-label" for="amenity12">Concierge</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+    
+        </div>
+        <!-- Building Preferences end -->
+    
+        <!-- Finance start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Finance</h4>
             </div>
+    
+            <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="minCr" class="form-label primary">What is your budget range for a house excluding interior cost and govt. charges?</label>
+    
+                    </div>
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="maxCr" class="form-label">Min_Cr *</label>
+                        <input type="text" class="form-control" id="minCr" name="budget_min" placeholder="₹1,00,000">
+                    </div>
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="maxCr" class="form-label">Max_Cr *</label>
+                        <input type="text" class="form-control" id="maxCr" name="budget_max" placeholder="₹5,00,000">
+                    </div>
             
-        </form>
-
-    </div>
-    <!-- Personal Infomation end -->
-
-    <!-- Family Demographics start -->
-    <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
-        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-            <h4>Family Demographics and Lifestyle</h4>
-        </div>
-
-        <!-- Form body -->
-        <form id="family_demographics" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-            <div class="row">
-                <!-- Why do you want to buy a house? -->
-                <div class="col-md-12 form-group">
-                    <label for="why_buy_house" class="form-label primary">Why do you want to buy a house?</label>
-                    <!-- <br> -->
-                    <!-- <label for="why_buy_house" class="form-label">Select<span class="required"> *</span></label> -->
-                    <select id="why_buy_house" class="form-select" name="why_buy_house">
-                        <option value="lifestyle_upgrade">Lifestyle upgrade</option>
-                        <option value="investment">Investment</option>
-                        <option value="second_home">Second home</option>
-                        <option value="relocation">Relocation</option>
-                        <option value="downsizing">Downsizing</option>
-                    </select>
-                </div>
-
-                <div class="col-md-12">
-                    <label class="form-label primary">How many members are going to stay in the house?</label>
-                </div>
-                <!-- Adults -->
-                <div class="col-md-4 form-group">
-                    <label for="adults" class="form-label">Adults<span class="required"> *</span></label>
-                    <input type="number" class="form-control" min="0" id="adults" value="0" name="adults" placeholder="02">
-                </div>
-                <!-- Children -->
-                <div class="col-md-4 form-group">
-                    <label for="children" class="form-label">Children<span class="required"> *</span></label>
-                    <input type="number" class="form-control" min="0" id="children" value="0" name="children" placeholder="01">
-                </div>
-                <!-- Senior Citizens -->
-                <div class="col-md-4 form-group">
-                    <label for="senior_citizens" class="form-label">Senior Citizens<span class="required"> *</span></label>
-                    <input type="number" class="form-control" min="0" id="senior_citizens" value="0" name="senior_citizens" placeholder="02">
-                </div>
-
-                <!-- Do you have pets? -->
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Do you have pets?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="have_pets" id="petsYes" value="yes">
-                        <label class="form-check-label" for="petsYes">Yes</label>
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="percentage" class="form-label primary">How much down payment will you be able to make in % from the maximum range?*</label>
+                        <input type="text" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage">
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="have_pets" id="petsNo" value="no">
-                        <label class="form-check-label" for="petsNo">No</label>
+            
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="loanAmount" class="form-label primary">Are you going to avail a home loan for this deal? What is the approved amount?*</label>
+                        <input type="text" class="form-control" id="loanAmount" name="loan_approved_amount" placeholder="₹80,00,000">
                     </div>
+            
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="needs" class="form-label primary">Are there any other specific needs or preferences that we have not covered?*</label>
+                        <textarea type="text" class="form-control" id="needs" name="specific_needs" placeholder="Enter text" rows="4"></textarea>
+                    </div>
+            
+                    <div class="col-md-6 form-group mb-5">
+                        <label for="concerns" class="form-label primary">Do you have any concerns or deal breakers that we should be aware of?*</label>
+                        <textarea type="text" class="form-control" id="concerns" name="concerns" placeholder="Enter text" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="col-md-12 text-center">
+                        <button type="button" onclick="submit_inquiry_form()" class="btn btn-custom">Show Properties</button>
                 </div>
-
-                <!-- Carpet Area -->
-                <div class="col-md-6 form-group">
-                    <label for="current_residence_area" class="form-label primary">What is the carpet area of your current residence?</label>
-                    <input type="text" class="form-control" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
-                </div>
+            </div>
     
-                <!-- Religious Place Preference -->
-                <div class="col-md-12 form-group">
-                    <label class="form-label primary">Do you prefer derasar / mandir / gurudwara near your house?</label><br>
-                    <div class="row">
-                        <div class="col-3 form-check">
-                            <input class="form-check-input" type="checkbox" id="derasar" name="religious_preference" value="derasar">
-                            <label class="form-check-label ml-1" for="derasar">Derasar</label>
-                        </div>
-                        <div class="col-3 form-check">
-                            <input class="form-check-input" type="checkbox" id="mandir" name="religious_preference" value="mandir">
-                            <label class="form-check-label ml-1" for="mandir">Mandir</label>
-                        </div>
-                        <div class="col-3 form-check">
-                            <input class="form-check-input" type="checkbox" id="gurudwara" name="religious_preference" value="gurudwara">
-                            <label class="form-check-label ml-1" for="gurudwara">Gurudwara</label>
-                        </div>
-                        <div class="col-3 form-check">
-                            <input class="form-check-input" type="checkbox" id="maybe" name="religious_preference" value="maybe">
-                            <label class="form-check-label ml-1" for="maybe">Maybe</label>
-                        </div>
-                    </div>
-                </div>
+            </form>
+        
+        </div>
+        <!-- Finance end -->
     
-                <!-- Workplace Area -->
-                <div class="col-md-6 form-group">
-                    <label for="workplace_area" class="form-label primary">In which area is your workplace?</label>
-                    <input type="text" class="form-control" id="workplace_area" name="workplace_area" placeholder="Enter area">
-                </div>
-
-                <!-- Children School Area -->
-                <div class="col-md-6 form-group">
-                    <label for="school_area" class="form-label primary">In which area do your children go to school?</label>
-                    <input type="text" class="form-control" id="school_area" name="school_area" placeholder="Enter area">
-                </div>
-
-                <!-- Top 3 Preferred Locations -->
-                <div class="col-md-6 form-group">
-                    <label for="preferred_locations" class="form-label primary">What are your top 3 preferred locations?</label>
-                    <input type="text" class="form-control" id="preferred_locations" name="preferred_locations" placeholder="Enter locations (e.g., Bopal, Shilaj)">
-                </div>
-    
-                <!-- Property Buying Decision -->
-                <div class="col-md-6 form-group">
-                    <label for="decision_driven_by" class="form-label primary">Property buying decision driven by?</label>
-                    <select id="decision_driven_by" class="form-select" name="decision_driven_by">
-                        <option value="budget_driven">Budget driven</option>
-                        <option value="choice_driven">Choice driven</option>
-                    </select>
-                </div>
-
-                <!-- Sell of old property? -->
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Is this purchase dependent on the sell of another property you own?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="dependent_on_sale" id="sellPropertyYes" value="yes">
-                        <label class="form-check-label" for="sellPropertyYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="dependent_on_sale" id="sellPropertyNo" value="no">
-                        <label class="form-check-label" for="sellPropertyNo">No</label>
-                    </div>
-                </div>
-
-                <!-- How long are you looking for house -->
-                <div class="col-md-6 form-group">
-                    <label for="looking_since" class="form-label primary">Since how long are you looking for a house?</label>
-                    <select id="looking_since" class="form-select" name="looking_since">
-                        <option value="just_started">Just started</option>
-                        <option value="6_to_12_months">6 - 12 months</option>
-                        <option value="12_to_24_months">12 to 24 months</option>
-                    </select>
-                </div>    
-                
-                <!-- Children School Area -->
-                <div class="col-md-6 form-group">
-                    <label for="time_to_seal_deal" class="form-label primary">In how much time do you want to seal the deal?</label>
-                    <br>
-                    <label for="time_to_seal_deal" class="form-label">Timeline<span class="required"> *</span></label>
-                    <input type="number" min="1" class="form-control" id="time_to_seal_deal" name="time_to_seal_deal" placeholder="Enter number of days">
-                </div>
-                                
-            </div>
-        </form>
-
-    </div>
-    <!-- Family Demographics end -->
-
-    <!-- House Specifications start -->
-    <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
-        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-            <h4>House Specifications</h4>
+        <div class="container mt-3">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
         </div>
-
-        <form id="house_specificaiton" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-            <div class="row">
-                <!-- Bedrooms and Washrooms -->
-                <div class="col-md-6 form-group">
-                    <label for="bedrooms" class="form-label primary">How many bedrooms do you need?</label>
-                    <select id="bedrooms" name="bedrooms" class="form-select">
-                        <option value="1_bhk">1 BHK</option>
-                        <option value="2_bhk">2 BHK</option>
-                        <option value="3_bhk">3 BHK</option>
-                        <option value="4_bhk">4 BHK</option>
-                        <option value="5_bhk">5 BHK</option>
-                        <option value="6_bhk">6 BHK</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label for="attached_washrooms" class="form-label primary">How many attached washrooms should your house have?</label>
-                    <select id="attached_washrooms" name="attached_washrooms" class="form-select">
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-
-                <!-- Servant room and Puja room -->
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Are you looking for a house with a servant room?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="servant_room" id="servantRoomYes" value="yes">
-                        <label class="form-check-label" for="servantRoomYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="servant_room" id="servantRoomNo" value="no">
-                        <label class="form-check-label" for="servantRoomNo">No</label>
-                    </div>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Do you want a separate puja room?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomYes" value="yes">
-                        <label class="form-check-label" for="pujaRoomYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomNo" value="no">
-                        <label class="form-check-label" for="pujaRoomNo">No</label>
-                    </div>
-                </div>
-
-                <!-- Carpet Area and Vastu Preferences -->
-                <div class="col-md-6 form-group">
-                    <label for="min_carpet_area" class="form-label primary">What should be the minimum carpet area of the new property?</label>
-                    <input type="text" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft.">
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label for="vastu_preferences" class="form-label primary">Any Vastu preferences?</label>
-                    <input type="text" class="form-control" id="vastu_preferences" name="vastu_preferences" placeholder="Enter text">
-                </div>
-
-                <!-- Flats and Floor Preference -->
-                <div class="col-md-6 form-group">
-                    <label for="flats_per_floor" class="form-label primary">How many flats do you prefer on one floor? <span class="required">*</span></label>
-                    <select id="flats_per_floor" name="flats_per_floor" class="form-select">
-                        <option value="1-2">1 - 2</option>
-                        <option value="3-4">3 - 4</option>
-                        <option value="5+">5+</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label for="floor_preference" class="form-label primary">What is your floor preference?</label>
-                    <select id="floor_preference" name="floor_preference" class="form-select">
-                        <option value="1-5">1 to 5</option>
-                        <option value="6-12">6 to 12</option>
-                        <option value="13-20">13 to 20</option>
-                        <option value="above_21">Above 21</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
-
-                <!-- Private Elevator and Central AC -->
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Do you need a private elevator outside your residence?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="private_elevator" id="elevatorYes" value="yes">
-                        <label class="form-check-label" for="elevatorYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="private_elevator" id="elevatorNo" value="no">
-                        <label class="form-check-label" for="elevatorNo">No</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="private_elevator" id="elevatorMaybe" value="maybe">
-                        <label class="form-check-label" for="elevatorMaybe">Maybe</label>
-                    </div>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Are you looking for a home with central air conditioning?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="central_air_conditioning" id="acYes" value="yes">
-                        <label class="form-check-label" for="acYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="central_air_conditioning" id="acNo" value="no">
-                        <label class="form-check-label" for="acNo">No</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="central_air_conditioning" id="acMaybe" value="maybe">
-                        <label class="form-check-label" for="acMaybe">Maybe</label>
-                    </div>
-                </div>
-
-                <!-- Parking Slots and Stack Parking -->
-                <div class="col-md-6 form-group">
-                    <label for="parkingSlots" class="form-label primary">What are the minimum number of parking slots required?</label>
-                    <select id="parkingSlots" class="form-select" name="min_parking_slots">
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label class="form-label primary">Are you comfortable with stack parking?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="stack_parking" id="stackYes" value="yes">
-                        <label class="form-check-label" for="stackYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="stack_parking" id="stackNo" value="no">
-                        <label class="form-check-label" for="stackNo">No</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="stack_parking" id="stackMaybe" value="maybe">
-                        <label class="form-check-label" for="stackMaybe">Maybe</label>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-    </div>
-    <!-- House Specifications end -->
-
-    <!-- Building Preferences start -->
-    <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
-        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-            <h4>Building Preferences</h4>
-        </div>
-
-        <form id="building_preferences" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-            <div class="row mb-4">
-                <label class="form-label primary">What should be the age of property that you are looking for?</label>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="12 to 36 months old" id="age1">
-                        <label class="form-check-label" for="age1">12 to 36 months old</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="0 to 12 months old" id="age2">
-                        <label class="form-check-label" for="age2">0 to 12 months old</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="Upcoming 6 - 12 months" id="age3">
-                        <label class="form-check-label" for="age3">Upcoming 6 - 12 months</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="Upcoming 12 to 36 months" id="age4">
-                        <label class="form-check-label" for="age4">Upcoming 12 to 36 months</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="36 to 48 months" id="age5">
-                        <label class="form-check-label" for="age5">36 to 48 months</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="property_age" value="Flexible" id="age6">
-                        <label class="form-check-label" for="age6">Flexible</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <label class="form-label primary">What type of society do you prefer?</label>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Small low rise (40 to 60 units)" id="society1">
-                        <label class="form-check-label" for="society1">Small low rise (40 to 60 units)</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Single block high end (70 - 100 units)" id="society2">
-                        <label class="form-check-label" for="society2">Single block high end (70 - 100 units)</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Mid-sized gated community (120 to 300 units)" id="society3">
-                        <label class="form-check-label" for="society3">Mid-sized gated community (120 to 300 units)</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Large gated community (350 to 800 units)" id="society4">
-                        <label class="form-check-label" for="society4">Large gated community (350 to 800 units)</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Township" id="society5">
-                        <label class="form-check-label" for="society5">Township</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="society_type" value="Enter text" id="society6">
-                        <label class="form-check-label" for="society6">Enter text</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <label class="form-label primary">What are the 5 must-have amenities?</label>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Swimming pool" id="amenity1">
-                        <label class="form-check-label" for="amenity1">Swimming pool</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Gym/Fitness Center" id="amenity2">
-                        <label class="form-check-label" for="amenity2">Gym/Fitness Center</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" id="amenity3">
-                        <label class="form-check-label" for="amenity3">Clubhouse</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Children's play area" id="amenity4">
-                        <label class="form-check-label" for="amenity4">Children's play area</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Community hall" id="amenity5">
-                        <label class="form-check-label" for="amenity5">Community hall</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="CCTV surveillance" id="amenity6">
-                        <label class="form-check-label" for="amenity6">CCTV surveillance</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Power backup" id="amenity7">
-                        <label class="form-check-label" for="amenity7">Power backup</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="24/7 Security" id="amenity8">
-                        <label class="form-check-label" for="amenity8">24/7 Security</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Sports facilities" id="amenity9">
-                        <label class="form-check-label" for="amenity9">Sports facilities</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Jogging/Walking tracks" id="amenity10">
-                        <label class="form-check-label" for="amenity10">Jogging/Walking tracks</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Waste management" id="amenity11">
-                        <label class="form-check-label" for="amenity11">Waste management</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Concierge" id="amenity12">
-                        <label class="form-check-label" for="amenity12">Concierge</label>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-    </div>
-    <!-- Building Preferences end -->
-
-    <!-- Finance start -->
-    <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
-        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-            <h4>Finance</h4>
-        </div>
-
-        <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="minCr" class="form-label primary">What is your budget range for a house excluding interior cost and govt. charges?</label>
-
-                </div>
-                <div class="col-md-6 form-group mb-5">
-                    <label for="maxCr" class="form-label">Min_Cr *</label>
-                    <input type="text" class="form-control" id="minCr" name="budget_min" placeholder="₹1,00,000">
-                </div>
-                <div class="col-md-6 form-group mb-5">
-                    <label for="maxCr" class="form-label">Max_Cr *</label>
-                    <input type="text" class="form-control" id="maxCr" name="budget_max" placeholder="₹5,00,000">
-                </div>
-        
-                <div class="col-md-6 form-group mb-5">
-                    <label for="percentage" class="form-label primary">How much down payment will you be able to make in % from the maximum range?*</label>
-                    <input type="text" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage">
-                </div>
-        
-                <div class="col-md-6 form-group mb-5">
-                    <label for="loanAmount" class="form-label primary">Are you going to avail a home loan for this deal? What is the approved amount?*</label>
-                    <input type="text" class="form-control" id="loanAmount" name="loan_approved_amount" placeholder="₹80,00,000">
-                </div>
-        
-                <div class="col-md-6 form-group mb-5">
-                    <label for="needs" class="form-label primary">Are there any other specific needs or preferences that we have not covered?*</label>
-                    <textarea type="text" class="form-control" id="needs" name="specific_needs" placeholder="Enter text" rows="4"></textarea>
-                </div>
-        
-                <div class="col-md-6 form-group mb-5">
-                    <label for="concerns" class="form-label primary">Do you have any concerns or deal breakers that we should be aware of?*</label>
-                    <textarea type="text" class="form-control" id="concerns" name="concerns" placeholder="Enter text" rows="4"></textarea>
-                </div>
-                
-                <div class="col-md-12 text-center">
-                    <button type="button" onclick="submit_inquiry_form()" class="btn btn-custom">Show Properties</button>
-            </div>
-        </div>
-
-        </form>
-    
-    </div>
-    <!-- Finance end -->
-
-    <div class="container mt-3">
-        <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
     </div>
 
 
@@ -801,6 +811,13 @@ crossorigin="anonymous"></script>
             console.log(error.message)
         }
 
+    }
+
+    function toggle_loader() {
+        document.getElementById('main-content').classList.toggle('blur');
+        document.getElementById('spinner').classList.toggle('spinner-container');
+        document.getElementById('spinner-text').classList.toggle('add-display-block');
+        
     }
 
 </script>

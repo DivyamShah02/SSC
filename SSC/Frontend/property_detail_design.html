@@ -139,6 +139,96 @@
             /* border-radius: 8px !important; */
             /* border: 2px solid black !important; */
         }
+
+        .ssc-images {
+            overflow: hidden;
+            /* Ensures the zoomed image stays within its container */
+        }
+
+        .ssc-images img {
+            width: 100%;
+            height: auto;
+            transition: transform 1.2s ease-in-out;
+            /* Smooth transition for the zoom effect */
+        }
+
+        .ssc-images img:hover {
+            /* transform: scale(1.1); */
+            transform: scale(1);
+            /* Zoom the image by 10% */
+        }
+
+        .primary-images {
+            position: relative;
+        }
+
+        .primary-images img {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            width: 100%;
+            height: auto;
+        }
+
+        .primary-images .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.875rem;
+            border-radius: 5px;
+        }
+
+        /* Style for the golden badge */
+        .golden-badge {
+            position: absolute;
+            top: 10px;
+            /* Adjust as needed */
+            left: 10px;
+            /* Adjust as needed */
+            background-color: gold;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 10;
+            /* Ensure it's above other elements */
+        }
+
+        .ssc-images.primary-images {
+            position: relative;
+            /* Required for absolute positioning of the badge */
+        }
+
+        .overlay-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .secondary-images-one img {
+            border-top-right-radius: 15px;
+        }
+
+        .secondary-images-two img {
+            border-bottom-right-radius: 15px;
+        }
+        @media (max-width: 992px) {
+            .secondary-images-one,
+            .secondary-images-two {
+                display: none;
+            }
+
+            .primary-images img {
+                border-radius: 15px;
+            }
+        }
+
     </style>
 
 </head>
@@ -232,14 +322,36 @@
 
             <div class="col-12 mt-4"></div>
 
-            <div class="col-12 col-md-8">
+            <div class="row px-5">
+                <!-- Main Image -->
+                <div class="col-lg-8 ssc-images primary-images p-0 position-relative">
+                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
+                        alt="Main Project Image">
+                    <div class="overlay-text">Ambrosia</div>
+                    <!-- Golden Badge -->
+                    <div class="golden-badge">Premium Property</div>
+                </div>
+                <!-- Thumbnail Images (hidden on mobile/tablet) -->
+                <div class="col-lg-4 p-0">
+                    <div class="ssc-images secondary-images-one p-0 mx-2" style="margin-bottom: 10px !important;">
+                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/2_1980-X-1080_1.jpg"
+                            alt="Thumbnail 2">
+                    </div>
+                    <div class="ssc-images secondary-images-two p-0 my-2 mx-2">
+                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Interior/Living-room.jpg"
+                            alt="Thumbnail 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-12 col-md-8">
                 <img src="C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\static\img\main_img.png"
                     width="100%" alt="">
             </div>
             <div class="col-12 col-md-4">
                 <img src="C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\static\img\sec_img.png"
                     width="100%" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Basic Property Detail end -->

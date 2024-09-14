@@ -258,16 +258,16 @@
         <div style="background-color: transparent !important;">
             <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link floor-plan-btn active" id="location-tab" data-bs-toggle="tab" href="#location"
-                        role="tab" aria-controls="location" aria-selected="false"><b>Location</b></a>
+                    <a class="nav-link floor-plan-btn active" id="floor_plan-tab" data-bs-toggle="tab" href="#floor_plan"
+                        role="tab" aria-controls="floor_plan" aria-selected="false"><b>Floor Plan</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link floor-plan-btn" id="amenties-tab" data-bs-toggle="tab" href="#amenties"
                         role="tab" aria-controls="amenties" aria-selected="false"><b>Amenties</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link floor-plan-btn" id="floor_plan-tab" data-bs-toggle="tab" href="#floor_plan"
-                        role="tab" aria-controls="floor_plan" aria-selected="false"><b>Floor Plan</b></a>
+                    <a class="nav-link floor-plan-btn" id="location-tab" data-bs-toggle="tab" href="#location"
+                        role="tab" aria-controls="location" aria-selected="false"><b>Location</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link floor-plan-btn" id="price_information-tab" data-bs-toggle="tab"
@@ -283,126 +283,7 @@
 
             <!-- Tabs content -->
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="location" role="tabpanel" aria-labelledby="location-tab">
-                    <!-- Location start -->
-                    <div class="scc-section container mt-5">
-                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                            <h4>Location</h4>
-                        </div>
-                        <div class="pt-3" style="background-color: white !important;">
-                            <div class="mb-3">
-                                <div class="map-one_map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
-                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
-                                        <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Location end -->
-
-                </div>
-
-                <div class="tab-pane fade" id="amenties" role="tabpanel" aria-labelledby="amenties-tab">
-                    <!-- Amenties start -->
-                    <div class="scc-section container">
-                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                            <h4>Amenties</h4>
-                        </div>
-                        <div class="px-5 row pt-3" style="background-color: white !important;">
-                            {% for client_amenity in client_prefered_amenities %}
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{client_amenity}}</b></p>
-                            </div>
-                            {% endfor %}
-                            <hr>
-
-                            {% for other_amenity in other_amenities %}
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{other_amenity}}</b></p>
-                            </div>
-                            {% endfor %}
-                            
-                            <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-fan text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Air Conditioning</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-sink text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Modern Kitchen Appliances</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-wifi text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>High-Speed Internet</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-hands-bubbles text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>In-Unit Washer and Dryer</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-door-closed text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Secure Entry</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Built-In-Wardrobes</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-grip-lines text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Balcony or Terrace</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-dumbbell text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Fitness Center</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-car text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Parking Space</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-person-swimming text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Swimming Pool</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-umbrella-beach text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Landscaped Garden</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-dice text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Indoor Games</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-volleyball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Club House</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-table-tennis-paddle-ball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Kids Play Area</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-video text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>24×7 Security</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-futbol text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Sports Ground</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-bolt text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Full Power Backup</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Banquet Hall</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-dumpster text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Community Hall</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-film text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Theater</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-book text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Library</b></p>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-3 p-2">
-                                <p><i class="fas fa-person-running text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Jogging Track</b></p>
-                            </div> -->
-                            
-                        </div>
-                    </div>
-                    <!-- Amenties end -->
-
-                </div>
-
-                <div class="tab-pane fade" id="floor_plan" role="tabpanel" aria-labelledby="floor_plan-tab">
+                <div class="tab-pane fade show active" id="floor_plan" role="tabpanel" aria-labelledby="floor_plan-tab">
                     <!-- Floor plan start -->
                     <div class="scc-section container">
                         <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
@@ -510,6 +391,125 @@
 
                     </div>
                     <!-- Floor plan end -->
+
+                </div>
+
+                <div class="tab-pane fade" id="amenties" role="tabpanel" aria-labelledby="amenties-tab">
+                    <!-- Amenties start -->
+                    <div class="scc-section container">
+                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                            <h4>Amenties</h4>
+                        </div>
+                        <div class="px-5 row pt-3" style="background-color: white !important;">
+                            {% for client_amenity in client_prefered_amenities %}
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{client_amenity}}</b></p>
+                            </div>
+                            {% endfor %}
+                            <hr>
+
+                            {% for other_amenity in other_amenities %}
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{other_amenity}}</b></p>
+                            </div>
+                            {% endfor %}
+                            
+                            <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-fan text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Air Conditioning</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-sink text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Modern Kitchen Appliances</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-wifi text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>High-Speed Internet</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-hands-bubbles text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>In-Unit Washer and Dryer</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-door-closed text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Secure Entry</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Built-In-Wardrobes</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-grip-lines text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Balcony or Terrace</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-dumbbell text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Fitness Center</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-car text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Parking Space</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-person-swimming text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Swimming Pool</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-umbrella-beach text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Landscaped Garden</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-dice text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Indoor Games</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-volleyball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Club House</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-table-tennis-paddle-ball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Kids Play Area</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-video text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>24×7 Security</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-futbol text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Sports Ground</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-bolt text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Full Power Backup</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Banquet Hall</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-dumpster text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Community Hall</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-film text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Theater</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-book text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Library</b></p>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 p-2">
+                                <p><i class="fas fa-person-running text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Jogging Track</b></p>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                    <!-- Amenties end -->
+
+                </div>
+
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <!-- Location start -->
+                    <div class="scc-section container mt-5">
+                        <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                            <h4>Location</h4>
+                        </div>
+                        <div class="pt-3" style="background-color: white !important;">
+                            <div class="mb-3">
+                                <div class="map-one_map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
+                                        <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Location end -->
 
                 </div>
 

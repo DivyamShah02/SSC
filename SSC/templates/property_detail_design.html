@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <title>Mount Solitaire Vista</title>
+    <style>
+        /* Set the size of the map */
+
+    </style>
 
 </head>
 
@@ -492,22 +496,40 @@
 
                 <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
                     <!-- Location start -->
-                    <div class="scc-section container mt-5">
+                    <div class="scc-section container mt-5 mb-5" style="background-color: white !important;">
                         <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                             <h4>Location</h4>
                         </div>
-                        <div class="pt-3" style="background-color: white !important;">
-                            <div class="mb-3">
+                        <div class="pt-3 mb-5" style="background-color: white !important;">
+                            <div class="mb-5">
                                 <div class="map-one_map">
-                                    <iframe
+                                    <!-- <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
                                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car &nbsp;<i class="fas fa-pen text-secondary-ssc"></i></p>
-                                        <p class="text-primary-ssc"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                                        <div id="place-details">Place Details Here</div>
+        
+                                        <!-- Map container -->
+                                        <div id="map"></div>
+
+                                        <ul id="commute-list">
+                                            <li>
+                                                <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car</p>
+                                            </li>
+
+                                        </ul>
+                                        <div class="row" id="commute-searchbox">
+                                            <div class="col-6">
+                                                <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                                <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" autofocus width="30%">
+                                            </div>
+                                        </div>
                                 </div>
+
+                                
                             </div>
                         </div>
+                        <div class="mt-5 p-5"></div>
                     </div>
                     <!-- Location end -->
 
@@ -672,6 +694,145 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k&libraries=places&callback=initMap" async defer></script>
+
+
+    <script>
+        // Initialize the map
+        function initMap() {
+            // Default location (latitude and longitude)
+            const defaultLocation = { lat: 23.0048286, lng: 72.5583729 };
+
+            // Create the map
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: defaultLocation
+            });
+
+            // Create a marker
+            const marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map
+            });
+
+            // Display place details
+            const placeDetailsDiv = document.getElementById('place-details');
+            
+            // Use reverse geocoding to get place details
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'location': defaultLocation }, (results, status) => {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        console.log(results)
+                        placeDetailsDiv.innerHTML = `
+                            <span>Siddhi Sadhan</span><br>
+                            ${results[0].formatted_address}<br>
+                            `;
+                            // Lat: ${defaultLocation.lat.toFixed(6)}, 
+                            // Lng: ${defaultLocation.lng.toFixed(6)}
+                    } else {
+                        placeDetailsDiv.innerHTML = 'No results found';
+                    }
+                } else {
+                    placeDetailsDiv.innerHTML = `Geocoder failed: ${status}`;
+                }
+            });
+        }
+    
+        function initAutocomplete() {
+            // Reference to the input element
+            const input = document.getElementById('place-search');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+                    const name = place.name;
+
+                    // Print latitude and longitude
+                    console.log('Selected place:', name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+
+                    const apiKey = 'AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k';
+                    const originLat = 23.0048286;
+                    const originLng = 72.5583729;
+                    
+                    const destinationLat = lat;
+                    const destinationLng = lng;
+
+                    getDistance(originLat, originLng, destinationLat, destinationLng, apiKey)
+                        .then(result => {
+                            const location_duration = result
+                            add_commut_li(location_duration, name)
+                            document.getElementById('commute-searchbox').style.display = 'none'
+                        });
+
+                }
+
+            });
+        }
+
+        async function getDistance(originLat, originLng, destinationLat, destinationLng, apiKey) {
+            // Define the endpoint for the Distance Matrix API
+            const endpoint = "{% url 'get-distance-list' %}";
+
+            // Parameters for the request
+            const params = new URLSearchParams({
+                origins: `${originLat},${originLng}`,
+                destinations: `${destinationLat},${destinationLng}`
+            });
+
+            try {
+                // Make the request to the Google Maps Distance Matrix API
+                const response = await fetch(`${endpoint}?${params}`);
+                console.log(`${endpoint}?${params}`)
+
+                // Parse the response
+                const data = await response.json();
+                console.log(data)
+                if (response.ok) {
+                    const duration = data.duration;
+                    return duration
+                    
+                } else {
+                    return "Error fetching data from Google Maps API";
+                }
+            } catch (error) {
+                console.log(error)
+                return "Request failed"
+            }
+        }
+
+        function add_commut_li(duration, location){
+            // Select the <ul> element
+            const ulElement = document.getElementById('commute-list'); // Adjust the selector if needed
+
+            // Create the new <li> element
+            const liElement = document.createElement('li');
+
+            // Set the HTML content of the <li> element
+            liElement.innerHTML = `
+                <p>
+                    <i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>${duration}+</b> to ${location} by car
+                </p>
+            `;
+
+            // Append the new <li> element to the <ul>
+            ulElement.appendChild(liElement);
+        }
+        // Initialize the autocomplete after the page loads
+        window.onload = initAutocomplete;
+    </script>
+
 </body>
 
 </html>

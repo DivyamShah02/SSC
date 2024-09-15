@@ -13,6 +13,7 @@ from django.shortcuts import get_object_or_404, render
 import json
 
 from .sorting_logic import Sorter
+from .library.DistanceCalculator import get_distance
 
 
 class SorterViewSet(viewsets.ViewSet):
@@ -371,3 +372,25 @@ class PropertyDetailViewset(viewsets.ViewSet):
             print(e)
             return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
+class GetDistanceViewset(viewsets.ViewSet):
+    def list(self, request):
+        try:
+            origins = str(request.GET.get('origins')).split(',')
+            destinations = str(request.GET.get('destinations')).split(',')
+            api_key = "AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k"
+            distance, duration = get_distance(origins[0], origins[1], destinations[0], destinations[1], api_key)
+            if distance:
+                data = {
+                    'success': True,
+                    'duration': str(duration).title()
+                }
+                return Response(data, status=200)
+            
+            else:
+                data = {
+                    'success': False
+                }
+                return Response(data, status=400)
+
+        except Exception as e:
+            return Response({'success': False, 'error': str(e)}, status=400)

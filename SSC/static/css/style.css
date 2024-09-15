@@ -53,6 +53,10 @@ body {
     /* Dark blue color */
 }
 
+.text-bg-primary-ssc {
+    background-color: var(--secondary-color) !important;
+}
+
 .rera-badge {
     background-color: #e8f5e9;
     color: #4caf50;

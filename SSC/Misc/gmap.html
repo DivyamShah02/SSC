@@ -24,6 +24,7 @@
             );
             infowindow.close();
             marker.position = null;
+            
             return;
           }
 
@@ -35,6 +36,8 @@
           }
           
           marker.position = place.location;
+          marker.draggable= true // Make the marker draggable
+
 
           console.log(place.location.lat())
           document.getElementById('lat').innerText = place.location.lat()

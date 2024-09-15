@@ -6,6 +6,11 @@
     display: block !important;
 }
 
+.add-display-none{
+    display: none !important;
+}
+
+
 .spinner-container {
     position: fixed;
     top: 50%;

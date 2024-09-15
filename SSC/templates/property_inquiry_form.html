@@ -14,72 +14,71 @@
 
 
 <body>
-    <!-- <div class="spinner"></div> -->
-    <div id="spinner">
+     <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
         <div class="spinner"></div>
         <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
      </div>
 
-     <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
-         <div class="container">
-             <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
-             <a class="navbar-brand" href="#">
-                 <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
-             </a>
-             <div class="row">
-                 <div class="col-6">
-                     <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
-                 </div>
-                 <div class="col-6">
-                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                         aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon"></span>
-                     </button>
-                 </div>
-             </div>
-             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                 aria-labelledby="offcanvasNavbarLabel">
-                 <div class="offcanvas-header">
-                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                 </div>
-                 <div class="offcanvas-body">
-                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                         <li class="nav-item">
-                             <a class="nav-link active" aria-current="page" href="#">Home</a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#">Link</a>
-                         </li>
-                         <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                 aria-expanded="false">
-                                 Dropdown
-                             </a>
-                             <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="#">Action</a></li>
-                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                 <li>
-                                     <hr class="dropdown-divider">
-                                 </li>
-                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                             </ul>
-                         </li>
-                     </ul>
-                     <form class="d-flex mt-3" role="search">
-                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                         <button class="btn btn-outline-success" type="submit">Search</button>
-                     </form>
-                 </div>
-             </div>
-         </div>
-     </nav>
-     
-    <div id="main-content">
-        <!-- Navigation bar start -->
-        <!-- Navigation bar end -->
-    
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation bar end -->
+
+    <!-- Main content start -->
+    <div id="main-content" class="blur">
         <!-- Personal Infomation start -->
         <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
@@ -254,7 +253,13 @@
                     <!-- Top 3 Preferred Locations -->
                     <div class="col-md-6 form-group">
                         <label for="preferred_locations" class="form-label primary">What are your top 3 preferred locations?</label>
-                        <input type="text" class="form-control" id="preferred_locations" name="preferred_locations" placeholder="Enter locations (e.g., Bopal, Shilaj)">
+                        <br>
+                        <input type="hidden" id="no_of_locations" value="0">
+                        <div id="preferred-location">
+                            
+                        </div>
+                        <input type="text" class="form-control" id="place-search" name="preferred_locations" placeholder="Enter locations (e.g., Bopal, Shilaj)">
+                        <!-- <button class="btn btn-custom-outline-primary">Select Location</button> -->
                     </div>
         
                     <!-- Property Buying Decision -->
@@ -735,170 +740,236 @@
             <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
         </div>
     </div>
+    <!-- Main content end -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-<script>
-    async function submit_inquiry_form() {
-        toggle_loader()
-        var personal_information_form = document.getElementById('personal_information');
-        var family_demographics_form = document.getElementById('family_demographics');
-        var house_specificaiton_form = document.getElementById('house_specificaiton');
-        var building_preferences_form = document.getElementById('building_preferences');
-        var finance_form = document.getElementById('finance');
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k&libraries=places" async defer></script>
 
-        if (personal_information_form.reportValidity()){
-            if (family_demographics_form.reportValidity()){
-                if (house_specificaiton_form.reportValidity()){
-                    if (building_preferences_form.reportValidity()){
-                        if (finance_form.reportValidity()){
-                            var form_personal_information = new FormData(document.getElementById('personal_information'));
-                            var form_family_demographics = new FormData(document.getElementById('family_demographics'));
-                            var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
-                            var form_building_preferences = new FormData(document.getElementById('building_preferences'));
-                            var form_finance = new FormData(document.getElementById('finance'));
+    <script>
+        function initAutocomplete() {
+            const input = document.getElementById('place-search');
+
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                const numberOfChildren = document.getElementById('preferred-location').childElementCount;
+
+                if (numberOfChildren <= 2){
+                    // Get the place details from the autocomplete object
+                    const place = autocomplete.getPlace();
+                    if (place.geometry) {
+                        const destinationLat = place.geometry.location.lat();
+                        const destinationLng = place.geometry.location.lng();
+                        const name = place.name;
+
+                        console.log(destinationLat);
+                        console.log(destinationLng);
+                        console.log(name);
+
+                        if (document.getElementById(name)) {
+                            console.log('Element exists!');
+                        }
+                        else {
+                            const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
+        
+                            // Create the new <li> element
+                            const newlocationElement = document.createElement('span');
+                            newlocationElement.id = `${name}`;
+        
+                            // Set the HTML content of the <li> element
+                            newlocationElement.innerHTML = `
+                                <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
+                            `;
+        
+                            // Append the new <li> element to the <ul>
+                            preferredElement.appendChild(newlocationElement);
+
+                        }
+                        input.value = ''
+
                     
-                            // Convert FormData to JSON
-                            var object = {};
-                            
-                            form_personal_information.forEach((value, key) => {
-                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                    object[key] = value;
-                                    return;
-                                }
-                                if (!Array.isArray(object[key])) {
-                                    object[key] = [object[key]];
-                                }
-                                object[key].push(value);
-                            });
-                    
-                            form_family_demographics.forEach((value, key) => {
-                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                    object[key] = value;
-                                    return;
-                                }
-                                if (!Array.isArray(object[key])) {
-                                    object[key] = [object[key]];
-                                }
-                                object[key].push(value);
-                            });
-                    
-                            form_house_specificaiton.forEach((value, key) => {
-                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                    object[key] = value;
-                                    return;
-                                }
-                                if (!Array.isArray(object[key])) {
-                                    object[key] = [object[key]];
-                                }
-                                object[key].push(value);
-                            });
-                    
-                            form_building_preferences.forEach((value, key) => {
-                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                    object[key] = value;
-                                    return;
-                                }
-                                if (!Array.isArray(object[key])) {
-                                    object[key] = [object[key]];
-                                }
-                                object[key].push(value);
-                            });
-                    
-                            form_finance.forEach((value, key) => {
-                                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                    object[key] = value;
-                                    return;
-                                }
-                                if (!Array.isArray(object[key])) {
-                                    object[key] = [object[key]];
-                                }
-                                object[key].push(value);
-                            });
-                    
-                            console.log(JSON.stringify(object))
-                            try{
-                                const response = await fetch("{% url 'property-inquiry-list' %}", {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'X-CSRFToken': '{{csrf_token}}'
-                                    },
-                                    body: JSON.stringify(object)
+                    }
+
+                }
+                else{
+                    input.style.display = 'none';
+                }
+
+
+            });
+        }
+
+        async function submit_inquiry_form() {
+            toggle_loader()
+            var personal_information_form = document.getElementById('personal_information');
+            var family_demographics_form = document.getElementById('family_demographics');
+            var house_specificaiton_form = document.getElementById('house_specificaiton');
+            var building_preferences_form = document.getElementById('building_preferences');
+            var finance_form = document.getElementById('finance');
+
+            if (personal_information_form.reportValidity()){
+                if (family_demographics_form.reportValidity()){
+                    if (house_specificaiton_form.reportValidity()){
+                        if (building_preferences_form.reportValidity()){
+                            if (finance_form.reportValidity()){
+                                var form_personal_information = new FormData(document.getElementById('personal_information'));
+                                var form_family_demographics = new FormData(document.getElementById('family_demographics'));
+                                var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
+                                var form_building_preferences = new FormData(document.getElementById('building_preferences'));
+                                var form_finance = new FormData(document.getElementById('finance'));
+                        
+                                // Convert FormData to JSON
+                                var object = {};
+                                
+                                form_personal_information.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
                                 });
-                                    
-                                const data = await response.json();
-                                console.log(JSON.stringify(data, null, 2))
-                                if (data.success == true){
-                                    console.log(data.client_id)
-                                    const cleint_id = data.client_id
-                                    sort_property(cleint_id)
+                        
+                                form_family_demographics.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_house_specificaiton.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_building_preferences.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_finance.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                console.log(JSON.stringify(object))
+                                try{
+                                    const response = await fetch("{% url 'property-inquiry-list' %}", {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'X-CSRFToken': '{{csrf_token}}'
+                                        },
+                                        body: JSON.stringify(object)
+                                    });
+                                        
+                                    const data = await response.json();
+                                    console.log(JSON.stringify(data, null, 2))
+                                    if (data.success == true){
+                                        console.log(data.client_id)
+                                        const cleint_id = data.client_id
+                                        sort_property(cleint_id)
+                                    }
+                                    else{
+                        
+                                    }
+                        
                                 }
-                                else{
-                    
+                                catch (error) {
+                                    console.log(error.message)
                                 }
-                    
+                                
                             }
-                            catch (error) {
-                                console.log(error.message)
-                            }
-                            
+                
                         }
             
                     }
-        
+                    
                 }
-                
+
+            }
+
+            toggle_loader()
+
+        }
+
+        async function sort_property(client_id) {
+            try{
+                const client_id_s = client_id
+                const response = await fetch("{% url 'sort-list' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({
+                        'id':client_id_s
+                    })
+                });
+
+                const data = await response.json();
+                console.log(JSON.stringify(data, null, 2))
+                if (data.success == true){
+                    const session_id = data.session_id
+                    window.location.href=`{% url 'view-properties-list' %}?ind=1&session_id=${session_id}`;
+                }
+                else{
+                    console.log(data)
+
+                }
+
+            }
+            catch (error) {
+                console.log(error.message)
             }
 
         }
 
-        toggle_loader()
-
-    }
-
-    async function sort_property(client_id) {
-        try{
-            const client_id_s = client_id
-            const response = await fetch("{% url 'sort-list' %}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{csrf_token}}'
-                },
-                body: JSON.stringify({
-                    'id':client_id_s
-                })
-            });
-
-            const data = await response.json();
-            console.log(JSON.stringify(data, null, 2))
-            if (data.success == true){
-                const session_id = data.session_id
-                window.location.href=`{% url 'view-properties-list' %}?ind=1&session_id=${session_id}`;
-            }
-            else{
-                console.log(data)
-
-            }
-
-        }
-        catch (error) {
-            console.log(error.message)
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            document.getElementById('spinner-text').classList.toggle('add-display-block');
         }
 
-    }
+        function toggle_preloader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+        }
 
-    function toggle_loader() {
-        document.getElementById('main-content').classList.toggle('blur');
-        document.getElementById('spinner').classList.toggle('spinner-container');
-        document.getElementById('spinner-text').classList.toggle('add-display-block');
-        
-    }
+        window.onload = function() {
+            initAutocomplete();
+            toggle_preloader();
+        };
 
-</script>
+
+    </script>
 </body>
 </html>

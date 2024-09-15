@@ -258,7 +258,11 @@
                         <div id="preferred-location">
                             
                         </div>
-                        <input type="text" class="form-control" id="place-search" name="preferred_locations" placeholder="Enter locations (e.g., Bopal, Shilaj)">
+                        <div id="preferred_locations_inputs">
+
+                        </div>
+                        
+                        <input type="text" class="form-control" id="place-search" placeholder="Enter locations (e.g., Bopal, Shilaj)">
                         <!-- <button class="btn btn-custom-outline-primary">Select Location</button> -->
                     </div>
         
@@ -759,6 +763,7 @@
                 const numberOfChildren = document.getElementById('preferred-location').childElementCount;
 
                 if (numberOfChildren <= 2){
+                    document.getElementById('place-search').classList.remove('form-control-error')
                     // Get the place details from the autocomplete object
                     const place = autocomplete.getPlace();
                     if (place.geometry) {
@@ -772,6 +777,7 @@
 
                         if (document.getElementById(name)) {
                             console.log('Element exists!');
+                            document.getElementById('place-search').classList.add('form-control-error')
                         }
                         else {
                             const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
@@ -782,23 +788,35 @@
         
                             // Set the HTML content of the <li> element
                             newlocationElement.innerHTML = `
-                                <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
+                                <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove();document.getElementById('${name}_${numberOfChildren}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
                             `;
         
                             // Append the new <li> element to the <ul>
                             preferredElement.appendChild(newlocationElement);
 
+                            const preferredElement_input = document.getElementById('preferred_locations_inputs');
+                            const numberOfChildren_input = preferredElement_input.childElementCount;
+
+                            const newlocationElement_input = document.createElement('input');
+                            newlocationElement_input.id = `${name}_${numberOfChildren_input}`;
+                            newlocationElement_input.value = `${destinationLat}|${destinationLng}`
+                            newlocationElement_input.name = `preferred_locations`
+                            newlocationElement_input.type = 'hidden'
+
+                            // Append the new <li> element to the <ul>
+                            preferredElement_input.appendChild(newlocationElement_input);
+
                         }
                         input.value = ''
 
-                    
                     }
 
                 }
                 else{
-                    input.style.display = 'none';
+                    console.log('count more than 3')
+                    document.getElementById('place-search').classList.add('form-control-error')
+                    
                 }
-
 
             });
         }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/loader.css">
-    <title>Mount Solitaire Vista</title>
+    <title>{{main_property.building_id}} - {{main_property.name}}</title>
     <style>
         /* Set the size of the map */
 
@@ -700,6 +700,9 @@
 
     </div>
 
+    <input type="hidden" name="" id="lat_cord" value="{{lat_cord}}">
+    <input type="hidden" name="" id="lng_cord" value="{{lng_cord}}">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -712,7 +715,12 @@
         // Initialize the map
         function initMap() {
             // Default location (latitude and longitude)
-            const defaultLocation = { lat: 23.0048286, lng: 72.5583729 };
+            const lat_cord = parseFloat(document.getElementById('lat_cord').value);
+            const lng_cord = parseFloat(document.getElementById('lng_cord').value);
+            
+            console.log(lat_cord)
+            console.log(lng_cord)
+            const defaultLocation = { lat: lat_cord, lng: lng_cord };
 
             // Create the map
             const map = new google.maps.Map(document.getElementById('map'), {

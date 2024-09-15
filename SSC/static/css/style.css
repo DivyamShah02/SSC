@@ -281,6 +281,11 @@ body {
     border-radius: 0;
 }
 
+.form-control-error, .form-control-error:focus {
+    border: none;
+    border: 2px solid red;
+}
+
 .form-control:focus {
     box-shadow: none;
     border-bottom: 2px solid var(--secondary-color);

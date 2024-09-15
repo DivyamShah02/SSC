@@ -18,7 +18,7 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
         for key in data.keys():
             if type(data[key]) == list:
                 data[key] = ', '.join(data[key])
-
+        print(data)
         serializer = PropertyInquirySerializer(data=data)
         if serializer.is_valid():
             serializer.save()

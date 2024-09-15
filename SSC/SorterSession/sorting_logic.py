@@ -8,6 +8,7 @@ from SSC.settings import BASE_DIR
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.exceptions import NotFound
+import math
 
 
 class Sorter:
@@ -61,6 +62,26 @@ class Sorter:
             print(f"Error updating client preferences: {e}")
             raise ValueError(f"Invalid data format: {str(e)}")
 
+    def get_bounds(self, lat, lon, radius_km):
+        """
+        Get the bounding box for a given point and radius.
+        """
+        R = 6371  # Earth radius in kilometers
+
+        # Calculate the bounding box
+        lat_radians = math.radians(lat)
+        lon_radians = math.radians(lon)
+        radius_degrees = radius_km / R * (180 / math.pi)
+
+        min_lat = lat - radius_degrees
+        max_lat = lat + radius_degrees
+
+        min_lon = lon - radius_degrees / math.cos(lat_radians)
+        max_lon = lon + radius_degrees / math.cos(lat_radians)
+
+        return min_lat, max_lat, min_lon, max_lon
+
+
     def get_pre_validated_property(self, updated_client_data):
         """
         Returns properties that match the client's updated preferences.
@@ -70,12 +91,26 @@ class Sorter:
             min_carpet_area = updated_client_data.get('min_carpet_area', 0)
             budget_min = updated_client_data.get('budget_min', 0)
             budget_max = updated_client_data.get('budget_max', 0)
+
+            coords = str(updated_client_data.get('preferred_locations')).split(',')
+            import pdb; pdb.set_trace()
+            lat = float(str(str(coords[0]).strip().split('|')[0]).strip())
+            lng = float(str(str(coords[0]).strip().split('|')[1]).strip())
+            km = 15
+
             unit_type = 'Simplex'
 
+            min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
+            print(min_lat, max_lat, min_lon, max_lon)
             validated_property = []
             for bedroom in bedrooms:
-                property_unit_matched = UnitDetails.objects.filter(unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
-
+                property_unit_matched = UnitDetails.objects.filter(
+                    google_pin_lat__gte=min_lat,
+                    google_pin_lat__lte=max_lat,
+                    google_pin_lng__gte=min_lon,
+                    google_pin_lng__lte=max_lon,
+                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
+                print(len(property_unit_matched))
                 if len(property_unit_matched) !=0:
                     for property in property_unit_matched:
                         unit_price = property.size_of_unit * property.per_sqft_rate_saleable

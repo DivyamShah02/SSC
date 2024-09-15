@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from Property.models import BuildingDetails, UnitDetails, Amenities
 import random
 import json
+from .cords import final_cords
 
 def temp_data(request):
     data = generate_building_details(number_of_entries=1000)
@@ -26,7 +27,8 @@ def temp_data(request):
             project_name = building['building_details']["project_name"],
             developed_by = building['building_details']["developed_by"],
             location_of_project = building['building_details']["location_of_project"],
-            google_pin = building['building_details']["google_pin"],
+            google_pin_lat = building['building_details']["google_pin_lat"],
+            google_pin_lng = building['building_details']["google_pin_lng"],
             type_of_project = building['building_details']["type_of_project"],
             type_of_apartments = building['building_details']["type_of_apartments"],
             age_of_property_developer = building['building_details']["age_of_property_developer"],
@@ -75,6 +77,8 @@ def temp_data(request):
                 no_of_balconies = unit["no_of_balconies"],
                 no_of_parking_allotted = unit["no_of_parking_allotted"],
                 per_sqft_rate_saleable = unit["per_sqft_rate_saleable"],
+                google_pin_lat = building['building_details']["google_pin_lat"],
+                google_pin_lng = building['building_details']["google_pin_lng"],
             )
             new_unit.save()
 
@@ -109,14 +113,19 @@ def temp_data(request):
 
 def generate_building_details(number_of_entries):
     building_details = []
+    
     for i in range(number_of_entries):
-        i=i+101
+        # i=i+101
         building_name = f"{random.choice(['Skyline', 'Star', 'Galaxy', 'Urban']) } {random.choice(['Residency', 'Heights', 'Towers', 'Apartments'])}"
         group_name = f"Group {chr(65+i)}"
         building = {}
         bhks = []
 
         min_bhk = random.randint(2, 6)
+        
+        coords= final_cords[i].split(',')
+        google_pin_lat = str(coords[0]).strip()
+        google_pin_lng = str(coords[1]).strip()
 
         while True:
             max_bhk = random.randint(2, 6)
@@ -150,7 +159,8 @@ def generate_building_details(number_of_entries):
             "project_name": building_name,
             "developed_by": group_name,
             "location_of_project": f"{random.randint(100, 999)} {random.choice(['Street', 'Avenue', 'Road'])}",
-            "google_pin": "https://maps.app.goo.gl/FxcQVyRjHuTiwx9f6",
+            "google_pin_lat": google_pin_lat,
+            "google_pin_lng": google_pin_lng,
             "type_of_project": "Residential",
             "type_of_apartments": type_of_apartments,  # 1-4 BHK options
             # "type_of_apartments": f"{random.randint(1, 4)}BHK",  # 1-4 BHK options
@@ -224,7 +234,10 @@ def generate_building_details(number_of_entries):
                 "separate_puja_room_available": random.choice([True, False]),
                 "no_of_balconies": random.randint(1, 3),
                 "no_of_parking_allotted": random.randint(0, 2),
-                "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2)
+                "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2),
+                "google_pin_lat": google_pin_lat,
+                "google_pin_lng": google_pin_lng,
+
             }
             building['unit_details'].append(temp_dict)
         

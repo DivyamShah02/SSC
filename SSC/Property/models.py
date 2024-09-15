@@ -21,7 +21,8 @@ class BuildingDetails(models.Model):
     project_name = models.CharField(max_length=255)
     developed_by = models.CharField(max_length=255)
     location_of_project = models.TextField()
-    google_pin = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the current location pin
     type_of_project = models.CharField(max_length=255)
     type_of_apartments = models.CharField(max_length=255)  # Multiple choice can be handled with a separate model if needed
     age_of_property_developer = models.PositiveIntegerField()
@@ -52,16 +53,6 @@ class BuildingDetails(models.Model):
     def __str__(self):
         return f"{self.group_name} - {self.project_name}"
 
-    def save(self, *args, **kwargs):
-        if not self.google_pin:
-            self.google_pin = self.fetch_current_location()
-        super(BuildingDetails, self).save(*args, **kwargs)
-
-    def fetch_current_location(self):
-        # This method should be implemented to fetch the current location
-        # For now, it's a placeholder
-        return "https://maps.app.goo.gl/FxcQVyRjHuTiwx9f6"
-
 
 class UnitDetails(models.Model):
     building_id = models.CharField(max_length=255)
@@ -82,6 +73,9 @@ class UnitDetails(models.Model):
     no_of_balconies = models.PositiveIntegerField()
     no_of_parking_allotted = models.PositiveIntegerField()
     per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)  # rate per square feet
+    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+
 
     def __str__(self):
         return f"{self.unit_configuration} - {self.unit_type}"

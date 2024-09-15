@@ -290,6 +290,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 raise NotFound(f"Building with id {building_id} not found.")
             building_data = BuildingDetailsSerializer(building_data_obj).data
 
+            lat_cord = building_data.get('google_pin_lat')
+            lng_cord = building_data.get('google_pin_lng')
 
             # Fetch amenties data
             try:
@@ -320,12 +322,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         amenity = str(amenity).replace('_', ' ').title()
                         other_amenities.append(amenity)
 
-            print(client_prefered_amenities)
-            print(other_amenities)
-
             size_of_unit = float(unit_data.get('size_of_unit'))
             property_unit_price = round((size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))) / 10000000, 2)
-
 
             size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
@@ -351,6 +349,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'size_of_unit_mtrs':size_of_unit_mtrs,
                 'menu_properties':menu_properties, 
                 'main_property': building_data,
+                'lat_cord':lat_cord,
+                'lng_cord':lng_cord,
                 'unit_data':unit_data,
                 'client_data':client_data,
                 'client_prefered_amenities':client_prefered_amenities,

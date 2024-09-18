@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.exceptions import NotFound
 import math
+import pdb
 
 
 class Sorter:
@@ -93,10 +94,10 @@ class Sorter:
             budget_max = updated_client_data.get('budget_max', 0)
 
             coords = str(updated_client_data.get('preferred_locations')).split(',')
-            import pdb; pdb.set_trace()
+
             lat = float(str(str(coords[0]).strip().split('|')[0]).strip())
             lng = float(str(str(coords[0]).strip().split('|')[1]).strip())
-            km = 15
+            km = 2
 
             unit_type = 'Simplex'
 
@@ -104,18 +105,24 @@ class Sorter:
             print(min_lat, max_lat, min_lon, max_lon)
             validated_property = []
             for bedroom in bedrooms:
-                property_unit_matched = UnitDetails.objects.filter(
+                property_unit_matched_min = UnitDetails.objects.filter(
                     google_pin_lat__gte=min_lat,
-                    google_pin_lat__lte=max_lat,
                     google_pin_lng__gte=min_lon,
+                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
+                
+                property_unit_matched_max = UnitDetails.objects.filter(
+                    google_pin_lat__lte=max_lat,
                     google_pin_lng__lte=max_lon,
                     unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
-                print(len(property_unit_matched))
-                if len(property_unit_matched) !=0:
-                    for property in property_unit_matched:
-                        unit_price = property.size_of_unit * property.per_sqft_rate_saleable
-                        if budget_min <= unit_price and budget_max >= unit_price:
-                            validated_property.append(property.id)
+                
+                pdb.set_trace()
+
+                # print(len(property_unit_matched))
+                # if len(property_unit_matched) !=0:
+                #     for property in property_unit_matched:
+                #         unit_price = property.size_of_unit * property.per_sqft_rate_saleable
+                #         if budget_min <= unit_price and budget_max >= unit_price:
+                #             validated_property.append(property.id)
 
             return validated_property
 

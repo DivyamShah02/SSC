@@ -75,6 +75,7 @@ class UnitDetails(models.Model):
     per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)  # rate per square feet
     google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the current location pin
     google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+    location_of_project = models.TextField(default="")
 
 
     def __str__(self):

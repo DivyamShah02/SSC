@@ -101,7 +101,7 @@ def haversine(coord1, coord2):
 
 lat = '23.0047206'
 lng = '72.558553'
-km = 20
+km = 4
 
 min_lat, max_lat, min_lon, max_lon = get_bounds(lat=float(lat), lon=float(lng), radius_km=km)
 
@@ -111,6 +111,7 @@ coordinates = generate_coordinates_within_bounds(min_lat, max_lat, min_lon, max_
 
 # Print the coordinates
 print(len(coordinates))
+pdb.set_trace()
 distances = []
 cords = []
 

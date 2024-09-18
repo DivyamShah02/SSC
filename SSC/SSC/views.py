@@ -4,9 +4,16 @@ from Property.models import BuildingDetails, UnitDetails, Amenities
 import random
 import json
 from .cords import final_cords
+import requests
+import os
 
 def temp_data(request):
     data = generate_building_details(number_of_entries=1000)
+    folder = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data'
+    filename = generate_file_name(folder=folder, file_name='data.json')
+    with open(filename, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    print(f'Data save to {filename}')
     
     for building in data:
         new_building = BuildingDetails(
@@ -126,6 +133,10 @@ def generate_building_details(number_of_entries):
         coords= final_cords[i].split(',')
         google_pin_lat = str(coords[0]).strip()
         google_pin_lng = str(coords[1]).strip()
+        api_key = 'AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k'  # Replace with your API key
+        address = get_address_from_coordinates(google_pin_lat, google_pin_lng, api_key)
+        print(address)
+
 
         while True:
             max_bhk = random.randint(2, 6)
@@ -158,7 +169,7 @@ def generate_building_details(number_of_entries):
             "project_id": f"PRJ{i+1:03}",
             "project_name": building_name,
             "developed_by": group_name,
-            "location_of_project": f"{random.randint(100, 999)} {random.choice(['Street', 'Avenue', 'Road'])}",
+            "location_of_project": address,
             "google_pin_lat": google_pin_lat,
             "google_pin_lng": google_pin_lng,
             "type_of_project": "Residential",
@@ -237,6 +248,7 @@ def generate_building_details(number_of_entries):
                 "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2),
                 "google_pin_lat": google_pin_lat,
                 "google_pin_lng": google_pin_lng,
+                "location_of_project": address,
 
             }
             building['unit_details'].append(temp_dict)
@@ -244,3 +256,41 @@ def generate_building_details(number_of_entries):
         building_details.append(building)
     
     return building_details
+
+
+def get_address_from_coordinates(lat, lng, api_key):
+    # Geocoding endpoint
+    url = f"https://maps.googleapis.com/maps/api/geocode/json"
+    params = {  
+    'latlng': f'{lat},{lng}',
+    'key':api_key
+    }
+    
+    response = requests.get(url, params=params)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        data = response.json()
+
+        # Check if the API returned any results
+        if data['results']:
+            # Extract the formatted address
+            address = data['results'][0]['formatted_address']
+            return address
+        else:
+            return "No address found for the provided coordinates."
+    else:
+        return f"Error: {response.status_code}"
+
+def generate_file_name(folder, file_name):
+    """Generate unique file name to avoid conflicts."""
+    process_file_path = os.path.join(folder, file_name)
+    counter = 1
+    while os.path.exists(process_file_path):
+        base_name, ext = os.path.splitext(file_name)
+        base_name = str(base_name).replace(f'_{counter-1}','')
+        process_file_path = os.path.join(folder, f"{base_name}_{counter}{ext}")
+        counter += 1
+    return process_file_path
+

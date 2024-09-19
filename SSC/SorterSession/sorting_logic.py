@@ -97,7 +97,7 @@ class Sorter:
 
             lat = float(str(str(coords[0]).strip().split('|')[0]).strip())
             lng = float(str(str(coords[0]).strip().split('|')[1]).strip())
-            km = 2
+            km = 3
 
             unit_type = 'Simplex'
 
@@ -108,12 +108,22 @@ class Sorter:
                 property_unit_matched_min = UnitDetails.objects.filter(
                     google_pin_lat__gte=min_lat,
                     google_pin_lng__gte=min_lon,
-                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
+                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
+                    )  # Assuming unit_type as 'Simplex'
                 
                 property_unit_matched_max = UnitDetails.objects.filter(
                     google_pin_lat__lte=max_lat,
                     google_pin_lng__lte=max_lon,
-                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type)  # Assuming unit_type as 'Simplex'
+                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
+                    )  # Assuming unit_type as 'Simplex'
+                
+                property_unit_matched = UnitDetails.objects.filter(
+                    google_pin_lat__gte=min_lat,
+                    google_pin_lng__gte=min_lon,
+                    google_pin_lat__lte=max_lat,
+                    google_pin_lng__lte=max_lon,
+                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
+                    )  # Assuming unit_type as 'Simplex'
                 
                 pdb.set_trace()
 

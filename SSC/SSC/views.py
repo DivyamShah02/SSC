@@ -8,7 +8,7 @@ import requests
 import os
 
 def temp_data(request):
-    data = generate_building_details(number_of_entries=1000)
+    data = generate_building_details(number_of_entries=56)
     folder = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data'
     filename = generate_file_name(folder=folder, file_name='data.json')
     with open(filename, 'w') as json_file:

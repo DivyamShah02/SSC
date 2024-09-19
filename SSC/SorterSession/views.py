@@ -372,13 +372,13 @@ class PropertyDetailViewset(viewsets.ViewSet):
             print(e)
             return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
+
 class GetDistanceViewset(viewsets.ViewSet):
     def list(self, request):
         try:
             origins = str(request.GET.get('origins')).split(',')
             destinations = str(request.GET.get('destinations')).split(',')
-            api_key = "AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k"
-            distance, duration = get_distance(origins[0], origins[1], destinations[0], destinations[1], api_key)
+            distance, duration = get_distance(origins[0], origins[1], destinations[0], destinations[1])
             if distance:
                 data = {
                     'success': True,

@@ -1,5 +1,6 @@
 import os
 from .library.Config import Config
+from .library.DistanceCalculator import get_distance
 from Property.models import BuildingDetails, UnitDetails, Amenities
 from Property.serializers import UnitDetailsSerializer, BuildingDetailsSerializer, AmenitiesSerializer
 from ClientDetail.models import PropertyInquiry
@@ -82,7 +83,6 @@ class Sorter:
 
         return min_lat, max_lat, min_lon, max_lon
 
-
     def get_pre_validated_property(self, updated_client_data):
         """
         Returns properties that match the client's updated preferences.
@@ -97,43 +97,26 @@ class Sorter:
 
             lat = float(str(str(coords[0]).strip().split('|')[0]).strip())
             lng = float(str(str(coords[0]).strip().split('|')[1]).strip())
-            km = 3
+            km = 1.5
 
             unit_type = 'Simplex'
 
             min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
-            print(min_lat, max_lat, min_lon, max_lon)
+
             validated_property = []
             for bedroom in bedrooms:
-                property_unit_matched_min = UnitDetails.objects.filter(
-                    google_pin_lat__gte=min_lat,
-                    google_pin_lng__gte=min_lon,
-                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
-                    )  # Assuming unit_type as 'Simplex'
-                
-                property_unit_matched_max = UnitDetails.objects.filter(
-                    google_pin_lat__lte=max_lat,
-                    google_pin_lng__lte=max_lon,
-                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
-                    )  # Assuming unit_type as 'Simplex'
-                
                 property_unit_matched = UnitDetails.objects.filter(
                     google_pin_lat__gte=min_lat,
                     google_pin_lng__gte=min_lon,
                     google_pin_lat__lte=max_lat,
                     google_pin_lng__lte=max_lon,
-                    # unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type
+                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
+                    base_price__gte=budget_min,
+                    base_price__lte=budget_max
                     )  # Assuming unit_type as 'Simplex'
+
+                validated_property = [property.id for property in property_unit_matched]
                 
-                pdb.set_trace()
-
-                # print(len(property_unit_matched))
-                # if len(property_unit_matched) !=0:
-                #     for property in property_unit_matched:
-                #         unit_price = property.size_of_unit * property.per_sqft_rate_saleable
-                #         if budget_min <= unit_price and budget_max >= unit_price:
-                #             validated_property.append(property.id)
-
             return validated_property
 
         except Exception as e:
@@ -237,7 +220,10 @@ class Sorter:
         return 0
 
     def _score_religious_place(self, client_preferences, property_data):
-        return int(self.config.scoring.religious_place_match) if client_preferences.get('religious_preference') in property_data.get('spiritual_or_religious_attraction', '') else 0
+        if property_data.get('spiritual_or_religious_attraction'):
+            return int(self.config.scoring.religious_place_match) if client_preferences.get('religious_preference') in property_data.get('spiritual_or_religious_attraction', '') else 0
+        else:
+            return 0
 
     def _score_private_elevator(self, unit_data):
         return int(self.config.scoring.private_elevator_exists) if unit_data.get('private_lifts') else int(self.config.scoring.private_elevator_no)

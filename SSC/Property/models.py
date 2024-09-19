@@ -36,7 +36,7 @@ class BuildingDetails(models.Model):
     no_of_basements = models.PositiveIntegerField()
     central_air_conditioning = models.BooleanField(default=False)
     pet_friendly = models.BooleanField(default=False)
-    spiritual_or_religious_attraction = models.TextField(null=True, blank=True)
+    spiritual_or_religious_attraction = models.TextField(null=True, blank=True, default='')
     type_of_parking = models.CharField(max_length=255)
     plc = models.DecimalField(max_digits=10, decimal_places=2)  # PLC could be a decimal field for price
     floor_rise = models.DecimalField(max_digits=10, decimal_places=2)
@@ -72,14 +72,18 @@ class UnitDetails(models.Model):
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.PositiveIntegerField()
     no_of_parking_allotted = models.PositiveIntegerField()
-    per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)  # rate per square feet
-    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the current location pin
-    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the current location pin
-    location_of_project = models.TextField(default="")
+    per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)
+    base_price = models.DecimalField(max_digits=20, decimal_places=2)
+    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the lat
+    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the lng
 
 
     def __str__(self):
         return f"{self.unit_configuration} - {self.unit_type}"
+    
+    def save(self, *args, **kwargs):
+        self.base_price = self.size_of_unit * self.per_sqft_rate_saleable
+        super(UnitDetails, self).save(*args, **kwargs)
 
 
 class Amenities(models.Model):

@@ -1,6 +1,9 @@
 import requests
 
-def get_distance(origin_lat, origin_lng, destination_lat, destination_lng, api_key):
+def get_distance(origin_lat, origin_lng, destination_lat, destination_lng):
+    
+    api_key = "AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk"
+
     # Define the endpoint for the Distance Matrix API
     endpoint = "https://maps.googleapis.com/maps/api/distancematrix/json"
 

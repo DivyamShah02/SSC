@@ -3,6 +3,7 @@ import numpy as np
 import requests
 import pdb
 import random
+import pyperclip
 
 def generate_coordinates_within_bounds(min_lat, max_lat, min_lon, max_lon, step_size):
     """
@@ -101,7 +102,7 @@ def haversine(coord1, coord2):
 
 lat = '23.0047206'
 lng = '72.558553'
-km = 4
+km = 8
 
 min_lat, max_lat, min_lon, max_lon = get_bounds(lat=float(lat), lon=float(lng), radius_km=km)
 

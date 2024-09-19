@@ -707,7 +707,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
         
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places&callback=initMap" async defer></script>
 
     <script>
         
@@ -746,7 +746,7 @@
                     if (results[0]) {
                         console.log(results)
                         placeDetailsDiv.innerHTML = `
-                            <span>Siddhi Sadhan</span><br>
+                            <span>{{main_property.name}}</span><br>
                             ${results[0].formatted_address}<br>
                             `;
                             // Lat: ${defaultLocation.lat.toFixed(6)}, 

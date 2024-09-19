@@ -8,7 +8,7 @@ import requests
 import os
 
 def temp_data(request):
-    data = generate_building_details(number_of_entries=56)
+    data = generate_building_details(number_of_entries=2250)
     folder = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data'
     filename = generate_file_name(folder=folder, file_name='data.json')
     with open(filename, 'w') as json_file:
@@ -120,6 +120,10 @@ def temp_data(request):
 
 def generate_building_details(number_of_entries):
     building_details = []
+    print('-------------------------------------------------------------------')
+    print(len(final_cords))
+    print('-------------------------------------------------------------------')
+
     
     for i in range(number_of_entries):
         # i=i+101
@@ -133,9 +137,9 @@ def generate_building_details(number_of_entries):
         coords= final_cords[i].split(',')
         google_pin_lat = str(coords[0]).strip()
         google_pin_lng = str(coords[1]).strip()
-        api_key = 'AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k'  # Replace with your API key
-        address = get_address_from_coordinates(google_pin_lat, google_pin_lng, api_key)
-        print(address)
+        # api_key = 'AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk'  # Replace with your API key
+        # address = get_address_from_coordinates(google_pin_lat, google_pin_lng, api_key)
+        # print(address)
 
 
         while True:
@@ -169,7 +173,8 @@ def generate_building_details(number_of_entries):
             "project_id": f"PRJ{i+1:03}",
             "project_name": building_name,
             "developed_by": group_name,
-            "location_of_project": address,
+            # "location_of_project": address,
+            "location_of_project": f"{random.randint(100, 999)} {random.choice(['Street', 'Avenue', 'Road'])}",
             "google_pin_lat": google_pin_lat,
             "google_pin_lng": google_pin_lng,
             "type_of_project": "Residential",
@@ -248,7 +253,6 @@ def generate_building_details(number_of_entries):
                 "per_sqft_rate_saleable": round(random.uniform(5000.00, 12000.00), 2),
                 "google_pin_lat": google_pin_lat,
                 "google_pin_lng": google_pin_lng,
-                "location_of_project": address,
 
             }
             building['unit_details'].append(temp_dict)

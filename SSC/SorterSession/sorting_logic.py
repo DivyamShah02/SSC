@@ -94,29 +94,31 @@ class Sorter:
             budget_max = updated_client_data.get('budget_max', 0)
 
             coords = str(updated_client_data.get('preferred_locations')).split(',')
-
-            lat = float(str(str(coords[0]).strip().split('|')[0]).strip())
-            lng = float(str(str(coords[0]).strip().split('|')[1]).strip())
-            km = 1.5
-
-            unit_type = 'Simplex'
-
-            min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
-
             validated_property = []
-            for bedroom in bedrooms:
-                property_unit_matched = UnitDetails.objects.filter(
-                    google_pin_lat__gte=min_lat,
-                    google_pin_lng__gte=min_lon,
-                    google_pin_lat__lte=max_lat,
-                    google_pin_lng__lte=max_lon,
-                    unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
-                    base_price__gte=budget_min,
-                    base_price__lte=budget_max
-                    )  # Assuming unit_type as 'Simplex'
 
-                validated_property = [property.id for property in property_unit_matched]
-                
+            for coord in coords:
+                lat = float(str(str(coord).strip().split('|')[0]).strip())
+                lng = float(str(str(coord).strip().split('|')[1]).strip())
+                km = 1.5
+
+                unit_type = 'Simplex'
+
+                min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
+
+                for bedroom in bedrooms:
+                    property_unit_matched = UnitDetails.objects.filter(
+                        google_pin_lat__gte=min_lat,
+                        google_pin_lng__gte=min_lon,
+                        google_pin_lat__lte=max_lat,
+                        google_pin_lng__lte=max_lon,
+                        unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
+                        base_price__gte=budget_min,
+                        base_price__lte=budget_max
+                        )  # Assuming unit_type as 'Simplex'
+
+                    for property in property_unit_matched:    validated_property.append(property.id)
+
+
             return validated_property
 
         except Exception as e:

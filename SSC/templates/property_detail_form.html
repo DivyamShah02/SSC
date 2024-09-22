@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>Property Detail Form</title>
+</head>
+
+
+<body>
+     <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
+     </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+        </div>
+    </nav>
+    <!-- Navigation bar end -->
+
+    <!-- Main content start -->
+    <div id="main-content" class="blur">
+        <!-- Developer History start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Developer History</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developerGroupName">Name of the group</label>
+                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="yearOfEstablishment">Year of establishment</label>
+                        <input type="number" class="form-control" id="yearOfEstablishment" name="yearOfEstablishment" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectsDelivered">No. of projects delivered</label>
+                        <input type="number" class="form-control" id="projectsDelivered" name="projectsDelivered" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="keyProjects">Key projects</label>
+                        <textarea class="form-control" id="keyProjects" name="keyProjects" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="keyPromoters">Key promoters</label>
+                        <textarea class="form-control" id="keyPromoters" name="keyPromoters" rows="3"></textarea>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Developer History end -->
+        
+        <!-- Contact Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Contact Details</h4>
+            </div>
+    
+            <!-- Form body -->
+            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Customer Name -->
+                    <!-- <div class="col-md-4 form-group">
+                        <label for="developerGroupName" class="form-label">
+                            Customer Name<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" required>
+                    </div> -->
+                    <!-- autofocus -->
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="contactName">Name</label>
+                        <input type="text" class="form-control" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="contactNumber">Number</label>
+                        <input type="tel" class="form-control" id="contactNumber" name="contactNumber" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="contactEmail">Email</label>
+                        <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="alternateName">Alternate name</label>
+                        <input type="text" class="form-control" id="alternateName" name="alternateName">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="alternateNumber">Alternate number</label>
+                        <input type="tel" class="form-control" id="alternateNumber" name="alternateNumber">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="alternateEmail">Alternate Email</label>
+                        <input type="email" class="form-control" id="alternateEmail" name="alternateEmail">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Contact Details end -->        
+
+        <!-- Project/Property Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Project/Property Details</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="project_property_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectId">Project/property ID</label>
+                        <input type="text" class="form-control" id="projectId" name="projectId" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectName">Project Name</label>
+                        <input type="text" class="form-control" id="projectName" name="projectName" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developedBy">Developed by</label>
+                        <input type="text" class="form-control" id="developedBy" name="developedBy" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectLocation">Location of the project (Address)</label>
+                        <input type="text" class="form-control" id="projectLocation" name="projectLocation" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="googlePin">Google pin (fetch current location)</label>
+                        <input type="text" class="form-control" id="googlePin" name="googlePin" placeholder="Fetch current location">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label for="projectType" class="form-label primary">Type of Project</label>
+                        <!-- <br> -->
+                        <!-- <label for="why_buy_house" class="form-label">Select<span class="required"> *</span></label> -->
+                        <select class="form-select" id="projectType" name="projectType">
+                            <option value="Residential apartments">Residential apartments</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Mix">Mix</option>
+                        </select>
+                    </div>
+                    <div class="row col-md-12 form-group">
+                        <label for="bedrooms" class="form-label primary">Type of apartments (multiple choice)</label>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="1_bhk" id="1_bhk">
+                                <label class="form-check-label" for="1_bhk">1 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="2_bhk" id="2_bhk">
+                                <label class="form-check-label" for="2_bhk">2 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="3_bhk" id="3_bhk">
+                                <label class="form-check-label" for="3_bhk">3 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="4_bhk" id="4_bhk">
+                                <label class="form-check-label" for="4_bhk">4 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="5_bhk" id="5_bhk">
+                                <label class="form-check-label" for="5_bhk">5 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="bedrooms" value="6_bhk" id="6_bhk">
+                                <label class="form-check-label" for="6_bhk">6 BHK</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="ageOfPropertyDeveloper">Age of the property as per developer (MM/YY)</label>
+                        <input type="text" class="form-control" id="ageOfPropertyDeveloper" name="ageOfPropertyDeveloper">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="ageOfPropertyRERA">Age of the property as per RERA (MM/YY)</label>
+                        <input type="text" class="form-control" id="ageOfPropertyRERA" name="ageOfPropertyRERA">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plotArea">Plot area of the project (FP/Net)</label>
+                        <input type="text" class="form-control" id="plotArea" name="plotArea">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="architect">Architect</label>
+                        <input type="text" class="form-control" id="architect" name="architect">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="constructionCompany">Construction company</label>
+                        <input type="text" class="form-control" id="constructionCompany" name="constructionCompany">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBlocks">No. of Blocks</label>
+                        <input type="number" class="form-control" id="numberOfBlocks" name="numberOfBlocks">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfUnits">No. Units</label>
+                        <input type="number" class="form-control" id="numberOfUnits" name="numberOfUnits">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfFloors">No. Floors</label>
+                        <input type="number" class="form-control" id="numberOfFloors" name="numberOfFloors">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBasements">No. of Basements</label>
+                        <input type="number" class="form-control" id="numberOfBasements" name="numberOfBasements">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="jodiPossible">Jodi possible?</label><br>
+                        <select class="form-select" id="jodiPossible" name="jodiPossible">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="layoutDetails">Details about different types of layouts and options</label>
+                        <textarea class="form-control" id="layoutDetails" name="layoutDetails" rows="3"></textarea>
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="overallVastu">Overall Vastu</label><br>
+                        <select class="form-select" id="overallVastu" name="overallVastu">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="entryExitWind">Entry, Exit & Wind directions</label>
+                        <input type="text" class="form-control" id="entryExitWind" name="entryExitWind">
+                    </div>
+                    <div class="col-md-12 row form-group">
+                        <label class="form-label primary" for="buildingAmenities">Building amenities list</label>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="swimming_pool" id="amenity1">
+                                <label class="form-check-label" for="amenity1">Swimming Pool</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="gym_fitness_center" id="amenity2">
+                                <label class="form-check-label" for="amenity2">Gym Fitness Center</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="clubhouse" id="amenity3">
+                                <label class="form-check-label" for="amenity3">Clubhouse</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="children_play_area" id="amenity4">
+                                <label class="form-check-label" for="amenity4">Children Play Area</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="sports_facilities" id="amenity5">
+                                <label class="form-check-label" for="amenity5">Sports Facilities</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="jogging_walking_tracks" id="amenity6">
+                                <label class="form-check-label" for="amenity6">Jogging Walking Tracks</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="common_gardens" id="amenity7">
+                                <label class="form-check-label" for="amenity7">Common Gardens</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="community_hall" id="amenity8">
+                                <label class="form-check-label" for="amenity8">Community Hall</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="security_24_7" id="amenity9">
+                                <label class="form-check-label" for="amenity9">Security 24X7</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="cctv_surveillance" id="amenity10">
+                                <label class="form-check-label" for="amenity10">CCTV Surveillance</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="power_backup" id="amenity11">
+                                <label class="form-check-label" for="amenity11">Power Backup</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="waste_management" id="amenity12">
+                                <label class="form-check-label" for="amenity12">Waste Management</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="concierge" id="amenity13">
+                                <label class="form-check-label" for="amenity13">Concierge</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="reading_room" id="amenity14">
+                                <label class="form-check-label" for="amenity14">Reading Room</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="home_theatre" id="amenity15">
+                                <label class="form-check-label" for="amenity15">Home Theatre</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="internet_connectivity" id="amenity16">
+                                <label class="form-check-label" for="amenity16">Internet Connectivity</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="guest_rooms" id="amenity17">
+                                <label class="form-check-label" for="amenity17">Guest Rooms</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="pet_friendly_areas" id="amenity18">
+                                <label class="form-check-label" for="amenity18">Pet Friendly Areas</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="spa_salon" id="amenity19">
+                                <label class="form-check-label" for="amenity19">Spa Salon</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="co_working_space" id="amenity20">
+                                <label class="form-check-label" for="amenity20">Co-Working Space</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities" value="terrace_amenities" id="amenity21">
+                                <label class="form-check-label" for="amenity21">Terrace Amenities</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="centralAC">Central air conditioning available?</label><br>
+                        <select class="form-select" id="centralAC" name="centralAC">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="petFriendly">Is this project pet friendly?</label><br>
+                        <select class="form-select" id="petFriendly" name="petFriendly">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="spiritualAttraction">Any spiritual or religious attraction in the project?</label><br>
+                        <select class="form-select" id="spiritualAttraction" name="spiritualAttraction">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="parkingType">Type of parking</label><br>
+                        <select class="form-select" id="parkingType" name="parkingType">
+                            <option value="Normal">Normal</option>
+                            <option value="Hydraulic">Hydraulic</option>
+                            <option value="Hydraulic with Valet">Hydraulic with Valet</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plcOptions">PLC Options</label><br>
+                        <select class="form-select" id="plcOptions" name="plcOptions">
+                            <option value="Garden">Garden</option>
+                            <option value="Road Facing">Road Facing</option>
+                            <option value="Corner">Corner</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="floorRise">Floor rise</label>
+                        <input type="text" class="form-control" id="floorRise" name="floorRise">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Project/Property Details end -->        
+
+        <!-- Unit Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Unit Details</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="unit_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectId">Project/property ID</label>
+                        <input type="text" class="form-control" id="projectId" name="projectId" required>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="unitTypes">Type of unit</label><br>
+                        <select class="form-select" id="unitTypes" name="unitTypes">
+                            <option value="3 BHK">3 BHK</option>
+                            <option value="4 BHK">4 BHK</option>
+                            <option value="5 BHK">5 BHK</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="layoutTypes">Layout Types</label><br>
+                        <select class="form-select" id="layoutTypes" name="layoutTypes">
+                            <option value="Simplex">Simplex</option>
+                            <option value="Duplex">Duplex</option>
+                            <option value="Triplex">Triplex</option>
+                            <option value="Penthouse">Penthouse</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="unitsPerFloor">No. of units on one floor</label>
+                        <input type="number" class="form-control" id="unitsPerFloor" name="unitsPerFloor">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="liftsPerFloor">No. of lifts on one floor</label>
+                        <input type="number" class="form-control" id="liftsPerFloor" name="liftsPerFloor">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="privateLifts">Private lifts?</label>
+                        <select class="form-select" id="privateLifts" name="privateLifts">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfPrivateLifts">If Yes, How many?</label>
+                        <input type="number" class="form-control" id="numberOfPrivateLifts" name="numberOfPrivateLifts">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="commonTerrace">Common terrace accessible?</label><br>
+                        <select class="form-select" id="commonTerrace" name="commonTerrace">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sizeOfMainBalcony">Size of main balcony</label>
+                        <input type="text" class="form-control" id="sizeOfMainBalcony" name="sizeOfMainBalcony">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sizeOfMasterBedroom">Size of master bedroom</label>
+                        <input type="text" class="form-control" id="sizeOfMasterBedroom" name="sizeOfMasterBedroom">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sizeOfKitchen">Size of kitchen</label>
+                        <input type="text" class="form-control" id="sizeOfKitchen" name="sizeOfKitchen">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sizeOfPrivateTerrace">Size of private terrace</label>
+                        <input type="text" class="form-control" id="sizeOfPrivateTerrace" name="sizeOfPrivateTerrace">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sizeOfUnit">Size of the unit</label>
+                        <input type="text" class="form-control" id="sizeOfUnit" name="sizeOfUnit">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="carpetArea">Carpet area as per RERA</label>
+                        <input type="text" class="form-control" id="carpetArea" name="carpetArea">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBathrooms">No. of attached bathrooms</label>
+                        <input type="number" class="form-control" id="numberOfBathrooms" name="numberOfBathrooms">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="servantRoomAvailable">Servant room available?</label><br>
+                        <select class="form-select" id="servantRoomAvailable" name="servantRoomAvailable">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="pujaRoomAvailable">Separate puja room available?</label><br>
+                        <select class="form-select" id="pujaRoomAvailable" name="pujaRoomAvailable">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBalconies">No. balconies in one house</label>
+                        <input type="number" class="form-control" id="numberOfBalconies" name="numberOfBalconies">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="parkingAllotted">No. of parking allotted to one unit</label>
+                        <input type="number" class="form-control" id="parkingAllotted" name="parkingAllotted">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="perSqFtRate">Per Sq. Ft. rate on saleable</label>
+                        <input type="text" class="form-control" id="perSqFtRate" name="perSqFtRate">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Unit Details end -->   
+         
+        <!-- Finance start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Finance</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developmentCharges">Development charges (AMC/Torrent etc)</label>
+                        <input type="text" class="form-control" id="developmentCharges" name="developmentCharges">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="advanceMaintenance">Advance maintenance</label>
+                        <input type="text" class="form-control" id="advanceMaintenance" name="advanceMaintenance">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="maintenanceDeposit">Maintenance deposit</label>
+                        <input type="text" class="form-control" id="maintenanceDeposit" name="maintenanceDeposit">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="specificExpenses">Other specific expenses if any?</label>
+                        <input type="text" class="form-control" id="specificExpenses" name="specificExpenses">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="saleDeedValue">Sale deed value</label>
+                        <input type="text" class="form-control" id="saleDeedValue" name="saleDeedValue">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="gstApplicable">How much GST is applicable?</label>
+                        <input type="text" class="form-control" id="gstApplicable" name="gstApplicable">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="loanAvailability">Loan availability?</label><br>
+                        <select class="form-control" id="loanAvailability" name="loanAvailability">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label class="form-label primary" for="remarks">Remarks if any</label>
+                        <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
+                    </div>
+        
+                    <div class="col-md-12 text-center">
+                        <button type="button" onclick="submit_inquiry_form()" class="btn btn-custom"><b>Save Property Details</b></button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Finance end -->
+
+        <div class="container mt-3">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+    </div>
+    <!-- Main content end -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places" async defer></script>
+
+    <script>
+        function initAutocomplete() {
+            const input = document.getElementById('place-search');
+
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                const numberOfChildren = document.getElementById('preferred-location').childElementCount;
+
+                if (numberOfChildren <= 2){
+                    document.getElementById('place-search').classList.remove('form-control-error')
+                    // Get the place details from the autocomplete object
+                    const place = autocomplete.getPlace();
+                    if (place.geometry) {
+                        const destinationLat = place.geometry.location.lat();
+                        const destinationLng = place.geometry.location.lng();
+                        const name = place.name;
+
+                        console.log(destinationLat);
+                        console.log(destinationLng);
+                        console.log(name);
+
+                        if (document.getElementById(name)) {
+                            console.log('Element exists!');
+                            document.getElementById('place-search').classList.add('form-control-error')
+                        }
+                        else {
+                            const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
+        
+                            // Create the new <li> element
+                            const newlocationElement = document.createElement('span');
+                            newlocationElement.id = `${name}`;
+        
+                            // Set the HTML content of the <li> element
+                            newlocationElement.innerHTML = `
+                                <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove();document.getElementById('${name}_${numberOfChildren}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
+                            `;
+        
+                            // Append the new <li> element to the <ul>
+                            preferredElement.appendChild(newlocationElement);
+
+                            const preferredElement_input = document.getElementById('preferred_locations_inputs');
+                            const numberOfChildren_input = preferredElement_input.childElementCount;
+
+                            const newlocationElement_input = document.createElement('input');
+                            newlocationElement_input.id = `${name}_${numberOfChildren_input}`;
+                            newlocationElement_input.value = `${destinationLat}|${destinationLng}`
+                            newlocationElement_input.name = `preferred_locations`
+                            newlocationElement_input.type = 'hidden'
+
+                            // Append the new <li> element to the <ul>
+                            preferredElement_input.appendChild(newlocationElement_input);
+
+                        }
+                        input.value = ''
+
+                    }
+
+                }
+                else{
+                    console.log('count more than 3')
+                    document.getElementById('place-search').classList.add('form-control-error')
+                    
+                }
+
+            });
+        }
+
+        async function submit_inquiry_form() {
+            toggle_loader()
+            var personal_information_form = document.getElementById('personal_information');
+            var family_demographics_form = document.getElementById('family_demographics');
+            var house_specificaiton_form = document.getElementById('house_specificaiton');
+            var building_preferences_form = document.getElementById('building_preferences');
+            var finance_form = document.getElementById('finance');
+
+            if (personal_information_form.reportValidity()){
+                if (family_demographics_form.reportValidity()){
+                    if (house_specificaiton_form.reportValidity()){
+                        if (building_preferences_form.reportValidity()){
+                            if (finance_form.reportValidity()){
+                                var form_personal_information = new FormData(document.getElementById('personal_information'));
+                                var form_family_demographics = new FormData(document.getElementById('family_demographics'));
+                                var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
+                                var form_building_preferences = new FormData(document.getElementById('building_preferences'));
+                                var form_finance = new FormData(document.getElementById('finance'));
+                        
+                                // Convert FormData to JSON
+                                var object = {};
+                                
+                                form_personal_information.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_family_demographics.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_house_specificaiton.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_building_preferences.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                form_finance.forEach((value, key) => {
+                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                        object[key] = value;
+                                        return;
+                                    }
+                                    if (!Array.isArray(object[key])) {
+                                        object[key] = [object[key]];
+                                    }
+                                    object[key].push(value);
+                                });
+                        
+                                console.log(JSON.stringify(object))
+                                try{
+                                    const response = await fetch("{% url 'property-inquiry-list' %}", {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'X-CSRFToken': '{{csrf_token}}'
+                                        },
+                                        body: JSON.stringify(object)
+                                    });
+                                        
+                                    const data = await response.json();
+                                    console.log(JSON.stringify(data, null, 2))
+                                    if (data.success == true){
+                                        console.log(data.client_id)
+                                        const cleint_id = data.client_id
+                                        sort_property(cleint_id)
+                                    }
+                                    else{
+                        
+                                    }
+                        
+                                }
+                                catch (error) {
+                                    console.log(error.message)
+                                }
+                                
+                            }
+                
+                        }
+            
+                    }
+                    
+                }
+
+            }
+
+            toggle_loader()
+
+        }
+
+        async function sort_property(client_id) {
+            try{
+                const client_id_s = client_id
+                const response = await fetch("{% url 'sort-list' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({
+                        'id':client_id_s
+                    })
+                });
+
+                const data = await response.json();
+                console.log(JSON.stringify(data, null, 2))
+                if (data.success == true){
+                    const session_id = data.session_id
+                    window.location.href=`{% url 'view-properties-list' %}?ind=1&session_id=${session_id}`;
+                }
+                else{
+                    console.log(data)
+
+                }
+
+            }
+            catch (error) {
+                console.log(error.message)
+            }
+
+        }
+
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            document.getElementById('spinner-text').classList.toggle('add-display-block');
+        }
+
+        function toggle_preloader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+        }
+
+        const bedroom_checkboxes = document.querySelectorAll('input[name="bedrooms"]');
+        const bedroom_maxSelection = 2;
+
+        bedroom_checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedBoxes = document.querySelectorAll('input[name="bedrooms"]:checked');
+                if (checkedBoxes.length > bedroom_maxSelection) {
+                    checkbox.checked = false;
+                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
+                }
+            });
+        });
+
+        const amenities_checkboxes = document.querySelectorAll('input[name="amenities"]');
+        const amenities_maxSelection = 5;
+
+        amenities_checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedBoxes = document.querySelectorAll('input[name="amenities"]:checked');
+                if (checkedBoxes.length > amenities_maxSelection) {
+                    checkbox.checked = false;
+                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
+                }
+            });
+        });
+
+
+        window.onload = function() {
+            initAutocomplete();
+            toggle_preloader();
+        };
+
+    </script>
+</body>
+</html>

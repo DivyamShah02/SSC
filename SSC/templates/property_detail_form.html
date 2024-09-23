@@ -39,19 +39,19 @@
             </div>
 
             <!-- Form body -->
-            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+            <form id="developer_history" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developerGroupName">Name of the group</label>
-                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" required>
+                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="yearOfEstablishment">Year of establishment</label>
-                        <input type="number" class="form-control" id="yearOfEstablishment" name="yearOfEstablishment" required>
+                        <input type="number" class="form-control" id="yearOfEstablishment" name="yearOfEstablishment" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectsDelivered">No. of projects delivered</label>
-                        <input type="number" class="form-control" id="projectsDelivered" name="projectsDelivered" required>
+                        <input type="number" class="form-control" id="projectsDelivered" name="projectsDelivered" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="keyProjects">Key projects</label>
@@ -79,23 +79,23 @@
                     <!-- Customer Name -->
                     <!-- <div class="col-md-4 form-group">
                         <label for="developerGroupName" class="form-label">
-                            Customer Name<span class="required"> *</span>
+                            Customer Name<span class=""> *</span>
                         </label>
-                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" required>
+                        <input type="text" class="form-control" id="developerGroupName" name="developerGroupName" placeholder="Enter name" >
                     </div> -->
                     <!-- autofocus -->
 
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="contactName">Name</label>
-                        <input type="text" class="form-control" id="contactName" name="contactName" required>
+                        <input type="text" class="form-control" id="contactName" name="contactName" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="contactNumber">Number</label>
-                        <input type="tel" class="form-control" id="contactNumber" name="contactNumber" required>
+                        <input type="tel" class="form-control" id="contactNumber" name="contactNumber" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="contactEmail">Email</label>
-                        <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+                        <input type="email" class="form-control" id="contactEmail" name="contactEmail" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="alternateName">Alternate name</label>
@@ -124,21 +124,21 @@
             <!-- Form body -->
             <form id="project_property_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
-                    <div class="col-md-4 form-group">
+                    <!-- <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectId">Project/property ID</label>
-                        <input type="text" class="form-control" id="projectId" name="projectId" required>
-                    </div>
+                        <input type="text" class="form-control" id="projectId" name="projectId" >
+                    </div> -->
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectName">Project Name</label>
-                        <input type="text" class="form-control" id="projectName" name="projectName" required>
+                        <input type="text" class="form-control" id="projectName" name="projectName" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developedBy">Developed by</label>
-                        <input type="text" class="form-control" id="developedBy" name="developedBy" required>
+                        <input type="text" class="form-control" id="developedBy" name="developedBy" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectLocation">Location of the project (Address)</label>
-                        <input type="text" class="form-control" id="projectLocation" name="projectLocation" required>
+                        <input type="text" class="form-control" id="projectLocation" name="projectLocation" >
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="googlePin">Google pin (fetch current location)</label>
@@ -147,7 +147,7 @@
                     <div class="col-md-4 form-group">
                         <label for="projectType" class="form-label primary">Type of Project</label>
                         <!-- <br> -->
-                        <!-- <label for="why_buy_house" class="form-label">Select<span class="required"> *</span></label> -->
+                        <!-- <label for="why_buy_house" class="form-label">Select<span class=""> *</span></label> -->
                         <select class="form-select" id="projectType" name="projectType">
                             <option value="Residential apartments">Residential apartments</option>
                             <option value="Residential">Residential</option>
@@ -246,7 +246,8 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="layoutDetails">Details about different types of layouts and options</label>
-                        <textarea class="form-control" id="layoutDetails" name="layoutDetails" rows="3"></textarea>
+                        <input type="text" class="form-control" id="layoutDetails" name="layoutDetails">
+                        <!-- <textarea class="form-control" id="layoutDetails" name="layoutDetails" rows="3"></textarea> -->
                     </div>
 
                     <div class="col-md-4 form-group">
@@ -441,116 +442,156 @@
             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                 <h4>Unit Details</h4>
             </div>
+            <div class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <table id="unit_details_table" class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Unit Configuration</th>
+                        <th scope="col">Unit Size</th>
+                        <th scope="col" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal" data-bs-target="#unitModal">
+                    Add Unit
+                </button>
 
-            <!-- Form body -->
-            <form id="unit_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-                <div class="row">
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="projectId">Project/property ID</label>
-                        <input type="text" class="form-control" id="projectId" name="projectId" required>
+                <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
+                    <div class="modal-dialog custom-size">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                            <h1 class="modal-title fs-5" id="unitModalLabel">Unit Details</h1>
+                            <button type="button" class="btn-close" style="filter: invert(10);" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>Unit Details</h4>
+                            </div> -->
+
+                            <!-- Form body -->
+                            <form id="unit_details_modal_form" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                                <div class="row">
+                                    <!-- <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="projectId">Project/property ID</label>
+                                        <input type="text" class="form-control" id="projectId" name="projectId" >
+                                    </div> -->
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="unitTypes">Type of unit</label><br>
+                                        <select class="form-select" id="unitTypes" name="unitTypes">
+                                            <option value="3 BHK">3 BHK</option>
+                                            <option value="4 BHK">4 BHK</option>
+                                            <option value="5 BHK">5 BHK</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="layoutTypes">Layout Types</label><br>
+                                        <select class="form-select" id="layoutTypes" name="layoutTypes">
+                                            <option value="Simplex">Simplex</option>
+                                            <option value="Duplex">Duplex</option>
+                                            <option value="Triplex">Triplex</option>
+                                            <option value="Penthouse">Penthouse</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="unitsPerFloor">No. of units on one floor</label>
+                                        <input type="number" class="form-control" id="unitsPerFloor" name="unitsPerFloor">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="liftsPerFloor">No. of lifts on one floor</label>
+                                        <input type="number" class="form-control" id="liftsPerFloor" name="liftsPerFloor">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="privateLifts">Private lifts?</label>
+                                        <select class="form-select" id="privateLifts" name="privateLifts">
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="numberOfPrivateLifts">If Yes, How many?</label>
+                                        <input type="number" class="form-control" id="numberOfPrivateLifts" name="numberOfPrivateLifts">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="commonTerrace">Common terrace accessible?</label><br>
+                                        <select class="form-select" id="commonTerrace" name="commonTerrace">
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="sizeOfMainBalcony">Size of main balcony</label>
+                                        <input type="text" class="form-control" id="sizeOfMainBalcony" name="sizeOfMainBalcony">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="sizeOfMasterBedroom">Size of master bedroom</label>
+                                        <input type="text" class="form-control" id="sizeOfMasterBedroom" name="sizeOfMasterBedroom">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="sizeOfKitchen">Size of kitchen</label>
+                                        <input type="text" class="form-control" id="sizeOfKitchen" name="sizeOfKitchen">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="sizeOfPrivateTerrace">Size of private terrace</label>
+                                        <input type="text" class="form-control" id="sizeOfPrivateTerrace" name="sizeOfPrivateTerrace">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="sizeOfUnit">Size of the unit</label>
+                                        <input type="text" class="form-control" id="sizeOfUnit" name="sizeOfUnit">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="carpetArea">Carpet area as per RERA</label>
+                                        <input type="text" class="form-control" id="carpetArea" name="carpetArea">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="numberOfBathrooms">No. of attached bathrooms</label>
+                                        <input type="number" class="form-control" id="numberOfBathrooms" name="numberOfBathrooms">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="servantRoomAvailable">Servant room available?</label><br>
+                                        <select class="form-select" id="servantRoomAvailable" name="servantRoomAvailable">
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="pujaRoomAvailable">Separate puja room available?</label><br>
+                                        <select class="form-select" id="pujaRoomAvailable" name="pujaRoomAvailable">
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="numberOfBalconies">No. balconies in one house</label>
+                                        <input type="number" class="form-control" id="numberOfBalconies" name="numberOfBalconies">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="parkingAllotted">No. of parking allotted to one unit</label>
+                                        <input type="number" class="form-control" id="parkingAllotted" name="parkingAllotted">
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label class="form-label primary" for="perSqFtRate">Per Sq. Ft. rate on saleable</label>
+                                        <input type="text" class="form-control" id="perSqFtRate" name="perSqFtRate">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" id="unit_modal_close" class="btn btn-custom" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-custom-primary" onclick="save_unit_details()">Save changes</button>
+                        </div>
                     </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="unitTypes">Type of unit</label><br>
-                        <select class="form-select" id="unitTypes" name="unitTypes">
-                            <option value="3 BHK">3 BHK</option>
-                            <option value="4 BHK">4 BHK</option>
-                            <option value="5 BHK">5 BHK</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="layoutTypes">Layout Types</label><br>
-                        <select class="form-select" id="layoutTypes" name="layoutTypes">
-                            <option value="Simplex">Simplex</option>
-                            <option value="Duplex">Duplex</option>
-                            <option value="Triplex">Triplex</option>
-                            <option value="Penthouse">Penthouse</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="unitsPerFloor">No. of units on one floor</label>
-                        <input type="number" class="form-control" id="unitsPerFloor" name="unitsPerFloor">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="liftsPerFloor">No. of lifts on one floor</label>
-                        <input type="number" class="form-control" id="liftsPerFloor" name="liftsPerFloor">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="privateLifts">Private lifts?</label>
-                        <select class="form-select" id="privateLifts" name="privateLifts">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfPrivateLifts">If Yes, How many?</label>
-                        <input type="number" class="form-control" id="numberOfPrivateLifts" name="numberOfPrivateLifts">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="commonTerrace">Common terrace accessible?</label><br>
-                        <select class="form-select" id="commonTerrace" name="commonTerrace">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sizeOfMainBalcony">Size of main balcony</label>
-                        <input type="text" class="form-control" id="sizeOfMainBalcony" name="sizeOfMainBalcony">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sizeOfMasterBedroom">Size of master bedroom</label>
-                        <input type="text" class="form-control" id="sizeOfMasterBedroom" name="sizeOfMasterBedroom">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sizeOfKitchen">Size of kitchen</label>
-                        <input type="text" class="form-control" id="sizeOfKitchen" name="sizeOfKitchen">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sizeOfPrivateTerrace">Size of private terrace</label>
-                        <input type="text" class="form-control" id="sizeOfPrivateTerrace" name="sizeOfPrivateTerrace">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sizeOfUnit">Size of the unit</label>
-                        <input type="text" class="form-control" id="sizeOfUnit" name="sizeOfUnit">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="carpetArea">Carpet area as per RERA</label>
-                        <input type="text" class="form-control" id="carpetArea" name="carpetArea">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBathrooms">No. of attached bathrooms</label>
-                        <input type="number" class="form-control" id="numberOfBathrooms" name="numberOfBathrooms">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="servantRoomAvailable">Servant room available?</label><br>
-                        <select class="form-select" id="servantRoomAvailable" name="servantRoomAvailable">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="pujaRoomAvailable">Separate puja room available?</label><br>
-                        <select class="form-select" id="pujaRoomAvailable" name="pujaRoomAvailable">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBalconies">No. balconies in one house</label>
-                        <input type="number" class="form-control" id="numberOfBalconies" name="numberOfBalconies">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="parkingAllotted">No. of parking allotted to one unit</label>
-                        <input type="number" class="form-control" id="parkingAllotted" name="parkingAllotted">
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="perSqFtRate">Per Sq. Ft. rate on saleable</label>
-                        <input type="text" class="form-control" id="perSqFtRate" name="perSqFtRate">
                     </div>
                 </div>
-            </form>
+
+            </div>
+
         </div>
-        <!-- Unit Details end -->   
-         
+        <!-- Unit Details end -->
+
         <!-- Finance start -->
         <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
@@ -558,7 +599,7 @@
             </div>
 
             <!-- Form body -->
-            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+            <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developmentCharges">Development charges (AMC/Torrent etc)</label>
@@ -597,7 +638,7 @@
                     </div>
         
                     <div class="col-md-12 text-center">
-                        <button type="button" onclick="submit_inquiry_form()" class="btn btn-custom"><b>Save Property Details</b></button>
+                        <button type="button" onclick="submit_detail_form()" class="btn btn-custom"><b>Save Property Details</b></button>
                     </div>
                 </div>
             </form>
@@ -619,6 +660,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places" async defer></script>
 
     <script>
+        let property_detail = {}
+        property_detail['units'] = []
+
         function initAutocomplete() {
             const input = document.getElementById('place-search');
 
@@ -686,154 +730,147 @@
             });
         }
 
-        async function submit_inquiry_form() {
-            toggle_loader()
-            var personal_information_form = document.getElementById('personal_information');
-            var family_demographics_form = document.getElementById('family_demographics');
-            var house_specificaiton_form = document.getElementById('house_specificaiton');
-            var building_preferences_form = document.getElementById('building_preferences');
+        async function submit_detail_form() {
+            toggle_preloader()
+            var developer_history_form = document.getElementById('developer_history');
+            var contact_details_form = document.getElementById('contact_details');
+            var project_property_details_form = document.getElementById('project_property_details');
             var finance_form = document.getElementById('finance');
 
-            if (personal_information_form.reportValidity()){
-                if (family_demographics_form.reportValidity()){
-                    if (house_specificaiton_form.reportValidity()){
-                        if (building_preferences_form.reportValidity()){
-                            if (finance_form.reportValidity()){
-                                var form_personal_information = new FormData(document.getElementById('personal_information'));
-                                var form_family_demographics = new FormData(document.getElementById('family_demographics'));
-                                var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
-                                var form_building_preferences = new FormData(document.getElementById('building_preferences'));
-                                var form_finance = new FormData(document.getElementById('finance'));
-                        
-                                // Convert FormData to JSON
-                                var object = {};
-                                
-                                form_personal_information.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_family_demographics.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_house_specificaiton.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_building_preferences.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_finance.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                console.log(JSON.stringify(object))
-                                try{
-                                    const response = await fetch("{% url 'property-inquiry-list' %}", {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            'X-CSRFToken': '{{csrf_token}}'
-                                        },
-                                        body: JSON.stringify(object)
-                                    });
-                                        
-                                    const data = await response.json();
-                                    console.log(JSON.stringify(data, null, 2))
-                                    if (data.success == true){
-                                        console.log(data.client_id)
-                                        const cleint_id = data.client_id
-                                        sort_property(cleint_id)
-                                    }
-                                    else{
-                        
-                                    }
-                        
+            if (developer_history_form.reportValidity()){
+                if (contact_details_form.reportValidity()){
+                    if (project_property_details_form.reportValidity()){
+                        if (finance_form.reportValidity()){
+                            var form_developer_history = new FormData(document.getElementById('developer_history'));
+                            var form_contact_details = new FormData(document.getElementById('contact_details'));
+                            var form_project_property_details = new FormData(document.getElementById('project_property_details'));
+                            var form_finance = new FormData(document.getElementById('finance'));
+
+                            form_developer_history.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                    property_detail[key] = value;
+                                    return;
                                 }
-                                catch (error) {
-                                    console.log(error.message)
+                                if (!Array.isArray(property_detail[key])) {
+                                    property_detail[key] = [property_detail[key]];
                                 }
-                                
+                                property_detail[key].push(value);
+                            });
+                    
+                            form_contact_details.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                    property_detail[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(property_detail[key])) {
+                                    property_detail[key] = [property_detail[key]];
+                                }
+                                property_detail[key].push(value);
+                            });
+                    
+                            form_project_property_details.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                    property_detail[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(property_detail[key])) {
+                                    property_detail[key] = [property_detail[key]];
+                                }
+                                property_detail[key].push(value);
+                            });
+                    
+                            form_finance.forEach((value, key) => {
+                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                    property_detail[key] = value;
+                                    return;
+                                }
+                                if (!Array.isArray(property_detail[key])) {
+                                    property_detail[key] = [property_detail[key]];
+                                }
+                                property_detail[key].push(value);
+                            });
+    
+                            console.log(JSON.stringify(property_detail))
+                            try{
+                                const response = await fetch("{% url 'property-detail-list' %}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRFToken': '{{csrf_token}}'
+                                    },
+                                    body: JSON.stringify(property_detail)
+                                });
+
+                                const data = await response.json();
+                                console.log(JSON.stringify(data, null, 2))
+                                if (data.success == true){
+                                    alert('data added successfully!')
+                                }
+                                else{
+                    
+                                }
+                    
                             }
-                
+                            catch (error) {
+                                console.log(error.message)
+                            }
+                            
                         }
-            
+
                     }
                     
                 }
 
             }
 
-            toggle_loader()
+            toggle_preloader()
 
         }
 
-        async function sort_property(client_id) {
-            try{
-                const client_id_s = client_id
-                const response = await fetch("{% url 'sort-list' %}", {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': '{{csrf_token}}'
-                    },
-                    body: JSON.stringify({
-                        'id':client_id_s
-                    })
-                });
-
-                const data = await response.json();
-                console.log(JSON.stringify(data, null, 2))
-                if (data.success == true){
-                    const session_id = data.session_id
-                    window.location.href=`{% url 'view-properties-list' %}?ind=1&session_id=${session_id}`;
+        function save_unit_details() {
+            var object = {};
+            var unit_details_modal_form = new FormData(document.getElementById('unit_details_modal_form'));
+            unit_details_modal_form.forEach((value, key) => {
+                if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                    object[key] = value;
+                    return;
                 }
-                else{
-                    console.log(data)
-
+                if (!Array.isArray(object[key])) {
+                    object[key] = [object[key]];
                 }
+                object[key].push(value);
+            });
+            property_detail['units'].push(object)
+ 
+            const table = document.getElementById('unit_details_table').querySelector('tbody');
+            const numberOfRows = table.childElementCount;
 
-            }
-            catch (error) {
-                console.log(error.message)
-            }
+            const newRow = table.insertRow();
+    
+            // Add columns for bedrooms and size
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
 
+            // Fill in the columns
+            cell1.textContent = numberOfRows + 1;
+            cell1.style.fontWeight = 600;
+            cell2.textContent = object['unitTypes'];
+            cell3.textContent = object['sizeOfUnit'];
+            cell4.innerHTML = `<i onclick="remove_unit_row(${numberOfRows + 1})" style="cursor: pointer;" class="fa fa-xmark"></i>`;
+            cell4.classList.add('text-end');
+
+            document.getElementById('unit_details_modal_form').reset();
+            document.getElementById('unit_modal_close').click()
+
+        }
+
+        function remove_unit_row(ind) {
+            console.log(ind-1);
+            property_detail['units'].splice(ind-1, 1);
+            var table = document.getElementById('unit_details_table');
+            table.deleteRow(ind);
         }
 
         function toggle_loader() {
@@ -872,7 +909,6 @@
                 }
             });
         });
-
 
         window.onload = function() {
             initAutocomplete();

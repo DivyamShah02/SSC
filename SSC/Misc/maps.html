@@ -9,11 +9,16 @@
             width: 300px;
             padding: 8px;
         }
+        #school_area {
+            width: 300px;
+            padding: 8px;
+        }
     </style>
 </head>
 <body>
     <h1>Search for a Place</h1>
     <input id="place-search" type="text" placeholder="Search for a place...">
+    <input id="school_area" type="text" placeholder="Search for school_area...">
     
     <script>
         function initAutocomplete() {
@@ -34,6 +39,7 @@
                     const lng = place.geometry.location.lng();
 
                     // Print latitude and longitude
+                    console.log('from simple')
                     console.log('Selected place:', place.name);
                     console.log('Latitude:', lat);
                     console.log('Longitude:', lng);
@@ -44,8 +50,39 @@
             });
         }
 
-        // Initialize the autocomplete after the page loads
-        window.onload = initAutocomplete;
+        function initAutocomplete_school() {
+            // Reference to the input element
+            const input = document.getElementById('school_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    // Print latitude and longitude
+                    console.log('from school')
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
+            });
+        }
+
+        window.onload = function() {
+            initAutocomplete();
+            initAutocomplete_school();
+        };
     </script>
 </body>
 </html>

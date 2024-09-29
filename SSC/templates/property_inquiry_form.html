@@ -84,74 +84,97 @@
             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                 <h4>Personal Information</h4>
             </div>
-    
+
             <!-- Form body -->
             <form id="personal_information" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <!-- Customer Name -->
-                    <div class="col-md-4 form-group">
-                        <label for="name" class="form-label">
-                            Customer Name<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="name" class="form-label primary">
+                            Name
+                            <!-- <span class="required"> *</span> -->
                         </label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
                         <!-- autofocus -->
                     </div>
     
                     <!-- Mobile Number -->
-                    <div class="col-md-4 form-group">
-                        <label for="number" class="form-label">
-                            Number<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="number" class="form-label primary">
+                            Number
+                            <!-- <span class="required"> *</span> -->
                         </label>
-                        <input type="text" class="form-control" id="number" name="number" placeholder="Mobile number">
+                        <div class="row input-group">
+                            <div class="col-3">
+                                <select name="country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                  </select>
+                            </div>
+                            <div class="col-9">
+                                <input type="number" max="9999999999" min="0" class="form-control" id="number" name="number" placeholder="Mobile number">
+                            </div>
+                        </div>
                     </div>
     
                     <!-- WhatsApp Number -->
-                    <div class="col-md-4 form-group">
-                        <label for="whatsapp" class="form-label">
-                            WhatsApp<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="whatsapp" class="form-label primary">
+                            WhatsApp
+                            <!-- <span class="required"> *</span> -->
                         </label>
-                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">
+                        <div class="row input-group">
+                            <div class="col-3">
+                                <select name="country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                  </select>
+                            </div>
+                            <div class="col-9">
+                                <input type="number" max="9999999999" min="0" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">                                
+                            </div>
+                        </div>
                     </div>
-                </div>
-    
-                <div class="row">
+
                     <!-- Email Address -->
-                    <div class="col-md-4 form-group">
-                        <label for="email" class="form-label">
-                            Email Address<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="email" class="form-label primary">
+                            Email Address
+                            <!-- <span class="required"> *</span> -->
                         </label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="e.g. abc@website.com">
                     </div>
     
                     <!-- Profession -->
-                    <div class="col-md-4 form-group">
-                        <label for="profession" class="form-label">
-                            Profession<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="profession" class="form-label primary">
+                            Profession
+                            <!-- <span class="required"> *</span> -->
                         </label>
                         <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter Profession">
                     </div>
     
                     <!-- Current Residence -->
-                    <div class="col-md-4 form-group">
-                        <label for="residence" class="form-label">
-                            Current Residence<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="residence" class="form-label primary">
+                            Current Residence
+                            <!-- <span class="required"> *</span> -->
                         </label>
                         <input type="text" class="form-control" id="residence" name="residence" placeholder="Local area, Society">
                     </div>
-                </div>
-    
-                <div class="row">
+
                     <!-- Reference -->
-                    <div class="col-md-4 form-group">
-                        <label for="reference" class="form-label">
-                            Reference<span class="required"> *</span>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="reference" class="form-label primary">
+                            Reference
+                            <!-- <span class="required"> *</span> -->
                         </label>
                         <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference person name">
                     </div>
                 </div>
-                
+
             </form>
-    
+
         </div>
         <!-- Personal Infomation end -->
     
@@ -165,38 +188,60 @@
             <form id="family_demographics" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <!-- Why do you want to buy a house? -->
-                    <div class="col-md-12 form-group">
-                        <label for="why_buy_house" class="form-label primary">Why do you want to buy a house?</label>
+                    <div class="col-12 form-group">
+                        <label for="why_buy_house" class="form-label primary">Why do you want to buy a house?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="why_buy_house" id="Lifestyle_upgrade" value="Lifestyle upgrade">
+                            <label class="form-check-label" for="Lifestyle_upgrade">Lifestyle upgrade</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="why_buy_house" id="Investment" value="Investment">
+                            <label class="form-check-label" for="Investment">Investment</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="why_buy_house" id="Second home" value="Second home">
+                            <label class="form-check-label" for="Second home">Second home</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="why_buy_house" id="Relocation" value="Relocation">
+                            <label class="form-check-label" for="Relocation">Relocation</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="why_buy_house" id="Downsizing" value="Downsizing">
+                            <label class="form-check-label" for="Downsizing">Downsizing</label>
+                        </div>
+                        
                         <!-- <br> -->
                         <!-- <label for="why_buy_house" class="form-label">Select<span class="required"> *</span></label> -->
-                        <select id="why_buy_house" class="form-select" name="why_buy_house">
+                        <!-- <select id="why_buy_house" class="form-select" name="why_buy_house">
                             <option value="lifestyle_upgrade">Lifestyle upgrade</option>
                             <option value="investment">Investment</option>
                             <option value="second_home">Second home</option>
                             <option value="relocation">Relocation</option>
                             <option value="downsizing">Downsizing</option>
-                        </select>
+                        </select> -->
                     </div>
     
-                    <div class="col-md-12">
+                    <div class="col-12">
                         <label class="form-label primary">How many members are going to stay in the house?</label>
                     </div>
                     <!-- Adults -->
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label for="adults" class="form-label">Adults<span class="required"> *</span></label>
                         <input type="number" class="form-control" min="0" id="adults" value="0" name="adults" placeholder="02">
                     </div>
                     <!-- Children -->
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label for="children" class="form-label">Children<span class="required"> *</span></label>
                         <input type="number" class="form-control" min="0" id="children" value="0" name="children" placeholder="01">
                     </div>
                     <!-- Senior Citizens -->
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label for="senior_citizens" class="form-label">Senior Citizens<span class="required"> *</span></label>
                         <input type="number" class="form-control" min="0" id="senior_citizens" value="0" name="senior_citizens" placeholder="02">
                     </div>
-    
+                </div>
+                <div class="row">
                     <!-- Do you have pets? -->
                     <div class="col-md-6 form-group">
                         <label class="form-label primary">Do you have pets?</label><br>
@@ -213,28 +258,32 @@
                     <!-- Carpet Area -->
                     <div class="col-md-6 form-group">
                         <label for="current_residence_area" class="form-label primary">What is the carpet area of your current residence?</label>
-                        <input type="text" class="form-control" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
+                        <input type="number" class="form-control" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
                     </div>
         
                     <!-- Religious Place Preference -->
                     <div class="col-md-12 form-group">
                         <label class="form-label primary">Do you prefer derasar / mandir / gurudwara near your house?</label><br>
-                        <div class="row">
-                            <div class="col-3 form-check">
+                        <div class="">
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="derasar" name="religious_preference" value="derasar">
                                 <label class="form-check-label ml-1" for="derasar">Derasar</label>
                             </div>
-                            <div class="col-3 form-check">
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="mandir" name="religious_preference" value="mandir">
                                 <label class="form-check-label ml-1" for="mandir">Mandir</label>
                             </div>
-                            <div class="col-3 form-check">
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="gurudwara" name="religious_preference" value="gurudwara">
                                 <label class="form-check-label ml-1" for="gurudwara">Gurudwara</label>
                             </div>
-                            <div class="col-3 form-check">
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="maybe" name="religious_preference" value="maybe">
                                 <label class="form-check-label ml-1" for="maybe">Maybe</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id=" Not_preferred" name="religious_preference" value="Not preferred">
+                                <label class="form-check-label ml-1" for=" Not_preferred"> Not preferred</label>
                             </div>
                         </div>
                     </div>
@@ -242,17 +291,19 @@
                     <!-- Workplace Area -->
                     <div class="col-md-6 form-group">
                         <label for="workplace_area" class="form-label primary">In which area is your workplace?</label>
-                        <input type="text" class="form-control" id="workplace_area" name="workplace_area" placeholder="Enter area">
+                        <input type="text" class="form-control" id="workplace_area" placeholder="Enter location">
+                        <input type="hidden" id="workplace_area_value" name="workplace_area">
                     </div>
     
                     <!-- Children School Area -->
                     <div class="col-md-6 form-group">
                         <label for="school_area" class="form-label primary">In which area do your children go to school?</label>
-                        <input type="text" class="form-control" id="school_area" name="school_area" placeholder="Enter area">
+                        <input type="text" class="form-control" id="school_area" placeholder="Enter location">
+                        <input type="hidden" id="school_area_value" name="school_area">
                     </div>
     
                     <!-- Top 3 Preferred Locations -->
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-12 col-lg-6 form-group">
                         <label for="preferred_locations" class="form-label primary">What are your top 3 preferred locations?</label>
                         <br>
                         <input type="hidden" id="no_of_locations" value="0">
@@ -268,8 +319,8 @@
                     </div>
         
                     <!-- Property Buying Decision -->
-                    <div class="col-md-6 form-group">
-                        <label for="decision_driven_by" class="form-label primary">Property buying decision driven by?</label>
+                    <div class="col-md-12 col-lg-6 form-group">
+                        <label for="decision_driven_by" class="form-label primary">What is driving your property buying decisio?</label>
                         <select id="decision_driven_by" class="form-select" name="decision_driven_by">
                             <option value="budget_driven">Budget driven</option>
                             <option value="choice_driven">Choice driven</option>
@@ -277,7 +328,7 @@
                     </div>
     
                     <!-- Sell of old property? -->
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-12 col-lg-6 form-group">
                         <label class="form-label primary">Is this purchase dependent on the sell of another property you own?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="dependent_on_sale" id="sellPropertyYes" value="yes">
@@ -299,11 +350,11 @@
                         </select>
                     </div>    
                     
-                    <!-- Children School Area -->
+                    <!-- Time to seal deal -->
                     <div class="col-md-6 form-group">
                         <label for="time_to_seal_deal" class="form-label primary">In how much time do you want to seal the deal?</label>
                         <br>
-                        <label for="time_to_seal_deal" class="form-label">Timeline<span class="required"> *</span></label>
+                        <!-- <label for="time_to_seal_deal" class="form-label">Timeline<span class="required"> *</span></label> -->
                         <input type="number" min="1" class="form-control" id="time_to_seal_deal" name="time_to_seal_deal" placeholder="Enter number of days">
                     </div>
                                     
@@ -322,10 +373,10 @@
             <form id="house_specificaiton" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <!-- Bedrooms and Washrooms -->
-                    <div class="row col-md-6 form-group">
+                    <div class="row col-md-12 col-lg-6 form-group">
                         <label for="bedrooms" class="form-label primary">How many bedrooms do you need?</label>
 
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="1_bhk" id="1_bhk">
                                 <label class="form-check-label" for="1_bhk">1 BHK</label>
@@ -337,7 +388,7 @@
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="2_bhk" id="2_bhk">
                                 <label class="form-check-label" for="2_bhk">2 BHK</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-4">
                             <div class="form-check">
@@ -440,7 +491,7 @@
     
                     <!-- Private Elevator and Central AC -->
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary">Do you need a private elevator outside your residence?</label><br>
+                        <label class="form-label primary">Are you looking for a home with private elevator access?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="private_elevator" id="elevatorYes" value="yes">
                             <label class="form-check-label" for="elevatorYes">Yes</label>
@@ -582,12 +633,12 @@
                             <label class="form-check-label" for="society5">Township</label>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="society_type" value="Enter text" id="society6">
                             <label class="form-check-label" for="society6">Enter text</label>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
     
                 <div class="row mb-4">
@@ -640,7 +691,7 @@
                             <label class="form-check-label" for="amenity8">Community Hall</label>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="amenities" value="security_24_7" id="amenity9">
                             <label class="form-check-label" for="amenity9">Security 24X7</label>
@@ -651,7 +702,7 @@
                             <input class="form-check-input" type="checkbox" name="amenities" value="cctv_surveillance" id="amenity10">
                             <label class="form-check-label" for="amenity10">CCTV Surveillance</label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="amenities" value="power_backup" id="amenity11">
@@ -682,12 +733,12 @@
                             <label class="form-check-label" for="amenity15">Home Theatre</label>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="amenities" value="internet_connectivity" id="amenity16">
                             <label class="form-check-label" for="amenity16">Internet Connectivity</label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="amenities" value="guest_rooms" id="amenity17">
@@ -734,36 +785,42 @@
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <label for="minCr" class="form-label primary">What is your budget range for a house excluding interior cost and govt. charges?</label>
+                        <label for="minCr" class="form-label primary">What is your budget range for a house excluding interior cost and govt. charges? (in Cr)</label>
     
                     </div>
-                    <div class="col-md-6 form-group mb-5">
-                        <label for="maxCr" class="form-label">Min_Cr *</label>
-                        <input type="text" class="form-control" id="minCr" name="budget_min" placeholder="1">
+                    <div class="row col-md-12">
+                        <div class="col-md-4 form-group mb-5">
+                            <label for="maxCr" class="form-label">Min *</label>
+                            <input type="text" class="form-control" id="minCr" name="budget_min" placeholder="1">
+                        </div>
+                        <div class="col-md-4 form-group mb-5">
+                            <label for="maxCr" class="form-label">Max *</label>
+                            <input type="text" class="form-control" id="maxCr" name="budget_max" placeholder="5">
+                        </div>
                     </div>
-                    <div class="col-md-6 form-group mb-5">
-                        <label for="maxCr" class="form-label">Max_Cr *</label>
-                        <input type="text" class="form-control" id="maxCr" name="budget_max" placeholder="5">
-                    </div>
-            
-                    <div class="col-md-6 form-group mb-5">
+
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
                         <label for="percentage" class="form-label primary">How much down payment will you be able to make in % from the maximum range?*</label>
-                        <input type="text" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage">
+                        <div class="row col-md-12">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage">
+                            </div>
+                        </div>
                     </div>
             
-                    <div class="col-md-6 form-group mb-5">
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
                         <label for="loanAmount" class="form-label primary">Are you going to avail a home loan for this deal? What is the approved amount?*</label>
                         <input type="text" class="form-control" id="loanAmount" name="loan_approved_amount" placeholder="₹80,00,000">
                     </div>
             
-                    <div class="col-md-6 form-group mb-5">
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
                         <label for="needs" class="form-label primary">Are there any other specific needs or preferences that we have not covered?*</label>
-                        <textarea type="text" class="form-control" id="needs" name="specific_needs" placeholder="Enter text" rows="4"></textarea>
+                        <textarea type="text" class="form-control" id="needs" name="specific_needs" placeholder="Enter text" rows="1"></textarea>
                     </div>
             
-                    <div class="col-md-6 form-group mb-5">
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
                         <label for="concerns" class="form-label primary">Do you have any concerns or deal breakers that we should be aware of?*</label>
-                        <textarea type="text" class="form-control" id="concerns" name="concerns" placeholder="Enter text" rows="4"></textarea>
+                        <textarea type="text" class="form-control" id="concerns" name="concerns" placeholder="Enter text" rows="1"></textarea>
                     </div>
                     
                     <div class="col-md-12 text-center">
@@ -854,6 +911,66 @@
                     
                 }
 
+            });
+        }
+
+        function initAutocomplete_school() {
+            // Reference to the input element
+            const input = document.getElementById('school_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    // Print latitude and longitude
+                    console.log('from school')
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                    document.getElementById('school_area_value').value = `${lat}|${lng}`
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
+            });
+        }
+
+        function initAutocomplete_workplace() {
+            // Reference to the input element
+            const input = document.getElementById('workplace_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    // Print latitude and longitude
+                    console.log('from school')
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                    document.getElementById('workplace_area_value').value = `${lat}|${lng}`
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
             });
         }
 
@@ -1047,6 +1164,8 @@
 
         window.onload = function() {
             initAutocomplete();
+            initAutocomplete_school();
+            initAutocomplete_workplace();
             toggle_preloader();
         };
 

@@ -87,15 +87,17 @@
         <div class="mt-3 container">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <span class="property-name">{{main_property.building_id}} - {{main_property.name}}</span>
+                    <span class="property-name">{{main_property.name}}</span>
+                    {% if main_property.rera_approved == True %}
                     <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
+                    {% endif %}
                 </div>
                 <div class="col-12 col-md-6 text-start text-md-end">
-                    <div class="developer-name">By - {{main_property.group_name}}</div>
+                    <div class="property-location"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.location_of_project}}</div>
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <div class="property-location"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.location_of_project}}</div>
+                    <div class="developer-name">By - {{main_property.group_name}}</div>
                 </div>
                 <div class="col-12 col-md-6 text-start text-md-end">
                     <div class="icon-bar">
@@ -114,7 +116,7 @@
                             alt="Main Project Image">
                         <div class="overlay-text">{{main_property.name}}</div>
                         <!-- Golden Badge -->
-                        <div class="golden-badge">Premium Property</div>
+                        <!-- <div class="golden-badge">Premium Property</div> -->
                     </div>
                     <!-- Thumbnail Images (hidden on mobile/tablet) -->
                     <div class="col-lg-4 p-0">
@@ -185,8 +187,8 @@
                             <div class="col-10">
                                 <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
                                 <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
-                                <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span
-                                            class="text-primary-ssc"></span></b></p>
+                                <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span class="text-primary-ssc"></span></b></p>
                             </div>
                         </div>
                     </div>

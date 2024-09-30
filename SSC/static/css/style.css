@@ -68,12 +68,14 @@ body {
 }
 
 .property-location {
-    color: #777;
-    font-size: 1rem;
+    /* color: #777; */
+    color: #0d3b66;
+    font-size: 1.2rem;
+    
 }
 
 .developer-name {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: #777;
 }
 

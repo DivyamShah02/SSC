@@ -27,6 +27,7 @@ class BuildingDetails(models.Model):
     type_of_apartments = models.CharField(max_length=255)  # Multiple choice can be handled with a separate model if needed
     age_of_property_developer = models.PositiveIntegerField()
     age_of_property_rera = models.PositiveIntegerField()
+    rera_approved = models.BooleanField(default=False)
     plot_area = models.CharField(max_length=255)
     architect = models.CharField(max_length=255)
     construction_company = models.CharField(max_length=255)

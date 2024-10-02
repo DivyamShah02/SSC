@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/scc.css">
     <link rel="stylesheet" href="/static/css/loader.css">
     <title>{{main_property.building_id}} - {{main_property.name}}</title>
     <style>
@@ -256,8 +257,8 @@
                                 <h4 class="pt-2"><i class="fas fa-elevator text-secondary-ssc"></i></h4>
                             </div>
                             <div class="col-10">
-                                <p class="card-text text-light-ssc m-0"><b>Lift</b></p>
-                                <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_lifts_per_floor}}</b></h5>
+                                <p class="card-text text-light-ssc m-0"><b>Architect</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.developed_by}}</b></h5>
                                 <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                             </div>
                         </div>
@@ -268,37 +269,31 @@
         <!-- Property details end -->
 
         <div class="ssc-section container">
-            <div style="background-color: transparent !important;">
-                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link floor-plan-btn active" id="floor_plan-tab" data-bs-toggle="tab" href="#floor_plan"
-                            role="tab" aria-controls="floor_plan" aria-selected="false"><b>Floor Plan</b></a>
+            <div>
+                <ul class="nav nav-tabs sticky-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn active" id="floor_plan-tab" href="#floor_plan"><b>Floor Plan</b></a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link floor-plan-btn" id="amenties-tab" data-bs-toggle="tab" href="#amenties"
-                            role="tab" aria-controls="amenties" aria-selected="false"><b>Amenties</b></a>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="amenties-tab" href="#amenties"><b>Amenties</b></a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link floor-plan-btn" id="location-tab" data-bs-toggle="tab" href="#location"
-                            role="tab" aria-controls="location" aria-selected="false"><b>Location</b></a>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="location-tab" href="#location"><b>Location</b></a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link floor-plan-btn" id="price_information-tab" data-bs-toggle="tab"
-                            href="#price_information" role="tab" aria-controls="price_information"
-                            aria-selected="false"><b>Price Information</b></a>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="price_information-tab" href="#price_information"><b>Price Information</b></a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link floor-plan-btn" id="overview-tab" data-bs-toggle="tab" href="#overview"
-                            role="tab" aria-controls="overview" aria-selected="true"><b>Overview</b></a>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="overview-tab" href="#overview"><b>Overview</b></a>
                     </li>
                 </ul>
                 <!-- Tabs navs -->
 
                 <!-- Tabs content -->
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="floor_plan" role="tabpanel" aria-labelledby="floor_plan-tab">
+                <div class="" id="myTabContent">
+                    <div class="tabs-ssc mb-5" id="floor_plan">
                         <!-- Floor plan start -->
-                        <div class="scc-section container">
+                        <div class="scc-section container pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                                 <h4>Floor Plan</h4>
                             </div>
@@ -407,9 +402,9 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="amenties" role="tabpanel" aria-labelledby="amenties-tab">
+                    <div class="tabs-ssc my-5" id="amenties">
                         <!-- Amenties start -->
-                        <div class="scc-section container">
+                        <div class="scc-section container pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                                 <h4>Amenties</h4>
                             </div>
@@ -503,15 +498,15 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <div class="tabs-ssc my-5" id="location">
                         <!-- Location start -->
-                        <div class="scc-section container mt-5 mb-5" style="background-color: white !important;">
+                        <div class="scc-section container mt-5 mb-5 pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                                 <h4>Location</h4>
                             </div>
                             <div class="pt-3 mb-5" style="background-color: white !important;">
-                                <div class="mb-5">
-                                    <div class="map-one_map">
+                                <div class="mb-5" style="background-color: white !important;">
+                                    <div class="map-one_map" style="background-color: white !important;">
                                         <!-- <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
                                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -519,23 +514,24 @@
                                             <div id="place-details">Place Details Here</div>
             
                                             <!-- Map container -->
-                                            <div id="map"></div>
-
-                                            <ul id="commute-list">
-                                                <li>
-                                                    <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car</p>
-                                                </li>
-
-                                            </ul>
-                                            <div class="row" id="commute-searchbox">
-                                                <div class="col-6">
-                                                    <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
-                                                    <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" autofocus width="30%">
+                                            <div id="map" style="background-color: white !important;"></div>
+                                            <div class="p-3" style="background-color: white !important;">
+                                                <ul id="commute-list">
+                                                    <li>
+                                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car</p>
+                                                    </li>
+    
+                                                </ul>
+                                                <div class="row" id="commute-searchbox">
+                                                    <div class="col-6">
+                                                        <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                                        <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" autofocus width="30%">
+                                                    </div>
                                                 </div>
+
                                             </div>
                                     </div>
 
-                                    
                                 </div>
                             </div>
                             <div class="mt-5 p-5"></div>
@@ -544,9 +540,9 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="price_information" role="tabpanel" aria-labelledby="price_information-tab">
+                    <div class="tabs-ssc my-5" id="price_information">
                         <!-- Price start -->
-                        <div class="scc-section container">
+                        <div class="scc-section container pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                                 <h4>Price Information</h4>
                             </div>
@@ -591,9 +587,9 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="tabs-ssc my-5" id="overview">
                         <!-- More details start -->
-                        <div class="scc-section container">
+                        <div class="scc-section container pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                                 <h4>More Details</h4>
                             </div>
@@ -710,6 +706,33 @@
         crossorigin="anonymous"></script>
         
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places&callback=initMap" async defer></script>
+
+    <script>
+        // Function to add/remove 'active' class based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.tabs-ssc');
+            const navLinks = document.querySelectorAll('.nav-link-scc');
+
+            let currentSection = '';
+
+            // Loop through sections and determine which section is in view
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200; // Adjust offset as needed
+                if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Remove 'active' class from all nav links and add it to the current one
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
 
     <script>
         

@@ -70,11 +70,23 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="keyProjects">Key projects</label>
-                        <textarea class="form-control" id="keyProjects" name="keyProjects" rows="3"></textarea>
+                        <input type="text" class="form-control" id="key_projects_1" name="key_projects" placeholder="Key Project 1">
+                        <input type="text" class="form-control" id="key_projects_2" name="key_projects" placeholder="Key Project 2">
+                        <input type="text" class="form-control" id="key_projects_3" name="key_projects" placeholder="Key Project 3">
+                        <input type="text" class="form-control" id="key_projects_4" name="key_projects" placeholder="Key Project 4">
+                        <input type="text" class="form-control" id="key_projects_5" name="key_projects" placeholder="Key Project 5">
+
+                        <!-- <textarea class="form-control" id="keyProjects" name="keyProjects" rows="3"></textarea> -->
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="keyPromoters">Key promoters</label>
-                        <textarea class="form-control" id="keyPromoters" name="keyPromoters" rows="3"></textarea>
+                        <input type="text" class="form-control" id="key_promoters_1" name="keyPromoters" placeholder="Key Promoter 1">
+                        <input type="text" class="form-control" id="key_promoters_2" name="keyPromoters" placeholder="Key Promoter 2">
+                        <input type="text" class="form-control" id="key_promoters_3" name="keyPromoters" placeholder="Key Promoter 3">
+                        <input type="text" class="form-control" id="key_promoters_4" name="keyPromoters" placeholder="Key Promoter 4">
+                        <input type="text" class="form-control" id="key_promoters_5" name="keyPromoters" placeholder="Key Promoter 5">
+
+                        <!-- <textarea class="form-control" id="keyPromoters" name="keyPromoters" rows="3"></textarea> -->
                     </div>
                 </div>
             </form>
@@ -215,7 +227,7 @@
                     <div class="row col-md-12 form-group">
                         <label for="bedrooms" class="form-label primary">Type of apartments (multiple choice)</label>
 
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="1_bhk" id="1_bhk">
                                 <label class="form-check-label" for="1_bhk">1 BHK</label>
@@ -228,7 +240,7 @@
                                     id="2_bhk">
                                 <label class="form-check-label" for="2_bhk">2 BHK</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-4">
                             <div class="form-check">
@@ -296,7 +308,7 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="numberOfFloors">No. Floors</label>
-                        <input type="number" class="form-control" id="numberOfFloors" name="numberOfFloors" placeholder="Enter number of floors">
+                        <input type="number" class="form-control" id="numberOfFloors" name="numberOfFloors" placeholder="Enter number of floors" value="10">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="numberOfBasements">No. of Basements</label>
@@ -508,19 +520,7 @@
                             <option value="Hydraulic with Valet">Hydraulic with Valet</option>
                         </select>
                     </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="plcOptions">PLC Options</label><br>
-                        <select class="form-select" id="plcOptions" name="plcOptions">
-                            <option value="Garden">Garden</option>
-                            <option value="Road Facing">Road Facing</option>
-                            <option value="Corner">Corner</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="floorRise">Floor rise</label>
-                        <input type="text" class="form-control" id="floorRise" name="floorRise">
-                    </div>
+
                 </div>
             </form>
         </div>
@@ -689,11 +689,7 @@
                                             <input type="number" class="form-control" id="parkingAllotted" placeholder="Enter number of parking space"
                                                 name="parkingAllotted">
                                         </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="perSqFtRate">Per Sq. Ft. rate on
-                                                saleable</label>
-                                            <input type="text" class="form-control" id="perSqFtRate" name="perSqFtRate" placeholder="Enter rate of Per Sq. Ft.">
-                                        </div>
+                                        
                                     </div>
                                 </form>
 
@@ -722,6 +718,88 @@
             <!-- Form body -->
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="perSqFtRate">Per Sq. Ft. rate on
+                            saleable</label>
+                        <input type="text" class="form-control" id="perSqFtRate" name="perSqFtRate" placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label primary">PLC Options</label>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_garden" class="form-label">Garden<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_garden" value="0" name="plcOptions_garden" placeholder="20">
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_road_facing" class="form-label">Road Facing<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_road_facing" value="0" name="plcOptions_road_facing" placeholder="50">
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_corner" class="form-label">Corner<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_corner" value="0" name="plcOptions_corner" placeholder="40">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_others" class="form-label">Others<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_others" value="0" name="plcOptions_others" placeholder="02">
+                    </div>
+
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plcOptions">PLC Options</label><br>
+                        <select class="form-select" id="plcOptions" name="plcOptions">
+                            <option value="Garden">Garden</option>
+                            <option value="Road Facing">Road Facing</option>
+                            <option value="Corner">Corner</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div> -->
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="floorRise">Floor rise</label><br>
+                        <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal"
+                        data-bs-target="#floorrisemodal" id="addFloorRiseBtn">
+                        Add Floor Rise
+                    </button>
+                        <input type="text" class="form-control" id="floorRise" name="floorRise">
+                    </div>
+
+                    <div class="modal fade" id="floorrisemodal" tabindex="-1" aria-labelledby="floorrisemodalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header"
+                                    style="background-color: var(--primary-color); color: white;">
+                                    <h1 class="modal-title fs-5" id="floorrisemodalLabel">Floor Rise Prices</h1>
+                                    <button type="button" class="btn-close" style="filter: invert(10);"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-5">
+                                    <table id="floorRiseTable" class="table table-striped table-hover" style="border: 3px solid var(--primary-color); border-radius: 20px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Floor Number</th>
+                                                <th>Price</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="floor_rise_table"></tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">                                   
+                                    <button type="button" id="floorrise_modal_close" class="btn btn-custom"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-custom-primary" id="saveChangesBtn">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developmentCharges">Development charges (AMC/Torrent
                             etc)</label>
@@ -900,7 +978,6 @@
 
     </script>
 
-
     <script>
         let property_detail = {}
         property_detail['units'] = []
@@ -1059,31 +1136,86 @@
             document.getElementById('spinner').classList.toggle('spinner-container');
         }
 
-        const bedroom_checkboxes = document.querySelectorAll('input[name="bedrooms"]');
-        const bedroom_maxSelection = 2;
+        document.getElementById('addFloorRiseBtn').addEventListener('click', function () {
+            let totalFloors = document.getElementById('numberOfFloors').value;
 
-        bedroom_checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const checkedBoxes = document.querySelectorAll('input[name="bedrooms"]:checked');
-                if (checkedBoxes.length > bedroom_maxSelection) {
-                    checkbox.checked = false;
-                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
+            if (!totalFloors || totalFloors <= 0) {
+                alert("Please enter a valid number of floors.");
+                return;
+            }
+
+            // Clear previous rows if any
+            let tableBody = document.getElementById('floor_rise_table');
+            tableBody.innerHTML = '';
+
+            // Create table rows dynamically based on floor number
+            for (let i = 1; i <= totalFloors; i++) {
+                let row = document.createElement('tr');
+
+                // Floor Number (pre-filled)
+                let floorCell = document.createElement('td');
+                // floorCell.textContent = i;
+                floorCell.innerHTML = `<b>${i}</b>`
+                row.appendChild(floorCell);
+
+                // Price Input
+                let priceCell = document.createElement('td');
+                let priceInput = document.createElement('input');
+                priceInput.type = 'number';
+                priceInput.name = `floorPrice_${i}`;
+                priceInput.className = 'priceInput';
+                priceInput.classList.add('form-control')
+                priceInput.placeholder = 'Enter price...'
+                priceCell.appendChild(priceInput);
+                row.appendChild(priceCell);
+                
+
+                // Action (Copy button)
+                let actionCell = document.createElement('td');
+                let copyBtn = document.createElement('button');
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.add('btn', 'btn-outline-dark');
+                copyBtn.type = 'button'
+                copyBtn.setAttribute('data-floor', i);
+                copyBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
+                        priceInput.value = prevPrice;
+                    }
+                });
+                if (i > 1){
+                    actionCell.appendChild(copyBtn);
+                    
                 }
-            });
+                row.appendChild(actionCell);
+
+                // Append the row to the table body
+                tableBody.appendChild(row);
+            }
+
         });
 
-        const amenities_checkboxes = document.querySelectorAll('input[name="amenities"]');
-        const amenities_maxSelection = 5;
+        // Handle saving the data
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            let prices = [];
+            let totalFloors = document.getElementById('numberOfFloors').value;
+            console.log('esgrea')
 
-        amenities_checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const checkedBoxes = document.querySelectorAll('input[name="amenities"]:checked');
-                if (checkedBoxes.length > amenities_maxSelection) {
-                    checkbox.checked = false;
-                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
-                }
-            });
+            for (let i = 1; i <= totalFloors; i++) {
+                let price = document.querySelector(`input[name=floorPrice_${i}]`).value;
+                prices.push({ floor: i, price: price });
+            }
+
+            // Send the data to the backend (for demo, we log it to the console)
+            console.log(prices);
+            property_detail['floor_rise_prices'] = prices
+            document.getElementById('floorrise_modal_close').click()
+
+
+            // Close modal
+            
         });
+    
 
         window.onload = function () {
             toggle_preloader();

@@ -320,11 +320,21 @@
         
                     <!-- Property Buying Decision -->
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="decision_driven_by" class="form-label primary">What is driving your property buying decisio?</label>
-                        <select id="decision_driven_by" class="form-select" name="decision_driven_by">
+                        <label for="decision_driven_by" class="form-label primary">What is driving your property buying decision?</label><br>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="decision_driven_by" id="budget_driven" value="Budget driven">
+                            <label class="form-check-label" for="budget_driven">Budget driven</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="decision_driven_by" id="choice_driven" value="Choice driven">
+                            <label class="form-check-label" for="choice_driven">Choice driven</label>
+                        </div>
+
+                        <!-- <select id="decision_driven_by" class="form-select" name="decision_driven_by">
                             <option value="budget_driven">Budget driven</option>
                             <option value="choice_driven">Choice driven</option>
-                        </select>
+                        </select> -->
                     </div>
     
                     <!-- Sell of old property? -->
@@ -342,12 +352,26 @@
     
                     <!-- How long are you looking for house -->
                     <div class="col-md-6 form-group">
-                        <label for="looking_since" class="form-label primary">Since how long are you looking for a house?</label>
-                        <select id="looking_since" class="form-select" name="looking_since">
+                        <label for="looking_since" class="form-label primary">Since how long are you looking for a house?</label><br>
+                        
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="looking_since" id="just_started" value="just_started">
+                            <label class="form-check-label" for="just_started">Just started</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="looking_since" id="6_to_12_months" value="6_to_12_months">
+                            <label class="form-check-label" for="6_to_12_months">6 - 12 months</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="looking_since" id="12_to_24_months" value="12_to_24_months">
+                            <label class="form-check-label" for="12_to_24_months">12 to 24 months</label>
+                        </div>
+
+                        <!-- <select id="looking_since" class="form-select" name="looking_since">
                             <option value="just_started">Just started</option>
                             <option value="6_to_12_months">6 - 12 months</option>
                             <option value="12_to_24_months">12 to 24 months</option>
-                        </select>
+                        </select> -->
                     </div>    
                     
                     <!-- Time to seal deal -->
@@ -390,28 +414,28 @@
                             </div>
                         </div> -->
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="3_bhk" id="3_bhk">
                                 <label class="form-check-label" for="3_bhk">3 BHK</label>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="4_bhk" id="4_bhk">
                                 <label class="form-check-label" for="4_bhk">4 BHK</label>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="5_bhk" id="5_bhk">
                                 <label class="form-check-label" for="5_bhk">5 BHK</label>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="bedrooms" value="6_bhk" id="6_bhk">
                                 <label class="form-check-label" for="6_bhk">6 BHK</label>
@@ -421,14 +445,38 @@
                     </div>
     
                     <div class="col-md-6 form-group">
-                        <label for="attached_washrooms" class="form-label primary">How many attached washrooms should your house have?</label>
-                        <select id="attached_washrooms" name="attached_washrooms" class="form-select">
+                        <label for="attached_washrooms" class="form-label primary">How many attached washrooms should your house have?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_1" value="1">
+                            <label class="form-check-label" for="attached_washrooms_1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_2" value="2">
+                            <label class="form-check-label" for="attached_washrooms_2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_3" value="3">
+                            <label class="form-check-label" for="attached_washrooms_3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_4" value="4">
+                            <label class="form-check-label" for="attached_washrooms_4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_5" value="5">
+                            <label class="form-check-label" for="attached_washrooms_5">5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_6" value="6">
+                            <label class="form-check-label" for="attached_washrooms_6">6</label>
+                        </div>
+                        <!-- <select id="attached_washrooms" name="attached_washrooms" class="form-select">
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
-                        </select>
+                        </select> -->
                     </div>
 
                     <!-- Servant room and Puja room -->
@@ -469,24 +517,62 @@
     
                     <!-- Flats and Floor Preference -->
                     <div class="col-md-6 form-group">
-                        <label for="flats_per_floor" class="form-label primary">How many flats do you prefer on one floor? <span class="required">*</span></label>
-                        <select id="flats_per_floor" name="flats_per_floor" class="form-select">
+                        <label for="flats_per_floor" class="form-label primary">How many flats do you prefer on one floor? <span class="required">*</span></label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flats_per_floor" id="flats_per_floor_1-2" value="1 - 2">
+                            <label class="form-check-label" for="flats_per_floor_1-2">1 - 2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flats_per_floor" id="flats_per_floor_3-4" value="3 - 4">
+                            <label class="form-check-label" for="flats_per_floor_3-4">3 - 4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flats_per_floor" id="flats_per_floor_5+" value="5+">
+                            <label class="form-check-label" for="flats_per_floor_5+">5+</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flats_per_floor" id="flats_per_floor_flexible" value="Flexible">
+                            <label class="form-check-label" for="flats_per_floor_flexible">Flexible</label>
+                        </div>
+                        
+                        <!-- <select id="flats_per_floor" name="flats_per_floor" class="form-select">
                             <option value="1-2">1 - 2</option>
                             <option value="3-4">3 - 4</option>
                             <option value="5+">5+</option>
                             <option value="flexible">Flexible</option>
-                        </select>
+                        </select> -->
                     </div>
     
                     <div class="col-md-6 form-group">
-                        <label for="floor_preference" class="form-label primary">What is your floor preference?</label>
-                        <select id="floor_preference" name="floor_preference" class="form-select">
+                        <label for="floor_preference" class="form-label primary">What is your floor preference?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="floor_preference" id="floor_preference_1-5" value="1 to 5">
+                            <label class="form-check-label" for="floor_preference_1-5">1 to 5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="floor_preference" id="floor_preference_6-12" value="6 to 12">
+                            <label class="form-check-label" for="floor_preference_6-12">6 to 12</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="floor_preference" id="floor_preference_13-20" value="13 to 20">
+                            <label class="form-check-label" for="floor_preference_13-20">13 to 20</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="floor_preference" id="floor_preference_above_21" value="Above 21">
+                            <label class="form-check-label" for="floor_preference_above_21">Above 21</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="floor_preference" id="floor_preference_flexible" value="Flexible">
+                            <label class="form-check-label" for="floor_preference_flexible">Flexible</label>
+                        </div>
+
+                        <!-- <select id="floor_preference" name="floor_preference" class="form-select">
                             <option value="1-5">1 to 5</option>
                             <option value="6-12">6 to 12</option>
                             <option value="13-20">13 to 20</option>
                             <option value="above_21">Above 21</option>
                             <option value="flexible">Flexible</option>
-                        </select>
+                        </select> -->
                     </div>
     
                     <!-- Private Elevator and Central AC -->
@@ -524,13 +610,33 @@
     
                     <!-- Parking Slots and Stack Parking -->
                     <div class="col-md-6 form-group">
-                        <label for="parkingSlots" class="form-label primary">What are the minimum number of parking slots required?</label>
-                        <select id="parkingSlots" class="form-select" name="min_parking_slots">
+                        <label for="parkingSlots" class="form-label primary">What are the minimum number of parking slots required?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_1" value="1">
+                            <label class="form-check-label" for="min_parking_slots_1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_2" value="2">
+                            <label class="form-check-label" for="min_parking_slots_2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_3" value="3">
+                            <label class="form-check-label" for="min_parking_slots_3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_4" value="4">
+                            <label class="form-check-label" for="min_parking_slots_4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_flexible" value="Flexible">
+                            <label class="form-check-label" for="min_parking_slots_flexible">Flexible</label>
+                        </div>
+                        <!-- <select id="parkingSlots" class="form-select" name="min_parking_slots">
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="flexible">Flexible</option>
-                        </select>
+                        </select> -->
                     </div>
     
                     <div class="col-md-6 form-group">
@@ -789,11 +895,11 @@
     
                     </div>
                     <div class="row col-md-12">
-                        <div class="col-md-4 form-group mb-5">
+                        <div class="col-md-6 form-group mb-5">
                             <label for="maxCr" class="form-label">Min *</label>
                             <input type="text" class="form-control" id="minCr" name="budget_min" placeholder="1">
                         </div>
-                        <div class="col-md-4 form-group mb-5">
+                        <div class="col-md-6 form-group mb-5">
                             <label for="maxCr" class="form-label">Max *</label>
                             <input type="text" class="form-control" id="maxCr" name="budget_max" placeholder="5">
                         </div>

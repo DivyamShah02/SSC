@@ -34,7 +34,7 @@
             </a>
             <div class="row">
                 <div class="col-6">
-                    <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
                 </div>
                 <div class="col-6">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -87,17 +87,20 @@
         <!-- Basic Property Detail start -->
         <div class="mt-3 container">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <span class="property-name">{{main_property.name}}</span>
-                    {% if main_property.rera_approved == True %}
-                    <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
-                    {% endif %}
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <span class="property-name">{{main_property.name}}</span>
+                        {% if main_property.rera_approved == True %}
+                        <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
+                        {% endif %}
+                        <div class="developer-name">By - {{main_property.group_name}}</div>
+                    </div>
+                    <div class="col-12 col-md-6 text-start text-md-end">
+                        <div class="property-name"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.location_of_project}}</div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 text-start text-md-end">
-                    <div class="property-location"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.location_of_project}}</div>
-                </div>
-
-                <div class="col-12 col-md-6">
+                
+                <!-- <div class="col-12 col-md-6">
                     <div class="developer-name">By - {{main_property.group_name}}</div>
                 </div>
                 <div class="col-12 col-md-6 text-start text-md-end">
@@ -106,7 +109,7 @@
                         <i class="fa fa-heart"></i>
                         <i class="fa fa-share-nodes"></i>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-12 mt-4"></div>
 
@@ -525,7 +528,7 @@
                                                 <div class="row" id="commute-searchbox">
                                                     <div class="col-6">
                                                         <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
-                                                        <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" autofocus width="30%">
+                                                        <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" width="30%">
                                                     </div>
                                                 </div>
 

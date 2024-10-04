@@ -114,7 +114,7 @@ class Sorter:
                         unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
                         base_price__gte=budget_min,
                         base_price__lte=budget_max
-                        )  # Assuming unit_type as 'Simplex'
+                        )
 
                     for property in property_unit_matched:    validated_property.append(property.id)
 

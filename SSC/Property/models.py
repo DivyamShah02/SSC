@@ -6,27 +6,29 @@ class BuildingDetails(models.Model):
     building_id = models.CharField(max_length=255, unique=True)
 
     group_name = models.CharField(max_length=255)
-    head_image = models.ImageField(upload_to='property')
-    sec_image_1 = models.ImageField(upload_to='property')
-    sec_image_2 = models.ImageField(upload_to='property')
+    head_image = models.ImageField(upload_to='property', null=True, blank=True)
+    sec_image_1 = models.ImageField(upload_to='property', null=True, blank=True)
+    sec_image_2 = models.ImageField(upload_to='property', null=True, blank=True)
     year_of_establishment = models.PositiveIntegerField()
     no_of_projects_delivered = models.PositiveIntegerField()
     key_projects = models.TextField()
     key_promoters = models.TextField()
     name = models.CharField(max_length=255)
     number = models.CharField(max_length=15)
+    email = models.EmailField(default='', null=True, blank=True)
     alternate_name = models.CharField(max_length=255, null=True, blank=True)
     alternate_number = models.CharField(max_length=15, null=True, blank=True)
-    project_id = models.CharField(max_length=255)
-    project_name = models.CharField(max_length=255)
-    developed_by = models.CharField(max_length=255)
-    location_of_project = models.TextField()
-    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the current location pin
-    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the current location pin
+    alternate_email = models.EmailField(default='', null=True, blank=True)
+    project_id = models.CharField(max_length=255, null=True, blank=True)
+    project_name = models.CharField(max_length=255, null=True, blank=True)
+    developed_by = models.CharField(max_length=255, null=True, blank=True)
+    location_of_project = models.TextField(null=True, blank=True)
+    google_pin_lat = models.CharField(max_length=255, default="") 
+    google_pin_lng = models.CharField(max_length=255, default="") 
     type_of_project = models.CharField(max_length=255)
-    type_of_apartments = models.CharField(max_length=255)  # Multiple choice can be handled with a separate model if needed
-    age_of_property_developer = models.PositiveIntegerField()
-    age_of_property_rera = models.PositiveIntegerField()
+    type_of_apartments = models.CharField(max_length=255)
+    age_of_property_by_developer = models.TextField(max_length=15, default='', null=True, blank=True)
+    age_of_property_rera = models.TextField(max_length=15, default='', null=True, blank=True)
     rera_approved = models.BooleanField(default=False)
     plot_area = models.CharField(max_length=255)
     architect = models.CharField(max_length=255)
@@ -39,17 +41,22 @@ class BuildingDetails(models.Model):
     pet_friendly = models.BooleanField(default=False)
     spiritual_or_religious_attraction = models.TextField(null=True, blank=True, default='')
     type_of_parking = models.CharField(max_length=255)
-    plc = models.DecimalField(max_digits=10, decimal_places=2)  # PLC could be a decimal field for price
-    floor_rise = models.DecimalField(max_digits=10, decimal_places=2)
-    development_charges = models.DecimalField(max_digits=10, decimal_places=2)  # AMC/Torrent etc
-    advance_maintenance = models.DecimalField(max_digits=10, decimal_places=2)
-    maintenance_deposit = models.DecimalField(max_digits=10, decimal_places=2)
-    other_specific_expenses = models.TextField(null=True, blank=True)
-    sale_deed_value_min = models.DecimalField(max_digits=15, decimal_places=2)
-    sale_deed_value_max = models.DecimalField(max_digits=15, decimal_places=2)
-    gst_applicable = models.DecimalField(max_digits=4, decimal_places=2)  # GST percentage
+    plc_garden = models.CharField(max_length=20, default=0, blank=True, null=True)
+    plc_road_facing = models.CharField(max_length=20, default=0, blank=True, null=True)
+    plc_corner = models.CharField(max_length=20, default=0, blank=True, null=True)
+    plc_others = models.CharField(max_length=20, default=0, blank=True, null=True)
+    floor_rise = models.TextField(null=True, blank=True)
+    development_charges = models.CharField(max_length=20, default=0, blank=True, null=True)
+    advance_maintenance = models.CharField(max_length=20, default=0, blank=True, null=True)
+    maintenance_deposit = models.CharField(max_length=20, default=0, blank=True, null=True)
+    other_specific_expenses = models.CharField(max_length=20, default=0, null=True, blank=True)
+    sale_deed_value = models.CharField(max_length=20, default=0, blank=True, null=True)
+    sale_deed_value_min = models.CharField(max_length=20, default=0, blank=True, null=True)
+    sale_deed_value_max = models.CharField(max_length=20, default=0, blank=True, null=True)
+    gst_applicable = models.CharField(max_length=20, default=0, blank=True, null=True)
     loan_availability = models.BooleanField(default=False)
     remarks = models.TextField(null=True, blank=True)
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.group_name} - {self.project_name}"
@@ -64,19 +71,23 @@ class UnitDetails(models.Model):
     no_of_lifts_per_floor = models.PositiveIntegerField()
     private_lifts = models.BooleanField(default=False)
     common_terrace_accessible = models.BooleanField(default=False)
-    size_of_private_terrace = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  # in square feet
-    size_of_unit = models.DecimalField(max_digits=10, decimal_places=2)  # in square feet
-    carpet_area_rera = models.DecimalField(max_digits=10, decimal_places=2)  # in square feet
+    size_of_private_terrace = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    size_of_unit = models.DecimalField(max_digits=10, decimal_places=2)
+    carpet_area_rera = models.DecimalField(max_digits=10, decimal_places=2)
     jodi_possible = models.BooleanField(default=False)
     no_of_attached_bathrooms = models.PositiveIntegerField()
     servant_room_available = models.BooleanField(default=False)
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.PositiveIntegerField()
+    size_of_balcony = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
+    size_of_master_bedroom = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
+    size_of_kitchen = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
     no_of_parking_allotted = models.PositiveIntegerField()
     per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)
-    base_price = models.DecimalField(max_digits=20, decimal_places=2)
-    google_pin_lat = models.CharField(max_length=255, default="")  # to be filled with the lat
-    google_pin_lng = models.CharField(max_length=255, default="")  # to be filled with the lng
+    base_price = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    google_pin_lat = models.CharField(max_length=255, default="")
+    google_pin_lng = models.CharField(max_length=255, default="")
+    active = models.BooleanField(default=False)
 
 
     def __str__(self):

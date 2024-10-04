@@ -85,6 +85,3 @@ class PropertyActiveFormViewSet(viewsets.ViewSet):
         all_units = UnitDetails.objects.get(building_id=building_id)
         print(all_units.building_id)
 
-
-
-

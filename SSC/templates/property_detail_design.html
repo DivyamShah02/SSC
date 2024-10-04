@@ -558,20 +558,49 @@
                                 </thead> -->
                                 <tbody class="">
                                     <tr>
-                                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc"></i></td>
+                                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{per_sqft_rate_saleable}}k /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹2.1 Cr</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Parking Cost</td>
+                                        <td class="px-4 py-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    PLC Options
+                                                    <select id="" name="" class="form-select">
+                                                        <option value="1-5"><b>None</b></option>
+                                                        <option value="1-5"><b>Garden</b> : {{main_property.plc_garden}}/Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="1-5"><b>Road Facing</b> : {{main_property.plc_road_facing}}/Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="1-5"><b>Corner</b> : {{main_property.plc_corner}}/Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="1-5"><b>Others</b> : {{main_property.plc_others}}/Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <th class="text-end py-3 px-4">₹2 L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Municipalty Tax</td>
+                                        <td class="px-4 py-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    Floor Rise
+                                                    <select id="" name="" class="form-select">
+                                                        <option value="1-5"><b>None</b></option>
+                                                        {% for floor in floor_rise %}
+                                                        <option value="1-5"><b>Floor {{floor.floor}}</b> : {{floor.price}}/Sq.Ft * {{unit_data.size_of_unit}}</option>                                                        
+                                                        {% endfor %}                                                    
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <th class="text-end py-3 px-4">₹1.5 L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Corporation Tax</td>
-                                        <th class="text-end py-3 px-4">₹1.5 L</th>
+                                        <td class="px-4 py-3">Development Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.development_charges}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{development_charges}} L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Advance Maintenance &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{advance_maintenance_rate}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{advance_maintenance}} L</th>
                                     </tr>
                                     <tr>
                                         <td class="px-4 py-3">Additional Tax</td>

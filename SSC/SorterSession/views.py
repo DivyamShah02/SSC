@@ -11,6 +11,7 @@ from rest_framework import viewsets
 from rest_framework.exceptions import NotFound, ParseError
 from django.shortcuts import get_object_or_404, render
 import json
+import ast
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance
@@ -323,7 +324,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         other_amenities.append(amenity)
 
             size_of_unit = float(unit_data.get('size_of_unit'))
-            property_unit_price = round((size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))) / 10000000, 2)
+            property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
 
             size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
@@ -336,6 +337,22 @@ class PropertyDetailViewset(viewsets.ViewSet):
             next_ind = False
             if ind+1 <= 15:
                 next_ind = ind+1
+
+            floor_rise_str = building_data['floor_rise']
+
+            # Convert the string to a list of dictionaries
+            floor_rise = ast.literal_eval(floor_rise_str)
+
+            advance_maintenance_rate = round((float(building_data['advance_maintenance']) / 24), 2)
+            total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+            advance_maintenance = round(total_advance_maintenance / 100000, 2)
+
+            total_development_charges = size_of_unit * float(building_data['development_charges'])
+            development_charges = round(total_development_charges / 100000, 2)
+            
+            print(property_unit_price)
+            property_unit_price = round((property_unit_price + total_advance_maintenance + total_development_charges) / 10000000, 2)
+
 
             data = {
                 'success': True, 
@@ -355,6 +372,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'client_data':client_data,
                 'client_prefered_amenities':client_prefered_amenities,
                 'other_amenities':other_amenities,
+                'floor_rise':floor_rise,
+                'advance_maintenance_rate':advance_maintenance_rate,
+                'advance_maintenance':advance_maintenance,
+                'development_charges':development_charges,
                 }
             
             return render(request, 'property_detail_design.html', data)

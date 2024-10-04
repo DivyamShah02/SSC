@@ -27,6 +27,7 @@ class BuildingDetails(models.Model):
     google_pin_lng = models.CharField(max_length=255, default="") 
     type_of_project = models.CharField(max_length=255)
     type_of_apartments = models.CharField(max_length=255)
+    possession_by = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_by_developer = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_rera = models.TextField(max_length=15, default='', null=True, blank=True)
     rera_approved = models.BooleanField(default=False)

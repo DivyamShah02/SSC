@@ -172,7 +172,7 @@
                                 <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
                             </div>
                             <div class="col-10">
-                                <p class="card-text text-light-ssc m-0"><b>Price Range</b></p>
+                                <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
                                 <h5 class="card-title text-primary-ssc"><b>₹{{property_unit_price}} Cr</b></h5>
                                 <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft</b></p>
 
@@ -246,8 +246,8 @@
                                 <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
                             </div>
                             <div class="col-10">
-                                <p class="card-text text-light-ssc m-0"><b>Servant Room</b></p>
-                                <h5 class="card-title text-primary-ssc"><b>100 * 80 Sq. Ft.</b></h5>
+                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.developed_by}}</b></h5>
                                 <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                             </div>
                         </div>
@@ -559,7 +559,7 @@
                                 <tbody class="">
                                     <tr>
                                         <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{per_sqft_rate_saleable}}k /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
-                                        <th class="text-end py-3 px-4">₹2.1 Cr</th>
+                                        <th class="text-end py-3 px-4">₹{{basic_price}} Cr</th>
                                     </tr>
                                     <tr>
                                         <td class="px-4 py-3">
@@ -603,13 +603,25 @@
                                         <th class="text-end py-3 px-4">₹{{advance_maintenance}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Additional Tax</td>
-                                        <th class="text-end py-3 px-4">₹1 L</th>
+                                        <td class="px-4 py-3">Maintenance Deposit &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.maintenance_deposit}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{maintenance_deposit}} L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Other Expenses &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{other_specific_expenses}} L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Government Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{government_charges}} L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">GST ({{main_property.gst_applicable}}%)&nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <th class="text-end py-3 px-4">₹{{gst}} L</th>
                                     </tr>
                                     <tr>
                                         <th class="px-4 py-3">Grand Total</td>
                                         <th class="text-end py-3 px-4">
-                                            <h5 class="text-primary-ssc"><b>₹2.16 CR</b></h5>
+                                            <h5 class="text-primary-ssc"><b>₹{{property_unit_price}} CR</b></h5>
                                         </th>
                                     </tr>
                                 </tbody>

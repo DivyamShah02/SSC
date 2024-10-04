@@ -325,6 +325,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             size_of_unit = float(unit_data.get('size_of_unit'))
             property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
+            basic_price = round(property_unit_price/ 10000000, 2)
+
 
             size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
@@ -342,16 +344,57 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             # Convert the string to a list of dictionaries
             floor_rise = ast.literal_eval(floor_rise_str)
-
-            advance_maintenance_rate = round((float(building_data['advance_maintenance']) / 24), 2)
-            total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
-            advance_maintenance = round(total_advance_maintenance / 100000, 2)
-
-            total_development_charges = size_of_unit * float(building_data['development_charges'])
-            development_charges = round(total_development_charges / 100000, 2)
             
-            print(property_unit_price)
-            property_unit_price = round((property_unit_price + total_advance_maintenance + total_development_charges) / 10000000, 2)
+            try:
+                total_development_charges = size_of_unit * float(building_data['development_charges'])
+                development_charges = round(total_development_charges / 100000, 2)
+            except:
+                total_development_charges = 0
+                development_charges = 0
+
+            
+            try:            
+                advance_maintenance_rate = round((float(building_data['advance_maintenance']) / 24), 2)
+                total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                advance_maintenance = round(total_advance_maintenance / 100000, 2)
+            except:
+                advance_maintenance_rate = 0
+                total_advance_maintenance = 0
+                advance_maintenance = 0
+
+            
+            try:
+                total_maintenance_deposit = size_of_unit * float(building_data['maintenance_deposit'])
+                maintenance_deposit = round(total_maintenance_deposit / 100000, 2)
+            except:
+                total_maintenance_deposit = 0
+                maintenance_deposit = 0
+
+            
+            try:            
+                total_other_specific_expenses = size_of_unit * float(building_data['other_specific_expenses'])
+                other_specific_expenses = round(total_other_specific_expenses / 100000, 2)
+            except:
+                total_other_specific_expenses = 0
+                other_specific_expenses = 0
+
+
+            try:            
+                total_government_charges = (property_unit_price * (float(building_data['sale_deed_value'])/100)) * 5.9 / 100
+                government_charges = round(total_government_charges / 100000, 2)
+            except:
+                total_government_charges = 0
+                government_charges = 0
+
+            try:            
+                total_gst = (property_unit_price * (float(building_data['sale_deed_value'])/100)) * float(building_data['gst_applicable']) / 100
+                gst = round(total_gst / 100000, 2)
+            except:
+                total_gst = 0
+                gst = 0
+
+            
+            property_unit_price = round((property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst) / 10000000, 2)
 
 
             data = {
@@ -373,9 +416,14 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'client_prefered_amenities':client_prefered_amenities,
                 'other_amenities':other_amenities,
                 'floor_rise':floor_rise,
+                'basic_price':basic_price,
                 'advance_maintenance_rate':advance_maintenance_rate,
                 'advance_maintenance':advance_maintenance,
                 'development_charges':development_charges,
+                'maintenance_deposit':maintenance_deposit,
+                'other_specific_expenses':other_specific_expenses,
+                'government_charges':government_charges,
+                'gst':gst
                 }
             
             return render(request, 'property_detail_design.html', data)

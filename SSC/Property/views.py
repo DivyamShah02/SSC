@@ -70,6 +70,41 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         return Response({"success":True,"message": "Inquiry submitted successfully!"}, status=status.HTTP_201_CREATED)
         return Response({"success":False,"message":building_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
+
+class DocumentFormViewSet(viewsets.ViewSet):
+    def create(self, request):
+        building_id = request.data.get('building_id')
+        
+        if not building_id:
+            return Response({"success": False, "message": "Building ID is required!"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Extract the files from the request
+        brochure_1 = request.FILES.get('brochure_1')
+        brochure_2 = request.FILES.get('brochure_2')
+        head_image = request.FILES.get('head_image')
+        sec_image_1 = request.FILES.get('sec_image_1')
+        sec_image_2 = request.FILES.get('sec_image_2')
+        sec_image_3 = request.FILES.get('sec_image_3')
+        sec_image_4 = request.FILES.get('sec_image_4')
+
+        # Create an instance of your DocumentDetails model to save the document files
+        get_building_data = BuildingDetails.objects.get(id=building_id)
+        get_building_data.brochure_1 = brochure_1
+        get_building_data.brochure_2 = brochure_2
+
+        get_building_data.head_image = head_image
+        get_building_data.sec_image_1 = sec_image_1
+        get_building_data.sec_image_2 = sec_image_2
+        get_building_data.sec_image_3 = sec_image_3
+        get_building_data.sec_image_4 = sec_image_4
+
+        try:
+            get_building_data.save()
+            return Response({"success": True, "message": "Documents saved successfully!"}, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 class PropertyActiveFormViewSet(viewsets.ViewSet):
     def create(self, request):
         data = request.data

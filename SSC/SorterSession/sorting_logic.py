@@ -115,6 +115,7 @@ class Sorter:
                         base_price__gte=budget_min,
                         base_price__lte=budget_max
                         )
+                    print(len(property_unit_matched))
 
                     for property in property_unit_matched:    validated_property.append(property.id)
 

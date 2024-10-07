@@ -11,7 +11,19 @@ from django.db import transaction
 class PropertyDetailFormViewSet(viewsets.ViewSet):
 
     def list(self, request):
-        return render(request, 'property_detail_form.html')
+        building_id = request.GET.get('building_id')
+        is_building_edit = False
+        print(building_id)
+        if building_id:
+            is_building_edit = True
+            print('hello')
+
+        data = {
+            'is_building_edit':is_building_edit,
+            'building_id':building_id,
+        }
+
+        return render(request, 'property_detail_form.html', data)
 
     def create(self, request):
             data = request.data.copy()
@@ -57,6 +69,15 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
         if building_id:
             building_data_obj = get_object_or_404(BuildingDetails, building_id=building_id)
             building_data = BuildingDetailsSerializer(building_data_obj).data
+            
+            for i in building_data:
+                if "," in str(building_data[i]):
+                    building_data[i] = [str(j).strip() for j in str(building_data[i]).split(',')]
+                    print(building_data[i])
+            if type(building_data['type_of_apartments']) != list:
+                building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
+                print(building_data['type_of_apartments'])
+
             return Response({'success': True, 'building_data': building_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
 

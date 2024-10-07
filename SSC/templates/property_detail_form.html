@@ -1345,6 +1345,7 @@
     <script>
         async function copy_building_details(building_id) {
             toggle_preloader();
+            console.log('gagrea')
             const data = await get_building_data(building_id)
             setFormValues(data)
             console.log(data)
@@ -1395,6 +1396,17 @@
                                     radio.checked = true;
                                 }
                             });
+                        } else if (input.type === 'checkbox') {
+                            // Handle checkboxes
+                            if (Array.isArray(data[key])) {
+                                // If the data is an array, check each checkbox that matches
+                                inputs.forEach(checkbox => {
+                                    checkbox.checked = data[key].includes(checkbox.value);
+                                });
+                            } else {
+                                // If it's a single value, just check/uncheck the box
+                                input.checked = data[key] === true || data[key] === "true";
+                            }
                         } else if (input.type === 'file') {
                             console.warn('File input cannot be set programmatically. Please upload a new file.');
                         } else {
@@ -1410,6 +1422,10 @@
                 formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+
+        {% if is_building_edit == True %}
+            copy_building_details('{{building_id}}')
+        {% endif %}
 
     </script>
 </body>

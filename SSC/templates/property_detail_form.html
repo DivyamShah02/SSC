@@ -239,15 +239,27 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label for="projectType" class="form-label primary">Type of Project</label>
+                        <label for="projectType" class="form-label primary">Type of Project</label><br>
                         <!-- <br> -->
                         <!-- <label for="why_buy_house" class="form-label">Select<span class=""> *</span></label> -->
-                        <select class="form-select" id="projectType" name="type_of_project">
+                        <!-- <select class="form-select" id="projectType" name="type_of_project">
                             <option value="Residential apartments">Residential apartments</option>
                             <option value="Residential">Residential</option>
                             <option value="Commercial">Commercial</option>
                             <option value="Mix">Mix</option>
-                        </select>
+                        </select> -->                        
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Residential" value="Residential">
+                            <label class="form-check-label" for="type_of_project_Residential">Residential</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Commercial" value="Commercial">
+                            <label class="form-check-label" for="type_of_project_Commercial">Commercial</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Mix" value="Mix">
+                            <label class="form-check-label" for="type_of_project_Mix">Mix</label>
+                        </div>
                     </div>
                     <div class="row col-md-12 form-group">
                         <label for="bedrooms" class="form-label primary">Type of apartments (multiple choice)</label>
@@ -370,10 +382,19 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="jodiPossible">Jodi possible?</label><br>
-                        <select class="form-select" id="jodiPossible" name="jodi_possible">
+                        <!-- <select class="form-select" id="jodiPossible" name="jodi_possible">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_Yes" value="Yes">
+                            <label class="form-check-label" for="jodi_possible_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_No" value="No">
+                            <label class="form-check-label" for="jodi_possible_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="layoutDetails">Details about different types of layouts
@@ -389,10 +410,19 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="overallVastu">Overall Vastu</label><br>
-                        <select class="form-select" id="overallVastu" name="overallVastu">
+                        <!-- <select class="form-select" id="overallVastu" name="overallVastu">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_Yes" value="Yes">
+                            <label class="form-check-label" for="overallVastu_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_No" value="No">
+                            <label class="form-check-label" for="overallVastu_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="entryExitWind">Entry, Exit & Wind directions</label>
@@ -580,33 +610,73 @@
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="centralAC">Central air conditioning
                             available?</label><br>
-                        <select class="form-select" id="centralAC" name="central_air_conditioning">
+                        <!-- <select class="form-select" id="centralAC" name="central_air_conditioning">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="central_air_conditioning_Yes" value="Yes">
+                            <label class="form-check-label" for="central_air_conditioning_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="central_air_conditioning_No" value="No">
+                            <label class="form-check-label" for="central_air_conditioning_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="petFriendly">Is this project pet friendly?</label><br>
-                        <select class="form-select" id="petFriendly" name="pet_friendly">
+                        <!-- <select class="form-select" id="petFriendly" name="pet_friendly">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_Yes" value="Yes">
+                            <label class="form-check-label" for="pet_friendly_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_No" value="No">
+                            <label class="form-check-label" for="pet_friendly_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="spiritualAttraction">Any spiritual or religious
                             attraction in the project?</label><br>
-                        <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
+                        <!-- <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction" id="spiritual_or_religious_attraction_Yes" value="Yes">
+                            <label class="form-check-label" for="spiritual_or_religious_attraction_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction" id="spiritual_or_religious_attraction_No" value="No">
+                            <label class="form-check-label" for="spiritual_or_religious_attraction_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="parkingType">Type of parking</label><br>
-                        <select class="form-select" id="parkingType" name="type_of_parking">
+                        <!-- <select class="form-select" id="parkingType" name="type_of_parking">
                             <option value="Normal">Normal</option>
                             <option value="Hydraulic">Hydraulic</option>
                             <option value="Hydraulic with Valet">Hydraulic with Valet</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Normal" value="Normal">
+                            <label class="form-check-label" for="type_of_parking_Normal">Normal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Hydraulic" value="Hydraulic">
+                            <label class="form-check-label" for="type_of_parking_Hydraulic">Hydraulic</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Hydraulic_with_Valet" value="Hydraulic with Valet">
+                            <label class="form-check-label" for="type_of_parking_Hydraulic_with_Valet">Hydraulic with Valet</label>
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -703,198 +773,6 @@
 
         </div>
         <!-- Project/Property Details end -->
-
-        <!-- Unit Details start -->
-        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
-            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                <h4>Unit Details</h4>
-            </div>
-            <div class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
-                <table id="unit_details_table" class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Unit Configuration</th>
-                            <th scope="col">Unit Size</th>
-                            <th scope="col" class="text-end">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal" data-bs-target="#unitModal">
-                    Add Unit
-                </button>
-
-                <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog custom-size">
-                        <div class="modal-content">
-                            <div class="modal-header" style="background-color: var(--primary-color); color: white;">
-                                <h1 class="modal-title fs-5" id="unitModalLabel">Unit Details</h1>
-                                <button type="button" class="btn-close" style="filter: invert(10);"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                                <h4>Unit Details</h4>
-                            </div> -->
-
-                                <!-- Form body -->
-                                <form id="unit_details_modal_form" class="p-4 border border-top-0 rounded-bottom"
-                                    style="background-color: white;">
-                                    <div class="row">
-                                        <!-- <div class="col-md-4 form-group">
-                                        <label class="form-label primary" for="projectId">Project/property ID</label>
-                                        <input type="text" class="form-control" id="projectId" name="project_id" >
-                                    </div> -->
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="unitTypes">Type of unit</label><br>
-                                            <select class="form-select" id="unitTypes" name="unit_configuration">
-                                                <option value="3 BHK">3 BHK</option>
-                                                <option value="4 BHK">4 BHK</option>
-                                                <option value="5 BHK">5 BHK</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="layoutTypes">Layout Types</label><br>
-                                            <select class="form-select" id="layoutTypes" name="unit_type">
-                                                <option value="Simplex">Simplex</option>
-                                                <option value="Duplex">Duplex</option>
-                                                <option value="Triplex">Triplex</option>
-                                                <option value="Penthouse">Penthouse</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="unitsPerFloor">No. of units on one
-                                                floor</label>
-                                            <input type="number" class="form-control" id="unitsPerFloor"
-                                                placeholder="Enter Units per floor" name="no_of_units_per_floor">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="liftsPerFloor">No. of lifts on one
-                                                floor</label>
-                                            <input type="number" class="form-control" id="liftsPerFloor"
-                                                placeholder="Enter nubmer of lifts per floor"
-                                                name="no_of_lifts_per_floor">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="privateLifts">Private lifts?</label>
-                                            <select class="form-select" id="privateLifts" name="private_lifts">
-                                                <option value="Yes">Yes</option>
-                                                <option value="No">No</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="numberOfPrivateLifts">If Yes, How
-                                                many?</label>
-                                            <input type="number" class="form-control" id="numberOfPrivateLifts"
-                                                placeholder="Enter number of private lifts" name="no_private_lifts">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="commonTerrace">Common terrace
-                                                accessible?</label><br>
-                                            <select class="form-select" id="commonTerrace"
-                                                name="common_terrace_accessible">
-                                                <option value="Yes">Yes</option>
-                                                <option value="No">No</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="sizeOfMainBalcony">Size of main
-                                                balcony</label>
-                                            <input type="text" class="form-control" id="sizeOfMainBalcony"
-                                                placeholder="Enter size of main balcony" name="size_of_balcony">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="sizeOfMasterBedroom">Size of master
-                                                bedroom</label>
-                                            <input type="text" class="form-control" id="sizeOfMasterBedroom"
-                                                placeholder="Enter size of master bedroom"
-                                                name="size_of_master_bedroom">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="sizeOfKitchen">Size of
-                                                kitchen</label>
-                                            <input type="text" class="form-control" id="sizeOfKitchen"
-                                                placeholder="Enter size of kitchen" name="size_of_kitchen">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="sizeOfPrivateTerrace">Size of private
-                                                terrace</label>
-                                            <input type="text" class="form-control" id="sizeOfPrivateTerrace"
-                                                placeholder="Enter size of private terrace"
-                                                name="size_of_private_terrace">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="sizeOfUnit">Size of the unit
-                                                (SBU)</label>
-                                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit"
-                                                placeholder="Enter size of unit">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="carpetArea">Carpet area as per
-                                                RERA</label>
-                                            <input type="text" class="form-control" id="carpetArea"
-                                                name="carpet_area_rera" placeholder="Enter carpet area as per RERA">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="numberOfBathrooms">No. of attached
-                                                bathrooms</label>
-                                            <input type="number" class="form-control" id="numberOfBathrooms"
-                                                placeholder="Enter number of attached bathrooms"
-                                                name="no_of_attached_bathrooms">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="servantRoomAvailable">Servant room
-                                                available?</label><br>
-                                            <select class="form-select" id="servantRoomAvailable"
-                                                name="servant_room_available">
-                                                <option value="Yes">Yes</option>
-                                                <option value="No">No</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="pujaRoomAvailable">Separate puja room
-                                                available?</label><br>
-                                            <select class="form-select" id="pujaRoomAvailable"
-                                                name="separate_puja_room_available">
-                                                <option value="Yes">Yes</option>
-                                                <option value="No">No</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="numberOfBalconies">No. balconies in
-                                                one house</label>
-                                            <input type="number" class="form-control" id="numberOfBalconies"
-                                                placeholder="Enter number of balconies" name="no_of_balconies">
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label class="form-label primary" for="parkingAllotted">No. of parking
-                                                allotted to one unit</label>
-                                            <input type="number" class="form-control" id="parkingAllotted"
-                                                placeholder="Enter number of parking space"
-                                                name="no_of_parking_allotted">
-                                        </div>
-
-                                    </div>
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="unit_modal_close" class="btn btn-custom"
-                                    data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-custom-primary" onclick="save_unit_details()">Save
-                                    changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <!-- Unit Details end -->
 
         <!-- Finance start -->
         <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
@@ -1025,10 +903,19 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="loanAvailability">Loan availability?</label><br>
-                        <select class="form-control" id="loanAvailability" name="loan_availability">
+                        <!-- <select class="form-control" id="loanAvailability" name="loan_availability">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="loan_availability" id="loan_availability_Yes" value="Yes">
+                            <label class="form-check-label" for="loan_availability_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="loan_availability" id="loan_availability_No" value="No">
+                            <label class="form-check-label" for="loan_availability_No">No</label>
+                        </div>
+                        
                     </div>
                     <div class="col-md-12 form-group">
                         <label class="form-label primary" for="remarks">Remarks if any</label>
@@ -1180,8 +1067,6 @@
 
     <script>
         let property_detail = {}
-        property_detail['units'] = []
-
 
         $('#yearOfEstablishment').datepicker({
             format: "yyyy",
@@ -1347,6 +1232,7 @@
                     console.log(JSON.stringify(data, null, 2));
 
                     if (data.success === true) {
+                        toggle_preloader();
                         return;
                     } else {
                         alert('Error in submitting documents: ' + data.message);
@@ -1359,52 +1245,6 @@
             }
 
             toggle_preloader();
-        }
-
-        function save_unit_details() {
-            var object = {};
-            var unit_details_modal_form = new FormData(document.getElementById('unit_details_modal_form'));
-            unit_details_modal_form.forEach((value, key) => {
-                if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                    object[key] = value;
-                    return;
-                }
-                if (!Array.isArray(object[key])) {
-                    object[key] = [object[key]];
-                }
-                object[key].push(value);
-            });
-            property_detail['units'].push(object)
-
-            const table = document.getElementById('unit_details_table').querySelector('tbody');
-            const numberOfRows = table.childElementCount;
-
-            const newRow = table.insertRow();
-
-            // Add columns for bedrooms and size
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            const cell3 = newRow.insertCell(2);
-            const cell4 = newRow.insertCell(3);
-
-            // Fill in the columns
-            cell1.textContent = numberOfRows + 1;
-            cell1.style.fontWeight = 600;
-            cell2.textContent = object['unitTypes'];
-            cell3.textContent = object['sizeOfUnit'];
-            cell4.innerHTML = `<i onclick="remove_unit_row(${numberOfRows + 1})" style="cursor: pointer;" class="fa fa-xmark"></i>`;
-            cell4.classList.add('text-end');
-
-            document.getElementById('unit_details_modal_form').reset();
-            document.getElementById('unit_modal_close').click()
-
-        }
-
-        function remove_unit_row(ind) {
-            console.log(ind - 1);
-            property_detail['units'].splice(ind - 1, 1);
-            var table = document.getElementById('unit_details_table');
-            table.deleteRow(ind);
         }
 
         function toggle_loader() {
@@ -1495,11 +1335,81 @@
 
         });
 
-
         window.onload = function () {
             toggle_preloader();
             initMap();
         };
+
+    </script>
+
+    <script>
+        async function copy_building_details(building_id) {
+            toggle_preloader();
+            const data = await get_building_data(building_id)
+            setFormValues(data)
+            console.log(data)
+            toggle_preloader();
+        }
+
+        async function get_building_data(building_id) {
+            try {
+                const response = await fetch("{% url 'property-copy-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({"building_id":`${building_id}`})
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    return data.building_data
+                } else {
+                    alert('Error in getting unit details: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+            }
+        }
+
+        function setFormValues(data) {
+            // Loop through each key-value pair in the dictionary (data)
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    // Find the input element(s) where name attribute matches the key
+                    const input = document.querySelector(`[name="${key}"]`);
+                    const inputs = document.querySelectorAll(`[name="${key}"]`);
+
+                    if (input) {
+                        if (input.type === 'radio') {
+                            // If the input is a radio button group, loop through all radio buttons
+                            inputs.forEach(radio => {
+                                // Check for true/false values and map them to 'Yes'/'No'
+                                if ((data[key] === true || data[key] === "true") && radio.value.toLowerCase() === 'yes') {
+                                    radio.checked = true;  // Select the "Yes" radio button
+                                } else if ((data[key] === false || data[key] === "false") && radio.value.toLowerCase() === 'no') {
+                                    radio.checked = true;  // Select the "No" radio button
+                                } else if (radio.value === data[key]) {
+                                    // For other radio buttons, match by value
+                                    radio.checked = true;
+                                }
+                            });
+                        } else if (input.type === 'file') {
+                            console.warn('File input cannot be set programmatically. Please upload a new file.');
+                        } else {
+                            input.value = data[key];
+                        }
+                    }
+                }
+            }
+
+            // Scroll into view after setting the form values
+            const formElement = document.getElementById('unit_details_modal_form');
+            if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
 
     </script>
 </body>

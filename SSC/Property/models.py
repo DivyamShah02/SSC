@@ -30,6 +30,7 @@ class BuildingDetails(models.Model):
     google_pin_lat = models.CharField(max_length=255, default="") 
     google_pin_lng = models.CharField(max_length=255, default="") 
     type_of_project = models.CharField(max_length=255)
+    per_sqft_rate_saleable = models.CharField(max_length=100, default='')
     type_of_apartments = models.CharField(max_length=255)
     special_amenity = models.TextField(default='', null=True, blank=True)
     possession_by = models.TextField(max_length=15, default='', null=True, blank=True)
@@ -77,31 +78,33 @@ class UnitDetails(models.Model):
     no_of_lifts_per_floor = models.PositiveIntegerField()
     private_lifts = models.BooleanField(default=False)
     common_terrace_accessible = models.BooleanField(default=False)
-    size_of_private_terrace = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    size_of_unit = models.DecimalField(max_digits=10, decimal_places=2)
-    carpet_area_rera = models.DecimalField(max_digits=10, decimal_places=2)
+    size_of_private_terrace = models.CharField(max_length=100, null=True, blank=True)
+    size_of_unit = models.CharField(max_length=100)
+    carpet_area_rera = models.CharField(max_length=100)
     jodi_possible = models.BooleanField(default=False)
     no_of_attached_bathrooms = models.PositiveIntegerField()
     servant_room_available = models.BooleanField(default=False)
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.PositiveIntegerField()
-    size_of_balcony = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
-    size_of_master_bedroom = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
-    size_of_kitchen = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
+    size_of_balcony = models.CharField(max_length=100, null=True, blank=True, default=0)
+    size_of_master_bedroom = models.CharField(max_length=100, null=True, blank=True, default=0)
+    size_of_kitchen = models.CharField(max_length=100, null=True, blank=True, default=0)
     no_of_parking_allotted = models.PositiveIntegerField()
-    per_sqft_rate_saleable = models.DecimalField(max_digits=10, decimal_places=2)
-    base_price = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    per_sqft_rate_saleable = models.CharField(max_length=100)
+    base_price = models.CharField(max_length=100, null=True, blank=True)
     google_pin_lat = models.CharField(max_length=255, default="")
     google_pin_lng = models.CharField(max_length=255, default="")
+    floor_plan = models.ImageField(upload_to='plan', null=True, blank=True)
+    unit_plan = models.ImageField(upload_to='plan', null=True, blank=True)
     active = models.BooleanField(default=False)
 
 
     def __str__(self):
         return f"{self.unit_configuration} - {self.unit_type}"
     
-    def save(self, *args, **kwargs):
-        self.base_price = self.size_of_unit * self.per_sqft_rate_saleable
-        super(UnitDetails, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.base_price = self.size_of_unit * self.per_sqft_rate_saleable
+    #     super(UnitDetails, self).save(*args, **kwargs)
 
 
 class Amenities(models.Model):

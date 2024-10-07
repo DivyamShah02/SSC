@@ -1,122 +1,178 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
-from django.shortcuts import render
-import json
-import time
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from .serializers import BuildingDetailsSerializer, AmenitiesSerializer, UnitDetailsSerializer
 from .models import BuildingDetails, Amenities, UnitDetails
+from django.db import transaction
+
 
 class PropertyDetailFormViewSet(viewsets.ViewSet):
+
     def list(self, request):
         return render(request, 'property_detail_form.html')
 
     def create(self, request):
-        # time.sleep(5)
-        data = request.data
+            data = request.data.copy()
 
-        for key in data.keys():
-            if type(data[key]) == list and key != 'amenities':
-                print(type(data[key]))
-                try:
-                    data[key] = ', '.join(data[key])
-                except:
-                    pass
-        print(data)
-        data['floor_rise'] = str(data['floor_rise'])
+        # try:
+            # Process list fields
+            for key in data.keys():
+                if isinstance(data[key], list) and key != 'amenities':
+                    try:                
+                        data[key] = ', '.join(data[key])
+                    except:
+                        pass
 
-        last_porperty = BuildingDetails.objects.latest('id')
-        building_id = int(last_porperty.building_id) + 1
-        data['building_id'] = building_id
+            data['floor_rise'] = str(data.get('floor_rise', ''))
 
-        google_pin = str(data['google_Pin']).split('|')
-        google_pin_lat = google_pin[0]
-        google_pin_lng = google_pin[1]
+            last_property = BuildingDetails.objects.latest('id')
+            building_id = int(last_property.building_id) + 1
+            data['building_id'] = building_id
 
-        data['google_pin_lat'] = google_pin_lat
-        data['google_pin_lng'] = google_pin_lng
+            google_pin = data['google_Pin'].split('|')
+            data['google_pin_lat'], data['google_pin_lng'] = google_pin
 
-        building_serializer = BuildingDetailsSerializer(data=data)
-        if building_serializer.is_valid():
+            building_serializer = BuildingDetailsSerializer(data=data)
+            if not building_serializer.is_valid():
+                return Response({"success": False, "errors": building_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
             building_serializer.save()
-            # print(building_serializer.data)
-            for ind,unit in enumerate(data['units']):
-                data['units'][ind]['building_id'] = building_id
-                data['units'][ind]['per_sqft_rate_saleable'] = data['per_sqft_rate_saleable']
-                data['units'][ind]['google_pin_lat'] = google_pin_lat
-                data['units'][ind]['google_pin_lng'] = google_pin_lng
 
-            unit_serializer = UnitDetailsSerializer(data=data['units'], many=True)
+            # Process amenities
+            amenities_data = {amenity: True for amenity in data['amenities']}
+            amenities_instance = Amenities(building_id=building_id, **amenities_data)
+            amenities_instance.save()
+
+            return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id']}, status=status.HTTP_201_CREATED)
+
+        # except Exception as e:
+        #     return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class PropertyCopyDataViewSet(viewsets.ViewSet):
+
+    def create(self, request):
+        building_id = request.data.get('building_id')
+        if building_id:
+            building_data_obj = get_object_or_404(BuildingDetails, building_id=building_id)
+            building_data = BuildingDetailsSerializer(building_data_obj).data
+            return Response({'success': True, 'building_data': building_data}, status=status.HTTP_200_OK)
+        return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UnitDetailFormViewSet(viewsets.ViewSet):
+
+    def list(self, request):
+        building_id = request.GET.get('building_id')
+        building_data = get_object_or_404(BuildingDetails, building_id=building_id)
+        all_units = UnitDetails.objects.filter(building_id=building_id)
+
+        return render(request, 'unit_adder.html', {
+            'all_units': all_units,
+            'building_id': building_id,
+            'building_data': building_data,
+        })
+
+    @transaction.atomic
+    def create(self, request):
+        data = request.data.copy()
+
+        try:
+            # Handle file uploads
+            self.handle_file_uploads(data, request.FILES)
+
+            data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
+
+            if data['unit_id'] != "NULL":
+                unit_instance = get_object_or_404(UnitDetails, id=data['unit_id'])
+                unit_serializer = UnitDetailsSerializer(unit_instance, data=data)
+            else:
+                unit_serializer = UnitDetailsSerializer(data=data)
+
             if unit_serializer.is_valid():
                 unit_serializer.save()
-                print(unit_serializer.data)
+                return Response({"success": True, "data": unit_serializer.data}, status=status.HTTP_201_CREATED)
+            else:
+                return Response(unit_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-                amenities_list = data['amenities']
-                amenities_instance = Amenities(building_id=building_id)
+        except Exception as e:
+            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-                # Set fields to True based on the amenities_list
-                for amenity in amenities_list:
-                    if hasattr(amenities_instance, amenity):
-                        setattr(amenities_instance, amenity, True)
-                
-                amenities_instance.save()
-            # print(unit_serializer.errors)
+    def handle_file_uploads(self, data, files):
+        """Utility to handle file uploads and update data dict."""
+        file_fields = ['floor_plan', 'unit_plan']
+        for field in file_fields:
+            file = files.get(field)
+            if file:
+                data[field] = file
+            else:
+                data.pop(field, None)
+
+    def delete(self, request):
+        unit_id = request.data.get('unit_id')
+        if not unit_id:
+            return Response({"error": "ID must be provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            unit = UnitDetails.objects.get(id=unit_id)
+            unit.delete()
+            return Response({'success': True}, status=status.HTTP_204_NO_CONTENT)
+        except UnitDetails.DoesNotExist:
+            return Response({"error": "Unit not found"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-            return Response({"success":True,"message": "Property submitted successfully!", "building_db_id":building_serializer.data['id']}, status=status.HTTP_201_CREATED)
-        else:
-            print(building_serializer.errors)
-        return Response({"success":True,"message": "Inquiry submitted successfully!"}, status=status.HTTP_201_CREATED)
-        return Response({"success":False,"message":building_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+class UnitCopyDataViewSet(viewsets.ViewSet):
+
+    def create(self, request):
+        unit_id = request.data.get('unit_id')
+        if unit_id:
+            unit_data_obj = get_object_or_404(UnitDetails, id=unit_id)
+            unit_data = UnitDetailsSerializer(unit_data_obj).data
+            return Response({'success': True, 'unit_data': unit_data}, status=status.HTTP_200_OK)
+        return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class DocumentFormViewSet(viewsets.ViewSet):
+
+    @transaction.atomic
     def create(self, request):
         building_id = request.data.get('building_id')
-        
         if not building_id:
             return Response({"success": False, "message": "Building ID is required!"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Extract the files from the request
-        brochure_1 = request.FILES.get('brochure_1')
-        brochure_2 = request.FILES.get('brochure_2')
-        head_image = request.FILES.get('head_image')
-        sec_image_1 = request.FILES.get('sec_image_1')
-        sec_image_2 = request.FILES.get('sec_image_2')
-        sec_image_3 = request.FILES.get('sec_image_3')
-        sec_image_4 = request.FILES.get('sec_image_4')
-
-        # Create an instance of your DocumentDetails model to save the document files
-        get_building_data = BuildingDetails.objects.get(id=building_id)
-        get_building_data.brochure_1 = brochure_1
-        get_building_data.brochure_2 = brochure_2
-
-        get_building_data.head_image = head_image
-        get_building_data.sec_image_1 = sec_image_1
-        get_building_data.sec_image_2 = sec_image_2
-        get_building_data.sec_image_3 = sec_image_3
-        get_building_data.sec_image_4 = sec_image_4
-
         try:
-            get_building_data.save()
+            building_data = BuildingDetails.objects.get(id=building_id)
+            self.save_documents(building_data, request.FILES)
             return Response({"success": True, "message": "Documents saved successfully!"}, status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    def save_documents(self, building_data, files):
+        """Utility to save documents for the building."""
+        document_fields = ['brochure_1', 'brochure_2', 'head_image', 'sec_image_1', 'sec_image_2', 'sec_image_3', 'sec_image_4']
+        for field in document_fields:
+            file = files.get(field)
+            if file:
+                setattr(building_data, field, file)
+        building_data.save()
+
 
 class PropertyActiveFormViewSet(viewsets.ViewSet):
+
+    @transaction.atomic
     def create(self, request):
-        data = request.data
+        building_db_id = request.data.get('building_db_id')
+        try:
+            building_data = BuildingDetails.objects.get(id=building_db_id)
+            building_data.active = True
+            building_data.save()
 
-        building_db_id = data['building_db_id']
-
-        building_data = BuildingDetails.objects.get(id=building_db_id)
-        building_id = building_data.building_id
-
-        building_data.active = True
-        building_data.save()
-        
-        all_units = UnitDetails.objects.get(building_id=building_id)
-        print(all_units.building_id)
-
+            all_units = UnitDetails.objects.filter(building_id=building_data.building_id)
+            return Response({"success": True, "message": "Property activated", "units": all_units.count()}, status=status.HTTP_200_OK)
+        except BuildingDetails.DoesNotExist:
+            return Response({"success": False, "message": "Building not found"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

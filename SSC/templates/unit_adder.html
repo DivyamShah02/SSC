@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/loader.css">
-    <title>Property Detail Form</title>
+    <title>Unit Detail Form</title>
     <style>
         #map {
             height: 400px;
@@ -190,6 +190,12 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfUnit">Size of the unit
+                                (SBU)</label>
+                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit"
+                                placeholder="Enter size of unit">
+                        </div>
+                        <div class="col-md-4 form-group">
                             <label class="form-label primary" for="unitsPerFloor">No. of units on one
                                 floor</label>
                             <input type="number" class="form-control" id="unitsPerFloor"
@@ -260,12 +266,6 @@
                                 terrace</label>
                             <input type="text" class="form-control" id="sizeOfPrivateTerrace"
                                 placeholder="Enter size of private terrace" name="size_of_private_terrace">
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfUnit">Size of the unit
-                                (SBU)</label>
-                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit"
-                                placeholder="Enter size of unit">
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="carpetArea">Carpet area as per
@@ -427,7 +427,6 @@
             const data = await get_unit_data(unit_id)
             document.getElementById('form_details').innerText = `Copy of ${data['unit_configuration']} ${data['unit_type']}`
             setFormValues(data)
-            console.log(data)
             floor_img.src = data['floor_plan']
             floor_img.style.display = 'none'
             
@@ -481,7 +480,7 @@
                                 }
                             });
                         } else if (input.type === 'file') {
-                            console.warn('File input cannot be set programmatically. Please upload a new file.');
+
                         } else {
                             input.value = data[key];
                         }
@@ -514,7 +513,6 @@
                     });
 
                     const data = await response.json();
-                    console.log(JSON.stringify(data, null, 2));
 
                     if (data.success === true) {
                         toggle_preloader();

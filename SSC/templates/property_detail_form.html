@@ -28,8 +28,7 @@
 
 
 <body>
-    <div id="spinner" class="spinner-container p-2"
-        style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+    <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
         <div class="spinner"></div>
         <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
     </div>
@@ -172,6 +171,8 @@
             <form id="project_property_details" class="p-4 border border-top-0 rounded-bottom"
                 style="background-color: white;">
                 <div class="row">
+                    <input type="hidden" class="form-control" id="copy_building_id" value="NULL" placeholder=""
+                        name="copy_building_id">
                     <!-- <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectId">Project/property ID</label>
                         <input type="text" class="form-control" id="projectId" name="project_id" >
@@ -247,17 +248,20 @@
                             <option value="Residential">Residential</option>
                             <option value="Commercial">Commercial</option>
                             <option value="Mix">Mix</option>
-                        </select> -->                        
+                        </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Residential" value="Residential">
+                            <input class="form-check-input" type="radio" name="type_of_project"
+                                id="type_of_project_Residential" value="Residential">
                             <label class="form-check-label" for="type_of_project_Residential">Residential</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Commercial" value="Commercial">
+                            <input class="form-check-input" type="radio" name="type_of_project"
+                                id="type_of_project_Commercial" value="Commercial">
                             <label class="form-check-label" for="type_of_project_Commercial">Commercial</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Mix" value="Mix">
+                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Mix"
+                                value="Mix">
                             <label class="form-check-label" for="type_of_project_Mix">Mix</label>
                         </div>
                     </div>
@@ -337,7 +341,7 @@
                         <label class="form-label primary" for="ageOfPropertyDeveloper">Age of the property as per
                             developer (MM/YY)</label>
                         <input type="text" class="form-control" id="ageOfPropertyDeveloper"
-                            placeholder="Age of the property" name="age_of_property_developer">
+                            placeholder="Age of the property" name="age_of_property_by_developer">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="ageOfPropertyRERA">Age of the property as per RERA
@@ -387,14 +391,16 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_Yes"
+                                value="Yes">
                             <label class="form-check-label" for="jodi_possible_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_No" value="No">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_No"
+                                value="No">
                             <label class="form-check-label" for="jodi_possible_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="overallVastu">Overall Vastu</label><br>
@@ -403,14 +409,16 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_Yes"
+                                value="Yes">
                             <label class="form-check-label" for="overallVastu_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_No" value="No">
+                            <input class="form-check-input" type="radio" name="overallVastu" id="overallVastu_No"
+                                value="No">
                             <label class="form-check-label" for="overallVastu_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="entryExitWind">Entry, Exit & Wind directions</label>
@@ -572,26 +580,26 @@
                     </div>
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_1" class="form-label">Special Amenity 1</label>
-                        <input type="text" class="form-control" id="special_amenity_1"
-                            name="special_amenity_1" placeholder="Enter Special Amenity 1">
+                        <input type="text" class="form-control" id="special_amenity_1" name="special_amenity_1"
+                            placeholder="Enter Special Amenity 1">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_2" class="form-label">Special Amenity 2</label>
-                        <input type="text" class="form-control" id="special_amenity_2"
-                            name="special_amenity_2" placeholder="Enter Special Amenity 2">
+                        <input type="text" class="form-control" id="special_amenity_2" name="special_amenity_2"
+                            placeholder="Enter Special Amenity 2">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_3" class="form-label">Special Amenity 3</label>
-                        <input type="text" class="form-control" id="special_amenity_3"
-                            name="special_amenity_3" placeholder="Enter Special Amenity 3">
+                        <input type="text" class="form-control" id="special_amenity_3" name="special_amenity_3"
+                            placeholder="Enter Special Amenity 3">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_4" class="form-label">Special Amenity 4</label>
-                        <input type="text" class="form-control" id="special_amenity_4"
-                            name="special_amenity_4" placeholder="Enter Special Amenity 4">
+                        <input type="text" class="form-control" id="special_amenity_4" name="special_amenity_4"
+                            placeholder="Enter Special Amenity 4">
                     </div>
 
                     <div class="col-md-4 form-group">
@@ -602,14 +610,16 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="central_air_conditioning_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_Yes" value="Yes">
                             <label class="form-check-label" for="central_air_conditioning_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning" id="central_air_conditioning_No" value="No">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_No" value="No">
                             <label class="form-check-label" for="central_air_conditioning_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="petFriendly">Is this project pet friendly?</label><br>
@@ -618,14 +628,16 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_Yes"
+                                value="Yes">
                             <label class="form-check-label" for="pet_friendly_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_No" value="No">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_No"
+                                value="No">
                             <label class="form-check-label" for="pet_friendly_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="spiritualAttraction">Any spiritual or religious
@@ -635,14 +647,16 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction" id="spiritual_or_religious_attraction_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
+                                id="spiritual_or_religious_attraction_Yes" value="Yes">
                             <label class="form-check-label" for="spiritual_or_religious_attraction_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction" id="spiritual_or_religious_attraction_No" value="No">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
+                                id="spiritual_or_religious_attraction_No" value="No">
                             <label class="form-check-label" for="spiritual_or_religious_attraction_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="parkingType">Type of parking</label><br>
@@ -652,24 +666,26 @@
                             <option value="Hydraulic with Valet">Hydraulic with Valet</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Normal" value="Normal">
+                            <input class="form-check-input" type="radio" name="type_of_parking"
+                                id="type_of_parking_Normal" value="Normal">
                             <label class="form-check-label" for="type_of_parking_Normal">Normal</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Hydraulic" value="Hydraulic">
+                            <input class="form-check-input" type="radio" name="type_of_parking"
+                                id="type_of_parking_Hydraulic" value="Hydraulic">
                             <label class="form-check-label" for="type_of_parking_Hydraulic">Hydraulic</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type_of_parking" id="type_of_parking_Hydraulic_with_Valet" value="Hydraulic with Valet">
-                            <label class="form-check-label" for="type_of_parking_Hydraulic_with_Valet">Hydraulic with Valet</label>
+                            <input class="form-check-input" type="radio" name="type_of_parking"
+                                id="type_of_parking_Hydraulic_with_Valet" value="Hydraulic with Valet">
+                            <label class="form-check-label" for="type_of_parking_Hydraulic_with_Valet">Hydraulic with
+                                Valet</label>
                         </div>
-                        
+
                     </div>
 
                 </div>
             </form>
-
-        </div>
 
         </div>
         <!-- Project/Property Details end -->
@@ -680,7 +696,8 @@
                 <h4>Media</h4>
             </div>
 
-            <form id="documentForm" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data" style="background-color: white;">
+            <form id="documentForm" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data"
+                style="background-color: white;">
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
@@ -688,17 +705,17 @@
                             <h6 style="color: var(--primary-color);">Brochures</h6>
                             <label for="brochure1" class="form-label">Brochure 1 (PDF -
                                 Required)</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="brochure1"
-                                name="brochure_1" accept="application/pdf">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="brochure1" name="brochure_1" accept="application/pdf">
                             <a style="color: var(--primary-color); display: none;" id="brochure_1"></a>
                         </div>
 
                         <div class="mb-3">
                             <label for="brochure2" class="form-label">Brochure 2 (PDF -
                                 Optional)</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="brochure2"
-                                name="brochure_2" accept="application/pdf">
-                                <a style="color: var(--primary-color); display: none;" id="brochure_2"></a>                
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="brochure2" name="brochure_2" accept="application/pdf">
+                            <a style="color: var(--primary-color); display: none;" id="brochure_2"></a>
                         </div>
                     </div>
 
@@ -707,36 +724,36 @@
                         <div class="mb-3">
                             <h6 style="color: var(--primary-color);">Property Images (All Required)</h6>
                             <label for="image1" class="form-label">Image 1</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="image1"
-                                name="head_image" accept="image/*">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image1" name="head_image" accept="image/*">
                             <img id="head_image" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
 
                         <div class="mb-3">
                             <label for="image2" class="form-label">Image 2</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="image2"
-                                name="sec_image_1" accept="image/*">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image2" name="sec_image_1" accept="image/*">
                             <img id="sec_image_1" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
 
                         <div class="mb-3">
                             <label for="image3" class="form-label">Image 3</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="image3"
-                                name="sec_image_2" accept="image/*">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image3" name="sec_image_2" accept="image/*">
                             <img id="sec_image_2" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
 
                         <div class="mb-3">
                             <label for="image4" class="form-label">Image 4</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="image4"
-                                name="sec_image_3" accept="image/*">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image4" name="sec_image_3" accept="image/*">
                             <img id="sec_image_3" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
 
                         <div class="mb-3">
                             <label for="image5" class="form-label">Image 5</label>
-                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="image5"
-                                name="sec_image_4" accept="image/*">
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image5" name="sec_image_4" accept="image/*">
                             <img id="sec_image_4" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
 
@@ -881,23 +898,33 @@
                             <option value="No">No</option>
                         </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="loan_availability" id="loan_availability_Yes" value="Yes">
+                            <input class="form-check-input" type="radio" name="loan_availability"
+                                id="loan_availability_Yes" value="Yes">
                             <label class="form-check-label" for="loan_availability_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="loan_availability" id="loan_availability_No" value="No">
+                            <input class="form-check-input" type="radio" name="loan_availability"
+                                id="loan_availability_No" value="No">
                             <label class="form-check-label" for="loan_availability_No">No</label>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-12 form-group">
                         <label class="form-label primary" for="remarks">Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
-
-                    <div class="col-md-12 text-center">
-                        <button type="button" onclick="submit_detail_form()" class="btn btn-custom"><b>Save Property
-                                Details</b></button>
+                    <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
+                    <div class="col-md-12 row">
+                        <div class="col-12 text-center">
+                            <button type="button" onclick="window.location.href = `{% url 'unit-detail-form-list' %}?building_id={{building_id}}`;" id="unit_btn" class="btn btn-outline-dark" style="display: none"><b>Add Units</b></button>
+                        </div>
+                        <div class="col-12 text-center mt-2">
+                            <button type="button" onclick="submit_detail_form()" class="btn btn-custom"><b>Save Property
+                                    Details</b></button>
+                        </div>
+                        <div class="col-12 text-center mt-2">
+                            <button type="button" onclick="publish_building_data()" id="publish_btn" class="btn btn-custom-primary" style="display: none"><b>Publish Property Details</b></button>
+                        </div>
                     </div>
 
                 </div>
@@ -912,16 +939,12 @@
     </div>
     <!-- Main content end -->
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places"></script>
@@ -1020,7 +1043,7 @@
                             if (results[0]) {
                                 document.getElementById('searchBox').value = results[0].formatted_address;
                             } else {
-                                
+
                             }
                         }
                     });
@@ -1036,8 +1059,6 @@
         document.getElementById('currentLocationBtn').addEventListener('click', getCurrentLocation);
 
         function setLocation(lat, lng) {
-            console.log(lat)
-            console.log(lng)
             const newLocation = { lat: lat, lng: lng };
 
             // Set the map center and marker position to the new location
@@ -1050,8 +1071,8 @@
             geocoder.geocode({ location: newLocation }, (results, status) => {
                 if (status === 'OK') {
                     if (results[0]) {
-                        document.getElementById('searchBox').value = results[0].formatted_address;                        
-                    } else {                        
+                        document.getElementById('searchBox').value = results[0].formatted_address;
+                    } else {
                     }
 
                     // Automatically press the Save button
@@ -1169,7 +1190,6 @@
                                 //     property_detail[key].push(value);
                                 // });
 
-                                console.log(JSON.stringify(property_detail))
                                 try {
                                     const response = await fetch("{% url 'property-detail-list' %}", {
                                         method: 'POST',
@@ -1181,10 +1201,11 @@
                                     });
 
                                     const data = await response.json();
-                                    console.log(JSON.stringify(data, null, 2))
                                     if (data.success == true) {
                                         submit_document_form(data.building_db_id)
                                         alert(`data added successfully to ${data.building_id}!`)
+                                        window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                        
                                     }
                                     else {
 
@@ -1192,7 +1213,6 @@
 
                                 }
                                 catch (error) {
-                                    console.log(error.message)
                                 }
                             }
                         }
@@ -1228,7 +1248,6 @@
                     });
 
                     const data = await response.json();
-                    console.log(JSON.stringify(data, null, 2));
 
                     if (data.success === true) {
                         toggle_preloader();
@@ -1257,66 +1276,66 @@
             document.getElementById('spinner').classList.toggle('spinner-container');
         }
 
-        function create_table_floor_rise(totalFloors){
-            
-                // Clear previous rows if any
-                let tableBody = document.getElementById('floor_rise_table');
-                tableBody.innerHTML = '';
+        function create_table_floor_rise(totalFloors) {
 
-                // Create table rows dynamically based on floor number
-                for (let i = 1; i <= totalFloors; i++) {
-                    let row = document.createElement('tr');
-                    row.id = `floor_rise_tr_${i}`
+            // Clear previous rows if any
+            let tableBody = document.getElementById('floor_rise_table');
+            tableBody.innerHTML = '';
 
-                    // Floor Number (pre-filled)
-                    let floorCell = document.createElement('td');
-                    // floorCell.textContent = i;
-                    floorCell.innerHTML = `<b>${i}</b>`
-                    row.appendChild(floorCell);
+            // Create table rows dynamically based on floor number
+            for (let i = 1; i <= totalFloors; i++) {
+                let row = document.createElement('tr');
+                row.id = `floor_rise_tr_${i}`
 
-                    // Price Input
-                    let priceCell = document.createElement('td');
-                    let priceInput = document.createElement('input');
-                    priceInput.type = 'number';
-                    priceInput.name = `floorPrice_${i}`;
-                    priceInput.id = `floorPrice_${i}`;
-                    priceInput.className = 'priceInput';
-                    priceInput.classList.add('form-control')
-                    priceInput.placeholder = 'Enter price...'
-                    priceCell.appendChild(priceInput);
-                    row.appendChild(priceCell);
+                // Floor Number (pre-filled)
+                let floorCell = document.createElement('td');
+                // floorCell.textContent = i;
+                floorCell.innerHTML = `<b>${i}</b>`
+                row.appendChild(floorCell);
+
+                // Price Input
+                let priceCell = document.createElement('td');
+                let priceInput = document.createElement('input');
+                priceInput.type = 'number';
+                priceInput.name = `floorPrice_${i}`;
+                priceInput.id = `floorPrice_${i}`;
+                priceInput.className = 'priceInput';
+                priceInput.classList.add('form-control')
+                priceInput.placeholder = 'Enter price...'
+                priceCell.appendChild(priceInput);
+                row.appendChild(priceCell);
 
 
-                    // Action (Copy button)
-                    let actionCell = document.createElement('td');
-                    let copyBtn = document.createElement('button');
-                    copyBtn.textContent = 'Copy';
-                    copyBtn.classList.add('btn', 'btn-outline-dark');
-                    copyBtn.type = 'button'
-                    copyBtn.setAttribute('data-floor', i);
-                    copyBtn.addEventListener('click', function () {
-                        if (i > 1) {
-                            let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
-                            priceInput.value = prevPrice;
-                        }
-                    });
+                // Action (Copy button)
+                let actionCell = document.createElement('td');
+                let copyBtn = document.createElement('button');
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.add('btn', 'btn-outline-dark');
+                copyBtn.type = 'button'
+                copyBtn.setAttribute('data-floor', i);
+                copyBtn.addEventListener('click', function () {
                     if (i > 1) {
-                        actionCell.appendChild(copyBtn);
-
+                        let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
+                        priceInput.value = prevPrice;
                     }
-                    row.appendChild(actionCell);
+                });
+                if (i > 1) {
+                    actionCell.appendChild(copyBtn);
 
-                    // Append the row to the table body
-                    tableBody.appendChild(row);
                 }
+                row.appendChild(actionCell);
+
+                // Append the row to the table body
+                tableBody.appendChild(row);
+            }
 
         }
 
         document.getElementById('addFloorRiseBtn').addEventListener('click', function () {
             let totalFloors = document.getElementById('numberOfFloors').value;
             const file_input = document.querySelector(`[id="floor_rise_tr_${totalFloors}"]`);
-            if (file_input){}
-            else{
+            if (file_input) { }
+            else {
                 if (!totalFloors || totalFloors <= 0) {
                     alert("Please enter a valid number of floors.");
                     return;
@@ -1328,7 +1347,6 @@
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             let prices = [];
             let totalFloors = document.getElementById('numberOfFloors').value;
-            console.log('esgrea')
 
             for (let i = 1; i <= totalFloors; i++) {
                 let price = document.querySelector(`input[name=floorPrice_${i}]`).value;
@@ -1336,7 +1354,6 @@
             }
 
 
-            console.log(prices);
             property_detail['floor_rise'] = prices
             document.getElementById('floorrise_modal_close').click()
             document.getElementById('floor_rise_saved').classList.add('fa', 'fa-check')
@@ -1351,13 +1368,22 @@
     </script>
 
     <script>
+        let building_db_id
         async function copy_building_details(building_id) {
             toggle_preloader();
-            const data = await get_building_data(building_id)
-            create_table_floor_rise(data['no_of_floors'])
-            setFormValues(data)
-            setLocation(Number(data['google_pin_lat']), Number(data['google_pin_lng']))
-            document.getElementById('saveChangesBtn').click()
+            const data = await get_building_data(building_id);
+            create_table_floor_rise(data['no_of_floors']);
+            setFormValues(data);
+            setLocation(Number(data['google_pin_lat']), Number(data['google_pin_lng']));
+            document.getElementById('saveChangesBtn').click();
+            document.getElementById('copy_building_id').value = building_id;
+            document.getElementById('publish_btn').style.display = 'initial';
+            document.getElementById('unit_btn').style.display = 'initial';
+            building_db_id = data['id']
+            if (data['unit_unactive'] === true){
+                document.getElementById('note_p').style.display = 'block';
+                document.getElementById('note_span').innerText = data['note'];
+            }
             toggle_preloader();
         }
 
@@ -1369,7 +1395,7 @@
                         'Content-Type': 'application/json',
                         'X-CSRFToken': '{{csrf_token}}'
                     },
-                    body: JSON.stringify({"building_id":`${building_id}`})
+                    body: JSON.stringify({ "building_id": `${building_id}` })
                 });
 
                 const data = await response.json();
@@ -1380,6 +1406,29 @@
                 }
             } catch (error) {
                 console.error("Error submitting document form: ", error);
+            }
+        }
+
+        async function publish_building_data() {
+            try {
+                const response = await fetch("{% url 'property-publish-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({ "building_db_id": `${building_db_id}` })
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    alert('Successfully Published building')
+                    location.reload()
+                } else {
+                    alert('Error in publishing building: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error in publishing building: ", error);
             }
         }
 
@@ -1418,19 +1467,18 @@
                             }
                         } else if (input.type === 'file') {
                             const file_input = document.querySelector(`[id="${key}"]`);
-                            if (file_input){
-                                if (file_input.tagName === 'A' && data[key] !== null){                                    
+                            if (file_input) {
+                                if (file_input.tagName === 'A' && data[key] !== null) {
                                     let file_input_obj = document.getElementById(key)
                                     file_input_obj.style.display = 'block';
                                     file_input_obj.href = data[key]
                                     file_input_obj.innerText = String(data[key]).split('/').pop();
-                                }else{
+                                } else {
                                     let file_input_obj = document.getElementById(key)
                                     file_input_obj.style.display = 'block';
                                     file_input_obj.src = data[key]
                                 }
                             }
-                            console.warn('File input cannot be set programmatically. Please upload a new file.');
                         } else {
                             input.value = data[key];
                         }
@@ -1441,10 +1489,11 @@
         }
 
         '{% if is_building_edit == True %}'
-            copy_building_details('{{building_id}}')
+        copy_building_details('{{building_id}}')
         '{% endif %}'
 
     </script>
+
 </body>
 
 </html>

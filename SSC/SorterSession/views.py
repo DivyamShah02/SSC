@@ -215,7 +215,7 @@ class PropertyViewset(viewsets.ViewSet):
 
 class PropertyDetailViewset(viewsets.ViewSet):
     def list(self, request):
-        try:
+        # try:
             session_id = request.GET.get('session_id')
             ind = request.GET.get('ind')
 
@@ -393,7 +393,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 total_gst = 0
                 gst = 0
 
-            
+
             property_unit_price = round((property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst) / 10000000, 2)
 
 
@@ -430,16 +430,16 @@ class PropertyDetailViewset(viewsets.ViewSet):
             return Response(data)
         
 
-        except ParseError as e:
-            return Response({'success': False, 'error': str(e)}, status=400)
+        # except ParseError as e:
+        #     return Response({'success': False, 'error': str(e)}, status=400)
 
-        except NotFound as e:
-            return Response({'success': False, 'error': str(e)}, status=404)
+        # except NotFound as e:
+        #     return Response({'success': False, 'error': str(e)}, status=404)
 
-        except Exception as e:
-            # Catch any other unforeseen errors
-            print(e)
-            return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
+        # except Exception as e:
+        #     # Catch any other unforeseen errors
+        #     print(e)
+        #     return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
 
 class GetDistanceViewset(viewsets.ViewSet):

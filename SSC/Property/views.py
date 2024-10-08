@@ -6,6 +6,7 @@ from django.urls import reverse
 from .serializers import BuildingDetailsSerializer, AmenitiesSerializer, UnitDetailsSerializer
 from .models import BuildingDetails, Amenities, UnitDetails
 from django.db import transaction
+import ast
 
 
 class PropertyDetailFormViewSet(viewsets.ViewSet):
@@ -26,9 +27,8 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         return render(request, 'property_detail_form.html', data)
 
     def create(self, request):
+        try:
             data = request.data.copy()
-
-        # try:
             # Process list fields
             for key in data.keys():
                 if isinstance(data[key], list) and key != 'amenities':
@@ -57,10 +57,10 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             amenities_instance = Amenities(building_id=building_id, **amenities_data)
             amenities_instance.save()
 
-            return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id']}, status=status.HTTP_201_CREATED)
+            return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id'], "building_id":building_id}, status=status.HTTP_201_CREATED)
 
-        # except Exception as e:
-        #     return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as e:
+            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class PropertyCopyDataViewSet(viewsets.ViewSet):
 
@@ -69,14 +69,31 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
         if building_id:
             building_data_obj = get_object_or_404(BuildingDetails, building_id=building_id)
             building_data = BuildingDetailsSerializer(building_data_obj).data
-            
+
             for i in building_data:
-                if "," in str(building_data[i]):
+                if "," in str(building_data[i]) and 'floor_rise' != i:
                     building_data[i] = [str(j).strip() for j in str(building_data[i]).split(',')]
-                    print(building_data[i])
+
             if type(building_data['type_of_apartments']) != list:
                 building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
-                print(building_data['type_of_apartments'])
+
+            building_data['amenities'] = []
+
+            amenities_data_obj = get_object_or_404(Amenities, building_id=building_id)
+            amenities_data = AmenitiesSerializer(amenities_data_obj).data
+
+            for amenity in amenities_data:
+                if amenities_data[amenity]:
+                    building_data['amenities'].append(amenity)
+
+            floor_rise_str = building_data['floor_rise']
+            
+            floor_rise = ast.literal_eval(floor_rise_str)
+            building_data['floor_rise'] = floor_rise
+            # print(floor_rise)
+            for floor in floor_rise:
+                building_data[f'floorPrice_{floor["floor"]}'] = floor['price']
+                print(building_data)
 
             return Response({'success': True, 'building_data': building_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)

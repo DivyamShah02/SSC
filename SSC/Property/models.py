@@ -15,8 +15,19 @@ class BuildingDetails(models.Model):
     brochure_2 = models.FileField(upload_to='brochure', null=True, blank=True)
     year_of_establishment = models.PositiveIntegerField()
     no_of_projects_delivered = models.PositiveIntegerField()
-    key_projects = models.TextField()
-    key_promoters = models.TextField()
+
+    key_projects_1 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_projects_2 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_projects_3 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_projects_4 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_projects_5 = models.CharField(max_length=255, default='', null=True, blank=True)
+    
+    key_promoters_1 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_promoters_2 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_promoters_3 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_promoters_4 = models.CharField(max_length=255, default='', null=True, blank=True)
+    key_promoters_5 = models.CharField(max_length=255, default='', null=True, blank=True)
+
     name = models.CharField(max_length=255)
     number = models.CharField(max_length=15)
     email = models.EmailField(default='', null=True, blank=True)
@@ -32,7 +43,12 @@ class BuildingDetails(models.Model):
     type_of_project = models.CharField(max_length=255)
     per_sqft_rate_saleable = models.CharField(max_length=100, default='')
     type_of_apartments = models.CharField(max_length=255)
-    special_amenity = models.TextField(default='', null=True, blank=True)
+
+    special_amenity_1 = models.CharField(max_length=255, default='', null=True, blank=True)
+    special_amenity_2 = models.CharField(max_length=255, default='', null=True, blank=True)
+    special_amenity_3 = models.CharField(max_length=255, default='', null=True, blank=True)
+    special_amenity_4 = models.CharField(max_length=255, default='', null=True, blank=True)
+
     possession_by = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_by_developer = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_rera = models.TextField(max_length=15, default='', null=True, blank=True)

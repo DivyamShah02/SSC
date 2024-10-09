@@ -33,7 +33,6 @@ class PropertyInquiry(models.Model):
     servant_room = models.CharField(null=True, blank=True, max_length=10)
     puja_room = models.CharField(null=True, blank=True, max_length=10)
     min_carpet_area = models.CharField(null=True, blank=True, max_length=100)
-    vastu_preferences = models.CharField(null=True, blank=True, max_length=200)
     flats_per_floor = models.CharField(null=True, blank=True, max_length=50)
     floor_preference = models.CharField(null=True, blank=True, max_length=50)
     private_elevator = models.CharField(null=True, blank=True, max_length=10)

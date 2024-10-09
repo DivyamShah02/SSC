@@ -38,6 +38,7 @@ class BuildingDetails(models.Model):
     project_name = models.CharField(max_length=255, null=True, blank=True)
     developed_by = models.CharField(max_length=255, null=True, blank=True)
     location_of_project = models.TextField(null=True, blank=True)
+    area_of_project = models.CharField(max_length=255, null=True, blank=True, default='')
     google_pin_lat = models.CharField(max_length=255, default="") 
     google_pin_lng = models.CharField(max_length=255, default="") 
     type_of_project = models.CharField(max_length=255)

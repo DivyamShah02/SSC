@@ -16,6 +16,7 @@ from datetime import datetime
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance
+from .overview_lst import overview_list
 
 
 class SorterViewSet(viewsets.ViewSet):
@@ -401,6 +402,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
+            overview_details = []
+            for field in overview_list:
+                overview_details.append({'key':field, 'value':building_data[field]})
+
             data = {
                 'success': True, 
                 'index':ind,
@@ -409,6 +414,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'session_id':session_id,
                 'amenties_data':amenties_data,
                 'property_unit_price_in_cr':property_unit_price_in_cr,
+                'total_property_unit_price':total_property_unit_price,
                 'per_sqft_rate_saleable':per_sqft_rate_saleable,
                 'size_of_unit_mtrs':size_of_unit_mtrs,
                 'menu_properties':menu_properties, 
@@ -430,6 +436,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'government_charges':government_charges,
                 'gst':gst,
                 'is_ready_to_move':is_ready_to_move,
+                'overview_details':overview_details,
                 }
             
             return render(request, 'property_detail_design.html', data)

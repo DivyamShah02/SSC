@@ -87,6 +87,9 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
 
             if type(building_data['type_of_apartments']) != list:
                 building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
+            
+            if type(building_data['type_of_parking']) != list:
+                building_data['type_of_parking'] = building_data['type_of_parking'].split()
 
             building_data['amenities'] = []
 

@@ -12,6 +12,7 @@ from rest_framework.exceptions import NotFound, ParseError
 from django.shortcuts import get_object_or_404, render
 import json
 import ast
+from datetime import datetime
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance
@@ -353,9 +354,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 development_charges = 0
 
             
-            try:            
+            try:
                 advance_maintenance_rate = round((float(building_data['advance_maintenance']) / 24), 2)
-                total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                # total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                total_advance_maintenance = size_of_unit * float(building_data['advance_maintenance'])
+                advance_maintenance_per_month = advance_maintenance_rate * size_of_unit
                 advance_maintenance = round(total_advance_maintenance / 100000, 2)
             except:
                 advance_maintenance_rate = 0
@@ -393,9 +396,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 total_gst = 0
                 gst = 0
 
+            total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+            property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
 
-            property_unit_price = round((property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst) / 10000000, 2)
-
+            is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
             data = {
                 'success': True, 
@@ -404,7 +408,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'next_ind':next_ind,
                 'session_id':session_id,
                 'amenties_data':amenties_data,
-                'property_unit_price':property_unit_price,
+                'property_unit_price_in_cr':property_unit_price_in_cr,
                 'per_sqft_rate_saleable':per_sqft_rate_saleable,
                 'size_of_unit_mtrs':size_of_unit_mtrs,
                 'menu_properties':menu_properties, 
@@ -419,11 +423,13 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'basic_price':basic_price,
                 'advance_maintenance_rate':advance_maintenance_rate,
                 'advance_maintenance':advance_maintenance,
+                'advance_maintenance_per_month':advance_maintenance_per_month,
                 'development_charges':development_charges,
                 'maintenance_deposit':maintenance_deposit,
                 'other_specific_expenses':other_specific_expenses,
                 'government_charges':government_charges,
-                'gst':gst
+                'gst':gst,
+                'is_ready_to_move':is_ready_to_move,
                 }
             
             return render(request, 'property_detail_design.html', data)
@@ -441,6 +447,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
         #     print(e)
         #     return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
+
+    def is_date_in_past(self, date_str):
+        input_date = datetime.strptime(date_str, "%m-%Y")
+        current_date = datetime.now().replace(day=1)
+        return input_date < current_date
 
 class GetDistanceViewset(viewsets.ViewSet):
     def list(self, request):

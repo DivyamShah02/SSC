@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="/static/css/loader.css">
     <title>{{main_property.building_id}} - {{main_property.project_name}}</title>
     <style>
-        /* Set the size of the map */
-
+        .custom-tooltip {
+        --bs-tooltip-bg: var(--primary-color);
+        --bs-tooltip-color: #fff;
+        font-weight: 600;
+        }
     </style>
 
 </head>
@@ -173,7 +176,7 @@
                             </div>
                             <div class="col-10">
                                 <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
-                                <h5 class="card-title text-primary-ssc"><b>₹{{property_unit_price}} Cr</b></h5>
+                                <h5 class="card-title text-primary-ssc"><b>₹{{property_unit_price_in_cr}} Cr</b></h5>
                                 <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft</b></p>
 
                                 <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
@@ -245,11 +248,19 @@
                             <div class="col-2">
                                 <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
                             </div>
+                            {% if is_ready_to_move == True %}
                             <div class="col-10">
                                 <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
-                                <h5 class="card-title text-primary-ssc"><b>{{main_property.developed_by}}</b></h5>
+                                <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
                                 <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                             </div>
+                            {% else %}
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.age_of_property_by_developer}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -261,7 +272,7 @@
                             </div>
                             <div class="col-10">
                                 <p class="card-text text-light-ssc m-0"><b>Architect</b></p>
-                                <h5 class="card-title text-primary-ssc"><b>{{main_property.developed_by}}</b></h5>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.architect}}</b></h5>
                                 <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
                             </div>
                         </div>
@@ -558,7 +569,10 @@
                                 </thead> -->
                                 <tbody class="">
                                     <tr>
-                                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{per_sqft_rate_saleable}}k /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
+                                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{per_sqft_rate_saleable}}k / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹{{basic_price}} Cr</th>
                                     </tr>
                                     <tr>
@@ -595,34 +609,54 @@
                                         <th class="text-end py-3 px-4">₹1.5 L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Development Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.development_charges}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">Development Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.development_charges}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹{{development_charges}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Advance Maintenance &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{advance_maintenance_rate}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">Advance Maintenance &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+
+                                            data-bs-title="₹{{main_property.advance_maintenance}} / 24 = {{advance_maintenance_rate}} X {{unit_data.size_of_unit}} Sq.Ft = ₹{{advance_maintenance_per_month}} PM"></i></td>
+                                            <!-- data-bs-title="₹{{advance_maintenance_rate}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td> -->
                                         <th class="text-end py-3 px-4">₹{{advance_maintenance}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Maintenance Deposit &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.maintenance_deposit}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">Maintenance Deposit &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.maintenance_deposit}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹{{maintenance_deposit}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Other Expenses &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">Other Expenses &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.other_specific_expenses}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹{{other_specific_expenses}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">Government Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">Government Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X 5.9%"></i></td>
                                         <th class="text-end py-3 px-4">₹{{government_charges}} L</th>
                                     </tr>
                                     <tr>
-                                        <td class="px-4 py-3">GST ({{main_property.gst_applicable}}%)&nbsp;<i class="fas fa-circle-info text-secondary-ssc" title="₹{{main_property.other_specific_expenses}} /Sq.Ft X {{unit_data.size_of_unit}}"></i></td>                                        
+                                        <td class="px-4 py-3">GST ({{main_property.gst_applicable}}%)&nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X {{main_property.gst_applicable}}%"></i></td>                                            
                                         <th class="text-end py-3 px-4">₹{{gst}} L</th>
                                     </tr>
                                     <tr>
                                         <!-- <th class="px-4 py-3">Grand Total</td> -->
                                             <th class="px-4 py-3">Approx. Price</td>
                                         <th class="text-end py-3 px-4">
-                                            <h5 class="text-primary-ssc"><b>₹{{property_unit_price}} CR</b></h5>
+                                            <h5 class="text-primary-ssc"><b>₹{{property_unit_price_in_cr}} CR</b></h5>
                                         </th>
                                     </tr>
                                 </tbody>
@@ -918,6 +952,11 @@
             initAutocomplete();
             toggle_loader();
         };
+    </script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 
 </body>

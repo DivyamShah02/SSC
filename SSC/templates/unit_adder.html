@@ -108,7 +108,7 @@
                         <input type="hidden" class="form-control" id="base_price" value="" placeholder="" name="base_price">
                         <input type="hidden" class="form-control" id="unit_id" value="NULL" placeholder="" name="unit_id">
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="unitTypes">Type of unit</label><br>
+                            <label class="form-label primary" for="unitTypes">1) Type of unit</label><br>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
@@ -155,7 +155,7 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="layoutTypes">Layout Types</label><br>
+                            <label class="form-label primary" for="layoutTypes">2) Layout Types</label><br>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
@@ -190,25 +190,31 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfUnit">Size of the unit
+                            <label class="form-label primary" for="sizeOfUnit">3) Size of the unit
                                 (SBU)</label>
                             <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit"
                                 placeholder="Enter size of unit">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="unitsPerFloor">No. of units on one
+                            <label class="form-label primary" for="carpetArea">4) Carpet area as per
+                                RERA</label>
+                            <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera"
+                                placeholder="Enter carpet area as per RERA">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unitsPerFloor">5) No. of units on one
                                 floor</label>
                             <input type="number" class="form-control" id="unitsPerFloor"
                                 placeholder="Enter Units per floor" name="no_of_units_per_floor">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="liftsPerFloor">No. of lifts on one
+                            <label class="form-label primary" for="liftsPerFloor">6) No. of lifts on one
                                 floor</label>
                             <input type="number" class="form-control" id="liftsPerFloor"
                                 placeholder="Enter nubmer of lifts per floor" name="no_of_lifts_per_floor">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="privateLifts">Private lifts?</label><br>
+                            <label class="form-label primary" for="privateLifts">7) Private lifts?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_yes" value="Yes">
                                 <label class="form-check-label" for="private_lifts_yes">Yes</label>
@@ -223,13 +229,13 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="numberOfPrivateLifts">If Yes, How
+                            <label class="form-label primary" for="numberOfPrivateLifts">8) If Yes, How
                                 many?</label>
                             <input type="number" class="form-control" id="numberOfPrivateLifts"
                                 placeholder="Enter number of private lifts" name="no_private_lifts">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="commonTerrace">Common terrace accessible?</label><br>
+                            <label class="form-label primary" for="commonTerrace">9) Common terrace accessible?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="common_terrace_accessible" id="common_terrace_accessible_yes" value="Yes">
                                 <label class="form-check-label" for="common_terrace_accessible_yes">Yes</label>
@@ -244,43 +250,37 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfMainBalcony">Size of main
-                                balcony</label>
+                            <label class="form-label primary" for="sizeOfMainBalcony">10) Size of main
+                                balcony<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <input type="text" class="form-control" id="sizeOfMainBalcony"
                                 placeholder="Enter size of main balcony" name="size_of_balcony">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfMasterBedroom">Size of master
-                                bedroom</label>
+                            <label class="form-label primary" for="sizeOfMasterBedroom">11) Size of master
+                                bedroom<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <input type="text" class="form-control" id="sizeOfMasterBedroom"
                                 placeholder="Enter size of master bedroom" name="size_of_master_bedroom">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfKitchen">Size of
-                                kitchen</label>
+                            <label class="form-label primary" for="sizeOfKitchen">12) Size of
+                                kitchen<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <input type="text" class="form-control" id="sizeOfKitchen"
                                 placeholder="Enter size of kitchen" name="size_of_kitchen">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="sizeOfPrivateTerrace">Size of private
-                                terrace</label>
+                            <label class="form-label primary" for="sizeOfPrivateTerrace">13) Size of private
+                                terrace<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <input type="text" class="form-control" id="sizeOfPrivateTerrace"
                                 placeholder="Enter size of private terrace" name="size_of_private_terrace">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="carpetArea">Carpet area as per
-                                RERA</label>
-                            <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera"
-                                placeholder="Enter carpet area as per RERA">
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="numberOfBathrooms">No. of attached
+                            <label class="form-label primary" for="numberOfBathrooms">14) No. of attached
                                 bathrooms</label>
                             <input type="number" class="form-control" id="numberOfBathrooms"
                                 placeholder="Enter number of attached bathrooms" name="no_of_attached_bathrooms">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="servantRoomAvailable">Servant room available?</label><br>
+                            <label class="form-label primary" for="servantRoomAvailable">15) Servant room available?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="servant_room_available" id="servant_room_available_yes" value="Yes">
                                 <label class="form-check-label" for="servant_room_available_yes">Yes</label>
@@ -295,7 +295,7 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="pujaRoomAvailable">Separate puja room available?</label><br>
+                            <label class="form-label primary" for="pujaRoomAvailable">16) Separate puja room available?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="separate_puja_room_available" id="separate_puja_room_yes" value="Yes">
                                 <label class="form-check-label" for="separate_puja_room_yes">Yes</label>
@@ -306,25 +306,25 @@
                             </div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="numberOfBalconies">No. balconies in
+                            <label class="form-label primary" for="numberOfBalconies">17) No. balconies in
                                 one house</label>
                             <input type="number" class="form-control" id="numberOfBalconies"
                                 placeholder="Enter number of balconies" name="no_of_balconies">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="parkingAllotted">No. of parking
+                            <label class="form-label primary" for="parkingAllotted">18) No. of parking
                                 allotted to one unit</label>
                             <input type="number" class="form-control" id="parkingAllotted"
                                 placeholder="Enter number of parking space" name="no_of_parking_allotted">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="floor_plan">Upload Floor Plan</label>
+                            <label class="form-label primary" for="floor_plan">19) Upload Floor Plan</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="floor_plan"
                             name="floor_plan" accept="image/*">
                             <img id="img_floor_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="unit_plan">Upload Unit Plan</label>
+                            <label class="form-label primary" for="unit_plan">20) Upload Unit Plan</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="unit_plan"
                             name="unit_plan" accept="image/*">
                             <img id="img_unit_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">

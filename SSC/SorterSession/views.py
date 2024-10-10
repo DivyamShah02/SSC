@@ -15,7 +15,7 @@ import ast
 from datetime import datetime
 
 from .sorting_logic import Sorter
-from .library.DistanceCalculator import get_distance
+from .library.DistanceCalculator import get_distance, get_address
 from .overview_lst import overview_list
 
 
@@ -405,6 +405,28 @@ class PropertyDetailViewset(viewsets.ViewSet):
             overview_details = []
             for field in overview_list:
                 overview_details.append({'key':field, 'value':building_data[field]})
+            destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
+
+            try:
+                origins_sch = str(client_data['school_area']).split('|')
+                distance_sch, duration_sch = get_distance(origins_sch[0], origins_sch[1], destinations[0], destinations[1])
+                sch_info = get_address(origins_sch[0], origins_sch[1])
+                print(sch_info)
+                duration_sch = str(duration_sch).title()
+            
+            except:
+                duration_sch = False
+
+            try:
+                origins_work = str(client_data['workplace_area']).split('|')
+                distance_work, duration_work = get_distance(origins_work[0], origins_work[1], destinations[0], destinations[1])
+                work_info = get_address(origins_work[0], origins_work[1])
+                print(work_info)
+                duration_work = str(duration_work).title()
+
+            except:
+                duration_work = False
+            
 
             data = {
                 'success': True, 
@@ -437,6 +459,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'gst':gst,
                 'is_ready_to_move':is_ready_to_move,
                 'overview_details':overview_details,
+                'duration_sch':duration_sch,
+                'duration_work':duration_work,
+                'sch_info':sch_info,
+                'work_info':work_info,
                 }
             
             return render(request, 'property_detail_design.html', data)

@@ -531,9 +531,22 @@
                                             <div id="map" style="background-color: white !important;"></div>
                                             <div class="p-3" style="background-color: white !important;">
                                                 <ul id="commute-list">
+                                                    {% if duration_sch != False %}
                                                     <li>
-                                                        <p><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>5 Hrs+</b> to 805 safady St by car</p>
+                                                        <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        data-bs-custom-class="custom-tooltip"
+                                                        data-bs-title="{{sch_info}}"
+                                                        ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_sch}}+</b> to your school by car</span></p>
                                                     </li>
+                                                    {% endif %}
+                                                    {% if duration_work != False %}
+                                                    <li>
+                                                        <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        data-bs-custom-class="custom-tooltip"
+                                                        data-bs-title="{{work_info}}"
+                                                        ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_work}}+</b> to your workplace by car</span></p>
+                                                    </li>
+                                                    {% endif %}
     
                                                 </ul>
                                                 <div class="row" id="commute-searchbox">
@@ -890,7 +903,8 @@
                         .then(result => {
                             const location_duration = result
                             add_commut_li(location_duration, name)
-                            document.getElementById('commute-searchbox').style.display = 'none'
+                            // document.getElementById('commute-searchbox').style.display = 'none'
+                            document.getElementById('place-search').value = ''
                         });
                 }
 

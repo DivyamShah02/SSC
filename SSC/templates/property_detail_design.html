@@ -119,7 +119,7 @@
                 <div class="row px-5">
                     <!-- Main Image -->
                     <div class="col-lg-8 ssc-images primary-images p-0 position-relative">
-                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
+                        <img src="{{main_property.head_image}}"
                             alt="Main Project Image">
                         <div class="overlay-text">{{main_property.project_name}}</div>
                         <!-- Golden Badge -->
@@ -128,11 +128,11 @@
                     <!-- Thumbnail Images (hidden on mobile/tablet) -->
                     <div class="col-lg-4 p-0">
                         <div class="ssc-images secondary-images-one p-0 mx-2" style="margin-bottom: 10px !important;">
-                            <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/2_1980-X-1080_1.jpg"
+                            <img src="{{main_property.sec_image_1}}"
                                 alt="Thumbnail 2">
                         </div>
                         <div class="ssc-images secondary-images-two p-0 my-2 mx-2">
-                            <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Interior/Living-room.jpg"
+                            <img src="{{main_property.sec_image_2}}"
                                 alt="Thumbnail 3">
                         </div>
                     </div>
@@ -315,29 +315,23 @@
                             <div style="background-color: white !important;">
                                 <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link floor-plan-btn active" id="home-tab" data-bs-toggle="tab"
-                                            href="#home" role="tab" aria-controls="home" aria-selected="true"><b>4 BHK Typical
-                                            Floor Plan Deluxe</b></a>
+                                        <a class="nav-link floor-plan-btn active" id="floor_plan_img-tab" data-bs-toggle="tab"
+                                            href="#floor_plan_img" role="tab" aria-controls="floor_plan_img" aria-selected="true"><b>{{unit_data.unit_configuration}} Floor Plan</b></a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link floor-plan-btn" id="profile-tab" data-bs-toggle="tab"
-                                            href="#profile" role="tab" aria-controls="profile" aria-selected="false"><b>4 BHK
-                                            Typical Floor Plan Classic</b></a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link floor-plan-btn" id="contact-tab" data-bs-toggle="tab"
-                                            href="#contact" role="tab" aria-controls="contact" aria-selected="false"><b>4 BHK
-                                            Unit Plan Wing B</b></a>
+                                        <a class="nav-link floor-plan-btn" id="unit_plan_img-tab" data-bs-toggle="tab"
+                                            href="#unit_plan_img" role="tab" aria-controls="unit_plan_img" aria-selected="false"><b>{{unit_data.unit_configuration}} Unit Plan</b></a>
                                     </li>
                                 </ul>
                                 <!-- Tabs navs -->
 
                                 <!-- Tabs content -->
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                        aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" id="floor_plan_img" role="tabpanel"
+                                        aria-labelledby="floor_plan_img-tab">
+                                        <!-- src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg" -->
                                         <img class="img-fluid"
-                                            src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg"
+                                            src="{{unit_data.floor_plan}}"
                                             alt="Tab 1 Image" width="100%" data-bs-toggle="modal"
                                             data-bs-target="#tab-modal1">
                                     </div>
@@ -353,7 +347,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Full-size Image -->
-                                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg"
+                                                    <img src="{{unit_data.floor_plan}}"
                                                         alt="Full Size Image" class="img-fluid">
                                                 </div>
                                             </div>
@@ -361,8 +355,8 @@
                                     </div>
 
 
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Classic.jpg"
+                                    <div class="tab-pane fade" id="unit_plan_img" role="tabpanel" aria-labelledby="unit_plan_img-tab">
+                                        <img src="{{unit_data.unit_plan}}"
                                             alt="Tab 2 Image" width="100%" data-bs-toggle="modal"
                                             data-bs-target="#tab-modal2">
                                     </div>
@@ -378,36 +372,13 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Full-size Image -->
-                                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Classic.jpg"
+                                                    <img src="{{unit_data.unit_plan}}"
                                                         alt="Full Size Image" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-
-                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Unit-Plan-_-Wing-B.jpg"
-                                            alt="Tab 3 Image" width="100%" data-bs-toggle="modal"
-                                            data-bs-target="#tab-modal3">
-                                    </div>
-                                    <div class="modal fade" id="tab-modal3" tabindex="-1" aria-labelledby="tab-modal3Label"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog custom-size">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="tab-modal3Label">4 BHK Unit Plan Wing B</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <!-- Full-size Image -->
-                                                    <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Unit-Plan-_-Wing-B.jpg"
-                                                        alt="Full Size Image" class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

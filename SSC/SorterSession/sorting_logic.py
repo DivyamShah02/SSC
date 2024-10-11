@@ -94,6 +94,7 @@ class Sorter:
             budget_max = updated_client_data.get('budget_max', 0)
 
             coords = str(updated_client_data.get('preferred_locations')).split(',')
+            unit_types = str(updated_client_data.get('unit_type')).split(',')
             validated_property = []
 
             for coord in coords:
@@ -101,27 +102,29 @@ class Sorter:
                 lng = float(str(str(coord).strip().split('|')[1]).strip())
                 km = 1.5
 
-                unit_type = 'Simplex'
+                # unit_type = 'Simplex'
 
                 min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
 
                 print(budget_min)
                 print(budget_max)
                 for bedroom in bedrooms:
-                    print(bedroom)
-                    property_unit_matched = UnitDetails.objects.filter(
-                        google_pin_lat__gte=min_lat,
-                        google_pin_lng__gte=min_lon,
-                        google_pin_lat__lte=max_lat,
-                        google_pin_lng__lte=max_lon,
-                        unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
-                        base_price__gte=budget_min,
-                        base_price__lte=budget_max
-                        )
-                    print(len(property_unit_matched))
-                    for pr in property_unit_matched:
-                        print(pr.id)
-                    for property in property_unit_matched:    validated_property.append(property.id)
+                    for unit_type in unit_types:
+                        print(bedroom)
+                        property_unit_matched = UnitDetails.objects.filter(
+                            google_pin_lat__gte=min_lat,
+                            google_pin_lng__gte=min_lon,
+                            google_pin_lat__lte=max_lat,
+                            google_pin_lng__lte=max_lon,
+                            unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
+                            base_price__gte=budget_min,
+                            base_price__lte=budget_max,
+                            active=True
+                            )
+                        print(len(property_unit_matched))
+                        for pr in property_unit_matched:
+                            print(pr.id)
+                        for property in property_unit_matched:    validated_property.append(property.id)
 
 
             return validated_property

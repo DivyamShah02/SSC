@@ -320,10 +320,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
             for amenity in amenties_data.keys():
                 if amenties_data[amenity] == True:
                     if amenity in client_amenities:
-                        amenity = str(amenity).replace('_', ' ').title()
+                        amenity = str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title()
                         client_prefered_amenities.append(amenity)
                     else:
-                        amenity = str(amenity).replace('_', ' ').title()
+                        amenity = str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title()
                         other_amenities.append(amenity)
 
             client_prefered_amenities, other_amenities, special_amenities = self.adjust_lists(client_prefered_amenities, other_amenities, special_amenities)

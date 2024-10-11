@@ -326,6 +326,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         other_amenities.append(amenity)
 
             size_of_unit = float(unit_data.get('size_of_unit'))
+            print(unit_data.get('per_sqft_rate_saleable'))
             property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
             basic_price = round(property_unit_price/ 10000000, 2)
 
@@ -405,6 +406,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
             overview_details = []
             for field in overview_list:
                 overview_details.append({'key':field, 'value':building_data[field]})
+            
             destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
 
             try:
@@ -485,6 +487,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
         input_date = datetime.strptime(date_str, "%m-%Y")
         current_date = datetime.now().replace(day=1)
         return input_date < current_date
+
 
 class GetDistanceViewset(viewsets.ViewSet):
     def list(self, request):

@@ -54,7 +54,7 @@ class Sorter:
 
             # Format bedroom data
             bedrooms_list = client_data.get("bedrooms", "").split(', ')
-            formatted_bedrooms = [b.replace('_bhk', 'BHK').upper() for b in bedrooms_list]
+            formatted_bedrooms = [b.replace('_bhk', ' BHK').upper() for b in bedrooms_list]
             updated_data["bedrooms"] = ' | '.join(formatted_bedrooms)
 
             return updated_data
@@ -105,7 +105,10 @@ class Sorter:
 
                 min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
 
+                print(budget_min)
+                print(budget_max)
                 for bedroom in bedrooms:
+                    print(bedroom)
                     property_unit_matched = UnitDetails.objects.filter(
                         google_pin_lat__gte=min_lat,
                         google_pin_lng__gte=min_lon,
@@ -116,7 +119,8 @@ class Sorter:
                         base_price__lte=budget_max
                         )
                     print(len(property_unit_matched))
-
+                    for pr in property_unit_matched:
+                        print(pr.id)
                     for property in property_unit_matched:    validated_property.append(property.id)
 
 

@@ -355,42 +355,56 @@
                             placeholder="Age of the property as per RERA">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="plotArea">21) Plot area of the project (FP/Net)</label>
+                        <label class="form-label primary" for="jodiPossible">21) RERA Approved?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="rera_approved_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_No"
+                                value="No">
+                            <label class="form-check-label" for="rera_approved_No">No</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plotArea">22) Plot area of the project (FP/Net)</label>
                         <input type="number" min="1" class="form-control" id="plotArea" name="plot_area"
                             placeholder="Enter plot area">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="architect">22) Architect</label>
+                        <label class="form-label primary" for="architect">23) Architect</label>
                         <input type="text" class="form-control" id="architect" name="architect"
                             placeholder="Enter architech name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="constructionCompany">23) Construction company</label>
+                        <label class="form-label primary" for="constructionCompany">24) Construction company</label>
                         <input type="text" class="form-control" id="constructionCompany" name="construction_company"
                             placeholder="Enter construction company name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBlocks">24) No. of Blocks</label>
+                        <label class="form-label primary" for="numberOfBlocks">25) No. of Blocks</label>
                         <input type="number" class="form-control" min="1" id="numberOfBlocks" name="no_of_blocks"
                             placeholder="Enter number of blocks">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfUnits">25) No. Units</label>
+                        <label class="form-label primary" for="numberOfUnits">26) No. Units</label>
                         <input type="number" class="form-control" min="1" id="numberOfUnits" name="no_of_units"
                             placeholder="Enter number of units">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfFloors">26) No. Floors</label>
+                        <label class="form-label primary" for="numberOfFloors">27) No. Floors</label>
                         <input type="number" class="form-control" min="1" id="numberOfFloors" name="no_of_floors"
                             placeholder="Enter number of floors">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBasements">27) No. of Basements</label>
+                        <label class="form-label primary" for="numberOfBasements">28) No. of Basements</label>
                         <input type="number" class="form-control" min="0" id="numberOfBasements" name="no_of_basements"
                             placeholder="Enter number of basements">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="jodiPossible">28) Jodi possible?</label><br>
+                        <label class="form-label primary" for="jodiPossible">29) Jodi possible?</label><br>
                         <!-- <select class="form-select" id="jodiPossible" name="jodi_possible">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -408,7 +422,7 @@
 
                     </div>
                     <div class="col-md-12 row form-group">
-                        <label class="form-label primary" for="buildingAmenities">29) Building amenities list</label>
+                        <label class="form-label primary" for="buildingAmenities">30) Building amenities list</label>
                         <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="amenities" value="swimming_pool"
@@ -558,7 +572,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">30) Special Amenities</label>
+                        <label class="form-label primary" for="removethis">31) Special Amenities</label>
                     </div>
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_1" class="form-label">Special Amenity 1</label>
@@ -585,7 +599,7 @@
                     </div>
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="centralAC">31) Central air conditioning
+                        <label class="form-label primary" for="centralAC">32) Central air conditioning
                             available?</label><br>
                         <!-- <select class="form-select" id="centralAC" name="central_air_conditioning">
                             <option value="Yes">Yes</option>
@@ -604,7 +618,7 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="petFriendly">32) Is this project pet friendly?</label><br>
+                        <label class="form-label primary" for="petFriendly">33) Is this project pet friendly?</label><br>
                         <!-- <select class="form-select" id="petFriendly" name="pet_friendly">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -622,8 +636,8 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="spiritualAttraction">33) Any spiritual or religious
-                            attraction in the project?</label><br>
+                        <label class="form-label primary" for="spiritualAttraction">34) Any spiritual or religious
+                            attraction in the project like  Gurudwara, Derasar, Mandir?</label><br>
                         <!-- <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -641,7 +655,7 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="parkingType">34) Type of parking</label><br>
+                        <label class="form-label primary" for="parkingType">35) Type of parking</label><br>
                         <!-- <select class="form-select" id="parkingType" name="type_of_parking">
                             <option value="Normal">Normal</option>
                             <option value="Hydraulic">Hydraulic</option>
@@ -684,7 +698,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">35) Brochures</label><br>
+                            <label class="form-label primary" for="removethis">36) Brochures</label><br>
                             <label for="brochure1" class="form-label">Brochure 1 (PDF -
                                 Required)</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
@@ -704,7 +718,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Property Images Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">36) Property Images (All Required)</label><br>
+                            <label class="form-label primary" for="removethis">37) Property Images (All Required)</label><br>
                             <label for="image1" class="form-label">Image 1</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
                                 class="form-control" id="image1" name="head_image" accept="image/*">
@@ -756,14 +770,14 @@
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="perSqFtRate">37) Per Sq. Ft. rate on
+                        <label class="form-label primary" for="perSqFtRate">38) Per Sq. Ft. rate on
                             saleable</label>
                         <input type="number" min="1" class="form-control" id="perSqFtRate" name="per_sqft_rate_saleable"
                             placeholder="Enter rate of Per Sq. Ft.">
                     </div>
 
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">38) PLC Options</label>
+                        <label class="form-label primary" for="removethis">39) PLC Options</label>
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
@@ -802,7 +816,7 @@
                     </div> -->
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="floorRise">39) Floor rise</label><br>
+                        <label class="form-label primary" for="floorRise">40) Floor rise</label><br>
                         <button type="button" class="btn btn-custom-primary" id="addFloorRiseBtn">
                             Add Floor Rise <i id="floor_rise_saved" class=""></i>
                         </button>
@@ -844,38 +858,38 @@
 
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developmentCharges">40) Development charges (AMC/Torrent
+                        <label class="form-label primary" for="developmentCharges">41) Development charges (AMC/Torrent
                             etc)</label>
                         <input type="number" min="0" class="form-control" id="developmentCharges" name="development_charges"
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="advanceMaintenance">41) Advance maintenance</label>
+                        <label class="form-label primary" for="advanceMaintenance">42) Advance maintenance</label>
                         <input type="number" min="0" class="form-control" id="advanceMaintenance" name="advance_maintenance"
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="maintenanceDeposit">42) Maintenance deposit</label>
+                        <label class="form-label primary" for="maintenanceDeposit">43) Maintenance deposit</label>
                         <input type="number" min="0" class="form-control" id="maintenanceDeposit" name="maintenance_deposit"
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="specificExpenses">43) Other specific expenses if any?</label>
+                        <label class="form-label primary" for="specificExpenses">44) Other specific expenses if any?</label>
                         <input type="number" min="0" class="form-control" id="specificExpenses" name="other_specific_expenses"
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">44) Sale deed value</label>
+                        <label class="form-label primary" for="saleDeedValue">45) Sale deed value</label>
                         <input type="number" min="0" max="100" class="form-control" id="saleDeedValue" name="sale_deed_value"
                             placeholder="Enter sale deed value">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="gstApplicable">45) How much GST is applicable?</label>
+                        <label class="form-label primary" for="gstApplicable">46) How much GST is applicable?</label>
                         <input type="number" min="0" class="form-control" id="gstApplicable" name="gst_applicable"
                             placeholder="Enter GST">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="loanAvailability">46) Loan availability?</label><br>
+                        <label class="form-label primary" for="loanAvailability">47) Loan availability?</label><br>
                         <!-- <select class="form-control" id="loanAvailability" name="loan_availability">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -893,7 +907,7 @@
 
                     </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">47) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">48) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
@@ -922,6 +936,7 @@
     </div>
     <!-- Main content end -->
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

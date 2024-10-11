@@ -117,7 +117,6 @@ def temp_data(request):
 
     return HttpResponse('Data uploaded')
 
-
 def generate_building_details(number_of_entries):
     building_details = []
     print('-------------------------------------------------------------------')
@@ -298,3 +297,5 @@ def generate_file_name(folder, file_name):
         counter += 1
     return process_file_path
 
+def handle_error_page(request):
+    return render(request, 'error_page.html')

@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.exceptions import NotFound, ParseError
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 import json
 import ast
 from datetime import datetime
@@ -216,7 +216,7 @@ class PropertyViewset(viewsets.ViewSet):
 
 class PropertyDetailViewset(viewsets.ViewSet):
     def list(self, request):
-        # try:
+        try:
             session_id = request.GET.get('session_id')
             ind = request.GET.get('ind')
 
@@ -476,18 +476,21 @@ class PropertyDetailViewset(viewsets.ViewSet):
             
             return render(request, 'property_detail_design.html', data)
             return Response(data)
-        
 
-        # except ParseError as e:
-        #     return Response({'success': False, 'error': str(e)}, status=400)
 
-        # except NotFound as e:
-        #     return Response({'success': False, 'error': str(e)}, status=404)
+        except ParseError as e:
+            return redirect('error_page')
+            return Response({'success': False, 'error': str(e)}, status=400)
 
-        # except Exception as e:
-        #     # Catch any other unforeseen errors
-        #     print(e)
-        #     return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
+        except NotFound as e:
+            return redirect('error_page')
+            return Response({'success': False, 'error': str(e)}, status=404)
+
+        except Exception as e:
+            # Catch any other unforeseen errors
+            print(e)
+            return redirect('error_page')
+            return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
     def is_date_in_past(self, date_str):
         input_date = datetime.strptime(date_str, "%m-%Y")

@@ -13,4 +13,6 @@ urlpatterns = [
     path('', include('Property.urls')),
 
     path('temp/', temp_data, name='temp'),
+
+    path('error_page/', handle_error_page, name='error_page')
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

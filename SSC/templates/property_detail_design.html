@@ -406,6 +406,14 @@
                                     <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{other_amenity}}</b></p>
                                 </div>
                                 {% endfor %}
+
+                                <hr>
+
+                                {% for special_amenity in special_amenities %}
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{special_amenity}}</b></p>
+                                </div>
+                                {% endfor %}
                                 
                                 <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
                                     <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>

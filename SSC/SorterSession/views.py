@@ -16,7 +16,6 @@ from datetime import datetime
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance, get_address
-from .overview_lst import overview_list
 
 
 class SorterViewSet(viewsets.ViewSet):
@@ -316,6 +315,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             client_prefered_amenities = []
             other_amenities = []
+            special_amenities = [building_data[f'special_amenity_{sp}'] for sp in range(1,5) if building_data[f'special_amenity_{sp}'] != '']
+
             for amenity in amenties_data.keys():
                 if amenties_data[amenity] == True:
                     if amenity in client_amenities:
@@ -325,8 +326,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         amenity = str(amenity).replace('_', ' ').title()
                         other_amenities.append(amenity)
 
+            client_prefered_amenities, other_amenities, special_amenities = self.adjust_lists(client_prefered_amenities, other_amenities, special_amenities)
+
             size_of_unit = float(unit_data.get('size_of_unit'))
-            print(unit_data.get('per_sqft_rate_saleable'))
+
             property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
             basic_price = round(property_unit_price/ 10000000, 2)
 
@@ -404,8 +407,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
             overview_details = []
-            for field in overview_list:
+            for field in building_data.keys():
                 overview_details.append({'key':field, 'value':building_data[field]})
+
+            for field in unit_data.keys():
+                overview_details.append({'key':field, 'value':unit_data[field]})
             
             destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
 
@@ -449,6 +455,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'client_data':client_data,
                 'client_prefered_amenities':client_prefered_amenities,
                 'other_amenities':other_amenities,
+                'special_amenities':special_amenities,
                 'floor_rise':floor_rise,
                 'basic_price':basic_price,
                 'advance_maintenance_rate':advance_maintenance_rate,
@@ -482,11 +489,40 @@ class PropertyDetailViewset(viewsets.ViewSet):
         #     print(e)
         #     return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
-
     def is_date_in_past(self, date_str):
         input_date = datetime.strptime(date_str, "%m-%Y")
         current_date = datetime.now().replace(day=1)
         return input_date < current_date
+
+    def adjust_lists(self, list1, list2, list3):
+        # Ensure list1 and list3 have exactly 4 elements
+        def fill_list(target_list, filler_list):
+            while len(target_list) < 4:
+                if filler_list:
+                    target_list.append(filler_list.pop(0))
+                else:
+                    break
+            return target_list
+
+        # Make sure list2 has a length that is a multiple of 4
+        def make_multiple_of_4(l):
+            while len(l) % 4 != 0:
+                l.pop()
+            return l
+
+        # Adjust list1 and list3
+        list1 = fill_list(list1, list2)
+        list3 = fill_list(list3, list2)
+
+        # Adjust list2 length to be a multiple of 4
+        list2 = make_multiple_of_4(list2)
+
+        # Convert lists to strings
+        list1 = [str(elem) for elem in list1]
+        list2 = [str(elem) for elem in list2]
+        list3 = [str(elem) for elem in list3]
+
+        return list1, list2, list3
 
 
 class GetDistanceViewset(viewsets.ViewSet):

@@ -1,6 +1,6 @@
 import time
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db import DatabaseError, transaction
 
 from rest_framework import viewsets, status
@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 
 from .serializers import PropertyInquirySerializer
+from .models import PropertyInquiry
 
 
 class PropertyInquiryViewSet(viewsets.ViewSet):
@@ -66,3 +67,14 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
                              "message": "An unexpected error occurred.", 
                              "details": str(e)}, 
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class UnitClientDataViewSet(viewsets.ViewSet):
+
+    def create(self, request):
+        client_id = request.data.get('client_id')
+        if client_id:
+            client_data_obj = get_object_or_404(PropertyInquiry, id=client_id)
+            client_data = PropertyInquirySerializer(client_data_obj).data
+            return Response({'success': True, 'client_data': client_data}, status=status.HTTP_200_OK)
+        return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
+

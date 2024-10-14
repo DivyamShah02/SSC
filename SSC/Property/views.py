@@ -25,7 +25,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         return render(request, 'property_detail_form.html', data)
 
     def create(self, request):
-        try:
+        # try:
             data = request.data.copy()
             # Process list fields
             for key in data.keys():
@@ -37,8 +37,12 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             data['floor_rise'] = str(data.get('floor_rise', ''))
 
-            last_property = BuildingDetails.objects.latest('id')
-            building_id = int(last_property.building_id) + 1
+            try:
+                last_property = BuildingDetails.objects.latest('id')
+                building_id = int(last_property.building_id) + 1
+            
+            except BuildingDetails.DoesNotExist:
+                building_id = 1000
 
             google_pin = data['google_Pin'].split('|')
             data['google_pin_lat'], data['google_pin_lng'] = google_pin
@@ -70,8 +74,8 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id'], "building_id":building_serializer.data['building_id']}, status=status.HTTP_201_CREATED)
 
-        except Exception as e:
-            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        # except Exception as e:
+        #     return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class PropertyCopyDataViewSet(viewsets.ViewSet):

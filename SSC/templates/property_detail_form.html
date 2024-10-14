@@ -1328,7 +1328,7 @@
                                     console.log(data);
                                     if (data.success == true) {
                                         submit_document_form(data.building_db_id)
-                                        alert(`data added successfully to ${data.building_id}!`)
+                                        alert(`data added successfully to building_id ${data.building_id}!`)
                                         window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
                                         
                                     }

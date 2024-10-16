@@ -7,3 +7,8 @@ Outcome - Small low rise (40 to 60 units ) - Single block high end (70 - 100 uni
 
 add a field of selected property to the sorted property
 
+################################################
+17/10/24
+add functionality to set the amentiy to false if unselected
+manage +91 issue in number
+

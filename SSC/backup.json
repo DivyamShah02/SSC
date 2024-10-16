@@ -3,7 +3,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$3SQ9Hzq5O0weyCT5nrw5d3$uyaNqIgGwX/f2VFOPBhN3b+IUE2ECrh4vC3KKxCztuQ=",
-    "last_login": "2024-10-13T10:31:07.846Z",
+    "last_login": "2024-10-15T09:58:44.706Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -38,6 +38,22 @@
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1stsDK:cdsFVcO6hvGk1VLtVNPu1LEwBPfIl0Oc3rt15vwmjyo",
     "expire_date": "2024-10-10T17:23:38.305Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nsubo5wm2brq4nw0n866a4t5yofwn9rq",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0eKC:AT-nPV7lP8Kt70bd8gKRx2n9O0MLnxQUzhOoBX8v5EA",
+    "expire_date": "2024-10-29T09:58:44.073Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "olsdumz5ztgg9sw6er0aulixfq3vbds3",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0eKC:AT-nPV7lP8Kt70bd8gKRx2n9O0MLnxQUzhOoBX8v5EA",
+    "expire_date": "2024-10-29T09:58:44.728Z"
   }
 },
 {
@@ -108,6 +124,102 @@
     "budget_max": "",
     "down_payment_percentage": "",
     "loan_approved_amount": "",
+    "specific_needs": "",
+    "concerns": ""
+  }
+},
+{
+  "model": "ClientDetail.propertyinquiry",
+  "pk": 38,
+  "fields": {
+    "name": "Pratik Thakkar",
+    "number": "+91 8758222401",
+    "whatsapp": "+91 8758222401",
+    "email": "pratik@squaresecondconsultants.com",
+    "profession": "Business",
+    "residence": "Riviera Blues",
+    "reference": "Dhruvil",
+    "why_buy_house": "Lifestyle upgrade",
+    "adults": 5,
+    "children": 2,
+    "senior_citizens": 2,
+    "have_pets": "no",
+    "current_residence_area": "1850",
+    "religious_preference": "maybe",
+    "workplace_area": "23.0120338|72.51075399999999",
+    "school_area": "23.0386593|72.5118581",
+    "preferred_locations": "23.0269804|72.4833787, 23.0557134|72.4686607, 23.1362081|72.54229629999999",
+    "decision_driven_by": "Choice driven",
+    "dependent_on_sale": "no",
+    "looking_since": "6_to_12_months",
+    "time_to_seal_deal": "30",
+    "unit_type": "Simplex, Duplex, Penthouse",
+    "bedrooms": "3_bhk, 4_bhk",
+    "attached_washrooms": "4",
+    "servant_room": "yes",
+    "puja_room": "yes",
+    "min_carpet_area": "2500",
+    "flats_per_floor": "Flexible",
+    "floor_preference": "13 to 20",
+    "private_elevator": "maybe",
+    "central_air_conditioning": "yes",
+    "min_parking_slots": "3",
+    "stack_parking": "maybe",
+    "property_age": "Upcoming 6 - 12 months",
+    "society_type": "Mid-sized gated community (120 to 300 units)",
+    "amenities": "gymnasium, indoor_swimming_pool, mini_theatre, co_d_working_space, jacuzzi",
+    "budget_min": "3",
+    "budget_max": "5",
+    "down_payment_percentage": "50",
+    "loan_approved_amount": "20000000",
+    "specific_needs": "NA",
+    "concerns": "NA"
+  }
+},
+{
+  "model": "ClientDetail.propertyinquiry",
+  "pk": 39,
+  "fields": {
+    "name": "Salmon Bhai",
+    "number": "+91 8899000099",
+    "whatsapp": "+91",
+    "email": null,
+    "profession": null,
+    "residence": null,
+    "reference": null,
+    "why_buy_house": "Lifestyle upgrade",
+    "adults": 5,
+    "children": 3,
+    "senior_citizens": 2,
+    "have_pets": "no",
+    "current_residence_area": "2500",
+    "religious_preference": "Not preferred",
+    "workplace_area": "23.0375943|72.5614923",
+    "school_area": "23.0386593|72.5118581",
+    "preferred_locations": "23.027614|72.4840917, 23.0557134|72.4686607, 22.995165|72.604097",
+    "decision_driven_by": "Choice driven",
+    "dependent_on_sale": "no",
+    "looking_since": "6_to_12_months",
+    "time_to_seal_deal": "30",
+    "unit_type": "Simplex, Duplex, Triplex, Penthouse",
+    "bedrooms": "4_bhk, 5_bhk",
+    "attached_washrooms": "4",
+    "servant_room": "yes",
+    "puja_room": "no",
+    "min_carpet_area": "4500",
+    "flats_per_floor": "1 - 2",
+    "floor_preference": "Above 21",
+    "private_elevator": "yes",
+    "central_air_conditioning": "no",
+    "min_parking_slots": "3",
+    "stack_parking": "no",
+    "property_age": "0 to 12 months old",
+    "society_type": "Single block high end (70 - 100 units)",
+    "amenities": "outdoor_swimming_pool, indoor_swimming_pool, guest_rooms, gazebo_sit_outs, massage_room",
+    "budget_min": "1",
+    "budget_max": "8",
+    "down_payment_percentage": "80",
+    "loan_approved_amount": "77",
     "specific_needs": "",
     "concerns": ""
   }
@@ -191,6 +303,180 @@
   }
 },
 {
+  "model": "Property.buildingdetails",
+  "pk": 9577,
+  "fields": {
+    "building_id": "1001",
+    "group_name": "Swati Procon",
+    "head_image": "property/Emailer_-_The_Waterfall_.jpg",
+    "sec_image_1": "property/Screenshot_2024-08-14_at_9.54.52_PM.png",
+    "sec_image_2": "property/sec_2_9vAexsa.jpg",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "brochure/amd-bom_s_Mh64RvD.pdf",
+    "brochure_2": "",
+    "year_of_establishment": 2010,
+    "no_of_projects_delivered": 12,
+    "key_projects_1": "Swati Senor",
+    "key_projects_2": "Swati Crimson",
+    "key_projects_3": "Swati Clover",
+    "key_projects_4": "Swati Parkside",
+    "key_projects_5": "",
+    "key_promoters_1": "Ashok Agrawal",
+    "key_promoters_2": "Saket Agrawal",
+    "key_promoters_3": "Maheshraj",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "name": "Vivek Joshi",
+    "number": "1111111114",
+    "email": "",
+    "alternate_name": "Payal Waghela",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "Swati Senor",
+    "developed_by": "Swati",
+    "location_of_project": "Ambli",
+    "area_of_project": "Ambli",
+    "google_pin_lat": "23.027614",
+    "google_pin_lng": "72.4840917",
+    "type_of_project": "Residential",
+    "per_sqft_rate_saleable": "9698",
+    "type_of_apartments": "5_bhk",
+    "special_amenity_1": "Basketball court",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "05-2025",
+    "age_of_property_rera": "06-2026",
+    "rera_approved": true,
+    "plot_area": "5500",
+    "architect": "ADS",
+    "construction_company": "In house",
+    "no_of_blocks": 1,
+    "no_of_units": 54,
+    "no_of_floors": 20,
+    "no_of_basements": 3,
+    "central_air_conditioning": true,
+    "pet_friendly": true,
+    "spiritual_or_religious_attraction": "No",
+    "type_of_parking": "Normal",
+    "plc_garden": "0",
+    "plc_road_facing": "200",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '0'}, {'floor': 3, 'price': '0'}, {'floor': 4, 'price': '0'}, {'floor': 5, 'price': '0'}, {'floor': 6, 'price': '0'}, {'floor': 7, 'price': '0'}, {'floor': 8, 'price': '0'}, {'floor': 9, 'price': '100'}, {'floor': 10, 'price': '200'}, {'floor': 11, 'price': '300'}, {'floor': 12, 'price': '400'}, {'floor': 13, 'price': '500'}, {'floor': 14, 'price': '600'}, {'floor': 15, 'price': '700'}, {'floor': 16, 'price': '800'}, {'floor': 17, 'price': '900'}, {'floor': 18, 'price': '1000'}, {'floor': 19, 'price': '1100'}, {'floor': 20, 'price': '1200'}]",
+    "development_charges": "900",
+    "advance_maintenance": "250",
+    "maintenance_deposit": "250",
+    "other_specific_expenses": "0",
+    "sale_deed_value": "70",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "5",
+    "loan_availability": true,
+    "remarks": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 20126,
+  "fields": {
+    "building_id": "1001",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Simplex",
+    "no_of_units_per_floor": 3,
+    "no_of_lifts_per_floor": 7,
+    "private_lifts": true,
+    "common_terrace_accessible": true,
+    "size_of_private_terrace": "",
+    "size_of_unit": "10000",
+    "carpet_area_rera": "5500",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": 5,
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": 3,
+    "size_of_balcony": "34 x 56",
+    "size_of_master_bedroom": "",
+    "size_of_kitchen": "",
+    "no_of_parking_allotted": 5,
+    "per_sqft_rate_saleable": "9698",
+    "base_price": "96980000.0",
+    "google_pin_lat": "",
+    "google_pin_lng": "",
+    "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_4.00.29_PM.jpeg",
+    "unit_plan": "plan/WhatsApp_Image_2024-10-15_at_4_FU9M9I1.00.29_PM.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 20127,
+  "fields": {
+    "building_id": "1001",
+    "unit_configuration": "6 BHK",
+    "unit_type": "Penthouse",
+    "no_of_units_per_floor": 3,
+    "no_of_lifts_per_floor": 7,
+    "private_lifts": true,
+    "common_terrace_accessible": true,
+    "size_of_private_terrace": "50*80",
+    "size_of_unit": "15600",
+    "carpet_area_rera": "7800",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": 5,
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": 3,
+    "size_of_balcony": "",
+    "size_of_master_bedroom": "",
+    "size_of_kitchen": "",
+    "no_of_parking_allotted": 5,
+    "per_sqft_rate_saleable": "9698",
+    "base_price": "151288800.0",
+    "google_pin_lat": "",
+    "google_pin_lng": "",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 20128,
+  "fields": {
+    "building_id": "1001",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Simplex",
+    "no_of_units_per_floor": 3,
+    "no_of_lifts_per_floor": 7,
+    "private_lifts": true,
+    "common_terrace_accessible": true,
+    "size_of_private_terrace": "50*80",
+    "size_of_unit": "7800",
+    "carpet_area_rera": "5000",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": 5,
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": 3,
+    "size_of_balcony": "",
+    "size_of_master_bedroom": "",
+    "size_of_kitchen": "",
+    "no_of_parking_allotted": 5,
+    "per_sqft_rate_saleable": "9698",
+    "base_price": "75644400.0",
+    "google_pin_lat": "23.027614",
+    "google_pin_lng": "72.4840917",
+    "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_16.01.30_9445b10d.jpg",
+    "unit_plan": "plan/WhatsApp_Image_2024-10-15_at_4_fLDTIxK.00.29_PM.jpeg",
+    "active": true
+  }
+},
+{
   "model": "Property.amenities",
   "pk": 12713,
   "fields": {
@@ -229,6 +515,65 @@
     "solar_for_common_area": false,
     "ev_charging_stations": true,
     "green_building_rated": true
+  }
+},
+{
+  "model": "Property.amenities",
+  "pk": 12714,
+  "fields": {
+    "building_id": "1001",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": true,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": true,
+    "outdoor_swimming_pool": true,
+    "indoor_swimming_pool": true,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": true,
+    "mini_theatre": true,
+    "indoor_games": true,
+    "activity_room": true,
+    "library_s_reading_room": true,
+    "daycare_center": false,
+    "guest_rooms": true,
+    "co_d_working_space": true,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": true,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": true,
+    "steam_sauna": true,
+    "massage_room": true,
+    "jacuzzi": true,
+    "cafeteria": true,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": true,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": true,
+    "solar_for_common_area": false,
+    "ev_charging_stations": true,
+    "green_building_rated": false
+  }
+},
+{
+  "model": "SorterSession.shortlistedproperty",
+  "pk": 18,
+  "fields": {
+    "client_id": "38",
+    "number": "+91 8758222401",
+    "properties": "[]"
+  }
+},
+{
+  "model": "SorterSession.shortlistedproperty",
+  "pk": 19,
+  "fields": {
+    "client_id": "39",
+    "number": "+91 8899000099",
+    "properties": "[{'unit_id': 20128, 'score': 49}]"
   }
 },
 {
@@ -7411,6 +7756,60 @@
     "object_repr": "ShortlistedProperty object (17)",
     "action_flag": 3,
     "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 400,
+  "fields": {
+    "action_time": "2024-10-15T10:44:25.807Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "ClientDetail",
+      "propertyinquiry"
+    ],
+    "object_id": "39",
+    "object_repr": "Salmon Bhai",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Budget max\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 401,
+  "fields": {
+    "action_time": "2024-10-15T10:45:46.732Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "20128",
+    "object_repr": "5 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Google pin lat\", \"Google pin lng\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 402,
+  "fields": {
+    "action_time": "2024-10-15T10:46:51.625Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "ClientDetail",
+      "propertyinquiry"
+    ],
+    "object_id": "39",
+    "object_repr": "Salmon Bhai",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Preferred locations\"]}}]"
   }
 }
 ]

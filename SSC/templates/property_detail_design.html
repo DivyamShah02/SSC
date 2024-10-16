@@ -876,8 +876,11 @@
                     const destinationLng = place.geometry.location.lng();
                     const name = place.name;
 
-                    const originLat = 23.0048286;
-                    const originLng = 72.5583729;
+                    const originLat = parseFloat(document.getElementById('lat_cord').value);
+                    const originLng = parseFloat(document.getElementById('lng_cord').value);
+            
+                    // const originLat = 23.0048286;
+                    // const originLng = 72.5583729;
 
                     getDistance(originLat, originLng, destinationLat, destinationLng)
                         .then(result => {

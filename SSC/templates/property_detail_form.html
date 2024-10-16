@@ -57,8 +57,8 @@
                 style="background-color: white;">
                 <div class="row">
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developerGroupName">1) Name of the group</label>
-                        <input type="text" class="form-control" id="developerGroupName" name="group_name"
+                        <label class="form-label primary" for="developerGroupName">1) Name of the group<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="developerGroupName" name="group_name" required
                             placeholder="Enter name">
                     </div>
                     <div class="col-md-4 form-group">
@@ -178,32 +178,32 @@
                         <input type="text" class="form-control" id="projectId" name="project_id" >
                     </div> -->
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="projectName">12) Project Name</label>
-                        <input type="text" class="form-control" id="projectName" name="project_name"
+                        <label class="form-label primary" for="projectName">12) Project Name<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectName" name="project_name" required
                             placeholder="Enter project name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developedBy">13) Developed by</label>
-                        <input type="text" class="form-control" id="developedBy" name="developed_by"
+                        <label class="form-label primary" for="developedBy">13) Developed by<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="developedBy" name="developed_by" required
                             placeholder="Builder group name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="projectLocation">14) Area location (one word)</label>
-                        <input type="text" class="form-control" id="projectLocation" name="area_of_project"
+                        <label class="form-label primary" for="projectLocation">14) Area location (one word)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectLocation" name="area_of_project" required
                             placeholder="Area of project">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectLocation">15) Location of the project
-                            (Address)</label>
-                        <input type="text" class="form-control" id="projectLocation" name="location_of_project"
+                            (Address)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectLocation" name="location_of_project" required
                             placeholder="Address of project">
                     </div>                    
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="googlePin">16) Google pin (fetch current location)</label>
+                        <label class="form-label primary" for="googlePin">16) Google pin (fetch current location)<span class="required"> *</span></label>
                         <input type="hidden" class="form-control" id="googlePin" name="google_Pin"
                             placeholder="Fetch current location" value="No">
                         <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal"
-                            data-bs-target="#mapModal">
+                            data-bs-target="#mapModal" id="location_btn">
                             Open Map Selector <i id="locaiton_saved" class=""></i>
                         </button>
 
@@ -245,7 +245,7 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="projectType">17) Type of Project</label><br>
+                        <label class="form-label primary" for="projectType">17) Type of Project <span class="required"> *</span></label><br>
                         <!-- <br> -->
                         <!-- <label for="why_buy_house" class="form-label">Select<span class=""> *</span></label> -->
                         <!-- <select class="form-select" id="projectType" name="type_of_project">
@@ -256,22 +256,22 @@
                         </select> -->
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="type_of_project"
-                                id="type_of_project_Residential" value="Residential">
+                                id="type_of_project_Residential" value="Residential" required>
                             <label class="form-check-label" for="type_of_project_Residential">Residential</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="type_of_project"
-                                id="type_of_project_Commercial" value="Commercial">
+                                id="type_of_project_Commercial" value="Commercial" required>
                             <label class="form-check-label" for="type_of_project_Commercial">Commercial</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Mix"
-                                value="Mix">
+                                value="Mix" required>
                             <label class="form-check-label" for="type_of_project_Mix">Mix</label>
                         </div>
                     </div>
                     <div class="row col-md-12 form-group">
-                        <label class="form-label primary" for="bedrooms">18) Type of apartments (multiple choice)</label>
+                        <label class="form-label primary" for="bedrooms" id="bedrooms">18) Type of apartments (multiple choice)<span class="required"> *</span></label>
 
                         <!-- <div class="col-md-4">
                             <div class="form-check">
@@ -344,8 +344,8 @@
                     </div> -->
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="ageOfPropertyDeveloper">19) Age of the property as per
-                            developer (MM/YY)</label>
-                        <input type="text" class="form-control" id="ageOfPropertyDeveloper"
+                            developer (MM/YY)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="ageOfPropertyDeveloper" required
                             placeholder="Age of the property" name="age_of_property_by_developer">
                     </div>
                     <div class="col-md-4 form-group">
@@ -374,8 +374,8 @@
                             placeholder="Enter plot area">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="architect">23) Architect</label>
-                        <input type="text" class="form-control" id="architect" name="architect"
+                        <label class="form-label primary" for="architect">23) Architect<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="architect" name="architect" required
                             placeholder="Enter architech name">
                     </div>
                     <div class="col-md-4 form-group">
@@ -384,23 +384,23 @@
                             placeholder="Enter construction company name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBlocks">25) No. of Blocks</label>
-                        <input type="number" class="form-control" min="1" id="numberOfBlocks" name="no_of_blocks"
+                        <label class="form-label primary" for="numberOfBlocks">25) No. of Blocks<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfBlocks" name="no_of_blocks" required
                             placeholder="Enter number of blocks">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfUnits">26) No. Units</label>
-                        <input type="number" class="form-control" min="1" id="numberOfUnits" name="no_of_units"
+                        <label class="form-label primary" for="numberOfUnits">26) No. Units<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfUnits" name="no_of_units" required
                             placeholder="Enter number of units">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfFloors">27) No. Floors</label>
-                        <input type="number" class="form-control" min="1" id="numberOfFloors" name="no_of_floors"
+                        <label class="form-label primary" for="numberOfFloors">27) No. Floors<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfFloors" name="no_of_floors" required
                             placeholder="Enter number of floors">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="numberOfBasements">28) No. of Basements</label>
-                        <input type="number" class="form-control" min="0" id="numberOfBasements" name="no_of_basements"
+                        <label class="form-label primary" for="numberOfBasements">28) No. of Basements<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="numberOfBasements" name="no_of_basements" required
                             placeholder="Enter number of basements">
                     </div>
                     <div class="col-md-4 form-group">
@@ -896,37 +896,36 @@
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <label class="form-label primary" for="perSqFtRate">38) Per Sq. Ft. rate on
-                            saleable</label>
-                        <input type="number" min="1" class="form-control" id="perSqFtRate" name="per_sqft_rate_saleable"
+                            saleable<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control" id="perSqFtRate" name="per_sqft_rate_saleable" required
                             placeholder="Enter rate of Per Sq. Ft.">
                     </div>
 
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">39) PLC Options</label>
+                        <label class="form-label primary" for="removethis">39) PLC Options<span class="required"> *</span></label>
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
-                        <label for="plcOptions_garden" class="form-label">Garden<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="plcOptions_garden" value="0"
+                        <label for="plcOptions_garden" class="form-label">Garden</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_garden" value="0" required
                             name="plc_garden" placeholder="20">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
-                        <label for="plcOptions_road_facing" class="form-label">Road Facing<span class="required">
-                                *</span></label>
-                        <input type="number" class="form-control" min="0" id="plcOptions_road_facing" value="0"
+                        <label for="plcOptions_road_facing" class="form-label">Road Facing</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_road_facing" value="0" required
                             name="plc_road_facing" placeholder="50">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
-                        <label for="plcOptions_corner" class="form-label">Corner<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="plcOptions_corner" value="0"
+                        <label for="plcOptions_corner" class="form-label">Corner</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_corner" value="0" required
                             name="plc_corner" placeholder="40">
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
-                        <label for="plcOptions_others" class="form-label">Others<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="plcOptions_others" value="0"
+                        <label for="plcOptions_others" class="form-label">Others</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_others" value="0" required
                             name="plc_others" placeholder="02">
                     </div>
 
@@ -984,33 +983,33 @@
 
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developmentCharges">41) Development charges (AMC/Torrent
-                            etc)</label>
-                        <input type="number" min="0" class="form-control" id="developmentCharges" name="development_charges"
+                            etc)<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control" id="developmentCharges" name="development_charges" required
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="advanceMaintenance">42) Advance maintenance</label>
-                        <input type="number" min="0" class="form-control" id="advanceMaintenance" name="advance_maintenance"
+                        <label class="form-label primary" for="advanceMaintenance">42) Advance maintenance<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control" id="advanceMaintenance" name="advance_maintenance" required
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="maintenanceDeposit">43) Maintenance deposit</label>
-                        <input type="number" min="0" class="form-control" id="maintenanceDeposit" name="maintenance_deposit"
+                        <label class="form-label primary" for="maintenanceDeposit">43) Maintenance deposit<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control" id="maintenanceDeposit" name="maintenance_deposit" required
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="specificExpenses">44) Other specific expenses if any?</label>
-                        <input type="number" min="0" class="form-control" id="specificExpenses" name="other_specific_expenses"
+                        <label class="form-label primary" for="specificExpenses">44) Other specific expenses if any?<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control" id="specificExpenses" name="other_specific_expenses" required
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">45) Sale deed value</label>
-                        <input type="number" min="0" max="100" class="form-control" id="saleDeedValue" name="sale_deed_value"
+                        <label class="form-label primary" for="saleDeedValue">45) Sale deed value<span class="required"> *</span></label>
+                        <input type="number" min="0" max="100" class="form-control" id="saleDeedValue" name="sale_deed_value" required
                             placeholder="Enter sale deed value">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="gstApplicable">46) How much GST is applicable?</label>
-                        <input type="number" min="0" class="form-control" id="gstApplicable" name="gst_applicable"
+                        <label class="form-label primary" for="gstApplicable">46) How much GST is applicable?<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
                     <div class="col-md-4 form-group">
@@ -1029,7 +1028,6 @@
                                 id="loan_availability_No" value="No">
                             <label class="form-check-label" for="loan_availability_No">No</label>
                         </div>
-
                     </div>
                     <div class="col-md-12 form-group">
                         <label class="form-label primary" for="remarks">48) Remarks if any</label>
@@ -1141,6 +1139,7 @@
             const lng = marker.getPosition().lng();
             // alert(`Selected Location: Latitude: ${lat}, Longitude: ${lng}`);
             document.getElementById('googlePin').value = `${lat}|${lng}`
+            document.getElementById('location_btn').classList.remove('red-border-btn')
             document.getElementById('location_modal_close').click()
             document.getElementById('locaiton_saved').classList.add('fa', 'fa-check')
             // You can send the location data to your backend here
@@ -1241,113 +1240,117 @@
 
         async function submit_detail_form() {
             toggle_preloader()
-            var developer_history_form = document.getElementById('developer_history');
-            var contact_details_form = document.getElementById('contact_details');
-            var project_property_details_form = document.getElementById('project_property_details');
-            var finance_form = document.getElementById('finance');
-            var document_form = document.getElementById('documentForm');
+            if (check_location_added() && isAnyCheckboxChecked('type_of_apartments', 'bedrooms')){
+                var developer_history_form = document.getElementById('developer_history');
+                var contact_details_form = document.getElementById('contact_details');
+                var project_property_details_form = document.getElementById('project_property_details');
+                var finance_form = document.getElementById('finance');
+                var document_form = document.getElementById('documentForm');
 
-            if (developer_history_form.reportValidity()) {
-                if (contact_details_form.reportValidity()) {
-                    if (project_property_details_form.reportValidity()) {
-                        if (finance_form.reportValidity()) {
-                            if (document_form.reportValidity()) {
-                                var form_developer_history = new FormData(document.getElementById('developer_history'));
-                                var form_contact_details = new FormData(document.getElementById('contact_details'));
-                                var form_project_property_details = new FormData(document.getElementById('project_property_details'));
-                                var form_finance = new FormData(document.getElementById('finance'));
-                                // var form_documents = new FormData(document.getElementById('documentForm'));
-
-                                form_developer_history.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                        property_detail[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(property_detail[key])) {
-                                        property_detail[key] = [property_detail[key]];
-                                    }
-                                    property_detail[key].push(value);
-                                });
-
-                                form_contact_details.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                        property_detail[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(property_detail[key])) {
-                                        property_detail[key] = [property_detail[key]];
-                                    }
-                                    property_detail[key].push(value);
-                                });
-
-                                form_project_property_details.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                        property_detail[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(property_detail[key])) {
-                                        property_detail[key] = [property_detail[key]];
-                                    }
-                                    property_detail[key].push(value);
-                                });
-
-                                form_finance.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                        property_detail[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(property_detail[key])) {
-                                        property_detail[key] = [property_detail[key]];
-                                    }
-                                    property_detail[key].push(value);
-                                });
-
-                                // form_documents.forEach((value, key) => {
-                                //     if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                //         property_detail[key] = value;
-                                //         return;
-                                //     }
-                                //     if (!Array.isArray(property_detail[key])) {
-                                //         property_detail[key] = [property_detail[key]];
-                                //     }
-                                //     property_detail[key].push(value);
-                                // });
-
-                                try {
-                                    const response = await fetch("{% url 'property-detail-list' %}", {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            'X-CSRFToken': '{{csrf_token}}'
-                                        },
-                                        body: JSON.stringify(property_detail)
+                if (developer_history_form.reportValidity()) {
+                    if (contact_details_form.reportValidity()) {
+                        if (project_property_details_form.reportValidity()) {
+                            if (finance_form.reportValidity()) {
+                                if (document_form.reportValidity()) {
+                                    var form_developer_history = new FormData(document.getElementById('developer_history'));
+                                    var form_contact_details = new FormData(document.getElementById('contact_details'));
+                                    var form_project_property_details = new FormData(document.getElementById('project_property_details'));
+                                    var form_finance = new FormData(document.getElementById('finance'));
+                                    // var form_documents = new FormData(document.getElementById('documentForm'));
+    
+                                    form_developer_history.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                            property_detail[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(property_detail[key])) {
+                                            property_detail[key] = [property_detail[key]];
+                                        }
+                                        property_detail[key].push(value);
                                     });
-                                    console.log(response)
-
-                                    const data = await response.json();
-                                    console.log(data);
-                                    if (data.success == true) {
-                                        submit_document_form(data.building_db_id)
-                                        alert(`data added successfully to building_id ${data.building_id}!`)
-                                        window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
-                                        
+    
+                                    form_contact_details.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                            property_detail[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(property_detail[key])) {
+                                            property_detail[key] = [property_detail[key]];
+                                        }
+                                        property_detail[key].push(value);
+                                    });
+    
+                                    form_project_property_details.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                            property_detail[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(property_detail[key])) {
+                                            property_detail[key] = [property_detail[key]];
+                                        }
+                                        property_detail[key].push(value);
+                                    });
+    
+                                    form_finance.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                            property_detail[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(property_detail[key])) {
+                                            property_detail[key] = [property_detail[key]];
+                                        }
+                                        property_detail[key].push(value);
+                                    });
+    
+                                    // form_documents.forEach((value, key) => {
+                                    //     if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                    //         property_detail[key] = value;
+                                    //         return;
+                                    //     }
+                                    //     if (!Array.isArray(property_detail[key])) {
+                                    //         property_detail[key] = [property_detail[key]];
+                                    //     }
+                                    //     property_detail[key].push(value);
+                                    // });
+    
+                                    try {
+                                        const response = await fetch("{% url 'property-detail-list' %}", {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'X-CSRFToken': '{{csrf_token}}'
+                                            },
+                                            body: JSON.stringify(property_detail)
+                                        });
+                                        console.log(response)
+    
+                                        const data = await response.json();
+                                        console.log(data);
+                                        if (data.success == true) {
+                                            submit_document_form(data.building_db_id)
+                                            alert(`data added successfully to building_id ${data.building_id}!`)
+                                            window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                            
+                                        }
+                                        else {
+                                            let floor_info = property_detail['floor_rise']
+                                            property_detail = {}
+                                            property_detail['floor_rise'] = floor_info
+                                        }
+    
                                     }
-                                    else {
-
+                                    catch (error) {
+                                        console.log(error)
+                                        let floor_info = property_detail['floor_rise']
+                                        property_detail = {}
+                                        property_detail['floor_rise'] = floor_info
                                     }
-
-                                }
-                                catch (error) {
                                 }
                             }
                         }
-
                     }
-
                 }
-
-            }
-
+            }    
             toggle_preloader()
 
         }
@@ -1493,6 +1496,34 @@
             document.getElementById('floor_rise_saved').classList.add('fa', 'fa-check')
 
         });
+
+        function check_location_added() {
+            value_googlepin = document.getElementById('googlePin').value;
+            if (value_googlepin === 'No'){
+                let location_btn = document.getElementById('location_btn')
+                location_btn.classList.toggle('red-border-btn')
+                location_btn.focus();
+                location_btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function isAnyCheckboxChecked(option_name, label_id) {
+            var checkboxes = document.querySelectorAll(`input[name="${option_name}"]`);
+            var isChecked = Array.prototype.slice.call(checkboxes).some(function(checkbox) {
+                return checkbox.checked;
+            });
+            if (!isChecked){ 
+                let label_ele = document.getElementById(label_id)
+                document.querySelector(`input[name="${option_name}"]`).focus();
+                label_ele.focus();
+                label_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return isChecked;
+        }
 
         window.onload = function () {
             toggle_preloader();

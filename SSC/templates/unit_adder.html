@@ -108,41 +108,41 @@
                         <input type="hidden" class="form-control" id="base_price" value="" placeholder="" name="base_price">
                         <input type="hidden" class="form-control" id="unit_id" value="NULL" placeholder="" name="unit_id">
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="unitTypes">1) Type of unit</label><br>
+                            <label class="form-label primary" for="unitTypes">1) Type of unit<span class="required"> *</span></label><br>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_1_BHK" value="1 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_1_BHK" value="1 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_1_BHK">1 BHK</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_2_BHK" value="2 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_2_BHK" value="2 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_2_BHK">2 BHK</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_3_BHK" value="3 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_3_BHK" value="3 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_3_BHK">3 BHK</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_4_BHK" value="4 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_4_BHK" value="4 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_4_BHK">4 BHK</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_5_BHK" value="5 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_5_BHK" value="5 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_5_BHK">5 BHK</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_6_BHK" value="6 BHK">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_6_BHK" value="6 BHK" required>
                                         <label class="form-check-label" for="unit_configuration_6_BHK">6 BHK</label>
                                     </div>
                                 </div>
@@ -155,29 +155,29 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="layoutTypes">2) Layout Types</label><br>
+                            <label class="form-label primary" for="layoutTypes">2) Layout Types<span class="required"> *</span></label><br>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Simplex" value="Simplex">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Simplex" value="Simplex" required>
                                         <label class="form-check-label" for="unit_type_Simplex">Simplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Duplex" value="Duplex">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Duplex" value="Duplex" required>
                                         <label class="form-check-label" for="unit_type_Duplex">Duplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex" required>
                                         <label class="form-check-label" for="unit_type_Triplex">Triplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse" required>
                                         <label class="form-check-label" for="unit_type_Penthouse">Penthouse</label>
                                     </div>
                                 </div>
@@ -191,14 +191,14 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfUnit">3) Size of the unit
-                                (SBU)</label>
-                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit"
+                                (SBU)<span class="required"> *</span></label>
+                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit" required
                                 placeholder="Enter size of unit">
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="carpetArea">4) Carpet area as per
-                                RERA</label>
-                            <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera"
+                                RERA<span class="required"> *</span></label>
+                            <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera" required
                                 placeholder="Enter carpet area as per RERA">
                         </div>
                         <div class="col-md-4 form-group">
@@ -275,8 +275,8 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="numberOfBathrooms">14) No. of attached
-                                bathrooms</label>
-                            <input type="number" class="form-control" id="numberOfBathrooms"
+                                bathrooms<span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="numberOfBathrooms" required
                                 placeholder="Enter number of attached bathrooms" name="no_of_attached_bathrooms">
                         </div>
                         <div class="col-md-4 form-group">
@@ -313,8 +313,8 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="parkingAllotted">18) No. of parking
-                                allotted to one unit</label>
-                            <input type="number" class="form-control" id="parkingAllotted"
+                                allotted to one unit<span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="parkingAllotted" required
                                 placeholder="Enter number of parking space" name="no_of_parking_allotted">
                         </div>
                         <div class="col-md-4 form-group">

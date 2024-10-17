@@ -90,8 +90,7 @@
                 <div class="row">
                     <!-- Customer Name -->
                     <div class="col-xl-4 col-lg-6 col-md-6 form-group">
-                        <label for="name" class="form-label primary">1) Name
-                            <!-- <span class="required"> *</span> -->
+                        <label for="name" class="form-label primary">1) Name<span class="required"> *</span>
                         </label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
                         <!-- autofocus -->
@@ -99,8 +98,7 @@
     
                     <!-- Mobile Number -->
                     <div class="col-xl-4 col-lg-6 col-md-6 form-group">
-                        <label for="number" class="form-label primary">2) Number
-                            <!-- <span class="required"> *</span> -->
+                        <label for="number" class="form-label primary">2) Number<span class="required"> *</span>
                         </label>
                         <div class="row input-group">
                             <div class="col-lg-3 col-md-4 col-5">
@@ -110,7 +108,7 @@
                                   </select>
                             </div>
                             <div class="col-lg-9 col-md-8 col-7">
-                                <input type="number" max="9999999999" min="0" class="form-control" id="number" name="number" placeholder="Mobile number">
+                                <input type="number" max="9999999999" minlength="10" class="form-control" id="number" name="number" placeholder="Mobile number" required>
                             </div>
                         </div>
                     </div>
@@ -128,7 +126,7 @@
                                   </select>
                             </div>
                             <div class="col-lg-9 col-md-8 col-7">
-                                <input type="number" max="9999999999" min="0" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">                                
+                                <input type="number" max="9999999999" minlength="10" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">                                
                             </div>
                         </div>
                     </div>
@@ -232,22 +230,22 @@
                     <!-- Adults -->
                     <div class="col-md-6 col-lg-4 form-group">
                         <label for="adults" class="form-label">Adults<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="adults" value="0" name="adults" placeholder="02">
+                        <input type="number" class="form-control" min="0" id="adults" value="0" name="adults" placeholder="02" required>
                     </div>
                     <!-- Children -->
                     <div class="col-md-6 col-lg-4 form-group">
                         <label for="children" class="form-label">Children<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="children" value="0" name="children" placeholder="01">
+                        <input type="number" class="form-control" min="0" id="children" value="0" name="children" placeholder="01" required>
                     </div>
                     <!-- Senior Citizens -->
                     <div class="col-md-6 col-lg-4 form-group">
                         <label for="senior_citizens" class="form-label">Senior Citizens<span class="required"> *</span></label>
-                        <input type="number" class="form-control" min="0" id="senior_citizens" value="0" name="senior_citizens" placeholder="02">
+                        <input type="number" class="form-control" min="0" id="senior_citizens" value="0" name="senior_citizens" placeholder="02" required>
                     </div>
                 </div>
                 <div class="row">
                     <!-- Do you have pets? -->
-                    <div class="col-md-6 form-group">
+                    <!-- <div class="col-md-6 form-group">
                         <label class="form-label primary">10) Do you have pets?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="have_pets" id="petsYes" value="yes">
@@ -257,12 +255,12 @@
                             <input class="form-check-input" type="radio" name="have_pets" id="petsNo" value="no">
                             <label class="form-check-label" for="petsNo">No</label>
                         </div>
-                    </div>
-    
+                    </div> -->
+
                     <!-- Carpet Area -->
                     <div class="col-md-6 form-group">
-                        <label for="current_residence_area" class="form-label primary">11) What is the carpet area of your current residence?</label>
-                        <input type="number" class="form-control" min="1" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft.">
+                        <label for="current_residence_area" class="form-label primary">11) What is the carpet area of your current residence?<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft." required>
                     </div>
         
                     <!-- Religious Place Preference -->
@@ -318,7 +316,7 @@
     
                     <!-- Top 3 Preferred Locations -->
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="preferred_locations" class="form-label primary">15) What are your top 3 preferred locations?</label>
+                        <label for="preferred_locations" class="form-label primary">15) What are your top 3 preferred locations?<span class="required"> *</span></label>
                         <br>
                         <input type="hidden" id="no_of_locations" value="0">
                         <div id="preferred-location">
@@ -443,7 +441,7 @@
                     </div>
 
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="bedrooms" class="form-label primary">21) How many bedrooms do you need?</label>
+                        <label for="bedrooms" class="form-label primary" id="bedrooms_label">21) How many bedrooms do you need?<span class="required"> *</span></label>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-check">
@@ -491,29 +489,29 @@
                     </div>
     
                     <div class="col-md-6 form-group">
-                        <label for="attached_washrooms" class="form-label primary">22) How many attached washrooms should your house have?</label><br>
+                        <label for="attached_washrooms" class="form-label primary">22) How many attached washrooms should your house have?<span class="required"> *</span></label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_1" value="1">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_1" value="1" required>
                             <label class="form-check-label" for="attached_washrooms_1">1</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_2" value="2">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_2" value="2" required>
                             <label class="form-check-label" for="attached_washrooms_2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_3" value="3">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_3" value="3" required>
                             <label class="form-check-label" for="attached_washrooms_3">3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_4" value="4">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_4" value="4" required>
                             <label class="form-check-label" for="attached_washrooms_4">4</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_5" value="5">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_5" value="5" required>
                             <label class="form-check-label" for="attached_washrooms_5">5</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_6" value="6">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_6" value="6" required>
                             <label class="form-check-label" for="attached_washrooms_6">6</label>
                         </div>
                         <!-- <select id="attached_washrooms" name="attached_washrooms" class="form-select">
@@ -552,13 +550,13 @@
     
                     <!-- Minimum carpet area -->
                     <div class="col-md-6 form-group">
-                        <label for="min_carpet_area" class="form-label primary">25) What should be the minimum carpet area of the new property?</label>
-                        <input type="number" min="1" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft.">
+                        <label for="min_carpet_area" class="form-label primary">25) What should be the minimum carpet area of the new property?<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft." required>
                     </div>
     
                     <!-- Flats and Floor Preference -->
                     <div class="col-md-6 form-group">
-                        <label for="flats_per_floor" class="form-label primary">26) How many flats do you prefer on one floor? <span class="required">*</span></label><br>
+                        <label for="flats_per_floor" class="form-label primary">26) How many flats do you prefer on one floor?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="flats_per_floor" id="flats_per_floor_1-2" value="1 - 2">
                             <label class="form-check-label" for="flats_per_floor_1-2">1 - 2</label>
@@ -651,25 +649,25 @@
     
                     <!-- Parking Slots and Stack Parking -->
                     <div class="col-md-6 form-group">
-                        <label for="parkingSlots" class="form-label primary">30) What are the minimum number of parking slots required?</label><br>
+                        <label for="parkingSlots" class="form-label primary">30) What are the minimum number of parking slots required?<span class="required"> *</span></label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_1" value="1">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_1" value="1" required>
                             <label class="form-check-label" for="min_parking_slots_1">1</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_2" value="2">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_2" value="2" required>
                             <label class="form-check-label" for="min_parking_slots_2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_3" value="3">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_3" value="3" required>
                             <label class="form-check-label" for="min_parking_slots_3">3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_4" value="4">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_4" value="4" required>
                             <label class="form-check-label" for="min_parking_slots_4">4</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_flexible" value="Flexible">
+                            <input class="form-check-input" type="radio" name="min_parking_slots" id="min_parking_slots_flexible" value="Flexible" required>
                             <label class="form-check-label" for="min_parking_slots_flexible">Flexible</label>
                         </div>
                         <!-- <select id="parkingSlots" class="form-select" name="min_parking_slots">
@@ -709,40 +707,40 @@
     
             <form id="building_preferences" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row mb-4">
-                    <label class="form-label primary">32) What should be the age of property that you are looking for?</label>
+                    <label class="form-label primary">32) What should be the age of property that you are looking for?<span class="required"> *</span></label>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="12 to 36 months old" id="age1">
+                            <input class="form-check-input" type="radio" name="property_age" value="12 to 36 months old" id="age1" required>
                             <label class="form-check-label" for="age1">12 to 36 months old</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="0 to 12 months old" id="age2">
+                            <input class="form-check-input" type="radio" name="property_age" value="0 to 12 months old" id="age2" required>
                             <label class="form-check-label" for="age2">0 to 12 months old</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 6 - 12 months" id="age3">
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 6 - 12 months" id="age3" required>
                             <label class="form-check-label" for="age3">Upcoming 6 - 12 months</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 12 to 36 months" id="age4">
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 12 to 36 months" id="age4" required>
                             <label class="form-check-label" for="age4">Upcoming 12 to 36 months</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="36 to 48 months" id="age5">
+                            <input class="form-check-input" type="radio" name="property_age" value="36 to 48 months" id="age5" required>
                             <label class="form-check-label" for="age5">36 to 48 months</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_age" value="Flexible" id="age6">
+                            <input class="form-check-input" type="radio" name="property_age" value="Flexible" id="age6" required>
                             <label class="form-check-label" for="age6">Flexible</label>
                         </div>
                     </div>
@@ -1098,19 +1096,19 @@
                     <div class="row col-md-12">
                         <div class="col-md-6 form-group mb-5">
                             <label for="maxCr" class="form-label">Min *</label>
-                            <input type="number" min="0" step="0.01" class="form-control" id="minCr" name="budget_min" placeholder="1">
+                            <input type="number" min="0" step="0.01" class="form-control" id="minCr" name="budget_min" placeholder="1" required>
                         </div>
                         <div class="col-md-6 form-group mb-5">
                             <label for="maxCr" class="form-label">Max *</label>
-                            <input type="number" min="0" step="0.01" class="form-control" id="maxCr" name="budget_max" placeholder="5">
+                            <input type="number" min="0" step="0.01" class="form-control" id="maxCr" name="budget_max" placeholder="5" required>
                         </div>
                     </div>
 
                     <div class="col-md-12 col-lg-6 form-group mb-5">
-                        <label for="percentage" class="form-label primary">36) How much down payment will you be able to make in % from the maximum range?*</label>
+                        <label for="percentage" class="form-label primary">36) How much down payment will you be able to make in % from the maximum range?<span class="required"> *</span></label>
                         <div class="row col-md-12">
                             <div class="col-md-6">
-                                <input type="number" min="0" step="0.01" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage">
+                                <input type="number" min="0" step="0.01" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage" required>
                             </div>
                         </div>
                     </div>
@@ -1283,120 +1281,139 @@
 
         async function submit_inquiry_form() {
             toggle_loader()
-            var personal_information_form = document.getElementById('personal_information');
-            var family_demographics_form = document.getElementById('family_demographics');
-            var house_specificaiton_form = document.getElementById('house_specificaiton');
-            var building_preferences_form = document.getElementById('building_preferences');
-            var finance_form = document.getElementById('finance');
 
-            if (personal_information_form.reportValidity()){
-                if (family_demographics_form.reportValidity()){
-                    if (house_specificaiton_form.reportValidity()){
-                        if (building_preferences_form.reportValidity()){
-                            if (finance_form.reportValidity()){
-                                var form_personal_information = new FormData(document.getElementById('personal_information'));
-                                var form_family_demographics = new FormData(document.getElementById('family_demographics'));
-                                var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
-                                var form_building_preferences = new FormData(document.getElementById('building_preferences'));
-                                var form_finance = new FormData(document.getElementById('finance'));
-                        
-                                // Convert FormData to JSON
-                                var object = {};
-                                
-                                form_personal_information.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_family_demographics.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_house_specificaiton.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_building_preferences.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                form_finance.forEach((value, key) => {
-                                    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-                                        object[key] = value;
-                                        return;
-                                    }
-                                    if (!Array.isArray(object[key])) {
-                                        object[key] = [object[key]];
-                                    }
-                                    object[key].push(value);
-                                });
-                        
-                                console.log(JSON.stringify(object))
-                                try{
-                                    const response = await fetch("{% url 'property-inquiry-list' %}", {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            'X-CSRFToken': '{{csrf_token}}'
-                                        },
-                                        body: JSON.stringify(object)
+            if (AnyCheckboxChecked('bedrooms','bedrooms_label')){
+                var personal_information_form = document.getElementById('personal_information');
+                var family_demographics_form = document.getElementById('family_demographics');
+                var house_specificaiton_form = document.getElementById('house_specificaiton');
+                var building_preferences_form = document.getElementById('building_preferences');
+                var finance_form = document.getElementById('finance');
+
+                if (personal_information_form.reportValidity()){
+                    if (family_demographics_form.reportValidity()){
+                        if (house_specificaiton_form.reportValidity()){
+                            if (building_preferences_form.reportValidity()){
+                                if (finance_form.reportValidity()){
+                                    var form_personal_information = new FormData(document.getElementById('personal_information'));
+                                    var form_family_demographics = new FormData(document.getElementById('family_demographics'));
+                                    var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
+                                    var form_building_preferences = new FormData(document.getElementById('building_preferences'));
+                                    var form_finance = new FormData(document.getElementById('finance'));
+                            
+                                    // Convert FormData to JSON
+                                    var object = {};
+                                    
+                                    form_personal_information.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
                                     });
-                                        
-                                    const data = await response.json();
-                                    console.log(JSON.stringify(data, null, 2))
-                                    if (data.success == true){
-                                        console.log(data.client_id)
-                                        const cleint_id = data.client_id
-                                        sort_property(cleint_id)
+                            
+                                    form_family_demographics.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_house_specificaiton.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_building_preferences.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_finance.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    console.log(JSON.stringify(object))
+                                    try{
+                                        const response = await fetch("{% url 'property-inquiry-list' %}", {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'X-CSRFToken': '{{csrf_token}}'
+                                            },
+                                            body: JSON.stringify(object)
+                                        });
+                                            
+                                        const data = await response.json();
+                                        console.log(JSON.stringify(data, null, 2))
+                                        if (data.success == true){
+                                            console.log(data.client_id)
+                                            const cleint_id = data.client_id
+                                            sort_property(cleint_id)
+                                        }
+                                        else{
+                            
+                                        }
+                            
                                     }
-                                    else{
-                        
+                                    catch (error) {
+                                        console.log(error.message)
                                     }
-                        
+                                    
                                 }
-                                catch (error) {
-                                    console.log(error.message)
-                                }
-                                
+                    
                             }
                 
                         }
-            
+                        
                     }
-                    
+
                 }
-
+            
             }
-
             toggle_loader()
 
+        }
+
+        function AnyCheckboxChecked(option_name, label_id) {
+            document.getElementById(label_id).classList.remove('red-border-btn')
+            var checkboxes = document.querySelectorAll(`input[name="${option_name}"]`);
+            var isChecked = Array.prototype.slice.call(checkboxes).some(function(checkbox) {
+                return checkbox.checked;
+            });
+            if (!isChecked){ 
+                let label_ele = document.getElementById(label_id)
+                document.querySelector(`input[name="${option_name}"]`).focus();
+                label_ele.focus();
+                label_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                label_ele.classList.add('red-border-btn')
+            }
+            return isChecked;
         }
 
         async function sort_property(client_id) {

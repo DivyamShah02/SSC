@@ -30,8 +30,8 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
                 if isinstance(data[key], list):
                     data[key] = ', '.join(data[key])
 
-            data['number'] = data['country_code'] + " " + data['number']
-            data['whatsapp'] = data['whatsapp_country_code'] + " " + data['whatsapp']
+            # data['number'] = data['country_code'] + " " + data['number']
+            # data['whatsapp'] = data['whatsapp_country_code'] + " " + data['whatsapp']
 
             serializer = PropertyInquirySerializer(data=data)
             if serializer.is_valid():

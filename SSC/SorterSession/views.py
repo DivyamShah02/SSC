@@ -401,7 +401,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 total_gst = 0
                 gst = 0
 
-            total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+            # total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+            total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
             property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
@@ -412,6 +413,17 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             for field in unit_data.keys():
                 overview_details.append({'key':field, 'value':unit_data[field]})
+            
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','type_of_parking','spiritual_or_religious_attraction','construction_company']
+            overview_details = []
+            
+            for key in overview_keys:
+                if key in unit_data.keys():
+                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
+                
+                elif key in building_data.keys():
+                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
+
             
             destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
 

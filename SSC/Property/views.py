@@ -37,8 +37,8 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             data['floor_rise'] = str(data.get('floor_rise', ''))
 
-            data['number'] = data['number_country_code'] + " " + data['number']
-            data['alternate_number'] = data['alternate_number_country_code'] + " " + data['alternate_number']
+            # data['number'] = data['number_country_code'] + " " + data['number']
+            # data['alternate_number'] = data['alternate_number_country_code'] + " " + data['alternate_number']
 
             try:
                 last_property = BuildingDetails.objects.latest('id')

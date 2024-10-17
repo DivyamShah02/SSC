@@ -631,7 +631,7 @@
                                             data-bs-title="₹{{main_property.other_specific_expenses}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
                                         <th class="text-end py-3 px-4">₹<span id="other_specific_amt">{{other_specific_expenses}}</span> L</th>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="px-4 py-3">Government Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
                                             data-bs-toggle="tooltip" data-bs-placement="right"
                                             data-bs-custom-class="custom-tooltip"
@@ -644,7 +644,7 @@
                                             data-bs-custom-class="custom-tooltip"
                                             data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X {{main_property.gst_applicable}}%"></i></td>                                            
                                         <th class="text-end py-3 px-4">₹<span id="gst_amt">{{gst}}</span> L</th>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <!-- <th class="px-4 py-3">Grand Total</td> -->
                                             <th class="px-4 py-3">Approx. Price</td>
@@ -679,7 +679,7 @@
                                         <th>{{field.value}}</th>
                                     </tr>
                                     {% endfor %}
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="px-3">Price Breakup</td>
                                         <th>₹1.5 Cr - ₹2.1 Cr</th>
                                     </tr>
@@ -725,7 +725,7 @@
                                             aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet
                                             neque egestas.
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -1037,10 +1037,11 @@
             let adv_main_amt = Number(document.getElementById('adv_main_amt').innerText);
             let main_depo_amt = Number(document.getElementById('main_depo_amt').innerText);
             let other_specific_amt = Number(document.getElementById('other_specific_amt').innerText);
-            let govt_chargs_amt = Number(document.getElementById('govt_chargs_amt').innerText);
-            let gst_amt = Number(document.getElementById('gst_amt').innerText);
+            // let govt_chargs_amt = Number(document.getElementById('govt_chargs_amt').innerText);
+            // let gst_amt = Number(document.getElementById('gst_amt').innerText);
 
-            let total_property_amt = basic_amt + plc_option_amt + floor_rise_amt + development_charges_amt + adv_main_amt + main_depo_amt + other_specific_amt + govt_chargs_amt + gst_amt;
+            // let total_property_amt = basic_amt + plc_option_amt + floor_rise_amt + development_charges_amt + adv_main_amt + main_depo_amt + other_specific_amt + govt_chargs_amt + gst_amt;
+            let total_property_amt = basic_amt + plc_option_amt + floor_rise_amt + development_charges_amt + adv_main_amt + main_depo_amt + other_specific_amt;
             let property_unit_price_in_cr = Math.round((total_property_amt / 100) * 100) / 100;
             document.getElementById('total_property_amt').innerText = property_unit_price_in_cr
         }

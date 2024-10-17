@@ -190,9 +190,14 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unitSeries">3) Unit series</label>
+                            <input type="text" class="form-control" id="unitSeries" name="unit_series"
+                                placeholder="Enter size of unit">
+                        </div>
+                        <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfUnit">3) Size of the unit
                                 (SBU in Sq Ft.)<span class="required"> *</span></label>
-                            <input type="text" class="form-control" id="sizeOfUnit" name="size_of_unit" required
+                            <input type="number" class="form-control" id="sizeOfUnit" name="size_of_unit" required
                                 placeholder="Enter size of unit">
                         </div>
                         <div class="col-md-4 form-group">
@@ -216,24 +221,29 @@
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="privateLifts">7) Private lifts available?</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_yes" value="Yes">
+                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_yes" value="Yes" onclick="toggleLiftInput(true, false)">
                                 <label class="form-check-label" for="private_lifts_yes">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_no" value="No">
+                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_no" value="No" onclick="toggleLiftInput(false, false)">
                                 <label class="form-check-label" for="private_lifts_no">No</label>
+                            </div>
+                            <div id="number_of_pvt_lift" class="pt-3" style="display: none;">
+                                <label class="form-label primary" for="numberOfPrivateLifts">&nbsp;&nbsp;How many?</label>
+                                <input type="number" class="form-control" id="numberOfPrivateLifts"
+                                    placeholder="Enter number of private lifts" name="no_private_lifts">
                             </div>
                             <!-- <select class="form-select" id="privateLifts" name="private_lifts">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select> -->
                         </div>
-                        <div class="col-md-4 form-group">
+                        <!-- <div class="col-md-4 form-group">
                             <label class="form-label primary" for="numberOfPrivateLifts">8) If Yes, How
                                 many?</label>
                             <input type="number" class="form-control" id="numberOfPrivateLifts"
                                 placeholder="Enter number of private lifts" name="no_private_lifts">
-                        </div>
+                        </div> -->
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="commonTerrace">9) Common terrace accessible?</label><br>
                             <div class="form-check form-check-inline">
@@ -252,26 +262,66 @@
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfMainBalcony">10) Size of main
                                 balcony<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
-                            <input type="text" class="form-control" id="sizeOfMainBalcony"
-                                placeholder="Enter size of main balcony" name="size_of_balcony">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMainBalconyLen"
+                                placeholder="Length" name="size_of_balcony_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMainBalconywid"
+                                placeholder="Width" name="size_of_balcony_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfMainBalcony"
+                                placeholder="Enter size of main balcony" name="size_of_balcony"> -->
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfMasterBedroom">11) Size of master
                                 bedroom<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
-                            <input type="text" class="form-control" id="sizeOfMasterBedroom"
-                                placeholder="Enter size of master bedroom" name="size_of_master_bedroom">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomLen"
+                                placeholder="Length" name="size_of_master_bedroom_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomwid"
+                                placeholder="Width" name="size_of_master_bedroom_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfMasterBedroom"
+                                placeholder="Enter size of master bedroom" name="size_of_master_bedroom"> -->
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfKitchen">12) Size of
                                 kitchen<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
-                            <input type="text" class="form-control" id="sizeOfKitchen"
-                                placeholder="Enter size of kitchen" name="size_of_kitchen">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfKitchenLen"
+                                placeholder="Length" name="size_of_kitchen_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfKitchenwid"
+                                placeholder="Width" name="size_of_kitchen_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfKitchen"
+                                placeholder="Enter size of kitchen" name="size_of_kitchen"> -->
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfPrivateTerrace">13) Size of private
                                 terrace<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
-                            <input type="text" class="form-control" id="sizeOfPrivateTerrace"
-                                placeholder="Enter size of private terrace" name="size_of_private_terrace">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerraceLen"
+                                placeholder="Length" name="size_of_private_terrace_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerracewid"
+                                placeholder="Width" name="size_of_private_terrace_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfPrivateTerrace"
+                                placeholder="Enter size of private terrace" name="size_of_private_terrace"> -->
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="numberOfBathrooms">14) No. of attached
@@ -402,6 +452,20 @@
             document.getElementById('spinner').classList.toggle('spinner-container');
         }
 
+        function toggleLiftInput(show, from_js) {
+            const liftCountDiv = document.getElementById('number_of_pvt_lift');
+            if (show) {
+                liftCountDiv.style.display = 'block';
+                if (!from_js){
+                    document.getElementById('numberOfPrivateLifts').value = '';
+                    document.getElementById('numberOfPrivateLifts').focus();
+                }
+            } else {
+                liftCountDiv.style.display = 'none';
+                document.getElementById('numberOfPrivateLifts').value = 0;
+            }
+        }
+
         async function edit_unit_details(unit_id){
             toggle_preloader();
             let floor_img = document.getElementById('img_floor_plan')
@@ -415,6 +479,8 @@
             
             unit_img.src = data['unit_plan']
             unit_img.style.display = 'block'
+            toggleLiftInput(data['private_lifts'], true)
+            
             toggle_preloader();
         }
 
@@ -431,6 +497,8 @@
             
             unit_img.src = data['unit_plan']
             unit_img.style.display = 'none'
+
+            toggleLiftInput(data['private_lifts'], true)
             toggle_preloader();
         }
 
@@ -563,6 +631,28 @@
         window.onload = function () {
             toggle_preloader();
         };
+
+    </script>
+
+    <script>
+        const numberInputs = document.querySelectorAll('input[type=number]');
+
+        numberInputs.forEach(function(input) {
+            input.addEventListener('wheel', function(event) {
+                event.preventDefault();
+            });
+            input.addEventListener('input', function() {
+                const min = input.min !== '' ? parseFloat(input.min) : 0;  // Default min to 0 if not set
+                if (input.value < min) {
+                    input.value = min;
+                }
+            });
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-') {
+                    e.preventDefault();  // Block invalid characters
+                }
+            });
+        });
 
     </script>
 </body>

@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import BooleanField
 from django.urls import reverse
 from .serializers import BuildingDetailsSerializer, AmenitiesSerializer, UnitDetailsSerializer
 from .models import BuildingDetails, Amenities, UnitDetails
@@ -37,8 +38,15 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             data['floor_rise'] = str(data.get('floor_rise', ''))
 
-            last_property = BuildingDetails.objects.latest('id')
-            building_id = int(last_property.building_id) + 1
+            # data['number'] = data['number_country_code'] + " " + data['number']
+            # data['alternate_number'] = data['alternate_number_country_code'] + " " + data['alternate_number']
+
+            try:
+                last_property = BuildingDetails.objects.latest('id')
+                building_id = int(last_property.building_id) + 1
+            
+            except BuildingDetails.DoesNotExist:
+                building_id = 1000
 
             google_pin = data['google_Pin'].split('|')
             data['google_pin_lat'], data['google_pin_lng'] = google_pin
@@ -51,6 +59,11 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
                 building_serializer = BuildingDetailsSerializer(building_instance, data=data)
 
                 amenities_instance = get_object_or_404(Amenities, building_id=data['copy_building_id'])
+
+                for field in amenities_instance._meta.fields:
+                    if isinstance(field, BooleanField):
+                        setattr(amenities_instance, field.name, False)
+
                 amenities_data['building_id'] = data['copy_building_id']
                 amenities_obj = AmenitiesSerializer(amenities_instance, data=amenities_data)
                 
@@ -67,6 +80,15 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             building_serializer.save()
             amenities_obj.save()
+
+            all_units = UnitDetails.objects.filter(building_id=building_serializer.data['building_id'])
+            for unit in all_units:
+                unit_obj = UnitDetails.objects.get(id=unit.id)
+                unit_obj.per_sqft_rate_saleable = building_serializer.data['per_sqft_rate_saleable']
+                # unit_obj.base_price
+                unit_obj.google_pin_lat = building_serializer.data['google_pin_lat']
+                unit_obj.google_pin_lng = building_serializer.data['google_pin_lng']
+                unit_obj.save()
 
             return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id'], "building_id":building_serializer.data['building_id']}, status=status.HTTP_201_CREATED)
 

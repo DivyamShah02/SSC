@@ -4,7 +4,9 @@ from django.db import models
 class PropertyInquiry(models.Model):
     # Personal Information
     name = models.CharField(max_length=100)
+    country_code = models.CharField(max_length=10, default='', null=True, blank=True)
     number = models.CharField(null=True, blank=True, max_length=15)
+    whatsapp_country_code = models.CharField(max_length=10, default='', null=True, blank=True)
     whatsapp = models.CharField(null=True, blank=True, max_length=15)
     email = models.EmailField(null=True, blank=True)
     profession = models.CharField(null=True, blank=True, max_length=100)
@@ -16,7 +18,7 @@ class PropertyInquiry(models.Model):
     adults = models.IntegerField(null=True, blank=True)
     children = models.IntegerField(null=True, blank=True)
     senior_citizens = models.IntegerField(null=True, blank=True)
-    have_pets = models.CharField(null=True, blank=True, max_length=10)
+    # have_pets = models.CharField(null=True, blank=True, max_length=10)
     current_residence_area = models.CharField(null=True, blank=True, max_length=100)
     religious_preference = models.CharField(null=True, blank=True, max_length=50)
     workplace_area = models.CharField(null=True, blank=True, max_length=100)

@@ -313,6 +313,10 @@ body {
     color: var(--secondary-color);
 }
 
+.red-border-btn {
+    border: red 4px solid !important;
+}
+
 label{
     color: var(--secondary-color);
     font-weight: 600;

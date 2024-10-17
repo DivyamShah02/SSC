@@ -11,6 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.exceptions import NotFound
 import math
 import pdb
+from datetime import datetime
 
 
 class Sorter:
@@ -106,8 +107,6 @@ class Sorter:
 
                 min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
 
-                print(budget_min)
-                print(budget_max)
                 for bedroom in bedrooms:
                     for unit_type in unit_types:
                         print(bedroom)
@@ -122,8 +121,8 @@ class Sorter:
                             active=True
                             )
                         print(len(property_unit_matched))
-                        for pr in property_unit_matched:
-                            print(pr.id)
+                        # for pr in property_unit_matched:
+                        #     print(pr.id)
                         for property in property_unit_matched:    validated_property.append(property.id)
 
 
@@ -182,6 +181,7 @@ class Sorter:
         score += self._score_parking(client_preferences, unit_data)
         score += self._score_stack_parking(client_preferences, property_data)
         score += self._score_amenities(client_preferences, amenities_data)
+        score += self._score_age_of_property(client_preferences, property_data)
 
         return {'unit_id': unit_id, 'score': score}
 
@@ -274,3 +274,43 @@ class Sorter:
             if amenities_data.get(amenity, False):
                 score += int(self.config.scoring.amenities_per_match)
         return score
+    
+    def _score_age_of_property(self, client_preferences, property_data):
+        try:
+            property_age = client_preferences.get('property_age', '')
+            age_of_property_by_developer = property_data.get('age_of_property_by_developer', '')
+            building_month, building_year = map(int, age_of_property_by_developer.split('-'))
+            building_date = datetime(year=building_year, month=building_month, day=1)
+            
+            current_date = datetime.now()
+            
+            months_difference = (building_date.year - current_date.year) * 12 + (building_date.month - current_date.month)
+
+            client_ranges = {
+                "0 to 12 months old": (-12, 0),
+                "12 to 36 months old": (-36, -12),
+                "36 to 48 months": (-48, -36),
+                "Upcoming 6 - 12 months": (6, 12),
+                "Upcoming 12 to 36 months": (12, 36),
+                "Flexible": None
+            }
+            
+            if property_age == "Flexible":
+                return 10
+
+            client_min, client_max = client_ranges[property_age]
+            
+            if client_min <= months_difference <= client_max:
+                return 10  # Direct match
+            else:
+                for range_name, range_values in client_ranges.items():
+                    if range_name == "Flexible":
+                        continue
+                    range_min, range_max = range_values
+                    if range_name != property_age and range_min <= months_difference <= range_max:
+                        return 5  # Concurrent match
+
+            return 0  # No match
+        
+        except:
+            return 0

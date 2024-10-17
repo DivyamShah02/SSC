@@ -26,7 +26,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         return render(request, 'property_detail_form.html', data)
 
     def create(self, request):
-        # try:
+        try:
             data = request.data.copy()
             # Process list fields
             for key in data.keys():
@@ -81,10 +81,19 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             building_serializer.save()
             amenities_obj.save()
 
+            all_units = UnitDetails.objects.filter(building_id=building_serializer.data['building_id'])
+            for unit in all_units:
+                unit_obj = UnitDetails.objects.get(id=unit.id)
+                unit_obj.per_sqft_rate_saleable = building_serializer.data['per_sqft_rate_saleable']
+                # unit_obj.base_price
+                unit_obj.google_pin_lat = building_serializer.data['google_pin_lat']
+                unit_obj.google_pin_lng = building_serializer.data['google_pin_lng']
+                unit_obj.save()
+
             return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id'], "building_id":building_serializer.data['building_id']}, status=status.HTTP_201_CREATED)
 
-        # except Exception as e:
-        #     return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as e:
+            return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class PropertyCopyDataViewSet(viewsets.ViewSet):

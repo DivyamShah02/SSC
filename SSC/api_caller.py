@@ -1,8 +1,8 @@
 import requests
 
 
-# base_url = 'http://127.0.0.1:8000/'
-base_url = 'https://ssc.pythonanywhere.com/'
+base_url = 'http://127.0.0.1:8000/'
+# base_url = 'https://ssc.pythonanywhere.com/'
 
 def sorter_api_call():
     url_endpoint = 'sort/'

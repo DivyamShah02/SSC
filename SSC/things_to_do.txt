@@ -11,3 +11,5 @@ add a field of selected property to the sorted property
 17/10/24
 XX add functionality to set the amentiy to false if unselected
 XX manage +91 issue in number
+
+ask if the basic price should be added with all the charges or not

@@ -500,7 +500,7 @@
                             </div>
                             <div class="pt-3 mb-5" style="background-color: white !important;">
                                 <div class="mb-5" style="background-color: white !important;">
-                                    <div class="map-one_map" style="background-color: white !important;">
+                                    <div class="map-one_map m-3" style="background-color: white !important;">
                                         <!-- <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
                                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -508,40 +508,40 @@
                                             <div id="place-details">Place Details Here</div>
             
                                             <!-- Map container -->
-                                            <div id="map" style="background-color: white !important;"></div>
-                                            <div class="p-3" style="background-color: white !important;">
-                                                <ul id="commute-list">
-                                                    {% if duration_sch != False %}
-                                                    <li>
-                                                        <p><span data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        data-bs-custom-class="custom-tooltip"
-                                                        data-bs-title="{{sch_info}}"
-                                                        ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_sch}}+</b> to your school by car</span></p>
-                                                    </li>
-                                                    {% endif %}
-                                                    {% if duration_work != False %}
-                                                    <li>
-                                                        <p><span data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        data-bs-custom-class="custom-tooltip"
-                                                        data-bs-title="{{work_info}}"
-                                                        ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_work}}+</b> to your workplace by car</span></p>
-                                                    </li>
-                                                    {% endif %}
-    
-                                                </ul>
-                                                <div class="row" id="commute-searchbox">
-                                                    <div class="col-6">
-                                                        <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
-                                                        <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" width="30%">
-                                                    </div>
-                                                </div>
+                                            <div id="map" style="background-color: white !important;"></div>                                            
+                                    </div>
+                                    <div class="p-3" style="background-color: white !important;">
+                                        <ul id="commute-list">
+                                            {% if duration_sch != False %}
+                                            <li>
+                                                <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="{{sch_info}}"
+                                                ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_sch}}+</b> to your school by car</span></p>
+                                            </li>
+                                            {% endif %}
+                                            {% if duration_work != False %}
+                                            <li>
+                                                <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="{{work_info}}"
+                                                ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_work}}+</b> to your workplace by car</span></p>
+                                            </li>
+                                            {% endif %}
 
+                                        </ul>
+                                        <div class="row" id="commute-searchbox">
+                                            <div class="col-6">
+                                                <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                                <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" width="30%">
                                             </div>
+                                        </div>
+
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="mt-5 p-5"></div>
+                            <!-- <div class="mt-5 p-5"></div> -->
                         </div>
                         <!-- Location end -->
 

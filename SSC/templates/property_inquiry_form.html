@@ -316,7 +316,7 @@
     
                     <!-- Top 3 Preferred Locations -->
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="preferred_locations" class="form-label primary">15) What are your top 3 preferred locations?<span class="required"> *</span></label>
+                        <label for="preferred_locations" id="preferred_locations_label" class="form-label primary">15) What are your top 3 preferred locations?<span class="required"> *</span></label>
                         <br>
                         <input type="hidden" id="no_of_locations" value="0">
                         <div id="preferred-location">
@@ -1282,7 +1282,11 @@
         async function submit_inquiry_form() {
             toggle_loader()
 
-            if (AnyCheckboxChecked('bedrooms','bedrooms_label')){
+            const isValid = validateForm();
+            const isAnyCheckboxChecked = AnyCheckboxChecked('bedrooms', 'bedrooms_label');
+            const isLocationAdded = LocationAdded();
+
+            if (isValid && isAnyCheckboxChecked && isLocationAdded) {
                 var personal_information_form = document.getElementById('personal_information');
                 var family_demographics_form = document.getElementById('family_demographics');
                 var house_specificaiton_form = document.getElementById('house_specificaiton');
@@ -1394,7 +1398,7 @@
                     }
 
                 }
-            
+
             }
             toggle_loader()
 
@@ -1414,6 +1418,46 @@
                 label_ele.classList.add('red-border-btn')
             }
             return isChecked;
+        }
+
+        function validateForm() {
+            
+            const inputs = document.querySelectorAll('input');
+            let invalidInputs = [];
+
+            // Remove red-border-btn class from all inputs
+            inputs.forEach(input => {
+                input.classList.remove('red-border-btn');
+            });
+
+            // Check validity of each input and collect IDs of invalid ones
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    invalidInputs.push(input.id);
+                    input.classList.add('red-border-btn');  // Add red border class
+                }
+            });
+
+            // If all inputs are valid, proceed
+            if (invalidInputs.length === 0) {
+                return true;
+            } else {
+                console.log("Invalid inputs:", invalidInputs);
+                return false;
+            }
+        }
+
+        function LocationAdded() {
+            let location_input = document.getElementsByName('preferred_locations').length > 0;
+            document.getElementById('preferred_locations_label').classList.remove('red-border-btn');
+            if (location_input) {
+                return true;
+            }
+            else {
+                document.getElementById('preferred_locations_label').classList.add('red-border-btn');
+                return false;
+            }
+
         }
 
         async function sort_property(client_id) {

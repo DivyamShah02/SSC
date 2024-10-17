@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>Unit Detail Form</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        .pac-container {
+            z-index: 2001 !important;
+            /* Ensure autocomplete dropdown is above the modal */
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="spinner" class="spinner-container p-2"
+        style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
+    </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+        </div>
+    </nav>
+    <!-- Navigation bar end -->
+
+    <!-- Main content start -->
+    <div id="main-content" class="blur">
+        <!-- Unit Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Unit Details</h4>
+            </div>
+            <div class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <table id="unit_details_table" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Unit Configuration</th>
+                            <th scope="col">Unit Type</th>
+                            <th scope="col">Unit Size</th>
+                            <th scope="col" class="text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for unit in all_units %}
+                        <tr>
+                            <td style="font-weight: 600;">{{ forloop.counter }}</td>
+                            <td>{{unit.unit_configuration}}</td>
+                            <td>{{unit.unit_type}}</td>
+                            <!-- <td>{{unit.id}}</td> -->
+                            <td>{{unit.size_of_unit}}</td>
+                            <td class="text-end">
+                                <i onclick="edit_unit_details('{{unit.id}}')" style="cursor: pointer;" class="fa fa-pen px-1"></i>
+                                <i onclick="copy_unit_details('{{unit.id}}')" style="cursor: pointer;" class="fa fa-copy px-1"></i>
+                                <i onclick="delete_unit_fun('{{unit.unit_configuration}}','{{unit.unit_type}}','{{unit.size_of_unit}}','{{unit.id}}')" style="cursor: pointer;" class="fa fa-trash px-1"></i>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <!-- Unit Details end -->
+
+
+        <!-- Unit Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Add Unit</h4>
+            </div>
+            <div class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <h5 id="form_details"></h5>
+
+                <form id="unit_details_modal_form" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data"
+                    style="background-color: white;">
+                    {% csrf_token %}
+                    <div class="row">
+                        <!-- <div class="col-md-4 form-group">
+                    <label class="form-label primary" for="projectId">Project/property ID</label>
+                    <input type="text" class="form-control" id="projectId" name="project_id" >
+                </div> -->
+                        <input type="hidden" class="form-control" id="building_id" value="{{building_id}}" placeholder="" name="building_id">
+                        <input type="hidden" class="form-control" id="per_sqft_rate_saleable" value="{{building_data.per_sqft_rate_saleable}}" placeholder="" name="per_sqft_rate_saleable">
+                        <input type="hidden" class="form-control" id="google_pin_lat" value="{{building_data.google_pin_lat}}" placeholder="" name="google_pin_lat">
+                        <input type="hidden" class="form-control" id="google_pin_lng" value="{{building_data.google_pin_lng}}" placeholder="" name="google_pin_lng">
+                        <input type="hidden" class="form-control" id="base_price" value="" placeholder="" name="base_price">
+                        <input type="hidden" class="form-control" id="unit_id" value="NULL" placeholder="" name="unit_id">
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unitTypes">1) Type of unit<span class="required"> *</span></label><br>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_1_BHK" value="1 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_1_BHK">1 BHK</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_2_BHK" value="2 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_2_BHK">2 BHK</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_3_BHK" value="3 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_3_BHK">3 BHK</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_4_BHK" value="4 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_4_BHK">4 BHK</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_5_BHK" value="5 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_5_BHK">5 BHK</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_6_BHK" value="6 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_6_BHK">6 BHK</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- <select class="form-select" id="unitTypes" name="unit_configuration">
+                                <option value="3 BHK">3 BHK</option>
+                                <option value="4 BHK">4 BHK</option>
+                                <option value="5 BHK">5 BHK</option>
+                            </select> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="layoutTypes">2) Layout Types<span class="required"> *</span></label><br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Simplex" value="Simplex" required>
+                                        <label class="form-check-label" for="unit_type_Simplex">Simplex</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Duplex" value="Duplex" required>
+                                        <label class="form-check-label" for="unit_type_Duplex">Duplex</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex" required>
+                                        <label class="form-check-label" for="unit_type_Triplex">Triplex</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse" required>
+                                        <label class="form-check-label" for="unit_type_Penthouse">Penthouse</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <select class="form-select" id="layoutTypes" name="unit_type">
+                                <option value="Simplex">Simplex</option>
+                                <option value="Duplex">Duplex</option>
+                                <option value="Triplex">Triplex</option>
+                                <option value="Penthouse">Penthouse</option>
+                            </select> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unitSeries">3) Unit series</label>
+                            <input type="text" class="form-control" id="unitSeries" name="unit_series"
+                                placeholder="Enter size of unit">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfUnit">4) Size of the unit
+                                (SBU in Sq Ft.)<span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="sizeOfUnit" name="size_of_unit" required
+                                placeholder="Enter size of unit">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="carpetArea">5) Carpet area as per
+                                RERA (in Sq Ft.)<span class="required"> *</span></label>
+                            <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera" required
+                                placeholder="Enter carpet area as per RERA">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unitsPerFloor">6) No. of units on one
+                                floor</label>
+                            <input type="number" class="form-control" id="unitsPerFloor"
+                                placeholder="Enter Units per floor" name="no_of_units_per_floor">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="liftsPerFloor">7) No. of lifts on one
+                                floor</label>
+                            <input type="number" class="form-control" id="liftsPerFloor"
+                                placeholder="Enter nubmer of lifts per floor" name="no_of_lifts_per_floor">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="privateLifts">8) Private lifts available?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_yes" value="Yes" onclick="toggleLiftInput(true, false)">
+                                <label class="form-check-label" for="private_lifts_yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_no" value="No" onclick="toggleLiftInput(false, false)">
+                                <label class="form-check-label" for="private_lifts_no">No</label>
+                            </div>
+                            <div id="number_of_pvt_lift" class="pt-3" style="display: none;">
+                                <label class="form-label primary" for="numberOfPrivateLifts">&nbsp;&nbsp;How many?</label>
+                                <input type="number" class="form-control" id="numberOfPrivateLifts"
+                                    placeholder="Enter number of private lifts" name="no_private_lifts">
+                            </div>
+                            <!-- <select class="form-select" id="privateLifts" name="private_lifts">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select> -->
+                        </div>
+                        <!-- <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="numberOfPrivateLifts">8) If Yes, How
+                                many?</label>
+                            <input type="number" class="form-control" id="numberOfPrivateLifts"
+                                placeholder="Enter number of private lifts" name="no_private_lifts">
+                        </div> -->
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="commonTerrace">9) Common terrace accessible?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="common_terrace_accessible" id="common_terrace_accessible_yes" value="Yes">
+                                <label class="form-check-label" for="common_terrace_accessible_yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="common_terrace_accessible" id="common_terrace_accessible_no" value="No">
+                                <label class="form-check-label" for="common_terrace_accessible_no">No</label>
+                            </div>
+                            <!-- <select class="form-select" id="commonTerrace" name="common_terrace_accessible">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfMainBalcony">10) Size of main
+                                balcony<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMainBalconyLen"
+                                placeholder="Length" name="size_of_balcony_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMainBalconywid"
+                                placeholder="Width" name="size_of_balcony_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfMainBalcony"
+                                placeholder="Enter size of main balcony" name="size_of_balcony"> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfMasterBedroom">11) Size of master
+                                bedroom<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomLen"
+                                placeholder="Length" name="size_of_master_bedroom_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomwid"
+                                placeholder="Width" name="size_of_master_bedroom_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfMasterBedroom"
+                                placeholder="Enter size of master bedroom" name="size_of_master_bedroom"> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfKitchen">12) Size of
+                                kitchen<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfKitchenLen"
+                                placeholder="Length" name="size_of_kitchen_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfKitchenwid"
+                                placeholder="Width" name="size_of_kitchen_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfKitchen"
+                                placeholder="Enter size of kitchen" name="size_of_kitchen"> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="sizeOfPrivateTerrace">13) Size of private
+                                terrace<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerraceLen"
+                                placeholder="Length" name="size_of_private_terrace_len">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerracewid"
+                                placeholder="Width" name="size_of_private_terrace_wid">
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="sizeOfPrivateTerrace"
+                                placeholder="Enter size of private terrace" name="size_of_private_terrace"> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="numberOfBathrooms">14) No. of attached
+                                bathrooms<span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="numberOfBathrooms" required
+                                placeholder="Enter number of attached bathrooms" name="no_of_attached_bathrooms">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="servantRoomAvailable">15) Servant room available?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="servant_room_available" id="servant_room_available_yes" value="Yes">
+                                <label class="form-check-label" for="servant_room_available_yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="servant_room_available" id="servant_room_available_no" value="No">
+                                <label class="form-check-label" for="servant_room_available_no">No</label>
+                            </div>
+                            <!-- <select class="form-select" id="servantRoomAvailable" name="servant_room_available">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select> -->
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="pujaRoomAvailable">16) Separate puja room available?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="separate_puja_room_available" id="separate_puja_room_yes" value="Yes">
+                                <label class="form-check-label" for="separate_puja_room_yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="separate_puja_room_available" id="separate_puja_room_no" value="No">
+                                <label class="form-check-label" for="separate_puja_room_no">No</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="numberOfBalconies">17) No. of balconies provided</label>
+                            <input type="number" class="form-control" id="numberOfBalconies"
+                                placeholder="Enter number of balconies" name="no_of_balconies">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="parkingAllotted">18) No. of parking
+                                allotted to one unit<span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="parkingAllotted" required
+                                placeholder="Enter number of parking space" name="no_of_parking_allotted">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="floor_plan">19) Upload Floor Plan</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="floor_plan"
+                            name="floor_plan" accept="image/*">
+                            <img id="img_floor_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="unit_plan">20) Upload Unit Plan</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="unit_plan"
+                            name="unit_plan" accept="image/*">
+                            <img id="img_unit_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-custom-primary" onclick="submit_form()">
+                                Submit
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <!-- Unit Details end -->
+
+        <div class="container mt-3">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+    </div>
+    <!-- Main content end -->
+
+    <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal"
+        data-bs-target="#deleteModal" id="delete_modal" style="display: none;">
+        Delete
+    </button>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                    <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm delete unit</h1>
+                    <button type="button" class="btn-close" style="filter: invert(10);"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><b>Are you sure you want to delete the unit with the following details?</b></p>
+                    <ul>
+                        <li><b>Unit Configuration: <span id="delete_unit_configuration"><u>4 BHK</u></span></b></li>
+                        <li><b>Unit Type: <span id="delete_unit_type"><u>Duplex</u></span></b></li>
+                        <li><b>Unit Size: <span id="delete_unit_size"><u>1200 sq ft</u></span></b></li>
+                    </ul> 
+                    <p><b><u>This action cannot be undone. Please confirm your choice.</u></b></p>
+                    <input type="hidden" id="unit_id_input">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="delete_modal_close" class="btn btn-outline-dark"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="saveLocationBtn" onclick="delete_unit_data()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            document.getElementById('spinner-text').classList.toggle('add-display-block');
+        }
+
+        function toggle_preloader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+        }
+
+        function toggleLiftInput(show, from_js) {
+            const liftCountDiv = document.getElementById('number_of_pvt_lift');
+            if (show) {
+                liftCountDiv.style.display = 'block';
+                if (!from_js){
+                    document.getElementById('numberOfPrivateLifts').value = '';
+                    document.getElementById('numberOfPrivateLifts').focus();
+                }
+            } else {
+                liftCountDiv.style.display = 'none';
+                document.getElementById('numberOfPrivateLifts').value = 0;
+            }
+        }
+
+        async function edit_unit_details(unit_id){
+            toggle_preloader();
+            let floor_img = document.getElementById('img_floor_plan')
+            let unit_img = document.getElementById('img_unit_plan')
+            document.getElementById('unit_id').value = unit_id
+            const data = await get_unit_data(unit_id)
+            document.getElementById('form_details').innerText = `Editing : ${data['unit_configuration']} ${data['unit_type']}`
+            setFormValues(data)
+            floor_img.src = data['floor_plan']
+            floor_img.style.display = 'block'
+            
+            unit_img.src = data['unit_plan']
+            unit_img.style.display = 'block'
+            toggleLiftInput(data['private_lifts'], true)
+            
+            toggle_preloader();
+        }
+
+        async function copy_unit_details(unit_id) {
+            toggle_preloader();
+            let floor_img = document.getElementById('img_floor_plan')
+            let unit_img = document.getElementById('img_unit_plan')
+            document.getElementById('unit_id').value = 'NULL'
+            const data = await get_unit_data(unit_id)
+            document.getElementById('form_details').innerText = `Copy of ${data['unit_configuration']} ${data['unit_type']}`
+            setFormValues(data)
+            floor_img.src = data['floor_plan']
+            floor_img.style.display = 'none'
+            
+            unit_img.src = data['unit_plan']
+            unit_img.style.display = 'none'
+
+            toggleLiftInput(data['private_lifts'], true)
+            toggle_preloader();
+        }
+
+        async function get_unit_data(unit_id) {
+            try {
+                const response = await fetch("{% url 'unit-copy-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({"unit_id":`${unit_id}`})
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    return data.unit_data
+                } else {
+                    alert('Error in getting unit details: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+            }
+        }
+
+        function setFormValues(data) {
+            // Loop through each key-value pair in the dictionary (data)
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    // Find the input element(s) where name attribute matches the key
+                    const input = document.querySelector(`[name="${key}"]`);
+                    const inputs = document.querySelectorAll(`[name="${key}"]`);
+
+                    if (input) {
+                        if (input.type === 'radio') {
+                            // If the input is a radio button group, loop through all radio buttons
+                            inputs.forEach(radio => {
+                                // Check for true/false values and map them to 'Yes'/'No'
+                                if ((data[key] === true || data[key] === "true") && radio.value.toLowerCase() === 'yes') {
+                                    radio.checked = true;  // Select the "Yes" radio button
+                                } else if ((data[key] === false || data[key] === "false") && radio.value.toLowerCase() === 'no') {
+                                    radio.checked = true;  // Select the "No" radio button
+                                } else if (radio.value === data[key]) {
+                                    // For other radio buttons, match by value
+                                    radio.checked = true;
+                                }
+                            });
+                        } else if (input.type === 'file') {
+
+                        } else {
+                            input.value = data[key];
+                        }
+                    }
+                }
+            }
+
+            // Scroll into view after setting the form values
+            const formElement = document.getElementById('unit_details_modal_form');
+            if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        async function submit_form() {
+            toggle_preloader();
+
+            var document_form = document.getElementById('unit_details_modal_form');
+
+            if (document_form.reportValidity()) {
+                var formData = new FormData(document_form);
+
+                try {
+                    const response = await fetch("{% url 'unit-detail-form-list' %}", {  // Use the appropriate URL for your API endpoint
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': '{{csrf_token}}'
+                        },
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success === true) {
+                        toggle_preloader();
+                        location.reload()
+                    } else {
+                        alert('Error in submitting unit data: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error("Error submitting unit data: ", error);
+                }
+            } else {
+                alert("Please fill all the fields in the form correctly.");
+            }
+
+            toggle_preloader();
+        }
+
+        function delete_unit_fun(unit_conf, unit_type, unit_size, unit_id) {
+            document.getElementById('delete_unit_configuration').innerText = unit_conf;
+            document.getElementById('delete_unit_type').innerText = unit_type;
+            document.getElementById('delete_unit_size').innerText = unit_size;
+            document.getElementById('unit_id_input').value = unit_id
+            document.getElementById('delete_modal').click()
+        }
+
+        async function delete_unit_data() {
+            try {
+                let unit_id = document.getElementById('unit_id_input').value
+                const response = await fetch("{% url 'unit-detail-form-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({"unit_id":`${unit_id}`})
+                });
+
+                if (response.ok) {
+                    document.getElementById('delete_modal_close').click()
+                    location.reload()
+                } else {
+                    alert('Error in deleting unit');
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+            }
+        }
+
+        window.onload = function () {
+            toggle_preloader();
+        };
+
+    </script>
+
+    <script>
+        const numberInputs = document.querySelectorAll('input[type=number]');
+
+        numberInputs.forEach(function(input) {
+            input.addEventListener('wheel', function(event) {
+                event.preventDefault();
+            });
+            input.addEventListener('input', function() {
+                const min = input.min !== '' ? parseFloat(input.min) : 0;  // Default min to 0 if not set
+                if (input.value < min) {
+                    input.value = min;
+                }
+            });
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-') {
+                    e.preventDefault();  // Block invalid characters
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

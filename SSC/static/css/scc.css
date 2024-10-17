@@ -1,0 +1,7 @@
+.sticky-tabs {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 70px; /* Adjust this value as needed to control when the tab sticks */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    background-color: var(--body-background); /* To prevent overlap transparency */
+  }

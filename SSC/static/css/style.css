@@ -1,0 +1,389 @@
+:root {
+    --body-background: #fffcf3;
+    --nav-background: #fff2e2;
+    --primary-color: #113e59;
+    --primary-color-faded: #113d59a9;
+    --secondary-color: #f6931e;
+    --secondary-color-faded: #f6951e9b;
+    --light-text-color: #bababa;
+    --temp: #073763;
+
+}
+
+body {
+    background-color: var(--body-background) !important;
+}
+
+
+.container-ssc {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+}
+
+.scc-section {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
+.text-primary-ssc {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary-ssc {
+    color: var(--secondary-color) !important;
+}
+
+.text-light-ssc {
+    color: var(--light-text-color) !important;
+}
+
+.ssc-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.best-results {
+    background-color: var(--nav-background);
+}
+
+.property-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0d3b66;
+    /* Dark blue color */
+}
+
+.text-bg-primary-ssc {
+    background-color: var(--secondary-color) !important;
+}
+
+.rera-badge {
+    background-color: #e8f5e9;
+    color: #4caf50;
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.property-location {
+    /* color: #777; */
+    color: #0d3b66;
+    font-size: 1.2rem;
+    
+}
+
+.developer-name {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.icon-bar i {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    color: #0d3b66;
+    cursor: pointer;
+}
+
+
+.ssc-images {
+    overflow: hidden;
+    /* Ensures the zoomed image stays within its container */
+}
+
+.ssc-images img {
+    width: 100%;
+    height: auto;
+    transition: transform 1.2s ease-in-out;
+    /* Smooth transition for the zoom effect */
+}
+
+.ssc-images img:hover {
+    /* transform: scale(1.1); */
+    transform: scale(1);
+    /* Zoom the image by 10% */
+}
+
+.primary-images {
+    position: relative;
+}
+
+.primary-images img {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.primary-images .overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    border-radius: 5px;
+}
+
+/* Style for the golden badge */
+.golden-badge {
+    position: absolute;
+    top: 10px;
+    /* Adjust as needed */
+    left: 10px;
+    /* Adjust as needed */
+    background-color: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 10;
+    /* Ensure it's above other elements */
+}
+
+.ssc-images.primary-images {
+    position: relative;
+    /* Required for absolute positioning of the badge */
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.secondary-images-one img {
+    border-top-right-radius: 15px;
+}
+
+.secondary-images-two img {
+    border-bottom-right-radius: 15px;
+}
+@media (max-width: 992px) {
+    .secondary-images-one,
+    .secondary-images-two {
+        display: none;
+    }
+
+    .primary-images img {
+        border-radius: 15px;
+    }
+}
+
+
+.floor-plan-btn {
+    color: var(--light-text-color);
+    text-decoration: none;
+}
+
+.floor-plan-btn:hover {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    border: 0px !important;
+    border-bottom: 3px var(--secondary-color) solid !important;
+}
+
+.floor-plan-btn.active {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    border: 0px !important;
+    border-bottom: 3px var(--secondary-color) solid !important;
+    background-color: transparent !important;
+}
+
+.modal-dialog.custom-size {
+    max-width: 90vw;
+    /* Adjust width as needed */
+    max-height: 90vh;
+    /* Adjust height as needed */
+}
+
+.modal-body {
+    padding: 0;
+    /* Remove padding around the image */
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    /* Ensure aspect ratio is maintained */
+}
+
+.map-one {
+    position: relative;
+}
+.map-one_map_old{
+    padding: 20px;
+}
+.map-one_map_old iframe {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    /* border-radius: 8px !important; */
+    /* border: 2px solid black !important; */
+}
+.map-one_map {
+    position: relative;
+    height: 450px; /* Set a specific height for the map */
+    width: 100%;
+    border: var(--primary-color) 3px solid;
+    border-radius: 20px;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+}
+
+#place-details {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+    width: 250px;
+}
+#place-details span{
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.form-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-header i {
+    font-size: 1.2rem;
+}
+
+/* Custom style for input underline */
+.form-control {
+    border: none;
+    border-bottom: 2px solid var(--light-text-color);
+    border-radius: 0;
+}
+
+.form-control-error, .form-control-error:focus {
+    border: none;
+    border: 2px solid red;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Additional margin for spacing between fields */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-select{
+    border: none;
+    border-bottom: 2px solid var(--light-text-color);
+    border-radius: 0;
+}
+
+.form-select:focus{
+    box-shadow: none;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.required {
+    color: var(--secondary-color);
+}
+
+.red-border-btn {
+    border: red 4px solid !important;
+}
+
+label{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.form-label.primary{
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+}
+
+.form-check-label{
+    color: rgba(54, 53, 53, 0.683) !important;
+}
+.btn-custom {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+}
+.btn-custom:hover {
+    box-shadow: 1px 1px 4px 4px var(--secondary-color-faded);
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-custom-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+.btn-custom-primary:hover {
+    box-shadow: 1px 1px 4px 4px var(--primary-color-faded);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-custom-outline-primary{
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-custom-outline-primary:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.fixed-bottom-bar .bar-content {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.fixed-bottom-bar h5,
+.fixed-bottom-bar p {
+    margin: 0;
+}

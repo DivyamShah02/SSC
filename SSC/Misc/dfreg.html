@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Embed with Coordinates</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map-container {
+            width: 100%;
+            height: 400px;
+        }
+        .input-container {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <label for="lat">Latitude:</label>
+        <input type="text" id="lat" placeholder="Enter latitude" />
+        <label for="lng">Longitude:</label>
+        <input type="text" id="lng" placeholder="Enter longitude" />
+        <button onclick="updateMap()">Show on Map</button>
+    </div>
+
+    <!-- Map iframe -->
+    <div id="map-container">
+        <iframe
+            id="map"
+            width="100%"
+            height="100%"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k&center=23.022505,72.5713621&zoom=14">
+        </iframe>
+    </div>
+
+    <script>
+        function updateMap() {
+            // Get the latitude and longitude values
+            const lat = document.getElementById('lat').value;
+            const lng = document.getElementById('lng').value;
+
+            // Construct the Google Maps URL with the coordinates
+            const mapUrl = `https://www.google.com/maps/embed/v1/view?key=AIzaSyBevStMFDR_VLoRnAeAeJF_OhXARBbLc5k&center=${lat},${lng}&zoom=14`;
+
+            // Update the iframe src to show the new map
+            document.getElementById('map').src = mapUrl;
+        }
+    </script>
+</body>
+</html>

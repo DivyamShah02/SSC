@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/scc.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>{{main_property.building_id}} - {{main_property.project_name}}</title>
+    <style>
+        .custom-tooltip {
+        --bs-tooltip-bg: var(--primary-color);
+        --bs-tooltip-color: #fff;
+        font-weight: 600;
+        font-size: large;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <!-- <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div> -->
+     </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+            <div class="row">
+                <div class="col-6">
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">All Properties</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    {% for menu_property in menu_properties %}
+                        {% if menu_property.active_property == True %}
+                            <div class="card mb-3 ssc-images primary-images" onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;" style="border: 4px black solid; cursor: pointer;">
+                        {% else %}
+                            <div class="card mb-3 ssc-images primary-images" onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;" style="cursor: pointer;">
+                        {% endif %}
+                                <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
+                                    alt="Property Image"
+                                    style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
+                                <div class="golden-badge">Premium Property</div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><u>{{menu_property.property_name}}</u></h5>
+                                    <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
+                                </div>
+                            </div>
+                    {% endfor %}
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-custom-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation bar end -->
+    
+    <div id="main-content" class="blur">
+        <!-- Best result start -->
+        <div class="py-2 pt-3 text-center best-results" style="margin-top: 68px !important;">
+            Showing best property for <b class="text-primary-ssc"><u>{{client_data.name}}</u></b>
+        </div>
+        <!-- Best result end -->
+
+        <!-- Basic Property Detail start -->
+        <div class="mt-3 container">
+            <div class="row">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <span class="property-name">{{main_property.project_name}}</span>
+                        {% if main_property.rera_approved == True %}
+                        <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
+                        {% endif %}
+                        <div class="developer-name">By - {{main_property.group_name}}</div>
+                    </div>
+                    <div class="col-12 col-md-6 text-start text-md-end">
+                        <div class="property-name"><i class="text-primary-ssc fa fa-location-dot"></i> {{main_property.area_of_project}}</div>
+                    </div>
+                </div>
+                
+                <!-- <div class="col-12 col-md-6">
+                    <div class="developer-name">By - {{main_property.group_name}}</div>
+                </div>
+                <div class="col-12 col-md-6 text-start text-md-end">
+                    <div class="icon-bar">
+                        <i class="fa fa-download"></i>
+                        <i class="fa fa-heart"></i>
+                        <i class="fa fa-share-nodes"></i>
+                    </div>
+                </div> -->
+
+                <div class="col-12 mt-4"></div>
+
+                <div class="row px-5">
+                    <!-- Main Image -->
+                    <div class="col-lg-8 ssc-images primary-images p-0 position-relative">
+                        <img src="{{main_property.head_image}}"
+                            alt="Main Project Image">
+                        <div class="overlay-text">{{main_property.project_name}}</div>
+                        <!-- Golden Badge -->
+                        <!-- <div class="golden-badge">Premium Property</div> -->
+                    </div>
+                    <!-- Thumbnail Images (hidden on mobile/tablet) -->
+                    <div class="col-lg-4 p-0">
+                        <div class="ssc-images secondary-images-one p-0 mx-2" style="margin-bottom: 10px !important;">
+                            <img src="{{main_property.sec_image_1}}"
+                                alt="Thumbnail 2">
+                        </div>
+                        <div class="ssc-images secondary-images-two p-0 my-2 mx-2">
+                            <img src="{{main_property.sec_image_2}}"
+                                alt="Thumbnail 3">
+                        </div>
+                    </div>
+                </div>
+
+            <!-- 
+                <div class="col-12 col-md-8">
+                    <img src="/static/img/main_img.png"
+                        width="100%" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="/static/img/sec_img.png"
+                        width="100%" alt="">
+                </div> -->
+            </div>
+        </div>
+        <!-- Basic Property Detail end -->
+
+        <!-- Property details start -->
+        <div class="ssc-section container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-bed text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{unit_data.unit_configuration}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>₹{{property_unit_price_in_cr}} Cr</b></h5>
+                                <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft</b></p>
+
+                                <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
+                                    Starts at ₹60.5 K)</span></b></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
+                                <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-building text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Total Units</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.no_of_units}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-expand text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Units per floor</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_units_per_floor}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-car text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Parking</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{unit_data.no_of_parking_allotted}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
+                            </div>
+                            {% if is_ready_to_move == True %}
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                            {% else %}
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.age_of_property_by_developer}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-2">
+                                <h4 class="pt-2"><i class="fas fa-elevator text-secondary-ssc"></i></h4>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text text-light-ssc m-0"><b>Architect</b></p>
+                                <h5 class="card-title text-primary-ssc"><b>{{main_property.architect}}</b></h5>
+                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Property details end -->
+
+        <div class="ssc-section container">
+            <div>
+                <ul class="nav nav-tabs sticky-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn active" id="floor_plan-tab" href="#floor_plan"><b>Floor Plan</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="amenties-tab" href="#amenties"><b>Amenties</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="location-tab" href="#location"><b>Location</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="price_information-tab" href="#price_information"><b>Price Information</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="overview-tab" href="#overview"><b>Overview</b></a>
+                    </li>
+                </ul>
+                <!-- Tabs navs -->
+
+                <!-- Tabs content -->
+                <div class="" id="myTabContent">
+                    <div class="tabs-ssc mb-5" id="floor_plan">
+                        <!-- Floor plan start -->
+                        <div class="scc-section container pt-5">
+                            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>Floor Plan</h4>
+                            </div>
+
+                            <div style="background-color: white !important;">
+                                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link floor-plan-btn active" id="floor_plan_img-tab" data-bs-toggle="tab"
+                                            href="#floor_plan_img" role="tab" aria-controls="floor_plan_img" aria-selected="true"><b>{{unit_data.unit_configuration}} Floor Plan</b></a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link floor-plan-btn" id="unit_plan_img-tab" data-bs-toggle="tab"
+                                            href="#unit_plan_img" role="tab" aria-controls="unit_plan_img" aria-selected="false"><b>{{unit_data.unit_configuration}} Unit Plan</b></a>
+                                    </li>
+                                </ul>
+                                <!-- Tabs navs -->
+
+                                <!-- Tabs content -->
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="floor_plan_img" role="tabpanel"
+                                        aria-labelledby="floor_plan_img-tab">
+                                        <!-- src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Layouts/Floor-Unit/4-BHK-Typical-floor-plan-Deluxe.jpg" -->
+                                        <img class="img-fluid"
+                                            src="{{unit_data.floor_plan}}"
+                                            alt="Tab 1 Image" width="100%" data-bs-toggle="modal"
+                                            data-bs-target="#tab-modal1">
+                                    </div>
+                                    <div class="modal fade" id="tab-modal1" tabindex="-1" aria-labelledby="tab-modal1Label"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog custom-size">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="tab-modal1Label">4 BHK Typical Floor Plan
+                                                        Deluxe</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- Full-size Image -->
+                                                    <img src="{{unit_data.floor_plan}}"
+                                                        alt="Full Size Image" class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="tab-pane fade" id="unit_plan_img" role="tabpanel" aria-labelledby="unit_plan_img-tab">
+                                        <img src="{{unit_data.unit_plan}}"
+                                            alt="Tab 2 Image" width="100%" data-bs-toggle="modal"
+                                            data-bs-target="#tab-modal2">
+                                    </div>
+                                    <div class="modal fade" id="tab-modal2" tabindex="-1" aria-labelledby="tab-modal2Label"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog custom-size">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="tab-modal2Label">4 BHK Typical Floor Plan
+                                                        Classic</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- Full-size Image -->
+                                                    <img src="{{unit_data.unit_plan}}"
+                                                        alt="Full Size Image" class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Floor plan end -->
+
+                    </div>
+
+                    <div class="tabs-ssc my-5" id="amenties">
+                        <!-- Amenties start -->
+                        <div class="scc-section container pt-5">
+                            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>Amenties</h4>
+                            </div>
+                            <div class="px-5 row pt-3" style="background-color: white !important;">
+                                {% for client_amenity in client_prefered_amenities %}
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{client_amenity}}</b></p>
+                                </div>
+                                {% endfor %}
+                                <hr>
+
+                                {% for other_amenity in other_amenities %}
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{other_amenity}}</b></p>
+                                </div>
+                                {% endfor %}
+
+                                <hr>
+
+                                {% for special_amenity in special_amenities %}
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp; <b>{{special_amenity}}</b></p>
+                                </div>
+                                {% endfor %}
+                                
+                                <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-fan text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Air Conditioning</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-sink text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Modern Kitchen Appliances</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-wifi text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>High-Speed Internet</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-hands-bubbles text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>In-Unit Washer and Dryer</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-door-closed text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Secure Entry</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Built-In-Wardrobes</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-grip-lines text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Balcony or Terrace</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-dumbbell text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Fitness Center</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-car text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Parking Space</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-person-swimming text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Swimming Pool</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-umbrella-beach text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Landscaped Garden</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-dice text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Indoor Games</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-volleyball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Club House</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-table-tennis-paddle-ball text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Kids Play Area</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-video text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>24×7 Security</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-futbol text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Sports Ground</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-bolt text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Full Power Backup</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-warehouse text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Banquet Hall</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-dumpster text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Community Hall</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-film text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Theater</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-book text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Library</b></p>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-person-running text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Jogging Track</b></p>
+                                </div> -->
+                                
+                            </div>
+                        </div>
+                        <!-- Amenties end -->
+
+                    </div>
+
+                    <div class="tabs-ssc my-5" id="location">
+                        <!-- Location start -->
+                        <div class="scc-section container mt-5 mb-5 pt-5">
+                            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>Location</h4>
+                            </div>
+                            <div class="pt-3 mb-5" style="background-color: white !important;">
+                                <div class="mb-5" style="background-color: white !important;">
+                                    <div class="map-one_map m-3" style="background-color: white !important;">
+                                        <!-- <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
+                                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                                            <div id="place-details">Place Details Here</div>
+            
+                                            <!-- Map container -->
+                                            <div id="map" style="background-color: white !important;"></div>                                            
+                                    </div>
+                                    <div class="p-3" style="background-color: white !important;">
+                                        <ul id="commute-list">
+                                            {% if duration_sch != False %}
+                                            <li>
+                                                <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="{{sch_info}}"
+                                                ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_sch}}+</b> to your school by car</span></p>
+                                            </li>
+                                            {% endif %}
+                                            {% if duration_work != False %}
+                                            <li>
+                                                <p><span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="{{work_info}}"
+                                                ><i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>{{duration_work}}+</b> to your workplace by car</span></p>
+                                            </li>
+                                            {% endif %}
+
+                                        </ul>
+                                        <div class="row" id="commute-searchbox">
+                                            <div class="col-6">
+                                                <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another Commute</b></p>
+                                                <input type="text" class="form-control" id="place-search" name="place-search" placeholder="Enter loaction" width="30%">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <div class="mt-5 p-5"></div> -->
+                        </div>
+                        <!-- Location end -->
+
+                    </div>
+
+                    <div class="tabs-ssc my-5" id="price_information">
+                        <!-- Price start -->
+                        <div class="scc-section container pt-5">
+                            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>Price Information</h4>
+                            </div>
+                            <table class="table table-striped">
+                                <!-- <thead>
+                                    <tr>
+                                    <th>Price Breakup</th>
+                                    <th>₹1.5 Cr - ₹2.1 Cr</th>
+                                    </tr>
+                                </thead> -->
+                                <tbody class="">
+                                    <tr>
+                                        <td class="px-4 py-3">Basic Price &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{per_sqft_rate_saleable}}k / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
+                                        <th class="text-end py-3 px-4">₹<span id="basic_amt">{{basic_price}}</span> Cr</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    PLC Options
+                                                    <select id="plc_option_selector" name="" class="form-select" onchange="handleOptionChangePLC()">
+                                                        <option value="None">None</option>
+                                                        <option value="garden">Garden : {{main_property.plc_garden}} / Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="roadFacing">Road Facing : {{main_property.plc_road_facing}} / Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="corner">Corner : {{main_property.plc_corner}} / Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                        <option value="others">Others : {{main_property.plc_others}} / Sq.Ft * {{unit_data.size_of_unit}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th class="text-end py-3 px-4">₹<span id="plc_option_amt">0</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    Floor Rise
+                                                    <select id="floor_rise_selector" name="" class="form-select" onchange="handleOptionChangeFloorRise()">
+                                                        <option value="None">None</option>
+                                                        {% for floor in floor_rise %}
+                                                        <option value="floor_rise_{{forloop.counter}}">Floor {{floor.floor}} : {{floor.price}}/Sq.Ft * {{unit_data.size_of_unit}}</option>                                                        
+                                                        {% endfor %}                                                    
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th class="text-end py-3 px-4">₹<span id="floor_rise_amt">0</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Development Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.development_charges}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
+                                        <th class="text-end py-3 px-4">₹<span id="development_charges_amt">{{development_charges}}</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Advance Maintenance &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+
+                                            data-bs-title="₹{{main_property.advance_maintenance}} / 24 = {{advance_maintenance_rate}} X {{unit_data.size_of_unit}} Sq.Ft = ₹{{advance_maintenance_per_month}} PM"></i></td>
+                                            <!-- data-bs-title="₹{{advance_maintenance_rate}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td> -->
+                                        <th class="text-end py-3 px-4">₹<span id="adv_main_amt">{{advance_maintenance}}</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Maintenance Deposit &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.maintenance_deposit}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
+                                        <th class="text-end py-3 px-4">₹<span id="main_depo_amt">{{maintenance_deposit}}</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">Other Expenses &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{main_property.other_specific_expenses}} / Sq.Ft X {{unit_data.size_of_unit}}"></i></td>
+                                        <th class="text-end py-3 px-4">₹<span id="other_specific_amt">{{other_specific_expenses}}</span> L</th>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td class="px-4 py-3">Government Charges &nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X 5.9%"></i></td>
+                                        <th class="text-end py-3 px-4">₹<span id="govt_chargs_amt">{{government_charges}}</span> L</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">GST ({{main_property.gst_applicable}}%)&nbsp;<i class="fas fa-circle-info text-secondary-ssc" 
+                                            data-bs-toggle="tooltip" data-bs-placement="right"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X {{main_property.gst_applicable}}%"></i></td>                                            
+                                        <th class="text-end py-3 px-4">₹<span id="gst_amt">{{gst}}</span> L</th>
+                                    </tr> -->
+                                    <tr>
+                                        <!-- <th class="px-4 py-3">Grand Total</td> -->
+                                            <th class="px-4 py-3">Approx. Price</td>
+                                        <th class="text-end py-3 px-4">
+                                            <h5 class="text-primary-ssc"><b>₹<span id="total_property_amt">{{property_unit_price_in_cr}}</span> CR</b></h5>
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Price end -->
+
+                    </div>
+
+                    <div class="tabs-ssc my-5" id="overview">
+                        <!-- More details start -->
+                        <div class="scc-section container pt-5">
+                            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                                <h4>More Details</h4>
+                            </div>
+                            <table class="table table-striped">
+                                <!-- <thead>
+                                <tr>
+                                    <th>Price Breakup</th>
+                                    <th>₹1.5 Cr - ₹2.1 Cr</th>
+                                </tr>
+                                </thead> -->
+                                <tbody class="">
+                                    {% for field in overview_details %}
+                                    <tr>
+                                        <td class="px-3">{{field.key}}</td>
+                                        <th>{{field.value}}</th>
+                                    </tr>
+                                    {% endfor %}
+                                    <!-- <tr>
+                                        <td class="px-3">Price Breakup</td>
+                                        <th>₹1.5 Cr - ₹2.1 Cr</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">RERA ID</td>
+                                        <th>Lorem ipsum</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Location</td>
+                                        <th>Shantigram, Ahmedabad - North, Gujarat</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Furnishing</td>
+                                        <th>Unfurnished</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Water Availability</td>
+                                        <th>24 Hours Available</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Status of Electricity</td>
+                                        <th>No/Rare Powercut</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Floors allowed for construction</td>
+                                        <th>14</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Lift</td>
+                                        <th>2-3</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3">Loan Offered</td>
+                                        <th>Estimated EMI Starting: ₹1,00,000 &nbsp;<i
+                                                class="fas fa-circle-info text-secondary-ssc"></i>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><b>Description</b> Lorem ipsum dolor sit amet consectetur. Tellus
+                                            sed nulla ac eu
+                                            sit fames pellentesque elit urna. Feugiat fusce tortor varius ipsum amet sed
+                                            pretium. Purus nisi
+                                            aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet
+                                            neque egestas.
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- More details end -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="fixed-bottom-bar">
+            <div class="row m-0">
+                <div class="col-lg-1 col-md-2 col-6 p-0">
+                    {% if prev_ind == False %}
+                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                        class="fa fa-arrow-left"></i></button>
+                    {% else %}
+                    <button onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;" class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-left"></i></button>
+                    {% endif %}
+
+                    {% if next_ind == False %}
+                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                        class="fa fa-arrow-right"></i></button>
+                    {% else %}
+                    <button onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;" class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-right"></i></button>
+                    {% endif %}
+                </div>
+                <div class="col-lg-5 col-md-4 col-6 text-start p-0">
+                    <h5 class="text-primary-ssc"><b>{{main_property.building_id}} - {{main_property.project_name}}</b></h5>
+                    <p><b>{{unit_data.unit_configuration}}</b></p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 text-end">
+                    <a href="#" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
+                            class="fas fa-arrow-up-from-bracket"></i> Share</a>
+                    <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
+                    <a href="#" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+
+    </div>
+
+    <input type="hidden" name="" id="lat_cord" value="{{lat_cord}}">
+    <input type="hidden" name="" id="lng_cord" value="{{lng_cord}}">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places&callback=initMap" async defer></script>
+
+    <script>
+        // Function to add/remove 'active' class based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.tabs-ssc');
+            const navLinks = document.querySelectorAll('.nav-link-scc');
+
+            let currentSection = '';
+
+            // Loop through sections and determine which section is in view
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200; // Adjust offset as needed
+                if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Remove 'active' class from all nav links and add it to the current one
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        
+        
+        // Initialize the map
+        function initMap() {
+            // Default location (latitude and longitude)
+            const lat_cord = parseFloat(document.getElementById('lat_cord').value);
+            const lng_cord = parseFloat(document.getElementById('lng_cord').value);
+            
+            console.log(lat_cord)
+            console.log(lng_cord)
+            const defaultLocation = { lat: lat_cord, lng: lng_cord };
+
+            // Create the map
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: defaultLocation
+            });
+
+            // Create a marker
+            const marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map,
+                // draggable: true // Make the marker draggable
+
+            });
+
+            // Display place details
+            const placeDetailsDiv = document.getElementById('place-details');
+            
+            // Use reverse geocoding to get place details
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'location': defaultLocation }, (results, status) => {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        console.log(results)
+                        placeDetailsDiv.innerHTML = `
+                            <span>{{main_property.project_name}}</span><br>
+                            ${results[0].formatted_address}<br>
+                            `;
+                            // Lat: ${defaultLocation.lat.toFixed(6)}, 
+                            // Lng: ${defaultLocation.lng.toFixed(6)}
+                    } else {
+                        placeDetailsDiv.innerHTML = 'No results found';
+                    }
+                } else {
+                    placeDetailsDiv.innerHTML = `Geocoder failed: ${status}`;
+                }
+            });
+        }
+    
+        function initAutocomplete() {
+            const input = document.getElementById('place-search');
+
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    const destinationLat = place.geometry.location.lat();
+                    const destinationLng = place.geometry.location.lng();
+                    const name = place.name;
+
+                    const originLat = parseFloat(document.getElementById('lat_cord').value);
+                    const originLng = parseFloat(document.getElementById('lng_cord').value);
+            
+                    // const originLat = 23.0048286;
+                    // const originLng = 72.5583729;
+
+                    getDistance(originLat, originLng, destinationLat, destinationLng)
+                        .then(result => {
+                            const location_duration = result
+                            add_commut_li(location_duration, name)
+                            // document.getElementById('commute-searchbox').style.display = 'none'
+                            document.getElementById('place-search').value = ''
+                        });
+                }
+
+            });
+        }
+
+        async function getDistance(originLat, originLng, destinationLat, destinationLng) {
+            // Define the endpoint for the Distance Matrix API
+            const endpoint = "{% url 'get-distance-list' %}";
+
+            // Parameters for the request
+            const params = new URLSearchParams({
+                origins: `${originLat},${originLng}`,
+                destinations: `${destinationLat},${destinationLng}`
+            });
+
+            try {
+                // Make the request to the Google Maps Distance Matrix API
+                const response = await fetch(`${endpoint}?${params}`);
+                console.log(`${endpoint}?${params}`)
+
+                // Parse the response
+                const data = await response.json();
+                console.log(data)
+                if (response.ok) {
+                    const duration = data.duration;
+                    return duration
+                    
+                } else {
+                    return "Error fetching data from Google Maps API";
+                }
+            } catch (error) {
+                console.log(error)
+                return "Request failed"
+            }
+        }
+
+        function add_commut_li(duration, location){
+            // Select the <ul> element
+            const ulElement = document.getElementById('commute-list'); // Adjust the selector if needed
+
+            // Create the new <li> element
+            const liElement = document.createElement('li');
+
+            // Set the HTML content of the <li> element
+            liElement.innerHTML = `
+                <p>
+                    <i class="fas fa-car text-secondary-ssc"></i> &nbsp;<b>${duration}+</b> to ${location} by car
+                </p>
+            `;
+
+            // Append the new <li> element to the <ul>
+            ulElement.appendChild(liElement);
+        }
+
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('add-display-none');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            // document.getElementById('spinner-text').classList.toggle('add-display-block');
+            
+        }
+
+        window.onload = function() {
+            initAutocomplete();
+            toggle_loader();
+        };
+    </script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    <script>
+        function handleOptionChangePLC() {
+            const select = document.getElementById('plc_option_selector');
+            const selectedValue = select.value;
+            
+
+            // Add your custom logic based on the selected value
+            if (selectedValue === 'garden') {
+                let plc_amt = '{{main_property.plc_garden}}';
+                CalculateTotalPricePLC(plc_amt)
+            } else if (selectedValue === 'roadFacing') {
+                let plc_amt = '{{main_property.plc_road_facing}}';
+                CalculateTotalPricePLC(plc_amt)
+            } else if (selectedValue === 'corner') {
+                let plc_amt = '{{main_property.plc_corner}}';
+                CalculateTotalPricePLC(plc_amt)
+            } else if (selectedValue === 'others') {
+                let plc_amt = '{{main_property.plc_others}}';
+                CalculateTotalPricePLC(plc_amt)
+            } else if (selectedValue === 'None') {
+                CalculateTotalPricePLC(0)
+            }
+        }
+
+        function handleOptionChangeFloorRise() {
+            const select = document.getElementById('floor_rise_selector');
+            const selectedValue = select.value;
+            console.log(selectedValue)
+
+            '{% for floor in floor_rise %}'
+            if (selectedValue === 'floor_rise_{{forloop.counter}}') {
+                let plc_amt = '{{floor.price}}';
+                CalculateTotalPriceFloorRise(plc_amt)
+            }
+            '{% endfor %}'
+            if (selectedValue === 'None') {
+                CalculateTotalPriceFloorRise(0)
+            }
+        }
+
+        function CalculateTotalPricePLC(value){
+            let size_of_unit = '{{unit_data.size_of_unit}}';
+            let plc_value = Number(size_of_unit) * Number(value);
+            document.getElementById('plc_option_amt').innerText =  Math.round((plc_value / 100000) * 100) / 100
+            CalculateTotalProperty()
+            // let new_total_value = plc_value + Number('{{total_property_unit_price}}')
+            // console.log(new_total_value)
+            // let property_unit_price_in_cr = Math.round((new_total_value / 10000000) * 100) / 100;
+            // console.log(property_unit_price_in_cr)
+            // document.getElementById('total_property_amt').innerText = property_unit_price_in_cr
+
+        }
+        
+        function CalculateTotalPriceFloorRise(value){
+            let size_of_unit = '{{unit_data.size_of_unit}}';
+            let plc_value = Number(size_of_unit) * Number(value);
+            document.getElementById('floor_rise_amt').innerText =  Math.round((plc_value / 100000) * 100) / 100
+            CalculateTotalProperty()
+            // let new_total_value = plc_value + Number('{{total_property_unit_price}}')
+            // console.log(new_total_value)
+            // let property_unit_price_in_cr = Math.round((new_total_value / 10000000) * 100) / 100;
+            // console.log(property_unit_price_in_cr)
+            // document.getElementById('total_property_amt').innerText = property_unit_price_in_cr
+
+        }
+
+        function CalculateTotalProperty(){
+            let basic_amt_in_cr = Number(document.getElementById('basic_amt').innerText) * 100;
+            let basic_amt = Math.round((basic_amt_in_cr) * 100) / 100
+            let plc_option_amt = Number(document.getElementById('plc_option_amt').innerText);
+            let floor_rise_amt = Number(document.getElementById('floor_rise_amt').innerText);
+            let development_charges_amt = Number(document.getElementById('development_charges_amt').innerText);
+            let adv_main_amt = Number(document.getElementById('adv_main_amt').innerText);
+            let main_depo_amt = Number(document.getElementById('main_depo_amt').innerText);
+            let other_specific_amt = Number(document.getElementById('other_specific_amt').innerText);
+            // let govt_chargs_amt = Number(document.getElementById('govt_chargs_amt').innerText);
+            // let gst_amt = Number(document.getElementById('gst_amt').innerText);
+
+            // let total_property_amt = basic_amt + plc_option_amt + floor_rise_amt + development_charges_amt + adv_main_amt + main_depo_amt + other_specific_amt + govt_chargs_amt + gst_amt;
+            let total_property_amt = basic_amt + plc_option_amt + floor_rise_amt + development_charges_amt + adv_main_amt + main_depo_amt + other_specific_amt;
+            let property_unit_price_in_cr = Math.round((total_property_amt / 100) * 100) / 100;
+            document.getElementById('total_property_amt').innerText = property_unit_price_in_cr
+        }
+    </script>
+
+</body>
+
+</html>

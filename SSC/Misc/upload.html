@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Form with Modal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Form with Add Docs Button -->
+<div class="container mt-5">
+  <h2>Property Documents Upload</h2>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
+    Add Docs
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadModalLabel">Upload Property Documents</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="documentForm">
+        <div class="row">
+            <div class="col-6">
+                <!-- Brochures Section -->
+                <div class="mb-3">
+                <h6>Brochures</h6>
+                <label for="brochure1" class="form-label">Brochure 1 (PDF - Required)</label>
+                <input type="file" class="form-control" id="brochure1" name="brochure1" accept="application/pdf" required>
+                <small class="text-muted">Upload the first brochure PDF (required).</small>
+                </div>
+    
+                <div class="mb-3">
+                <label for="brochure2" class="form-label">Brochure 2 (PDF - Optional)</label>
+                <input type="file" class="form-control" id="brochure2" name="brochure2" accept="application/pdf">
+                <small class="text-muted">Upload the second brochure PDF (optional).</small>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <!-- Property Images Section -->
+                <div class="mb-3">
+                <h6>Property Images (All Required)</h6>
+                <label for="image1" class="form-label">Image 1</label>
+                <input type="file" class="form-control" id="image1" name="image1" accept="image/*" required>
+                </div>
+    
+                <div class="mb-3">
+                <label for="image2" class="form-label">Image 2</label>
+                <input type="file" class="form-control" id="image2" name="image2" accept="image/*" required>
+                </div>
+    
+                <div class="mb-3">
+                <label for="image3" class="form-label">Image 3</label>
+                <input type="file" class="form-control" id="image3" name="image3" accept="image/*" required>
+                </div>
+    
+                <div class="mb-3">
+                <label for="image4" class="form-label">Image 4</label>
+                <input type="file" class="form-control" id="image4" name="image4" accept="image/*" required>
+                </div>
+    
+                <div class="mb-3">
+                <label for="image5" class="form-label">Image 5</label>
+                <input type="file" class="form-control" id="image5" name="image5" accept="image/*" required>
+                </div>
+
+            </div>
+        </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="documentForm">Upload Documents</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-custom-primary" data-bs-toggle="modal" data-bs-target="#uploadDocModal">
+    Add Docs
+</button>
+
+<div class="modal fade" id="uploadDocModal" tabindex="-1" aria-labelledby="uploadDocModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog custom-size">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                <h1 class="modal-title fs-5" id="uploadDocModalLabel">Upload Property Documents</h1>
+                <button type="button" class="btn-close" style="filter: invert(10);"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Unit Details</h4>
+            </div> -->
+
+                <!-- Form body -->
+                <form id="documentForm" class="p-4 border border-top-0 rounded-bottom"
+                    style="background-color: white;">
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Brochures Section -->
+                            <div class="mb-3">
+                            <h6>Brochures</h6>
+                            <label for="brochure1" class="form-label">Brochure 1 (PDF - Required)</label>
+                            <input type="file" class="form-control" id="brochure1" name="brochure1" accept="application/pdf" required>
+                            <small class="text-muted">Upload the first brochure PDF (required).</small>
+                            </div>
+                
+                            <div class="mb-3">
+                            <label for="brochure2" class="form-label">Brochure 2 (PDF - Optional)</label>
+                            <input type="file" class="form-control" id="brochure2" name="brochure2" accept="application/pdf">
+                            <small class="text-muted">Upload the second brochure PDF (optional).</small>
+                            </div>
+                        </div>
+            
+                        <div class="col-6">
+                            <!-- Property Images Section -->
+                            <div class="mb-3">
+                            <h6>Property Images (All Required)</h6>
+                            <label for="image1" class="form-label">Image 1</label>
+                            <input type="file" class="form-control" id="image1" name="image1" accept="image/*" required>
+                            </div>
+                
+                            <div class="mb-3">
+                            <label for="image2" class="form-label">Image 2</label>
+                            <input type="file" class="form-control" id="image2" name="image2" accept="image/*" required>
+                            </div>
+                
+                            <div class="mb-3">
+                            <label for="image3" class="form-label">Image 3</label>
+                            <input type="file" class="form-control" id="image3" name="image3" accept="image/*" required>
+                            </div>
+                
+                            <div class="mb-3">
+                            <label for="image4" class="form-label">Image 4</label>
+                            <input type="file" class="form-control" id="image4" name="image4" accept="image/*" required>
+                            </div>
+                
+                            <div class="mb-3">
+                            <label for="image5" class="form-label">Image 5</label>
+                            <input type="file" class="form-control" id="image5" name="image5" accept="image/*" required>
+                            </div>
+            
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="unit_modal_close" class="btn btn-custom"
+                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-custom-primary" onclick="save_unit_details()">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

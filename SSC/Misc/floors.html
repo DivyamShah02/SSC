@@ -1,0 +1,93 @@
+<!-- Input for number of floors -->
+<label for="floors">Total Number of Floors:</label>
+<input type="number" id="floors" name="floors" min="1" placeholder="Enter total floors">
+
+<!-- Button to trigger modal -->
+<button type="button" id="addFloorRiseBtn">Add Floor Rise</button>
+
+<!-- Modal -->
+<div id="floorRiseModal" style="display:none;">
+    <h2>Floor Rise Prices</h2>
+    <table id="floorRiseTable">
+        <thead>
+            <tr>
+                <th>Floor Number</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="floor_rise_table"></tbody>
+    </table>
+    <button id="saveChangesBtn">Save Changes</button>
+</div>
+
+<script>
+    document.getElementById('addFloorRiseBtn').addEventListener('click', function () {
+        let totalFloors = document.getElementById('floors').value;
+
+        if (!totalFloors || totalFloors <= 0) {
+            alert("Please enter a valid number of floors.");
+            return;
+        }
+
+        // Clear previous rows if any
+        let tableBody = document.getElementById('floor_rise_table');
+        tableBody.innerHTML = '';
+
+        // Create table rows dynamically based on floor number
+        for (let i = 1; i <= totalFloors; i++) {
+            let row = document.createElement('tr');
+
+            // Floor Number (pre-filled)
+            let floorCell = document.createElement('td');
+            floorCell.textContent = i;
+            row.appendChild(floorCell);
+
+            // Price Input
+            let priceCell = document.createElement('td');
+            let priceInput = document.createElement('input');
+            priceInput.type = 'number';
+            priceInput.name = `floorPrice_${i}`;
+            priceInput.className = 'priceInput';
+            priceCell.appendChild(priceInput);
+            row.appendChild(priceCell);
+
+            // Action (Copy button)
+            let actionCell = document.createElement('td');
+            let copyBtn = document.createElement('button');
+            copyBtn.textContent = 'Copy';
+            copyBtn.setAttribute('data-floor', i);
+            copyBtn.addEventListener('click', function () {
+                if (i > 1) {
+                    let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
+                    priceInput.value = prevPrice;
+                }
+            });
+            actionCell.appendChild(copyBtn);
+            row.appendChild(actionCell);
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+        }
+
+        // Show modal
+        document.getElementById('floorRiseModal').style.display = 'block';
+    });
+
+    // Handle saving the data
+    document.getElementById('saveChangesBtn').addEventListener('click', function () {
+        let prices = [];
+        let totalFloors = document.getElementById('floors').value;
+
+        for (let i = 1; i <= totalFloors; i++) {
+            let price = document.querySelector(`input[name=floorPrice_${i}]`).value;
+            prices.push({ floor: i, price: price });
+        }
+
+        // Send the data to the backend (for demo, we log it to the console)
+        console.log(prices);
+
+        // Close modal
+        document.getElementById('floorRiseModal').style.display = 'none';
+    });
+</script>

@@ -1,0 +1,8 @@
+## --- 3/9/24 --- ##
+-> what is type of society?
+
+
+
+Disscussion points:
+-> need to add unit_type in cleint form (simplex, duplex like that)
+-> google maps api

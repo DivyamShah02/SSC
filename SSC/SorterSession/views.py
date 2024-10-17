@@ -301,8 +301,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
             except Amenities.DoesNotExist:
                 raise NotFound(f"Amenties for building : {building_id} not found.")
             amenties_data = AmenitiesSerializer(amenities_obj).data
-
-
+            
             # Fetch client data
             client_id = session_data.get('client_id')
             try:
@@ -407,13 +406,6 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_details = []
-            for field in building_data.keys():
-                overview_details.append({'key':field, 'value':building_data[field]})
-
-            for field in unit_data.keys():
-                overview_details.append({'key':field, 'value':unit_data[field]})
-            
             overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','type_of_parking','spiritual_or_religious_attraction','construction_company']
             overview_details = []
             
@@ -431,7 +423,6 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 origins_sch = str(client_data['school_area']).split('|')
                 distance_sch, duration_sch = get_distance(origins_sch[0], origins_sch[1], destinations[0], destinations[1])
                 sch_info = get_address(origins_sch[0], origins_sch[1])
-                print(sch_info)
                 duration_sch = str(duration_sch).title()
             
             except:
@@ -441,7 +432,6 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 origins_work = str(client_data['workplace_area']).split('|')
                 distance_work, duration_work = get_distance(origins_work[0], origins_work[1], destinations[0], destinations[1])
                 work_info = get_address(origins_work[0], origins_work[1])
-                print(work_info)
                 duration_work = str(duration_work).title()
 
             except:
@@ -524,18 +514,28 @@ class PropertyDetailViewset(viewsets.ViewSet):
             while len(l) % 4 != 0:
                 l.pop()
             return l
+        
+        def rearrange_list_based_on_score(score_dict, input_list):
+            return sorted(input_list, key=lambda item: score_dict.get(item, float('inf')))
+
 
         # Adjust list1 and list3
         list1 = fill_list(list1, list2)
         list3 = fill_list(list3, list2)
 
         # Adjust list2 length to be a multiple of 4
+        list1 = make_multiple_of_4(list1)
         list2 = make_multiple_of_4(list2)
+        list3 = make_multiple_of_4(list3)
 
         # Convert lists to strings
         list1 = [str(elem) for elem in list1]
         list2 = [str(elem) for elem in list2]
         list3 = [str(elem) for elem in list3]
+
+        score_dict = {'Central Park / Garden' : 1, 'Multi-Purpose Court' : 2, 'Visitors Parking' : 3, 'Gymnasium' : 4, 'Splash Pool' : 5, 'Outdoor Swimming Pool' : 6, 'Indoor Swimming Pool' : 7, 'Multi-Purpose Hall' : 8, 'Banquet Hall' : 9, 'Mini Theatre' : 10, 'Indoor Games' : 11, 'Activity Room' : 12, 'Library / Reading Room' : 13, 'Daycare Center' : 14, 'Guest Rooms' : 15, 'Co-Working Space' : 16, 'Skating / Cycling Ring' : 17, 'Gazebo Sit Outs' : 18, 'Senior Citizen Sit-Outs' : 19, 'Walking / Jogging Track' : 20, 'Yoga Room' : 21, 'Steam Sauna' : 22, 'Massage Room' : 23, 'Jacuzzi' : 24, 'Cafeteria' : 25, 'Card Room' : 26, 'Toddler Play Zone' : 27, 'Mud Play Zone' : 28, 'Drivers Lounge' : 29, 'House Keeping Lounge' : 30, 'On Site Waste Management' : 31, 'Solar For Common Area' : 32, 'Ev Charging Stations' : 33, 'Green Building Rated' : 34}
+
+        list2 = rearrange_list_based_on_score(score_dict=score_dict, input_list=list2)
 
         return list1, list2, list3
 

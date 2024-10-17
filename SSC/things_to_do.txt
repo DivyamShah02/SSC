@@ -9,6 +9,5 @@ add a field of selected property to the sorted property
 
 ################################################
 17/10/24
-add functionality to set the amentiy to false if unselected
-manage +91 issue in number
-
+XX add functionality to set the amentiy to false if unselected
+XX manage +91 issue in number

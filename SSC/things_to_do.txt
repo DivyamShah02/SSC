@@ -13,3 +13,20 @@ XX add functionality to set the amentiy to false if unselected
 XX manage +91 issue in number
 
 ask if the basic price should be added with all the charges or not
+
+
+#3rd que in unit adder
+#Enter unit series
+
+
+
+#unit plan / floor plan showase
+#side by side in one screen and modal opening on clicking
+
+#add in overview tab
+#reomove : Spiritual Or Religious Attraction
+#18) No. of parking allotted to one unit *
+
+
+check responvness
+

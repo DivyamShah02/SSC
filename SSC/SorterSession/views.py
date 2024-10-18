@@ -406,7 +406,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','type_of_parking','spiritual_or_religious_attraction','construction_company']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company']
             overview_details = []
             
             for key in overview_keys:

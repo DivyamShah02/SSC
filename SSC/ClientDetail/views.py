@@ -9,13 +9,23 @@ from rest_framework.exceptions import ValidationError
 
 from .serializers import PropertyInquirySerializer
 from .models import PropertyInquiry
+from .library.DistanceCalculator import get_address
 
 
 class PropertyInquiryViewSet(viewsets.ViewSet):
 
     def list(self, request):
         try:
-            return render(request, 'property_inquiry_form.html')
+            client_id = request.GET.get('client_id')
+            is_client_edit = False
+            if client_id:
+                is_client_edit = True
+            data = {
+                'is_client_edit':is_client_edit,
+                'client_id':client_id
+            }
+
+            return render(request, 'property_inquiry_form.html', data)
         except Exception as e:
             print(f"Error rendering inquiry form: {str(e)}")
             return Response({"success": False, "message": "An error occurred while loading the form."}, 
@@ -68,13 +78,47 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
                              "details": str(e)}, 
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-class UnitClientDataViewSet(viewsets.ViewSet):
+class EditClientDataViewSet(viewsets.ViewSet):
 
     def create(self, request):
         client_id = request.data.get('client_id')
         if client_id:
             client_data_obj = get_object_or_404(PropertyInquiry, id=client_id)
             client_data = PropertyInquirySerializer(client_data_obj).data
+            for i in client_data:
+                if "," in str(client_data[i]):
+                    client_data[i] = [str(j).strip() for j in str(client_data[i]).split(',')]
+
+            if type(client_data['preferred_locations']) != list:
+                client_data['preferred_locations'] = str(client_data['preferred_locations']).split()
+
+            if type(client_data['unit_type']) != list:
+                client_data['unit_type'] = str(client_data['unit_type']).split()
+
+            if type(client_data['bedrooms']) != list:
+                client_data['bedrooms'] = str(client_data['bedrooms']).split()
+
+            if type(client_data['amenities']) != list:
+                client_data['amenities'] = str(client_data['amenities']).split()
+
+
+            school_area = str(client_data['school_area']).split('|')
+            school_area_info = get_address(school_area[0], school_area[1])
+            client_data['school_area_info'] = school_area_info
+            
+            workplace_area = str(client_data['workplace_area']).split('|')
+            workplace_area_info = get_address(workplace_area[0], workplace_area[1])
+            client_data['workplace_area_info'] = workplace_area_info
+
+            print(client_data['preferred_locations'])
+            pref_loc_cords = []
+            for pref_loc in client_data['preferred_locations']:
+                pref_loc_cord = str(pref_loc).split('|')
+                pref_loc_cords.append(get_address(pref_loc_cord[0], pref_loc_cord[1]))
+            
+            print(pref_loc_cords)
+                
+
             return Response({'success': True, 'client_data': client_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
 

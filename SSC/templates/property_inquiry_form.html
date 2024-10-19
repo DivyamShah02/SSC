@@ -88,6 +88,8 @@
             <!-- Form body -->
             <form id="personal_information" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
+                    <input type="hidden" class="form-control" id="copy_client_id" value="NULL" placeholder=""
+                        name="copy_client_id">
                     <!-- Customer Name -->
                     <div class="col-xl-4 col-lg-6 col-md-6 form-group">
                         <label for="name" class="form-label primary">1) Name<span class="required"> *</span>
@@ -181,31 +183,31 @@
                     <div class="col-12 form-group">
                         <label for="why_buy_house" class="form-label primary">8) Why do you want to buy a house?</label><br>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="why_buy_house" id="Lifestyle_upgrade" value="Lifestyle upgrade">
                                     <label class="form-check-label" for="Lifestyle_upgrade">Lifestyle upgrade</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="why_buy_house" id="Investment" value="Investment">
                                     <label class="form-check-label" for="Investment">Investment</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="why_buy_house" id="Second home" value="Second home">
                                     <label class="form-check-label" for="Second home">Second home</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="why_buy_house" id="Relocation" value="Relocation">
                                     <label class="form-check-label" for="Relocation">Relocation</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="why_buy_house" id="Downsizing" value="Downsizing">
                                     <label class="form-check-label" for="Downsizing">Downsizing</label>
@@ -267,31 +269,31 @@
                     <div class="col-md-12 form-group">
                         <label class="form-label primary">11) Do you prefer derasar / mandir / gurudwara near your house?</label><br>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id="derasar" name="religious_preference" value="derasar">
                                     <label class="form-check-label ml-1" for="derasar">Derasar</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id="mandir" name="religious_preference" value="mandir">
                                     <label class="form-check-label ml-1" for="mandir">Mandir</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id="gurudwara" name="religious_preference" value="gurudwara">
                                     <label class="form-check-label ml-1" for="gurudwara">Gurudwara</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id="maybe" name="religious_preference" value="maybe">
                                     <label class="form-check-label ml-1" for="maybe">Maybe</label>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id=" Not_preferred" name="religious_preference" value="Not preferred">
                                     <label class="form-check-label ml-1" for=" Not_preferred"> Not preferred</label>
@@ -1173,38 +1175,8 @@
                         console.log(destinationLng);
                         console.log(name);
 
-                        if (document.getElementById(name)) {
-                            console.log('Element exists!');
-                            document.getElementById('place-search').classList.add('form-control-error')
-                        }
-                        else {
-                            const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
-        
-                            // Create the new <li> element
-                            const newlocationElement = document.createElement('span');
-                            newlocationElement.id = `${name}`;
-        
-                            // Set the HTML content of the <li> element
-                            newlocationElement.innerHTML = `
-                                <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove();document.getElementById('${name}_${numberOfChildren}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
-                            `;
-        
-                            // Append the new <li> element to the <ul>
-                            preferredElement.appendChild(newlocationElement);
+                        addPrefferedLocation(destinationLat, destinationLng, name, numberOfChildren)
 
-                            const preferredElement_input = document.getElementById('preferred_locations_inputs');
-                            const numberOfChildren_input = preferredElement_input.childElementCount;
-
-                            const newlocationElement_input = document.createElement('input');
-                            newlocationElement_input.id = `${name}_${numberOfChildren_input}`;
-                            newlocationElement_input.value = `${destinationLat}|${destinationLng}`
-                            newlocationElement_input.name = `preferred_locations`
-                            newlocationElement_input.type = 'hidden'
-
-                            // Append the new <li> element to the <ul>
-                            preferredElement_input.appendChild(newlocationElement_input);
-
-                        }
                         input.value = ''
 
                     }
@@ -1217,6 +1189,41 @@
                 }
 
             });
+        }
+
+        function addPrefferedLocation(destinationLat, destinationLng, name, numberOfChildren) {
+            if (document.getElementById(name)) {
+                console.log('Element exists!');
+                document.getElementById('place-search').classList.add('form-control-error')
+            }
+            else {
+                const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
+
+                // Create the new <li> element
+                const newlocationElement = document.createElement('span');
+                newlocationElement.id = `${name}`;
+
+                // Set the HTML content of the <li> element
+                newlocationElement.innerHTML = `
+                    <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove();document.getElementById('${name}_${numberOfChildren}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
+                `;
+
+                // Append the new <li> element to the <ul>
+                preferredElement.appendChild(newlocationElement);
+
+                const preferredElement_input = document.getElementById('preferred_locations_inputs');
+                const numberOfChildren_input = preferredElement_input.childElementCount;
+
+                const newlocationElement_input = document.createElement('input');
+                newlocationElement_input.id = `${name}_${numberOfChildren_input}`;
+                newlocationElement_input.value = `${destinationLat}|${destinationLng}`
+                newlocationElement_input.name = `preferred_locations`
+                newlocationElement_input.type = 'hidden'
+
+                // Append the new <li> element to the <ul>
+                preferredElement_input.appendChild(newlocationElement_input);
+
+            }
         }
 
         function initAutocomplete_school() {
@@ -1545,6 +1552,13 @@
             const data = await get_client_data(client_id);
             console.log(data)
             setFormValues(data);
+            const preffered_locations = data['pref_loc_address'];
+            preffered_locations.forEach(location => {
+                console.log(location.name);
+                const numberOfChildren = document.getElementById('preferred-location').childElementCount;
+                addPrefferedLocation(location.lat, location.lng, location.name, numberOfChildren);
+            });
+            document.getElementById('copy_client_id').value = client_id;
             toggle_preloader();
         }
 

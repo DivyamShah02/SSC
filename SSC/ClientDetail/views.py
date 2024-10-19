@@ -43,7 +43,14 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
             # data['number'] = data['country_code'] + " " + data['number']
             # data['whatsapp'] = data['whatsapp_country_code'] + " " + data['whatsapp']
 
-            serializer = PropertyInquirySerializer(data=data)
+            if data['copy_client_id'] != "NULL":
+                print(data['copy_client_id'])
+                data['copy_client_id'] = data['copy_client_id']
+                inquiry_instance = get_object_or_404(PropertyInquiry, id=data['copy_client_id'])
+                serializer = PropertyInquirySerializer(inquiry_instance, data=data)
+            else:
+                serializer = PropertyInquirySerializer(data=data)
+
             if serializer.is_valid():
                 serializer.save()
                 print(f"Inquiry successfully saved. Client ID: {serializer.data['id']}")
@@ -88,18 +95,11 @@ class EditClientDataViewSet(viewsets.ViewSet):
             for i in client_data:
                 if "," in str(client_data[i]):
                     client_data[i] = [str(j).strip() for j in str(client_data[i]).split(',')]
+            multiple_values_fields = ['preferred_locations', 'unit_type', 'bedrooms', 'amenities', 'society_type']
 
-            if type(client_data['preferred_locations']) != list:
-                client_data['preferred_locations'] = str(client_data['preferred_locations']).split()
-
-            if type(client_data['unit_type']) != list:
-                client_data['unit_type'] = str(client_data['unit_type']).split()
-
-            if type(client_data['bedrooms']) != list:
-                client_data['bedrooms'] = str(client_data['bedrooms']).split()
-
-            if type(client_data['amenities']) != list:
-                client_data['amenities'] = str(client_data['amenities']).split()
+            for multiple_values_field in multiple_values_fields:
+                if type(client_data[multiple_values_field]) != list:
+                    client_data[multiple_values_field] = [str(client_data[multiple_values_field])]
 
 
             school_area = str(client_data['school_area']).split('|')
@@ -110,14 +110,22 @@ class EditClientDataViewSet(viewsets.ViewSet):
             workplace_area_info = get_address(workplace_area[0], workplace_area[1])
             client_data['workplace_area_info'] = workplace_area_info
 
-            print(client_data['preferred_locations'])
-            pref_loc_cords = []
+            pref_loc_address = []
             for pref_loc in client_data['preferred_locations']:
                 pref_loc_cord = str(pref_loc).split('|')
-                pref_loc_cords.append(get_address(pref_loc_cord[0], pref_loc_cord[1]))
-            
-            print(pref_loc_cords)
-                
+                full_loc_address = get_address(pref_loc_cord[0], pref_loc_cord[1])
+                loc_address_lst = full_loc_address.split(',')
+                loc_address = full_loc_address
+                for addr in loc_address_lst:
+                    if '+' in addr:
+                        continue
+                    else:
+                        loc_address = addr.strip()
+                        break
+
+                pref_loc_address.append({'lat':pref_loc_cord[0],'lng':pref_loc_cord[1],'name':loc_address})
+
+            client_data['pref_loc_address'] = pref_loc_address    
 
             return Response({'success': True, 'client_data': client_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)

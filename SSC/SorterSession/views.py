@@ -525,7 +525,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
         # Adjust list2 length to be a multiple of 4
         list1 = make_multiple_of_4(list1)
-        list2 = make_multiple_of_4(list2)
+        # list2 = make_multiple_of_4(list2)
         list3 = make_multiple_of_4(list3)
 
         # Convert lists to strings
@@ -535,7 +535,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
         score_dict = {'Central Park / Garden' : 1, 'Multi-Purpose Court' : 2, 'Visitors Parking' : 3, 'Gymnasium' : 4, 'Splash Pool' : 5, 'Outdoor Swimming Pool' : 6, 'Indoor Swimming Pool' : 7, 'Multi-Purpose Hall' : 8, 'Banquet Hall' : 9, 'Mini Theatre' : 10, 'Indoor Games' : 11, 'Activity Room' : 12, 'Library / Reading Room' : 13, 'Daycare Center' : 14, 'Guest Rooms' : 15, 'Co-Working Space' : 16, 'Skating / Cycling Ring' : 17, 'Gazebo Sit Outs' : 18, 'Senior Citizen Sit-Outs' : 19, 'Walking / Jogging Track' : 20, 'Yoga Room' : 21, 'Steam Sauna' : 22, 'Massage Room' : 23, 'Jacuzzi' : 24, 'Cafeteria' : 25, 'Card Room' : 26, 'Toddler Play Zone' : 27, 'Mud Play Zone' : 28, 'Drivers Lounge' : 29, 'House Keeping Lounge' : 30, 'On Site Waste Management' : 31, 'Solar For Common Area' : 32, 'Ev Charging Stations' : 33, 'Green Building Rated' : 34}
 
-        list2 = rearrange_list_based_on_score(score_dict=score_dict, input_list=list2)
+        try:
+            list2 = rearrange_list_based_on_score(score_dict=score_dict, input_list=list2)[0:4]
+        except:
+            pass
 
         return list1, list2, list3
 

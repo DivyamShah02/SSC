@@ -532,8 +532,8 @@
                                 <h4>Location</h4>
                             </div>
                             <div class="pt-3 mb-5" style="background-color: white !important;">
-                                <div class="mb-5" style="background-color: white !important;">
-                                    <div class="map-one_map m-3" style="background-color: white !important;">
+                                <div class="mb-5 p-3" style="background-color: white !important;">
+                                    <div class="map-one_map" style="background-color: white !important;">
                                         <!-- <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1834.0303444514218!2d72.537671!3d23.167985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c29266521b471%3A0xda572d5fb92e274d!2sAmbrosia%20(by%20Adani%20Realty)!5e0!3m2!1sen!2sus!4v1724178569956!5m2!1sen!2sus"
                                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -567,7 +567,7 @@
 
                                         </ul>
                                         <div class="row" id="commute-searchbox">
-                                            <div class="col-6">
+                                            <div class="col-12 col-md-6">
                                                 <p class="text-primary-ssc m-0"><b style="cursor: pointer;">Add Another
                                                         Commute</b></p>
                                                 <input type="text" class="form-control" id="place-search"
@@ -893,7 +893,8 @@
             // Create the map
             const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 17,
-                center: defaultLocation
+                center: defaultLocation,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
             });
 
             // Create a marker

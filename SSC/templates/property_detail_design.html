@@ -825,8 +825,8 @@
                     <p><b>{{unit_data.unit_configuration}}</b></p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12 text-end">
-                    <a href="#" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
-                            class="fas fa-arrow-up-from-bracket"></i> Share</a>
+                    <a href="{{main_property.brochure_1}}" target="_blank" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
+                            class="fas fa-arrow-up-from-bracket"></i> Brochure</a>
                     <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
                     <a href="#" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
                 </div>
@@ -878,7 +878,25 @@
     </script>
 
     <script>
-
+        let map;
+        let directionsService;
+        let directionsRenderers = []; // Array to hold multiple directions renderers
+        let defaultLocation;
+        
+        let routeColors = [
+            "#FF5733", // Orange-red
+            "#33FF57", // Green
+            "#3357FF", // Blue
+            "#F3FF33", // Yellow
+            "#FF33A1", // Pink
+            "#33FFF3", // Cyan
+            "#A133FF", // Purple
+            "#FF8C33", // Orange
+            "#33FF8C", // Light Green
+            "#8C33FF"  // Violet
+        ];
+        let routeIndex = 0;
+        let markers = [];
 
         // Initialize the map
         function initMap() {
@@ -888,14 +906,16 @@
 
             console.log(lat_cord)
             console.log(lng_cord)
-            const defaultLocation = { lat: lat_cord, lng: lng_cord };
+            defaultLocation = { lat: lat_cord, lng: lng_cord };
 
             // Create the map
-            const map = new google.maps.Map(document.getElementById('map'), {
+            map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 17,
                 center: defaultLocation,
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             });
+
+            directionsService = new google.maps.DirectionsService();
 
             // Create a marker
             const marker = new google.maps.Marker({
@@ -947,7 +967,8 @@
 
                     // const originLat = 23.0048286;
                     // const originLng = 72.5583729;
-
+                    calculateRoute(place.geometry.location);
+                    addMarker(place.geometry.location, place.name);
                     getDistance(originLat, originLng, destinationLat, destinationLng)
                         .then(result => {
                             const location_duration = result
@@ -955,8 +976,65 @@
                             // document.getElementById('commute-searchbox').style.display = 'none'
                             document.getElementById('place-search').value = ''
                         });
+                    
+                    setTimeout(addStylelabel, 1000);
                 }
 
+            });
+        }
+
+        function calculateRoute(destination) {
+            const color = routeColors[routeIndex % routeColors.length];
+            const directionsRenderer = new google.maps.DirectionsRenderer({
+                polylineOptions: {
+                    strokeColor: color,
+                    strokeOpacity: 2,
+                    strokeWeight: 5
+                }
+            }); // Create a new DirectionsRenderer for each route
+            directionsRenderer.setMap(map);
+            directionsRenderers.push(directionsRenderer); // Store the renderer to keep the route visible
+
+            directionsService.route({
+                origin: defaultLocation,
+                destination: destination,
+                travelMode: 'DRIVING',
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(response);
+                    routeIndex++;
+                } else {
+                    alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+
+        // Function to add custom styled marker with label background matching the route color
+        function addMarker(location, label) {
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png", // Custom marker icon
+                    labelOrigin: new google.maps.Point(15, 40), // Positioning the label relative to the marker
+                },
+                label: {
+                    text: label, // The label text (location name)
+                    color: "#FFFFFF", // White text
+                    fontSize: "14px", // Font size
+                    fontWeight: "bold", // Bold font
+                    className: "custom-marker-label" // CSS class to style background dynamically
+                },
+            });
+            markers.push(marker); // Store the marker to keep it visible
+        }
+
+        function addStylelabel() {
+            const labelDivs = document.querySelectorAll(`.custom-marker-label`);
+            labelDivs.forEach(labelDiv => {
+                labelDiv.style.backgroundColor = "#000"; // Set the background to match the route color
+                labelDiv.style.padding = "3px 8px"; // Add padding for better visibility
+                labelDiv.style.borderRadius = "5px"; // Add rounded corners to the label
             });
         }
 

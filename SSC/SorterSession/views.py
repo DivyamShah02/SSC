@@ -474,6 +474,10 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'duration_work':duration_work,
                 'sch_info':sch_info,
                 'work_info':work_info,
+                'origins_sch_lat':origins_sch[0],
+                'origins_sch_lng':origins_sch[1],
+                'origins_work_lat':origins_work[0],
+                'origins_work_lng':origins_work[1],
                 }
             
             return render(request, 'property_detail_design.html', data)

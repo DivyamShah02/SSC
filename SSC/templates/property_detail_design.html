@@ -897,6 +897,7 @@
         ];
         let routeIndex = 0;
         let markers = [];
+        let default_ind = false;
 
         // Initialize the map
         function initMap() {
@@ -967,6 +968,7 @@
 
                     // const originLat = 23.0048286;
                     // const originLng = 72.5583729;
+
                     calculateRoute(place.geometry.location);
                     addMarker(place.geometry.location, place.name);
                     getDistance(originLat, originLng, destinationLat, destinationLng)
@@ -984,7 +986,24 @@
         }
 
         function calculateRoute(destination) {
-            const color = routeColors[routeIndex % routeColors.length];
+            console.log(routeIndex);
+            console.log(routeIndex);
+            console.log(default_ind);
+            let color;
+            if (!default_ind) {
+                console.log('in test');
+                let tempIndex = 1
+                color = routeColors[tempIndex % routeColors.length];
+                default_ind = true;
+            }
+            else {
+                console.log('in else');
+                color = routeColors[routeIndex % routeColors.length];
+                console.log(color)
+            }
+
+            console.log(color)
+            // let color = routeColors[routeIndex % routeColors.length];
             const directionsRenderer = new google.maps.DirectionsRenderer({
                 polylineOptions: {
                     strokeColor: color,
@@ -1097,8 +1116,18 @@
 
         window.onload = function () {
             initAutocomplete();
+            const destination_sch = { lat: Number('{{origins_sch_lat}}'), lng: Number('{{origins_sch_lng}}') };
+            calculateRoute(destination_sch);
+            addMarker(destination_sch, '{{sch_info}}');
+            
+            const destination_work = { lat: Number('{{origins_work_lat}}'), lng: Number('{{origins_work_lng}}') };
+            calculateRoute(destination_work);
+            addMarker(destination_work, '{{work_info}}');
+            
+            setTimeout(addStylelabel, 1000);
             toggle_loader();
         };
+
     </script>
 
     <script>

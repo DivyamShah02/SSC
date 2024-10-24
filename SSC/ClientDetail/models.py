@@ -30,7 +30,7 @@ class PropertyInquiry(models.Model):
     time_to_seal_deal = models.CharField(null=True, blank=True, max_length=50)
 
     # House Specifications
-    unit_type = models.CharField(max_length=255, default='')
+    unit_type = models.CharField(max_length=255, default='', null=True, blank=True)
     bedrooms = models.CharField(null=True, blank=True, max_length=50)
     attached_washrooms = models.CharField(null=True, blank=True, max_length=50)
     servant_room = models.CharField(null=True, blank=True, max_length=10)

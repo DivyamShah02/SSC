@@ -107,12 +107,17 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
             for i in building_data:
                 if "," in str(building_data[i]) and 'floor_rise' != i:
                     building_data[i] = [str(j).strip() for j in str(building_data[i]).split(',')]
-
-            if type(building_data['type_of_apartments']) != list:
-                building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
-            
-            if type(building_data['type_of_parking']) != list:
-                building_data['type_of_parking'] = building_data['type_of_parking'].split()
+            # TODO
+            try:
+                if type(building_data['type_of_apartments']) != list:
+                    building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
+            except:
+                pass
+            try:
+                if type(building_data['type_of_parking']) != list:
+                    building_data['type_of_parking'] = building_data['type_of_parking'].split()
+            except:
+                pass
 
             building_data['amenities'] = []
 
@@ -124,13 +129,16 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
                     building_data['amenities'].append(amenity)
 
             floor_rise_str = building_data['floor_rise']
-            
-            floor_rise = ast.literal_eval(floor_rise_str)
-            building_data['floor_rise'] = floor_rise
+            # TODO
+            try:
+                floor_rise = ast.literal_eval(floor_rise_str)
+                building_data['floor_rise'] = floor_rise
+                for floor in floor_rise:
+                    building_data[f'floorPrice_{floor["floor"]}'] = floor['price']
 
-            for floor in floor_rise:
-                building_data[f'floorPrice_{floor["floor"]}'] = floor['price']
-            
+            except:
+                pass
+
             unit_unactive = False
             note = ''
             all_units = UnitDetails.objects.filter(building_id=building_id)

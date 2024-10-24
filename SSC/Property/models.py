@@ -5,7 +5,7 @@ from django.utils import timezone
 class BuildingDetails(models.Model):
     building_id = models.CharField(max_length=255, unique=True)
 
-    group_name = models.CharField(max_length=255)
+    group_name = models.CharField(max_length=255, null=True, blank=True)
     head_image = models.ImageField(upload_to='property', null=True, blank=True)
     sec_image_1 = models.ImageField(upload_to='property', null=True, blank=True)
     sec_image_2 = models.ImageField(upload_to='property', null=True, blank=True)
@@ -13,15 +13,15 @@ class BuildingDetails(models.Model):
     sec_image_4 = models.ImageField(upload_to='property', null=True, blank=True)
     brochure_1 = models.FileField(upload_to='brochure', null=True, blank=True)
     brochure_2 = models.FileField(upload_to='brochure', null=True, blank=True)
-    year_of_establishment = models.PositiveIntegerField()
-    no_of_projects_delivered = models.PositiveIntegerField()
+    year_of_establishment = models.CharField(max_length=255, null=True, default=0, blank=True)
+    no_of_projects_delivered = models.CharField(max_length=255, default=0, null=True, blank=True)
 
     key_projects_1 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_projects_2 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_projects_3 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_projects_4 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_projects_5 = models.CharField(max_length=255, default='', null=True, blank=True)
-    
+
     key_promoters_1 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_promoters_2 = models.CharField(max_length=255, default='', null=True, blank=True)
     key_promoters_3 = models.CharField(max_length=255, default='', null=True, blank=True)
@@ -29,8 +29,8 @@ class BuildingDetails(models.Model):
     key_promoters_5 = models.CharField(max_length=255, default='', null=True, blank=True)
 
     number_country_code = models.CharField(max_length=10, default='', null=True, blank=True)
-    name = models.CharField(max_length=255)
-    number = models.CharField(max_length=15)
+    name = models.CharField(max_length=255, null=True, blank=True)
+    number = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(default='', null=True, blank=True)
     alternate_name = models.CharField(max_length=255, null=True, blank=True)
     alternate_number_country_code = models.CharField(max_length=10, default='', null=True, blank=True)
@@ -41,11 +41,11 @@ class BuildingDetails(models.Model):
     # developed_by = models.CharField(max_length=255, null=True, blank=True)
     location_of_project = models.TextField(null=True, blank=True)
     area_of_project = models.CharField(max_length=255, null=True, blank=True, default='')
-    google_pin_lat = models.CharField(max_length=255, default="") 
-    google_pin_lng = models.CharField(max_length=255, default="") 
-    type_of_project = models.CharField(max_length=255)
-    per_sqft_rate_saleable = models.CharField(max_length=100, default='')
-    type_of_apartments = models.CharField(max_length=255)
+    google_pin_lat = models.CharField(max_length=255, default="", null=True, blank=True)
+    google_pin_lng = models.CharField(max_length=255, default="", null=True, blank=True)
+    type_of_project = models.CharField(max_length=255, null=True, blank=True)
+    per_sqft_rate_saleable = models.CharField(max_length=100, default='', null=True, blank=True)
+    type_of_apartments = models.CharField(max_length=255, null=True, blank=True)
 
     special_amenity_1 = models.CharField(max_length=255, default='', null=True, blank=True)
     special_amenity_2 = models.CharField(max_length=255, default='', null=True, blank=True)
@@ -56,9 +56,9 @@ class BuildingDetails(models.Model):
     age_of_property_by_developer = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_rera = models.TextField(max_length=15, default='', null=True, blank=True)
     rera_approved = models.BooleanField(default=False)
-    plot_area = models.CharField(max_length=255)
-    architect = models.CharField(max_length=255)
-    construction_company = models.CharField(max_length=255)
+    plot_area = models.CharField(max_length=255, null=True, blank=True)
+    architect = models.CharField(max_length=255, null=True, blank=True)
+    construction_company = models.CharField(max_length=255, null=True, blank=True)
     no_of_blocks = models.PositiveIntegerField(default=0, null=True, blank=True)
     no_of_units = models.PositiveIntegerField(default=0, null=True, blank=True)
     no_of_floors = models.PositiveIntegerField(default=0, null=True, blank=True)
@@ -66,7 +66,7 @@ class BuildingDetails(models.Model):
     central_air_conditioning = models.BooleanField(default=False)
     # pet_friendly = models.BooleanField(default=False)
     spiritual_or_religious_attraction = models.TextField(null=True, blank=True, default='')
-    type_of_parking = models.CharField(max_length=255)
+    type_of_parking = models.CharField(max_length=255, null=True, blank=True)
     plc_garden = models.CharField(max_length=20, default=0, blank=True, null=True)
     plc_road_facing = models.CharField(max_length=20, default=0, blank=True, null=True)
     plc_corner = models.CharField(max_length=20, default=0, blank=True, null=True)
@@ -91,22 +91,22 @@ class BuildingDetails(models.Model):
 class UnitDetails(models.Model):
     building_id = models.CharField(max_length=255)
 
-    unit_configuration = models.CharField(max_length=255)
-    unit_type = models.CharField(max_length=255)
+    unit_configuration = models.CharField(max_length=255, null=True, blank=True)
+    unit_type = models.CharField(max_length=255, null=True, blank=True)
     unit_series = models.CharField(max_length=255, default='', null=True, blank=True)
     no_of_units_per_floor = models.PositiveIntegerField(default=0, null=True, blank=True)
     no_of_lifts_per_floor = models.PositiveIntegerField(default=0, null=True, blank=True)
     private_lifts = models.BooleanField(default=False)
     no_private_lifts = models.PositiveIntegerField(default=0, null=True, blank=True)
     common_terrace_accessible = models.BooleanField(default=False)
-    size_of_unit = models.CharField(max_length=100)
-    carpet_area_rera = models.CharField(max_length=100)
+    size_of_unit = models.CharField(max_length=100, null=True, blank=True)
+    carpet_area_rera = models.CharField(max_length=100, null=True, blank=True)
     jodi_possible = models.BooleanField(default=False)
     no_of_attached_bathrooms = models.PositiveIntegerField(default=0, null=True, blank=True)
     servant_room_available = models.BooleanField(default=False)
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.PositiveIntegerField(default=0, null=True, blank=True)
-    
+
     size_of_private_terrace_len = models.CharField(max_length=100, null=True, blank=True)
     size_of_private_terrace_wid = models.CharField(max_length=100, null=True, blank=True)
 
@@ -120,10 +120,11 @@ class UnitDetails(models.Model):
     size_of_kitchen_wid = models.CharField(max_length=100, null=True, blank=True, default=0)
 
     no_of_parking_allotted = models.PositiveIntegerField(default=0, null=True, blank=True)
-    per_sqft_rate_saleable = models.CharField(max_length=100)
-    base_price = models.CharField(max_length=100, null=True, blank=True)
-    google_pin_lat = models.CharField(max_length=255, default="")
-    google_pin_lng = models.CharField(max_length=255, default="")
+    per_sqft_rate_saleable = models.CharField(max_length=100, null=True, blank=True)
+    # base_price = models.CharField(max_length=100, null=True, blank=True)
+    base_price = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    google_pin_lat = models.CharField(max_length=255, default="", null=True, blank=True)
+    google_pin_lng = models.CharField(max_length=255, default="", null=True, blank=True)
     floor_plan = models.ImageField(upload_to='plan', null=True, blank=True)
     unit_plan = models.ImageField(upload_to='plan', null=True, blank=True)
     active = models.BooleanField(default=False)
@@ -131,7 +132,7 @@ class UnitDetails(models.Model):
 
     def __str__(self):
         return f"{self.unit_configuration} - {self.unit_type}"
-    
+
     # def save(self, *args, **kwargs):
     #     self.base_price = self.size_of_unit * self.per_sqft_rate_saleable
     #     super(UnitDetails, self).save(*args, **kwargs)
@@ -139,7 +140,7 @@ class UnitDetails(models.Model):
 
 class Amenities(models.Model):
     building_id = models.CharField(max_length=255, unique=True)
-    
+
     central_park_s_garden = models.BooleanField(default=False)
     multi_d_purpose_court = models.BooleanField(default=False)
     visitors_parking = models.BooleanField(default=False)

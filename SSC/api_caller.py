@@ -9,7 +9,7 @@ def sorter_api_call():
 
     url = base_url + url_endpoint
     data = {
-        'id':39
+        'id':46
     }
     response = requests.post(url=url, data=data)
 

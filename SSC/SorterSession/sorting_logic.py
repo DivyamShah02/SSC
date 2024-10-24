@@ -36,12 +36,12 @@ class Sorter:
             max_budget = float(client_data.get('budget_max', 0)) * 10000000
 
             decision_driven = client_data.get('decision_driven_by')
-            if decision_driven == 'budget_driven':
+            if 'budget' in str(decision_driven).lower():
                 budget_variation = float(self.config.client_data_variation.budget_variation_budget_driven)
                 updated_data['budget_min'] = min_budget * (1 + (budget_variation / 100))
                 updated_data['budget_max'] = max_budget * (1 + (budget_variation / 100))
 
-            elif decision_driven == 'choice_driven':
+            elif 'choice' in str(decision_driven).lower():
                 min_variation = float(self.config.client_data_variation.budget_variation_choice_driven_min)
                 max_variation = float(self.config.client_data_variation.budget_variation_choice_driven_max)
                 updated_data['budget_min'] = min_budget * (1 + (min_variation / 100))

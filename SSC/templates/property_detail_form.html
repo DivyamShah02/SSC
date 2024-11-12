@@ -862,7 +862,7 @@
                     </div>
 
                     <div class="col-12 text-center mt-2">
-                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom"><b>Add Units</b></button>
+                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom-primary"><b>Add Units</b></button>
                     </div>
 
                 </div>
@@ -1095,9 +1095,9 @@
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
                     <div class="col-md-12 row">
-                        <div class="col-12 text-center">
+                        <!-- <div class="col-12 text-center">
                             <button type="button" onclick="window.location.href = `{% url 'unit-detail-form-list' %}?building_id={{building_id}}`;" id="unit_btn" class="btn btn-outline-dark" style="display: none"><b>Add Units</b></button>
-                        </div>
+                        </div> -->
                         <div class="col-12 text-center mt-2">
                             <button type="button" onclick="submit_detail_form(false)" class="btn btn-custom"><b>Save Property
                                     Details</b></button>
@@ -1711,7 +1711,7 @@
             document.getElementById('saveChangesBtn').click();
             document.getElementById('copy_building_id').value = building_id;
             document.getElementById('publish_btn').style.display = 'initial';
-            document.getElementById('unit_btn').style.display = 'initial';
+            // document.getElementById('unit_btn').style.display = 'initial';
             building_db_id = data['id']
             if (data['unit_unactive'] === true){
                 document.getElementById('note_p').style.display = 'block';

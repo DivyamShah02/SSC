@@ -23,6 +23,21 @@
             z-index: 2001 !important;
             /* Ensure autocomplete dropdown is above the modal */
         }
+        #autocomplete-list {
+            border: 1px solid #ddd;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background: white;
+            z-index: 1000;
+        }
+        .autocomplete-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .autocomplete-item:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 
@@ -60,6 +75,7 @@
                         <label class="form-label primary" for="developerGroupName">1) Name of the group<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="developerGroupName" name="group_name" required
                             placeholder="Enter name">
+                            <div id="autocomplete-list"></div>
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="yearOfEstablishment">2) Year of establishment</label>
@@ -125,52 +141,52 @@
                     </div> -->
                     <!-- autofocus -->
 
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="contactName">6) Name</label>
                         <input type="text" class="form-control" id="contactName" name="name"
                             placeholder="Enter contact name">
                     </div>
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="contactNumber">7) Number</label>
                         <div class="row input-group">
-                            <div class="col-lg-3 col-md-4 col-5">
+                            <div class="col-4 pe-0">
                                 <select name="number_country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                     <option value="+91" selected>+91 </option>
                                     <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
                                   </select>
                             </div>
-                            <div class="col-lg-9 col-md-8 col-7">
+                            <div class="col-8">
                                 <input type="number" max="9999999999" class="form-control" id="contactNumber" name="number"
                                     placeholder="Enter contact number">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="contactEmail">8) Email</label>
                         <input type="email" class="form-control" id="contactEmail" name="email"
                             placeholder="Enter contact email">
                     </div>
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="alternateName">9) Alternate name</label>
                         <input type="text" class="form-control" id="alternateName" name="alternate_name"
                             placeholder="Enter alternate name">
                     </div>
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="alternateNumber">10) Alternate number</label>
                         <div class="row input-group">
-                            <div class="col-lg-3 col-md-4 col-5">
+                            <div class="col-4 pe-0">
                                 <select name="alternate_number_country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                     <option value="+91" selected>+91 </option>
                                     <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
                                 </select>
                             </div>
-                            <div class="col-lg-9 col-md-8 col-7">
+                            <div class="col-8">
                                 <input type="number" max="9999999999" class="form-control" id="alternateNumber" name="alternate_number"
                                     placeholder="Enter alternate number">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 form-group">
+                    <div class="col-md-6 col-lg-4 form-group">
                         <label class="form-label primary" for="alternateEmail">11) Alternate Email</label>
                         <input type="email" class="form-control" id="alternateEmail" name="alternate_email"
                             placeholder="Enter alternate email">
@@ -847,6 +863,10 @@
 
                     </div>
 
+                    <div class="col-12 text-center mt-2">
+                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom"><b>Add Units</b></button>
+                    </div>
+
                 </div>
             </form>
 
@@ -939,7 +959,7 @@
                     <div class="col-md-12 form-group">
                         <label class="form-label primary" for="perSqFtRate">36) Per Sq. Ft. rate on
                             saleable<span class="required"> *</span></label>
-                        <input type="number" min="1" class="form-control" id="perSqFtRate" name="per_sqft_rate_saleable" required
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRate" name="per_sqft_rate_saleable" required
                             placeholder="Enter rate of Per Sq. Ft.">
                     </div>
 
@@ -1026,32 +1046,32 @@
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developmentCharges">39) Development charges (AMC/Torrent
                             etc)<span class="required"> *</span></label>
-                        <input type="number" min="0" class="form-control" id="developmentCharges" name="development_charges" required
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="developmentCharges" name="development_charges" required
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="advanceMaintenance">40) Advance maintenance<span class="required"> *</span></label>
-                        <input type="number" min="0" class="form-control" id="advanceMaintenance" name="advance_maintenance" required
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="advanceMaintenance" name="advance_maintenance" required
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="maintenanceDeposit">41) Maintenance deposit<span class="required"> *</span></label>
-                        <input type="number" min="0" class="form-control" id="maintenanceDeposit" name="maintenance_deposit" required
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="maintenanceDeposit" name="maintenance_deposit" required
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="specificExpenses">42) Other specific expenses if any?<span class="required"> *</span></label>
-                        <input type="number" min="0" class="form-control" id="specificExpenses" name="other_specific_expenses" required
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="specificExpenses" name="other_specific_expenses" required
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="saleDeedValue">43) Sale deed value<span class="required"> *</span></label>
-                        <input type="number" min="0" max="100" class="form-control" id="saleDeedValue" name="sale_deed_value" required
+                        <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
                             placeholder="Enter sale deed value">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="gstApplicable">44) How much GST is applicable?<span class="required"> *</span></label>
-                        <input type="number" min="0" class="form-control" id="gstApplicable" name="gst_applicable" required
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
                     <div class="col-md-4 form-group">
@@ -1081,7 +1101,7 @@
                             <button type="button" onclick="window.location.href = `{% url 'unit-detail-form-list' %}?building_id={{building_id}}`;" id="unit_btn" class="btn btn-outline-dark" style="display: none"><b>Add Units</b></button>
                         </div>
                         <div class="col-12 text-center mt-2">
-                            <button type="button" onclick="submit_detail_form()" class="btn btn-custom"><b>Save Property
+                            <button type="button" onclick="submit_detail_form(false)" class="btn btn-custom"><b>Save Property
                                     Details</b></button>
                         </div>
                         <div class="col-12 text-center mt-2">
@@ -1111,6 +1131,56 @@
 
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places"></script>
+
+    <script>
+        const input = document.getElementById('developerGroupName');
+        const autocompleteList = document.getElementById('autocomplete-list');
+
+        input.addEventListener('input', async () => {
+            const query = input.value;
+            if (!query) {
+                autocompleteList.innerHTML = '';
+                return;
+            }
+
+            const response = await fetch(`{% url 'autocomplete-name-list' %}?q=${query}`);
+            const data = await response.json();
+
+            // Clear previous results
+            autocompleteList.innerHTML = '';
+
+            // Populate new results
+            data.forEach(item => {
+                console.log(item.group_name)
+                const div = document.createElement('div');
+                div.classList.add('autocomplete-item');
+                div.textContent = item.group_name;
+                div.dataset.id = item.id;  // Save additional data like ID
+                div.addEventListener('click', () => {
+                    input.value = item.name;
+                    autocompleteList.innerHTML = ''; // Clear dropdown
+                    // Automatically populate other fields
+                    let new_item = {};
+                    new_item['group_name'] = item.group_name
+                    new_item['year_of_establishment'] = item.year_of_establishment
+                    new_item['no_of_projects_delivered'] = item.no_of_projects_delivered
+                    new_item['key_projects_1'] = item.key_projects_1
+                    new_item['key_projects_2'] = item.key_projects_2
+                    new_item['key_projects_3'] = item.key_projects_3
+                    new_item['key_projects_4'] = item.key_projects_4
+                    new_item['key_projects_5'] = item.key_projects_5
+                    new_item['key_promoters_1'] = item.key_promoters_1
+                    new_item['key_promoters_2'] = item.key_promoters_2
+                    new_item['key_promoters_3'] = item.key_promoters_3
+                    new_item['key_promoters_4'] = item.key_promoters_4
+                    new_item['key_promoters_5'] = item.key_promoters_5
+                    setFormValues(new_item);
+                });
+                autocompleteList.appendChild(div);
+            });
+        });
+
+    </script>
 
     <script>
         let map, marker, searchBox;
@@ -1280,11 +1350,15 @@
             autoclose: true
         });
 
-        async function submit_detail_form() {
+        async function submit_detail_form(unit_adder) {
             toggle_preloader()
-            const isValid = validateForm();
+            const isValid = validateForm(unit_adder);
             const isLocationAdded = check_location_added();
             const isAnyCheckboxChecked = AnyCheckboxChecked('type_of_apartments', 'bedrooms');
+
+            if (unit_adder) {
+                removeRequiredFromIgnored();
+            }
 
             if (isValid && isLocationAdded && isAnyCheckboxChecked) {
                 var developer_history_form = document.getElementById('developer_history');
@@ -1375,7 +1449,12 @@
                                         if (data.success == true) {
                                             submit_document_form(data.building_db_id)
                                             alert(`data added successfully to building_id ${data.building_id}!`)
-                                            window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                            if (unit_adder){
+                                                window.location.href = `{% url 'unit-detail-form-list' %}?building_id=${data.building_id}`;
+                                            }
+                                            else{
+                                                window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                            }
                                             
                                         }
                                         else {
@@ -1399,6 +1478,14 @@
             }    
             toggle_preloader()
 
+        }
+
+        function removeRequiredFromIgnored() {
+            const elements = document.querySelectorAll('.ignore_initial_save');
+        
+            elements.forEach(element => {
+                element.removeAttribute('required');
+            });
         }
 
         async function submit_document_form(building_id) {
@@ -1573,7 +1660,7 @@
             return isChecked;
         }
 
-        function validateForm() {
+        function validateForm(unit_adder) {
             
             const inputs = document.querySelectorAll('input');
             let invalidInputs = [];
@@ -1586,8 +1673,16 @@
             // Check validity of each input and collect IDs of invalid ones
             inputs.forEach(input => {
                 if (!input.checkValidity()) {
-                    invalidInputs.push(input.id);
-                    input.classList.add('red-border-btn');  // Add red border class
+                    if (unit_adder) {
+                        if (!input.classList.contains('ignore_initial_save')) {
+                            invalidInputs.push(input.id);
+                            input.classList.add('red-border-btn');  // Add red border class
+                        }
+                    }
+                    else {
+                        invalidInputs.push(input.id);
+                        input.classList.add('red-border-btn');  // Add red border class
+                    }
                 }
             });
 

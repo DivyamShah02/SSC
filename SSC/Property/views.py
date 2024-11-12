@@ -2,12 +2,14 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 from django.db.models import BooleanField
 from django.urls import reverse
 from .serializers import BuildingDetailsSerializer, AmenitiesSerializer, UnitDetailsSerializer
 from .models import BuildingDetails, Amenities, UnitDetails
 from django.db import transaction
 import ast
+from django.db.models import Q
 
 
 class PropertyDetailFormViewSet(viewsets.ViewSet):
@@ -50,8 +52,15 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             google_pin = data['google_Pin'].split('|')
             data['google_pin_lat'], data['google_pin_lng'] = google_pin
+            try:
+                if type(data['amenities']) != list:
+                    data['amenities'] = [data['amenities']]
+                amenities_data = {amenity: True for amenity in data['amenities']}
 
-            amenities_data = {amenity: True for amenity in data['amenities']}
+            except Exception as ex:
+                print("==================================",ex)
+                data['amenities'] = []
+                amenities_data = {amenity: True for amenity in data['amenities']}
 
             if data['copy_building_id'] != "NULL":
                 data['building_id'] = data['copy_building_id']
@@ -94,6 +103,17 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
         except Exception as e:
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class NameAutocompleteViewSet(viewsets.ViewSet):
+    def list(self, request):
+        query = request.GET.get('q', '')  # Get the query string from request
+        if query:
+            # Search for names containing the query (case-insensitive)
+            building_data_obj = BuildingDetails.objects.filter(Q(group_name__icontains=query))  # Add fields as needed
+            building_data = BuildingDetailsSerializer(building_data_obj, many=True)
+
+            return Response(building_data.data)
+        return Response({})
 
 
 class PropertyCopyDataViewSet(viewsets.ViewSet):

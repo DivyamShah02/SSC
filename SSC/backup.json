@@ -3,7 +3,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$3SQ9Hzq5O0weyCT5nrw5d3$uyaNqIgGwX/f2VFOPBhN3b+IUE2ECrh4vC3KKxCztuQ=",
-    "last_login": "2024-10-16T12:15:23.476Z",
+    "last_login": "2024-11-12T19:15:27.634Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -18,10 +18,26 @@
 },
 {
   "model": "sessions.session",
+  "pk": "4nkw308a0zcb8ib7n80wpdtksc993agv",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1tAwMJ:y33uSU2TXOuyY1wvobsvzNf_77_KglNbBnhWxYYcj2M",
+    "expire_date": "2024-11-26T19:15:27.643Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "c9i6q2m7ntnilwkcswyr3sub52o2cqze",
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t12vz:hE50j-MHTS0U40ktgOoZQnYaKKCPXXj5cXvyOryy2P0",
     "expire_date": "2024-10-30T12:15:23.485Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "f52bde1y6thibl9knlavwyicbxg7i5em",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t8z96:nBOLSy8rEQ34WMtmUOxF9E2rDAwKJuB5gcCF2-_EVTc",
+    "expire_date": "2024-11-21T09:49:44.983Z"
   }
 },
 {
@@ -62,6 +78,30 @@
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0eKC:AT-nPV7lP8Kt70bd8gKRx2n9O0MLnxQUzhOoBX8v5EA",
     "expire_date": "2024-10-29T09:58:44.073Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o78d0787rr5yqk6r1s1wi7k5riulbjui",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t8yy1:PS3iD2PPqmE-rkigyLR93m-MEVp4jVSJnQhV1CsWmP8",
+    "expire_date": "2024-11-21T09:38:17.701Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o8o15cbgmz1u39aggizyvnjm35ne2s3d",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1tApbc:Pmx6S0xEifzKHt0PIsmAN3q9LzMKVWjhGnmyVL1yai0",
+    "expire_date": "2024-11-26T12:02:48.810Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "oi1qd3wi6i1hngc2qn4w89zy35izp1f7",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t3qLJ:Ut9c0XnkKNp36LnOXHVAV1Bfz3fmUdK8vnKIVMChf7c",
+    "expire_date": "2024-11-07T05:25:05.139Z"
   }
 },
 {
@@ -558,7 +598,7 @@
     "religious_preference": "Not preferred",
     "workplace_area": "23.0375943|72.5614923",
     "school_area": "23.0386593|72.5118581",
-    "preferred_locations": "23.027614|72.4840917, 23.0557134|72.4686607, 22.995165|72.604097",
+    "preferred_locations": "23.027614|72.4840917, 23.0557134|72.4686607, 23.0208124|72.5125927",
     "decision_driven_by": "Choice driven",
     "dependent_on_sale": "no",
     "looking_since": "6_to_12_months",
@@ -568,7 +608,7 @@
     "attached_washrooms": "4",
     "servant_room": "yes",
     "puja_room": "no",
-    "min_carpet_area": "4500",
+    "min_carpet_area": "2500",
     "flats_per_floor": "1 - 2",
     "floor_preference": "Above 21",
     "private_elevator": "yes",
@@ -578,7 +618,7 @@
     "property_age": "0 to 12 months old",
     "society_type": "Single block high end (70 - 100 units)",
     "amenities": "massage_room, outdoor_swimming_pool, guest_rooms, indoor_swimming_pool, gazebo_sit_outs",
-    "budget_min": "1",
+    "budget_min": "0.5",
     "budget_max": "10",
     "down_payment_percentage": "80",
     "loan_approved_amount": "77",
@@ -670,7 +710,7 @@
   "fields": {
     "building_id": "1001",
     "group_name": "Swati Procon",
-    "head_image": "property/head_HMM46IH.jpg",
+    "head_image": "property/Screenshot_2024-09-19_at_4_tTzyDeJ.12.43_PM.png",
     "sec_image_1": "property/sec_1_mVABwPo.jpg",
     "sec_image_2": "property/sec_2_9vAexsa.jpg",
     "sec_image_3": "",
@@ -880,11 +920,11 @@
     "central_air_conditioning": false,
     "spiritual_or_religious_attraction": "Yes",
     "type_of_parking": "Normal",
-    "plc_garden": "0",
-    "plc_road_facing": "0",
-    "plc_corner": "0",
-    "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '0'}, {'floor': 3, 'price': '0'}, {'floor': 4, 'price': '0'}, {'floor': 5, 'price': '0'}, {'floor': 6, 'price': '0'}, {'floor': 7, 'price': '0'}, {'floor': 8, 'price': '0'}, {'floor': 9, 'price': '0'}, {'floor': 10, 'price': '0'}, {'floor': 11, 'price': '0'}]",
+    "plc_garden": "100",
+    "plc_road_facing": "200",
+    "plc_corner": "300",
+    "plc_others": "400",
+    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '30'}, {'floor': 3, 'price': '50'}, {'floor': 4, 'price': '70'}, {'floor': 5, 'price': '100'}, {'floor': 6, 'price': '130'}, {'floor': 7, 'price': '150'}, {'floor': 8, 'price': '180'}, {'floor': 9, 'price': '210'}, {'floor': 10, 'price': '230'}, {'floor': 11, 'price': '250'}]",
     "development_charges": "1000",
     "advance_maintenance": "200",
     "maintenance_deposit": "100",
@@ -977,6 +1017,318 @@
   }
 },
 {
+  "model": "Property.buildingdetails",
+  "pk": 9581,
+  "fields": {
+    "building_id": "1005",
+    "group_name": "Adani Realty",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "2010",
+    "no_of_projects_delivered": "",
+    "key_projects_1": "Adani Water Lily",
+    "key_projects_2": "Adani La Marina",
+    "key_projects_3": "Adani The North Park",
+    "key_projects_4": "Adani The Meadows",
+    "key_projects_5": "Adani Elysium",
+    "key_promoters_1": "Pranav Adani",
+    "key_promoters_2": "",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "Yash Sharma",
+    "number": "7227921211",
+    "email": "yash.sharma1@adani.com",
+    "alternate_name": "Rushit Joshi",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "7227922287",
+    "alternate_email": "rushit.joshi@adani.com",
+    "project_id": null,
+    "project_name": "Aster Neo",
+    "location_of_project": "Near Vaishnodevi",
+    "area_of_project": "Adani Shantigram",
+    "google_pin_lat": "23.1643688",
+    "google_pin_lng": "72.54164089999999",
+    "type_of_project": "Residential",
+    "per_sqft_rate_saleable": "5400",
+    "type_of_apartments": "2_bhk",
+    "special_amenity_1": "Infinity swimming pool",
+    "special_amenity_2": "Box cricket",
+    "special_amenity_3": "Smart homes",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "06-2025",
+    "age_of_property_rera": "09-2025",
+    "rera_approved": true,
+    "plot_area": "19000",
+    "architect": "NA",
+    "construction_company": "PSP",
+    "no_of_blocks": 11,
+    "no_of_units": 968,
+    "no_of_floors": 22,
+    "no_of_basements": 2,
+    "central_air_conditioning": false,
+    "spiritual_or_religious_attraction": "Yes",
+    "type_of_parking": "Normal",
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "157",
+    "floor_rise": "[{'floor': 1, 'price': '157'}, {'floor': 2, 'price': '157'}, {'floor': 3, 'price': '157'}, {'floor': 4, 'price': '157'}, {'floor': 5, 'price': '157'}, {'floor': 6, 'price': '157'}, {'floor': 7, 'price': '157'}, {'floor': 8, 'price': '157'}, {'floor': 9, 'price': '157'}, {'floor': 10, 'price': '157'}, {'floor': 11, 'price': '157'}, {'floor': 12, 'price': '157'}, {'floor': 13, 'price': '157'}, {'floor': 14, 'price': '157'}, {'floor': 15, 'price': '157'}, {'floor': 16, 'price': '157'}, {'floor': 17, 'price': '157'}, {'floor': 18, 'price': '157'}, {'floor': 19, 'price': '157'}, {'floor': 20, 'price': '157'}, {'floor': 21, 'price': '157'}, {'floor': 22, 'price': '157'}]",
+    "development_charges": "150",
+    "advance_maintenance": "0",
+    "maintenance_deposit": "110",
+    "other_specific_expenses": "106",
+    "sale_deed_value": "100",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "5",
+    "loan_availability": false,
+    "remarks": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 9582,
+  "fields": {
+    "building_id": "1006",
+    "group_name": "sdv",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "",
+    "no_of_projects_delivered": "",
+    "key_projects_1": "",
+    "key_projects_2": "",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "",
+    "key_promoters_2": "",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "",
+    "number": "",
+    "email": "",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "fve",
+    "location_of_project": "regq",
+    "area_of_project": "aevrg",
+    "google_pin_lat": "22.2953472",
+    "google_pin_lng": "73.1774976",
+    "type_of_project": "Residential",
+    "per_sqft_rate_saleable": "12",
+    "type_of_apartments": "2_bhk",
+    "special_amenity_1": "",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "11-2024",
+    "age_of_property_rera": "",
+    "rera_approved": false,
+    "plot_area": "",
+    "architect": "dva",
+    "construction_company": "",
+    "no_of_blocks": 1,
+    "no_of_units": 1,
+    "no_of_floors": 1,
+    "no_of_basements": 1,
+    "central_air_conditioning": false,
+    "spiritual_or_religious_attraction": "",
+    "type_of_parking": null,
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': '20'}]",
+    "development_charges": "1",
+    "advance_maintenance": "1",
+    "maintenance_deposit": "1",
+    "other_specific_expenses": "1",
+    "sale_deed_value": "1",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "1",
+    "loan_availability": false,
+    "remarks": "",
+    "active": false
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 9583,
+  "fields": {
+    "building_id": "1007",
+    "group_name": "esgr",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "",
+    "no_of_projects_delivered": "",
+    "key_projects_1": "",
+    "key_projects_2": "",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "",
+    "key_promoters_2": "",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "",
+    "number": "",
+    "email": "",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "aerg",
+    "location_of_project": "erga",
+    "area_of_project": "erag",
+    "google_pin_lat": "22.2953472",
+    "google_pin_lng": "73.1774976",
+    "type_of_project": "Commercial",
+    "per_sqft_rate_saleable": "",
+    "type_of_apartments": "2_bhk",
+    "special_amenity_1": "",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "11-2024",
+    "age_of_property_rera": "",
+    "rera_approved": false,
+    "plot_area": "",
+    "architect": "arf",
+    "construction_company": "",
+    "no_of_blocks": 1,
+    "no_of_units": 1,
+    "no_of_floors": 1,
+    "no_of_basements": 1,
+    "central_air_conditioning": false,
+    "spiritual_or_religious_attraction": "",
+    "type_of_parking": null,
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': ''}]",
+    "development_charges": "",
+    "advance_maintenance": "",
+    "maintenance_deposit": "",
+    "other_specific_expenses": "",
+    "sale_deed_value": "",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "",
+    "loan_availability": false,
+    "remarks": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 9584,
+  "fields": {
+    "building_id": "1008",
+    "group_name": "szvd",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "",
+    "no_of_projects_delivered": "",
+    "key_projects_1": "",
+    "key_projects_2": "",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "",
+    "key_promoters_2": "",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "",
+    "number": "",
+    "email": "",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "wa",
+    "location_of_project": "ave",
+    "area_of_project": "av",
+    "google_pin_lat": "22.2953472",
+    "google_pin_lng": "73.1774976",
+    "type_of_project": "Residential",
+    "per_sqft_rate_saleable": "",
+    "type_of_apartments": "2_bhk",
+    "special_amenity_1": "",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "11-2024",
+    "age_of_property_rera": "",
+    "rera_approved": false,
+    "plot_area": "",
+    "architect": "zv",
+    "construction_company": "",
+    "no_of_blocks": 1,
+    "no_of_units": 1,
+    "no_of_floors": 1,
+    "no_of_basements": 1,
+    "central_air_conditioning": false,
+    "spiritual_or_religious_attraction": "",
+    "type_of_parking": null,
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': ''}]",
+    "development_charges": "",
+    "advance_maintenance": "",
+    "maintenance_deposit": "",
+    "other_specific_expenses": "",
+    "sale_deed_value": "",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "",
+    "loan_availability": false,
+    "remarks": "",
+    "active": false
+  }
+},
+{
   "model": "Property.unitdetails",
   "pk": 20126,
   "fields": {
@@ -1006,7 +1358,7 @@
     "size_of_kitchen_wid": "10",
     "no_of_parking_allotted": 5,
     "per_sqft_rate_saleable": "10000",
-    "base_price": "96980000.0",
+    "base_price": "96980000.00",
     "google_pin_lat": "23.027614",
     "google_pin_lng": "72.4840917",
     "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_4.00.29_PM.jpeg",
@@ -1044,7 +1396,7 @@
     "size_of_kitchen_wid": "0",
     "no_of_parking_allotted": 5,
     "per_sqft_rate_saleable": "10000",
-    "base_price": "151288800.0",
+    "base_price": "151288800.00",
     "google_pin_lat": "23.027614",
     "google_pin_lng": "72.4840917",
     "floor_plan": "",
@@ -1082,7 +1434,7 @@
     "size_of_kitchen_wid": "0",
     "no_of_parking_allotted": 5,
     "per_sqft_rate_saleable": "10000",
-    "base_price": "75644400.0",
+    "base_price": "75644400.00",
     "google_pin_lat": "23.027614",
     "google_pin_lng": "72.4840917",
     "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_16.01.30_9445b10d.jpg",
@@ -1120,12 +1472,12 @@
     "size_of_kitchen_wid": "10",
     "no_of_parking_allotted": 5,
     "per_sqft_rate_saleable": "10000",
-    "base_price": "909980000.0",
+    "base_price": "909980000.00",
     "google_pin_lat": "23.027614",
     "google_pin_lng": "72.4840917",
     "floor_plan": "",
     "unit_plan": "",
-    "active": false
+    "active": true
   }
 },
 {
@@ -1158,12 +1510,12 @@
     "size_of_kitchen_wid": "10",
     "no_of_parking_allotted": 5,
     "per_sqft_rate_saleable": "10000",
-    "base_price": "100000000.0",
+    "base_price": "100000000.00",
     "google_pin_lat": "23.027614",
     "google_pin_lng": "72.4840917",
     "floor_plan": "",
     "unit_plan": "",
-    "active": false
+    "active": true
   }
 },
 {
@@ -1196,11 +1548,49 @@
     "size_of_kitchen_wid": "15",
     "no_of_parking_allotted": 3,
     "per_sqft_rate_saleable": "3000",
-    "base_price": "9000000.0",
+    "base_price": "9000000.00",
     "google_pin_lat": "23.0319185",
     "google_pin_lng": "72.518763",
     "floor_plan": "plan/Screenshot_2024-09-16_at_4.40.40_PM.png",
     "unit_plan": "plan/Screenshot_2024-09-25_at_4.24.41_PM.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 20132,
+  "fields": {
+    "building_id": "1005",
+    "unit_configuration": "2 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "",
+    "no_of_units_per_floor": 4,
+    "no_of_lifts_per_floor": 2,
+    "private_lifts": false,
+    "no_private_lifts": 0,
+    "common_terrace_accessible": false,
+    "size_of_unit": "1203",
+    "carpet_area_rera": "691",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": 1,
+    "servant_room_available": false,
+    "separate_puja_room_available": false,
+    "no_of_balconies": 1,
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": 1,
+    "per_sqft_rate_saleable": "5400",
+    "base_price": "6496200.00",
+    "google_pin_lat": "23.1643688",
+    "google_pin_lng": "72.54164089999999",
+    "floor_plan": "",
+    "unit_plan": "",
     "active": true
   }
 },
@@ -1410,6 +1800,170 @@
   }
 },
 {
+  "model": "Property.amenities",
+  "pk": 12718,
+  "fields": {
+    "building_id": "1005",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": true,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": false,
+    "outdoor_swimming_pool": true,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": true,
+    "banquet_hall": true,
+    "mini_theatre": false,
+    "indoor_games": true,
+    "activity_room": true,
+    "library_s_reading_room": true,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": true,
+    "gazebo_sit_outs": true,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": true,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": true,
+    "card_room": true,
+    "toddler_play_zone": true,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": true,
+    "solar_for_common_area": true,
+    "ev_charging_stations": true,
+    "green_building_rated": true
+  }
+},
+{
+  "model": "Property.amenities",
+  "pk": 12719,
+  "fields": {
+    "building_id": "1006",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": false,
+    "visitors_parking": false,
+    "gymnasium": false,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": false,
+    "mini_theatre": false,
+    "indoor_games": false,
+    "activity_room": false,
+    "library_s_reading_room": false,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": false,
+    "senior_citizen_sit_d_outs": false,
+    "walking_s_jogging_track": false,
+    "yoga_room": false,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": false,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": false,
+    "solar_for_common_area": false,
+    "ev_charging_stations": false,
+    "green_building_rated": false
+  }
+},
+{
+  "model": "Property.amenities",
+  "pk": 12720,
+  "fields": {
+    "building_id": "1007",
+    "central_park_s_garden": false,
+    "multi_d_purpose_court": false,
+    "visitors_parking": false,
+    "gymnasium": false,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": false,
+    "mini_theatre": false,
+    "indoor_games": false,
+    "activity_room": false,
+    "library_s_reading_room": false,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": false,
+    "senior_citizen_sit_d_outs": false,
+    "walking_s_jogging_track": false,
+    "yoga_room": false,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": false,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": false,
+    "solar_for_common_area": false,
+    "ev_charging_stations": false,
+    "green_building_rated": false
+  }
+},
+{
+  "model": "Property.amenities",
+  "pk": 12721,
+  "fields": {
+    "building_id": "1008",
+    "central_park_s_garden": false,
+    "multi_d_purpose_court": false,
+    "visitors_parking": false,
+    "gymnasium": false,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": false,
+    "mini_theatre": false,
+    "indoor_games": false,
+    "activity_room": false,
+    "library_s_reading_room": false,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": false,
+    "senior_citizen_sit_d_outs": false,
+    "walking_s_jogging_track": false,
+    "yoga_room": false,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": false,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": false,
+    "solar_for_common_area": false,
+    "ev_charging_stations": false,
+    "green_building_rated": false
+  }
+},
+{
   "model": "SorterSession.shortlistedproperty",
   "pk": 18,
   "fields": {
@@ -1433,7 +1987,7 @@
   "fields": {
     "client_id": "45",
     "number": "9054413199",
-    "properties": "[]"
+    "properties": "[{'unit_id': 20128, 'score': 53}, {'unit_id': 20131, 'score': 39}]"
   }
 },
 {
@@ -1442,7 +1996,7 @@
   "fields": {
     "client_id": "46",
     "number": "8899000099",
-    "properties": "[]"
+    "properties": "[{'unit_id': 20128, 'score': 53}, {'unit_id': 20131, 'score': 39}]"
   }
 },
 {
@@ -5562,3159 +6116,4 @@
       "buildingdetails"
     ],
     "object_id": "1154",
-    "object_repr": "Group ҍ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 230,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1153",
-    "object_repr": "Group Ҍ - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 231,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1152",
-    "object_repr": "Group ҋ - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 232,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1151",
-    "object_repr": "Group Ҋ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 233,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1150",
-    "object_repr": "Group ҉ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 234,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1149",
-    "object_repr": "Group ҈ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 235,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1148",
-    "object_repr": "Group ҇ - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 236,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1147",
-    "object_repr": "Group ҆ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 237,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1146",
-    "object_repr": "Group ҅ - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 238,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1145",
-    "object_repr": "Group ҄ - Skyline Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 239,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1144",
-    "object_repr": "Group ҃ - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 240,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1143",
-    "object_repr": "Group ҂ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 241,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1142",
-    "object_repr": "Group ҁ - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 242,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1141",
-    "object_repr": "Group Ҁ - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 243,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1140",
-    "object_repr": "Group ѿ - Skyline Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 244,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1139",
-    "object_repr": "Group Ѿ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 245,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1138",
-    "object_repr": "Group ѽ - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 246,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1137",
-    "object_repr": "Group Ѽ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 247,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1136",
-    "object_repr": "Group ѻ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 248,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1135",
-    "object_repr": "Group Ѻ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 249,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1134",
-    "object_repr": "Group ѹ - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 250,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1133",
-    "object_repr": "Group Ѹ - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 251,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1132",
-    "object_repr": "Group ѷ - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 252,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1131",
-    "object_repr": "Group Ѷ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 253,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1130",
-    "object_repr": "Group ѵ - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 254,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1129",
-    "object_repr": "Group Ѵ - Skyline Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 255,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1128",
-    "object_repr": "Group ѳ - Star Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 256,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1127",
-    "object_repr": "Group Ѳ - Star Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 257,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1126",
-    "object_repr": "Group ѱ - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 258,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1125",
-    "object_repr": "Group Ѱ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 259,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1124",
-    "object_repr": "Group ѯ - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 260,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1123",
-    "object_repr": "Group Ѯ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 261,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1122",
-    "object_repr": "Group ѭ - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 262,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1121",
-    "object_repr": "Group Ѭ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 263,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1120",
-    "object_repr": "Group ѫ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 264,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1119",
-    "object_repr": "Group Ѫ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 265,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1118",
-    "object_repr": "Group ѩ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 266,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1117",
-    "object_repr": "Group Ѩ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 267,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1116",
-    "object_repr": "Group ѧ - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 268,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1115",
-    "object_repr": "Group Ѧ - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 269,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1114",
-    "object_repr": "Group ѥ - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 270,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1113",
-    "object_repr": "Group Ѥ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 271,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1112",
-    "object_repr": "Group ѣ - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 272,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1111",
-    "object_repr": "Group Ѣ - Skyline Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 273,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1110",
-    "object_repr": "Group ѡ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 274,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1109",
-    "object_repr": "Group Ѡ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 275,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1108",
-    "object_repr": "Group џ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 276,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1107",
-    "object_repr": "Group ў - Star Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 277,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1106",
-    "object_repr": "Group ѝ - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 278,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1105",
-    "object_repr": "Group ќ - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 279,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1104",
-    "object_repr": "Group ћ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 280,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1103",
-    "object_repr": "Group њ - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 281,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1102",
-    "object_repr": "Group љ - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 282,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1101",
-    "object_repr": "Group ј - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 283,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1100",
-    "object_repr": "Group ї - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 284,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1099",
-    "object_repr": "Group і - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 285,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1098",
-    "object_repr": "Group ѕ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 286,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1097",
-    "object_repr": "Group є - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 287,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1096",
-    "object_repr": "Group ѓ - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 288,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1095",
-    "object_repr": "Group ђ - Skyline Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 289,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1094",
-    "object_repr": "Group ё - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 290,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1093",
-    "object_repr": "Group ѐ - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 291,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1092",
-    "object_repr": "Group я - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 292,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1091",
-    "object_repr": "Group ю - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 293,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1090",
-    "object_repr": "Group э - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 294,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1089",
-    "object_repr": "Group ь - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 295,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1088",
-    "object_repr": "Group ы - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 296,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1087",
-    "object_repr": "Group ъ - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 297,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1086",
-    "object_repr": "Group щ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 298,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1085",
-    "object_repr": "Group ш - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 299,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1084",
-    "object_repr": "Group ч - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 300,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1083",
-    "object_repr": "Group ц - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 301,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1082",
-    "object_repr": "Group х - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 302,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1081",
-    "object_repr": "Group ф - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 303,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1080",
-    "object_repr": "Group у - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 304,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1079",
-    "object_repr": "Group т - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 305,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1078",
-    "object_repr": "Group с - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 306,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1077",
-    "object_repr": "Group р - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 307,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1076",
-    "object_repr": "Group п - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 308,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1075",
-    "object_repr": "Group о - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 309,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1074",
-    "object_repr": "Group н - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 310,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1073",
-    "object_repr": "Group м - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 311,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1072",
-    "object_repr": "Group л - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 312,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1071",
-    "object_repr": "Group к - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 313,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1070",
-    "object_repr": "Group й - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 314,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1069",
-    "object_repr": "Group и - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 315,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1068",
-    "object_repr": "Group з - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 316,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1067",
-    "object_repr": "Group ж - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 317,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1066",
-    "object_repr": "Group е - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 318,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1065",
-    "object_repr": "Group д - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 319,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1064",
-    "object_repr": "Group г - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 320,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1063",
-    "object_repr": "Group в - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 321,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1062",
-    "object_repr": "Group б - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 322,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1061",
-    "object_repr": "Group а - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 323,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1060",
-    "object_repr": "Group Я - Urban Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 324,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1059",
-    "object_repr": "Group Ю - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 325,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1058",
-    "object_repr": "Group Э - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 326,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1057",
-    "object_repr": "Group Ь - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 327,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1056",
-    "object_repr": "Group Ы - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 328,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.287Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1055",
-    "object_repr": "Group Ъ - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 329,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "30",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 330,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "29",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 331,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "28",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 332,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "27",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 333,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "26",
-    "object_repr": "Divyam Hitesh Shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 334,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "25",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 335,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "24",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 336,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "23",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 337,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "22",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 338,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "21",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 339,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "20",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 340,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "19",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 341,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "18",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 342,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "17",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 343,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "16",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 344,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "15",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 345,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "14",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 346,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "13",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 347,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "12",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 348,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "11",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 349,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "10",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 350,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "9",
-    "object_repr": "Divyam",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 351,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "8",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 352,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "7",
-    "object_repr": "Divyam shah",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 353,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "6",
-    "object_repr": "Divyam",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 354,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "5",
-    "object_repr": "Divyam",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 355,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "4",
-    "object_repr": "Divc",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 356,
-  "fields": {
-    "action_time": "2024-09-15T19:07:45.798Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "1",
-    "object_repr": "Divyam",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 357,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "10",
-    "object_repr": "ShortlistedProperty object (10)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 358,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "9",
-    "object_repr": "ShortlistedProperty object (9)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 359,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "8",
-    "object_repr": "ShortlistedProperty object (8)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 360,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "7",
-    "object_repr": "ShortlistedProperty object (7)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 361,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "6",
-    "object_repr": "ShortlistedProperty object (6)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 362,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "5",
-    "object_repr": "ShortlistedProperty object (5)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 363,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "4",
-    "object_repr": "ShortlistedProperty object (4)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 364,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "3",
-    "object_repr": "ShortlistedProperty object (3)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 365,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "2",
-    "object_repr": "ShortlistedProperty object (2)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 366,
-  "fields": {
-    "action_time": "2024-09-15T19:07:58.993Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "1",
-    "object_repr": "ShortlistedProperty object (1)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 367,
-  "fields": {
-    "action_time": "2024-09-18T15:53:26.647Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "12",
-    "object_repr": "ShortlistedProperty object (12)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 368,
-  "fields": {
-    "action_time": "2024-09-18T15:53:26.647Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "11",
-    "object_repr": "ShortlistedProperty object (11)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 369,
-  "fields": {
-    "action_time": "2024-09-18T18:00:33.145Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "31",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Preferred locations\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 370,
-  "fields": {
-    "action_time": "2024-09-21T04:03:46.846Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "32",
-    "object_repr": "something",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 371,
-  "fields": {
-    "action_time": "2024-09-21T04:03:58.474Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "32",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 372,
-  "fields": {
-    "action_time": "2024-09-30T06:31:30.412Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "8259",
-    "object_repr": "Group І - Star Heights",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Rera approved\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 373,
-  "fields": {
-    "action_time": "2024-09-30T06:31:49.400Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "8259",
-    "object_repr": "Group І - Star Heights",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Rera approved\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 374,
-  "fields": {
-    "action_time": "2024-10-04T08:47:57.244Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "14",
-    "object_repr": "ShortlistedProperty object (14)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 375,
-  "fields": {
-    "action_time": "2024-10-04T08:53:58.901Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "14",
-    "object_repr": "ShortlistedProperty object (14)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 376,
-  "fields": {
-    "action_time": "2024-10-05T07:24:00.215Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "14",
-    "object_repr": "ShortlistedProperty object (14)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 377,
-  "fields": {
-    "action_time": "2024-10-05T07:24:48.761Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "14",
-    "object_repr": "ShortlistedProperty object (14)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 378,
-  "fields": {
-    "action_time": "2024-10-05T17:44:30.935Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 379,
-  "fields": {
-    "action_time": "2024-10-05T17:45:59.578Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Min carpet area\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 380,
-  "fields": {
-    "action_time": "2024-10-05T17:46:55.985Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Preferred locations\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 381,
-  "fields": {
-    "action_time": "2024-10-05T17:47:30.876Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Attached washrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 382,
-  "fields": {
-    "action_time": "2024-10-05T17:50:31.666Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 383,
-  "fields": {
-    "action_time": "2024-10-07T06:36:04.047Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9542",
-    "object_repr": "Group उ - Skyline Apartments",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Per sqft rate saleable\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 384,
-  "fields": {
-    "action_time": "2024-10-08T11:40:34.061Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "14",
-    "object_repr": "ShortlistedProperty object (14)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 385,
-  "fields": {
-    "action_time": "2024-10-08T15:28:24.228Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9567",
-    "object_repr": "Vasupujiya - Siddhi Sadhan",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Building id\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 386,
-  "fields": {
-    "action_time": "2024-10-08T18:50:38.930Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9569",
-    "object_repr": "Sun Life - Luxury apts",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 387,
-  "fields": {
-    "action_time": "2024-10-08T19:17:56.455Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "15",
-    "object_repr": "ShortlistedProperty object (15)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 388,
-  "fields": {
-    "action_time": "2024-10-10T11:11:57.422Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9569",
-    "object_repr": "Sun Life - Luxury apts",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Age of property by developer\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 389,
-  "fields": {
-    "action_time": "2024-10-10T11:13:27.857Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9569",
-    "object_repr": "Sun Life - Luxury apts",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Age of property by developer\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 390,
-  "fields": {
-    "action_time": "2024-10-11T04:54:52.353Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20121",
-    "object_repr": "3 BHK - Simplex",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Per sqft rate saleable\", \"Google pin lat\", \"Google pin lng\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 391,
-  "fields": {
-    "action_time": "2024-10-11T05:17:04.769Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "34",
-    "object_repr": "Divyam shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 392,
-  "fields": {
-    "action_time": "2024-10-11T10:29:08.487Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9570",
-    "object_repr": "Sun Life - Luxury flats",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 393,
-  "fields": {
-    "action_time": "2024-10-11T16:19:33.614Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "16",
-    "object_repr": "ShortlistedProperty object (16)",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 394,
-  "fields": {
-    "action_time": "2024-10-11T16:21:20.596Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20121",
-    "object_repr": "3 BHK - Simplex",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 395,
-  "fields": {
-    "action_time": "2024-10-11T16:21:40.498Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20121",
-    "object_repr": "3 BHK - Simplex",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 396,
-  "fields": {
-    "action_time": "2024-10-14T04:16:40.115Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9575",
-    "object_repr": "es - sdfav",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 397,
-  "fields": {
-    "action_time": "2024-10-14T04:16:46.730Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "12712",
-    "object_repr": "1000",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 398,
-  "fields": {
-    "action_time": "2024-10-14T04:16:52.581Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "36",
-    "object_repr": "vaefrgs",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 399,
-  "fields": {
-    "action_time": "2024-10-14T04:17:03.549Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "SorterSession",
-      "shortlistedproperty"
-    ],
-    "object_id": "17",
-    "object_repr": "ShortlistedProperty object (17)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 400,
-  "fields": {
-    "action_time": "2024-10-15T10:44:25.807Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "39",
-    "object_repr": "Salmon Bhai",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Budget max\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 401,
-  "fields": {
-    "action_time": "2024-10-15T10:45:46.732Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20128",
-    "object_repr": "5 BHK - Simplex",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Google pin lat\", \"Google pin lng\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 402,
-  "fields": {
-    "action_time": "2024-10-15T10:46:51.625Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "39",
-    "object_repr": "Salmon Bhai",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Preferred locations\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 403,
-  "fields": {
-    "action_time": "2024-10-18T07:43:24.483Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "39",
-    "object_repr": "Salmon Bhai",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Country code\", \"Number\", \"Whatsapp country code\", \"Whatsapp\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 404,
-  "fields": {
-    "action_time": "2024-10-21T11:33:59.673Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9577",
-    "object_repr": "Swati Procon - Swati Senor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Location of project\"]}}]"
-  }
-}
-]
+    "object_repr": 

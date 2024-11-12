@@ -382,7 +382,12 @@
                         </div>
                         <div class="col-12 text-center">
                             <button type="button" class="btn btn-custom-primary" onclick="submit_form()">
-                                Submit
+                                <b>Submit</b>
+                            </button>
+                        </div>
+                        <div class="col-12 text-center mt-2">
+                            <button type="button" class="btn btn-custom" onclick="window.location.href = `{% url 'property-detail-list' %}?building_id={{building_id}}`;">
+                                <b>Building Details</b>
                             </button>
                         </div>
 

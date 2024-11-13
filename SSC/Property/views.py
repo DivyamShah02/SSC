@@ -94,7 +94,10 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             for unit in all_units:
                 unit_obj = UnitDetails.objects.get(id=unit.id)
                 unit_obj.per_sqft_rate_saleable = building_serializer.data['per_sqft_rate_saleable']
-                # unit_obj.base_price
+                try:
+                    unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable) * float(unit_obj.size_of_unit)
+                except:
+                    unit_obj.base_price = 0
                 unit_obj.google_pin_lat = building_serializer.data['google_pin_lat']
                 unit_obj.google_pin_lng = building_serializer.data['google_pin_lng']
                 unit_obj.save()
@@ -198,8 +201,11 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
         try:
             # Handle file uploads
             self.handle_file_uploads(data, request.FILES)
-
-            data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
+            try:
+                data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
+            
+            except:
+                data['base_price'] = 0
 
             if data['unit_id'] != "NULL":
                 unit_instance = get_object_or_404(UnitDetails, id=data['unit_id'])
@@ -214,6 +220,7 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
                 return Response(unit_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
+            print(e)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def handle_file_uploads(self, data, files):

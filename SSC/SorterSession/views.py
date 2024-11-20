@@ -16,6 +16,7 @@ from datetime import datetime
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance, get_address
+from .visit_plan import create_visit_plan
 
 
 class SorterViewSet(viewsets.ViewSet):
@@ -42,6 +43,7 @@ class SorterViewSet(viewsets.ViewSet):
 
                 edit_session.number = client_data.get('number','')
                 edit_session.properties = sorted_data
+                edit_session.selected_properties = ''
 
                 edit_session.save()
                 session_id = edit_session.id
@@ -259,7 +261,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     building_id = unit_data.building_id
                     building_data = BuildingDetails.objects.get(building_id=building_id)
                     
-                    property_name = f'{building_id} - {building_data.name}'
+                    property_name = f'{building_id} - {building_data.project_name}'
                     property_group_name = building_data.group_name
                     active_property = False
                     
@@ -568,3 +570,142 @@ class GetDistanceViewset(viewsets.ViewSet):
 
         except Exception as e:
             return Response({'success': False, 'error': str(e)}, status=400)
+
+
+class SelectPropertyViewSet(viewsets.ViewSet):
+    def create(self, request):
+        session_id = request.data.get('session_id')
+        ind = request.data.get('ind')
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        selected_properties_data_str = session_data.get('selected_properties', '')
+
+        if selected_properties_data_str != '':
+            try:
+                selected_properties = json.loads(selected_properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+        else:
+            selected_properties = []
+
+        properties_data_str = session_data.get('properties', '')
+        properties = json.loads(properties_data_str.replace("'", '"'))
+
+        selected_property = properties[int(ind)-1]['unit_id']
+
+        if selected_property not in selected_properties:
+            selected_properties.append(selected_property)
+
+        session_data_obj.selected_properties = f'{selected_properties}'
+        session_data_obj.save()
+
+        return Response({'success':True}, status=200)
+
+
+class VisitPlanViewSet(viewsets.ViewSet):
+    def list(self, request):
+        session_id = request.GET.get('session_id')
+
+        if not session_id:
+            raise ParseError("Session ID is required.")
+
+        # Fetch session data
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        client_id = session_data.get('client_id')
+        try:
+            client_obj = PropertyInquiry.objects.get(id=client_id)
+        except PropertyInquiry.DoesNotExist:
+            raise NotFound(f"Client with id : {client_id} not found.")
+        client_data = PropertyInquirySerializer(client_obj).data
+
+        selected_properties_data_str = session_data.get('selected_properties', '')
+        if not selected_properties_data_str:
+            raise ParseError("No properties found in session data.")
+        
+        try:
+            selected_properties_data = json.loads(selected_properties_data_str.replace("'", '"'))
+        except json.JSONDecodeError:
+            raise ParseError("Error parsing properties data.")
+
+        if not isinstance(selected_properties_data, list):
+            raise ParseError("Properties data must be a list.")
+        
+        menu_properties = []
+        for i, property in enumerate(selected_properties_data):
+            try:
+                unit_id = property
+                unit_data = UnitDetails.objects.get(id=unit_id)
+                
+                building_id = unit_data.building_id
+                building_data = BuildingDetails.objects.get(building_id=building_id)
+                
+                property_name = f'{building_id} - {building_data.project_name}'
+                property_group_name = building_data.group_name
+                active_property = False            
+                menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1})
+            
+            except Exception as e:
+                print(e)
+
+        data = {
+            'session_id' : session_id,
+            'client_data' : client_data,
+            'menu_properties' : menu_properties,
+        }
+
+        return render(request, 'selected_property_detail_design.html', data)
+
+    def create(self, request):
+        start_date = request.data.get('start_date')
+        start_time = request.data.get('start_time')
+        start_area = request.data.get('start_area')
+        session_id = request.data.get('session_id')
+
+        date_str = f'{start_date}\n{start_time}'
+        start_datetime = datetime.strptime(date_str.strip(), '%Y-%m-%d\n%H:%M')
+
+        start_point = (str(start_area).split('|')[0], str(start_area).split('|')[1])
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        selected_properties_data_str = session_data.get('selected_properties', '')
+
+        if selected_properties_data_str != '':
+            try:
+                selected_properties = json.loads(selected_properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+        else:
+            selected_properties = []
+
+        selected_properties_coords = []
+        for selected_property in selected_properties:
+            selected_property_obj = UnitDetails.objects.get(id=selected_property)
+            selected_properties_coords.append({"id":selected_property, "coords":(selected_property_obj.google_pin_lat, selected_property_obj.google_pin_lng)})
+        
+        plan = create_visit_plan(start_point, selected_properties_coords, start_datetime)
+
+        print(plan)
+        for step in plan:
+            print(f"Visit property {step['property_id']} at {step['coords']}:\n"
+                    f"  Arrival: {step['arrival_time']}\n"
+                    f"  Departure: {step['departure_time']}\n")
+
+
+
+        return Response({'success':True}, status=200)
+

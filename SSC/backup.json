@@ -2,8 +2,8 @@
 {
   "model": "auth.user",
   "fields": {
-    "password": "pbkdf2_sha256$870000$3SQ9Hzq5O0weyCT5nrw5d3$uyaNqIgGwX/f2VFOPBhN3b+IUE2ECrh4vC3KKxCztuQ=",
-    "last_login": "2024-11-12T19:15:27.634Z",
+    "password": "pbkdf2_sha256$870000$m8mDEzVq0dTzSnPeJbtq6R$lPLC3qJ+mKo5jqOhNE5VXa2BrzPhJM2LlkM7JuwQoT4=",
+    "last_login": "2024-11-19T13:19:20.767Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -11,769 +11,113 @@
     "email": "admin@admin.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2024-09-02T15:17:20.965Z",
+    "date_joined": "2024-11-15T05:54:06.967Z",
     "groups": [],
     "user_permissions": []
   }
 },
 {
   "model": "sessions.session",
-  "pk": "4nkw308a0zcb8ib7n80wpdtksc993agv",
+  "pk": "bukou15f0ln31fqc0fegpbbfdm8s0rly",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1tAwMJ:y33uSU2TXOuyY1wvobsvzNf_77_KglNbBnhWxYYcj2M",
-    "expire_date": "2024-11-26T19:15:27.643Z"
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tD1Te:AqBgVn0fiAuCMkB5FG0ZTeKGGUqR-dySENilEYETfko",
+    "expire_date": "2024-12-02T13:07:38.395Z"
   }
 },
 {
   "model": "sessions.session",
-  "pk": "c9i6q2m7ntnilwkcswyr3sub52o2cqze",
+  "pk": "c2799csvtd1f1nkwokvlgbahq5ehsklc",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t12vz:hE50j-MHTS0U40ktgOoZQnYaKKCPXXj5cXvyOryy2P0",
-    "expire_date": "2024-10-30T12:15:23.485Z"
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tDO8W:8Y1c751-W6DTbGtvl99tCNpGXNdXyZAWwOishBMNU8w",
+    "expire_date": "2024-12-03T13:19:20.785Z"
   }
 },
 {
   "model": "sessions.session",
-  "pk": "f52bde1y6thibl9knlavwyicbxg7i5em",
+  "pk": "ozhs6ajqqp1hdrgzd1egladdm3jycru8",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t8z96:nBOLSy8rEQ34WMtmUOxF9E2rDAwKJuB5gcCF2-_EVTc",
-    "expire_date": "2024-11-21T09:49:44.983Z"
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tBpHs:XzF-U-eBfabkq7W_8LBJE_DX2rvZUmQBYsZOkFLqbU8",
+    "expire_date": "2024-11-29T05:54:32.805Z"
   }
 },
 {
   "model": "sessions.session",
-  "pk": "g77nu1fkye7k2o8kmpwgtoghr7x05blz",
+  "pk": "w84ol43w4oi5vjmsaz58e4ysozv8cz53",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1szvsR:cJ4A5Dj026kXS8E4BwpYy1CBUrIJS9njiP6blaNDy2U",
-    "expire_date": "2024-10-27T10:31:07.863Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "ho5vwfopaa0xipcynnavjn167agk2yoz",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1sqwvi:gOTxuRvdZuK6gwVt2eLgyJnZZ89bIV-D3qTbPmYz9uE",
-    "expire_date": "2024-10-02T15:49:22.453Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "kkc2j91mbsfwp24vnd2jfn0p4bslh7um",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0cPd:A9cv4WaP1ZFxtVosm2SpM44hgo0rtcjeJ7VJee2namU",
-    "expire_date": "2024-10-29T07:56:13.347Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "mpnzu3wjliy6t6yhx1fduac6xklay77d",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1stsDK:cdsFVcO6hvGk1VLtVNPu1LEwBPfIl0Oc3rt15vwmjyo",
-    "expire_date": "2024-10-10T17:23:38.305Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "nsubo5wm2brq4nw0n866a4t5yofwn9rq",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0eKC:AT-nPV7lP8Kt70bd8gKRx2n9O0MLnxQUzhOoBX8v5EA",
-    "expire_date": "2024-10-29T09:58:44.073Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "o78d0787rr5yqk6r1s1wi7k5riulbjui",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t8yy1:PS3iD2PPqmE-rkigyLR93m-MEVp4jVSJnQhV1CsWmP8",
-    "expire_date": "2024-11-21T09:38:17.701Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "o8o15cbgmz1u39aggizyvnjm35ne2s3d",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1tApbc:Pmx6S0xEifzKHt0PIsmAN3q9LzMKVWjhGnmyVL1yai0",
-    "expire_date": "2024-11-26T12:02:48.810Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "oi1qd3wi6i1hngc2qn4w89zy35izp1f7",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t3qLJ:Ut9c0XnkKNp36LnOXHVAV1Bfz3fmUdK8vnKIVMChf7c",
-    "expire_date": "2024-11-07T05:25:05.139Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "olsdumz5ztgg9sw6er0aulixfq3vbds3",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1t0eKC:AT-nPV7lP8Kt70bd8gKRx2n9O0MLnxQUzhOoBX8v5EA",
-    "expire_date": "2024-10-29T09:58:44.728Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "riplbtpnl2bz61engovfuxki30byg1s2",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1szLQ5:er0rH3-piBzyTMjzxbpc0iZueBebfekuSqDjpKiU9Qc",
-    "expire_date": "2024-10-25T19:35:25.143Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "vosd13jha5f17c90fxj4i5jvsmach1ov",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1sw4Rq:haP7KFdwE-H0DL2HlFSm2XDPI5YxdlR-6SwegaE0uiM",
-    "expire_date": "2024-10-16T18:51:42.334Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "yj1pbq60635l9ynhwi7x79za9xp155lo",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGll24h-U9DmDtevd4ACypTipEHcHSymgnZn3XiLCvuW4N17jQuIitDj9MoT04NIF3aHcqky1bOuCsifysE1Olfh5Pdq_gwwt9zUTomVlvCE9GlBBae0oUPAckDmlNBLN6BHd2Q-UBgv0ZYpmb51R4v0BEHI5Fw:1sl9WM:6TUZRiNQHbnn_DLn7Vn7RQXw-p1m5x4o06WFpBjk6_8",
-    "expire_date": "2024-09-16T16:03:14.909Z"
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 37,
-  "fields": {
-    "name": "Dhruvil",
-    "country_code": "",
-    "number": "+91 8866003020",
-    "whatsapp_country_code": "",
-    "whatsapp": "+91 8866003020",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": null,
-    "attached_washrooms": null,
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "",
-    "budget_max": "",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 38,
-  "fields": {
-    "name": "Pratik Thakkar",
-    "country_code": "",
-    "number": "+91 8758222401",
-    "whatsapp_country_code": "",
-    "whatsapp": "+91 8758222401",
-    "email": "pratik@squaresecondconsultants.com",
-    "profession": "Business",
-    "residence": "Riviera Blues",
-    "reference": "Dhruvil",
-    "why_buy_house": "Lifestyle upgrade",
-    "adults": 5,
-    "children": 2,
-    "senior_citizens": 2,
-    "current_residence_area": "1850",
-    "religious_preference": "maybe",
-    "workplace_area": "23.0120338|72.51075399999999",
-    "school_area": "23.0386593|72.5118581",
-    "preferred_locations": "23.0269804|72.4833787, 23.0557134|72.4686607, 23.1362081|72.54229629999999",
-    "decision_driven_by": "Choice driven",
-    "dependent_on_sale": "no",
-    "looking_since": "6_to_12_months",
-    "time_to_seal_deal": "30",
-    "unit_type": "Simplex, Duplex, Penthouse",
-    "bedrooms": "3_bhk, 4_bhk",
-    "attached_washrooms": "4",
-    "servant_room": "yes",
-    "puja_room": "yes",
-    "min_carpet_area": "2500",
-    "flats_per_floor": "Flexible",
-    "floor_preference": "13 to 20",
-    "private_elevator": "maybe",
-    "central_air_conditioning": "yes",
-    "min_parking_slots": "3",
-    "stack_parking": "maybe",
-    "property_age": "Upcoming 6 - 12 months",
-    "society_type": "Mid-sized gated community (120 to 300 units)",
-    "amenities": "gymnasium, indoor_swimming_pool, mini_theatre, co_d_working_space, jacuzzi",
-    "budget_min": "3",
-    "budget_max": "5",
-    "down_payment_percentage": "50",
-    "loan_approved_amount": "20000000",
-    "specific_needs": "NA",
-    "concerns": "NA"
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 39,
-  "fields": {
-    "name": "Selmon Bhai",
-    "country_code": "+91",
-    "number": "8899000099",
-    "whatsapp_country_code": "+91",
-    "whatsapp": "8899000099",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": "Lifestyle upgrade",
-    "adults": 5,
-    "children": 3,
-    "senior_citizens": 2,
-    "current_residence_area": "2500",
-    "religious_preference": "Not preferred",
-    "workplace_area": "23.0375943|72.5614923",
-    "school_area": "23.0386593|72.5118581",
-    "preferred_locations": "23.027614|72.4840917, 23.0557134|72.4686607, 23.011157|72.5630675",
-    "decision_driven_by": "Choice driven",
-    "dependent_on_sale": "no",
-    "looking_since": "6_to_12_months",
-    "time_to_seal_deal": "30",
-    "unit_type": "Simplex",
-    "bedrooms": "4_bhk, 5_bhk",
-    "attached_washrooms": "4",
-    "servant_room": "yes",
-    "puja_room": "no",
-    "min_carpet_area": "2000",
-    "flats_per_floor": "Flexible",
-    "floor_preference": "Flexible",
-    "private_elevator": "no",
-    "central_air_conditioning": "no",
-    "min_parking_slots": "3",
-    "stack_parking": "no",
-    "property_age": "0 to 12 months old",
-    "society_type": "Single block high end (70 - 100 units)",
-    "amenities": "massage_room, outdoor_swimming_pool, guest_rooms, indoor_swimming_pool, gazebo_sit_outs",
-    "budget_min": "0.1",
-    "budget_max": "5",
-    "down_payment_percentage": "80",
-    "loan_approved_amount": "77",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 40,
-  "fields": {
-    "name": "va",
-    "country_code": "",
-    "number": "+91 90877",
-    "whatsapp_country_code": "",
-    "whatsapp": "+91 90877",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": null,
-    "attached_washrooms": null,
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "",
-    "budget_max": "",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 41,
-  "fields": {
-    "name": "defasg",
-    "country_code": "",
-    "number": "+91",
-    "whatsapp_country_code": "",
-    "whatsapp": "+91",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": null,
-    "attached_washrooms": null,
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "1.5",
-    "budget_max": "",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 42,
-  "fields": {
-    "name": "awfr",
-    "country_code": "",
-    "number": "+91",
-    "whatsapp_country_code": "",
-    "whatsapp": "+91",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": null,
-    "attached_washrooms": null,
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "1.2",
-    "budget_max": "1.24",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 43,
-  "fields": {
-    "name": "fde",
-    "country_code": "+91",
-    "number": "0122222",
-    "whatsapp_country_code": "+91",
-    "whatsapp": "",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": null,
-    "attached_washrooms": null,
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "",
-    "budget_max": "",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 44,
-  "fields": {
-    "name": "gera",
-    "country_code": "+91",
-    "number": "1111111111",
-    "whatsapp_country_code": "+91",
-    "whatsapp": "",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": null,
-    "adults": 0,
-    "children": 0,
-    "senior_citizens": 0,
-    "current_residence_area": "12",
-    "religious_preference": null,
-    "workplace_area": "",
-    "school_area": "",
-    "preferred_locations": null,
-    "decision_driven_by": null,
-    "dependent_on_sale": null,
-    "looking_since": null,
-    "time_to_seal_deal": "",
-    "unit_type": "",
-    "bedrooms": "1_bhk",
-    "attached_washrooms": "1",
-    "servant_room": null,
-    "puja_room": null,
-    "min_carpet_area": "",
-    "flats_per_floor": null,
-    "floor_preference": null,
-    "private_elevator": null,
-    "central_air_conditioning": null,
-    "min_parking_slots": null,
-    "stack_parking": null,
-    "property_age": null,
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "",
-    "budget_max": "",
-    "down_payment_percentage": "",
-    "loan_approved_amount": "",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 45,
-  "fields": {
-    "name": "Salmon Bhai",
-    "country_code": "+91",
-    "number": "9054413199",
-    "whatsapp_country_code": "+91",
-    "whatsapp": "9054413199",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": "Lifestyle upgrade",
-    "adults": 5,
-    "children": 3,
-    "senior_citizens": 2,
-    "current_residence_area": "2500",
-    "religious_preference": "Not preferred",
-    "workplace_area": "23.0375943|72.5614923",
-    "school_area": "23.0386593|72.5118581",
-    "preferred_locations": "23.0047206|72.558553",
-    "decision_driven_by": "Choice driven",
-    "dependent_on_sale": "no",
-    "looking_since": "6_to_12_months",
-    "time_to_seal_deal": "30",
-    "unit_type": "Simplex",
-    "bedrooms": "2_bhk",
-    "attached_washrooms": "4",
-    "servant_room": "yes",
-    "puja_room": "no",
-    "min_carpet_area": "4500",
-    "flats_per_floor": "1 - 2",
-    "floor_preference": "Above 21",
-    "private_elevator": "yes",
-    "central_air_conditioning": "no",
-    "min_parking_slots": "3",
-    "stack_parking": "no",
-    "property_age": "0 to 12 months old",
-    "society_type": null,
-    "amenities": null,
-    "budget_min": "1",
-    "budget_max": "8",
-    "down_payment_percentage": "80",
-    "loan_approved_amount": "77",
-    "specific_needs": "",
-    "concerns": ""
-  }
-},
-{
-  "model": "ClientDetail.propertyinquiry",
-  "pk": 46,
-  "fields": {
-    "name": "Baba Siddqui",
-    "country_code": "+91",
-    "number": "8899000099",
-    "whatsapp_country_code": "+91",
-    "whatsapp": "8899000099",
-    "email": "",
-    "profession": "",
-    "residence": "",
-    "reference": "",
-    "why_buy_house": "Lifestyle upgrade",
-    "adults": 5,
-    "children": 3,
-    "senior_citizens": 2,
-    "current_residence_area": "2500",
-    "religious_preference": "Not preferred",
-    "workplace_area": "23.0375943|72.5614923",
-    "school_area": "23.0386593|72.5118581",
-    "preferred_locations": "23.027614|72.4840917, 23.0557134|72.4686607, 23.0208124|72.5125927",
-    "decision_driven_by": "Choice driven",
-    "dependent_on_sale": "no",
-    "looking_since": "6_to_12_months",
-    "time_to_seal_deal": "30",
-    "unit_type": "Simplex, Duplex, Triplex, Penthouse",
-    "bedrooms": "4_bhk, 5_bhk",
-    "attached_washrooms": "4",
-    "servant_room": "yes",
-    "puja_room": "no",
-    "min_carpet_area": "2500",
-    "flats_per_floor": "1 - 2",
-    "floor_preference": "Above 21",
-    "private_elevator": "yes",
-    "central_air_conditioning": "no",
-    "min_parking_slots": "3",
-    "stack_parking": "no",
-    "property_age": "0 to 12 months old",
-    "society_type": "Single block high end (70 - 100 units)",
-    "amenities": "massage_room, outdoor_swimming_pool, guest_rooms, indoor_swimming_pool, gazebo_sit_outs",
-    "budget_min": "0.5",
-    "budget_max": "10",
-    "down_payment_percentage": "80",
-    "loan_approved_amount": "77",
-    "specific_needs": "",
-    "concerns": ""
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tBpHX:9H9seaS8LDtDKtplcKJDi9G60aW2mj63BDrT-3NfELQ",
+    "expire_date": "2024-11-29T05:54:11.581Z"
   }
 },
 {
   "model": "Property.buildingdetails",
-  "pk": 9576,
+  "pk": 1,
   "fields": {
     "building_id": "1000",
-    "group_name": "Abhijeet Developers",
-    "head_image": "property/Screenshot_2024-09-19_at_4.12.43_PM.png",
-    "sec_image_1": "property/Screenshot_2024-09-19_at_4_ymDKLsI.12.43_PM.png",
+    "group_name": "Shafalya Aaron Dharnidhar",
+    "head_image": "",
+    "sec_image_1": "",
     "sec_image_2": "",
     "sec_image_3": "",
     "sec_image_4": "",
-    "brochure_1": "brochure/Dont_Make_Me_Think_-_A_Common_Sense_Approach_To_Web_Usability_Second_Edition_2006.pdf",
+    "brochure_1": "",
     "brochure_2": "",
-    "year_of_establishment": "1987",
-    "no_of_projects_delivered": "25",
-    "key_projects_1": "Satyanam 1",
-    "key_projects_2": "Satyanam 2",
-    "key_projects_3": "Namasat 1",
-    "key_projects_4": "Namasat 2",
-    "key_projects_5": "Namasat 3",
-    "key_promoters_1": "Vipul Patel",
-    "key_promoters_2": "Sailesh Patel",
-    "key_promoters_3": "Ankit Desai",
-    "key_promoters_4": "Tarun Vats",
-    "key_promoters_5": "Rahul Desai",
-    "number_country_code": "",
-    "name": "Poojan Patel",
-    "number": "7473829109",
-    "email": "dsds@dad.com",
-    "alternate_name": "",
-    "alternate_number_country_code": "",
-    "alternate_number": "",
-    "alternate_email": "",
-    "project_id": null,
-    "project_name": "Abhishek Upvan",
-    "location_of_project": "Besides SOBO city center",
-    "area_of_project": "South Bopal",
-    "google_pin_lat": "23.0319231",
-    "google_pin_lng": "72.5187454",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "3000",
-    "type_of_apartments": "4_bhk, 5_bhk",
-    "special_amenity_1": "External lift",
-    "special_amenity_2": "Helipad access",
-    "special_amenity_3": "Bulletproof glasses",
-    "special_amenity_4": "Scary house",
-    "possession_by": "",
-    "age_of_property_by_developer": "12-2024",
-    "age_of_property_rera": "06-2025",
-    "rera_approved": true,
-    "plot_area": "5000",
-    "architect": "Apurv Amin",
-    "construction_company": "Jaydeep contractor",
-    "no_of_blocks": 5,
-    "no_of_units": 300,
-    "no_of_floors": 15,
-    "no_of_basements": 2,
-    "central_air_conditioning": true,
-    "spiritual_or_religious_attraction": "No",
-    "type_of_parking": "Hydraulic, Hydraulic with Valet",
-    "plc_garden": "100",
-    "plc_road_facing": "120",
-    "plc_corner": "130",
-    "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': '15'}, {'floor': 2, 'price': '30'}, {'floor': 3, 'price': '30'}, {'floor': 4, 'price': '30'}, {'floor': 5, 'price': '30'}, {'floor': 6, 'price': '60'}, {'floor': 7, 'price': '60'}, {'floor': 8, 'price': '60'}, {'floor': 9, 'price': '100'}, {'floor': 10, 'price': '100'}, {'floor': 11, 'price': '100'}, {'floor': 12, 'price': '100'}, {'floor': 13, 'price': '100'}, {'floor': 14, 'price': '130'}, {'floor': 15, 'price': '200'}]",
-    "development_charges": "400",
-    "advance_maintenance": "20000",
-    "maintenance_deposit": "200",
-    "other_specific_expenses": "",
-    "sale_deed_value": "70",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "18",
-    "loan_availability": true,
-    "remarks": "",
-    "active": false
-  }
-},
-{
-  "model": "Property.buildingdetails",
-  "pk": 9577,
-  "fields": {
-    "building_id": "1001",
-    "group_name": "Swati Procon",
-    "head_image": "property/Screenshot_2024-09-19_at_4_tTzyDeJ.12.43_PM.png",
-    "sec_image_1": "property/sec_1_mVABwPo.jpg",
-    "sec_image_2": "property/sec_2_9vAexsa.jpg",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "brochure/amd-bom_s_Mh64RvD.pdf",
-    "brochure_2": "",
-    "year_of_establishment": "2010",
-    "no_of_projects_delivered": "12",
-    "key_projects_1": "Swati Senor",
-    "key_projects_2": "Swati Crimson",
-    "key_projects_3": "Swati Clover",
-    "key_projects_4": "Swati Parkside",
+    "year_of_establishment": "2012",
+    "no_of_projects_delivered": "10",
+    "key_projects_1": "Iconic - Shyamal",
+    "key_projects_2": "Unicus - Shyamal",
+    "key_projects_3": "Vertis",
+    "key_projects_4": "Renown",
     "key_projects_5": "",
-    "key_promoters_1": "Ashok Agrawal",
-    "key_promoters_2": "Saket Agrawal",
-    "key_promoters_3": "Maheshraj",
+    "key_promoters_1": "Bakabhai Patel",
+    "key_promoters_2": "Hareshbhai Patel",
+    "key_promoters_3": "",
     "key_promoters_4": "",
     "key_promoters_5": "",
     "number_country_code": "+91",
-    "name": "Vivek Joshi",
-    "number": "1111111111",
-    "email": "",
-    "alternate_name": "Payal Waghela",
+    "name": "Nirav Chavda",
+    "number": "9574587989",
+    "email": "marketing.theverity@gmail.com",
+    "alternate_name": "",
     "alternate_number_country_code": "+91",
-    "alternate_number": "1111111111",
+    "alternate_number": "",
     "alternate_email": "",
     "project_id": null,
-    "project_name": "Swati Senor",
-    "location_of_project": "Bopal Ambli road,near overhead tank",
-    "area_of_project": "Ambli",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "10000",
-    "type_of_apartments": "5_bhk",
-    "special_amenity_1": "Basketball court",
+    "project_name": "The Verity",
+    "location_of_project": "Opp. StarBazar",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "type_of_project": "Mix",
+    "per_sqft_rate_saleable": "7500",
+    "type_of_apartments": "4_bhk, 5_bhk",
+    "special_amenity_1": "",
     "special_amenity_2": "",
     "special_amenity_3": "",
     "special_amenity_4": "",
     "possession_by": "",
-    "age_of_property_by_developer": "06-2024",
-    "age_of_property_rera": "06-2026",
+    "age_of_property_by_developer": "12-2025",
+    "age_of_property_rera": "03-2026",
     "rera_approved": true,
-    "plot_area": "5500",
-    "architect": "ADS",
-    "construction_company": "In house",
-    "no_of_blocks": 1,
-    "no_of_units": 54,
-    "no_of_floors": 20,
-    "no_of_basements": 3,
-    "central_air_conditioning": true,
-    "spiritual_or_religious_attraction": "No",
+    "plot_area": "8000",
+    "architect": "ADS - Mohit Gajjar",
+    "construction_company": "Shakti Infra",
+    "no_of_blocks": "2",
+    "no_of_units": "113",
+    "no_of_floors": "18",
+    "no_of_basements": "3",
+    "central_air_conditioning": "Only ducting",
+    "spiritual_or_religious_attraction": "Yes",
     "type_of_parking": "Normal",
     "plc_garden": "0",
-    "plc_road_facing": "200",
+    "plc_road_facing": "0",
     "plc_corner": "0",
     "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '0'}, {'floor': 3, 'price': '0'}, {'floor': 4, 'price': '0'}, {'floor': 5, 'price': '0'}, {'floor': 6, 'price': '0'}, {'floor': 7, 'price': '0'}, {'floor': 8, 'price': '0'}, {'floor': 9, 'price': '100'}, {'floor': 10, 'price': '200'}, {'floor': 11, 'price': '300'}, {'floor': 12, 'price': '400'}, {'floor': 13, 'price': '500'}, {'floor': 14, 'price': '600'}, {'floor': 15, 'price': '700'}, {'floor': 16, 'price': '800'}, {'floor': 17, 'price': '900'}, {'floor': 18, 'price': '1000'}, {'floor': 19, 'price': '1100'}, {'floor': 20, 'price': '1200'}]",
-    "development_charges": "900",
-    "advance_maintenance": "250",
-    "maintenance_deposit": "250",
+    "floor_rise": "[{'floor': 1, 'price': ''}, {'floor': 2, 'price': ''}, {'floor': 3, 'price': ''}, {'floor': 4, 'price': ''}, {'floor': 5, 'price': ''}, {'floor': 6, 'price': ''}, {'floor': 7, 'price': ''}, {'floor': 8, 'price': ''}, {'floor': 9, 'price': ''}, {'floor': 10, 'price': ''}, {'floor': 11, 'price': ''}, {'floor': 12, 'price': ''}, {'floor': 13, 'price': ''}, {'floor': 14, 'price': ''}, {'floor': 15, 'price': ''}, {'floor': 16, 'price': ''}, {'floor': 17, 'price': ''}, {'floor': 18, 'price': ''}]",
+    "development_charges": "950",
+    "advance_maintenance": "50",
+    "maintenance_deposit": "100",
     "other_specific_expenses": "0",
-    "sale_deed_value": "70",
+    "sale_deed_value": "60",
     "sale_deed_value_min": "0",
     "sale_deed_value_max": "0",
     "gst_applicable": "5",
@@ -784,10 +128,10 @@
 },
 {
   "model": "Property.buildingdetails",
-  "pk": 9578,
+  "pk": 2,
   "fields": {
-    "building_id": "1002",
-    "group_name": "Vasupujiya",
+    "building_id": "1001",
+    "group_name": "Shaligram",
     "head_image": "",
     "sec_image_1": "",
     "sec_image_2": "",
@@ -795,155 +139,77 @@
     "sec_image_4": "",
     "brochure_1": "",
     "brochure_2": "",
-    "year_of_establishment": "1995",
-    "no_of_projects_delivered": "25",
-    "key_projects_1": "fvbfd",
-    "key_projects_2": "eab",
-    "key_projects_3": "",
-    "key_projects_4": "",
-    "key_projects_5": "",
-    "key_promoters_1": "eag",
-    "key_promoters_2": "eagr",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
+    "year_of_establishment": "2003",
+    "no_of_projects_delivered": "30",
+    "key_projects_1": "Shilp Shaligram",
+    "key_projects_2": "Shaligram Prime",
+    "key_projects_3": "Shaligram Corporate",
+    "key_projects_4": "Shaligram Lakeview",
+    "key_projects_5": "Shaligram Luxuria",
+    "key_promoters_1": "Gopal Patel",
+    "key_promoters_2": "Ramesh Patel",
+    "key_promoters_3": "Kamlesh Patel",
+    "key_promoters_4": "Sarth Antara",
     "key_promoters_5": "",
     "number_country_code": "+91",
-    "name": "Divyam shah",
-    "number": "9054413199",
-    "email": "divyamshah1234@gmail.com",
+    "name": "Vedantbhai",
+    "number": "9909067723",
+    "email": "info@shaligrambuildcon.com",
     "alternate_name": "",
     "alternate_number_country_code": "+91",
     "alternate_number": "",
     "alternate_email": "",
     "project_id": null,
-    "project_name": "Siddhi Sadhan",
-    "location_of_project": "Pankaj society, Bhattha, Paldi, Ahmedabad 380007",
-    "area_of_project": "Paldi",
-    "google_pin_lat": "23.0047206",
-    "google_pin_lng": "72.558553",
+    "project_name": "Shaligram Sky",
+    "location_of_project": "Opp. Karnavati Club",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.020339773371",
+    "google_pin_lng": "72.50776350331884",
     "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "2500",
-    "type_of_apartments": "3_bhk",
+    "per_sqft_rate_saleable": "8200",
+    "type_of_apartments": "4_bhk",
     "special_amenity_1": "",
     "special_amenity_2": "",
     "special_amenity_3": "",
     "special_amenity_4": "",
     "possession_by": "",
-    "age_of_property_by_developer": "10-2024",
-    "age_of_property_rera": "10-2024",
+    "age_of_property_by_developer": "06-2028",
+    "age_of_property_rera": "06-2029",
     "rera_approved": true,
-    "plot_area": "25000",
-    "architect": "Vasupujiya",
-    "construction_company": "Vasupujiya",
-    "no_of_blocks": 1,
-    "no_of_units": 21,
-    "no_of_floors": 7,
-    "no_of_basements": 1,
-    "central_air_conditioning": false,
+    "plot_area": "7000",
+    "architect": "Bhaskar Nerula",
+    "construction_company": "In house",
+    "no_of_blocks": "3",
+    "no_of_units": "114",
+    "no_of_floors": "21",
+    "no_of_basements": "1",
+    "central_air_conditioning": "Only ducting",
     "spiritual_or_religious_attraction": "Yes",
     "type_of_parking": "Normal",
-    "plc_garden": "200",
+    "plc_garden": "0",
     "plc_road_facing": "0",
     "plc_corner": "0",
     "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': '100'}, {'floor': 2, 'price': '100'}, {'floor': 3, 'price': '100'}, {'floor': 4, 'price': '100'}, {'floor': 5, 'price': '100'}, {'floor': 6, 'price': '100'}, {'floor': 7, 'price': '100'}]",
-    "development_charges": "200",
-    "advance_maintenance": "200",
-    "maintenance_deposit": "200",
-    "other_specific_expenses": "200",
-    "sale_deed_value": "70",
+    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '0'}, {'floor': 3, 'price': '0'}, {'floor': 4, 'price': '0'}, {'floor': 5, 'price': '0'}, {'floor': 6, 'price': '0'}, {'floor': 7, 'price': '0'}, {'floor': 8, 'price': '0'}, {'floor': 9, 'price': '0'}, {'floor': 10, 'price': '0'}, {'floor': 11, 'price': '50'}, {'floor': 12, 'price': '100'}, {'floor': 13, 'price': '150'}, {'floor': 14, 'price': '200'}, {'floor': 15, 'price': '250'}, {'floor': 16, 'price': '300'}, {'floor': 17, 'price': '350'}, {'floor': 18, 'price': '400'}, {'floor': 19, 'price': '450'}, {'floor': 20, 'price': '500'}, {'floor': 21, 'price': '550'}]",
+    "development_charges": "750",
+    "advance_maintenance": "40",
+    "maintenance_deposit": "160",
+    "other_specific_expenses": "0",
+    "sale_deed_value": "60",
     "sale_deed_value_min": "0",
     "sale_deed_value_max": "0",
-    "gst_applicable": "12",
+    "gst_applicable": "5",
     "loan_availability": true,
-    "remarks": "",
-    "active": false
-  }
-},
-{
-  "model": "Property.buildingdetails",
-  "pk": 9579,
-  "fields": {
-    "building_id": "1003",
-    "group_name": "Samprat Group",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "",
-    "brochure_2": "",
-    "year_of_establishment": "2021",
-    "no_of_projects_delivered": "10",
-    "key_projects_1": "",
-    "key_projects_2": "",
-    "key_projects_3": "",
-    "key_projects_4": "",
-    "key_projects_5": "",
-    "key_promoters_1": "",
-    "key_promoters_2": "",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
-    "key_promoters_5": "",
-    "number_country_code": "+91",
-    "name": "Parthil",
-    "number": "8888888888",
-    "email": "",
-    "alternate_name": "",
-    "alternate_number_country_code": "+91",
-    "alternate_number": "",
-    "alternate_email": "",
-    "project_id": null,
-    "project_name": "Samprat Residency 2",
-    "location_of_project": "Opp Parivar Society",
-    "area_of_project": "Bodekdev",
-    "google_pin_lat": "23.0319185",
-    "google_pin_lng": "72.518763",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "3000",
-    "type_of_apartments": "5_bhk",
-    "special_amenity_1": "",
-    "special_amenity_2": "",
-    "special_amenity_3": "",
-    "special_amenity_4": "",
-    "possession_by": "",
-    "age_of_property_by_developer": "02-2019",
-    "age_of_property_rera": "03-2024",
-    "rera_approved": true,
-    "plot_area": "4000",
-    "architect": "Hitesh Patel",
-    "construction_company": "Vikas",
-    "no_of_blocks": 1,
-    "no_of_units": 22,
-    "no_of_floors": 11,
-    "no_of_basements": 1,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "Yes",
-    "type_of_parking": "Normal",
-    "plc_garden": "100",
-    "plc_road_facing": "200",
-    "plc_corner": "300",
-    "plc_others": "400",
-    "floor_rise": "[{'floor': 1, 'price': '0'}, {'floor': 2, 'price': '30'}, {'floor': 3, 'price': '50'}, {'floor': 4, 'price': '70'}, {'floor': 5, 'price': '100'}, {'floor': 6, 'price': '130'}, {'floor': 7, 'price': '150'}, {'floor': 8, 'price': '180'}, {'floor': 9, 'price': '210'}, {'floor': 10, 'price': '230'}, {'floor': 11, 'price': '250'}]",
-    "development_charges": "1000",
-    "advance_maintenance": "200",
-    "maintenance_deposit": "100",
-    "other_specific_expenses": "200",
-    "sale_deed_value": "20",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "10",
-    "loan_availability": false,
     "remarks": "",
     "active": true
   }
 },
 {
   "model": "Property.buildingdetails",
-  "pk": 9580,
+  "pk": 3,
   "fields": {
-    "building_id": "1004",
-    "group_name": "segr",
+    "building_id": "1002",
+    "group_name": "Emberlynn",
     "head_image": "",
     "sec_image_1": "",
     "sec_image_2": "",
@@ -951,14 +217,170 @@
     "sec_image_4": "",
     "brochure_1": "",
     "brochure_2": "",
-    "year_of_establishment": "",
-    "no_of_projects_delivered": "",
+    "year_of_establishment": "2024",
+    "no_of_projects_delivered": "5",
     "key_projects_1": "",
     "key_projects_2": "",
     "key_projects_3": "",
     "key_projects_4": "",
     "key_projects_5": "",
-    "key_promoters_1": "",
+    "key_promoters_1": "Krunal Sanghani",
+    "key_promoters_2": "Naresh Thakkar",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "Shrutika Jajtap",
+    "number": "9574600300",
+    "email": "emberlynnbuildconllp@gmail.com",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "Emberlynn Two",
+    "location_of_project": "Prernatirth Derasar Road.",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "type_of_project": "Mix",
+    "per_sqft_rate_saleable": "9000",
+    "type_of_apartments": "4_bhk, 5_bhk",
+    "special_amenity_1": "",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "12-2026",
+    "age_of_property_rera": "03-2029",
+    "rera_approved": true,
+    "plot_area": "8100",
+    "architect": "Harshad Mistry",
+    "construction_company": "In house",
+    "no_of_blocks": "3",
+    "no_of_units": "1",
+    "no_of_floors": "12",
+    "no_of_basements": "2",
+    "central_air_conditioning": "Only ducting",
+    "spiritual_or_religious_attraction": "Yes",
+    "type_of_parking": "Normal",
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': ''}, {'floor': 2, 'price': ''}, {'floor': 3, 'price': ''}, {'floor': 4, 'price': ''}, {'floor': 5, 'price': ''}, {'floor': 6, 'price': ''}, {'floor': 7, 'price': ''}, {'floor': 8, 'price': ''}, {'floor': 9, 'price': ''}, {'floor': 10, 'price': ''}, {'floor': 11, 'price': ''}, {'floor': 12, 'price': ''}]",
+    "development_charges": "800",
+    "advance_maintenance": "75",
+    "maintenance_deposit": "75",
+    "other_specific_expenses": "0",
+    "sale_deed_value": "60",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "5",
+    "loan_availability": true,
+    "remarks": "3500 for personal foyer per sq ft on carpet,avg. 225 to 300 sq ft foyer area",
+    "active": true
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 4,
+  "fields": {
+    "building_id": "1003",
+    "group_name": "Emberlynn",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "2024",
+    "no_of_projects_delivered": "5",
+    "key_projects_1": "",
+    "key_projects_2": "",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "Krunal Sanghani",
+    "key_promoters_2": "Naresh Thakkar",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "Shurtika Jagtap",
+    "number": "9574600300",
+    "email": "emberlynnbuildconllp@gmail.com",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "Emberlynn 3",
+    "location_of_project": "Nr. Prernatirth Derasar",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.0181627",
+    "google_pin_lng": "72.5163451",
+    "type_of_project": "Residential",
+    "per_sqft_rate_saleable": "8500",
+    "type_of_apartments": "4_bhk",
+    "special_amenity_1": "",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "12-2025",
+    "age_of_property_rera": "03-2027",
+    "rera_approved": true,
+    "plot_area": "1700",
+    "architect": "Harshad Mistry",
+    "construction_company": "In House",
+    "no_of_blocks": "1",
+    "no_of_units": "22",
+    "no_of_floors": "12",
+    "no_of_basements": "2",
+    "central_air_conditioning": "Only ducting",
+    "spiritual_or_religious_attraction": "Yes",
+    "type_of_parking": "Hydraulic",
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': ''}, {'floor': 2, 'price': ''}, {'floor': 3, 'price': ''}, {'floor': 4, 'price': ''}, {'floor': 5, 'price': ''}, {'floor': 6, 'price': ''}, {'floor': 7, 'price': ''}, {'floor': 8, 'price': ''}, {'floor': 9, 'price': ''}, {'floor': 10, 'price': ''}, {'floor': 11, 'price': ''}, {'floor': 12, 'price': ''}]",
+    "development_charges": "800",
+    "advance_maintenance": "75",
+    "maintenance_deposit": "75",
+    "other_specific_expenses": "0",
+    "sale_deed_value": "60",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "5",
+    "loan_availability": true,
+    "remarks": "3500 for personal foyer on carpet",
+    "active": true
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 5,
+  "fields": {
+    "building_id": "1004",
+    "group_name": "Avni",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "2001",
+    "no_of_projects_delivered": "16",
+    "key_projects_1": "",
+    "key_projects_2": "",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "Tejil Patel",
     "key_promoters_2": "",
     "key_promoters_3": "",
     "key_promoters_4": "",
@@ -972,271 +394,115 @@
     "alternate_number": "",
     "alternate_email": "",
     "project_id": null,
-    "project_name": "erg",
-    "location_of_project": "aerg",
-    "area_of_project": "aegr",
-    "google_pin_lat": "23.0096896",
-    "google_pin_lng": "72.5581824",
+    "project_name": "Avni Amrut",
+    "location_of_project": "Prernatirth Derasar",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.018537532385576",
+    "google_pin_lng": "72.51657726903643",
     "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "1200",
-    "type_of_apartments": "2_bhk",
+    "per_sqft_rate_saleable": "8250",
+    "type_of_apartments": "4_bhk",
     "special_amenity_1": "",
     "special_amenity_2": "",
     "special_amenity_3": "",
     "special_amenity_4": "",
     "possession_by": "",
-    "age_of_property_by_developer": "10-2024",
-    "age_of_property_rera": "",
-    "rera_approved": false,
-    "plot_area": "",
-    "architect": "aerg",
-    "construction_company": "",
-    "no_of_blocks": 2,
-    "no_of_units": 2,
-    "no_of_floors": 2,
-    "no_of_basements": 2,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "",
-    "type_of_parking": null,
+    "age_of_property_by_developer": "06-2025",
+    "age_of_property_rera": "06-2027",
+    "rera_approved": true,
+    "plot_area": "2052",
+    "architect": "Saurabh Verma",
+    "construction_company": "Chavda",
+    "no_of_blocks": "1",
+    "no_of_units": "22",
+    "no_of_floors": "12",
+    "no_of_basements": "1",
+    "central_air_conditioning": "No",
+    "spiritual_or_religious_attraction": "Yes",
+    "type_of_parking": "Hydraulic",
+    "plc_garden": "0",
+    "plc_road_facing": "0",
+    "plc_corner": "0",
+    "plc_others": "0",
+    "floor_rise": "[{'floor': 1, 'price': ''}, {'floor': 2, 'price': ''}, {'floor': 3, 'price': ''}, {'floor': 4, 'price': ''}, {'floor': 5, 'price': ''}, {'floor': 6, 'price': ''}, {'floor': 7, 'price': ''}, {'floor': 8, 'price': ''}, {'floor': 9, 'price': ''}, {'floor': 10, 'price': ''}, {'floor': 11, 'price': ''}, {'floor': 12, 'price': ''}]",
+    "development_charges": "800",
+    "advance_maintenance": "72",
+    "maintenance_deposit": "100",
+    "other_specific_expenses": "0",
+    "sale_deed_value": "65",
+    "sale_deed_value_min": "0",
+    "sale_deed_value_max": "0",
+    "gst_applicable": "5",
+    "loan_availability": true,
+    "remarks": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.buildingdetails",
+  "pk": 6,
+  "fields": {
+    "building_id": "1005",
+    "group_name": "Ratnanjali",
+    "head_image": "",
+    "sec_image_1": "",
+    "sec_image_2": "",
+    "sec_image_3": "",
+    "sec_image_4": "",
+    "brochure_1": "",
+    "brochure_2": "",
+    "year_of_establishment": "2010",
+    "no_of_projects_delivered": "5",
+    "key_projects_1": "Ratnanjali Square",
+    "key_projects_2": "Ratnanjali Soliatire",
+    "key_projects_3": "",
+    "key_projects_4": "",
+    "key_projects_5": "",
+    "key_promoters_1": "Saiyam Shah",
+    "key_promoters_2": "",
+    "key_promoters_3": "",
+    "key_promoters_4": "",
+    "key_promoters_5": "",
+    "number_country_code": "+91",
+    "name": "Miteshbhai",
+    "number": "9558770040",
+    "email": "ratnanjaliskyline@gmail.com",
+    "alternate_name": "",
+    "alternate_number_country_code": "+91",
+    "alternate_number": "",
+    "alternate_email": "",
+    "project_id": null,
+    "project_name": "Hastinapur",
+    "location_of_project": "Nr. Prernatirth Derasar",
+    "area_of_project": "Satellite",
+    "google_pin_lat": "23.016514542450096",
+    "google_pin_lng": "72.51511292852818",
+    "type_of_project": "Mix",
+    "per_sqft_rate_saleable": "",
+    "type_of_apartments": "3_bhk, 4_bhk",
+    "special_amenity_1": "Jain Derasar",
+    "special_amenity_2": "",
+    "special_amenity_3": "",
+    "special_amenity_4": "",
+    "possession_by": "",
+    "age_of_property_by_developer": "12-2025",
+    "age_of_property_rera": "06-2025",
+    "rera_approved": true,
+    "plot_area": "15374",
+    "architect": "Harshad Mistry",
+    "construction_company": "Setu Infrastructre",
+    "no_of_blocks": "5",
+    "no_of_units": "176",
+    "no_of_floors": "13",
+    "no_of_basements": "1",
+    "central_air_conditioning": "No",
+    "spiritual_or_religious_attraction": "Yes",
+    "type_of_parking": "Normal",
     "plc_garden": "0",
     "plc_road_facing": "0",
     "plc_corner": "0",
     "plc_others": "0",
     "floor_rise": "",
-    "development_charges": "20",
-    "advance_maintenance": "20",
-    "maintenance_deposit": "20",
-    "other_specific_expenses": "20",
-    "sale_deed_value": "20",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "20",
-    "loan_availability": false,
-    "remarks": "",
-    "active": false
-  }
-},
-{
-  "model": "Property.buildingdetails",
-  "pk": 9581,
-  "fields": {
-    "building_id": "1005",
-    "group_name": "Adani Realty",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "",
-    "brochure_2": "",
-    "year_of_establishment": "2010",
-    "no_of_projects_delivered": "",
-    "key_projects_1": "Adani Water Lily",
-    "key_projects_2": "Adani La Marina",
-    "key_projects_3": "Adani The North Park",
-    "key_projects_4": "Adani The Meadows",
-    "key_projects_5": "Adani Elysium",
-    "key_promoters_1": "Pranav Adani",
-    "key_promoters_2": "",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
-    "key_promoters_5": "",
-    "number_country_code": "+91",
-    "name": "Yash Sharma",
-    "number": "7227921211",
-    "email": "yash.sharma1@adani.com",
-    "alternate_name": "Rushit Joshi",
-    "alternate_number_country_code": "+91",
-    "alternate_number": "7227922287",
-    "alternate_email": "rushit.joshi@adani.com",
-    "project_id": null,
-    "project_name": "Aster Neo",
-    "location_of_project": "Near Vaishnodevi",
-    "area_of_project": "Adani Shantigram",
-    "google_pin_lat": "23.1643688",
-    "google_pin_lng": "72.54164089999999",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "5400",
-    "type_of_apartments": "2_bhk",
-    "special_amenity_1": "Infinity swimming pool",
-    "special_amenity_2": "Box cricket",
-    "special_amenity_3": "Smart homes",
-    "special_amenity_4": "",
-    "possession_by": "",
-    "age_of_property_by_developer": "06-2025",
-    "age_of_property_rera": "09-2025",
-    "rera_approved": true,
-    "plot_area": "19000",
-    "architect": "NA",
-    "construction_company": "PSP",
-    "no_of_blocks": 11,
-    "no_of_units": 968,
-    "no_of_floors": 22,
-    "no_of_basements": 2,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "Yes",
-    "type_of_parking": "Normal",
-    "plc_garden": "0",
-    "plc_road_facing": "0",
-    "plc_corner": "0",
-    "plc_others": "157",
-    "floor_rise": "[{'floor': 1, 'price': '157'}, {'floor': 2, 'price': '157'}, {'floor': 3, 'price': '157'}, {'floor': 4, 'price': '157'}, {'floor': 5, 'price': '157'}, {'floor': 6, 'price': '157'}, {'floor': 7, 'price': '157'}, {'floor': 8, 'price': '157'}, {'floor': 9, 'price': '157'}, {'floor': 10, 'price': '157'}, {'floor': 11, 'price': '157'}, {'floor': 12, 'price': '157'}, {'floor': 13, 'price': '157'}, {'floor': 14, 'price': '157'}, {'floor': 15, 'price': '157'}, {'floor': 16, 'price': '157'}, {'floor': 17, 'price': '157'}, {'floor': 18, 'price': '157'}, {'floor': 19, 'price': '157'}, {'floor': 20, 'price': '157'}, {'floor': 21, 'price': '157'}, {'floor': 22, 'price': '157'}]",
-    "development_charges": "150",
-    "advance_maintenance": "0",
-    "maintenance_deposit": "110",
-    "other_specific_expenses": "106",
-    "sale_deed_value": "100",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "5",
-    "loan_availability": false,
-    "remarks": "",
-    "active": true
-  }
-},
-{
-  "model": "Property.buildingdetails",
-  "pk": 9582,
-  "fields": {
-    "building_id": "1006",
-    "group_name": "sdv",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "",
-    "brochure_2": "",
-    "year_of_establishment": "",
-    "no_of_projects_delivered": "",
-    "key_projects_1": "",
-    "key_projects_2": "",
-    "key_projects_3": "",
-    "key_projects_4": "",
-    "key_projects_5": "",
-    "key_promoters_1": "",
-    "key_promoters_2": "",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
-    "key_promoters_5": "",
-    "number_country_code": "+91",
-    "name": "",
-    "number": "",
-    "email": "",
-    "alternate_name": "",
-    "alternate_number_country_code": "+91",
-    "alternate_number": "",
-    "alternate_email": "",
-    "project_id": null,
-    "project_name": "fve",
-    "location_of_project": "regq",
-    "area_of_project": "aevrg",
-    "google_pin_lat": "22.2953472",
-    "google_pin_lng": "73.1774976",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "12",
-    "type_of_apartments": "2_bhk",
-    "special_amenity_1": "",
-    "special_amenity_2": "",
-    "special_amenity_3": "",
-    "special_amenity_4": "",
-    "possession_by": "",
-    "age_of_property_by_developer": "11-2024",
-    "age_of_property_rera": "",
-    "rera_approved": false,
-    "plot_area": "",
-    "architect": "dva",
-    "construction_company": "",
-    "no_of_blocks": 1,
-    "no_of_units": 1,
-    "no_of_floors": 1,
-    "no_of_basements": 1,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "",
-    "type_of_parking": null,
-    "plc_garden": "0",
-    "plc_road_facing": "0",
-    "plc_corner": "0",
-    "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': '20'}]",
-    "development_charges": "1",
-    "advance_maintenance": "1",
-    "maintenance_deposit": "1",
-    "other_specific_expenses": "1",
-    "sale_deed_value": "1",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "1",
-    "loan_availability": false,
-    "remarks": "",
-    "active": false
-  }
-},
-{
-  "model": "Property.buildingdetails",
-  "pk": 9583,
-  "fields": {
-    "building_id": "1007",
-    "group_name": "esgr",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "",
-    "brochure_2": "",
-    "year_of_establishment": "",
-    "no_of_projects_delivered": "",
-    "key_projects_1": "",
-    "key_projects_2": "",
-    "key_projects_3": "",
-    "key_projects_4": "",
-    "key_projects_5": "",
-    "key_promoters_1": "",
-    "key_promoters_2": "",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
-    "key_promoters_5": "",
-    "number_country_code": "+91",
-    "name": "",
-    "number": "",
-    "email": "",
-    "alternate_name": "",
-    "alternate_number_country_code": "+91",
-    "alternate_number": "",
-    "alternate_email": "",
-    "project_id": null,
-    "project_name": "aerg",
-    "location_of_project": "erga",
-    "area_of_project": "erag",
-    "google_pin_lat": "22.2953472",
-    "google_pin_lng": "73.1774976",
-    "type_of_project": "Commercial",
-    "per_sqft_rate_saleable": "",
-    "type_of_apartments": "2_bhk",
-    "special_amenity_1": "",
-    "special_amenity_2": "",
-    "special_amenity_3": "",
-    "special_amenity_4": "",
-    "possession_by": "",
-    "age_of_property_by_developer": "11-2024",
-    "age_of_property_rera": "",
-    "rera_approved": false,
-    "plot_area": "",
-    "architect": "arf",
-    "construction_company": "",
-    "no_of_blocks": 1,
-    "no_of_units": 1,
-    "no_of_floors": 1,
-    "no_of_basements": 1,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "",
-    "type_of_parking": null,
-    "plc_garden": "0",
-    "plc_road_facing": "0",
-    "plc_corner": "0",
-    "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': ''}]",
     "development_charges": "",
     "advance_maintenance": "",
     "maintenance_deposit": "",
@@ -1251,331 +517,63 @@
   }
 },
 {
-  "model": "Property.buildingdetails",
-  "pk": 9584,
-  "fields": {
-    "building_id": "1008",
-    "group_name": "szvd",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
-    "sec_image_3": "",
-    "sec_image_4": "",
-    "brochure_1": "",
-    "brochure_2": "",
-    "year_of_establishment": "",
-    "no_of_projects_delivered": "",
-    "key_projects_1": "",
-    "key_projects_2": "",
-    "key_projects_3": "",
-    "key_projects_4": "",
-    "key_projects_5": "",
-    "key_promoters_1": "",
-    "key_promoters_2": "",
-    "key_promoters_3": "",
-    "key_promoters_4": "",
-    "key_promoters_5": "",
-    "number_country_code": "+91",
-    "name": "",
-    "number": "",
-    "email": "",
-    "alternate_name": "",
-    "alternate_number_country_code": "+91",
-    "alternate_number": "",
-    "alternate_email": "",
-    "project_id": null,
-    "project_name": "wa",
-    "location_of_project": "ave",
-    "area_of_project": "av",
-    "google_pin_lat": "22.2953472",
-    "google_pin_lng": "73.1774976",
-    "type_of_project": "Residential",
-    "per_sqft_rate_saleable": "",
-    "type_of_apartments": "2_bhk",
-    "special_amenity_1": "",
-    "special_amenity_2": "",
-    "special_amenity_3": "",
-    "special_amenity_4": "",
-    "possession_by": "",
-    "age_of_property_by_developer": "11-2024",
-    "age_of_property_rera": "",
-    "rera_approved": false,
-    "plot_area": "",
-    "architect": "zv",
-    "construction_company": "",
-    "no_of_blocks": 1,
-    "no_of_units": 1,
-    "no_of_floors": 1,
-    "no_of_basements": 1,
-    "central_air_conditioning": false,
-    "spiritual_or_religious_attraction": "",
-    "type_of_parking": null,
-    "plc_garden": "0",
-    "plc_road_facing": "0",
-    "plc_corner": "0",
-    "plc_others": "0",
-    "floor_rise": "[{'floor': 1, 'price': ''}]",
-    "development_charges": "",
-    "advance_maintenance": "",
-    "maintenance_deposit": "",
-    "other_specific_expenses": "",
-    "sale_deed_value": "",
-    "sale_deed_value_min": "0",
-    "sale_deed_value_max": "0",
-    "gst_applicable": "",
-    "loan_availability": false,
-    "remarks": "",
-    "active": false
-  }
-},
-{
   "model": "Property.unitdetails",
-  "pk": 20126,
+  "pk": 1,
   "fields": {
-    "building_id": "1001",
-    "unit_configuration": "5 BHK",
-    "unit_type": "Simplex",
-    "unit_series": "Type - A",
-    "no_of_units_per_floor": 3,
-    "no_of_lifts_per_floor": 7,
-    "private_lifts": true,
-    "no_private_lifts": 9,
-    "common_terrace_accessible": true,
-    "size_of_unit": "10000",
-    "carpet_area_rera": "5500",
-    "jodi_possible": false,
-    "no_of_attached_bathrooms": 5,
-    "servant_room_available": true,
-    "separate_puja_room_available": true,
-    "no_of_balconies": 3,
-    "size_of_private_terrace_len": "10",
-    "size_of_private_terrace_wid": "10",
-    "size_of_balcony_len": "10",
-    "size_of_balcony_wid": "10",
-    "size_of_master_bedroom_len": "10",
-    "size_of_master_bedroom_wid": "10",
-    "size_of_kitchen_len": "10",
-    "size_of_kitchen_wid": "10",
-    "no_of_parking_allotted": 5,
-    "per_sqft_rate_saleable": "10000",
-    "base_price": "96980000.00",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_4.00.29_PM.jpeg",
-    "unit_plan": "plan/WhatsApp_Image_2024-10-15_at_4_FU9M9I1.00.29_PM.jpeg",
-    "active": true
-  }
-},
-{
-  "model": "Property.unitdetails",
-  "pk": 20127,
-  "fields": {
-    "building_id": "1001",
-    "unit_configuration": "6 BHK",
-    "unit_type": "Penthouse",
-    "unit_series": "",
-    "no_of_units_per_floor": 3,
-    "no_of_lifts_per_floor": 7,
-    "private_lifts": true,
-    "no_private_lifts": 0,
-    "common_terrace_accessible": true,
-    "size_of_unit": "15600",
-    "carpet_area_rera": "7800",
-    "jodi_possible": false,
-    "no_of_attached_bathrooms": 5,
-    "servant_room_available": true,
-    "separate_puja_room_available": true,
-    "no_of_balconies": 3,
-    "size_of_private_terrace_len": "50*80",
-    "size_of_private_terrace_wid": null,
-    "size_of_balcony_len": "",
-    "size_of_balcony_wid": "",
-    "size_of_master_bedroom_len": "0",
-    "size_of_master_bedroom_wid": "0",
-    "size_of_kitchen_len": "",
-    "size_of_kitchen_wid": "0",
-    "no_of_parking_allotted": 5,
-    "per_sqft_rate_saleable": "10000",
-    "base_price": "151288800.00",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "floor_plan": "",
-    "unit_plan": "",
-    "active": true
-  }
-},
-{
-  "model": "Property.unitdetails",
-  "pk": 20128,
-  "fields": {
-    "building_id": "1001",
-    "unit_configuration": "5 BHK",
-    "unit_type": "Simplex",
-    "unit_series": "",
-    "no_of_units_per_floor": 3,
-    "no_of_lifts_per_floor": 7,
-    "private_lifts": true,
-    "no_private_lifts": 0,
-    "common_terrace_accessible": true,
-    "size_of_unit": "7800",
-    "carpet_area_rera": "5000",
-    "jodi_possible": false,
-    "no_of_attached_bathrooms": 5,
-    "servant_room_available": true,
-    "separate_puja_room_available": true,
-    "no_of_balconies": 3,
-    "size_of_private_terrace_len": "50*80",
-    "size_of_private_terrace_wid": null,
-    "size_of_balcony_len": "",
-    "size_of_balcony_wid": "",
-    "size_of_master_bedroom_len": "0",
-    "size_of_master_bedroom_wid": "0",
-    "size_of_kitchen_len": "",
-    "size_of_kitchen_wid": "0",
-    "no_of_parking_allotted": 5,
-    "per_sqft_rate_saleable": "10000",
-    "base_price": "75644400.00",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "floor_plan": "plan/WhatsApp_Image_2024-10-15_at_16.01.30_9445b10d.jpg",
-    "unit_plan": "plan/WhatsApp_Image_2024-10-15_at_4_fLDTIxK.00.29_PM.jpeg",
-    "active": true
-  }
-},
-{
-  "model": "Property.unitdetails",
-  "pk": 20129,
-  "fields": {
-    "building_id": "1001",
-    "unit_configuration": "5 BHK",
-    "unit_type": "Simplex",
-    "unit_series": "Type - A",
-    "no_of_units_per_floor": 3,
-    "no_of_lifts_per_floor": 7,
-    "private_lifts": true,
-    "no_private_lifts": 9,
-    "common_terrace_accessible": true,
-    "size_of_unit": "90998",
-    "carpet_area_rera": "5500",
-    "jodi_possible": false,
-    "no_of_attached_bathrooms": 5,
-    "servant_room_available": true,
-    "separate_puja_room_available": true,
-    "no_of_balconies": 3,
-    "size_of_private_terrace_len": "10",
-    "size_of_private_terrace_wid": "10",
-    "size_of_balcony_len": "10",
-    "size_of_balcony_wid": "10",
-    "size_of_master_bedroom_len": "10",
-    "size_of_master_bedroom_wid": "10",
-    "size_of_kitchen_len": "10",
-    "size_of_kitchen_wid": "10",
-    "no_of_parking_allotted": 5,
-    "per_sqft_rate_saleable": "10000",
-    "base_price": "909980000.00",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "floor_plan": "",
-    "unit_plan": "",
-    "active": true
-  }
-},
-{
-  "model": "Property.unitdetails",
-  "pk": 20130,
-  "fields": {
-    "building_id": "1001",
-    "unit_configuration": "1 BHK",
-    "unit_type": "Simplex",
-    "unit_series": "Type - A",
-    "no_of_units_per_floor": 3,
-    "no_of_lifts_per_floor": 7,
-    "private_lifts": true,
-    "no_private_lifts": 9,
-    "common_terrace_accessible": true,
-    "size_of_unit": "10000",
-    "carpet_area_rera": "5500",
-    "jodi_possible": false,
-    "no_of_attached_bathrooms": 5,
-    "servant_room_available": true,
-    "separate_puja_room_available": true,
-    "no_of_balconies": 3,
-    "size_of_private_terrace_len": "10",
-    "size_of_private_terrace_wid": "10",
-    "size_of_balcony_len": "10",
-    "size_of_balcony_wid": "10",
-    "size_of_master_bedroom_len": "10",
-    "size_of_master_bedroom_wid": "10",
-    "size_of_kitchen_len": "10",
-    "size_of_kitchen_wid": "10",
-    "no_of_parking_allotted": 5,
-    "per_sqft_rate_saleable": "10000",
-    "base_price": "100000000.00",
-    "google_pin_lat": "23.027614",
-    "google_pin_lng": "72.4840917",
-    "floor_plan": "",
-    "unit_plan": "",
-    "active": true
-  }
-},
-{
-  "model": "Property.unitdetails",
-  "pk": 20131,
-  "fields": {
-    "building_id": "1003",
+    "building_id": "1000",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
-    "unit_series": "A",
-    "no_of_units_per_floor": 2,
-    "no_of_lifts_per_floor": 2,
-    "private_lifts": false,
-    "no_private_lifts": 0,
-    "common_terrace_accessible": false,
-    "size_of_unit": "3000",
-    "carpet_area_rera": "2500",
+    "unit_series": "A - 01,04",
+    "no_of_units_per_floor": "4",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3860",
+    "carpet_area_rera": "1950",
     "jodi_possible": false,
-    "no_of_attached_bathrooms": 4,
-    "servant_room_available": true,
-    "separate_puja_room_available": false,
-    "no_of_balconies": 4,
-    "size_of_private_terrace_len": "120",
-    "size_of_private_terrace_wid": "100",
-    "size_of_balcony_len": "12",
-    "size_of_balcony_wid": "10",
-    "size_of_master_bedroom_len": "15",
-    "size_of_master_bedroom_wid": "20",
-    "size_of_kitchen_len": "15",
-    "size_of_kitchen_wid": "15",
-    "no_of_parking_allotted": 3,
-    "per_sqft_rate_saleable": "3000",
-    "base_price": "9000000.00",
-    "google_pin_lat": "23.0319185",
-    "google_pin_lng": "72.518763",
-    "floor_plan": "plan/Screenshot_2024-09-16_at_4.40.40_PM.png",
-    "unit_plan": "plan/Screenshot_2024-09-25_at_4.24.41_PM.png",
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "17",
+    "size_of_balcony_wid": "7",
+    "size_of_master_bedroom_len": "12",
+    "size_of_master_bedroom_wid": "18",
+    "size_of_kitchen_len": "12",
+    "size_of_kitchen_wid": "11",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "28950000.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/IMG_0044.jpeg",
+    "unit_plan": "plan/IMG_0045.jpeg",
     "active": true
   }
 },
 {
   "model": "Property.unitdetails",
-  "pk": 20132,
+  "pk": 2,
   "fields": {
-    "building_id": "1005",
-    "unit_configuration": "2 BHK",
+    "building_id": "1000",
+    "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
-    "unit_series": "",
-    "no_of_units_per_floor": 4,
-    "no_of_lifts_per_floor": 2,
-    "private_lifts": false,
-    "no_private_lifts": 0,
-    "common_terrace_accessible": false,
-    "size_of_unit": "1203",
-    "carpet_area_rera": "691",
+    "unit_series": "A - 02",
+    "no_of_units_per_floor": "4",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3770",
+    "carpet_area_rera": "1960",
     "jodi_possible": false,
-    "no_of_attached_bathrooms": 1,
+    "no_of_attached_bathrooms": "4",
     "servant_room_available": false,
-    "separate_puja_room_available": false,
-    "no_of_balconies": 1,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1584,11 +582,771 @@
     "size_of_master_bedroom_wid": "",
     "size_of_kitchen_len": "",
     "size_of_kitchen_wid": "",
-    "no_of_parking_allotted": 1,
-    "per_sqft_rate_saleable": "5400",
-    "base_price": "6496200.00",
-    "google_pin_lat": "23.1643688",
-    "google_pin_lng": "72.54164089999999",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "28275000.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 3,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "A - 03",
+    "no_of_units_per_floor": "4",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3788",
+    "carpet_area_rera": "1969",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "28410000.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 4,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "B - 01",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4908",
+    "carpet_area_rera": "2552",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "19",
+    "size_of_balcony_wid": "6",
+    "size_of_master_bedroom_len": "20",
+    "size_of_master_bedroom_wid": "13",
+    "size_of_kitchen_len": "9",
+    "size_of_kitchen_wid": "6",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "36810000.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/IMG_0044_yIEpCaa.jpeg",
+    "unit_plan": "plan/IMG_0048.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 5,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "B - 02",
+    "no_of_units_per_floor": "3",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4912",
+    "carpet_area_rera": "2554",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "36840000.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 6,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "B - 03",
+    "no_of_units_per_floor": "3",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4793",
+    "carpet_area_rera": "2492",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "35947500.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 7,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Duplex",
+    "unit_series": "A - 02",
+    "no_of_units_per_floor": "4",
+    "no_of_lifts_per_floor": "5",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "6279",
+    "carpet_area_rera": "3265",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "47092500.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/IMG_0044_Zwju4h2.jpeg",
+    "unit_plan": "plan/IMG_0047.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 8,
+  "fields": {
+    "building_id": "1000",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Duplex",
+    "unit_series": "A - 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "8387",
+    "carpet_area_rera": "4361",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "62902500.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/IMG_0044_Up9y9Xd.jpeg",
+    "unit_plan": "plan/IMG_0049.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 9,
+  "fields": {
+    "building_id": "1001",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "A B 01, 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3695",
+    "carpet_area_rera": "1860",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "3",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "15",
+    "size_of_balcony_wid": "6",
+    "size_of_master_bedroom_len": "12",
+    "size_of_master_bedroom_wid": "18",
+    "size_of_kitchen_len": "14",
+    "size_of_kitchen_wid": "11",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8200",
+    "base_price": "30299000.00",
+    "google_pin_lat": "23.020339773371",
+    "google_pin_lng": "72.50776350331884",
+    "floor_plan": "plan/IMG_0043.jpeg",
+    "unit_plan": "plan/IMG_0040.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 10,
+  "fields": {
+    "building_id": "1001",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "C 01, 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4790",
+    "carpet_area_rera": "2400",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "18",
+    "size_of_balcony_wid": "6",
+    "size_of_master_bedroom_len": "13",
+    "size_of_master_bedroom_wid": "18",
+    "size_of_kitchen_len": "11",
+    "size_of_kitchen_wid": "16",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8200",
+    "base_price": "39278000.00",
+    "google_pin_lat": "23.020339773371",
+    "google_pin_lng": "72.50776350331884",
+    "floor_plan": "plan/IMG_0043_vE95ptY.jpeg",
+    "unit_plan": "plan/IMG_0041.jpeg",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 11,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "B & C  02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4051",
+    "carpet_area_rera": "2228",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "36459000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "plan/TFP_Emberlyn_2.png",
+    "unit_plan": "plan/B__C_02.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 12,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "A 01 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4741",
+    "carpet_area_rera": "2603",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "42669000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "plan/IMG_0058.jpeg",
+    "unit_plan": "plan/A_block_Emberlynn_2.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 13,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "B & C  02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3363",
+    "carpet_area_rera": "1849",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "30267000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "plan/TFP_Emberlyn_2_uhS46rb.png",
+    "unit_plan": "plan/B_01_Emberlynn__BbMuXG7.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 14,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Penthouse",
+    "unit_series": "A 01 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "7331",
+    "carpet_area_rera": "4032",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "5",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "65979000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 15,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Penthouse",
+    "unit_series": "B C 01",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "6255",
+    "carpet_area_rera": "3440",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "5",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "56295000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 16,
+  "fields": {
+    "building_id": "1002",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Penthouse",
+    "unit_series": "B C 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "5235",
+    "carpet_area_rera": "2879",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "5",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "9000",
+    "base_price": "47115000.00",
+    "google_pin_lat": "23.01540169559417",
+    "google_pin_lng": "72.51772281229321",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 17,
+  "fields": {
+    "building_id": "1003",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "01 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "2",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3224",
+    "carpet_area_rera": "1773",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": false,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8500",
+    "base_price": "27404000.00",
+    "google_pin_lat": "23.0181627",
+    "google_pin_lng": "72.5163451",
+    "floor_plan": "plan/TFP_-_Emberlynn_3.png",
+    "unit_plan": "plan/Open_E-3_PDF.pdf.jpeg.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 18,
+  "fields": {
+    "building_id": "1003",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Penthouse",
+    "unit_series": "01 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "2",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4881",
+    "carpet_area_rera": "2684",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": false,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8500",
+    "base_price": "41488500.00",
+    "google_pin_lat": "23.0181627",
+    "google_pin_lng": "72.5163451",
+    "floor_plan": "plan/L_L_EMber_3.png",
+    "unit_plan": "plan/Open_E-3_PDF.pdf.jpeg_2.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 19,
+  "fields": {
+    "building_id": "1004",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "01",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "3920",
+    "carpet_area_rera": "2270",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8250",
+    "base_price": "32340000.00",
+    "google_pin_lat": "23.018537532385576",
+    "google_pin_lng": "72.51657726903643",
+    "floor_plan": "plan/TFP_Avni_Amrut.jpeg.png",
+    "unit_plan": "plan/01_Avni_Amrut.jpeg.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 20,
+  "fields": {
+    "building_id": "1004",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4002",
+    "carpet_area_rera": "2300",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "8250",
+    "base_price": "33016500.00",
+    "google_pin_lat": "23.018537532385576",
+    "google_pin_lng": "72.51657726903643",
+    "floor_plan": "plan/TFP_Avni_Amrut_2GExuVh.jpeg.png",
+    "unit_plan": "plan/Avni_02.png",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 21,
+  "fields": {
+    "building_id": "1005",
+    "unit_configuration": "3 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "2",
+    "private_lifts": false,
+    "no_private_lifts": "0",
+    "common_terrace_accessible": true,
+    "size_of_unit": "2480",
+    "carpet_area_rera": "1315",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "2",
+    "servant_room_available": false,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "2",
+    "per_sqft_rate_saleable": "",
+    "base_price": "0.00",
+    "google_pin_lat": "23.016514542450096",
+    "google_pin_lng": "72.51511292852818",
+    "floor_plan": "",
+    "unit_plan": "",
+    "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 22,
+  "fields": {
+    "building_id": "1005",
+    "unit_configuration": "4 BHK",
+    "unit_type": "Simplex",
+    "unit_series": "",
+    "no_of_units_per_floor": "4",
+    "no_of_lifts_per_floor": "4",
+    "private_lifts": false,
+    "no_private_lifts": "0",
+    "common_terrace_accessible": true,
+    "size_of_unit": "4077",
+    "carpet_area_rera": "2160",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "3",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "",
+    "base_price": "0.00",
+    "google_pin_lat": "23.016514542450096",
+    "google_pin_lng": "72.51511292852818",
     "floor_plan": "",
     "unit_plan": "",
     "active": true
@@ -1596,226 +1354,62 @@
 },
 {
   "model": "Property.amenities",
-  "pk": 12713,
+  "pk": 1,
   "fields": {
     "building_id": "1000",
-    "central_park_s_garden": false,
-    "multi_d_purpose_court": false,
-    "visitors_parking": false,
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": true,
+    "visitors_parking": true,
     "gymnasium": true,
-    "splash_pool": false,
+    "splash_pool": true,
     "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
+    "indoor_swimming_pool": true,
+    "multi_d_purpose_hall": true,
     "banquet_hall": true,
-    "mini_theatre": false,
+    "mini_theatre": true,
     "indoor_games": true,
-    "activity_room": false,
-    "library_s_reading_room": false,
+    "activity_room": true,
+    "library_s_reading_room": true,
     "daycare_center": false,
     "guest_rooms": false,
     "co_d_working_space": false,
     "skating_s_cycling_ring": false,
     "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
     "yoga_room": true,
     "steam_sauna": false,
-    "massage_room": true,
+    "massage_room": false,
     "jacuzzi": false,
     "cafeteria": false,
     "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": true,
+    "toddler_play_zone": true,
+    "mud_play_zone": true,
+    "drivers_lounge": false,
     "house_keeping_lounge": false,
     "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": true,
-    "green_building_rated": true
+    "solar_for_common_area": true,
+    "ev_charging_stations": false,
+    "green_building_rated": false
   }
 },
 {
   "model": "Property.amenities",
-  "pk": 12714,
+  "pk": 2,
   "fields": {
     "building_id": "1001",
     "central_park_s_garden": true,
     "multi_d_purpose_court": true,
     "visitors_parking": true,
     "gymnasium": true,
-    "splash_pool": true,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
-    "banquet_hall": false,
-    "mini_theatre": true,
-    "indoor_games": true,
-    "activity_room": true,
-    "library_s_reading_room": true,
-    "daycare_center": true,
-    "guest_rooms": true,
-    "co_d_working_space": true,
-    "skating_s_cycling_ring": true,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": true,
-    "walking_s_jogging_track": true,
-    "yoga_room": true,
-    "steam_sauna": true,
-    "massage_room": true,
-    "jacuzzi": true,
-    "cafeteria": true,
-    "card_room": true,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": true,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": true,
-    "solar_for_common_area": false,
-    "ev_charging_stations": true,
-    "green_building_rated": false
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12715,
-  "fields": {
-    "building_id": "1002",
-    "central_park_s_garden": true,
-    "multi_d_purpose_court": true,
-    "visitors_parking": false,
-    "gymnasium": false,
-    "splash_pool": true,
-    "outdoor_swimming_pool": true,
-    "indoor_swimming_pool": true,
-    "multi_d_purpose_hall": true,
-    "banquet_hall": false,
-    "mini_theatre": true,
-    "indoor_games": true,
-    "activity_room": false,
-    "library_s_reading_room": true,
-    "daycare_center": false,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": true,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": true,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": true,
-    "ev_charging_stations": true,
-    "green_building_rated": true
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12716,
-  "fields": {
-    "building_id": "1003",
-    "central_park_s_garden": false,
-    "multi_d_purpose_court": false,
-    "visitors_parking": true,
-    "gymnasium": true,
-    "splash_pool": true,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": true,
-    "multi_d_purpose_hall": true,
-    "banquet_hall": true,
-    "mini_theatre": false,
-    "indoor_games": false,
-    "activity_room": true,
-    "library_s_reading_room": true,
-    "daycare_center": true,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": false,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": false,
-    "green_building_rated": false
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12717,
-  "fields": {
-    "building_id": "1004",
-    "central_park_s_garden": true,
-    "multi_d_purpose_court": false,
-    "visitors_parking": false,
-    "gymnasium": false,
-    "splash_pool": true,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
-    "banquet_hall": false,
-    "mini_theatre": false,
-    "indoor_games": false,
-    "activity_room": false,
-    "library_s_reading_room": false,
-    "daycare_center": false,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": false,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": false,
-    "green_building_rated": false
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12718,
-  "fields": {
-    "building_id": "1005",
-    "central_park_s_garden": true,
-    "multi_d_purpose_court": true,
-    "visitors_parking": true,
-    "gymnasium": true,
     "splash_pool": false,
-    "outdoor_swimming_pool": true,
+    "outdoor_swimming_pool": false,
     "indoor_swimming_pool": false,
     "multi_d_purpose_hall": true,
-    "banquet_hall": true,
-    "mini_theatre": false,
+    "banquet_hall": false,
+    "mini_theatre": true,
     "indoor_games": true,
-    "activity_room": true,
+    "activity_room": false,
     "library_s_reading_room": true,
     "daycare_center": false,
     "guest_rooms": false,
@@ -1829,7 +1423,48 @@
     "massage_room": false,
     "jacuzzi": false,
     "cafeteria": true,
-    "card_room": true,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": true,
+    "solar_for_common_area": true,
+    "ev_charging_stations": true,
+    "green_building_rated": false
+  }
+},
+{
+  "model": "Property.amenities",
+  "pk": 3,
+  "fields": {
+    "building_id": "1002",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": true,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": true,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": true,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": true,
+    "mini_theatre": true,
+    "indoor_games": true,
+    "activity_room": true,
+    "library_s_reading_room": true,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": false,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": true,
+    "steam_sauna": true,
+    "massage_room": true,
+    "jacuzzi": false,
+    "cafeteria": false,
+    "card_room": false,
     "toddler_play_zone": true,
     "mud_play_zone": false,
     "drivers_lounge": false,
@@ -1837,4283 +1472,130 @@
     "on_site_waste_management": true,
     "solar_for_common_area": true,
     "ev_charging_stations": true,
-    "green_building_rated": true
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12719,
-  "fields": {
-    "building_id": "1006",
-    "central_park_s_garden": true,
-    "multi_d_purpose_court": false,
-    "visitors_parking": false,
-    "gymnasium": false,
-    "splash_pool": false,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
-    "banquet_hall": false,
-    "mini_theatre": false,
-    "indoor_games": false,
-    "activity_room": false,
-    "library_s_reading_room": false,
-    "daycare_center": false,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": false,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": false,
     "green_building_rated": false
   }
 },
 {
   "model": "Property.amenities",
-  "pk": 12720,
-  "fields": {
-    "building_id": "1007",
-    "central_park_s_garden": false,
-    "multi_d_purpose_court": false,
-    "visitors_parking": false,
-    "gymnasium": false,
-    "splash_pool": false,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
-    "banquet_hall": false,
-    "mini_theatre": false,
-    "indoor_games": false,
-    "activity_room": false,
-    "library_s_reading_room": false,
-    "daycare_center": false,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": false,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": false,
-    "green_building_rated": false
-  }
-},
-{
-  "model": "Property.amenities",
-  "pk": 12721,
-  "fields": {
-    "building_id": "1008",
-    "central_park_s_garden": false,
-    "multi_d_purpose_court": false,
-    "visitors_parking": false,
-    "gymnasium": false,
-    "splash_pool": false,
-    "outdoor_swimming_pool": false,
-    "indoor_swimming_pool": false,
-    "multi_d_purpose_hall": false,
-    "banquet_hall": false,
-    "mini_theatre": false,
-    "indoor_games": false,
-    "activity_room": false,
-    "library_s_reading_room": false,
-    "daycare_center": false,
-    "guest_rooms": false,
-    "co_d_working_space": false,
-    "skating_s_cycling_ring": false,
-    "gazebo_sit_outs": false,
-    "senior_citizen_sit_d_outs": false,
-    "walking_s_jogging_track": false,
-    "yoga_room": false,
-    "steam_sauna": false,
-    "massage_room": false,
-    "jacuzzi": false,
-    "cafeteria": false,
-    "card_room": false,
-    "toddler_play_zone": false,
-    "mud_play_zone": false,
-    "drivers_lounge": false,
-    "house_keeping_lounge": false,
-    "on_site_waste_management": false,
-    "solar_for_common_area": false,
-    "ev_charging_stations": false,
-    "green_building_rated": false
-  }
-},
-{
-  "model": "SorterSession.shortlistedproperty",
-  "pk": 18,
-  "fields": {
-    "client_id": "38",
-    "number": "+91 8758222401",
-    "properties": "[]"
-  }
-},
-{
-  "model": "SorterSession.shortlistedproperty",
-  "pk": 19,
-  "fields": {
-    "client_id": "39",
-    "number": "8899000099",
-    "properties": "[]"
-  }
-},
-{
-  "model": "SorterSession.shortlistedproperty",
-  "pk": 20,
-  "fields": {
-    "client_id": "45",
-    "number": "9054413199",
-    "properties": "[{'unit_id': 20128, 'score': 53}, {'unit_id': 20131, 'score': 39}]"
-  }
-},
-{
-  "model": "SorterSession.shortlistedproperty",
-  "pk": 21,
-  "fields": {
-    "client_id": "46",
-    "number": "8899000099",
-    "properties": "[{'unit_id': 20128, 'score': 53}, {'unit_id': 20131, 'score': 39}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "10",
-    "object_repr": "BD010",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "9",
-    "object_repr": "BD009",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "8",
-    "object_repr": "BD008",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
   "pk": 4,
   "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "7",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
+    "building_id": "1003",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": false,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": false,
+    "mini_theatre": false,
+    "indoor_games": true,
+    "activity_room": false,
+    "library_s_reading_room": false,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": true,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": true,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": true,
+    "card_room": false,
+    "toddler_play_zone": true,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": true,
+    "solar_for_common_area": true,
+    "ev_charging_stations": true,
+    "green_building_rated": false
   }
 },
 {
-  "model": "admin.logentry",
+  "model": "Property.amenities",
   "pk": 5,
   "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "6",
-    "object_repr": "BD006",
-    "action_flag": 3,
-    "change_message": ""
+    "building_id": "1004",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": false,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": false,
+    "multi_d_purpose_hall": false,
+    "banquet_hall": false,
+    "mini_theatre": false,
+    "indoor_games": true,
+    "activity_room": false,
+    "library_s_reading_room": false,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": false,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": false,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": false,
+    "steam_sauna": false,
+    "massage_room": false,
+    "jacuzzi": false,
+    "cafeteria": false,
+    "card_room": false,
+    "toddler_play_zone": false,
+    "mud_play_zone": false,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": false,
+    "solar_for_common_area": true,
+    "ev_charging_stations": true,
+    "green_building_rated": false
   }
 },
 {
-  "model": "admin.logentry",
+  "model": "Property.amenities",
   "pk": 6,
   "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "5",
-    "object_repr": "BD005",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "4",
-    "object_repr": "BD004",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "3",
-    "object_repr": "BD003",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "2",
-    "object_repr": "BD002",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2024-09-02T18:54:24.662Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "1",
-    "object_repr": "BD001",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "10",
-    "object_repr": "Group J - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "9",
-    "object_repr": "Group I - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "8",
-    "object_repr": "Group H - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "7",
-    "object_repr": "Group G - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "6",
-    "object_repr": "Group F - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "5",
-    "object_repr": "Group E - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "4",
-    "object_repr": "Group D - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "3",
-    "object_repr": "Group C - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "2",
-    "object_repr": "Group B - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2024-09-02T18:54:32.279Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1",
-    "object_repr": "Group A - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 21,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "10",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 22,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "9",
-    "object_repr": "2BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 23,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "8",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 24,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "7",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 25,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "6",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 26,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "5",
-    "object_repr": "3BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 27,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "4",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 28,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "3",
-    "object_repr": "2BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 29,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "2",
-    "object_repr": "2BHK - Luxury",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 30,
-  "fields": {
-    "action_time": "2024-09-02T18:54:37.055Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "1",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 31,
-  "fields": {
-    "action_time": "2024-09-02T19:00:13.716Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "19",
-    "object_repr": "Group I - Skyline Apartments",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 32,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "20",
-    "object_repr": "BD010",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 33,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "19",
-    "object_repr": "BD009",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 34,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "18",
-    "object_repr": "BD008",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 35,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "17",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 36,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "16",
-    "object_repr": "BD006",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 37,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "15",
-    "object_repr": "BD005",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 38,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "14",
-    "object_repr": "BD004",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 39,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "13",
-    "object_repr": "BD003",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 40,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "12",
-    "object_repr": "BD002",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 41,
-  "fields": {
-    "action_time": "2024-09-02T19:04:40.600Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "11",
-    "object_repr": "BD001",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 42,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "20",
-    "object_repr": "Group J - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 43,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "19",
-    "object_repr": "Group I - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 44,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "18",
-    "object_repr": "Group H - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 45,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "17",
-    "object_repr": "Group G - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 46,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "16",
-    "object_repr": "Group F - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 47,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "15",
-    "object_repr": "Group E - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 48,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "14",
-    "object_repr": "Group D - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 49,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "13",
-    "object_repr": "Group C - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 50,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "12",
-    "object_repr": "Group B - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 51,
-  "fields": {
-    "action_time": "2024-09-02T19:04:46.938Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "11",
-    "object_repr": "Group A - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 52,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 53,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "19",
-    "object_repr": "2BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 54,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "18",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 55,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "17",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 56,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "16",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 57,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "15",
-    "object_repr": "3BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 58,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "14",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 59,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "13",
-    "object_repr": "2BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 60,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "12",
-    "object_repr": "2BHK - Luxury",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 61,
-  "fields": {
-    "action_time": "2024-09-02T19:04:51.904Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "11",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 62,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "30",
-    "object_repr": "BD010",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 63,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "29",
-    "object_repr": "BD009",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 64,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "28",
-    "object_repr": "BD008",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 65,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "27",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 66,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "26",
-    "object_repr": "BD006",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 67,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "25",
-    "object_repr": "BD005",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 68,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "24",
-    "object_repr": "BD004",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 69,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "23",
-    "object_repr": "BD003",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 70,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "22",
-    "object_repr": "BD002",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 71,
-  "fields": {
-    "action_time": "2024-09-04T18:06:08.764Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "21",
-    "object_repr": "BD001",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 72,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "30",
-    "object_repr": "Group J - Urban Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 73,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "29",
-    "object_repr": "Group I - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 74,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "28",
-    "object_repr": "Group H - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 75,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "27",
-    "object_repr": "Group G - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 76,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "26",
-    "object_repr": "Group F - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 77,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "25",
-    "object_repr": "Group E - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 78,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "24",
-    "object_repr": "Group D - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 79,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "23",
-    "object_repr": "Group C - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 80,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "22",
-    "object_repr": "Group B - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 81,
-  "fields": {
-    "action_time": "2024-09-04T18:06:13.631Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "21",
-    "object_repr": "Group A - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 82,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "30",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 83,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "29",
-    "object_repr": "2BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 84,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "28",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 85,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "27",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 86,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "26",
-    "object_repr": "4BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 87,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "25",
-    "object_repr": "3BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 88,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "24",
-    "object_repr": "4BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 89,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "23",
-    "object_repr": "2BHK - Premium",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 90,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "22",
-    "object_repr": "2BHK - Luxury",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 91,
-  "fields": {
-    "action_time": "2024-09-04T18:06:18.533Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "21",
-    "object_repr": "1BHK - Standard",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 92,
-  "fields": {
-    "action_time": "2024-09-04T18:07:13.575Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "31",
-    "object_repr": "Group A - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 93,
-  "fields": {
-    "action_time": "2024-09-04T18:07:26.389Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "31",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 94,
-  "fields": {
-    "action_time": "2024-09-04T18:07:33.422Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "32",
-    "object_repr": "Group A - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 95,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "40",
-    "object_repr": "BD010",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 96,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "39",
-    "object_repr": "BD009",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 97,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "38",
-    "object_repr": "BD008",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 98,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "37",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 99,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "36",
-    "object_repr": "BD006",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 100,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "35",
-    "object_repr": "BD005",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 101,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "34",
-    "object_repr": "BD004",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 102,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "33",
-    "object_repr": "BD003",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 103,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "32",
-    "object_repr": "BD002",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 104,
-  "fields": {
-    "action_time": "2024-09-04T18:39:48.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "31",
-    "object_repr": "BD001",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 105,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "42",
-    "object_repr": "Group J - Urban Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 106,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "41",
-    "object_repr": "Group I - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 107,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "40",
-    "object_repr": "Group H - Star Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 108,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "39",
-    "object_repr": "Group G - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 109,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "38",
-    "object_repr": "Group F - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 110,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "37",
-    "object_repr": "Group E - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 111,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "36",
-    "object_repr": "Group D - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 112,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "35",
-    "object_repr": "Group C - Urban Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 113,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "34",
-    "object_repr": "Group B - Star Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 114,
-  "fields": {
-    "action_time": "2024-09-04T18:39:54.150Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "33",
-    "object_repr": "Group A - Star Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 115,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.632Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "40",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 116,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.632Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "39",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 117,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.632Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "38",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 118,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "37",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 119,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "36",
-    "object_repr": "1BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 120,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "35",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 121,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "34",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 122,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "33",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 123,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "32",
-    "object_repr": "1BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 124,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "31",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 125,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "30",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 126,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "29",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 127,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "28",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 128,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "27",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 129,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "26",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 130,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "25",
-    "object_repr": "4BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 131,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "24",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 132,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "23",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 133,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "22",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 134,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "21",
-    "object_repr": "1BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 135,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "20",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 136,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "19",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 137,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "18",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 138,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "17",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 139,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "16",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 140,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "15",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 141,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "14",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 142,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "13",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 143,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "12",
-    "object_repr": "4BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 144,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "11",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 145,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "10",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 146,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "9",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 147,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "8",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 148,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "7",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 149,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "6",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 150,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "5",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 151,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "4",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 152,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.633Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "3",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 153,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.634Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "2",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 154,
-  "fields": {
-    "action_time": "2024-09-04T18:40:00.634Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "1",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 155,
-  "fields": {
-    "action_time": "2024-09-04T18:40:32.004Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "43",
-    "object_repr": "Group A - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 156,
-  "fields": {
-    "action_time": "2024-09-04T18:40:37.397Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "41",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 157,
-  "fields": {
-    "action_time": "2024-09-04T18:40:42.119Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "41",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 158,
-  "fields": {
-    "action_time": "2024-09-04T18:42:08.704Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "42",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 159,
-  "fields": {
-    "action_time": "2024-09-04T18:42:13.105Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "44",
-    "object_repr": "Group A - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 160,
-  "fields": {
-    "action_time": "2024-09-04T18:42:17.463Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "42",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 161,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "54",
-    "object_repr": "Group J - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 162,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "53",
-    "object_repr": "Group I - Skyline Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 163,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "52",
-    "object_repr": "Group H - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 164,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "51",
-    "object_repr": "Group G - Galaxy Towers",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 165,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "50",
-    "object_repr": "Group F - Skyline Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 166,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "49",
-    "object_repr": "Group E - Galaxy Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 167,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "48",
-    "object_repr": "Group D - Galaxy Residency",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 168,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "47",
-    "object_repr": "Group C - Skyline Apartments",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 169,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.138Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "46",
-    "object_repr": "Group B - Star Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 170,
-  "fields": {
-    "action_time": "2024-09-05T14:22:11.140Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "45",
-    "object_repr": "Group A - Galaxy Heights",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 171,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.857Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "52",
-    "object_repr": "BD010",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 172,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "51",
-    "object_repr": "BD009",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 173,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "50",
-    "object_repr": "BD008",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 174,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "49",
-    "object_repr": "BD007",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 175,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "48",
-    "object_repr": "BD006",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 176,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "47",
-    "object_repr": "BD005",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 177,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "46",
-    "object_repr": "BD004",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 178,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "45",
-    "object_repr": "BD003",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 179,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "44",
-    "object_repr": "BD002",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 180,
-  "fields": {
-    "action_time": "2024-09-05T14:22:15.858Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "amenities"
-    ],
-    "object_id": "43",
-    "object_repr": "BD001",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 181,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "80",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 182,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "79",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 183,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "78",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 184,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "77",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 185,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "76",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 186,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "75",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 187,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "74",
-    "object_repr": "3BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 188,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "73",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 189,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "72",
-    "object_repr": "4BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 190,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "71",
-    "object_repr": "4BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 191,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "70",
-    "object_repr": "1BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 192,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "69",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 193,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "68",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 194,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "67",
-    "object_repr": "2BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 195,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "66",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 196,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "65",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 197,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "64",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 198,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "63",
-    "object_repr": "3BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 199,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "62",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 200,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "61",
-    "object_repr": "4BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 201,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "60",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 202,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "59",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 203,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "58",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 204,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "57",
-    "object_repr": "1BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 205,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "56",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 206,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "55",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 207,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "54",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 208,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "53",
-    "object_repr": "4BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 209,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "52",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 210,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "51",
-    "object_repr": "1BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 211,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.112Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "50",
-    "object_repr": "3BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 212,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "49",
-    "object_repr": "4BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 213,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "48",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 214,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "47",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 215,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "46",
-    "object_repr": "2BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 216,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "45",
-    "object_repr": "2BHK - Duplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 217,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "44",
-    "object_repr": "1BHK - Simplex",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 218,
-  "fields": {
-    "action_time": "2024-09-05T14:22:22.113Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "unitdetails"
-    ],
-    "object_id": "43",
-    "object_repr": "4BHK - Pent House",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 219,
-  "fields": {
-    "action_time": "2024-09-05T19:38:11.250Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Min carpet area\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 220,
-  "fields": {
-    "action_time": "2024-09-07T05:37:31.455Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Attached washrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 221,
-  "fields": {
-    "action_time": "2024-09-07T08:07:18.665Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 222,
-  "fields": {
-    "action_time": "2024-09-07T08:07:50.461Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 223,
-  "fields": {
-    "action_time": "2024-09-07T08:08:29.281Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 224,
-  "fields": {
-    "action_time": "2024-09-07T08:09:00.570Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 225,
-  "fields": {
-    "action_time": "2024-09-07T08:29:46.628Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 226,
-  "fields": {
-    "action_time": "2024-09-07T08:30:13.730Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 227,
-  "fields": {
-    "action_time": "2024-09-11T14:41:33.799Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam Shah",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Bedrooms\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 228,
-  "fields": {
-    "action_time": "2024-09-12T18:51:25.927Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "ClientDetail",
-      "propertyinquiry"
-    ],
-    "object_id": "2",
-    "object_repr": "Divyam",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 229,
-  "fields": {
-    "action_time": "2024-09-15T19:04:35.286Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "Property",
-      "buildingdetails"
-    ],
-    "object_id": "1154",
-    "object_repr": 
+    "building_id": "1005",
+    "central_park_s_garden": true,
+    "multi_d_purpose_court": true,
+    "visitors_parking": true,
+    "gymnasium": true,
+    "splash_pool": false,
+    "outdoor_swimming_pool": false,
+    "indoor_swimming_pool": true,
+    "multi_d_purpose_hall": true,
+    "banquet_hall": true,
+    "mini_theatre": true,
+    "indoor_games": true,
+    "activity_room": true,
+    "library_s_reading_room": true,
+    "daycare_center": false,
+    "guest_rooms": false,
+    "co_d_working_space": true,
+    "skating_s_cycling_ring": false,
+    "gazebo_sit_outs": true,
+    "senior_citizen_sit_d_outs": true,
+    "walking_s_jogging_track": true,
+    "yoga_room": true,
+    "steam_sauna": true,
+    "massage_room": true,
+    "jacuzzi": false,
+    "cafeteria": true,
+    "card_room": false,
+    "toddler_play_zone": true,
+    "mud_play_zone": true,
+    "drivers_lounge": false,
+    "house_keeping_lounge": false,
+    "on_site_waste_management": false,
+    "solar_for_common_area": true,
+    "ev_charging_stations": true,
+    "green_building_rated": false
+  }
+}
+]

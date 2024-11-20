@@ -63,7 +63,7 @@ class BuildingDetails(models.Model):
     no_of_units = models.CharField(max_length=255, default=0, null=True, blank=True)
     no_of_floors = models.CharField(max_length=255, default=0, null=True, blank=True)
     no_of_basements = models.CharField(max_length=255, default=0, null=True, blank=True)
-    central_air_conditioning = models.BooleanField(default=False)
+    central_air_conditioning = models.CharField(max_length=255, default='', null=True, blank=True)
     # pet_friendly = models.BooleanField(default=False)
     spiritual_or_religious_attraction = models.TextField(null=True, blank=True, default='')
     type_of_parking = models.CharField(max_length=255, null=True, blank=True)

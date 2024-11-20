@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Example</title>
+    <style>
+        #autocomplete-list {
+            border: 1px solid #ddd;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background: white;
+            z-index: 1000;
+        }
+        .autocomplete-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .autocomplete-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="developerGroupName">Name:</label>
+        <input type="text" class="form-control" id="developerGroupName" name="group_name" required
+                            placeholder="Enter name">
+                            <div id="autocomplete-list"></div>
+<input type="number" class="form-control" id="yearOfEstablishment" name="year_of_establishment"
+                            placeholder="2000">
+<input type="number" class="form-control" id="projectsDelivered" name="no_of_projects_delivered"
+                            placeholder="15">
+<input type="text" class="form-control" id="key_projects_1" name="key_projects_1"
+                            placeholder="Key Project 1">
+<input type="text" class="form-control" id="key_projects_2" name="key_projects_2"
+                            placeholder="Key Project 2">
+<input type="text" class="form-control" id="key_projects_3" name="key_projects_3"
+                            placeholder="Key Project 3">
+<input type="text" class="form-control" id="key_projects_4" name="key_projects_4"
+                            placeholder="Key Project 4">
+<input type="text" class="form-control" id="key_projects_5" name="key_projects_5"
+                            placeholder="Key Project 5">
+<input type="text" class="form-control" id="key_promoters_1" name="key_promoters_1"
+                            placeholder="Key Promoter 1">
+<input type="text" class="form-control" id="key_promoters_2" name="key_promoters_2"
+                            placeholder="Key Promoter 2">
+<input type="text" class="form-control" id="key_promoters_3" name="key_promoters_3"
+                            placeholder="Key Promoter 3">
+<input type="text" class="form-control" id="key_promoters_4" name="key_promoters_4"
+                            placeholder="Key Promoter 4">
+<input type="text" class="form-control" id="key_promoters_5" name="key_promoters_5"
+                            placeholder="Key Promoter 5">
+        
+    </form>
+
+    <script>
+        const input = document.getElementById('developerGroupName');
+        const autocompleteList = document.getElementById('autocomplete-list');
+
+        input.addEventListener('input', async () => {
+            const query = input.value;
+            if (!query) {
+                autocompleteList.innerHTML = '';
+                return;
+            }
+
+            const response = await fetch(`{% url 'autocomplete-name-list' %}?q=${query}`);
+            const data = await response.json();
+
+            // Clear previous results
+            autocompleteList.innerHTML = '';
+
+            // Populate new results
+            data.forEach(item => {
+                console.log(item.group_name)
+                const div = document.createElement('div');
+                div.classList.add('autocomplete-item');
+                div.textContent = item.group_name;
+                div.dataset.id = item.id;  // Save additional data like ID
+                div.addEventListener('click', () => {
+                    input.value = item.name;
+                    autocompleteList.innerHTML = ''; // Clear dropdown
+                    // Automatically populate other fields
+                    let new_item = {};
+                    new_item['group_name'] = item.group_name
+                    new_item['year_of_establishment'] = item.year_of_establishment
+                    new_item['no_of_projects_delivered'] = item.no_of_projects_delivered
+                    new_item['key_projects_1'] = item.key_projects_1
+                    new_item['key_projects_2'] = item.key_projects_2
+                    new_item['key_projects_3'] = item.key_projects_3
+                    new_item['key_projects_4'] = item.key_projects_4
+                    new_item['key_projects_5'] = item.key_projects_5
+                    new_item['key_promoters_1'] = item.key_promoters_1
+                    new_item['key_promoters_2'] = item.key_promoters_2
+                    new_item['key_promoters_3'] = item.key_promoters_3
+                    new_item['key_promoters_4'] = item.key_promoters_4
+                    new_item['key_promoters_5'] = item.key_promoters_5
+                    setFormValues(new_item);
+                });
+                autocompleteList.appendChild(div);
+            });
+        });
+
+    </script>
+</body>
+</html>

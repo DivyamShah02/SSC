@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/scc.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>Selected Property</title>
+
+</head>
+
+<body>
+    <div id="spinner" class="spinner-container p-2"
+        style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <!-- <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div> -->
+    </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+            <div class="row">
+                <div class="col-6">
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+    </nav>
+    <!-- Navigation bar end -->
+
+    <div id="main-content" class="blur">
+        <!-- Best result start -->
+        <div class="py-2 pt-3 text-center best-results" style="margin-top: 68px !important;">
+            Visit Plan for <b class="text-primary-ssc"><u>{{client_data.name}}</u></b>
+        </div>
+        <!-- Best result end -->
+        <div class="container mt-5">
+            <div class="row mb-4">
+                {% for menu_property in menu_properties %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card mb-3 ssc-images primary-images"
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                        style="cursor: pointer;">
+                        <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
+                            alt="Property Image"
+                            style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
+                        <div class="golden-badge">Premium Property</div>
+                        <div class="card-body">
+                            <h5 class="card-title"><u>{{menu_property.property_name}}</u></h5>
+                            <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-8"></div>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-4 form-group">
+                <label class="form-label primary" for="visitStartDate">Select Visit Start Date<span class="required"> *</span></label>
+                <input type="date" class="form-control" id="visitStartDate" name="visitStartDate" required>
+            </div>
+
+            <div class="col-md-4 form-group">
+                <label class="form-label primary" for="visitStartDate">Select Visit Start Time<span class="required"> *</span></label>
+                <input type="time" class="form-control" id="visitStartTime" name="visitStartTime" required>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label for="start_area" class="form-label primary">Please select Start Area?<span class="required"> *</span></label>
+                <input type="text" class="form-control" id="start_area" placeholder="Enter location" name="start_area_info" required>
+                <input type="hidden" id="start_area_value" name="start_area">
+            </div>
+
+            <div class="col-md-4 form-group">
+                <button type="button" class="btn btn-custom-primary" id="visitPlanSubmit" onclick="generate_visit_plan()">
+                    Generate Visit Plan
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places" async defer></script>
+
+
+    <script>
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('add-display-none');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            // document.getElementById('spinner-text').classList.toggle('add-display-block');
+
+        }
+
+        function initAutocomplete_start() {
+            // Reference to the input element
+            const input = document.getElementById('start_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                    document.getElementById('start_area_value').value = `${lat}|${lng}`
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
+            });
+        }
+
+
+        function validateStartDateTime() {
+            
+            const inputs = document.querySelectorAll('input');
+            let invalidInputs = [];
+
+            // Remove red-border-btn class from all inputs
+            inputs.forEach(input => {
+                input.classList.remove('red-border-btn');
+            });
+
+            // Check validity of each input and collect IDs of invalid ones
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    invalidInputs.push(input.id);
+                    input.classList.add('red-border-btn');  // Add red border class                    
+                }
+            });
+
+            // If all inputs are valid, proceed
+            if (invalidInputs.length === 0) {
+                return true;
+            } else {
+                console.log("Invalid inputs:", invalidInputs);
+                return false;
+            }
+        }
+
+        function generate_visit_plan() {
+            let start_date = document.getElementById('visitStartDate');
+            let start_time = document.getElementById('visitStartTime');
+            let start_area = document.getElementById('start_area_value');
+
+            let form_validated = validateStartDateTime();
+
+            if (form_validated) {
+                console.log(start_date.value);
+                console.log(start_time.value);
+                console.log(start_area.value);
+                send_visit_time(start_date.value, start_time.value, start_area.value);
+            }
+
+        }
+
+        async function send_visit_time(start_date, start_time, start_area) {
+            try {
+                const response = await fetch("{% url 'visit-plan-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({ 
+                        "start_date": start_date,
+                        "start_time": start_time,
+                        "start_area": start_area,
+                        "session_id": '{{session_id}}'
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    console.log(data.success);
+                } else {
+                    console.log(data.success);
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+            }
+        }
+
+
+        window.onload = function () {
+            toggle_loader();
+            initAutocomplete_start();
+        };
+
+    </script>
+
+</body>
+
+</html>

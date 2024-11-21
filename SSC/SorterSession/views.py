@@ -44,6 +44,7 @@ class SorterViewSet(viewsets.ViewSet):
                 edit_session.number = client_data.get('number','')
                 edit_session.properties = sorted_data
                 edit_session.selected_properties = ''
+                edit_session.visit_details = ''
 
                 edit_session.save()
                 session_id = edit_session.id
@@ -628,22 +629,15 @@ class VisitPlanViewSet(viewsets.ViewSet):
             raise NotFound(f"Client with id : {client_id} not found.")
         client_data = PropertyInquirySerializer(client_obj).data
 
-        selected_properties_data_str = session_data.get('selected_properties', '')
-        if not selected_properties_data_str:
-            raise ParseError("No properties found in session data.")
-        
-        try:
-            selected_properties_data = json.loads(selected_properties_data_str.replace("'", '"'))
-        except json.JSONDecodeError:
-            raise ParseError("Error parsing properties data.")
-
-        if not isinstance(selected_properties_data, list):
-            raise ParseError("Properties data must be a list.")
-        
+        visit_details_data_str = session_data.get('visit_details', '')
         menu_properties = []
-        for i, property in enumerate(selected_properties_data):
-            try:
-                unit_id = property
+
+        if visit_details_data_str != '':
+            visit_details_data = json.loads(visit_details_data_str.replace("'", '"'))
+
+            for i, visit_unit in enumerate(visit_details_data):
+                unit_id = visit_unit['unit_id']
+
                 unit_data = UnitDetails.objects.get(id=unit_id)
                 
                 building_id = unit_data.building_id
@@ -652,10 +646,37 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 property_name = f'{building_id} - {building_data.project_name}'
                 property_group_name = building_data.group_name
                 active_property = False            
-                menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1})
+                menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True})
+                print(menu_properties)
+
+        else:
+            selected_properties_data_str = session_data.get('selected_properties', '')
+            if not selected_properties_data_str:
+                raise ParseError("No properties found in session data.")
             
-            except Exception as e:
-                print(e)
+            try:
+                selected_properties_data = json.loads(selected_properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+
+            if not isinstance(selected_properties_data, list):
+                raise ParseError("Properties data must be a list.")
+            
+            for i, property in enumerate(selected_properties_data):
+                try:
+                    unit_id = property
+                    unit_data = UnitDetails.objects.get(id=unit_id)
+                    
+                    building_id = unit_data.building_id
+                    building_data = BuildingDetails.objects.get(building_id=building_id)
+                    
+                    property_name = f'{building_id} - {building_data.project_name}'
+                    property_group_name = building_data.group_name
+                    active_property = False            
+                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False})
+                
+                except Exception as e:
+                    print(e)
 
         data = {
             'session_id' : session_id,
@@ -698,14 +719,22 @@ class VisitPlanViewSet(viewsets.ViewSet):
             selected_properties_coords.append({"id":selected_property, "coords":(selected_property_obj.google_pin_lat, selected_property_obj.google_pin_lng)})
         
         plan = create_visit_plan(start_point, selected_properties_coords, start_datetime)
-
-        print(plan)
+        visit_details = []
         for step in plan:
             print(f"Visit property {step['property_id']} at {step['coords']}:\n"
-                    f"  Arrival: {step['arrival_time']}\n"
+                    f"  Arrival_time: {step['arrival_time']}\n"
+                    f"  Arrival_date: {step['arrival_date']}\n"
                     f"  Departure: {step['departure_time']}\n")
+            temp_plan = {
+                'unit_id':step['property_id'],
+                'Arrival_time' : step['arrival_time'],
+                'Arrival_date' : step['arrival_date'],
+            }
 
+            visit_details.append(temp_plan)
+        
+        session_data_obj.visit_details = f'{visit_details}'
+        session_data_obj.save()
 
 
         return Response({'success':True}, status=200)
-

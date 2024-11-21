@@ -67,7 +67,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-8"></div>
+                <div class="col-12 col-md-6 col-lg-8">
+                    {% if menu_property.visit_planned == True %}
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Visit Start Date<span class="required"> *</span></label>
+                        <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
+                    </div>
+        
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Visit Start Time<span class="required"> *</span></label>
+                        <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
+                    </div>
+                    {% endif %}
+                </div>
                 {% endfor %}
             </div>
 

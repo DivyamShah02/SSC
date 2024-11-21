@@ -38,7 +38,8 @@ def create_visit_plan(starting_point, properties, start_date_time):
         visit_plan.append({
             "property_id": nearest_property['id'],  # Include property ID
             "coords": nearest_property['coords'],  # Include property coordinates
-            "arrival_time": arrival_time.strftime("%I:%M %p on %d/%m/%Y"),
+            "arrival_date": arrival_time.strftime("%Y-%m-%d"),
+            "arrival_time": arrival_time.strftime("%H:%M"),
             "departure_time": departure_time.strftime("%I:%M %p on %d/%m/%Y")
         })
 

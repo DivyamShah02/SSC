@@ -8,4 +8,9 @@ class ShortlistedProperty(models.Model):
     properties = models.TextField(null=True, blank=True)
     selected_properties = models.TextField(null=True, blank=True, default='')
     visit_details = models.TextField(null=True, blank=True, default='')
-    
+    start_visit_time_date = models.CharField(null=True, blank=True, default='', max_length=255)
+    visit_start_coords = models.CharField(null=True, blank=True, default='', max_length=255)
+    visit_start_location = models.CharField(null=True, blank=True, default='', max_length=255)
+    visist_finalize = models.BooleanField(default=False)
+    feedback = models.TextField(null=True, blank=True, default='')
+

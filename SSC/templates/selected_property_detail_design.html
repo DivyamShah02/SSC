@@ -70,40 +70,59 @@
                 <div class="col-12 col-md-6 col-lg-8">
                     {% if menu_property.visit_planned == True %}
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Visit Start Date<span class="required"> *</span></label>
+                        <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
                         <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
                     </div>
         
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Visit Start Time<span class="required"> *</span></label>
+                        <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
                         <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
                     </div>
+                    <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
 
-            <div class="col-md-4 form-group">
-                <label class="form-label primary" for="visitStartDate">Select Visit Start Date<span class="required"> *</span></label>
-                <input type="date" class="form-control" id="visitStartDate" name="visitStartDate" required>
-            </div>
+            <div class="scc-section container py-2 pt-3">
+                <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                    <h4>Visit Plan Generator</h4>
+                </div>
+                <div class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="visitStartDate">Select Visit Start Date<span class="required"> *</span></label>
+                            <input type="date" class="form-control" id="visitStartDate" name="visitStartDate" required value="{{visit_start_date}}">
+                        </div>
+            
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="visitStartDate">Select Visit Start Time<span class="required"> *</span></label>
+                            <input type="time" class="form-control" id="visitStartTime" name="visitStartTime" required value="{{visit_start_time}}">
+                        </div>
+            
+                        <div class="col-md-4 form-group">
+                            <label for="start_area" class="form-label primary">Please select Start Area?<span class="required"> *</span></label>
+                            <input type="text" class="form-control" id="start_area" placeholder="Enter location" name="start_area_info" required value="{{visit_start_location}}">
+                            <input type="hidden" id="start_area_value" name="start_area" value="{{visit_start_coords}}">
+                        </div>
+            
+                        <div class="col-md-12 form-group text-center">
+                            <button type="button" class="btn btn-custom-primary" id="visitPlanSubmit" onclick="generate_visit_plan()">
+                                Generate Visit Plan
+                            </button>
+                        </div>
+                        {% if visit_planned == True %}
+                        <div class="col-md-12 form-group text-center">
+                            <button type="button" class="btn btn-custom" id="sumbitVisitPlanSubmit" onclick="final_visit_time()">
+                                Submit Visit Plan
+                            </button>
+                        </div>
+                        {% endif %}
 
-            <div class="col-md-4 form-group">
-                <label class="form-label primary" for="visitStartDate">Select Visit Start Time<span class="required"> *</span></label>
-                <input type="time" class="form-control" id="visitStartTime" name="visitStartTime" required>
-            </div>
+                    </div>
 
-            <div class="col-md-6 form-group">
-                <label for="start_area" class="form-label primary">Please select Start Area?<span class="required"> *</span></label>
-                <input type="text" class="form-control" id="start_area" placeholder="Enter location" name="start_area_info" required>
-                <input type="hidden" id="start_area_value" name="start_area">
-            </div>
-
-            <div class="col-md-4 form-group">
-                <button type="button" class="btn btn-custom-primary" id="visitPlanSubmit" onclick="generate_visit_plan()">
-                    Generate Visit Plan
-                </button>
-            </div>
+                </div>
+            </div>    
         </div>
 
         <div class="container">
@@ -123,6 +142,28 @@
 
 
     <script>
+        function getVisitDetails(totalRows) {
+            let visitDetails = [];
+
+            for (let i = 1; i <= totalRows; i++) {
+                // Get the values from the input elements
+                let unitId = document.getElementById(`unit_id${i}`)?.value;
+                let arrivalTime = document.getElementById(`visitStartTime${i}`)?.value;
+                let arrivalDate = document.getElementById(`visitStartDate${i}`)?.value;
+
+                // Ensure all values are present before adding them to the list
+                if (unitId && arrivalTime && arrivalDate) {
+                    visitDetails.push({
+                        unit_id: parseInt(unitId), // Convert unit_id to an integer
+                        Arrival_time: arrivalTime,
+                        Arrival_date: arrivalDate,
+                    });
+                }
+            }
+
+            return visitDetails;
+        }
+
         function toggle_loader() {
             document.getElementById('main-content').classList.toggle('blur');
             document.getElementById('spinner').classList.toggle('add-display-none');
@@ -159,7 +200,6 @@
             });
         }
 
-
         function validateStartDateTime() {
             
             const inputs = document.querySelectorAll('input');
@@ -191,6 +231,7 @@
             let start_date = document.getElementById('visitStartDate');
             let start_time = document.getElementById('visitStartTime');
             let start_area = document.getElementById('start_area_value');
+            let start_area_text = document.getElementById('start_area');
 
             let form_validated = validateStartDateTime();
 
@@ -198,12 +239,13 @@
                 console.log(start_date.value);
                 console.log(start_time.value);
                 console.log(start_area.value);
-                send_visit_time(start_date.value, start_time.value, start_area.value);
+                send_visit_time(start_date.value, start_time.value, start_area.value, start_area_text.value);
             }
 
         }
 
-        async function send_visit_time(start_date, start_time, start_area) {
+        async function send_visit_time(start_date, start_time, start_area, start_area_text) {
+            toggle_loader();
             try {
                 const response = await fetch("{% url 'visit-plan-list' %}", {  // Use the appropriate URL for your API endpoint
                     method: 'POST',
@@ -215,18 +257,53 @@
                         "start_date": start_date,
                         "start_time": start_time,
                         "start_area": start_area,
+                        "start_area_text": start_area_text,
                         "session_id": '{{session_id}}'
                     })
                 });
 
                 const data = await response.json();
                 if (data.success === true) {
-                    console.log(data.success);
+                    location.reload();
+                    toggle_loader();
                 } else {
                     console.log(data.success);
+                    toggle_loader();
                 }
             } catch (error) {
                 console.error("Error submitting document form: ", error);
+            }
+            toggle_loader();
+        }
+
+        async function final_visit_time() {
+            toggle_loader();
+            try {
+                const response = await fetch("{% url 'final-visit-plan-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({ 
+                        "final_visit_details": getVisitDetails(Number('{{len_properties}}')),
+                        "session_id": '{{session_id}}'
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    // location.reload();
+                    console.log(data.success);
+                    console.log('eawgrtarwegt');
+                    toggle_loader();
+                } else {
+                    console.log(data.success);
+                    toggle_loader();
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+                toggle_loader();
             }
         }
 

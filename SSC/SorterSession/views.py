@@ -45,6 +45,11 @@ class SorterViewSet(viewsets.ViewSet):
                 edit_session.properties = sorted_data
                 edit_session.selected_properties = ''
                 edit_session.visit_details = ''
+                edit_session.start_visit_time_date = ''
+                edit_session.visit_start_coords = ''
+                edit_session.visit_start_location = ''
+                edit_session.visist_finalize = False
+                edit_session.feedback = ''
 
                 edit_session.save()
                 session_id = edit_session.id
@@ -634,6 +639,11 @@ class VisitPlanViewSet(viewsets.ViewSet):
 
         if visit_details_data_str != '':
             visit_details_data = json.loads(visit_details_data_str.replace("'", '"'))
+            visit_start_date = str(session_data.get('start_visit_time_date', '')).split('|')[0].strip()
+            visit_start_time = str(session_data.get('start_visit_time_date', '')).split('|')[1].strip()
+            visit_start_location = session_data.get('visit_start_location', '')
+            visit_start_coords = session_data.get('visit_start_coords', '')
+            visit_planned = True
 
             for i, visit_unit in enumerate(visit_details_data):
                 unit_id = visit_unit['unit_id']
@@ -646,10 +656,15 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 property_name = f'{building_id} - {building_data.project_name}'
                 property_group_name = building_data.group_name
                 active_property = False            
-                menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True})
+                menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True})
                 print(menu_properties)
 
         else:
+            visit_start_date = ''
+            visit_start_time = ''
+            visit_start_location = ''
+            visit_start_coords = ''
+            visit_planned = False
             selected_properties_data_str = session_data.get('selected_properties', '')
             if not selected_properties_data_str:
                 raise ParseError("No properties found in session data.")
@@ -673,7 +688,7 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     property_name = f'{building_id} - {building_data.project_name}'
                     property_group_name = building_data.group_name
                     active_property = False            
-                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False})
+                    menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False})
                 
                 except Exception as e:
                     print(e)
@@ -682,6 +697,12 @@ class VisitPlanViewSet(viewsets.ViewSet):
             'session_id' : session_id,
             'client_data' : client_data,
             'menu_properties' : menu_properties,
+            'len_properties' : len(menu_properties),
+            'visit_planned' : visit_planned,
+            'visit_start_date' : visit_start_date,
+            'visit_start_time' : visit_start_time,
+            'visit_start_location' : visit_start_location,
+            'visit_start_coords' : visit_start_coords,
         }
 
         return render(request, 'selected_property_detail_design.html', data)
@@ -691,6 +712,7 @@ class VisitPlanViewSet(viewsets.ViewSet):
         start_time = request.data.get('start_time')
         start_area = request.data.get('start_area')
         session_id = request.data.get('session_id')
+        start_area_text = request.data.get('start_area_text')
 
         date_str = f'{start_date}\n{start_time}'
         start_datetime = datetime.strptime(date_str.strip(), '%Y-%m-%d\n%H:%M')
@@ -732,9 +754,30 @@ class VisitPlanViewSet(viewsets.ViewSet):
             }
 
             visit_details.append(temp_plan)
-        
+
         session_data_obj.visit_details = f'{visit_details}'
+        session_data_obj.start_visit_time_date = f'{start_date}|{start_time}'
+        session_data_obj.visit_start_location = start_area_text
+        session_data_obj.visit_start_coords = start_area
         session_data_obj.save()
 
+
+        return Response({'success':True}, status=200)
+
+class FinalVisitPlan(viewsets.ViewSet):
+    def create(self, request):
+        session_id = request.data.get('session_id')
+        final_visit_details = request.data.get('final_visit_details')
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+        
+
+        session_data_obj.visit_details = final_visit_details
+        session_data_obj.visist_finalize = True
+        session_data_obj.save()
 
         return Response({'success':True}, status=200)

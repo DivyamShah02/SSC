@@ -13,4 +13,5 @@ class ShortlistedProperty(models.Model):
     visit_start_location = models.CharField(null=True, blank=True, default='', max_length=255)
     visist_finalize = models.BooleanField(default=False)
     feedback = models.TextField(null=True, blank=True, default='')
+    visit_plan_pdf = models.FileField(upload_to='visit_plan', null=True, blank=True)
 

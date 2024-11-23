@@ -105,18 +105,27 @@
                             <input type="text" class="form-control" id="start_area" placeholder="Enter location" name="start_area_info" required value="{{visit_start_location}}">
                             <input type="hidden" id="start_area_value" name="start_area" value="{{visit_start_coords}}">
                         </div>
-            
+
+                        {% if visit_final == True %}
                         <div class="col-md-12 form-group text-center">
-                            <button type="button" class="btn btn-custom-primary" id="visitPlanSubmit" onclick="generate_visit_plan()">
-                                Generate Visit Plan
-                            </button>
+                            <a class="btn btn-custom-primary" href="{{visit_plan_pdf}}">
+                                Download Visit Plan
+                            </a>
                         </div>
-                        {% if visit_planned == True %}
-                        <div class="col-md-12 form-group text-center">
-                            <button type="button" class="btn btn-custom" id="sumbitVisitPlanSubmit" onclick="final_visit_time()">
-                                Submit Visit Plan
-                            </button>
-                        </div>
+
+                        {% else %}
+                            <div class="col-md-12 form-group text-center">
+                                <button type="button" class="btn btn-custom-primary" id="visitPlanSubmit" onclick="generate_visit_plan()">
+                                    Generate Visit Plan
+                                </button>
+                            </div>
+                            {% if visit_planned == True %}
+                            <div class="col-md-12 form-group text-center">
+                                <button type="button" class="btn btn-custom" id="sumbitVisitPlanSubmit" onclick="final_visit_time()">
+                                    Submit Visit Plan
+                                </button>
+                            </div>
+                            {% endif %}
                         {% endif %}
 
                     </div>
@@ -293,9 +302,7 @@
 
                 const data = await response.json();
                 if (data.success === true) {
-                    // location.reload();
-                    console.log(data.success);
-                    console.log('eawgrtarwegt');
+                    location.reload();
                     toggle_loader();
                 } else {
                     console.log(data.success);
@@ -307,6 +314,18 @@
             }
         }
 
+        function disableAllInputs() {            
+            const inputs = document.querySelectorAll('input, select, textarea');
+
+            inputs.forEach(input => {
+                input.disabled = true;
+            });
+        }
+                        
+        '{% if visit_final == True %}'
+        disableAllInputs();
+        console.log('earghegaewa');
+        '{% endif %}'
 
         window.onload = function () {
             toggle_loader();

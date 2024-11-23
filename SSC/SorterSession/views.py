@@ -10,6 +10,8 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.exceptions import NotFound, ParseError
 from django.shortcuts import get_object_or_404, render, redirect
+from django.core.files.base import ContentFile
+
 import json
 import ast
 from datetime import datetime
@@ -17,6 +19,8 @@ from datetime import datetime
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance, get_address
 from .visit_plan import create_visit_plan
+from .visit_plan_pdf import generate_visit_plan_pdf
+from .library.EmailSender import send_mail
 
 
 class SorterViewSet(viewsets.ViewSet):
@@ -50,6 +54,7 @@ class SorterViewSet(viewsets.ViewSet):
                 edit_session.visit_start_location = ''
                 edit_session.visist_finalize = False
                 edit_session.feedback = ''
+                edit_session.visit_plan_pdf = None
 
                 edit_session.save()
                 session_id = edit_session.id
@@ -703,6 +708,8 @@ class VisitPlanViewSet(viewsets.ViewSet):
             'visit_start_time' : visit_start_time,
             'visit_start_location' : visit_start_location,
             'visit_start_coords' : visit_start_coords,
+            'visit_final':session_data.get('visist_finalize', False),
+            'visit_plan_pdf':session_data.get('visit_plan_pdf', '')
         }
 
         return render(request, 'selected_property_detail_design.html', data)
@@ -774,7 +781,52 @@ class FinalVisitPlan(viewsets.ViewSet):
         except ShortlistedProperty.DoesNotExist:
             raise NotFound(f"Session with id {session_id} not found.")
         session_data = ShortlistedPropertySerializer(session_data_obj).data
-        
+
+        client_id = session_data.get('client_id')
+        try:
+            client_obj = PropertyInquiry.objects.get(id=client_id)
+        except PropertyInquiry.DoesNotExist:
+            raise NotFound(f"Client with id : {client_id} not found.")
+        client_data = PropertyInquirySerializer(client_obj).data
+
+        client_name = client_data.get('name', '')
+        client_number = f"{client_data.get('country_code', '')} {client_data.get('number', '')}"
+
+        visit_properties = []
+        for i, visit_unit in enumerate(final_visit_details):
+                unit_id = visit_unit['unit_id']
+
+                unit_data = UnitDetails.objects.get(id=unit_id)
+                
+                building_id = unit_data.building_id
+                building_data = BuildingDetails.objects.get(building_id=building_id)
+                
+                property_name = building_data.project_name
+                property_group_name = building_data.group_name
+                property_address = building_data.location_of_project
+                # to = building_data.email
+                to = 'divyamshah1234@gmail.com'
+
+                unit_configuration = unit_data.unit_configuration
+                unit_type = unit_data.unit_type
+                unit_series = unit_data.unit_series
+
+                visit_properties.append({
+                    "Sr. No.":i+1,
+                    'property_name':property_name, 
+                    'unit_id':unit_id, 
+                    'property_group_name':property_group_name, 
+                    'Arrival_time':visit_unit['Arrival_time'],
+                    'Arrival_date':visit_unit['Arrival_date'],
+                    'Address':property_address
+                    }) 
+                send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series)
+
+        svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
+        pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)
+
+        session_data_obj.visit_plan_pdf.save("visit_plan.pdf", ContentFile(pdf_buffer.read()))
+        pdf_buffer.close()
 
         session_data_obj.visit_details = final_visit_details
         session_data_obj.visist_finalize = True

@@ -56,6 +56,7 @@ class BuildingDetails(models.Model):
     age_of_property_by_developer = models.TextField(max_length=15, default='', null=True, blank=True)
     age_of_property_rera = models.TextField(max_length=15, default='', null=True, blank=True)
     rera_approved = models.BooleanField(default=False)
+    rera_by_when = models.CharField(max_length=255, null=True, blank=True)
     plot_area = models.CharField(max_length=255, null=True, blank=True)
     architect = models.CharField(max_length=255, null=True, blank=True)
     construction_company = models.CharField(max_length=255, null=True, blank=True)
@@ -106,7 +107,10 @@ class UnitDetails(models.Model):
     servant_room_available = models.BooleanField(default=False)
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.CharField(max_length=255, default=0, null=True, blank=True)
+    floor_to_ceiling = models.CharField(max_length=255, default=0, null=True, blank=True)
 
+    private_terrace = models.BooleanField(default=False)
+    carpet_size_terrace = models.CharField(max_length=255, default=0, null=True, blank=True)
     size_of_private_terrace_len = models.CharField(max_length=100, null=True, blank=True)
     size_of_private_terrace_wid = models.CharField(max_length=100, null=True, blank=True)
 

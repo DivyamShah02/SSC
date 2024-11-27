@@ -161,25 +161,25 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Simplex" value="Simplex" required>
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Simplex" value="Simplex" required onclick="toggleTerraceAvailable(false)">
                                         <label class="form-check-label" for="unit_type_Simplex">Simplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Duplex" value="Duplex" required>
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Duplex" value="Duplex" required onclick="toggleTerraceAvailable(true)">
                                         <label class="form-check-label" for="unit_type_Duplex">Duplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex" required>
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex" required onclick="toggleTerraceAvailable(true)">
                                         <label class="form-check-label" for="unit_type_Triplex">Triplex</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse" required>
+                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse" required onclick="toggleTerraceAvailable(true)">
                                         <label class="form-check-label" for="unit_type_Penthouse">Penthouse</label>
                                     </div>
                                 </div>
@@ -191,6 +191,24 @@
                                 <option value="Penthouse">Penthouse</option>
                             </select> -->
                         </div>
+
+                        <div class="col-md-4 form-group" id="privateTerraceAvailable" style="display: none;">
+                            <label class="form-label primary" for="privateTerrace">Private terrace available?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="private_terrace" id="private_terrace_yes" value="Yes" onclick="toggleTerrace(true)">
+                                <label class="form-check-label" for="private_terrace_yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="private_terrace" id="private_terrace_no" value="No" onclick="toggleTerrace(false)">
+                                <label class="form-check-label" for="private_terrace_no">No</label>
+                            </div>
+                            <div id="carpet_size_of_private_terrace" class="pt-3" style="display: none;">
+                                <label class="form-label primary" for="carpet_size_terrace">&nbsp;&nbsp;Carpet Size?</label>
+                                <input type="number" class="form-control" id="carpet_size_terrace"
+                                    placeholder="Enter size of private terrace" name="carpet_size_terrace">
+                            </div>
+                        </div>
+
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="unitSeries">3) Unit series</label>
                             <input type="text" class="form-control" id="unitSeries" name="unit_series"
@@ -266,11 +284,11 @@
                                 balcony<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <div class="row">
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfMainBalconyLen"
+                                    <input type="number" class="form-control" id="sizeOfMainBalconyLen" step="0.01"
                                 placeholder="Length" name="size_of_balcony_len">
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfMainBalconywid"
+                                    <input type="number" class="form-control" id="sizeOfMainBalconywid" step="0.01"
                                 placeholder="Width" name="size_of_balcony_wid">
                                 </div>
                             </div>
@@ -282,11 +300,11 @@
                                 bedroom<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <div class="row">
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfMasterBedroomLen"
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomLen" step="0.01"
                                 placeholder="Length" name="size_of_master_bedroom_len">
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfMasterBedroomwid"
+                                    <input type="number" class="form-control" id="sizeOfMasterBedroomwid" step="0.01"
                                 placeholder="Width" name="size_of_master_bedroom_wid">
                                 </div>
                             </div>
@@ -298,11 +316,11 @@
                                 kitchen<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <div class="row">
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfKitchenLen"
+                                    <input type="number" class="form-control" id="sizeOfKitchenLen" step="0.01"
                                 placeholder="Length" name="size_of_kitchen_len">
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfKitchenwid"
+                                    <input type="number" class="form-control" id="sizeOfKitchenwid" step="0.01"
                                 placeholder="Width" name="size_of_kitchen_wid">
                                 </div>
                             </div>
@@ -314,11 +332,11 @@
                                 terrace<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
                             <div class="row">
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfPrivateTerraceLen"
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerraceLen" step="0.01"
                                 placeholder="Length" name="size_of_private_terrace_len">
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control" id="sizeOfPrivateTerracewid"
+                                    <input type="number" class="form-control" id="sizeOfPrivateTerracewid" step="0.01"
                                 placeholder="Width" name="size_of_private_terrace_wid">
                                 </div>
                             </div>
@@ -326,13 +344,19 @@
                                 placeholder="Enter size of private terrace" name="size_of_private_terrace"> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="numberOfBathrooms">14) No. of attached
+                            <label class="form-label primary" for="floorToCeilingHeight">14) Floor to Ceiling Height
+                                <span class="required"> *</span></label>
+                            <input type="number" class="form-control" id="floorToCeilingHeight" required step="0.01"
+                                placeholder="Enter Floor to Ceiling Height" name="floor_to_ceiling">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="numberOfBathrooms">15) No. of attached
                                 bathrooms<span class="required"> *</span></label>
                             <input type="number" class="form-control" id="numberOfBathrooms" required
                                 placeholder="Enter number of attached bathrooms" name="no_of_attached_bathrooms">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="servantRoomAvailable">15) Servant room available?</label><br>
+                            <label class="form-label primary" for="servantRoomAvailable">16) Servant room available?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="servant_room_available" id="servant_room_available_yes" value="Yes">
                                 <label class="form-check-label" for="servant_room_available_yes">Yes</label>
@@ -347,7 +371,7 @@
                             </select> -->
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="pujaRoomAvailable">16) Separate puja room available?</label><br>
+                            <label class="form-label primary" for="pujaRoomAvailable">17) Separate puja room available?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="separate_puja_room_available" id="separate_puja_room_yes" value="Yes">
                                 <label class="form-check-label" for="separate_puja_room_yes">Yes</label>
@@ -358,24 +382,24 @@
                             </div>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="numberOfBalconies">17) No. of balconies provided</label>
+                            <label class="form-label primary" for="numberOfBalconies">18) No. of balconies provided</label>
                             <input type="number" class="form-control" id="numberOfBalconies"
                                 placeholder="Enter number of balconies" name="no_of_balconies">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="parkingAllotted">18) No. of parking
+                            <label class="form-label primary" for="parkingAllotted">19) No. of parking
                                 allotted to one unit<span class="required"> *</span></label>
                             <input type="number" class="form-control" id="parkingAllotted" required
                                 placeholder="Enter number of parking space" name="no_of_parking_allotted">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="floor_plan">19) Upload Floor Plan</label>
+                            <label class="form-label primary" for="floor_plan">20) Upload Floor Plan</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="floor_plan"
                             name="floor_plan" accept="image/*">
                             <img id="img_floor_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="unit_plan">20) Upload Unit Plan</label>
+                            <label class="form-label primary" for="unit_plan">21) Upload Unit Plan</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="unit_plan"
                             name="unit_plan" accept="image/*">
                             <img id="img_unit_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
@@ -473,8 +497,33 @@
             }
         }
 
+        function toggleTerraceAvailable(show) {
+            const privateTerraceAvailable = document.getElementById('privateTerraceAvailable');
+            if (show) {
+                privateTerraceAvailable.style.display = 'block';
+            }
+            else {
+                privateTerraceAvailable.style.display = 'none';
+            }
+        }
+
+
+        function toggleTerrace(show) {
+            const privateTerrace = document.getElementById('carpet_size_of_private_terrace');
+            if (show) {
+                privateTerrace.style.display = 'block';
+            }
+            else {
+                privateTerrace.style.display = 'none';
+            }
+        }
+
         async function edit_unit_details(unit_id){
             toggle_preloader();
+
+            toggleTerrace(false);
+            toggleTerraceAvailable(false);
+
             let floor_img = document.getElementById('img_floor_plan')
             let unit_img = document.getElementById('img_unit_plan')
             document.getElementById('unit_id').value = unit_id
@@ -487,12 +536,23 @@
             unit_img.src = data['unit_plan']
             unit_img.style.display = 'block'
             toggleLiftInput(data['private_lifts'], true)
+
+            if (data['unit_type'] != 'Simplex') {
+                toggleTerraceAvailable(true);
+                console.log(data['private_terrace']);
+                if (data['private_terrace']) {
+                    toggleTerrace(true);
+                }
+            }
             
             toggle_preloader();
         }
 
         async function copy_unit_details(unit_id) {
             toggle_preloader();
+
+            toggleTerrace(false);
+            toggleTerraceAvailable(false);
             let floor_img = document.getElementById('img_floor_plan')
             let unit_img = document.getElementById('img_unit_plan')
             document.getElementById('unit_id').value = 'NULL'
@@ -506,6 +566,15 @@
             unit_img.style.display = 'none'
 
             toggleLiftInput(data['private_lifts'], true)
+
+            if (data['unit_type'] != 'Simplex') {
+                toggleTerraceAvailable(true);
+                console.log(data['private_terrace']);
+                if (data['private_terrace']) {
+                    toggleTerrace(true);
+                }
+            }
+
             toggle_preloader();
         }
 

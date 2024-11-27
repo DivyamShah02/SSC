@@ -391,14 +391,20 @@
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="jodiPossible">20) RERA Approved?</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_Yes"
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_Yes" onclick="toggleReraDate(false)"
                                 value="Yes">
                             <label class="form-check-label" for="rera_approved_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_No"
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_No" onclick="toggleReraDate(true)"
                                 value="No">
                             <label class="form-check-label" for="rera_approved_No">No</label>
+                        </div>
+
+                        <div id="rera_by_when_que" class="pt-3" style="display: none;">
+                            <label class="form-label primary" for="rera_by_when">&nbsp;&nbsp;By When is RERA expected?</label>
+                            <input type="text" class="form-control" id="rera_by_when" name="rera_by_when"
+                            placeholder="Possession date as per RERA">
                         </div>
 
                     </div>
@@ -410,7 +416,7 @@
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="architect">22) Architect<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="architect" name="architect" required
-                            placeholder="Enter architech name">
+                            placeholder="Enter Architect name">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="constructionCompany">23) Construction company</label>
@@ -1103,6 +1109,9 @@
                                     Details</b></button>
                         </div>
                         <div class="col-12 text-center mt-2">
+                            <a type="button" id="view_property" class="btn btn-custom-outline-primary" style="display: none"><b>View Property Details</b></a>
+                        </div>
+                        <div class="col-12 text-center mt-2">
                             <button type="button" onclick="publish_building_data()" id="publish_btn" class="btn btn-custom-primary" style="display: none"><b>Publish Property Details</b></button>
                         </div>
                     </div>
@@ -1340,6 +1349,14 @@
             minViewMode: "months",
             autoclose: true
         });
+
+        $('#rera_by_when').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+
 
         $('#possession_by').datepicker({
             format: "mm-yyyy",
@@ -1717,6 +1734,15 @@
                 document.getElementById('note_p').style.display = 'block';
                 document.getElementById('note_span').innerText = data['note'];
             }
+            if (data['one_unit_added'] === true){
+                let view_property_btn = document.getElementById('view_property');
+                view_property_btn.style.display = '';
+                view_property_btn.href = `{% url 'view-default-property-list' %}?unit_id=${data['one_unit_id']}`
+            }
+            if (data['rera_approved']) {}
+                else {
+                    toggleReraDate(true);
+                }
             toggle_preloader();
         }
 
@@ -1824,6 +1850,17 @@
         '{% if is_building_edit == True %}'
         copy_building_details('{{building_id}}')
         '{% endif %}'
+
+        function toggleReraDate(show) {
+            const rera_by_when_que = document.getElementById('rera_by_when_que');
+            if (show) {
+                rera_by_when_que.style.display = 'block';
+            }
+            else {
+                rera_by_when_que.style.display = 'none';
+                document.getElementById('rera_by_when').value = '';
+            }
+        }
 
     </script>
 

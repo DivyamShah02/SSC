@@ -163,9 +163,12 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
                 pass
 
             unit_unactive = False
+            one_unit_added = False
             note = ''
             all_units = UnitDetails.objects.filter(building_id=building_id)
+
             if len(all_units) != 0:
+                one_unit_added = True
                 for unit in all_units:
                     if not unit.active:
                         unit_unactive = True
@@ -174,8 +177,16 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
                 unit_unactive = True
                 note = 'You have added 0 units of this property, please Add unit'
 
+            if one_unit_added:
+                unit_id = all_units[0].id
+            
+            else:
+                unit_id = None
+
             building_data['unit_unactive'] = unit_unactive
             building_data['note'] = note
+            building_data['one_unit_added'] = one_unit_added
+            building_data['one_unit_id'] = unit_id
 
             return Response({'success': True, 'building_data': building_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)

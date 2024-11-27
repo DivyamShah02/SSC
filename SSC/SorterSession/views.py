@@ -272,13 +272,19 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     building_id = unit_data.building_id
                     building_data = BuildingDetails.objects.get(building_id=building_id)
                     
-                    property_name = f'{building_id} - {building_data.project_name}'
+                    property_name = f'{building_data.project_name}'
                     property_group_name = building_data.group_name
+                    try:
+                        property_img = building_data.head_image.url
+                    except:
+                        property_img = ''
+                        pass
+                    property_basic_price = round(float(unit_data.base_price) / 10000000, 2)
                     active_property = False
                     
                     if i == ind-1:
                         active_property = True
-                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1})
+                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1})
                 
                 except Exception as e:
                     print(e)
@@ -458,6 +464,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'next_ind':next_ind,
                 'session_id':session_id,
                 'amenties_data':amenties_data,
+                'default_amentity':False,
                 'property_unit_price_in_cr':property_unit_price_in_cr,
                 'total_property_unit_price':total_property_unit_price,
                 'per_sqft_rate_saleable':per_sqft_rate_saleable,
@@ -558,6 +565,202 @@ class PropertyDetailViewset(viewsets.ViewSet):
             pass
 
         return list1, list2, list3
+
+
+class PropertyDefaultDetailViewset(viewsets.ViewSet):
+    def list(self, request):
+        try:
+            unit_id = request.GET.get('unit_id')
+            # Fetch unit data
+            try:
+                unit_data_obj = UnitDetails.objects.get(id=unit_id)
+            except UnitDetails.DoesNotExist:
+                raise NotFound(f"Unit with id {unit_id} not found.")
+            unit_data = UnitDetailsSerializer(unit_data_obj).data
+
+
+            # Fetch building data
+            building_id = unit_data.get('building_id')
+            try:
+                building_data_obj = BuildingDetails.objects.get(building_id=building_id)
+            except BuildingDetails.DoesNotExist:
+                raise NotFound(f"Building with id {building_id} not found.")
+            building_data = BuildingDetailsSerializer(building_data_obj).data
+
+            lat_cord = building_data.get('google_pin_lat')
+            lng_cord = building_data.get('google_pin_lng')
+
+            # Fetch amenties data
+            try:
+                amenities_obj = Amenities.objects.get(building_id=building_id)
+            except Amenities.DoesNotExist:
+                raise NotFound(f"Amenties for building : {building_id} not found.")
+            amenties_data = AmenitiesSerializer(amenities_obj).data
+            all_amenties = []
+
+            for amenity in amenties_data.keys():
+                if amenties_data[amenity] == True and type(amenties_data[amenity]) == bool:
+                    all_amenties.append(amenity)
+            size_of_unit = float(unit_data.get('size_of_unit'))
+
+            property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
+            basic_price = round(property_unit_price/ 10000000, 2)
+
+
+            size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
+
+            per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable')) / 1000, 2)
+
+            floor_rise_str = building_data['floor_rise']
+
+            # Convert the string to a list of dictionaries
+            floor_rise = ast.literal_eval(floor_rise_str)
+            
+            try:
+                total_development_charges = size_of_unit * float(building_data['development_charges'])
+                development_charges = round(total_development_charges / 100000, 2)
+            except:
+                total_development_charges = 0
+                development_charges = 0
+
+            
+            try:
+                advance_maintenance_rate = round((float(building_data['advance_maintenance']) / 24), 2)
+                # total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                total_advance_maintenance = size_of_unit * float(building_data['advance_maintenance'])
+                advance_maintenance_per_month = advance_maintenance_rate * size_of_unit
+                advance_maintenance = round(total_advance_maintenance / 100000, 2)
+            except:
+                advance_maintenance_rate = 0
+                total_advance_maintenance = 0
+                advance_maintenance = 0
+
+            
+            try:
+                total_maintenance_deposit = size_of_unit * float(building_data['maintenance_deposit'])
+                maintenance_deposit = round(total_maintenance_deposit / 100000, 2)
+            except:
+                total_maintenance_deposit = 0
+                maintenance_deposit = 0
+
+            
+            try:            
+                total_other_specific_expenses = size_of_unit * float(building_data['other_specific_expenses'])
+                other_specific_expenses = round(total_other_specific_expenses / 100000, 2)
+            except:
+                total_other_specific_expenses = 0
+                other_specific_expenses = 0
+
+
+            try:            
+                total_government_charges = (property_unit_price * (float(building_data['sale_deed_value'])/100)) * 5.9 / 100
+                government_charges = round(total_government_charges / 100000, 2)
+            except:
+                total_government_charges = 0
+                government_charges = 0
+
+            try:            
+                total_gst = (property_unit_price * (float(building_data['sale_deed_value'])/100)) * float(building_data['gst_applicable']) / 100
+                gst = round(total_gst / 100000, 2)
+            except:
+                total_gst = 0
+                gst = 0
+
+            # total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+            total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+            property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
+
+            is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
+
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company']
+            overview_details = []
+            
+            for key in overview_keys:
+                if key in unit_data.keys():
+                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
+                
+                elif key in building_data.keys():
+                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
+
+            
+            destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
+
+            try:
+                origins_sch = ['23.0188033', '72.5283894']            
+                distance_sch, duration_sch = get_distance(origins_sch[0], origins_sch[1], destinations[0], destinations[1])
+                sch_info = get_address(origins_sch[0], origins_sch[1])
+                duration_sch = str(duration_sch).title()
+            
+            except:
+                duration_sch = False
+
+            try:
+                origins_work = ['23.0005694', '72.5024269']
+                distance_work, duration_work = get_distance(origins_work[0], origins_work[1], destinations[0], destinations[1])
+                work_info = get_address(origins_work[0], origins_work[1])
+                duration_work = str(duration_work).title()
+
+            except:
+                duration_work = False
+            
+
+            data = {
+                'success': True,                
+                'amenties_data':amenties_data,
+                'all_amenties':all_amenties,
+                'default_amentity':True,
+                'property_unit_price_in_cr':property_unit_price_in_cr,
+                'total_property_unit_price':total_property_unit_price,
+                'per_sqft_rate_saleable':per_sqft_rate_saleable,
+                'size_of_unit_mtrs':size_of_unit_mtrs,                
+                'main_property': building_data,
+                'lat_cord':lat_cord,
+                'lng_cord':lng_cord,
+                'unit_data':unit_data,
+                'floor_rise':floor_rise,
+                'basic_price':basic_price,
+                'advance_maintenance_rate':advance_maintenance_rate,
+                'advance_maintenance':advance_maintenance,
+                'advance_maintenance_per_month':advance_maintenance_per_month,
+                'development_charges':development_charges,
+                'maintenance_deposit':maintenance_deposit,
+                'other_specific_expenses':other_specific_expenses,
+                'government_charges':government_charges,
+                'gst':gst,
+                'is_ready_to_move':is_ready_to_move,
+                'overview_details':overview_details,
+                'duration_sch':duration_sch,
+                'duration_work':duration_work,
+                'sch_info':sch_info,
+                'work_info':work_info,
+                'origins_sch_lat':origins_sch[0],
+                'origins_sch_lng':origins_sch[1],
+                'origins_work_lat':origins_work[0],
+                'origins_work_lng':origins_work[1],
+                }
+            
+            return render(request, 'property_detail_design.html', data)
+            return Response(data)
+
+
+        except ParseError as e:
+            return redirect('error_page')
+            return Response({'success': False, 'error': str(e)}, status=400)
+
+        except NotFound as e:
+            return redirect('error_page')
+            return Response({'success': False, 'error': str(e)}, status=404)
+
+        except Exception as e:
+            # Catch any other unforeseen errors
+            print(e)
+            return redirect('error_page')
+            return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
+
+    def is_date_in_past(self, date_str):
+        input_date = datetime.strptime(date_str, "%m-%Y")
+        current_date = datetime.now().replace(day=1)
+        return input_date < current_date
 
 
 class GetDistanceViewset(viewsets.ViewSet):
@@ -770,6 +973,7 @@ class VisitPlanViewSet(viewsets.ViewSet):
 
 
         return Response({'success':True}, status=200)
+
 
 class FinalVisitPlan(viewsets.ViewSet):
     def create(self, request):

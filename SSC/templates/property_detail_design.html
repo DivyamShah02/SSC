@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/scc.css">
     <link rel="stylesheet" href="/static/css/loader.css">
-    <title>{{main_property.building_id}} - {{main_property.project_name}}</title>
+    <title>{{main_property.project_name}} by {{main_property.group_name}}</title>
     <style>
         .custom-tooltip {
             --bs-tooltip-bg: var(--primary-color);
@@ -85,20 +85,22 @@
                             onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
                             style="cursor: pointer;">
                             {% endif %}
-                            <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg"
+                            <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
+                            <img src="{{menu_property.property_img}}"
                                 alt="Property Image"
                                 style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
-                            <div class="golden-badge">Premium Property</div>
+                            <!-- <div class="golden-badge">Premium Property</div> -->
                             <div class="card-body">
-                                <h5 class="card-title"><u>{{menu_property.property_name}}</u></h5>
+                                <h5 class="card-title">{{forloop.counter}}) - <u>{{menu_property.property_name}}</u></h5>
                                 <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
+                                <h5 class="card-title">₹ {{menu_property.property_basic_price}} Cr</h5>
                             </div>
                         </div>
                         {% endfor %}
-                        <form class="d-flex mt-3" role="search">
+                        <!-- <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-custom-outline-primary" type="submit">Search</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>
@@ -335,8 +337,8 @@
                             href="#price_information"><b>Price Information</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-scc floor-plan-btn" id="overview-tab"
-                            href="#overview"><b>Overview</b></a>
+                        <a class="nav-link nav-link-scc floor-plan-btn" id="additional_details-tab"
+                            href="#additional_details"><b>Additional Details</b></a>
                     </li>
                 </ul>
                 <!-- Tabs navs -->
@@ -422,6 +424,17 @@
                                 <h4>Amenties</h4>
                             </div>
                             <div class="px-5 row pt-3" style="background-color: white !important;">
+                                {% if default_amentity == True %}
+                                {% for amenity in all_amenties %}
+                                <div class="col-12 col-md-4 col-lg-3 p-2">
+                                    <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp;
+                                        <b>{{amenity}}</b>
+                                    </p>
+                                </div>
+                                {% endfor %}
+
+                                {% else %}
+
                                 {% for client_amenity in client_prefered_amenities %}
                                 <div class="col-12 col-md-4 col-lg-3 p-2">
                                     <p><i class="fas fa-circle-dot fa-sm text-secondary-ssc mt-3"></i>&nbsp;&nbsp;
@@ -448,6 +461,8 @@
                                     </p>
                                 </div>
                                 {% endfor %}
+
+                                {% endif %}
 
                                 <!-- <div class="col-12 col-md-4 col-lg-3 p-2">
                                     <p><i class="fas fa-temperature-arrow-up text-secondary-ssc fs-3"></i>&nbsp;&nbsp; <b>Central Heating</b></p>
@@ -717,11 +732,11 @@
 
                     </div>
 
-                    <div class="tabs-ssc my-5" id="overview">
+                    <div class="tabs-ssc my-5" id="additional_details">
                         <!-- More details start -->
                         <div class="scc-section container pt-5">
                             <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
-                                <h4>More Details</h4>
+                                <h4>Additional Details</h4>
                             </div>
                             <table class="table table-striped">
                                 <!-- <thead>
@@ -733,57 +748,10 @@
                                 <tbody class="">
                                     {% for field in overview_details %}
                                     <tr>
-                                        <td class="px-3">{{field.key}}</td>
-                                        <th>{{field.value}}</th>
+                                        <td class="">{{field.key}}</td>
+                                        <th>{{field.value}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                     </tr>
-                                    {% endfor %}
-                                    <!-- <tr>
-                                        <td class="px-3">Price Breakup</td>
-                                        <th>₹1.5 Cr - ₹2.1 Cr</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">RERA ID</td>
-                                        <th>Lorem ipsum</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Location</td>
-                                        <th>Shantigram, Ahmedabad - North, Gujarat</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Furnishing</td>
-                                        <th>Unfurnished</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Water Availability</td>
-                                        <th>24 Hours Available</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Status of Electricity</td>
-                                        <th>No/Rare Powercut</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Floors allowed for construction</td>
-                                        <th>14</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Lift</td>
-                                        <th>2-3</th>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3">Loan Offered</td>
-                                        <th>Estimated EMI Starting: ₹1,00,000 &nbsp;<i
-                                                class="fas fa-circle-info text-secondary-ssc"></i>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2"><b>Description</b> Lorem ipsum dolor sit amet consectetur. Tellus
-                                            sed nulla ac eu
-                                            sit fames pellentesque elit urna. Feugiat fusce tortor varius ipsum amet sed
-                                            pretium. Purus nisi
-                                            aliquam lacus fermentum quam viverra. Risus velit orci tellus volutpat id amet
-                                            neque egestas.
-                                        </td>
-                                    </tr> -->
+                                    {% endfor %}                                    
                                 </tbody>
                             </table>
                         </div>
@@ -820,7 +788,7 @@
                     {% endif %}
                 </div>
                 <div class="col-lg-5 col-md-4 col-6 text-start p-0">
-                    <h5 class="text-primary-ssc"><b>{{main_property.building_id}} - {{main_property.project_name}}</b>
+                    <h5 class="text-primary-ssc"><b>{{main_property.project_name}}</b>
                     </h5>
                     <p><b>{{unit_data.unit_configuration}}</b></p>
                 </div>

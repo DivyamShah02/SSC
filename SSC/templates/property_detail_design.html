@@ -217,12 +217,47 @@
                             <div class="col-2">
                                 <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
                             </div>
-                            <div class="col-10">
+                            <div class="col-9">
                                 <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
                                 <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
                                 <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
                                 <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
                                             class="text-primary-ssc"></span></b></p>
+                            </div>
+                            <div class="col-1 px-1">
+                                <br>
+                                <i class="fa fa-chevron-down" id="down-same-unit" style="cursor: pointer;" onclick="toggleSameUnit(true)"></i>
+                                <i class="fa fa-chevron-up" id="up-same-unit" style="cursor: pointer; display: none;" onclick="toggleSameUnit(false)"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute bg-white p-3" id="same_units_dropdown" style="z-index: 999; display: none; width: 20rem;">
+                        <div class="card my-2" style="border: 3px solid black;">
+                            <div class="card-body row">
+                                <div class="col-2">
+                                    <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
+                                </div>
+                                <div class="col-10 px-4">
+                                    <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
+                                    <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
+                                    <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                    <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
+                                                class="text-primary-ssc"></span></b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card my-2" style="border: 3px solid black;">
+                            <div class="card-body row">
+                                <div class="col-2">
+                                    <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
+                                </div>
+                                <div class="col-10 px-4">
+                                    <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
+                                    <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
+                                    <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                    <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
+                                                class="text-primary-ssc"></span></b></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -319,7 +354,7 @@
 
         <div class="ssc-section container">
             <div>
-                <ul class="nav nav-tabs sticky-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs sticky-tabs" id="myTab" role="tablist" style="z-index: 400;">
                     <li class="nav-item">
                         <a class="nav-link nav-link-scc floor-plan-btn active" id="floor_plan-tab"
                             href="#floor_plan"><b>Floor Plan</b></a>
@@ -765,7 +800,47 @@
 
         <!-- Fixed Bottom Bar -->
         <div class="fixed-bottom-bar">
-            <div class="row m-0">
+            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+                <!-- Left Section -->
+                <div class="d-flex align-items-center mb-2 mb-md-0">
+                    <!-- Navigation Buttons -->
+                    {% if prev_ind == False %}
+                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-left"></i></button>
+                    {% else %}
+                    <button
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;"
+                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-left"></i></button>
+                    {% endif %}
+    
+                    {% if next_ind == False %}
+                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-right"></i></button>
+                    {% else %}
+                    <button
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;"
+                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
+                            class="fa fa-arrow-right"></i></button>
+                    {% endif %}
+    
+                    <!-- Property Details -->
+                    <div class="mx-3">
+                        <h5 class="text-primary-ssc"><b>{{main_property.project_name}}</b>
+                        </h5>
+                        <p><b>{{unit_data.unit_configuration}}</b></p>
+                    </div>
+                </div>
+
+                <!-- Right Section (Action Buttons) -->
+                <div class="justify-content-end">
+                    <a href="{{main_property.brochure_1}}" target="_blank" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
+                        class="fas fa-arrow-up-from-bracket"></i> Brochure</a>
+                <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
+                <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
+                </div>
+            </div>
+            <!-- <div class="row m-0">
                 <div class="col-lg-1 col-md-2 col-6 p-0">
                     {% if prev_ind == False %}
                     <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
@@ -798,7 +873,7 @@
                     <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
                     <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="container">
@@ -1209,6 +1284,19 @@
                 }
             } catch (error) {
                 console.error("Error submitting document form: ", error);
+            }
+        }
+
+        function toggleSameUnit(show) {
+            if (show) {
+                document.getElementById('same_units_dropdown').style.display = '';
+                document.getElementById('down-same-unit').style.display = 'none';
+                document.getElementById('up-same-unit').style.display = '';
+            }
+            else {
+                document.getElementById('same_units_dropdown').style.display = 'none';
+                document.getElementById('down-same-unit').style.display = '';
+                document.getElementById('up-same-unit').style.display = 'none';
             }
         }
 

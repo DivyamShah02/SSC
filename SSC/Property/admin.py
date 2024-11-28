@@ -8,8 +8,10 @@ class AdminBuildingDetails(admin.ModelAdmin):
 admin.site.register(BuildingDetails, AdminBuildingDetails)
 
 class AdminUnitDetails(admin.ModelAdmin):
-    list_display = ('building_id', 'unit_configuration', 'unit_type', 'no_of_units_per_floor')
+    list_display = ('project_name', 'group_name', 'size_of_unit', 'building_id', 'unit_configuration', 'unit_type')
+    search_fields = ('project_name', 'group_name', 'size_of_unit', 'building_id', 'unit_configuration', 'unit_type')
     list_filter = ('unit_configuration', 'unit_type')
+
 admin.site.register(UnitDetails, AdminUnitDetails)
 
 class AdminAmenities(admin.ModelAdmin):

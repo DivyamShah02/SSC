@@ -91,6 +91,8 @@ class BuildingDetails(models.Model):
 
 class UnitDetails(models.Model):
     building_id = models.CharField(max_length=255)
+    project_name = models.CharField(max_length=255, null=True, blank=True, default='')
+    group_name = models.CharField(max_length=255, null=True, blank=True, default='')
 
     unit_configuration = models.CharField(max_length=255, null=True, blank=True)
     unit_type = models.CharField(max_length=255, null=True, blank=True)

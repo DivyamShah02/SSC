@@ -224,43 +224,37 @@
                                 <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
                                             class="text-primary-ssc"></span></b></p>
                             </div>
+                            {% if same_building == True %}
                             <div class="col-1 px-1">
                                 <br>
                                 <i class="fa fa-chevron-down" id="down-same-unit" style="cursor: pointer;" onclick="toggleSameUnit(true)"></i>
                                 <i class="fa fa-chevron-up" id="up-same-unit" style="cursor: pointer; display: none;" onclick="toggleSameUnit(false)"></i>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
+                    {% if same_building == True %}
                     <div class="position-absolute bg-white p-3" id="same_units_dropdown" style="z-index: 999; display: none; width: 20rem;">
-                        <div class="card my-2" style="border: 3px solid black;">
+                        {% for same_unit in final_same_unit_details %}
+                        <div class="card my-2" style="border: 3px solid black; cursor: pointer;"
+                        onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}`">
                             <div class="card-body row">
                                 <div class="col-2">
                                     <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
                                 </div>
                                 <div class="col-10 px-4">
                                     <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                                    <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
+                                    <h5 class="card-title text-primary-ssc"><b>{{same_unit.size_of_unit}} Sq. Ft.</b></h5>
                                     <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
-                                    <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
+                                    <p class="card-text text-light-ssc"><b>{{same_unit.carpet_area_rera}} Sq. Ft<span
                                                 class="text-primary-ssc"></span></b></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card my-2" style="border: 3px solid black;">
-                            <div class="card-body row">
-                                <div class="col-2">
-                                    <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
-                                </div>
-                                <div class="col-10 px-4">
-                                    <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                                    <h5 class="card-title text-primary-ssc"><b>{{unit_data.size_of_unit}} Sq. Ft.</b></h5>
-                                    <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
-                                    <p class="card-text text-light-ssc"><b>{{unit_data.carpet_area_rera}} Sq. Ft<span
-                                                class="text-primary-ssc"></span></b></p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        
                     </div>
+                    {% endif %}
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mt-4">
                     <div class="card">

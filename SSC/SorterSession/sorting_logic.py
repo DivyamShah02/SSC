@@ -123,8 +123,9 @@ class Sorter:
                         print(len(property_unit_matched))
                         # for pr in property_unit_matched:
                         #     print(pr.id)
-                        for property in property_unit_matched:    validated_property.append(property.id)
-
+                        for property in property_unit_matched:
+                            if property.id not in validated_property:
+                                validated_property.append(property.id)
 
             return validated_property
 

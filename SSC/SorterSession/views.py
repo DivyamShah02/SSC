@@ -262,16 +262,19 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             if not isinstance(properties_data, list):
                 raise ParseError("Properties data must be a list.")
-            
+            same_building_id = []
             menu_properties = []
+            same_units = {}
+            
             for i, property in enumerate(properties_data[0:15]):
                 try:
                     unit_id = property.get('unit_id')
                     unit_data = UnitDetails.objects.get(id=unit_id)
                     
                     building_id = unit_data.building_id
-                    building_data = BuildingDetails.objects.get(building_id=building_id)
                     
+                    building_data = BuildingDetails.objects.get(building_id=building_id)
+
                     property_name = f'{building_data.project_name}'
                     property_group_name = building_data.group_name
                     try:
@@ -284,7 +287,39 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     
                     if i == ind-1:
                         active_property = True
-                    menu_properties.append({'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1})
+
+                    if building_id not in same_building_id:
+                        menu_properties.append({'unit_id':unit_id, 'building_id':building_id, 'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1})
+                        same_building_id.append(building_id)
+                        same_units[building_id] = []
+                        same_units[building_id].append({
+                            'building_id': building_id,
+                            'unit_id': unit_id,
+                            'size_of_unit': unit_data.size_of_unit,
+                            'carpet_area_rera': unit_data.carpet_area_rera,
+                            'ind': i+1
+                        })
+                    else:
+                        if active_property:
+                            for property_in_menu in menu_properties:
+                                if building_id == property_in_menu['building_id']:
+                                    property_in_menu['unit_id'] = unit_id
+                                    property_in_menu['building_id'] = building_id
+                                    property_in_menu['property_name'] = property_name
+                                    property_in_menu['property_group_name'] = property_group_name
+                                    property_in_menu['active_property'] = active_property
+                                    property_in_menu['property_img'] = property_img
+                                    property_in_menu['property_basic_price'] = property_basic_price
+                                    property_in_menu['ind'] = i+1
+
+                        same_units[building_id].append({
+                            'building_id': building_id,
+                            'size_of_unit': unit_data.size_of_unit,
+                            'carpet_area_rera': unit_data.carpet_area_rera,
+                            'ind': i+1,
+                            'unit_id': unit_id,
+                        })
+
                 
                 except Exception as e:
                     print(e)
@@ -305,6 +340,33 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             # Fetch building data
             building_id = unit_data.get('building_id')
+
+            if len(same_units[building_id]) > 1:
+                same_building = True
+                same_unit_details = same_units[building_id]
+            else:
+                same_building = False
+                same_unit_details = []
+
+            final_same_unit_details = []
+            for same_unit_detail in same_unit_details:
+                if same_unit_detail['ind'] != ind:
+                    final_same_unit_details.append(same_unit_detail)
+
+            for proerty_ind, property_temp in enumerate(menu_properties):
+
+                if property_temp['active_property']:
+                    try:
+                        next_ind = menu_properties[proerty_ind + 1]['ind']
+                    except:
+                        next_ind = False
+
+                    try:
+                        prev_ind = menu_properties[proerty_ind - 1]['ind']
+                    except:
+                        prev_ind = False
+
+
             try:
                 building_data_obj = BuildingDetails.objects.get(building_id=building_id)
             except BuildingDetails.DoesNotExist:
@@ -356,13 +418,13 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable')) / 1000, 2)
 
-            prev_ind = False
-            if ind-1 != 0:
-                prev_ind = ind-1
+            # prev_ind = False
+            # if ind-1 != 0:
+            #     prev_ind = ind-1
 
-            next_ind = False
-            if ind+1 <= 15:
-                next_ind = ind+1
+            # next_ind = False
+            # if ind+1 <= 15:
+            #     next_ind = ind+1
 
             floor_rise_str = building_data['floor_rise']
 
@@ -462,6 +524,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'index':ind,
                 'prev_ind':prev_ind,
                 'next_ind':next_ind,
+                'final_same_unit_details':final_same_unit_details,
+                'same_building':same_building,
                 'session_id':session_id,
                 'amenties_data':amenties_data,
                 'default_amentity':False,

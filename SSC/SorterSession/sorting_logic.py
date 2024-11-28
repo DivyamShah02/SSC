@@ -1,16 +1,13 @@
-import os
-from .library.Config import Config
-from .library.DistanceCalculator import get_distance
-from Property.models import BuildingDetails, UnitDetails, Amenities
 from Property.serializers import UnitDetailsSerializer, BuildingDetailsSerializer, AmenitiesSerializer
-from ClientDetail.models import PropertyInquiry
-from ClientDetail.serializers import PropertyInquirySerializer
-from SSC.settings import BASE_DIR
-from django.shortcuts import get_object_or_404
+from Property.models import BuildingDetails, UnitDetails, Amenities
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.exceptions import NotFound
+
+from .library.Config import Config
+from SSC.settings import BASE_DIR
+
+import os
 import math
-import pdb
 from datetime import datetime
 
 import logging
@@ -106,13 +103,10 @@ class Sorter:
                 lng = float(str(str(coord).strip().split('|')[1]).strip())
                 km = 1.5
 
-                # unit_type = 'Simplex'
-
                 min_lat, max_lat, min_lon, max_lon = self.get_bounds(lat=lat, lon=lng, radius_km=km)
 
                 for bedroom in bedrooms:
                     for unit_type in unit_types:
-                        print(bedroom)
                         property_unit_matched = UnitDetails.objects.filter(
                             google_pin_lat__gte=min_lat,
                             google_pin_lng__gte=min_lon,
@@ -123,9 +117,6 @@ class Sorter:
                             base_price__lte=budget_max,
                             active=True
                             )
-                        print(len(property_unit_matched))
-                        # for pr in property_unit_matched:
-                        #     print(pr.id)
                         for property in property_unit_matched:
                             if property.id not in validated_property:
                                 validated_property.append(property.id)
@@ -201,7 +192,8 @@ class Sorter:
             return int(self.config.scoring.attached_washroom_less)
 
     def _score_floor_preference(self, client_preferences, property_data):
-        client_floor_range = client_preferences.get('floor_preference', '').split('-')
+        client_floor_range = client_preferences.get('floor_preference', '').split('to')
+        client_floor_range = [str(client_floor_range[0]).strip(), str(client_floor_range[1]).strip()]
         property_total_floors = int(property_data.get('no_of_floors', 0))
         
         if len(client_floor_range) == 2:
@@ -209,7 +201,8 @@ class Sorter:
                 return int(self.config.scoring.floor_preference_exact)
             else:
                 return int(self.config.scoring.floor_preference_other)
-        return 0
+
+        return int(self.config.scoring.floor_preference_exact)
 
     def _score_servant_room(self, unit_data):
         return int(self.config.scoring.servant_room) if unit_data.get('servant_room_available') else 0
@@ -254,7 +247,11 @@ class Sorter:
             return int(self.config.scoring.central_ac_other)
 
     def _score_parking(self, client_preferences, unit_data):
-        client_parking = int(client_preferences.get('min_parking_slots', 0))
+        client_parking = client_preferences.get('min_parking_slots', 0)
+        if str(client_parking) == 'Flexible':
+            return int(self.config.scoring.parking_exact_or_more)
+        
+        client_parking = int(client_parking)
         property_parking = int(unit_data.get('no_of_parking_allotted', 0))
         
         if property_parking >= client_parking:

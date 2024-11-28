@@ -161,3 +161,11 @@ Traceback (most recent call last):
     property = properties_data[ind-1]
                ~~~~~~~~~~~~~~~^^^^^^^
 IndexError: list index out of range
+ERROR 2024-11-29 01:31:39,713 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:34:25,882 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:37:12,346 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:37:56,403 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:38:23,053 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:39:11,573 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:41:12,340 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:41:35,926 views Inquiry successfully saved. Client ID: 1

@@ -13,6 +13,9 @@ import math
 import pdb
 from datetime import datetime
 
+import logging
+logger = logging.getLogger('SorterSession')
+
 
 class Sorter:
     def __init__(self) -> None:
@@ -62,7 +65,7 @@ class Sorter:
 
         except (KeyError, ValueError, TypeError) as e:
             # Log error and raise appropriate exception
-            print(f"Error updating client preferences: {e}")
+            logger.error(f"Error updating client preferences: {e}", exc_info=True)
             raise ValueError(f"Invalid data format: {str(e)}")
 
     def get_bounds(self, lat, lon, radius_km):
@@ -130,7 +133,7 @@ class Sorter:
             return validated_property
 
         except Exception as e:
-            print(f"Error fetching pre-validated properties: {e}")
+            logger.error(f"Error fetching pre-validated properties: {e}", exc_info=True)
             raise ValueError(f"Error in property validation: {str(e)}")
 
     def generate_property_list(self, updated_client_data, validated_properties):
@@ -143,7 +146,7 @@ class Sorter:
                 scored_units.append(scored_properties)
             except Exception as e:
                 # Log the exception and continue with next property
-                print(f"Error scoring property {property}: {str(e)}")
+                logger.error(f"Error scoring property {property}: {str(e)}", exc_info=True)
         
         sorted_data = sorted(scored_units, key=lambda x: x['score'], reverse=True)
         return sorted_data

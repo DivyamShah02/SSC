@@ -4,6 +4,60 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+logs_dir = os.path.join(BASE_DIR, 'logs')
+os.makedirs(logs_dir, exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(logs_dir, 'application.log'),  # Single log file
+            'formatter': 'verbose',
+        },
+        'console': {  # Add this handler
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        # 'django.utils.autoreload': {  # Suppress autoreload debug logs
+        #     'handlers': ['console'],  # Now correctly references the console handler
+        #     'level': 'INFO',  # Ignore DEBUG messages
+        #     'propagate': False,
+        # },
+        # 'django': {  # For Django's built-in logs
+        #     'handlers': ['file'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        'ClientDetail': {  # Custom logger for your app
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'Property': {  # Custom logger for your app
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'SorterSession': {  # Custom logger for your app
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },        
+    },
+}
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/

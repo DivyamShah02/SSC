@@ -11,6 +11,8 @@ from django.db import transaction
 import ast
 from django.db.models import Q
 
+import logging
+logger = logging.getLogger('Property')
 
 class PropertyDetailFormViewSet(viewsets.ViewSet):
 
@@ -58,7 +60,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
                 amenities_data = {amenity: True for amenity in data['amenities']}
 
             except Exception as ex:
-                print("==================================",ex)
+                logger.error(ex, exc_info=True)
                 data['amenities'] = []
                 amenities_data = {amenity: True for amenity in data['amenities']}
 
@@ -105,6 +107,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             return Response({"success": True, "message": "Property submitted successfully!", "building_db_id": building_serializer.data['id'], "building_id":building_serializer.data['building_id']}, status=status.HTTP_201_CREATED)
 
         except Exception as e:
+            logger.error(e, exc_info=True)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class NameAutocompleteViewSet(viewsets.ViewSet):
@@ -231,7 +234,7 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
                 return Response(unit_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
-            print(e)
+            logger.error(e, exc_info=True)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def handle_file_uploads(self, data, files):
@@ -256,6 +259,7 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
         except UnitDetails.DoesNotExist:
             return Response({"error": "Unit not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
+            logger.error(e, exc_info=True)
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -283,6 +287,7 @@ class DocumentFormViewSet(viewsets.ViewSet):
             self.save_documents(building_data, request.FILES)
             return Response({"success": True, "message": "Documents saved successfully!"}, status=status.HTTP_201_CREATED)
         except Exception as e:
+            logger.error(e, exc_info=True)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def save_documents(self, building_data, files):
@@ -315,4 +320,5 @@ class PropertyActiveFormViewSet(viewsets.ViewSet):
         except BuildingDetails.DoesNotExist:
             return Response({"success": False, "message": "Building not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
+            logger.error(e, exc_info=True)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

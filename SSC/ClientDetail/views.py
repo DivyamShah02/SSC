@@ -11,6 +11,8 @@ from .serializers import PropertyInquirySerializer
 from .models import PropertyInquiry
 from .library.DistanceCalculator import get_address
 
+import logging
+logger = logging.getLogger('ClientDetail')
 
 class PropertyInquiryViewSet(viewsets.ViewSet):
 
@@ -27,7 +29,7 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
 
             return render(request, 'property_inquiry_form.html', data)
         except Exception as e:
-            print(f"Error rendering inquiry form: {str(e)}")
+            logger.error(f"Error rendering inquiry form: {str(e)}")
             return Response({"success": False, "message": "An error occurred while loading the form."}, 
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -44,7 +46,6 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
             # data['whatsapp'] = data['whatsapp_country_code'] + " " + data['whatsapp']
 
             if data['copy_client_id'] != "NULL":
-                print(data['copy_client_id'])
                 data['copy_client_id'] = data['copy_client_id']
                 inquiry_instance = get_object_or_404(PropertyInquiry, id=data['copy_client_id'])
                 serializer = PropertyInquirySerializer(inquiry_instance, data=data)
@@ -53,33 +54,33 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
 
             if serializer.is_valid():
                 serializer.save()
-                print(f"Inquiry successfully saved. Client ID: {serializer.data['id']}")
+                logger.error(f"Inquiry successfully saved. Client ID: {serializer.data['id']}")
                 return Response({"success": True, 
                                  "message": "Inquiry submitted successfully!", 
                                  "client_id": serializer.data['id']}, 
                                 status=status.HTTP_201_CREATED)
 
-            print(f"Validation errors: {serializer.errors}")
+            logger.error(f"Validation errors: {serializer.errors}")
             return Response({"success": False, 
                              "message": serializer.errors}, 
                             status=status.HTTP_400_BAD_REQUEST)
 
         except ValidationError as ve:
-            print(f"Validation Error: {str(ve)}")
+            logger.error(f"Validation Error: {str(ve)}")
             return Response({"success": False, 
                              "message": "Validation error occurred.", 
                              "details": str(ve)}, 
                             status=status.HTTP_400_BAD_REQUEST)
 
         except DatabaseError as db_err:
-            print(f"Database Error: {str(db_err)}")
+            logger.error(f"Database Error: {str(db_err)}")
             return Response({"success": False, 
                              "message": "A database error occurred.", 
                              "details": str(db_err)}, 
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e:
-            print(f"Unexpected error: {str(e)}")
+            logger.error(f"Unexpected error: {str(e)}")
             return Response({"success": False, 
                              "message": "An unexpected error occurred.", 
                              "details": str(e)}, 

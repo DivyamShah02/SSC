@@ -22,6 +22,8 @@ from .visit_plan import create_visit_plan
 from .visit_plan_pdf import generate_visit_plan_pdf
 from .library.EmailSender import send_mail
 
+import logging
+logger = logging.getLogger('SorterSession')
 
 class SorterViewSet(viewsets.ViewSet):
     def create(self, request):
@@ -141,7 +143,7 @@ class PropertyViewset(viewsets.ViewSet):
 
                     all_properties.append(property_details)
                 except Exception as e:
-                    print(e)
+                    logger.error(e, exc_info=True)
 
             return Response({'success': True, 'total_properties':len(all_properties), 'all_properties': all_properties})
 
@@ -322,7 +324,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
                 
                 except Exception as e:
-                    print(e)
+                    logger.error(e, exc_info=True)
 
             property = properties_data[ind-1]
 
@@ -578,7 +580,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
         except Exception as e:
             # Catch any other unforeseen errors
-            print(e)
+            logger.error(e, exc_info=True)
             return redirect('error_page')
             return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
@@ -817,7 +819,7 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
         except Exception as e:
             # Catch any other unforeseen errors
-            print(e)
+            logger.error(e, exc_info=True)
             return redirect('error_page')
             return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
 
@@ -929,7 +931,6 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 property_group_name = building_data.group_name
                 active_property = False            
                 menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True})
-                print(menu_properties)
 
         else:
             visit_start_date = ''
@@ -963,7 +964,7 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False})
                 
                 except Exception as e:
-                    print(e)
+                    logger.error(e, exc_info=True)
 
         data = {
             'session_id' : session_id,

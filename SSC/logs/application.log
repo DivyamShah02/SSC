@@ -1,0 +1,163 @@
+ERROR 2024-11-29 01:07:03,860 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-11-29 01:07:03,910 sorting_logic Error scoring property 2: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,925 sorting_logic Error scoring property 3: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,934 sorting_logic Error scoring property 4: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,948 sorting_logic Error scoring property 5: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,958 sorting_logic Error scoring property 6: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,967 sorting_logic Error scoring property 11: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,977 sorting_logic Error scoring property 12: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,987 sorting_logic Error scoring property 13: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:03,997 sorting_logic Error scoring property 17: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:04,056 sorting_logic Error scoring property 19: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:04,065 sorting_logic Error scoring property 20: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:04,075 sorting_logic Error scoring property 9: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:04,089 sorting_logic Error scoring property 10: invalid literal for int() with base 10: 'Flexible'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 143, in generate_property_list
+    scored_properties = self.calculate_property_score(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 185, in calculate_property_score
+    score += self._score_parking(client_preferences, unit_data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 257, in _score_parking
+    client_parking = int(client_preferences.get('min_parking_slots', 0))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Flexible'
+ERROR 2024-11-29 01:07:04,114 views list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 329, in list
+    property = properties_data[ind-1]
+               ~~~~~~~~~~~~~~~^^^^^^^
+IndexError: list index out of range

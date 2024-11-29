@@ -2,8 +2,7 @@ import boto3
 from botocore.exceptions import NoCredentialsError
 
 # AWS credentials
-AWS_ACCESS_KEY_ID = 'AKIAT7JJU2JBBCLMP4NJ'
-AWS_SECRET_ACCESS_KEY = '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'
+
 AWS_S3_BUCKET_NAME = 'ssc-disrupt'
 
 # File to upload

@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from .encrypt_decrypt import base64_to_text
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,6 +85,7 @@ INSTALLED_APPS = [
     'ClientDetail',
     'Property',
     'SorterSession',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -175,5 +177,23 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+# AWS S3 Configuration
+AWS_ACCESS_KEY_ID = base64_to_text('QUtJQVQ3SkpVMkpCQkNMTVA0Tko=')
+AWS_SECRET_ACCESS_KEY = base64_to_text('ZnE4SHdESHZxdkVWUEMwbHI0TUxWYlgzRDQxbjBZV1hXeUxuMlBGbA==')
+AWS_STORAGE_BUCKET_NAME = 'ssc-disrupt'
+AWS_S3_SIGNATURE_NAME = 's3v4'
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_QUERYSTRING_AUTH = False
+
+# S3 Media Files Configuration
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/'
+
+# Cache Control (Optional, for performance)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}

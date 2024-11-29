@@ -1,4 +1,5 @@
 from django.db import models
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Create your models here.
 
@@ -13,5 +14,5 @@ class ShortlistedProperty(models.Model):
     visit_start_location = models.CharField(null=True, blank=True, default='', max_length=255)
     visist_finalize = models.BooleanField(default=False)
     feedback = models.TextField(null=True, blank=True, default='')
-    visit_plan_pdf = models.FileField(upload_to='visit_plan', null=True, blank=True)
+    visit_plan_pdf = models.FileField(upload_to='visit_plan', storage=S3Boto3Storage(), null=True, blank=True)
 

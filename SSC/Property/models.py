@@ -1,18 +1,19 @@
 from django.db import models
 from django.utils import timezone
+from storages.backends.s3boto3 import S3Boto3Storage
 
 
 class BuildingDetails(models.Model):
     building_id = models.CharField(max_length=255, unique=True)
 
     group_name = models.CharField(max_length=255, null=True, blank=True)
-    head_image = models.ImageField(upload_to='property', null=True, blank=True)
-    sec_image_1 = models.ImageField(upload_to='property', null=True, blank=True)
-    sec_image_2 = models.ImageField(upload_to='property', null=True, blank=True)
-    sec_image_3 = models.ImageField(upload_to='property', null=True, blank=True)
-    sec_image_4 = models.ImageField(upload_to='property', null=True, blank=True)
-    brochure_1 = models.FileField(upload_to='brochure', null=True, blank=True)
-    brochure_2 = models.FileField(upload_to='brochure', null=True, blank=True)
+    head_image = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
+    sec_image_1 = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
+    sec_image_2 = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
+    sec_image_3 = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
+    sec_image_4 = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
+    brochure_1 = models.FileField(upload_to='brochure', storage=S3Boto3Storage(), null=True, blank=True)
+    brochure_2 = models.FileField(upload_to='brochure', storage=S3Boto3Storage(), null=True, blank=True)
     year_of_establishment = models.CharField(max_length=255, null=True, default=0, blank=True)
     no_of_projects_delivered = models.CharField(max_length=255, default=0, null=True, blank=True)
 
@@ -131,8 +132,8 @@ class UnitDetails(models.Model):
     base_price = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     google_pin_lat = models.CharField(max_length=255, default="", null=True, blank=True)
     google_pin_lng = models.CharField(max_length=255, default="", null=True, blank=True)
-    floor_plan = models.ImageField(upload_to='plan', null=True, blank=True)
-    unit_plan = models.ImageField(upload_to='plan', null=True, blank=True)
+    floor_plan = models.ImageField(upload_to='plan', storage=S3Boto3Storage(), null=True, blank=True)
+    unit_plan = models.ImageField(upload_to='plan', storage=S3Boto3Storage(), null=True, blank=True)
     active = models.BooleanField(default=False)
 
 

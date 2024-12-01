@@ -927,10 +927,15 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 building_id = unit_data.building_id
                 building_data = BuildingDetails.objects.get(building_id=building_id)
                 
-                property_name = f'{building_id} - {building_data.project_name}'
+                property_name = f'{building_data.project_name}'
+                try:
+                    property_img = building_data.head_image.url
+                except:
+                    property_img = ''
+                    pass
                 property_group_name = building_data.group_name
                 active_property = False            
-                menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True})
+                menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True, 'property_img':property_img})
 
         else:
             visit_start_date = ''
@@ -958,10 +963,15 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     building_id = unit_data.building_id
                     building_data = BuildingDetails.objects.get(building_id=building_id)
                     
-                    property_name = f'{building_id} - {building_data.project_name}'
+                    property_name = f'{building_data.project_name}'
+                    try:
+                        property_img = building_data.head_image.url
+                    except:
+                        property_img = ''
+                        pass
                     property_group_name = building_data.group_name
                     active_property = False            
-                    menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False})
+                    menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False, 'property_img':property_img})
                 
                 except Exception as e:
                     logger.error(e, exc_info=True)
@@ -1102,3 +1112,88 @@ class FinalVisitPlan(viewsets.ViewSet):
         session_data_obj.save()
 
         return Response({'success':True}, status=200)
+
+class FeedbackViewSet(viewsets.ViewSet):
+    def list(self, request):
+        try:
+            session_id = request.GET.get('session_id')
+            unit_id = request.GET.get('unit_id')
+
+            print(session_id)
+            print(unit_id)
+
+            try:
+                session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+            except ShortlistedProperty.DoesNotExist:
+                raise NotFound(f"Session with id {session_id} not found.")
+            session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+            feedback_data_str = session_data.get('feedback')
+            if feedback_data_str != '':
+                try:
+                    feedback_data = json.loads(feedback_data_str.replace("'", '"'))
+                except json.JSONDecodeError:
+                    raise ParseError("Error parsing properties data.")
+            else:
+                feedback_data = []
+            
+            for ind_feedback in feedback_data:
+                try:
+                    if ind_feedback['unit_id'] == unit_id:
+                        return Response({'success':True, 'feedback_submitted':True, 'feedback_data': ind_feedback}, status=status.HTTP_200_OK)
+                except:
+                    pass
+
+            return Response({'success':True, 'feedback_submitted':False}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            logging.error(e, exc_info=True)
+            return Response({'success':False, 'error':e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)            
+
+    def create(self, request):
+        try:
+            session_id = request.data.get('session_id')
+            unit_id = request.data.get('unit_id')
+            user_feedback_data = request.data.get('user_feedback_data')
+
+            try:
+                session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+            except ShortlistedProperty.DoesNotExist:
+                raise NotFound(f"Session with id {session_id} not found.")
+            session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+            feedback_data_str = session_data.get('feedback')
+            if feedback_data_str != '':
+                try:
+                    feedback_data = json.loads(feedback_data_str.replace("'", '"'))
+                except json.JSONDecodeError:
+                    raise ParseError("Error parsing properties data.")
+            else:
+                feedback_data = []
+
+            already_feedback_given = False
+            same_unit_ind = 0
+            for ind, ind_feedback in enumerate(feedback_data):
+                try:
+                    if ind_feedback['unit_id'] == unit_id:
+                        already_feedback_given = True
+                        same_unit_ind = ind
+                except:
+                    pass
+            
+            user_feedback_data['unit_id'] = unit_id
+
+            if already_feedback_given:
+                feedback_data[same_unit_ind] = user_feedback_data
+            else:
+                feedback_data.append(user_feedback_data)
+
+            session_data_obj.feedback = f'{feedback_data}'
+            session_data_obj.save()
+            return Response({'success':True}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            logging.error(e, exc_info=True)
+            return Response({'success':False, 'error':e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)            
+
+    

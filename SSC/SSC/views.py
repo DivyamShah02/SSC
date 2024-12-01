@@ -7,6 +7,9 @@ from .cords import final_cords
 import requests
 import os
 
+def home(request):
+    return render(request, 'index.html')
+
 def temp_data(request):
     data = generate_building_details(number_of_entries=2250)
     folder = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Square Second Consultancy\SSC\SSC\Misc\data'
@@ -259,7 +262,6 @@ def generate_building_details(number_of_entries):
         building_details.append(building)
     
     return building_details
-
 
 def get_address_from_coordinates(lat, lng, api_key):
     # Geocoding endpoint

@@ -400,7 +400,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
             special_amenities = [building_data[f'special_amenity_{sp}'] for sp in range(1,5) if building_data[f'special_amenity_{sp}'] != '']
 
             for amenity in amenties_data.keys():
-                if amenties_data[amenity] == True:
+                if amenties_data[amenity] == True and type(amenties_data[amenity]) == bool:
                     if amenity in client_amenities:
                         amenity = str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title()
                         client_prefered_amenities.append(amenity)

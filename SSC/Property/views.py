@@ -279,13 +279,17 @@ class DocumentFormViewSet(viewsets.ViewSet):
     @transaction.atomic
     def create(self, request):
         building_id = request.data.get('building_id')
+        building_ssc_id = request.data.get('building_ssc_id')
+        redirect_url_id = request.data.get('redirect_url_id')
         if not building_id:
             return Response({"success": False, "message": "Building ID is required!"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             building_data = BuildingDetails.objects.get(id=building_id)
             self.save_documents(building_data, request.FILES)
+            return redirect(f'{redirect_url_id}?building_id={building_ssc_id}')
             return Response({"success": True, "message": "Documents saved successfully!"}, status=status.HTTP_201_CREATED)
+        
         except Exception as e:
             logger.error(e, exc_info=True)
             return Response({"success": False, "message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

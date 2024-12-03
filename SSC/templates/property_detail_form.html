@@ -883,9 +883,11 @@
                 <h4>Media</h4>
             </div>
 
-            <form id="documentForm" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data"
+            <form id="documentForm" method="post" action="{% url 'submit-document-form-list' %}" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data"
                 style="background-color: white;">
+                {%csrf_token%}                
                 <div class="row">
+                    <input type="hidden" name="building_id" id="building_db_id">
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
                         <div class="mb-3">
@@ -945,6 +947,9 @@
                         </div>
 
                     </div>
+                    <input type="hidden" name="redirect_url_id" id="redirect_url_id">
+                    <input type="hidden" name="building_ssc_id" id="building_ssc_id">
+                    <button type="submit" style="display: none;" id="submit_document_form_btn">Submit</button>
                 </div>
             </form>
 
@@ -1462,13 +1467,14 @@
                                         const data = await response.json();
                                         console.log(data);
                                         if (data.success == true) {
-                                            submit_document_form(data.building_db_id)
                                             alert(`data added successfully to building_id ${data.building_id}!`)
                                             if (unit_adder){
-                                                window.location.href = `{% url 'unit-detail-form-list' %}?building_id=${data.building_id}`;
+                                                submit_document_form(data.building_db_id, `{% url 'unit-detail-form-list' %}`, `${data.building_id}`)
+                                                // window.location.href = `{% url 'unit-detail-form-list' %}?building_id=${data.building_id}`;
                                             }
                                             else{
-                                                window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                                submit_document_form(data.building_db_id, `{% url 'property-detail-list' %}`, `${data.building_id}`)
+                                                // window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
                                             }
                                             
                                         }
@@ -1491,7 +1497,7 @@
                     }
                 }
             }    
-            toggle_preloader()
+            // toggle_preloader()
 
         }
 
@@ -1503,7 +1509,7 @@
             });
         }
 
-        async function submit_document_form(building_id) {
+        async function submit_document_form_old(building_id) {
             toggle_preloader();
 
             var document_form = document.getElementById('documentForm');
@@ -1539,6 +1545,23 @@
             }
 
             toggle_preloader();
+        }
+
+        function submit_document_form(building_id, redirect_url_id, building_ssc_id) {
+
+            var document_form = document.getElementById('documentForm');
+
+            if (document_form.reportValidity()) {
+                document.getElementById('building_db_id').value = building_id;
+                document.getElementById('redirect_url_id').value = redirect_url_id;
+                console.log(redirect_url_id);
+                document.getElementById('building_ssc_id').value = building_ssc_id;
+                document.getElementById('submit_document_form_btn').click();
+
+            } else {
+                alert("Please fill all the fields in the document form correctly.");
+            }
+
         }
 
         function toggle_loader() {

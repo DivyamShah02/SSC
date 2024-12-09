@@ -926,6 +926,74 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 
                 building_id = unit_data.building_id
                 building_data = BuildingDetails.objects.get(building_id=building_id)
+
+                size_of_unit = float(unit_data.size_of_unit)
+
+                property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
+                basic_price = round(property_unit_price/ 10000000, 2)
+
+
+                size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
+
+                per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
+
+                
+                try:
+                    total_development_charges = size_of_unit * float(building_data.development_charges)
+                    development_charges = round(total_development_charges / 100000, 2)
+                except:
+                    total_development_charges = 0
+                    development_charges = 0
+
+                
+                try:
+                    advance_maintenance_rate = round((float(building_data.advance_maintenance) / 24), 2)
+                    # total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                    total_advance_maintenance = size_of_unit * float(building_data.advance_maintenance)
+                    advance_maintenance_per_month = advance_maintenance_rate * size_of_unit
+                    advance_maintenance = round(total_advance_maintenance / 100000, 2)
+                except:
+                    advance_maintenance_rate = 0
+                    total_advance_maintenance = 0
+                    advance_maintenance = 0
+
+                
+                try:
+                    total_maintenance_deposit = size_of_unit * float(building_data.maintenance_deposit)
+                    maintenance_deposit = round(total_maintenance_deposit / 100000, 2)
+                except:
+                    total_maintenance_deposit = 0
+                    maintenance_deposit = 0
+
+                
+                try:            
+                    total_other_specific_expenses = size_of_unit * float(building_data.other_specific_expenses)
+                    other_specific_expenses = round(total_other_specific_expenses / 100000, 2)
+                except:
+                    total_other_specific_expenses = 0
+                    other_specific_expenses = 0
+
+
+                try:            
+                    total_government_charges = (property_unit_price * (float(building_data.sale_deed_value)/100)) * 5.9 / 100
+                    government_charges = round(total_government_charges / 100000, 2)
+                except:
+                    total_government_charges = 0
+                    government_charges = 0
+
+                try:            
+                    total_gst = (property_unit_price * (float(building_data.sale_deed_value)/100)) * float(building_data.gst_applicable) / 100
+                    gst = round(total_gst / 100000, 2)
+                except:
+                    total_gst = 0
+                    gst = 0
+
+                # total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+                total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+                property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
+
+                is_ready_to_move = self.is_date_in_past(date_str=str(building_data.age_of_property_by_developer))
+
                 
                 property_name = f'{building_data.project_name}'
                 try:
@@ -935,7 +1003,21 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     pass
                 property_group_name = building_data.group_name
                 active_property = False            
-                menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True, 'property_img':property_img})
+                menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 
+                                        'unit_configuration':unit_data.unit_configuration, 
+                                        'size_of_unit':unit_data.size_of_unit,
+                                        'area_of_project':building_data.area_of_project,
+                                        'carpet_area_rera':unit_data.carpet_area_rera,
+                                        'property_group_name':property_group_name, 'active_property':active_property, 
+                                        'ind':i+1, 'Arrival_time':visit_unit['Arrival_time'], 
+                                        'Arrival_date':visit_unit['Arrival_date'], 'visit_planned':True, 
+                                        'property_img':property_img, 'property_unit_price_in_cr':property_unit_price_in_cr,
+                                        'total_property_unit_price':total_property_unit_price,
+                                        'per_sqft_rate_saleable':per_sqft_rate_saleable,
+                                        'size_of_unit_mtrs':size_of_unit_mtrs,
+                                        'is_ready_to_move':is_ready_to_move,
+                                        'age_of_property_by_developer':building_data.age_of_property_by_developer,
+                                        })
 
         else:
             visit_start_date = ''
@@ -962,7 +1044,74 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     
                     building_id = unit_data.building_id
                     building_data = BuildingDetails.objects.get(building_id=building_id)
+
+                    size_of_unit = float(unit_data.size_of_unit)
+                    property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
+                    basic_price = round(property_unit_price/ 10000000, 2)
+
+
+                    size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
+
+                    per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
+
                     
+                    try:
+                        total_development_charges = size_of_unit * float(building_data.development_charges)
+                        development_charges = round(total_development_charges / 100000, 2)
+                    except:
+                        total_development_charges = 0
+                        development_charges = 0
+
+                    
+                    try:
+                        advance_maintenance_rate = round((float(building_data.advance_maintenance) / 24), 2)
+                        # total_advance_maintenance = size_of_unit * float(advance_maintenance_rate)
+                        total_advance_maintenance = size_of_unit * float(building_data.advance_maintenance)
+                        advance_maintenance_per_month = advance_maintenance_rate * size_of_unit
+                        advance_maintenance = round(total_advance_maintenance / 100000, 2)
+                    except:
+                        advance_maintenance_rate = 0
+                        total_advance_maintenance = 0
+                        advance_maintenance = 0
+
+                    
+                    try:
+                        total_maintenance_deposit = size_of_unit * float(building_data.maintenance_deposit)
+                        maintenance_deposit = round(total_maintenance_deposit / 100000, 2)
+                    except:
+                        total_maintenance_deposit = 0
+                        maintenance_deposit = 0
+
+                    
+                    try:            
+                        total_other_specific_expenses = size_of_unit * float(building_data.other_specific_expenses)
+                        other_specific_expenses = round(total_other_specific_expenses / 100000, 2)
+                    except:
+                        total_other_specific_expenses = 0
+                        other_specific_expenses = 0
+
+
+                    try:            
+                        total_government_charges = (property_unit_price * (float(building_data.sale_deed_value)/100)) * 5.9 / 100
+                        government_charges = round(total_government_charges / 100000, 2)
+                    except:
+                        total_government_charges = 0
+                        government_charges = 0
+
+                    try:            
+                        total_gst = (property_unit_price * (float(building_data.sale_deed_value)/100)) * float(building_data.gst_applicable) / 100
+                        gst = round(total_gst / 100000, 2)
+                    except:
+                        total_gst = 0
+                        gst = 0
+
+                    # total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses + total_government_charges + total_gst
+                    total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+                    property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
+
+                    is_ready_to_move = self.is_date_in_past(date_str=str(building_data.age_of_property_by_developer))
+
+
                     property_name = f'{building_data.project_name}'
                     try:
                         property_img = building_data.head_image.url
@@ -971,8 +1120,21 @@ class VisitPlanViewSet(viewsets.ViewSet):
                         pass
                     property_group_name = building_data.group_name
                     active_property = False            
-                    menu_properties.append({'property_name':property_name, 'unit_id':unit_id, 'property_group_name':property_group_name, 'active_property':active_property, 'ind':i+1, 'visit_planned':False, 'property_img':property_img})
-                
+                    menu_properties.append({'property_name':property_name, 'unit_id':unit_id,
+                                            'unit_configuration':unit_data.unit_configuration,
+                                            'size_of_unit':unit_data.size_of_unit,
+                                            'area_of_project':building_data.area_of_project,
+                                            'carpet_area_rera':unit_data.carpet_area_rera,
+                                            'property_group_name':property_group_name, 'active_property':active_property,
+                                            'ind':i+1, 'visit_planned':False, 'property_img':property_img,
+                                            'property_unit_price_in_cr':property_unit_price_in_cr,
+                                            'total_property_unit_price':total_property_unit_price,
+                                            'per_sqft_rate_saleable':per_sqft_rate_saleable,
+                                            'size_of_unit_mtrs':size_of_unit_mtrs,
+                                            'is_ready_to_move':is_ready_to_move,
+                                            'age_of_property_by_developer':building_data.age_of_property_by_developer,
+                                            })
+
                 except Exception as e:
                     logger.error(e, exc_info=True)
 
@@ -987,7 +1149,8 @@ class VisitPlanViewSet(viewsets.ViewSet):
             'visit_start_location' : visit_start_location,
             'visit_start_coords' : visit_start_coords,
             'visit_final':session_data.get('visist_finalize', False),
-            'visit_plan_pdf':session_data.get('visit_plan_pdf', '')
+            'visit_plan_pdf':session_data.get('visit_plan_pdf', ''),
+            
         }
 
         return render(request, 'selected_property_detail_design.html', data)
@@ -1048,6 +1211,11 @@ class VisitPlanViewSet(viewsets.ViewSet):
 
 
         return Response({'success':True}, status=200)
+
+    def is_date_in_past(self, date_str):
+        input_date = datetime.strptime(date_str, "%m-%Y")
+        current_date = datetime.now().replace(day=1)
+        return input_date < current_date
 
 
 class FinalVisitPlan(viewsets.ViewSet):

@@ -830,8 +830,9 @@
                 <div class="justify-content-end">
                     <a href="{{main_property.brochure_1}}" target="_blank" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
                         class="fas fa-arrow-up-from-bracket"></i> Brochure</a>
-                <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
-                <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
+                <a href="#" class="btn btn-danger rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
+                <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Select</b></a>
+                <a onclick="window.location.href=`{% url 'visit-plan-list' %}?session_id={{session_id}}`;" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
                 </div>
             </div>
             <!-- <div class="row m-0">

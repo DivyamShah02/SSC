@@ -1,0 +1,29 @@
+2024-12-09 10:56:43,089 - INFO - GetLogger.py.wrapper():63 - start_chrome called with ()
+2024-12-09 10:56:43,089 - INFO - ChromeHandler.py.start_chrome():36 - Starting Chrome with Selenium WebDriver.
+2024-12-09 10:56:43,089 - INFO - logger.py.log():11 - ====== WebDriver manager ======
+2024-12-09 10:56:44,505 - INFO - logger.py.log():11 - Get LATEST chromedriver version for google-chrome
+2024-12-09 10:56:44,607 - INFO - logger.py.log():11 - Get LATEST chromedriver version for google-chrome
+2024-12-09 10:56:44,671 - INFO - logger.py.log():11 - Driver [C:\Users\Divyam Shah\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-09 10:56:45,918 - INFO - ChromeHandler.py.start_chrome():53 - Chrome started successfully.
+2024-12-09 10:56:45,918 - INFO - GetLogger.py.wrapper():63 - maximise_chrome called with ()
+2024-12-09 10:56:45,918 - INFO - ChromeHandler.py.maximise_chrome():62 - Maximizing Chrome window.
+2024-12-09 10:56:45,957 - INFO - ChromeHandler.py.maximise_chrome():64 - Chrome window maximized successfully.
+2024-12-09 10:56:45,957 - INFO - GetLogger.py.wrapper():63 - load_url called with (url: 'http://127.0.0.1:8000/property-detail/?building_id=1000')
+2024-12-09 10:56:45,957 - INFO - ChromeHandler.py.load_url():84 - Loading URL: http://127.0.0.1:8000/property-detail/?building_id=1000
+2024-12-09 10:56:46,577 - INFO - ChromeHandler.py.load_url():86 - URL http://127.0.0.1:8000/property-detail/?building_id=1000 loaded successfully.
+2024-12-09 10:57:06,577 - INFO - GetLogger.py.wrapper():63 - fullscreen_chrome called with ()
+2024-12-09 10:57:06,577 - INFO - ChromeHandler.py.fullscreen_chrome():73 - Turning Chrome to full screen window.
+2024-12-09 10:57:06,685 - INFO - ChromeHandler.py.fullscreen_chrome():75 - Chrome window fullscreened successfully.
+2024-12-09 10:57:06,686 - INFO - GetLogger.py.wrapper():63 - test_form_combinations called with ()
+2024-12-09 10:57:32,311 - ERROR - ChromeHandler.py.test_form_combinations():231 - 
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Automated-testing\DevFiles\library\ChromeHandler.py", line 211, in test_form_combinations
+    if checkboxes.index(checkbox) in subset:
+       ^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+                      ^^^^^^^^^^^^^
+bdb.BdbQuit

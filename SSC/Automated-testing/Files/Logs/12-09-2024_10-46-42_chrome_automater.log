@@ -1,0 +1,30 @@
+2024-12-09 10:46:42,032 - INFO - GetLogger.py.wrapper():63 - start_chrome called with ()
+2024-12-09 10:46:42,032 - INFO - ChromeHandler.py.start_chrome():36 - Starting Chrome with Selenium WebDriver.
+2024-12-09 10:46:42,032 - INFO - logger.py.log():11 - ====== WebDriver manager ======
+2024-12-09 10:46:43,386 - INFO - logger.py.log():11 - Get LATEST chromedriver version for google-chrome
+2024-12-09 10:46:43,472 - INFO - logger.py.log():11 - Get LATEST chromedriver version for google-chrome
+2024-12-09 10:46:43,533 - INFO - logger.py.log():11 - Driver [C:\Users\Divyam Shah\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-09 10:46:44,782 - INFO - ChromeHandler.py.start_chrome():53 - Chrome started successfully.
+2024-12-09 10:46:44,782 - INFO - GetLogger.py.wrapper():63 - maximise_chrome called with ()
+2024-12-09 10:46:44,782 - INFO - ChromeHandler.py.maximise_chrome():62 - Maximizing Chrome window.
+2024-12-09 10:46:44,819 - INFO - ChromeHandler.py.maximise_chrome():64 - Chrome window maximized successfully.
+2024-12-09 10:46:44,820 - INFO - GetLogger.py.wrapper():63 - load_url called with (url: 'http://127.0.0.1:8000/property-detail/?building_id=1000')
+2024-12-09 10:46:44,820 - INFO - ChromeHandler.py.load_url():84 - Loading URL: http://127.0.0.1:8000/property-detail/?building_id=1000
+2024-12-09 10:46:45,430 - INFO - ChromeHandler.py.load_url():86 - URL http://127.0.0.1:8000/property-detail/?building_id=1000 loaded successfully.
+2024-12-09 10:47:05,431 - INFO - GetLogger.py.wrapper():63 - fullscreen_chrome called with ()
+2024-12-09 10:47:05,431 - INFO - ChromeHandler.py.fullscreen_chrome():73 - Turning Chrome to full screen window.
+2024-12-09 10:47:05,523 - INFO - ChromeHandler.py.fullscreen_chrome():75 - Chrome window fullscreened successfully.
+2024-12-09 10:47:05,524 - INFO - GetLogger.py.wrapper():63 - test_form_combinations called with ()
+2024-12-09 10:47:07,685 - INFO - ChromeHandler.py.test_form_combinations():181 - Clicked Residential
+2024-12-09 10:47:08,190 - INFO - GetLogger.py.wrapper():63 - test_and_validate called with (input_name: 'Residential')
+2024-12-09 10:47:09,190 - INFO - GetLogger.py.wrapper():63 - scroll_to_end_of_page called with ()
+2024-12-09 10:47:09,190 - INFO - ChromeHandler.py.scroll_to_end_of_page():107 - Scrolling to the end of the page.
+2024-12-09 10:47:09,195 - INFO - ChromeHandler.py.scroll_to_end_of_page():109 - Successfully scrolled to the end of the page.
+2024-12-09 10:47:25,294 - INFO - GetLogger.py.wrapper():63 - get_result_property_detail called with (input_name: 'Residential')
+2024-12-09 10:47:34,323 - INFO - ChromeHandler.py.get_result_property_detail():311 - Test passed! Successfully redirected to: data added successfully to building_id 1000!
+2024-12-09 10:47:36,419 - INFO - ChromeHandler.py.test_form_combinations():181 - Clicked Commercial
+2024-12-09 10:47:36,924 - INFO - GetLogger.py.wrapper():63 - test_and_validate called with (input_name: 'Commercial')
+2024-12-09 10:47:37,925 - INFO - GetLogger.py.wrapper():63 - scroll_to_end_of_page called with ()
+2024-12-09 10:47:37,926 - INFO - ChromeHandler.py.scroll_to_end_of_page():107 - Scrolling to the end of the page.
+2024-12-09 10:47:37,930 - INFO - ChromeHandler.py.scroll_to_end_of_page():109 - Successfully scrolled to the end of the page.
+2024-12-09 10:47:44,455 - WARNING - connectionpool.py.urlopen():870 - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/2d3ba19c1382bcd497f34fab687e5ea3

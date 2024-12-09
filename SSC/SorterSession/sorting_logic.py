@@ -192,15 +192,16 @@ class Sorter:
             return int(self.config.scoring.attached_washroom_less)
 
     def _score_floor_preference(self, client_preferences, property_data):
-        client_floor_range = client_preferences.get('floor_preference', '').split('to')
-        client_floor_range = [str(client_floor_range[0]).strip(), str(client_floor_range[1]).strip()]
-        property_total_floors = int(property_data.get('no_of_floors', 0))
-        
-        if len(client_floor_range) == 2:
-            if property_total_floors >= int(client_floor_range[0]) and property_total_floors <= int(client_floor_range[1]):
-                return int(self.config.scoring.floor_preference_exact)
-            else:
-                return int(self.config.scoring.floor_preference_other)
+        if str(client_preferences.get('floor_preference', '')) != 'Above 21' and str(client_preferences.get('floor_preference', '')) != 'Flexible':
+            client_floor_range = client_preferences.get('floor_preference', '').split('to')
+            client_floor_range = [str(client_floor_range[0]).strip(), str(client_floor_range[1]).strip()]
+            property_total_floors = int(property_data.get('no_of_floors', 0))
+
+            if len(client_floor_range) == 2:
+                if property_total_floors >= int(client_floor_range[0]) and property_total_floors <= int(client_floor_range[1]):
+                    return int(self.config.scoring.floor_preference_exact)
+                else:
+                    return int(self.config.scoring.floor_preference_other)
 
         return int(self.config.scoring.floor_preference_exact)
 

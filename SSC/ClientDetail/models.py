@@ -45,7 +45,7 @@ class PropertyInquiry(models.Model):
 
     # Building Preferences
     property_age = models.CharField(null=True, blank=True, max_length=50)
-    society_type = models.CharField(null=True, blank=True, max_length=100)
+    society_type = models.CharField(null=True, blank=True, max_length=250)
     amenities = models.CharField(null=True, blank=True, max_length=200)
 
     # Finance and Timeline

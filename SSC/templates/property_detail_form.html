@@ -1370,6 +1370,19 @@
             autoclose: true
         });
 
+        document.addEventListener("input", function (event) {
+            // Check if the event target is an input element
+            if (event.target.tagName === "INPUT") {
+                // Check if it has the 'red-border-btn' class
+                if (event.target.classList.contains("red-border-btn")) {
+                    // Remove the class
+                    event.target.classList.remove("red-border-btn");
+                    console.log("Removed 'red-border-btn' class from:", event.target);
+                }
+            }
+        });
+
+
         async function submit_detail_form(unit_adder) {
             toggle_preloader()
             const isValid = validateForm(unit_adder);
@@ -1497,7 +1510,7 @@
                     }
                 }
             }    
-            // toggle_preloader()
+            toggle_preloader()
 
         }
 

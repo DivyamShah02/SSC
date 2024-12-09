@@ -33,6 +33,21 @@ body {
     color: var(--secondary-color) !important;
 }
 
+.form-check-input {
+    border-color: var(--primary-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0px 3px var(--primary-color-faded);
+    border-color: var(--primary-color);
+}
+
+
 .text-light-ssc {
     color: var(--light-text-color) !important;
 }
@@ -331,7 +346,8 @@ body {
 }
 
 .red-border-btn {
-    border: red 4px solid !important;
+    /* border: red 4px solid !important; */
+    border: var(--secondary-color) 4px solid !important;
 }
 
 label{

@@ -86,6 +86,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12 col-md-6 col-lg-4 mt-4">
                             <div class="card">
                                 <div class="card-body row">
@@ -103,12 +104,16 @@
                                 </div>
                             </div>
                         </div>
-                        {% if menu_property.visit_planned == True %}
-                            <div class="col-lg-4 col-md-8 form-group mt-4">
+
+                        <div class="col-12 col-md-6 col-lg-4 mt-4">
+                            {% if menu_property.visit_planned == True %}
+                            <div class="form-group">
                                 <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
                                 <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
                             </div>
-                        {% endif %}
+                            {% endif %}
+                        </div>
+
                         <div class="col-12 col-md-6 col-lg-4 mt-4">
                             <div class="card">
                                 <div class="card-body row">
@@ -153,13 +158,15 @@
                             </div>
                         </div>
                         
-                        {% if menu_property.visit_planned == True %}
-                        <div class="col-lg-4 col-md-8 form-group mt-4">
-                            <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
-                            <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
+                        <div class="col-12 col-md-6 col-lg-4 mt-4">
+                            {% if menu_property.visit_planned == True %}
+                            <div class="form-group">
+                                <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
+                                <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
+                            </div>
+                            <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
+                            {% endif %}
                         </div>
-                        <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
-                        {% endif %}
 
                         <!-- {% if menu_property.visit_planned == True %} -->
                             <!-- <div class="col-lg-4 col-md-8 form-group">
@@ -174,7 +181,8 @@
                             <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
                              -->
                             {% if visit_final == True %}
-                                <button type="button" class="btn btn-custom-primary" onclick="open_feedback_modal('{{menu_property.unit_id}}', '{{forloop.counter}}')">
+                            <div class="col-12 mt-4">
+                                <button type="button" class="btn btn-custom-primary w-100" onclick="open_feedback_modal('{{menu_property.unit_id}}', '{{forloop.counter}}')">
                                     Feedback
                                 </button>
 
@@ -1049,6 +1057,7 @@
                                     </div>
                                     </div>
                                 </div>
+                            </div>
                             {% endif %}
                             
                         <!-- {% endif %} -->
@@ -1093,6 +1102,11 @@
                                 </button>
                             </div>
                             {% if visit_planned == True %}
+                            <div class="form-check" id="consent_tick_div">
+                                <input class="form-check-input" type="checkbox" name="consent_tick"
+                                    value="consent_tick" id="consent_tick">
+                                <label class="form-check-label" for="consent_tick"><b>I hereby agree to visit the shortlisted properties with Square Second Consultants and give my consent to share my contact details with the respective developers for registering me as a prospective buyer.</b></label>
+                            </div>
                             <div class="col-md-12 form-group text-center">
                                 <button type="button" class="btn btn-custom" id="sumbitVisitPlanSubmit" onclick="final_visit_time()">
                                     Submit Visit Plan
@@ -1260,29 +1274,38 @@
 
         async function final_visit_time() {
             toggle_loader();
-            try {
-                const response = await fetch("{% url 'final-visit-plan-list' %}", {  // Use the appropriate URL for your API endpoint
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': '{{csrf_token}}'
-                    },
-                    body: JSON.stringify({ 
-                        "final_visit_details": getVisitDetails(Number('{{len_properties}}')),
-                        "session_id": '{{session_id}}'
-                    })
-                });
+            const consentTick = document.getElementById("consent_tick");
+            const consentTick_div = document.getElementById("consent_tick_div");
+            if (consentTick.checked) {
+                consentTick_div.classList.remove('red-border-btn');
+                try {
+                    const response = await fetch("{% url 'final-visit-plan-list' %}", {  // Use the appropriate URL for your API endpoint
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{csrf_token}}'
+                        },
+                        body: JSON.stringify({ 
+                            "final_visit_details": getVisitDetails(Number('{{len_properties}}')),
+                            "session_id": '{{session_id}}'
+                        })
+                    });
 
-                const data = await response.json();
-                if (data.success === true) {
-                    location.reload();
-                    toggle_loader();
-                } else {
-                    console.log(data.success);
+                    const data = await response.json();
+                    if (data.success === true) {
+                        location.reload();
+                        toggle_loader();
+                    } else {
+                        console.log(data.success);
+                        toggle_loader();
+                    }
+                } catch (error) {
+                    console.error("Error submitting document form: ", error);
                     toggle_loader();
                 }
-            } catch (error) {
-                console.error("Error submitting document form: ", error);
+            }
+            else {
+                consentTick_div.classList.add('red-border-btn');
                 toggle_loader();
             }
         }

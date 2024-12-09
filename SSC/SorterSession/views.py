@@ -1251,6 +1251,12 @@ class FinalVisitPlan(viewsets.ViewSet):
                 property_name = building_data.project_name
                 property_group_name = building_data.group_name
                 property_address = building_data.location_of_project
+                property_contact_name = building_data.name
+                visit_time = str(visit_unit['Arrival_time'])
+                visit_date = str(visit_unit['Arrival_date'])
+
+                your_name = 'Pratik Thakkar'
+                your_contact = '+91 98989 89898'
                 # to = building_data.email
                 to = 'divyamshah1234@gmail.com'
 
@@ -1267,7 +1273,7 @@ class FinalVisitPlan(viewsets.ViewSet):
                     'Arrival_date':visit_unit['Arrival_date'],
                     'Address':property_address
                     }) 
-                send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series)
+                send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series, property_contact_name, visit_time, visit_date, your_name, your_contact)
 
         svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
         pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)

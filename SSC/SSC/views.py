@@ -8,6 +8,9 @@ import requests
 import os
 from django.contrib.auth import authenticate, login, logout
 
+import logging
+logger = logging.getLogger('SorterSession')
+
 
 def home(request):
     return render(request, 'index.html')
@@ -305,28 +308,32 @@ def handle_error_page(request):
     return render(request, 'error_page.html')
 
 def ssc_login(request):
-    next_url = request.GET.get('next')
-    user_authenticated = True
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        next_url = request.POST.get('next_url')
+    try:
+        next_url = request.GET.get('next')
+        user_authenticated = True
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            next_url = request.POST.get('next_url')
 
-        user = authenticate(request, password=password, username=username) # Authenticating user
-        if user is not None:
-            print(user)
-            # User is authenticated
-            login(request, user)
-            request.session.set_expiry(30 * 24 * 60 * 60)
-            user_authenticated = True
+            user = authenticate(request, password=password, username=username) # Authenticating user
+            if user is not None:
+                login(request, user)
+                request.session.set_expiry(30 * 24 * 60 * 60)
+                user_authenticated = True
 
-            return redirect(next_url)
-        else:
-            user_authenticated = False
+                return redirect(next_url)
+            else:
+                user_authenticated = False
 
-    data = {
-        'next_url': next_url,
-        'user_authenticated':user_authenticated
-    }
+        data = {
+            'next_url': next_url,
+            'user_authenticated':user_authenticated
+        }
+        return render(request, 'login.html', data)
+    
+    except Exception as e:
+        logger.error(e, exc_info=True)
 
-    return render(request, 'login.html', data)
+        return render(request, 'login.html')
+

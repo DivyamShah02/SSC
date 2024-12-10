@@ -20,6 +20,12 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
     
     @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
+        user = request.user
+        group_names = user.groups.values_list('name', flat=True)
+
+        if str(group_names[0]) != 'Building Detail':
+            return redirect('error_page')
+
         building_id = request.GET.get('building_id')
         is_building_edit = False
         if building_id:
@@ -202,6 +208,12 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
     
     @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
+        user = request.user
+        group_names = user.groups.values_list('name', flat=True)
+
+        if str(group_names[0]) != 'Building Detail':
+            return redirect('error_page')
+
         building_id = request.GET.get('building_id')
         building_data = get_object_or_404(BuildingDetails, building_id=building_id)
         all_units = UnitDetails.objects.filter(building_id=building_id)

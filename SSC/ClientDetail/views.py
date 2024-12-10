@@ -1,6 +1,6 @@
 import time
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db import DatabaseError, transaction
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -21,6 +21,12 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
     @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         try:
+            user = request.user
+            group_names = user.groups.values_list('name', flat=True)
+
+            if str(group_names[0]) != 'Property Inquiry':
+                return redirect('error_page')
+
             client_id = request.GET.get('client_id')
             is_client_edit = False
             if client_id:

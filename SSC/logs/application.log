@@ -9157,3 +9157,5 @@ ERROR 2024-12-09 18:44:23,406 views Inquiry successfully saved. Client ID: 1
 ERROR 2024-12-09 18:45:48,810 views Inquiry successfully saved. Client ID: 1
 ERROR 2024-12-09 18:53:20,613 views Inquiry successfully saved. Client ID: 1
 ERROR 2024-12-09 18:54:43,978 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-12-10 20:32:59,384 views Error rendering inquiry form: 'User' object has no attribute 'group'
+ERROR 2024-12-10 20:33:01,755 views Error rendering inquiry form: 'User' object has no attribute 'group'

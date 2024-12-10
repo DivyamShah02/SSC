@@ -24,8 +24,9 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
             user = request.user
             group_names = user.groups.values_list('name', flat=True)
 
-            if str(group_names[0]) != 'Property Inquiry':
-                return redirect('error_page')
+            if not user.is_staff:
+                if str(group_names[0]) != 'Property Inquiry':
+                    return redirect('error_page')
 
             client_id = request.GET.get('client_id')
             is_client_edit = False

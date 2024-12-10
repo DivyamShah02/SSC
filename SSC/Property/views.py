@@ -23,8 +23,9 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         user = request.user
         group_names = user.groups.values_list('name', flat=True)
 
-        if str(group_names[0]) != 'Building Detail':
-            return redirect('error_page')
+        if not user.is_staff:
+            if str(group_names[0]) != 'Building Detail':
+                return redirect('error_page')
 
         building_id = request.GET.get('building_id')
         is_building_edit = False
@@ -210,9 +211,10 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
     def list(self, request):
         user = request.user
         group_names = user.groups.values_list('name', flat=True)
-
-        if str(group_names[0]) != 'Building Detail':
-            return redirect('error_page')
+    
+        if not user.is_staff:
+            if str(group_names[0]) != 'Building Detail':
+                return redirect('error_page')
 
         building_id = request.GET.get('building_id')
         building_data = get_object_or_404(BuildingDetails, building_id=building_id)

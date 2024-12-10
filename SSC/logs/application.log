@@ -9159,3 +9159,22 @@ ERROR 2024-12-09 18:53:20,613 views Inquiry successfully saved. Client ID: 1
 ERROR 2024-12-09 18:54:43,978 views Inquiry successfully saved. Client ID: 1
 ERROR 2024-12-10 20:32:59,384 views Error rendering inquiry form: 'User' object has no attribute 'group'
 ERROR 2024-12-10 20:33:01,755 views Error rendering inquiry form: 'User' object has no attribute 'group'
+ERROR 2024-12-10 21:10:27,211 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-12-10 21:10:43,027 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-12-10 21:16:17,968 views Reverse for 'None' not found. 'None' is not a valid view function or pattern name.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 325, in ssc_login
+    return redirect(next_url)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'None' not found. 'None' is not a valid view function or pattern name.

@@ -34,6 +34,7 @@ def create_visit_plan(starting_point, properties, start_date_time):
         
         # Update visit plan
         arrival_time = current_time + timedelta(seconds=travel_time)
+        arrival_time = round_up_time(arrival_time)
         departure_time = arrival_time + timedelta(hours=1)
         visit_plan.append({
             "property_id": nearest_property['id'],  # Include property ID
@@ -49,6 +50,20 @@ def create_visit_plan(starting_point, properties, start_date_time):
         properties.remove(nearest_property)
 
     return visit_plan
+
+def round_up_time(input_time):
+    time_obj = input_time
+    
+    # Round up to the next quarter hour
+    minutes = ((time_obj.minute + 14) // 15) * 15
+    rounded_time = time_obj.replace(minute=0) + timedelta(minutes=minutes)
+    
+    # Handle the case where the time rounds to the next hour
+    if rounded_time.minute == 60:
+        rounded_time = rounded_time.replace(minute=0) + timedelta(hours=1)
+    
+    # Return the rounded time in 'HH:MM' format
+    return rounded_time
 
 
 # Example usage

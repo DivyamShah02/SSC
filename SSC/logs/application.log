@@ -9178,3 +9178,4 @@ Traceback (most recent call last):
   File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'None' not found. 'None' is not a valid view function or pattern name.
+ERROR 2024-12-10 22:24:09,710 views Inquiry successfully saved. Client ID: 1

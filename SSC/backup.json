@@ -3,7 +3,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$m8mDEzVq0dTzSnPeJbtq6R$lPLC3qJ+mKo5jqOhNE5VXa2BrzPhJM2LlkM7JuwQoT4=",
-    "last_login": "2024-12-02T12:06:54.132Z",
+    "last_login": "2024-12-04T07:51:51.588Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -14,6 +14,14 @@
     "date_joined": "2024-11-15T05:54:06.967Z",
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "55yw4kj1srfgyoe0yasl6l5asglk7t6e",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tI4yQ:S6nA3etD_VbcZFEzkoSNU7gzZRqwsg26gF4vX15xmsk",
+    "expire_date": "2024-12-16T11:52:18.830Z"
   }
 },
 {
@@ -34,10 +42,42 @@
 },
 {
   "model": "sessions.session",
+  "pk": "c7dcmw3nbj2p57vat3v2anefkta5o8rp",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tH291:hqjm-w7CVARl2FNP2p0yuZ9smv_SbuvkJCnHNmanIMc",
+    "expire_date": "2024-12-13T14:38:55.874Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "cjpau8w2wf76y00c2k6aphek4d4wm7wf",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tI5CY:J6uIDozOgPVixcLjgAa5BCnKNP8fwdzqQ1vriTRdQwU",
     "expire_date": "2024-12-16T12:06:54.152Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "erlmh1eikqqgxf4jwlth8g1ir0yglr9j",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tGwQp:DrsnqQALTwzo7ID3TZmQmCwobulKwtA9EHc5_DtS86Q",
+    "expire_date": "2024-12-13T08:32:55.719Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "g2o15dx8q16bufwslkxo6yoo7wcm33ue",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tHgLX:O4geW6cxJaeK-ExTFF66fFnTVscUXI-Czuvnl6j5JZY",
+    "expire_date": "2024-12-15T09:34:31.443Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "kx0yg0oxjv4h9osj3sbbcds209yf7166",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tDhSj:mM9A0Ov9lHbLM2NO5r-j8p2E7mo7pITbfoNWtD8ReqY",
+    "expire_date": "2024-12-04T09:57:29.825Z"
   }
 },
 {
@@ -54,6 +94,22 @@
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tBpHX:9H9seaS8LDtDKtplcKJDi9G60aW2mj63BDrT-3NfELQ",
     "expire_date": "2024-11-29T05:54:11.581Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wf6jmkjfcj643q3igz15ll9ryyxzodh5",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tIkAp:5miAi-ChLvSzP7Dp0AqwJiCLX9GX4fIAVEeMPTQepdI",
+    "expire_date": "2024-12-18T07:51:51.605Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wju92q2i49y9qi7vlosdwxjzinda3n0v",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tIkAo:LS4BCb61mhdr4iSxMa3NqHNe_az3rGj3yYIRAewspHs",
+    "expire_date": "2024-12-18T07:51:50.788Z"
   }
 },
 {
@@ -302,17 +358,115 @@
   }
 },
 {
+  "model": "ClientDetail.propertyinquiry",
+  "pk": 6,
+  "fields": {
+    "name": "Hriman Banker",
+    "country_code": "+1",
+    "number": "4168483466",
+    "whatsapp_country_code": "+1",
+    "whatsapp": "4168483466",
+    "email": "hriman1996@gmail.com",
+    "profession": "Insurance advisor",
+    "residence": "Toronto, Canada",
+    "reference": "Bhai hai mera",
+    "why_buy_house": "Investment",
+    "adults": 4,
+    "children": 0,
+    "senior_citizens": 0,
+    "current_residence_area": "1800",
+    "religious_preference": "gurudwara",
+    "workplace_area": "23.032138|72.52520439999999",
+    "school_area": "23.0479089|72.5485254",
+    "preferred_locations": "23.0128495|72.5062251, 23.0336769|72.4634117, 23.0395828|72.4961873",
+    "decision_driven_by": "Choice driven",
+    "dependent_on_sale": "no",
+    "looking_since": "just_started",
+    "time_to_seal_deal": "90",
+    "unit_type": "Simplex, Duplex, Penthouse",
+    "bedrooms": "4_bhk, 5_bhk",
+    "attached_washrooms": "5",
+    "servant_room": "yes",
+    "puja_room": "yes",
+    "min_carpet_area": "3000",
+    "flats_per_floor": "1 - 2",
+    "floor_preference": "Above 21",
+    "private_elevator": "yes",
+    "central_air_conditioning": "yes",
+    "min_parking_slots": "4",
+    "stack_parking": "maybe",
+    "property_age": "Upcoming 12 to 36 months",
+    "society_type": "Single block high end (70 - 100 units)",
+    "amenities": "mini_theatre, multi_d_purpose_court, walking_s_jogging_track, splash_pool, guest_rooms",
+    "budget_min": "5",
+    "budget_max": "10",
+    "down_payment_percentage": "5",
+    "loan_approved_amount": "100",
+    "specific_needs": "All good",
+    "concerns": "Need best price"
+  }
+},
+{
+  "model": "ClientDetail.propertyinquiry",
+  "pk": 7,
+  "fields": {
+    "name": "Hriman Banker",
+    "country_code": "+91",
+    "number": "4168483466",
+    "whatsapp_country_code": "+91",
+    "whatsapp": "4168483466",
+    "email": "hriman1996@gmail.com",
+    "profession": "Insurance advisor",
+    "residence": "Toronto,Canada",
+    "reference": "Bhai hai mera",
+    "why_buy_house": "Investment",
+    "adults": 4,
+    "children": 0,
+    "senior_citizens": 0,
+    "current_residence_area": "1800",
+    "religious_preference": "gurudwara",
+    "workplace_area": "23.032138|72.52520439999999",
+    "school_area": "23.0479089|72.5485254",
+    "preferred_locations": "23.0128495|72.5062251, 23.0336769|72.4634117, 23.0395828|72.4961873",
+    "decision_driven_by": "Choice driven",
+    "dependent_on_sale": "no",
+    "looking_since": "just_started",
+    "time_to_seal_deal": "90",
+    "unit_type": "Simplex, Duplex, Penthouse",
+    "bedrooms": "4_bhk, 5_bhk",
+    "attached_washrooms": "5",
+    "servant_room": "yes",
+    "puja_room": "yes",
+    "min_carpet_area": "3000",
+    "flats_per_floor": "1 - 2",
+    "floor_preference": "Above 21",
+    "private_elevator": "yes",
+    "central_air_conditioning": "yes",
+    "min_parking_slots": "4",
+    "stack_parking": "maybe",
+    "property_age": "Upcoming 12 to 36 months",
+    "society_type": "Single block high end (70 - 100 units)",
+    "amenities": "mini_theatre, multi_d_purpose_court, walking_s_jogging_track, splash_pool, guest_rooms",
+    "budget_min": "1",
+    "budget_max": "10",
+    "down_payment_percentage": "5",
+    "loan_approved_amount": "100",
+    "specific_needs": "All good",
+    "concerns": "Need best price"
+  }
+},
+{
   "model": "Property.buildingdetails",
   "pk": 1,
   "fields": {
     "building_id": "1000",
     "group_name": "Shafalya Aaron Dharnidhar",
-    "head_image": "",
-    "sec_image_1": "",
-    "sec_image_2": "",
+    "head_image": "property/head.jpg",
+    "sec_image_1": "property/sec_1.jpg",
+    "sec_image_2": "property/sec_2.jpg",
     "sec_image_3": "",
     "sec_image_4": "",
-    "brochure_1": "",
+    "brochure_1": "brochure/SHANTIPURA_FACT-SHEET.pdf",
     "brochure_2": "",
     "year_of_establishment": "2012",
     "no_of_projects_delivered": "10",
@@ -351,6 +505,7 @@
     "age_of_property_by_developer": "12-2025",
     "age_of_property_rera": "03-2026",
     "rera_approved": true,
+    "rera_by_when": "",
     "plot_area": "8000",
     "architect": "ADS - Mohit Gajjar",
     "construction_company": "Shakti Infra",
@@ -429,6 +584,7 @@
     "age_of_property_by_developer": "06-2028",
     "age_of_property_rera": "06-2029",
     "rera_approved": true,
+    "rera_by_when": null,
     "plot_area": "7000",
     "architect": "Bhaskar Nerula",
     "construction_company": "In house",
@@ -507,6 +663,7 @@
     "age_of_property_by_developer": "12-2026",
     "age_of_property_rera": "03-2029",
     "rera_approved": true,
+    "rera_by_when": null,
     "plot_area": "8100",
     "architect": "Harshad Mistry",
     "construction_company": "In house",
@@ -585,6 +742,7 @@
     "age_of_property_by_developer": "12-2025",
     "age_of_property_rera": "03-2027",
     "rera_approved": true,
+    "rera_by_when": null,
     "plot_area": "1700",
     "architect": "Harshad Mistry",
     "construction_company": "In House",
@@ -619,12 +777,12 @@
   "fields": {
     "building_id": "1004",
     "group_name": "Avni",
-    "head_image": "property/Hiring_JPH.png",
-    "sec_image_1": "",
+    "head_image": "property/PHOTO-2024-11-19-12-59-52_3.jpeg",
+    "sec_image_1": "property/PHOTO-2024-11-19-13-00-58_2.jpeg",
     "sec_image_2": "",
     "sec_image_3": "",
     "sec_image_4": "",
-    "brochure_1": "brochure/Resume.pdf",
+    "brochure_1": "brochure/Avni_Amrut.pdf",
     "brochure_2": "",
     "year_of_establishment": "2001",
     "no_of_projects_delivered": "16",
@@ -663,6 +821,7 @@
     "age_of_property_by_developer": "06-2025",
     "age_of_property_rera": "06-2027",
     "rera_approved": true,
+    "rera_by_when": "",
     "plot_area": "2052",
     "architect": "Saurabh Verma",
     "construction_company": "Chavda",
@@ -741,6 +900,7 @@
     "age_of_property_by_developer": "12-2025",
     "age_of_property_rera": "06-2025",
     "rera_approved": true,
+    "rera_by_when": null,
     "plot_area": "15374",
     "architect": "Harshad Mistry",
     "construction_company": "Setu Infrastructre",
@@ -774,6 +934,8 @@
   "pk": 1,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "A - 01,04",
@@ -789,9 +951,12 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
-    "size_of_balcony_len": "17",
+    "size_of_balcony_len": "17.7",
     "size_of_balcony_wid": "7",
     "size_of_master_bedroom_len": "12",
     "size_of_master_bedroom_wid": "18",
@@ -812,6 +977,8 @@
   "pk": 2,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "A - 02",
@@ -827,6 +994,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -850,6 +1020,8 @@
   "pk": 3,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "A - 03",
@@ -865,6 +1037,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -888,6 +1063,8 @@
   "pk": 4,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "B - 01",
@@ -903,6 +1080,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "19",
@@ -926,6 +1106,8 @@
   "pk": 5,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "B - 02",
@@ -941,6 +1123,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -964,6 +1149,8 @@
   "pk": 6,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "B - 03",
@@ -979,6 +1166,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1002,6 +1192,8 @@
   "pk": 7,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "5 BHK",
     "unit_type": "Duplex",
     "unit_series": "A - 02",
@@ -1017,6 +1209,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1040,6 +1235,8 @@
   "pk": 8,
   "fields": {
     "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "5 BHK",
     "unit_type": "Duplex",
     "unit_series": "A - 02",
@@ -1055,6 +1252,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1078,6 +1278,8 @@
   "pk": 9,
   "fields": {
     "building_id": "1001",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "A B 01, 02",
@@ -1093,6 +1295,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "15",
@@ -1116,6 +1321,8 @@
   "pk": 10,
   "fields": {
     "building_id": "1001",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "C 01, 02",
@@ -1131,6 +1338,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "18",
@@ -1154,6 +1364,8 @@
   "pk": 11,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "B & C  02",
@@ -1169,6 +1381,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1192,6 +1407,8 @@
   "pk": 12,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "A 01 02",
@@ -1207,6 +1424,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1230,6 +1450,8 @@
   "pk": 13,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "B & C  02",
@@ -1245,6 +1467,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1268,6 +1493,8 @@
   "pk": 14,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "5 BHK",
     "unit_type": "Penthouse",
     "unit_series": "A 01 02",
@@ -1283,6 +1510,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1306,6 +1536,8 @@
   "pk": 15,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "5 BHK",
     "unit_type": "Penthouse",
     "unit_series": "B C 01",
@@ -1321,6 +1553,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1344,6 +1579,8 @@
   "pk": 16,
   "fields": {
     "building_id": "1002",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "5 BHK",
     "unit_type": "Penthouse",
     "unit_series": "B C 02",
@@ -1359,6 +1596,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1382,6 +1622,8 @@
   "pk": 17,
   "fields": {
     "building_id": "1003",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "01 02",
@@ -1397,6 +1639,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": false,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1420,6 +1665,8 @@
   "pk": 18,
   "fields": {
     "building_id": "1003",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Penthouse",
     "unit_series": "01 02",
@@ -1435,6 +1682,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": false,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1458,6 +1708,8 @@
   "pk": 19,
   "fields": {
     "building_id": "1004",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "01",
@@ -1473,6 +1725,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1496,6 +1751,8 @@
   "pk": 20,
   "fields": {
     "building_id": "1004",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "02",
@@ -1511,6 +1768,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1534,6 +1794,8 @@
   "pk": 21,
   "fields": {
     "building_id": "1005",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "3 BHK",
     "unit_type": "Simplex",
     "unit_series": "",
@@ -1549,6 +1811,9 @@
     "servant_room_available": false,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1572,6 +1837,8 @@
   "pk": 22,
   "fields": {
     "building_id": "1005",
+    "project_name": "",
+    "group_name": "",
     "unit_configuration": "4 BHK",
     "unit_type": "Simplex",
     "unit_series": "",
@@ -1587,6 +1854,9 @@
     "servant_room_available": true,
     "separate_puja_room_available": true,
     "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
     "size_of_private_terrace_len": "",
     "size_of_private_terrace_wid": "",
     "size_of_balcony_len": "",
@@ -1603,6 +1873,49 @@
     "floor_plan": "",
     "unit_plan": "",
     "active": true
+  }
+},
+{
+  "model": "Property.unitdetails",
+  "pk": 23,
+  "fields": {
+    "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Duplex",
+    "unit_series": "A - 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "6969",
+    "carpet_area_rera": "4361",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "52267500.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/image.jpg",
+    "unit_plan": "",
+    "active": false
   }
 },
 {
@@ -1857,7 +2170,15 @@
   "fields": {
     "client_id": "1",
     "number": "8866003020",
-    "properties": "[{'unit_id': 4, 'score': 55}, {'unit_id': 5, 'score': 55}, {'unit_id': 6, 'score': 55}, {'unit_id': 19, 'score': 53}, {'unit_id': 20, 'score': 53}, {'unit_id': 19, 'score': 53}, {'unit_id': 20, 'score': 53}, {'unit_id': 11, 'score': 50}, {'unit_id': 13, 'score': 50}, {'unit_id': 1, 'score': 50}, {'unit_id': 2, 'score': 50}, {'unit_id': 3, 'score': 50}, {'unit_id': 11, 'score': 50}, {'unit_id': 13, 'score': 50}, {'unit_id': 10, 'score': 48}, {'unit_id': 17, 'score': 48}, {'unit_id': 17, 'score': 48}, {'unit_id': 9, 'score': 33}]"
+    "properties": "[{'unit_id': 4, 'score': 65}, {'unit_id': 5, 'score': 65}, {'unit_id': 6, 'score': 65}, {'unit_id': 17, 'score': 63}, {'unit_id': 19, 'score': 63}, {'unit_id': 20, 'score': 63}, {'unit_id': 11, 'score': 60}, {'unit_id': 13, 'score': 60}, {'unit_id': 1, 'score': 60}, {'unit_id': 2, 'score': 60}, {'unit_id': 3, 'score': 60}, {'unit_id': 10, 'score': 53}, {'unit_id': 9, 'score': 38}]",
+    "selected_properties": "[4]",
+    "visit_details": "[{'unit_id': 4, 'Arrival_time': '08:14', 'Arrival_date': '2024-12-06'}]",
+    "start_visit_time_date": "2024-12-06|08:06",
+    "visit_start_coords": "23.0119795|72.528454",
+    "visit_start_location": "Shyamal Cross Road, Shyamal, Ahmedabad, Gujarat, India",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
   }
 },
 {
@@ -1866,7 +2187,15 @@
   "fields": {
     "client_id": "2",
     "number": "8989898989",
-    "properties": "[]"
+    "properties": "[]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
   }
 },
 {
@@ -1875,7 +2204,15 @@
   "fields": {
     "client_id": "3",
     "number": "8989898989",
-    "properties": "[]"
+    "properties": "[]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
   }
 },
 {
@@ -1884,7 +2221,15 @@
   "fields": {
     "client_id": "4",
     "number": "8989898989",
-    "properties": "[]"
+    "properties": "[]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
   }
 },
 {
@@ -1893,7 +2238,49 @@
   "fields": {
     "client_id": "5",
     "number": "8989898989",
-    "properties": "[]"
+    "properties": "[]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
+  }
+},
+{
+  "model": "SorterSession.shortlistedproperty",
+  "pk": 6,
+  "fields": {
+    "client_id": "6",
+    "number": "4168483466",
+    "properties": "[]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
+  }
+},
+{
+  "model": "SorterSession.shortlistedproperty",
+  "pk": 7,
+  "fields": {
+    "client_id": "7",
+    "number": "4168483466",
+    "properties": "[{'unit_id': 12, 'score': 55}, {'unit_id': 11, 'score': 50}, {'unit_id': 10, 'score': 43}, {'unit_id': 19, 'score': 39}, {'unit_id': 20, 'score': 39}, {'unit_id': 9, 'score': 38}]",
+    "selected_properties": "",
+    "visit_details": "",
+    "start_visit_time_date": "",
+    "visit_start_coords": "",
+    "visit_start_location": "",
+    "visist_finalize": false,
+    "feedback": "",
+    "visit_plan_pdf": ""
   }
 },
 {
@@ -1912,6 +2299,708 @@
     "object_repr": "Emberlynn - Emberlynn Two",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-11-20T10:41:09.366Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-11-20T10:44:22.551Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Selected properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-11-20T13:47:31.480Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Selected properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-22T19:43:40.672Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Visist finalize\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-23T06:34:49.813Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-23T06:35:38.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-11-23T06:35:43.111Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "2",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-11-23T06:35:47.927Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "3",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-11-23T06:35:52.559Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "4",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-11-23T06:37:28.442Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "5",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-11-23T06:37:38.353Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "6",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-11-23T06:37:44.700Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "7",
+    "object_repr": "5 BHK - Duplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-11-23T06:37:53.449Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "8",
+    "object_repr": "5 BHK - Duplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-11-28T15:24:25.618Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-11-29T07:52:15.244Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-11-29T08:33:06.864Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-11-29T08:37:58.958Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-11-29T08:41:47.950Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-11-29T08:48:58.979Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-11-29T09:00:54.477Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-11-29T09:05:02.600Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-11-29T09:09:23.483Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-11-29T09:11:23.303Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-11-29T09:43:53.930Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-11-29T09:45:14.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-11-29T09:55:07.456Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-11-29T10:01:51.501Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-11-29T10:03:05.889Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-11-29T10:04:22.149Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-11-29T10:09:06.035Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-11-29T10:16:32.873Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-11-29T10:21:39.949Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-11-29T10:27:31.130Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-11-29T14:39:21.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-11-29T15:34:18.257Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-12-01T19:38:51.803Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-12-01T19:39:10.652Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-12-01T19:44:00.900Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-12-01T19:45:14.952Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
   }
 }
 ]

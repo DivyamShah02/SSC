@@ -10,12 +10,15 @@ from .models import BuildingDetails, Amenities, UnitDetails
 from django.db import transaction
 import ast
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 import logging
 logger = logging.getLogger('Property')
 
 class PropertyDetailFormViewSet(viewsets.ViewSet):
-
+    
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         building_id = request.GET.get('building_id')
         is_building_edit = False
@@ -196,7 +199,8 @@ class PropertyCopyDataViewSet(viewsets.ViewSet):
 
 
 class UnitDetailFormViewSet(viewsets.ViewSet):
-
+    
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         building_id = request.GET.get('building_id')
         building_data = get_object_or_404(BuildingDetails, building_id=building_id)

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from Property.models import BuildingDetails, UnitDetails, Amenities
 import random
@@ -6,6 +6,8 @@ import json
 from .cords import final_cords
 import requests
 import os
+from django.contrib.auth import authenticate, login, logout
+
 
 def home(request):
     return render(request, 'index.html')
@@ -301,3 +303,30 @@ def generate_file_name(folder, file_name):
 
 def handle_error_page(request):
     return render(request, 'error_page.html')
+
+def ssc_login(request):
+    next_url = request.GET.get('next')
+    user_authenticated = True
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        next_url = request.POST.get('next_url')
+
+        user = authenticate(request, password=password, username=username) # Authenticating user
+        if user is not None:
+            print(user)
+            # User is authenticated
+            login(request, user)
+            request.session.set_expiry(30 * 24 * 60 * 60)
+            user_authenticated = True
+
+            return redirect(next_url)
+        else:
+            user_authenticated = False
+
+    data = {
+        'next_url': next_url,
+        'user_authenticated':user_authenticated
+    }
+
+    return render(request, 'login.html', data)

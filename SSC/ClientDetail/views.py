@@ -2,6 +2,8 @@ import time
 
 from django.shortcuts import render, get_object_or_404
 from django.db import DatabaseError, transaction
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -16,6 +18,7 @@ logger = logging.getLogger('ClientDetail')
 
 class PropertyInquiryViewSet(viewsets.ViewSet):
 
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         try:
             client_id = request.GET.get('client_id')

@@ -11,6 +11,8 @@ from rest_framework import viewsets
 from rest_framework.exceptions import NotFound, ParseError
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.files.base import ContentFile
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 import json
 import ast
@@ -230,6 +232,8 @@ class PropertyViewset(viewsets.ViewSet):
 
 
 class PropertyDetailViewset(viewsets.ViewSet):
+    
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         try:
             session_id = request.GET.get('session_id')
@@ -634,6 +638,8 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
 
 class PropertyDefaultDetailViewset(viewsets.ViewSet):
+    
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         try:
             unit_id = request.GET.get('unit_id')
@@ -888,6 +894,8 @@ class SelectPropertyViewSet(viewsets.ViewSet):
 
 
 class VisitPlanViewSet(viewsets.ViewSet):
+    
+    @method_decorator(login_required(login_url='/login/'))
     def list(self, request):
         session_id = request.GET.get('session_id')
 

@@ -53,631 +53,634 @@
         <div class="container mt-5">
             <div class="row mb-4">
                 {% for menu_property in menu_properties %}
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card mb-3 ssc-images primary-images"
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
-                        style="cursor: pointer;">
-                        <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
-                        <img src="{{menu_property.property_img}}"
-                            alt="Property Image"
-                            style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
-                        <!-- <div class="primary-ssc-badge"><i class="fa fa-location-dot"></i> {{menu_property.area_of_project}}</div> -->
-                        <div class="card-body">
-                            <h5 class="card-title"><u>{{menu_property.property_name}}</u></h5>
-                            <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
-                            <p><b><i class="text-primary-ssc fa fa-location-dot"></i> {{menu_property.area_of_project}}</b></p>
+                <div id="visit-card{{forloop.counter}}" class="col-12 p-0 m-0 row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card mb-3 ssc-images primary-images"
+                            onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                            style="cursor: pointer;">
+                            <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
+                            <img src="{{menu_property.property_img}}"
+                                alt="Property Image"
+                                style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
+                            <!-- <div class="primary-ssc-badge"><i class="fa fa-location-dot"></i> {{menu_property.area_of_project}}</div> -->
+                            <div class="card-body">
+                                <h5 class="card-title"><u>{{menu_property.property_name}}</u><span id="feedbackText{{forloop.counter}}" class="text-secondary-ssc"></span></h5>
+                                <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
+                                <p><b><i class="text-primary-ssc fa fa-location-dot"></i> {{menu_property.area_of_project}}</b></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-8">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            <div class="card">
-                                <div class="card-body row">
-                                    <div class="col-2">
-                                        <h4 class="pt-2"><i class="fas fa-bed text-secondary-ssc"></i></h4>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
-                                        <h5 class="card-title text-primary-ssc"><b>{{menu_property.unit_configuration}}</b></h5>
-                                        <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            <div class="card">
-                                <div class="card-body row">
-                                    <div class="col-2">
-                                        <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
-                                        <h5 class="card-title text-primary-ssc"><b>₹{{menu_property.property_unit_price_in_cr}} Cr</b></h5>
-                                        <p class="card-text text-light-ssc"><b>₹{{menu_property.per_sqft_rate_saleable}}k /Sq.Ft</b></p>
-        
-                                        <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
-                                            Starts at ₹60.5 K)</span></b></p> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            {% if menu_property.visit_planned == True %}
-                            <div class="form-group">
-                                <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
-                                <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
-                            </div>
-                            {% endif %}
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            <div class="card">
-                                <div class="card-body row">
-                                    <div class="col-2">
-                                        <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
-                                    </div>
-                                    <div class="col-9">
-                                        <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                                        <h5 class="card-title text-primary-ssc"><b>{{menu_property.size_of_unit}} Sq. Ft.</b></h5>
-                                        <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
-                                        <p class="card-text text-light-ssc"><b>{{menu_property.carpet_area_rera}} Sq. Ft<span
-                                                    class="text-primary-ssc"></span></b></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            <div class="card">
-                                <div class="card-body row">
-                                    <div class="col-2">
-                                        <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
-                                    </div>
-                                    {% if menu_property.is_ready_to_move == True %}
-                                    <div class="col-10">
-                                        <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
-                                        <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
-                                        <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                        </p>
-                                    </div>
-                                    {% else %}
-                                    <div class="col-10">
-                                        <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
-                                        <h5 class="card-title text-primary-ssc">
-                                            <b>{{menu_property.age_of_property_by_developer}}</b>
-                                        </h5>
-                                        <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                        </p>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 col-md-6 col-lg-4 mt-4">
-                            {% if menu_property.visit_planned == True %}
-                            <div class="form-group">
-                                <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
-                                <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
-                            </div>
-                            <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
-                            {% endif %}
-                        </div>
-
-                        <!-- {% if menu_property.visit_planned == True %} -->
-                            <!-- <div class="col-lg-4 col-md-8 form-group">
-                                <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
-                                <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
-                            </div>
-                
-                            <div class="col-lg-4 col-md-8 form-group">
-                                <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
-                                <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
-                            </div>
-                            <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
-                             -->
-                            {% if visit_final == True %}
-                            <div class="col-12 mt-4">
-                                <button type="button" class="btn btn-custom-primary w-100" onclick="open_feedback_modal('{{menu_property.unit_id}}', '{{forloop.counter}}')">
-                                    Feedback
-                                </button>
-
-                                <button type="button" style="display: none;" id="open_feedback_modal_btn{{forloop.counter}}" data-bs-toggle="modal" data-bs-target="#feedbackModal{{forloop.counter}}">
-                                    
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="feedbackModal{{forloop.counter}}" tabindex="-1" aria-labelledby="feedbackModal{{forloop.counter}}Label" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="feedbackModal{{forloop.counter}}Label">Feedback for {{menu_property.property_name}}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                <div class="card">
+                                    <div class="card-body row">
+                                        <div class="col-2">
+                                            <h4 class="pt-2"><i class="fas fa-bed text-secondary-ssc"></i></h4>
                                         </div>
-                                        <div class="modal-body">
-                                            <form id="feedbackForm{{forloop.counter}}" class="p-3">
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="location">1) How suitable do you find the property's location?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="location" id="location_1" value="1">
-                                                        <label class="form-check-label" for="location_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="location" id="location_2" value="2">
-                                                        <label class="form-check-label" for="location_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="location" id="location_3" value="3">
-                                                        <label class="form-check-label" for="location_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="location" id="location_4" value="4">
-                                                        <label class="form-check-label" for="location_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="location" id="location_5" value="5">
-                                                        <label class="form-check-label" for="location_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="neighborhood">2) How do you feel about the safety, cleanliness, and overall atmosphere of the surrounding area?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_1" value="1">
-                                                        <label class="form-check-label" for="neighborhood_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_2" value="2">
-                                                        <label class="form-check-label" for="neighborhood_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_3" value="3">
-                                                        <label class="form-check-label" for="neighborhood_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_4" value="4">
-                                                        <label class="form-check-label" for="neighborhood_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_5" value="5">
-                                                        <label class="form-check-label" for="neighborhood_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="connectivity">3) How would you rate the accessibility to public transportation, major roads, and nearby facilities?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="connectivity" id="connectivity_1" value="1">
-                                                        <label class="form-check-label" for="connectivity_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="connectivity" id="connectivity_2" value="2">
-                                                        <label class="form-check-label" for="connectivity_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="connectivity" id="connectivity_3" value="3">
-                                                        <label class="form-check-label" for="connectivity_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="connectivity" id="connectivity_4" value="4">
-                                                        <label class="form-check-label" for="connectivity_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="connectivity" id="connectivity_5" value="5">
-                                                        <label class="form-check-label" for="connectivity_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="exterior">4) How appealing did you find the building's exterior and entrance?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="exterior" id="exterior_1" value="1">
-                                                        <label class="form-check-label" for="exterior_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="exterior" id="exterior_2" value="2">
-                                                        <label class="form-check-label" for="exterior_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="exterior" id="exterior_3" value="3">
-                                                        <label class="form-check-label" for="exterior_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="exterior" id="exterior_4" value="4">
-                                                        <label class="form-check-label" for="exterior_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="exterior" id="exterior_5" value="5">
-                                                        <label class="form-check-label" for="exterior_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="interior">5) How satisfied are you with the design, layout, and flow of the apartment?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="interior" id="interior_1" value="1">
-                                                        <label class="form-check-label" for="interior_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="interior" id="interior_2" value="2">
-                                                        <label class="form-check-label" for="interior_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="interior" id="interior_3" value="3">
-                                                        <label class="form-check-label" for="interior_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="interior" id="interior_4" value="4">
-                                                        <label class="form-check-label" for="interior_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="interior" id="interior_5" value="5">
-                                                        <label class="form-check-label" for="interior_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="size">6) How appropriate do you find the apartment's size for your requirements?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="size" id="size_1" value="1">
-                                                        <label class="form-check-label" for="size_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="size" id="size_2" value="2">
-                                                        <label class="form-check-label" for="size_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="size" id="size_3" value="3">
-                                                        <label class="form-check-label" for="size_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="size" id="size_4" value="4">
-                                                        <label class="form-check-label" for="size_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="size" id="size_5" value="5">
-                                                        <label class="form-check-label" for="size_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="room_configuration">7) How satisfied are you with the configuration and sizes of individual rooms (e.g., living room, bedrooms, kitchen)?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_1" value="1">
-                                                        <label class="form-check-label" for="room_configuration_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_2" value="2">
-                                                        <label class="form-check-label" for="room_configuration_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_3" value="3">
-                                                        <label class="form-check-label" for="room_configuration_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_4" value="4">
-                                                        <label class="form-check-label" for="room_configuration_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_5" value="5">
-                                                        <label class="form-check-label" for="room_configuration_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="construction_quality">8) How would you rate the quality of materials and construction finishes observed?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_1" value="1">
-                                                        <label class="form-check-label" for="construction_quality_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_2" value="2">
-                                                        <label class="form-check-label" for="construction_quality_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_3" value="3">
-                                                        <label class="form-check-label" for="construction_quality_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_4" value="4">
-                                                        <label class="form-check-label" for="construction_quality_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_5" value="5">
-                                                        <label class="form-check-label" for="construction_quality_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="amenities">9) How satisfied are you with the amenities available (e.g., gym, pool, clubhouse, play areas)?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="amenities" id="amenities_1" value="1">
-                                                        <label class="form-check-label" for="amenities_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="amenities" id="amenities_2" value="2">
-                                                        <label class="form-check-label" for="amenities_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="amenities" id="amenities_3" value="3">
-                                                        <label class="form-check-label" for="amenities_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="amenities" id="amenities_4" value="4">
-                                                        <label class="form-check-label" for="amenities_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="amenities" id="amenities_5" value="5">
-                                                        <label class="form-check-label" for="amenities_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="parking">10) How suitable do you find the parking arrangements for your needs?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="parking" id="parking_1" value="1">
-                                                        <label class="form-check-label" for="parking_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="parking" id="parking_2" value="2">
-                                                        <label class="form-check-label" for="parking_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="parking" id="parking_3" value="3">
-                                                        <label class="form-check-label" for="parking_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="parking" id="parking_4" value="4">
-                                                        <label class="form-check-label" for="parking_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="parking" id="parking_5" value="5">
-                                                        <label class="form-check-label" for="parking_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="light_ventilation">11) How would you rate the amount of natural light and ventilation within the apartment?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_1" value="1">
-                                                        <label class="form-check-label" for="light_ventilation_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_2" value="2">
-                                                        <label class="form-check-label" for="light_ventilation_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_3" value="3">
-                                                        <label class="form-check-label" for="light_ventilation_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_4" value="4">
-                                                        <label class="form-check-label" for="light_ventilation_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_5" value="5">
-                                                        <label class="form-check-label" for="light_ventilation_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="safety_security">12) How would you rate the safety measures (e.g., security personnel, CCTV, fire safety) in the building?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="safety_security" id="safety_security_1" value="1">
-                                                        <label class="form-check-label" for="safety_security_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="safety_security" id="safety_security_2" value="2">
-                                                        <label class="form-check-label" for="safety_security_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="safety_security" id="safety_security_3" value="3">
-                                                        <label class="form-check-label" for="safety_security_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="safety_security" id="safety_security_4" value="4">
-                                                        <label class="form-check-label" for="safety_security_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="safety_security" id="safety_security_5" value="5">
-                                                        <label class="form-check-label" for="safety_security_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="pricing">13) How reasonable do you find the property's pricing based on its features and offerings?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pricing" id="pricing_1" value="1">
-                                                        <label class="form-check-label" for="pricing_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pricing" id="pricing_2" value="2">
-                                                        <label class="form-check-label" for="pricing_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pricing" id="pricing_3" value="3">
-                                                        <label class="form-check-label" for="pricing_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pricing" id="pricing_4" value="4">
-                                                        <label class="form-check-label" for="pricing_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="pricing" id="pricing_5" value="5">
-                                                        <label class="form-check-label" for="pricing_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="sales_team">14) How satisfied are you with the information and support provided by our sales team during the visit?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="sales_team" id="sales_team_1" value="1">
-                                                        <label class="form-check-label" for="sales_team_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="sales_team" id="sales_team_2" value="2">
-                                                        <label class="form-check-label" for="sales_team_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="sales_team" id="sales_team_3" value="3">
-                                                        <label class="form-check-label" for="sales_team_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="sales_team" id="sales_team_4" value="4">
-                                                        <label class="form-check-label" for="sales_team_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="sales_team" id="sales_team_5" value="5">
-                                                        <label class="form-check-label" for="sales_team_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="overall_impression">15) Based on your visit, how would you rate the overall impression of the property?</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_1" value="1">
-                                                        <label class="form-check-label" for="overall_impression_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_2" value="2">
-                                                        <label class="form-check-label" for="overall_impression_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_3" value="3">
-                                                        <label class="form-check-label" for="overall_impression_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_4" value="4">
-                                                        <label class="form-check-label" for="overall_impression_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_5" value="5">
-                                                        <label class="form-check-label" for="overall_impression_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                                <div class="form-group mb-4">
-                                                    <label class="form-label primary" for="specifications">16) Fittings, fixtures, floorings, glasses, etc.</label><br>
-                                            
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="specifications" id="specifications_1" value="1">
-                                                        <label class="form-check-label" for="specifications_1">1</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="specifications" id="specifications_2" value="2">
-                                                        <label class="form-check-label" for="specifications_2">2</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="specifications" id="specifications_3" value="3">
-                                                        <label class="form-check-label" for="specifications_3">3</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="specifications" id="specifications_4" value="4">
-                                                        <label class="form-check-label" for="specifications_4">4</label>
-                                                    </div>
-                                                
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="specifications" id="specifications_5" value="5">
-                                                        <label class="form-check-label" for="specifications_5">5</label>
-                                                    </div>
-                                                
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-custom" id="close_feedback_modal_btn{{forloop.counter}}" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-custom-primary" onclick="add_feedback('{{menu_property.unit_id}}', '{{forloop.counter}}')">Save changes</button>
+                                        <div class="col-10">
+                                            <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
+                                            <h5 class="card-title text-primary-ssc"><b>{{menu_property.unit_configuration}}</b></h5>
+                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                            </p>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                <div class="card">
+                                    <div class="card-body row">
+                                        <div class="col-2">
+                                            <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
+                                            <h5 class="card-title text-primary-ssc"><b>₹{{menu_property.property_unit_price_in_cr}} Cr</b></h5>
+                                            <p class="card-text text-light-ssc"><b>₹{{menu_property.per_sqft_rate_saleable}}k /Sq.Ft</b></p>
+            
+                                            <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
+                                                Starts at ₹60.5 K)</span></b></p> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
+    
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                {% if menu_property.visit_planned == True %}
+                                <div class="form-group">
+                                    <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
+                                    <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
+                                </div>
+                                {% endif %}
+                            </div>
+    
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                <div class="card">
+                                    <div class="card-body row">
+                                        <div class="col-2">
+                                            <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
+                                        </div>
+                                        <div class="col-9">
+                                            <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
+                                            <h5 class="card-title text-primary-ssc"><b>{{menu_property.size_of_unit}} Sq. Ft.</b></h5>
+                                            <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                            <p class="card-text text-light-ssc"><b>{{menu_property.carpet_area_rera}} Sq. Ft<span
+                                                        class="text-primary-ssc"></span></b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                <div class="card">
+                                    <div class="card-body row">
+                                        <div class="col-2">
+                                            <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
+                                        </div>
+                                        {% if menu_property.is_ready_to_move == True %}
+                                        <div class="col-10">
+                                            <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                            <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
+                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                            </p>
+                                        </div>
+                                        {% else %}
+                                        <div class="col-10">
+                                            <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                            <h5 class="card-title text-primary-ssc">
+                                                <b>{{menu_property.age_of_property_by_developer}}</b>
+                                            </h5>
+                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                            </p>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                             
-                        <!-- {% endif %} -->
+                            <div class="col-12 col-md-6 col-lg-4 mt-4">
+                                {% if menu_property.visit_planned == True %}
+                                <div class="form-group">
+                                    <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
+                                    <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
+                                </div>
+                                <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
+                                {% endif %}
+                            </div>
+    
+                            <!-- {% if menu_property.visit_planned == True %} -->
+                                <!-- <div class="col-lg-4 col-md-8 form-group">
+                                    <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
+                                    <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
+                                </div>
+                    
+                                <div class="col-lg-4 col-md-8 form-group">
+                                    <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
+                                    <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
+                                </div>
+                                <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
+                                 -->
+                                {% if visit_final == True %}
+                                <div class="col-12 mt-4">
+                                    <button type="button" class="btn btn-custom-primary w-100" onclick="open_feedback_modal('{{menu_property.unit_id}}', '{{forloop.counter}}')">
+                                        Feedback
+                                    </button>
+    
+                                    <button type="button" style="display: none;" id="open_feedback_modal_btn{{forloop.counter}}" data-bs-toggle="modal" data-bs-target="#feedbackModal{{forloop.counter}}">
+                                        
+                                    </button>
+    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="feedbackModal{{forloop.counter}}" tabindex="-1" aria-labelledby="feedbackModal{{forloop.counter}}Label" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="feedbackModal{{forloop.counter}}Label">Feedback for {{menu_property.property_name}}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="feedbackForm{{forloop.counter}}" class="p-3">
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="location">1) How suitable do you find the property's location?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="location" id="location_1" value="1">
+                                                            <label class="form-check-label" for="location_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="location" id="location_2" value="2">
+                                                            <label class="form-check-label" for="location_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="location" id="location_3" value="3">
+                                                            <label class="form-check-label" for="location_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="location" id="location_4" value="4">
+                                                            <label class="form-check-label" for="location_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="location" id="location_5" value="5">
+                                                            <label class="form-check-label" for="location_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="neighborhood">2) How do you feel about the safety, cleanliness, and overall atmosphere of the surrounding area?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_1" value="1">
+                                                            <label class="form-check-label" for="neighborhood_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_2" value="2">
+                                                            <label class="form-check-label" for="neighborhood_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_3" value="3">
+                                                            <label class="form-check-label" for="neighborhood_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_4" value="4">
+                                                            <label class="form-check-label" for="neighborhood_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="neighborhood" id="neighborhood_5" value="5">
+                                                            <label class="form-check-label" for="neighborhood_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="connectivity">3) How would you rate the accessibility to public transportation, major roads, and nearby facilities?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="connectivity" id="connectivity_1" value="1">
+                                                            <label class="form-check-label" for="connectivity_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="connectivity" id="connectivity_2" value="2">
+                                                            <label class="form-check-label" for="connectivity_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="connectivity" id="connectivity_3" value="3">
+                                                            <label class="form-check-label" for="connectivity_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="connectivity" id="connectivity_4" value="4">
+                                                            <label class="form-check-label" for="connectivity_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="connectivity" id="connectivity_5" value="5">
+                                                            <label class="form-check-label" for="connectivity_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="exterior">4) How appealing did you find the building's exterior and entrance?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exterior" id="exterior_1" value="1">
+                                                            <label class="form-check-label" for="exterior_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exterior" id="exterior_2" value="2">
+                                                            <label class="form-check-label" for="exterior_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exterior" id="exterior_3" value="3">
+                                                            <label class="form-check-label" for="exterior_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exterior" id="exterior_4" value="4">
+                                                            <label class="form-check-label" for="exterior_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exterior" id="exterior_5" value="5">
+                                                            <label class="form-check-label" for="exterior_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="interior">5) How satisfied are you with the design, layout, and flow of the apartment?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="interior" id="interior_1" value="1">
+                                                            <label class="form-check-label" for="interior_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="interior" id="interior_2" value="2">
+                                                            <label class="form-check-label" for="interior_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="interior" id="interior_3" value="3">
+                                                            <label class="form-check-label" for="interior_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="interior" id="interior_4" value="4">
+                                                            <label class="form-check-label" for="interior_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="interior" id="interior_5" value="5">
+                                                            <label class="form-check-label" for="interior_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="size">6) How appropriate do you find the apartment's size for your requirements?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="size" id="size_1" value="1">
+                                                            <label class="form-check-label" for="size_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="size" id="size_2" value="2">
+                                                            <label class="form-check-label" for="size_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="size" id="size_3" value="3">
+                                                            <label class="form-check-label" for="size_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="size" id="size_4" value="4">
+                                                            <label class="form-check-label" for="size_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="size" id="size_5" value="5">
+                                                            <label class="form-check-label" for="size_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="room_configuration">7) How satisfied are you with the configuration and sizes of individual rooms (e.g., living room, bedrooms, kitchen)?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_1" value="1">
+                                                            <label class="form-check-label" for="room_configuration_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_2" value="2">
+                                                            <label class="form-check-label" for="room_configuration_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_3" value="3">
+                                                            <label class="form-check-label" for="room_configuration_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_4" value="4">
+                                                            <label class="form-check-label" for="room_configuration_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="room_configuration" id="room_configuration_5" value="5">
+                                                            <label class="form-check-label" for="room_configuration_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="construction_quality">8) How would you rate the quality of materials and construction finishes observed?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_1" value="1">
+                                                            <label class="form-check-label" for="construction_quality_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_2" value="2">
+                                                            <label class="form-check-label" for="construction_quality_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_3" value="3">
+                                                            <label class="form-check-label" for="construction_quality_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_4" value="4">
+                                                            <label class="form-check-label" for="construction_quality_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="construction_quality" id="construction_quality_5" value="5">
+                                                            <label class="form-check-label" for="construction_quality_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="amenities">9) How satisfied are you with the amenities available (e.g., gym, pool, clubhouse, play areas)?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="amenities" id="amenities_1" value="1">
+                                                            <label class="form-check-label" for="amenities_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="amenities" id="amenities_2" value="2">
+                                                            <label class="form-check-label" for="amenities_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="amenities" id="amenities_3" value="3">
+                                                            <label class="form-check-label" for="amenities_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="amenities" id="amenities_4" value="4">
+                                                            <label class="form-check-label" for="amenities_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="amenities" id="amenities_5" value="5">
+                                                            <label class="form-check-label" for="amenities_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="parking">10) How suitable do you find the parking arrangements for your needs?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="parking" id="parking_1" value="1">
+                                                            <label class="form-check-label" for="parking_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="parking" id="parking_2" value="2">
+                                                            <label class="form-check-label" for="parking_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="parking" id="parking_3" value="3">
+                                                            <label class="form-check-label" for="parking_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="parking" id="parking_4" value="4">
+                                                            <label class="form-check-label" for="parking_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="parking" id="parking_5" value="5">
+                                                            <label class="form-check-label" for="parking_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="light_ventilation">11) How would you rate the amount of natural light and ventilation within the apartment?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_1" value="1">
+                                                            <label class="form-check-label" for="light_ventilation_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_2" value="2">
+                                                            <label class="form-check-label" for="light_ventilation_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_3" value="3">
+                                                            <label class="form-check-label" for="light_ventilation_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_4" value="4">
+                                                            <label class="form-check-label" for="light_ventilation_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="light_ventilation" id="light_ventilation_5" value="5">
+                                                            <label class="form-check-label" for="light_ventilation_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="safety_security">12) How would you rate the safety measures (e.g., security personnel, CCTV, fire safety) in the building?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="safety_security" id="safety_security_1" value="1">
+                                                            <label class="form-check-label" for="safety_security_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="safety_security" id="safety_security_2" value="2">
+                                                            <label class="form-check-label" for="safety_security_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="safety_security" id="safety_security_3" value="3">
+                                                            <label class="form-check-label" for="safety_security_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="safety_security" id="safety_security_4" value="4">
+                                                            <label class="form-check-label" for="safety_security_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="safety_security" id="safety_security_5" value="5">
+                                                            <label class="form-check-label" for="safety_security_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="pricing">13) How reasonable do you find the property's pricing based on its features and offerings?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="pricing" id="pricing_1" value="1">
+                                                            <label class="form-check-label" for="pricing_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="pricing" id="pricing_2" value="2">
+                                                            <label class="form-check-label" for="pricing_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="pricing" id="pricing_3" value="3">
+                                                            <label class="form-check-label" for="pricing_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="pricing" id="pricing_4" value="4">
+                                                            <label class="form-check-label" for="pricing_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="pricing" id="pricing_5" value="5">
+                                                            <label class="form-check-label" for="pricing_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="sales_team">14) How satisfied are you with the information and support provided by our sales team during the visit?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="sales_team" id="sales_team_1" value="1">
+                                                            <label class="form-check-label" for="sales_team_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="sales_team" id="sales_team_2" value="2">
+                                                            <label class="form-check-label" for="sales_team_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="sales_team" id="sales_team_3" value="3">
+                                                            <label class="form-check-label" for="sales_team_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="sales_team" id="sales_team_4" value="4">
+                                                            <label class="form-check-label" for="sales_team_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="sales_team" id="sales_team_5" value="5">
+                                                            <label class="form-check-label" for="sales_team_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="overall_impression">15) Based on your visit, how would you rate the overall impression of the property?</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_1" value="1">
+                                                            <label class="form-check-label" for="overall_impression_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_2" value="2">
+                                                            <label class="form-check-label" for="overall_impression_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_3" value="3">
+                                                            <label class="form-check-label" for="overall_impression_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_4" value="4">
+                                                            <label class="form-check-label" for="overall_impression_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="overall_impression" id="overall_impression_5" value="5">
+                                                            <label class="form-check-label" for="overall_impression_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label class="form-label primary" for="specifications">16) Fittings, fixtures, floorings, glasses, etc.</label><br>
+                                                
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="specifications" id="specifications_1" value="1">
+                                                            <label class="form-check-label" for="specifications_1">1</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="specifications" id="specifications_2" value="2">
+                                                            <label class="form-check-label" for="specifications_2">2</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="specifications" id="specifications_3" value="3">
+                                                            <label class="form-check-label" for="specifications_3">3</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="specifications" id="specifications_4" value="4">
+                                                            <label class="form-check-label" for="specifications_4">4</label>
+                                                        </div>
+                                                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="specifications" id="specifications_5" value="5">
+                                                            <label class="form-check-label" for="specifications_5">5</label>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-custom" id="close_feedback_modal_btn{{forloop.counter}}" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-custom-primary" onclick="add_feedback('{{menu_property.unit_id}}', '{{forloop.counter}}')">Save changes</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                
+                            <!-- {% endif %} -->
+                        </div>
                     </div>
+
                 </div>
                 {% endfor %}
             </div>
@@ -936,6 +939,43 @@
             });
         }
 
+        async function get_feedback_details(unit_id, counter) {            
+            try {
+                // document.getElementById(`feedbackForm${counter}`).reset();
+                const response = await fetch(`{% url 'feedback-list' %}?unit_id=${unit_id}&session_id={{session_id}}`, {  // Use the appropriate URL for your API endpoint
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    if (data.feedback_submitted === true) {
+                        console.log(data)
+                        let average = calculateAverage(data.feedback_data);
+                        document.getElementById(`feedbackText${counter}`).innerHTML = ` (${average}<i class="fa fa-star fa-sm"></i>)`;
+                    }
+
+                } else {
+                    console.log(data.success);                    
+                }
+            } catch (error) {
+                console.error("Error: ", error);                
+            }
+        }
+
+        function calculateAverage(data) {
+        delete data.unit_id;
+        const values = Object.values(data);
+        const sum = values.reduce((acc, value) => acc + Number(value), 0);
+        const average = (sum / values.length).toFixed(1);
+        
+        return parseFloat(average);
+        }
+
         async function open_feedback_modal(unit_id, counter) {
             toggle_loader();
             try {
@@ -1055,6 +1095,12 @@
             toggle_loader();
             initAutocomplete_start();
         };
+
+        '{% for menu_property in menu_properties %}'
+        console.log('{{menu_property.unit_id}}');
+        get_feedback_details('{{menu_property.unit_id}}', '{{forloop.counter}}')
+        '{% endfor %}'
+
 
     </script>
 

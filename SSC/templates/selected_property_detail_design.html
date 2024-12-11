@@ -1050,6 +1050,7 @@
                 if (data.success === true) {
                     toggle_loader();
                     document.getElementById(`close_feedback_modal_btn${counter}`).click();
+                    location.reload();
                 } else {
                     console.log(data.success);
                     toggle_loader();

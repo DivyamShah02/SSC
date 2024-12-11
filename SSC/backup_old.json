@@ -1,549 +1,19 @@
 [
 {
-  "model": "auth.group",
-  "fields": {
-    "name": "Property Inquiry",
-    "permissions": [
-      [
-        "add_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "change_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "delete_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "view_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "add_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "change_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "delete_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "view_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "add_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "change_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "delete_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "view_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "add_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "change_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "delete_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "view_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "add_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "change_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "delete_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "view_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "add_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "change_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "delete_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "view_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "add_group",
-        "auth",
-        "group"
-      ],
-      [
-        "change_group",
-        "auth",
-        "group"
-      ],
-      [
-        "delete_group",
-        "auth",
-        "group"
-      ],
-      [
-        "view_group",
-        "auth",
-        "group"
-      ],
-      [
-        "add_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "change_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "delete_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "view_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "add_user",
-        "auth",
-        "user"
-      ],
-      [
-        "change_user",
-        "auth",
-        "user"
-      ],
-      [
-        "delete_user",
-        "auth",
-        "user"
-      ],
-      [
-        "view_user",
-        "auth",
-        "user"
-      ],
-      [
-        "add_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "change_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "delete_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "view_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "add_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "change_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "delete_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "view_session",
-        "sessions",
-        "session"
-      ]
-    ]
-  }
-},
-{
-  "model": "auth.group",
-  "fields": {
-    "name": "Building Detail",
-    "permissions": [
-      [
-        "add_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "change_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "delete_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "view_propertyinquiry",
-        "ClientDetail",
-        "propertyinquiry"
-      ],
-      [
-        "add_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "change_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "delete_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "view_amenities",
-        "Property",
-        "amenities"
-      ],
-      [
-        "add_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "change_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "delete_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "view_buildingdetails",
-        "Property",
-        "buildingdetails"
-      ],
-      [
-        "add_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "change_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "delete_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "view_unitdetails",
-        "Property",
-        "unitdetails"
-      ],
-      [
-        "add_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "change_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "delete_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "view_shortlistedproperty",
-        "SorterSession",
-        "shortlistedproperty"
-      ],
-      [
-        "add_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "change_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "delete_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "view_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "add_group",
-        "auth",
-        "group"
-      ],
-      [
-        "change_group",
-        "auth",
-        "group"
-      ],
-      [
-        "delete_group",
-        "auth",
-        "group"
-      ],
-      [
-        "view_group",
-        "auth",
-        "group"
-      ],
-      [
-        "add_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "change_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "delete_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "view_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "add_user",
-        "auth",
-        "user"
-      ],
-      [
-        "change_user",
-        "auth",
-        "user"
-      ],
-      [
-        "delete_user",
-        "auth",
-        "user"
-      ],
-      [
-        "view_user",
-        "auth",
-        "user"
-      ],
-      [
-        "add_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "change_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "delete_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "view_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "add_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "change_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "delete_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "view_session",
-        "sessions",
-        "session"
-      ]
-    ]
-  }
-},
-{
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$m8mDEzVq0dTzSnPeJbtq6R$lPLC3qJ+mKo5jqOhNE5VXa2BrzPhJM2LlkM7JuwQoT4=",
-    "last_login": "2024-12-11T07:44:00.130Z",
+    "last_login": "2024-12-04T07:51:51.588Z",
     "is_superuser": true,
-    "username": "admin@admin.com",
+    "username": "admin",
     "first_name": "",
     "last_name": "",
     "email": "admin@admin.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2024-11-15T05:54:06Z",
-    "groups": [
-      [
-        "Property Inquiry"
-      ],
-      [
-        "Building Detail"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$H6idJUFKPPOSPBLr5oHb9h$BMrx+wvhzri4J0iHA7MZawUHbG3M6W3K9bFjdS+3iUU=",
-    "last_login": "2024-12-11T21:29:22.051Z",
-    "is_superuser": true,
-    "username": "pratik@squaresecondconsultants.com",
-    "first_name": "Pratik",
-    "last_name": "Thakkar",
-    "email": "pratik@squaresecondconsultants.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-12-11T21:25:35Z",
+    "date_joined": "2024-11-15T05:54:06.967Z",
     "groups": [],
     "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$a23LawOCorw8bWANeDeA3x$8lsBVy9wm1G2ZBPuxH7yHS2sECzzFP7ADEnrNPl0gUs=",
-    "last_login": null,
-    "is_superuser": true,
-    "username": "dhruvil@squaresecondconsultants.com",
-    "first_name": "Dhruvil",
-    "last_name": "Hapani",
-    "email": "dhruvil@squaresecondconsultants.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-12-11T21:26:23Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$j5HuRlSrrxbw0qriwYmQG6$HwAHXmsp0Ti1JSbLiHDqDmdMYIX13VcPPAAe/jFAcQ0=",
-    "last_login": null,
-    "is_superuser": true,
-    "username": "divyamshah1234@gmail.com",
-    "first_name": "Divyam",
-    "last_name": "Shah",
-    "email": "divyamshah1234@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-12-11T21:27:44Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "0zvbso6bsjx5fcd6qkz4vnbkw0en93ea",
-  "fields": {
-    "session_data": ".eJxVjkEOwiAURO_C2hDgl0JduvcMBPgfixowpU00xrtrTRe6nfdmMk_m_DKPbmk0uYxszyTb_WbBxwuVFeDZl1PlsZZ5yoGvCt9o48eKdD1s7t_A6Nv4aVtAE0FLIYy1SKhC6BWh0UNC6GwPaUDRRcQEHjQmE2IwUpLpgXQM31eNWsu1OLrf8vRge6UHJYR4vQEb2UDa:1tL0S1:JvOqtWv8iH98oo0KA_EhlISTr2mcpxEpXZKP17oSmrU",
-    "expire_date": "2025-01-09T13:38:57.828Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "13sj94lgw17iivxwhot3g281nf0nc6ui",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAUBf-FtSEXyrNL934DubwsasCUNtEY_12bdKHbM3PmRRyuy-TWnmZXIhmJIoffzWO4prqBeMF6bjS0uszF002hO-301GK6HXf3LzBhn75vGHLiqFlMapBCIEcPEsBbrULWnhkbhEnBKzRKaIZgjVYRssVBM8hyi_bUe2nVpce9zE8ycmk5ALw_968_4w:1tLUGo:uAKvX9RZKLaRHY8mC8hGx00y1RZDzrXamLzgPZdYHCk",
-    "expire_date": "2025-01-10T21:29:22.073Z"
   }
 },
 {
@@ -604,14 +74,6 @@
 },
 {
   "model": "sessions.session",
-  "pk": "g70y5jfe110ik9wowvtaznkl9pftkbq5",
-  "fields": {
-    "session_data": ".eJxVjkEOwiAURO_C2hDgl0JduvcMBPgfixowpU00xrtrTRe6nfdmMk_m_DKPbmk0uYxszyTb_WbBxwuVFeDZl1PlsZZ5yoGvCt9o48eKdD1s7t_A6Nv4aVtAE0FLIYy1SKhC6BWh0UNC6GwPaUDRRcQEHjQmE2IwUpLpgXQM31eNWsu1OLrf8vRge6UHJYR4vQEb2UDa:1tL0Sw:win8vx4aHD8ukUsQpTnnFJWrDgmNdEEhQy38Zi1gL-0",
-    "expire_date": "2025-01-09T13:39:54.912Z"
-  }
-},
-{
-  "model": "sessions.session",
   "pk": "kx0yg0oxjv4h9osj3sbbcds209yf7166",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tDhSj:mM9A0Ov9lHbLM2NO5r-j8p2E7mo7pITbfoNWtD8ReqY",
@@ -620,26 +82,10 @@
 },
 {
   "model": "sessions.session",
-  "pk": "orfe9huz01ngyjtko9k4dgbu4ljstpab",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2pBhaLF06d4zkJkCFjVgSptojHc3JF3o9r_331s42tbZbTUsLnkxChSH341puoXcgL9SvhQ5lbwuiWVT5E6rPBcf7qfd_QvMVOf2nggCW--5Rx2hM5osdz3GQSnodBgYogGrkcge2RqviNFG1ErrAaxp0RpqTSW78Hyk5SVG7C0CwOcLBqg_0g:1tL2WA:6TNeOIVw_jHCZxEk-rZp9Y5RQ_JkV8kh-jcwlhZkds0",
-    "expire_date": "2025-01-09T15:51:22.928Z"
-  }
-},
-{
-  "model": "sessions.session",
   "pk": "ozhs6ajqqp1hdrgzd1egladdm3jycru8",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tBpHs:XzF-U-eBfabkq7W_8LBJE_DX2rvZUmQBYsZOkFLqbU8",
     "expire_date": "2024-11-29T05:54:32.805Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "r907gln8hgg8uevz6sz599m7gvvv5bts",
-  "fields": {
-    "session_data": ".eJxVjMEOwiAQRP-FsyF0KbR49O43kAV2LWqoKW2iMf67bdKDHuYy8-a9hcdlHvxSafI5iaMw4vDbBYw3KtuQrlguo4xjmacc5IbIfa3yPCa6n3b2TzBgHdZ3YGh14MSq71MizYocO6tN0IZ4jY0NMzYtWHRt1Ki7Hq0GAOU4QLdJK9Wax-Lp-cjTSxzBOFBKfb45ekCr:1tLHSU:nlwJRH5vg2qUwVjAuidvevO6_kpnmE1SSi2KN0XJ8wk",
-    "expire_date": "2025-01-10T07:48:34.657Z"
   }
 },
 {
@@ -664,30 +110,6 @@
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tIkAo:LS4BCb61mhdr4iSxMa3NqHNe_az3rGj3yYIRAewspHs",
     "expire_date": "2024-12-18T07:51:50.788Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "x5feqmy9azk9ngwts8dpga51fbvj2qdo",
-  "fields": {
-    "session_data": "e30:1tL0Ra:4g1YRKWRV0OQvIZzCByDPTjD3S2w4UIqoBt8oK0xeUM",
-    "expire_date": "2024-12-24T13:38:30.502Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "yojwqgoqddx8rwkrwysltep3rsd2ibru",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2pBhaLF06d4zkJkCFjVgSptojHc3JF3o9r_331s42tbZbTUsLnkxChSH341puoXcgL9SvhQ5lbwuiWVT5E6rPBcf7qfd_QvMVOf2nggCW--5Rx2hM5osdz3GQSnodBgYogGrkcge2RqviNFG1ErrAaxp0RpqTSW78Hyk5SVG7C0CwOcLBqg_0g:1tL21z:jBKcQH8gfwU5J6PFyiwyjF3RX6PWFwmvGVphUv4jotE",
-    "expire_date": "2025-01-09T15:20:11.610Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "zo7ki0rlq364opzv8b8d9jyjje2r5y1p",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tL2Ri:1vLS1yb-wz5ugqQAcoRT8W7jtO9gqaPWnDzcUPWYPnk",
-    "expire_date": "2024-12-24T15:46:46.679Z"
   }
 },
 {
@@ -2454,6 +1876,49 @@
   }
 },
 {
+  "model": "Property.unitdetails",
+  "pk": 23,
+  "fields": {
+    "building_id": "1000",
+    "project_name": "",
+    "group_name": "",
+    "unit_configuration": "5 BHK",
+    "unit_type": "Duplex",
+    "unit_series": "A - 02",
+    "no_of_units_per_floor": "2",
+    "no_of_lifts_per_floor": "3",
+    "private_lifts": true,
+    "no_private_lifts": "1",
+    "common_terrace_accessible": true,
+    "size_of_unit": "6969",
+    "carpet_area_rera": "4361",
+    "jodi_possible": false,
+    "no_of_attached_bathrooms": "4",
+    "servant_room_available": true,
+    "separate_puja_room_available": true,
+    "no_of_balconies": "1",
+    "floor_to_ceiling": "0",
+    "private_terrace": false,
+    "carpet_size_terrace": "0",
+    "size_of_private_terrace_len": "",
+    "size_of_private_terrace_wid": "",
+    "size_of_balcony_len": "",
+    "size_of_balcony_wid": "",
+    "size_of_master_bedroom_len": "",
+    "size_of_master_bedroom_wid": "",
+    "size_of_kitchen_len": "",
+    "size_of_kitchen_wid": "",
+    "no_of_parking_allotted": "3",
+    "per_sqft_rate_saleable": "7500",
+    "base_price": "52267500.00",
+    "google_pin_lat": "23.02641427462316",
+    "google_pin_lng": "72.52335846005717",
+    "floor_plan": "plan/image.jpg",
+    "unit_plan": "",
+    "active": false
+  }
+},
+{
   "model": "Property.amenities",
   "pk": 1,
   "fields": {
@@ -2706,13 +2171,13 @@
     "client_id": "1",
     "number": "8866003020",
     "properties": "[{'unit_id': 4, 'score': 65}, {'unit_id': 5, 'score': 65}, {'unit_id': 6, 'score': 65}, {'unit_id': 17, 'score': 63}, {'unit_id': 19, 'score': 63}, {'unit_id': 20, 'score': 63}, {'unit_id': 11, 'score': 60}, {'unit_id': 13, 'score': 60}, {'unit_id': 1, 'score': 60}, {'unit_id': 2, 'score': 60}, {'unit_id': 3, 'score': 60}, {'unit_id': 10, 'score': 53}, {'unit_id': 9, 'score': 38}]",
-    "selected_properties": "[4, 19]",
-    "visit_details": "[{'unit_id': 19, 'Arrival_time': '10:15', 'Arrival_date': '2024-12-03'}, {'unit_id': 4, 'Arrival_time': '11:30', 'Arrival_date': '2024-12-03'}]",
-    "start_visit_time_date": "2024-12-03|10:00",
+    "selected_properties": "[4]",
+    "visit_details": "[{'unit_id': 4, 'Arrival_time': '08:14', 'Arrival_date': '2024-12-06'}]",
+    "start_visit_time_date": "2024-12-06|08:06",
     "visit_start_coords": "23.0119795|72.528454",
     "visit_start_location": "Shyamal Cross Road, Shyamal, Ahmedabad, Gujarat, India",
-    "visist_finalize": true,
-    "feedback": "[{'location': '5', 'neighborhood': '2', 'connectivity': '5', 'exterior': '3', 'interior': '5', 'size': '4', 'unit_id': '19'}, {'location': '4', 'connectivity': '3', 'interior': '5', 'size': '4', 'room_configuration': '2', 'construction_quality': '1', 'amenities': '1', 'parking': '2', 'safety_security': '1', 'unit_id': '4'}]",
+    "visist_finalize": false,
+    "feedback": "",
     "visit_plan_pdf": ""
   }
 },
@@ -2820,344 +2285,722 @@
 },
 {
   "model": "admin.logentry",
-  "pk": 41,
+  "pk": 1,
   "fields": {
-    "action_time": "2024-12-10T13:37:59.325Z",
+    "action_time": "2024-11-23T09:05:34.805Z",
     "user": [
-      "admin@admin.com"
+      "admin"
     ],
     "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "1",
-    "object_repr": "admin@admin.com",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 42,
-  "fields": {
-    "action_time": "2024-12-10T14:23:42.067Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "Property Inquiry",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 43,
-  "fields": {
-    "action_time": "2024-12-10T14:23:54.365Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "1",
-    "object_repr": "admin@admin.com",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 44,
-  "fields": {
-    "action_time": "2024-12-10T15:18:44.534Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "divyamshah1234@gmail.com",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 45,
-  "fields": {
-    "action_time": "2024-12-10T15:19:19.999Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "Building Detail",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 46,
-  "fields": {
-    "action_time": "2024-12-10T15:19:33.412Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "divyamshah1234@gmail.com",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 47,
-  "fields": {
-    "action_time": "2024-12-10T15:33:40.535Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "1",
-    "object_repr": "admin@admin.com",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 48,
-  "fields": {
-    "action_time": "2024-12-10T15:33:53.828Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
+      "Property",
+      "buildingdetails"
     ],
     "object_id": "3",
-    "object_repr": "admin",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 49,
-  "fields": {
-    "action_time": "2024-12-10T15:45:59.589Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "4",
-    "object_repr": "admin",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 50,
-  "fields": {
-    "action_time": "2024-12-11T07:46:25.117Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "5",
-    "object_repr": "divyamshah2020@gmail.com",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 51,
-  "fields": {
-    "action_time": "2024-12-11T07:48:11.426Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "5",
-    "object_repr": "divyamshah2020@gmail.com",
+    "object_repr": "Emberlynn - Emberlynn Two",
     "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 52,
+  "pk": 2,
   "fields": {
-    "action_time": "2024-12-11T21:25:36.066Z",
+    "action_time": "2024-11-20T10:41:09.366Z",
     "user": [
-      "admin@admin.com"
+      "admin"
     ],
     "content_type": [
-      "auth",
-      "user"
+      "SorterSession",
+      "shortlistedproperty"
     ],
-    "object_id": "6",
-    "object_repr": "pratik@squaresecondconsultants.com",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 53,
-  "fields": {
-    "action_time": "2024-12-11T21:25:58.515Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "6",
-    "object_repr": "pratik@squaresecondconsultants.com",
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
     "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"Superuser status\"]}}]"
+    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 54,
+  "pk": 3,
   "fields": {
-    "action_time": "2024-12-11T21:26:24.383Z",
+    "action_time": "2024-11-20T10:44:22.551Z",
     "user": [
-      "admin@admin.com"
+      "admin"
     ],
     "content_type": [
-      "auth",
-      "user"
+      "SorterSession",
+      "shortlistedproperty"
     ],
-    "object_id": "7",
-    "object_repr": "dhruvil@squaresecondconsultants.com",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 55,
-  "fields": {
-    "action_time": "2024-12-11T21:26:50.399Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "7",
-    "object_repr": "dhruvil@squaresecondconsultants.com",
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
     "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"Superuser status\"]}}]"
+    "change_message": "[{\"changed\": {\"fields\": [\"Selected properties\"]}}]"
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 56,
+  "pk": 4,
   "fields": {
-    "action_time": "2024-12-11T21:27:06.649Z",
+    "action_time": "2024-11-20T13:47:31.480Z",
     "user": [
-      "admin@admin.com"
+      "admin"
     ],
     "content_type": [
-      "auth",
-      "user"
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Selected properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-22T19:43:40.672Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Visist finalize\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-23T06:34:49.813Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-23T06:35:38.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-11-23T06:35:43.111Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
     ],
     "object_id": "2",
-    "object_repr": "divyamshah1234@gmail.com",
-    "action_flag": 3,
-    "change_message": ""
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 57,
+  "pk": 9,
   "fields": {
-    "action_time": "2024-12-11T21:27:06.650Z",
+    "action_time": "2024-11-23T06:35:47.927Z",
     "user": [
-      "admin@admin.com"
+      "admin"
     ],
     "content_type": [
-      "auth",
-      "user"
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "3",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-11-23T06:35:52.559Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "4",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-11-23T06:37:28.442Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
     ],
     "object_id": "5",
-    "object_repr": "divyamshah2020@gmail.com",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 58,
-  "fields": {
-    "action_time": "2024-12-11T21:27:45.247Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "8",
-    "object_repr": "divyamshah1234@gmail.com",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 59,
-  "fields": {
-    "action_time": "2024-12-11T21:28:01.481Z",
-    "user": [
-      "admin@admin.com"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "8",
-    "object_repr": "divyamshah1234@gmail.com",
+    "object_repr": "4 BHK - Simplex",
     "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"Superuser status\"]}}]"
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-11-23T06:37:38.353Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "6",
+    "object_repr": "4 BHK - Simplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-11-23T06:37:44.700Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "7",
+    "object_repr": "5 BHK - Duplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-11-23T06:37:53.449Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "unitdetails"
+    ],
+    "object_id": "8",
+    "object_repr": "5 BHK - Duplex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-11-28T15:24:25.618Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Properties\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-11-29T07:52:15.244Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-11-29T08:33:06.864Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-11-29T08:37:58.958Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-11-29T08:41:47.950Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-11-29T08:48:58.979Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-11-29T09:00:54.477Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-11-29T09:05:02.600Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-11-29T09:09:23.483Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-11-29T09:11:23.303Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-11-29T09:43:53.930Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-11-29T09:45:14.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-11-29T09:55:07.456Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-11-29T10:01:51.501Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-11-29T10:03:05.889Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-11-29T10:04:22.149Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-11-29T10:09:06.035Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-11-29T10:16:32.873Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-11-29T10:21:39.949Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-11-29T10:27:31.130Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-11-29T14:39:21.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-11-29T15:34:18.257Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "Property",
+      "buildingdetails"
+    ],
+    "object_id": "1",
+    "object_repr": "Shafalya Aaron Dharnidhar - The Verity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Head image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-12-01T19:38:51.803Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-12-01T19:39:10.652Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-12-01T19:44:00.900Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-12-01T19:45:14.952Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "SorterSession",
+      "shortlistedproperty"
+    ],
+    "object_id": "1",
+    "object_repr": "ShortlistedProperty object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Feedback\"]}}]"
   }
 }
 ]

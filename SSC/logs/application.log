@@ -9179,3 +9179,4 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'None' not found. 'None' is not a valid view function or pattern name.
 ERROR 2024-12-10 22:24:09,710 views Inquiry successfully saved. Client ID: 1
+ERROR 2024-12-12 02:11:09,661 views Inquiry successfully saved. Client ID: 1

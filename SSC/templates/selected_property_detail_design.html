@@ -713,7 +713,7 @@
 
                         {% if visit_final == True %}
                         <div class="col-md-12 form-group text-center">
-                            <a class="btn btn-custom-primary" href="{{visit_plan_pdf}}">
+                            <a class="btn btn-custom-primary" href="{% url 'download-visit-plan-list' %}?session_id={{session_id}}">
                                 Download Visit Plan
                             </a>
                         </div>

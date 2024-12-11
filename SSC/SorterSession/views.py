@@ -13,6 +13,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.core.files.base import ContentFile
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.http import HttpResponse
 
 import json
 import ast
@@ -1247,7 +1248,7 @@ class FinalVisitPlan(viewsets.ViewSet):
         client_name = client_data.get('name', '')
         client_number = f"{client_data.get('country_code', '')} {client_data.get('number', '')}"
 
-        visit_properties = []
+        # visit_properties = []
         for i, visit_unit in enumerate(final_visit_details):
                 unit_id = visit_unit['unit_id']
 
@@ -1257,8 +1258,8 @@ class FinalVisitPlan(viewsets.ViewSet):
                 building_data = BuildingDetails.objects.get(building_id=building_id)
                 
                 property_name = building_data.project_name
-                property_group_name = building_data.group_name
-                property_address = building_data.location_of_project
+                # property_group_name = building_data.group_name
+                # property_address = building_data.location_of_project
                 property_contact_name = building_data.name
                 visit_time = str(visit_unit['Arrival_time'])
                 visit_date = str(visit_unit['Arrival_date'])
@@ -1272,6 +1273,81 @@ class FinalVisitPlan(viewsets.ViewSet):
                 unit_type = unit_data.unit_type
                 unit_series = unit_data.unit_series
 
+                # visit_properties.append({
+                #     "Sr. No.":i+1,
+                #     'property_name':property_name, 
+                #     'unit_id':unit_id, 
+                #     'property_group_name':property_group_name, 
+                #     'Arrival_time':visit_unit['Arrival_time'],
+                #     'Arrival_date':visit_unit['Arrival_date'],
+                #     'Address':property_address
+                #     }) 
+                send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series, property_contact_name, visit_time, visit_date, your_name, your_contact)
+
+        # svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
+        # pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)
+
+        # session_data_obj.visit_plan_pdf.save("visit_plan.pdf", ContentFile(pdf_buffer.read()))
+        # pdf_buffer.close()
+
+        session_data_obj.visit_details = final_visit_details
+        session_data_obj.visist_finalize = True
+        session_data_obj.save()
+
+        return Response({'success':True}, status=200)
+
+class DownloadVisitPlan(viewsets.ViewSet):
+    @method_decorator(login_required(login_url='/login/'))
+    def list(self, request):
+        user = request.user
+        group_names = user.groups.values_list('name', flat=True)
+
+        if not user.is_staff:
+            if str(group_names[0]) != 'Property Inquiry':
+                return redirect('error_page')
+
+        session_id = request.GET.get('session_id')
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        client_id = session_data.get('client_id')
+        try:
+            client_obj = PropertyInquiry.objects.get(id=client_id)
+        except PropertyInquiry.DoesNotExist:
+            raise NotFound(f"Client with id : {client_id} not found.")
+        client_data = PropertyInquirySerializer(client_obj).data
+
+        client_name = client_data.get('name', '')
+        client_number = f"{client_data.get('country_code', '')} {client_data.get('number', '')}"
+
+        final_visit_details_str = session_data_obj.visit_details
+
+        if final_visit_details_str != '':
+            try:
+                final_visit_details = json.loads(final_visit_details_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+        else:
+            final_visit_details = []
+
+
+        visit_properties = []
+        for i, visit_unit in enumerate(final_visit_details):
+                unit_id = visit_unit['unit_id']
+
+                unit_data = UnitDetails.objects.get(id=unit_id)
+                
+                building_id = unit_data.building_id
+                building_data = BuildingDetails.objects.get(building_id=building_id)
+                
+                property_name = building_data.project_name
+                property_group_name = building_data.group_name
+                property_address = building_data.location_of_project
+
                 visit_properties.append({
                     "Sr. No.":i+1,
                     'property_name':property_name, 
@@ -1281,19 +1357,20 @@ class FinalVisitPlan(viewsets.ViewSet):
                     'Arrival_date':visit_unit['Arrival_date'],
                     'Address':property_address
                     }) 
-                send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series, property_contact_name, visit_time, visit_date, your_name, your_contact)
+                
 
         svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
         pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)
+    
+        pdf_response = HttpResponse(pdf_buffer.read(), content_type='application/pdf')
+        pdf_response['Content-Disposition'] = 'inline; filename="visit_plan.pdf"'
 
-        session_data_obj.visit_plan_pdf.save("visit_plan.pdf", ContentFile(pdf_buffer.read()))
+        # Reset buffer position before returning it
         pdf_buffer.close()
 
-        session_data_obj.visit_details = final_visit_details
-        session_data_obj.visist_finalize = True
-        session_data_obj.save()
 
-        return Response({'success':True}, status=200)
+        return pdf_response
+
 
 class FeedbackViewSet(viewsets.ViewSet):
     def list(self, request):
@@ -1378,4 +1455,3 @@ class FeedbackViewSet(viewsets.ViewSet):
             logging.error(e, exc_info=True)
             return Response({'success':False, 'error':e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)            
 
-    

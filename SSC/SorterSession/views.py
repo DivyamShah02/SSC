@@ -22,8 +22,10 @@ from datetime import datetime
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance, get_address
 from .visit_plan import create_visit_plan
-from .visit_plan_pdf import generate_visit_plan_pdf
+from .visit_plan_pdf import generate_visit_plan_pdf, generate_feedback_pdf
 from .library.EmailSender import send_mail
+from SSC.settings import STATIC_URL
+
 
 import logging
 logger = logging.getLogger('SorterSession')
@@ -1284,7 +1286,7 @@ class FinalVisitPlan(viewsets.ViewSet):
                 #     }) 
                 send_mail(to, client_name, client_number, property_name, unit_configuration, unit_type, unit_series, property_contact_name, visit_time, visit_date, your_name, your_contact)
 
-        # svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
+        # svg_path = STATIC_URL + 'img/Logo.svg'
         # pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)
 
         # session_data_obj.visit_plan_pdf.save("visit_plan.pdf", ContentFile(pdf_buffer.read()))
@@ -1359,7 +1361,7 @@ class DownloadVisitPlan(viewsets.ViewSet):
                     }) 
                 
 
-        svg_path = r'C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\static\img\Logo.svg'
+        svg_path = STATIC_URL + 'img/Logo.svg'
         pdf_buffer = generate_visit_plan_pdf(visit_properties, client_name, svg_path=svg_path)
     
         pdf_response = HttpResponse(pdf_buffer.read(), content_type='application/pdf')
@@ -1370,6 +1372,92 @@ class DownloadVisitPlan(viewsets.ViewSet):
 
 
         return pdf_response
+
+class DownloadFeedback(viewsets.ViewSet):
+    @method_decorator(login_required(login_url='/login/'))
+    def list(self, request):
+        user = request.user
+        group_names = user.groups.values_list('name', flat=True)
+
+        if not user.is_staff:
+            if str(group_names[0]) != 'Property Inquiry':
+                return redirect('error_page')
+
+        session_id = request.GET.get('session_id')
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        client_id = session_data.get('client_id')
+        try:
+            client_obj = PropertyInquiry.objects.get(id=client_id)
+        except PropertyInquiry.DoesNotExist:
+            raise NotFound(f"Client with id : {client_id} not found.")
+        client_data = PropertyInquirySerializer(client_obj).data
+
+        client_name = client_data.get('name', '')
+        client_number = f"{client_data.get('country_code', '')} {client_data.get('number', '')}"
+
+        feedback_details_str = session_data_obj.feedback
+
+        if feedback_details_str != '':
+            try:
+                feedback_details = json.loads(feedback_details_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+        else:
+            feedback_details = []
+
+
+        visit_properties = []
+        for i, visit_unit in enumerate(feedback_details):
+                unit_id = visit_unit['unit_id']
+
+                unit_data = UnitDetails.objects.get(id=unit_id)
+                
+                building_id = unit_data.building_id
+                building_data = BuildingDetails.objects.get(building_id=building_id)
+                
+                property_name = building_data.project_name
+                property_group_name = building_data.group_name
+                property_address = building_data.location_of_project
+
+                average_feedback = self.calculate_average(visit_unit)
+
+                visit_properties.append({
+                    "Sr. No.":i+1,
+                    'property_name':property_name, 
+                    'unit_id':unit_id, 
+                    'property_group_name':property_group_name,
+                    'Address':property_address,
+                    'average_feedback':average_feedback
+                    }) 
+
+
+        svg_path = STATIC_URL + 'img/Logo.svg'
+
+        pdf_buffer = generate_feedback_pdf(visit_properties, client_name, svg_path=svg_path)
+    
+        pdf_response = HttpResponse(pdf_buffer.read(), content_type='application/pdf')
+        pdf_response['Content-Disposition'] = 'inline; filename="visit_plan.pdf"'
+
+        # Reset buffer position before returning it
+        pdf_buffer.close()
+
+
+        return pdf_response
+
+    def calculate_average(self, data):
+        data.pop('unit_id', None)
+        # values = list(data.values())
+        values = [int(value) for value in data.values()]
+        total = sum(values)
+        average = round(total / len(values), 1)
+        
+        return average
 
 
 class FeedbackViewSet(viewsets.ViewSet):

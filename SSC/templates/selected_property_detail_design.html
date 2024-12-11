@@ -717,6 +717,11 @@
                                 Download Visit Plan
                             </a>
                         </div>
+                        <div class="col-md-12 form-group text-center" style="display: none;" id="downlaod_feedback">
+                            <a class="btn btn-custom" href="{% url 'download-feedback-list' %}?session_id={{session_id}}">
+                                Download Feedback Score
+                            </a>
+                        </div>
 
                         {% else %}
                             <div class="col-md-12 form-group text-center">
@@ -961,6 +966,7 @@
                         console.log(data)
                         let average = calculateAverage(data.feedback_data);
                         document.getElementById(`feedbackText${counter}`).innerHTML = ` (${average}<i class="fa fa-star fa-sm"></i>)`;
+                        document.getElementById('downlaod_feedback').style.display = '';
                     }
 
                 } else {

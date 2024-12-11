@@ -53,8 +53,8 @@
         <div class="container mt-5">
             <div class="row mb-4">
                 {% for menu_property in menu_properties %}
-                <div id="visit-card{{forloop.counter}}" class="col-12 p-0 m-0 row">
-                    <div class="col-12 col-md-6 col-lg-4">
+                <div id="visit-card{{forloop.counter}}" class="col-12 p-0 m-0 row mb-5">
+                    <div class="col-12 col-md-12 col-lg-4">
                         <div class="card mb-3 ssc-images primary-images"
                             onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
                             style="cursor: pointer;">
@@ -70,105 +70,109 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-8">
+                    <div class="col-12 col-md-12 col-lg-8">
                         <div class="row">
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                <div class="card">
-                                    <div class="card-body row">
-                                        <div class="col-2">
-                                            <h4 class="pt-2"><i class="fas fa-bed text-secondary-ssc"></i></h4>
+                            <div class="col-12 col-lg-8 p-0 m-0 row">
+                                <div class="col-12 col-md-6 mt-4">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-2">
+                                                <h4 class="pt-2"><i class="fas fa-bed text-secondary-ssc"></i></h4>
+                                            </div>
+                                            <div class="col-10">
+                                                <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
+                                                <h5 class="card-title text-primary-ssc"><b>{{menu_property.unit_configuration}}</b></h5>
+                                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="col-10">
-                                            <p class="card-text text-light-ssc m-0"><b>Configuration</b></p>
-                                            <h5 class="card-title text-primary-ssc"><b>{{menu_property.unit_configuration}}</b></h5>
-                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                            </p>
+                                    </div>
+                                </div>
+        
+                                <div class="col-12 col-md-6 mt-4">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-2">
+                                                <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
+                                            </div>
+                                            <div class="col-10">
+                                                <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
+                                                <h5 class="card-title text-primary-ssc"><b>₹{{menu_property.property_unit_price_in_cr}} Cr</b></h5>
+                                                <p class="card-text text-light-ssc"><b>₹{{menu_property.per_sqft_rate_saleable}}k /Sq.Ft</b></p>
+                
+                                                <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
+                                                    Starts at ₹60.5 K)</span></b></p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-12 col-md-6 mt-4">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-2">
+                                                <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
+                                                <h5 class="card-title text-primary-ssc"><b>{{menu_property.size_of_unit}} Sq. Ft.</b></h5>
+                                                <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
+                                                <p class="card-text text-light-ssc"><b>{{menu_property.carpet_area_rera}} Sq. Ft<span
+                                                            class="text-primary-ssc"></span></b></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-12 col-md-6 mt-4">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-2">
+                                                <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
+                                            </div>
+                                            {% if menu_property.is_ready_to_move == True %}
+                                            <div class="col-10">
+                                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                                <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
+                                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                                </p>
+                                            </div>
+                                            {% else %}
+                                            <div class="col-10">
+                                                <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
+                                                <h5 class="card-title text-primary-ssc">
+                                                    <b>{{menu_property.age_of_property_by_developer}}</b>
+                                                </h5>
+                                                <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
+                                                </p>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                <div class="card">
-                                    <div class="card-body row">
-                                        <div class="col-2">
-                                            <h4 class="pt-2"><i class="fas fa-indian-rupee-sign text-secondary-ssc"></i></h4>
-                                        </div>
-                                        <div class="col-10">
-                                            <p class="card-text text-light-ssc m-0"><b>Approx. Price</b></p>
-                                            <h5 class="card-title text-primary-ssc"><b>₹{{menu_property.property_unit_price_in_cr}} Cr</b></h5>
-                                            <p class="card-text text-light-ssc"><b>₹{{menu_property.per_sqft_rate_saleable}}k /Sq.Ft</b></p>
-            
-                                            <!-- <p class="card-text text-light-ssc"><b>₹{{per_sqft_rate_saleable}}k /Sq.Ft <span class="text-primary-ssc">(EMI
-                                                Starts at ₹60.5 K)</span></b></p> -->
-                                        </div>
+
+                            <div class="col-12 col-lg-4 p-0 m-0 row">
+                                <div class="col-12 col-md-6 col-lg-12 mt-4">
+                                    {% if menu_property.visit_planned == True %}
+                                    <div class="form-group">
+                                        <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
+                                        <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
                                     </div>
+                                    {% endif %}
                                 </div>
-                            </div>
     
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                {% if menu_property.visit_planned == True %}
-                                <div class="form-group">
-                                    <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
-                                    <input type="date" class="form-control" id="visitStartDate{{forloop.counter}}" name="visitStartDate{{forloop.counter}}" required value="{{menu_property.Arrival_date}}">
-                                </div>
-                                {% endif %}
-                            </div>
-    
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                <div class="card">
-                                    <div class="card-body row">
-                                        <div class="col-2">
-                                            <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
-                                        </div>
-                                        <div class="col-9">
-                                            <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                                            <h5 class="card-title text-primary-ssc"><b>{{menu_property.size_of_unit}} Sq. Ft.</b></h5>
-                                            <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
-                                            <p class="card-text text-light-ssc"><b>{{menu_property.carpet_area_rera}} Sq. Ft<span
-                                                        class="text-primary-ssc"></span></b></p>
-                                        </div>
+                                <div class="col-12 col-md-6 col-lg-12 mt-4">
+                                    {% if menu_property.visit_planned == True %}
+                                    <div class="form-group">
+                                        <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
+                                        <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
                                     </div>
+                                    <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
+                                    {% endif %}
                                 </div>
                             </div>
-    
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                <div class="card">
-                                    <div class="card-body row">
-                                        <div class="col-2">
-                                            <h4 class="pt-2"><i class="fas fa-person-shelter text-secondary-ssc"></i></h4>
-                                        </div>
-                                        {% if menu_property.is_ready_to_move == True %}
-                                        <div class="col-10">
-                                            <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
-                                            <h5 class="card-title text-primary-ssc"><b>Read to move in</b></h5>
-                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                            </p>
-                                        </div>
-                                        {% else %}
-                                        <div class="col-10">
-                                            <p class="card-text text-light-ssc m-0"><b>Possession By</b></p>
-                                            <h5 class="card-title text-primary-ssc">
-                                                <b>{{menu_property.age_of_property_by_developer}}</b>
-                                            </h5>
-                                            <p class="card-text text-light-ssc"><b>&nbsp;<span class="text-primary-ssc"></span></b>
-                                            </p>
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12 col-md-6 col-lg-4 mt-4">
-                                {% if menu_property.visit_planned == True %}
-                                <div class="form-group">
-                                    <label class="form-label primary" for="visitStartTime{{forloop.counter}}">Start Time<span class="required"> *</span></label>
-                                    <input type="time" class="form-control" id="visitStartTime{{forloop.counter}}" name="visitStartTime{{forloop.counter}}" required value="{{menu_property.Arrival_time}}">
-                                </div>
-                                <input type="hidden" id="unit_id{{forloop.counter}}" value="{{menu_property.unit_id}}">
-                                {% endif %}
-                            </div>
-    
+
                             <!-- {% if menu_property.visit_planned == True %} -->
                                 <!-- <div class="col-lg-4 col-md-8 form-group">
                                     <label class="form-label primary" for="visitStartDate{{forloop.counter}}">Start Date<span class="required"> *</span></label>
@@ -685,7 +689,7 @@
                 {% endfor %}
             </div>
 
-            <div class="scc-section container py-2 pt-3">
+            <div class="scc-section container pb-2">
                 <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
                     <h4>Visit Plan Generator</h4>
                 </div>

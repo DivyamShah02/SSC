@@ -20,6 +20,16 @@ def send_mail(to, client_name, client_number, property_name, unit_configuration,
         Bcc = ['divyam@dynamiclabz.net']
         message['Subject'] = 'Inquiry Information | SSC'
 
+        # <tr>
+        #     <td style="padding: 20px;">
+        #         client_name - {client_name}<br>
+        #         client_number - {client_number}<br>
+        #         property_name - {property_name}<br>
+        #         unit_configuration - {unit_configuration}<br>
+        #         unit_type - {unit_type}<br>
+        #         unit_series - {unit_series}<br>
+        #     </td>
+        # </tr>
         message_str = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -33,16 +43,6 @@ def send_mail(to, client_name, client_number, property_name, unit_configuration,
         <tr>
             <td style="padding: 20px; text-align: center; background-color: #113E59; color: #ffffff;">
                 <h1 style="margin: 0;">Square Second Consultancy</h1>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px;">
-                client_name - {client_name}<br>
-                client_number - {client_number}<br>
-                property_name - {property_name}<br>
-                unit_configuration - {unit_configuration}<br>
-                unit_type - {unit_type}<br>
-                unit_series - {unit_series}<br>
             </td>
         </tr>
         <tr>

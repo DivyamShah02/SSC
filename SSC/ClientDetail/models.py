@@ -3,6 +3,7 @@ from django.db import models
 
 class PropertyInquiry(models.Model):
     # Personal Information
+    inquiry_added_by = models.CharField(max_length=255, null=True, blank=True)
     name = models.CharField(max_length=100)
     country_code = models.CharField(max_length=10, default='', null=True, blank=True)
     number = models.CharField(null=True, blank=True, max_length=15)

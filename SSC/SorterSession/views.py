@@ -53,6 +53,7 @@ class SorterViewSet(viewsets.ViewSet):
                 edit_session = ShortlistedProperty.objects.get(client_id=inquiry_id)
 
                 edit_session.number = client_data.get('number','')
+                edit_session.name = client_data.get('name','')
                 edit_session.properties = sorted_data
                 edit_session.selected_properties = ''
                 edit_session.visit_details = ''
@@ -70,6 +71,7 @@ class SorterViewSet(viewsets.ViewSet):
                  new_session = ShortlistedProperty(
                       client_id=inquiry_id,
                       number=client_data.get('number',''),
+                      name=client_data.get('name',''),
                       properties=sorted_data
                  )
 
@@ -85,6 +87,7 @@ class SorterViewSet(viewsets.ViewSet):
             return Response({'success': False, 'error': 'Property Inquiry not found'}, status=status.HTTP_404_NOT_FOUND)
         
         except Exception as e:
+            logger.error(e, exc_info=True)
             return Response({'success': False, 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 

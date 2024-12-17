@@ -5,7 +5,7 @@ from storages.backends.s3boto3 import S3Boto3Storage
 
 class BuildingDetails(models.Model):
     building_id = models.CharField(max_length=255, unique=True)
-
+    property_added_by = models.CharField(max_length=255, null=True, blank=True)
     group_name = models.CharField(max_length=255, null=True, blank=True)
     head_image = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)
     sec_image_1 = models.ImageField(upload_to='property/', storage=S3Boto3Storage(), null=True, blank=True)

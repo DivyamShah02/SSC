@@ -60,6 +60,7 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
                 inquiry_instance = get_object_or_404(PropertyInquiry, id=data['copy_client_id'])
                 serializer = PropertyInquirySerializer(inquiry_instance, data=data)
             else:
+                data['inquiry_added_by'] = f'{request.user.first_name} {request.user.last_name}'
                 serializer = PropertyInquirySerializer(data=data)
 
             if serializer.is_valid():

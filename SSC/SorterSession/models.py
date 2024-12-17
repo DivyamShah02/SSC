@@ -5,6 +5,7 @@ from storages.backends.s3boto3 import S3Boto3Storage
 
 class ShortlistedProperty(models.Model):
     client_id = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
     number = models.CharField(null=True, blank=True, max_length=15)
     properties = models.TextField(null=True, blank=True)
     selected_properties = models.TextField(null=True, blank=True, default='')

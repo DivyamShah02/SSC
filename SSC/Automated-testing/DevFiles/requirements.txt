@@ -1,6 +1,0 @@
-fitz
-pandas
-pyautogui
-pyperclip
-selenium
-webdriver-manager

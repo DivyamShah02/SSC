@@ -886,13 +886,13 @@
                         {% if visit_final == True %}
                         <div class="col-md-12 form-group text-center">
                             <a class="btn btn-custom-primary"
-                                href="{% url 'download-visit-plan-list' %}?session_id={{session_id}}">
+                                href="{% url 'render-visit-plan-pdf-list' %}?session_id={{session_id}}">
                                 Download Visit Plan
                             </a>
                         </div>
                         <div class="col-md-12 form-group text-center" style="display: none;" id="downlaod_feedback">
                             <a class="btn btn-custom"
-                                href="{% url 'download-feedback-list' %}?session_id={{session_id}}">
+                                href="{% url 'render-feedback-pdf-list' %}?session_id={{session_id}}">
                                 Download Feedback Score
                             </a>
                         </div>
@@ -1151,7 +1151,9 @@
             const sum = values.reduce((acc, value) => acc + Number(value), 0);
             const average = (sum / values.length).toFixed(1);
 
-            return parseFloat(average);
+            // return parseFloat(average);
+            return parseFloat(average.toFixed(1));
+
         }
 
         async function open_feedback_modal(unit_id, counter) {

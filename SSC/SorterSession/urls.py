@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import SorterViewSet, PropertyViewset, PropertyDetailViewset, PropertyDefaultDetailViewset, GetDistanceViewset, SelectPropertyViewSet, VisitPlanViewSet, FinalVisitPlan, FeedbackViewSet, DownloadVisitPlan, DownloadFeedback
+from .views import SorterViewSet, PropertyViewset, PropertyDetailViewset, PropertyDefaultDetailViewset, GetDistanceViewset, SelectPropertyViewSet, VisitPlanViewSet, FinalVisitPlan, FeedbackViewSet, DownloadVisitPlan, DownloadFeedback, RenderVisitPlanPdf, RenderFeedbackPdf
 
 
 router = DefaultRouter()
@@ -15,6 +15,8 @@ router.register(r'download-visit-plan', DownloadVisitPlan, basename='download-vi
 router.register(r'final-visit-plan', FinalVisitPlan, basename='final-visit-plan')
 router.register(r'feedback', FeedbackViewSet, basename='feedback')
 router.register(r'download-feedback', DownloadFeedback, basename='download-feedback')
+router.register(r'render-visit-plan-pdf', RenderVisitPlanPdf, basename='render-visit-plan-pdf')
+router.register(r'render-feedback-pdf', RenderFeedbackPdf, basename='render-feedback-pdf')
 
 
 urlpatterns = [

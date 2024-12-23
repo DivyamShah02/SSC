@@ -93,7 +93,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
 
             else:    
                 data['building_id'] = building_id
-                data['property_added_by'] = f'{request.user.first_name} {request.user.last_name}'
+                data['property_added_by'] = f'{request.user}'
                 building_serializer = BuildingDetailsSerializer(data=data)
                 amenities_obj = Amenities(building_id=building_id, **amenities_data)
             

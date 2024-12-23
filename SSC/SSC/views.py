@@ -17,6 +17,11 @@ def not_found(request, exception):
     return render(request, 'error_page.html')
 
 
+def not_found_500(request):
+    # print(exception)
+    return render(request, 'error_page.html')
+
+
 def home(request):
     return render(request, 'index.html')
 

@@ -459,7 +459,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$m8mDEzVq0dTzSnPeJbtq6R$lPLC3qJ+mKo5jqOhNE5VXa2BrzPhJM2LlkM7JuwQoT4=",
-    "last_login": "2024-12-17T10:00:53.888Z",
+    "last_login": "2024-12-19T08:59:20.790Z",
     "is_superuser": true,
     "username": "admin@admin.com",
     "first_name": "",
@@ -500,7 +500,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$H6idJUFKPPOSPBLr5oHb9h$BMrx+wvhzri4J0iHA7MZawUHbG3M6W3K9bFjdS+3iUU=",
-    "last_login": "2024-12-16T09:59:39.756Z",
+    "last_login": "2024-12-18T09:37:55.411Z",
     "is_superuser": true,
     "username": "pratik@squaresecondconsultants.com",
     "first_name": "Pratik",
@@ -517,7 +517,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$870000$a23LawOCorw8bWANeDeA3x$8lsBVy9wm1G2ZBPuxH7yHS2sECzzFP7ADEnrNPl0gUs=",
-    "last_login": "2024-12-16T12:28:37.105Z",
+    "last_login": "2024-12-18T10:41:56.093Z",
     "is_superuser": true,
     "username": "dhruvil@squaresecondconsultants.com",
     "first_name": "Dhruvil",
@@ -556,22 +556,6 @@
 },
 {
   "model": "sessions.session",
-  "pk": "5eewllumh4pkfa72gl0bsl9ouz03zk3j",
-  "fields": {
-    "session_data": ".eJxVjssKwjAURP8lawk3aZ4u3fsN4eZlo5JI04Ii_rtWutDtnDPDPInDZR7d0tPkSiR7IsnuN_MYLqmuIJ6xnhoNrc5T8XRV6EY7PbaYrofN_RsYsY-fNgw5cdQsJjVIIZCjBwngrVYha8-MDcKk4BUaJTRDsEarCNnioBnk76ueei-tunS_lelB9lxaDgCvN_b8P-I:1tN7t5:Q32WO7VoSzDO9CH3uBho7yeqiI3u-qZhLvXlNCqtCv4",
-    "expire_date": "2025-01-15T09:59:39.774Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "6ptrjle9cvjng1nn6o0jxyk9cowfft45",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAQRf-FtSEDhYF26d5vIDymFjVgSptojP-uTbrQ7T3nnhdzfl0mtzaaXU5sYMgOv1vw8UplA-niy7nyWMsy58A3he-08VNNdDvu7l9g8m36vqmTKUn0VvYRu6AIjDCWjDRWklCjJgTSgEKBHxEshNEEYSPalBCV3qKNWsu1OHrc8_xkg9S9BID3B990P44:1tNADF:6tdHm2fClMk4bA36wBI9NAHMpkNEmXxSImSxW8MawtM",
-    "expire_date": "2025-01-15T12:28:37.126Z"
-  }
-},
-{
-  "model": "sessions.session",
   "pk": "bukou15f0ln31fqc0fegpbbfdm8s0rly",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tD1Te:AqBgVn0fiAuCMkB5FG0ZTeKGGUqR-dySENilEYETfko",
@@ -600,6 +584,30 @@
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tI5CY:J6uIDozOgPVixcLjgAa5BCnKNP8fwdzqQ1vriTRdQwU",
     "expire_date": "2024-12-16T12:06:54.152Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "cmn2gs5f42kew79xmqpp8tg3vxuj2exe",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHQKY-6dO83EIYZpGogKe3K-O_apAvd3nPOfYkQt7WErfMSZhJnocXpd8OYHlx3QPdYb02mVtdlRrkr8qBdXhvx83K4fwcl9vKtPZBLYLRSzntiGhDtwOTMlAlGbyFPpMZElCGCoewwodOanQU2CbV4fwDohDhr:1tNY23:scUUFjZPmAskH71qTONX71h-v-XA8L8N1Rvc6jDamXg",
+    "expire_date": "2024-12-31T13:54:39.126Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "cpz5ncfiqo2t8izitp1020qmkbw9v7f4",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEDhYF26d5vIDymFjVgSptojP-uTbrQ7T3nnhdzfl0mtzaaXU5sYIodfrfg45XKBtLFl3PlsZZlzoFvCt9p46ea6Hbc3b_A5Nv0fVMnU5LorewjdkERGGEsGWmsJKFGTQikAYUCPyJYCKMJwka0KSEqvUUbtZZrcfS45_nJBql7CQDvD94OP4w:1tNrV6:P1wN-Gtb6NlXFWY-_7i6wTOdpKk4m8UG53MeT0zrGQE",
+    "expire_date": "2025-01-17T10:41:56.115Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dernafh91sqad6gp82ki5kjpya3tlfl3",
+  "fields": {
+    "session_data": ".eJxVjkEOwiAURO_C2hDgl0JduvcMBPgfixowpU00xrtrTRe6nfdmMk_m_DKPbmk0uYxszyTb_WbBxwuVFeDZl1PlsZZ5yoGvCt9o48eKdD1s7t_A6Nv4aVtAE0FLIYy1SKhC6BWh0UNC6GwPaUDRRcQEHjQmE2IwUpLpgXQM31eNWsu1OLrf8vRge6UHJYR4vQEb2UDa:1tOCNM:Kc79u0aPLwXs3C5AF0lA1G86CmKHc8Ep6T71fH9pC0A",
+    "expire_date": "2025-01-18T08:59:20.809Z"
   }
 },
 {
@@ -648,6 +656,14 @@
   "fields": {
     "session_data": ".eJxVjkEOwiAURO_C2hDgl0JduvcMBPgfixowpU00xrtrTRe6nfdmMk_m_DKPbmk0uYxszyTb_WbBxwuVFeDZl1PlsZZ5yoGvCt9o48eKdD1s7t_A6Nv4aVtAE0FLIYy1SKhC6BWh0UNC6GwPaUDRRcQEHjQmE2IwUpLpgXQM31eNWsu1OLrf8vRge6UHJYR4vQEb2UDa:1tLTfS:1l3eaHPKUxz3VnWmzgnpfKC-Vh814C6lfqbvZC2MbGQ",
     "expire_date": "2025-01-10T20:50:46.583Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mp4zjlzayw1if3gdwzsx1epc8l1s2895",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAUBf-FtSEXyrNL934DubwsasCUNtEY_12bdKHbM3PmRRyuy-TWnmZXIhnJQA6_m8dwTXUD8YL13GhodZmLp5tCd9rpqcV0O-7uX2DCPn3fMOTEUbOY1CCFQI4eJIC3WoWsPTM2CJOCV2iU0AzBGq0iZIuDZpDlFu2p99KqS497mZ9k5NJyAHh_APWWP-A:1tNqV9:PSE71GGj44VjmqeBa7cztPl3RyTt_XbzZ6ZXn4RnMEo",
+    "expire_date": "2025-01-17T09:37:55.444Z"
   }
 },
 {
@@ -742,6 +758,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 1,
   "fields": {
+    "inquiry_added_by": null,
     "name": "Dhruvil",
     "country_code": "+91",
     "number": "8866003020",
@@ -791,6 +808,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 2,
   "fields": {
+    "inquiry_added_by": null,
     "name": "palash",
     "country_code": "+91",
     "number": "8989898989",
@@ -840,6 +858,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 3,
   "fields": {
+    "inquiry_added_by": null,
     "name": "palash",
     "country_code": "+91",
     "number": "8989898989",
@@ -889,6 +908,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 4,
   "fields": {
+    "inquiry_added_by": null,
     "name": "palash",
     "country_code": "+91",
     "number": "8989898989",
@@ -938,6 +958,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 5,
   "fields": {
+    "inquiry_added_by": null,
     "name": "palash",
     "country_code": "+91",
     "number": "8989898989",
@@ -987,6 +1008,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 6,
   "fields": {
+    "inquiry_added_by": null,
     "name": "Hriman Banker",
     "country_code": "+1",
     "number": "4168483466",
@@ -1036,6 +1058,7 @@
   "model": "ClientDetail.propertyinquiry",
   "pk": 7,
   "fields": {
+    "inquiry_added_by": null,
     "name": "Hriman Banker",
     "country_code": "+91",
     "number": "4168483466",
@@ -1086,8 +1109,9 @@
   "pk": 1,
   "fields": {
     "building_id": "1000",
+    "property_added_by": null,
     "group_name": "Shafalya Aaron Dharnidhar",
-    "head_image": "property/head.jpg",
+    "head_image": "property/main_img.png",
     "sec_image_1": "property/sec_1.jpg",
     "sec_image_2": "property/sec_2.jpg",
     "sec_image_3": "",
@@ -1165,6 +1189,7 @@
   "pk": 2,
   "fields": {
     "building_id": "1001",
+    "property_added_by": null,
     "group_name": "Shaligram",
     "head_image": "",
     "sec_image_1": "",
@@ -1244,6 +1269,7 @@
   "pk": 3,
   "fields": {
     "building_id": "1002",
+    "property_added_by": null,
     "group_name": "Emberlynn",
     "head_image": "property/about-5.jpg",
     "sec_image_1": "property/banner_new.jpeg",
@@ -1323,6 +1349,7 @@
   "pk": 4,
   "fields": {
     "building_id": "1003",
+    "property_added_by": null,
     "group_name": "Emberlynn",
     "head_image": "",
     "sec_image_1": "",
@@ -1402,6 +1429,7 @@
   "pk": 5,
   "fields": {
     "building_id": "1004",
+    "property_added_by": null,
     "group_name": "Avni",
     "head_image": "property/PHOTO-2024-11-19-12-59-52_3.jpeg",
     "sec_image_1": "property/PHOTO-2024-11-19-13-00-58_2.jpeg",
@@ -1481,6 +1509,7 @@
   "pk": 6,
   "fields": {
     "building_id": "1005",
+    "property_added_by": null,
     "group_name": "Ratnanjali",
     "head_image": "",
     "sec_image_1": "",
@@ -2795,15 +2824,16 @@
   "pk": 1,
   "fields": {
     "client_id": "1",
+    "name": "Dhruvil",
     "number": "8866003020",
     "properties": "[{'unit_id': 4, 'score': 65}, {'unit_id': 5, 'score': 65}, {'unit_id': 6, 'score': 65}, {'unit_id': 17, 'score': 63}, {'unit_id': 19, 'score': 63}, {'unit_id': 20, 'score': 63}, {'unit_id': 11, 'score': 60}, {'unit_id': 13, 'score': 60}, {'unit_id': 1, 'score': 60}, {'unit_id': 2, 'score': 60}, {'unit_id': 3, 'score': 60}, {'unit_id': 10, 'score': 53}, {'unit_id': 9, 'score': 38}]",
-    "selected_properties": "[4, 11]",
-    "visit_details": "[{'unit_id': 4, 'Arrival_time': '10:15', 'Arrival_date': '2024-12-21'}, {'unit_id': 11, 'Arrival_time': '11:30', 'Arrival_date': '2024-12-21'}]",
-    "start_visit_time_date": "2024-12-21|10:10",
-    "visit_start_coords": "23.0317863|72.5187265",
-    "visit_start_location": "SAMPRAT RESIDENCY-2, Dhanyata Society, Satellite, Ahmedabad, Gujarat, India",
+    "selected_properties": "[2, 17, 19]",
+    "visit_details": "[{'unit_id': 2, 'Arrival_time': '10:15', 'Arrival_date': '2024-12-12'}, {'unit_id': 19, 'Arrival_time': '11:30', 'Arrival_date': '2024-12-12'}, {'unit_id': 17, 'Arrival_time': '12:45', 'Arrival_date': '2024-12-12'}]",
+    "start_visit_time_date": "2024-12-12|10:00",
+    "visit_start_coords": "23.0267584|72.5193492",
+    "visit_start_location": "ISRO, Satellite Road, Satellite, Ahmedabad, Gujarat, India",
     "visist_finalize": true,
-    "feedback": "[{'location': '1', 'neighborhood': '2', 'connectivity': '3', 'exterior': '2', 'interior': '2', 'size': '2', 'room_configuration': '3', 'construction_quality': '4', 'amenities': '4', 'parking': '3', 'light_ventilation': '2', 'safety_security': '3', 'pricing': '3', 'sales_team': '3', 'overall_impression': '3', 'specifications': '3', 'unit_id': '4'}, {'location': '5', 'neighborhood': '4', 'unit_id': '11'}]",
+    "feedback": "[{'location': '4', 'neighborhood': '2', 'connectivity': '4', 'sales_team': '3', 'unit_id': '2'}, {'location': '5', 'neighborhood': '5', 'connectivity': '5', 'exterior': '5', 'unit_id': '17'}]",
     "visit_plan_pdf": ""
   }
 },
@@ -2812,6 +2842,7 @@
   "pk": 2,
   "fields": {
     "client_id": "2",
+    "name": "",
     "number": "8989898989",
     "properties": "[]",
     "selected_properties": "",
@@ -2829,6 +2860,7 @@
   "pk": 3,
   "fields": {
     "client_id": "3",
+    "name": "",
     "number": "8989898989",
     "properties": "[]",
     "selected_properties": "",
@@ -2846,6 +2878,7 @@
   "pk": 4,
   "fields": {
     "client_id": "4",
+    "name": "",
     "number": "8989898989",
     "properties": "[]",
     "selected_properties": "",
@@ -2863,6 +2896,7 @@
   "pk": 5,
   "fields": {
     "client_id": "5",
+    "name": "",
     "number": "8989898989",
     "properties": "[]",
     "selected_properties": "",
@@ -2880,6 +2914,7 @@
   "pk": 6,
   "fields": {
     "client_id": "6",
+    "name": "",
     "number": "4168483466",
     "properties": "[]",
     "selected_properties": "",
@@ -2897,6 +2932,7 @@
   "pk": 7,
   "fields": {
     "client_id": "7",
+    "name": "",
     "number": "4168483466",
     "properties": "[{'unit_id': 12, 'score': 55}, {'unit_id': 11, 'score': 50}, {'unit_id': 10, 'score': 43}, {'unit_id': 19, 'score': 39}, {'unit_id': 20, 'score': 39}, {'unit_id': 9, 'score': 38}]",
     "selected_properties": "",

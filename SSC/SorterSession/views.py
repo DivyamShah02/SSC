@@ -1445,7 +1445,7 @@ class DownloadFeedback(viewsets.ViewSet):
         pdf_buffer = generate_feedback_pdf(visit_properties, client_name, svg_path=svg_path)
     
         pdf_response = HttpResponse(pdf_buffer.read(), content_type='application/pdf')
-        pdf_response['Content-Disposition'] = 'inline; filename="visit_plan.pdf"'
+        pdf_response['Content-Disposition'] = 'inline; filename="feedback.pdf"'
 
         # Reset buffer position before returning it
         pdf_buffer.close()
@@ -1458,9 +1458,30 @@ class DownloadFeedback(viewsets.ViewSet):
         # values = list(data.values())
         values = [int(value) for value in data.values()]
         total = sum(values)
-        average = round(total / len(values), 1)
+        average = self.round_js_style(total / len(values), 1)
         
         return average
+    
+    def round_js_style(self, value, decimal_places=1):
+        factor = 10 ** decimal_places
+        return round(value + 1e-10, decimal_places)
+
+
+class RenderVisitPlanPdf(viewsets.ViewSet):
+    def list(self, request):
+        session_id = request.GET.get('session_id')
+        data = {
+            'session_id':session_id,
+        }
+        return render(request, "visit_pdf_view.html", data)
+
+class RenderFeedbackPdf(viewsets.ViewSet):
+    def list(self, request):
+        session_id = request.GET.get('session_id')
+        data = {
+            'session_id':session_id,
+        }
+        return render(request, "feedback_pdf_view.html", data)
 
 
 class FeedbackViewSet(viewsets.ViewSet):

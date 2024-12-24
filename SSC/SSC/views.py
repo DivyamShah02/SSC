@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from Property.models import BuildingDetails, UnitDetails, Amenities
+from ClientDetail.models import PropertyInquiry
+from SorterSession.models import ShortlistedProperty
 import random
 import json
 from .cords import final_cords
@@ -24,6 +26,33 @@ def not_found_500(request):
 
 def home(request):
     return render(request, 'index.html')
+
+def temp_api(request):
+    # all_units = UnitDetails.objects.all()
+
+    # for unit in all_units:
+    #     print(unit.building_id)
+    #     building_data = BuildingDetails.objects.filter(building_id=unit.building_id).first()
+
+    #     unit_obj = UnitDetails.objects.get(id=unit.id)
+
+    #     unit_obj.project_name = building_data.project_name
+    #     unit_obj.group_name = building_data.group_name
+
+    #     unit_obj.save()
+
+    all_sorter = ShortlistedProperty.objects.all()
+
+    for client in all_sorter:
+        print(client.client_id)
+        client_data = PropertyInquiry.objects.filter(id=client.client_id).first()
+
+        sorter_obj = ShortlistedProperty.objects.get(id=client.id)
+
+        sorter_obj.name = client_data.name
+        sorter_obj.save()
+
+    return HttpResponse('Hello World!')
 
 def temp_data(request):
     print(request.user.first_name)

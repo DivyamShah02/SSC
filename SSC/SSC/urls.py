@@ -16,6 +16,7 @@ urlpatterns = [
 
 
     path('temp/', temp_data, name='temp'),
+    path('temp_api/', temp_api, name='temp_api'),
     path('error_page/', handle_error_page, name='error_page')
 # ]
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

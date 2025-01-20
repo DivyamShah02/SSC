@@ -404,6 +404,15 @@
                                                 data-bs-target="#tab-modal2">
                                         </div>
                                     </div>
+                                    
+                                    {% for extra_plan in unit_data.uploaded_extra_plans %}
+                                        {% if forloop.counter == 1 %}
+                                            <div class="col-12 text-end">
+                                                <p class="" data-bs-toggle="modal" data-bs-target="#tab-modal3" style="cursor: pointer;"><b><u>View All</u></b></p>                                        
+                                            </div>                                       
+                                        {% endif %}
+
+                                    {% endfor %}                                    
                                 </div>
                             </div>
 
@@ -440,6 +449,46 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="modal fade" id="tab-modal3" tabindex="-1" aria-labelledby="tab-modal3Label" aria-hidden="true">
+                                <div class="modal-dialog custom-size">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="tab-modal3Label">{{unit_data.unit_configuration}} Plan</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Carousel -->
+                                            <div id="floorPlanCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-inner">                                            
+                                                    {% for extra_plan in unit_data.uploaded_extra_plans %}
+                                                        {% if forloop.counter == 1 %}
+                                                            <div class="carousel-item active">
+                                                                <img src="{{extra_plan}}" class="d-block w-100 img-fluid" alt="Floor Plan 3">
+                                                            </div>
+                                                        {% else %}
+                                                            <div class="carousel-item">
+                                                                <img src="{{extra_plan}}" class="d-block w-100 img-fluid" alt="Floor Plan 3">
+                                                            </div>
+                                                        {% endif %}
+
+                                                    {% endfor %}
+                                                </div>
+                                                <!-- Carousel controls (previous and next buttons) -->
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#floorPlanCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#floorPlanCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
 
                         </div>
                         <!-- Floor plan end -->

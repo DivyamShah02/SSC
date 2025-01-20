@@ -1,12 +1,18 @@
 import os
 from pathlib import Path
 from .encrypt_decrypt import base64_to_text
-
+import logging
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 logs_dir = os.path.join(BASE_DIR, 'logs')
 os.makedirs(logs_dir, exist_ok=True)
+
+
+class ExcludeURLResolverLogs(logging.Filter):
+    def filter(self, record):
+        return 'URLResolver' not in record.getMessage()
+
 
 LOGGING = {
     'version': 1,
@@ -17,45 +23,53 @@ LOGGING = {
             'style': '{',
         },
     },
+    'filters': {
+        'exclude_url_resolver': {
+            '()': ExcludeURLResolverLogs,
+        },
+    },
     'handlers': {
         'file': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(logs_dir, 'application.log'),  # Single log file
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(logs_dir, 'application.log'),
             'formatter': 'verbose',
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'filters': ['exclude_url_resolver'],  # Apply the filter
         },
-        'console': {  # Add this handler
+        'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
     },
     'loggers': {
-        # 'django.utils.autoreload': {  # Suppress autoreload debug logs
-        #     'handlers': ['console'],  # Now correctly references the console handler
-        #     'level': 'INFO',  # Ignore DEBUG messages
-        #     'propagate': False,
-        # },
-        # 'django': {  # For Django's built-in logs
-        #     'handlers': ['file'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
-        'ClientDetail': {  # Custom logger for your app
-            'handlers': ['file'],
-            'level': 'DEBUG',
+        'django.utils.autoreload': {  # Suppress autoreload debug logs
+            'handlers': ['console'],  # Reference the console handler
+            'level': 'WARNING',  # Ignore DEBUG messages
             'propagate': False,
         },
-        'Property': {  # Custom logger for your app
+        'ClientDetail': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
         },
-        'SorterSession': {  # Custom logger for your app
+        'Property': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
-        },        
+        },
+        'SorterSession': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
     },
 }
 
@@ -67,7 +81,7 @@ LOGGING = {
 SECRET_KEY = 'django-insecure-^8cv(#$rb2-v%ug(4sls*gec&ym58ub66^g_72siu6c9&9%vwk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 

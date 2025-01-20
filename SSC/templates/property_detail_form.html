@@ -831,15 +831,27 @@
                         </select> -->
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
-                                id="spiritual_or_religious_attraction_Yes" value="Yes">
+                                id="spiritual_or_religious_attraction_Yes" value="Yes" onclick="
+                                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = '';
+                                document.getElementById('spiritual_or_religious_attraction_text').required = true;
+                                document.getElementById('spiritual_or_religious_attraction_text').value = '';">
                             <label class="form-check-label" for="spiritual_or_religious_attraction_Yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
-                                id="spiritual_or_religious_attraction_No" value="No">
+                                id="spiritual_or_religious_attraction_No" value="No" onclick="
+                                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = 'none';
+                                document.getElementById('spiritual_or_religious_attraction_text').required = false;
+                                document.getElementById('spiritual_or_religious_attraction_text').value = '';"
+                                >
                             <label class="form-check-label" for="spiritual_or_religious_attraction_No">No</label>
                         </div>
 
+                    </div>
+                    <div class="col-md-4 form-group" id="spiritual_or_religious_attraction_text_div" style="display: none;">
+                        <label class="form-label primary" for="spiritual_or_religious_attraction_text">Which spiritual or religious attraction<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="spiritual_or_religious_attraction_text" name="spiritual_or_religious_attraction_text"
+                            placeholder="Enter spiritual or religious attraction">
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="parkingType">33) Type of parking</label><br>
@@ -867,6 +879,33 @@
 
                     </div>
 
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sampleHouse">34) Sample House Ready?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sample_house"
+                                id="sample_house_Yes" value="Yes" onclick="
+                                document.getElementById('sample_house_date_div').style.display = 'none';
+                                document.getElementById('sample_house_date').required = false;
+                                document.getElementById('sample_house_date').value = '';">
+                            <label class="form-check-label" for="sample_house_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sample_house"
+                                id="sample_house_No" value="No" onclick="
+                                document.getElementById('sample_house_date_div').style.display = '';
+                                document.getElementById('sample_house_date').required = true;
+                                document.getElementById('sample_house_date').value = '';"
+                                >
+                            <label class="form-check-label" for="sample_house_No">No</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group" id="sample_house_date_div" style="display: none;">
+                        <label class="form-label primary" for="sample_house_date">By When will Sample House be ready?<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="sample_house_date" name="sample_house_date"
+                            placeholder="Enter spiritual or religious attraction">
+                    </div>
+
                     <div class="col-12 text-center mt-2">
                         <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom-primary"><b>Add Units</b></button>
                     </div>
@@ -891,7 +930,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">34) Brochures</label><br>
+                            <label class="form-label primary" for="removethis">35) Brochures</label><br>
                             <label for="brochure1" class="form-label">Brochure 1 (PDF -
                                 Required)</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
@@ -911,7 +950,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Property Images Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">35) Property Images (All Required)</label><br>
+                            <label class="form-label primary" for="removethis">36) Property Images (All Required)</label><br>
                             <label for="image1" class="form-label">Image 1</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
                                 class="form-control" id="image1" name="head_image" accept="image/*">
@@ -966,14 +1005,14 @@
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="perSqFtRate">36) Per Sq. Ft. rate on
+                        <label class="form-label primary" for="perSqFtRate">37) Per Sq. Ft. rate on
                             saleable<span class="required"> *</span></label>
                         <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRate" name="per_sqft_rate_saleable" required
                             placeholder="Enter rate of Per Sq. Ft.">
                     </div>
 
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">37) PLC Options<span class="required"> *</span></label>
+                        <label class="form-label primary" for="removethis">38) PLC Options<span class="required"> *</span></label>
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
@@ -1011,7 +1050,7 @@
                     </div> -->
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="floorRise">38) Floor rise</label><br>
+                        <label class="form-label primary" for="floorRise">39) Floor rise</label><br>
                         <button type="button" class="btn btn-custom-primary" id="addFloorRiseBtn">
                             Add Floor Rise <i id="floor_rise_saved" class=""></i>
                         </button>
@@ -1053,38 +1092,38 @@
 
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developmentCharges">39) Development charges (AMC/Torrent
+                        <label class="form-label primary" for="developmentCharges">40) Development charges (AMC/Torrent
                             etc)<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="developmentCharges" name="development_charges" required
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="advanceMaintenance">40) Advance maintenance<span class="required"> *</span></label>
+                        <label class="form-label primary" for="advanceMaintenance">41) Advance maintenance<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="advanceMaintenance" name="advance_maintenance" required
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="maintenanceDeposit">41) Maintenance deposit<span class="required"> *</span></label>
+                        <label class="form-label primary" for="maintenanceDeposit">42) Maintenance deposit<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="maintenanceDeposit" name="maintenance_deposit" required
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="specificExpenses">42) Other specific expenses if any?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="specificExpenses">43) Other specific expenses if any?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="specificExpenses" name="other_specific_expenses" required
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">43) Sale deed value<span class="required"> *</span></label>
+                        <label class="form-label primary" for="saleDeedValue">44) Sale deed value<span class="required"> *</span></label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
                             placeholder="Enter sale deed value">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="gstApplicable">44) How much GST is applicable?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="gstApplicable">45) How much GST is applicable?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="loanAvailability">45) Loan availability?</label><br>
+                        <label class="form-label primary" for="loanAvailability">46) Loan availability?</label><br>
                         <!-- <select class="form-control" id="loanAvailability" name="loan_availability">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -1101,12 +1140,12 @@
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">46) Brokerage given per transaction (in %)</label>
+                        <label class="form-label primary" for="brokerage">47) Brokerage given per transaction (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
                             placeholder="Enter Brokerage given per transaction">
                     </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">47) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">48) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
@@ -1375,6 +1414,12 @@
             autoclose: true
         });
 
+        $('#sample_house_date').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
         document.addEventListener("input", function (event) {
             // Check if the event target is an input element
             if (event.target.tagName === "INPUT") {
@@ -1781,9 +1826,20 @@
                 view_property_btn.href = `{% url 'view-default-property-list' %}?unit_id=${data['one_unit_id']}`
             }
             if (data['rera_approved']) {}
-                else {
-                    toggleReraDate(true);
-                }
+            else {
+                toggleReraDate(true);
+            }
+            if (data['spiritual_or_religious_attraction'] === 'Yes') {
+                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = '';
+                document.getElementById('spiritual_or_religious_attraction_text').required = true;
+                document.getElementById('spiritual_or_religious_attraction_text').value = data['spiritual_or_religious_attraction_text'];
+            }
+
+            if (data['sample_house'] === false) {
+                document.getElementById('sample_house_date_div').style.display = '';
+                document.getElementById('sample_house_date').required = true;
+                document.getElementById('sample_house_date').value = data['sample_house_date'];
+            }
             toggle_preloader();
         }
 

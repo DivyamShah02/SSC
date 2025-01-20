@@ -67,7 +67,10 @@ class BuildingDetails(models.Model):
     no_of_basements = models.CharField(max_length=255, default=0, null=True, blank=True)
     central_air_conditioning = models.CharField(max_length=255, default='', null=True, blank=True)
     # pet_friendly = models.BooleanField(default=False)
-    spiritual_or_religious_attraction = models.TextField(null=True, blank=True, default='')
+    spiritual_or_religious_attraction = models.CharField(max_length=10, null=True, blank=True, default='')
+    spiritual_or_religious_attraction_text = models.CharField(max_length=255, null=True, blank=True, default='')
+    sample_house = models.BooleanField(default=False)
+    sample_house_date = models.CharField(max_length=255, null=True, blank=True)
     type_of_parking = models.CharField(max_length=255, null=True, blank=True)
     plc_garden = models.CharField(max_length=20, default=0, blank=True, null=True)
     plc_road_facing = models.CharField(max_length=20, default=0, blank=True, null=True)
@@ -135,6 +138,7 @@ class UnitDetails(models.Model):
     google_pin_lng = models.CharField(max_length=255, default="", null=True, blank=True)
     floor_plan = models.ImageField(upload_to='plan', storage=S3Boto3Storage(), null=True, blank=True)
     unit_plan = models.ImageField(upload_to='plan', storage=S3Boto3Storage(), null=True, blank=True)
+    uploaded_extra_plans = models.JSONField(null=True, blank=True, default=list)
     active = models.BooleanField(default=False)
 
 

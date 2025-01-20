@@ -12,6 +12,7 @@ import ast
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from .upload_s3 import upload_to_s3_from_request_files
 
 import logging
 logger = logging.getLogger('Property')
@@ -233,6 +234,14 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
 
         try:
             # Handle file uploads
+            try:
+                extra_plans = request.FILES.getlist('uploaded_extra_plans')
+                uploaded_extra_plans = upload_to_s3_from_request_files(extra_plans, f"plan/")
+
+            except Exception as e:
+                logger.error(e, exc_info=True)
+                uploaded_extra_plans = []
+
             self.handle_file_uploads(data, request.FILES)
             try:
                 data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
@@ -242,14 +251,27 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
 
             if data['unit_id'] != "NULL":
                 unit_instance = get_object_or_404(UnitDetails, id=data['unit_id'])
+                old_extra_plans = list(unit_instance.uploaded_extra_plans)
+                data['uploaded_extra_plans'] = list(unit_instance.uploaded_extra_plans) + uploaded_extra_plans
                 unit_serializer = UnitDetailsSerializer(unit_instance, data=data)
+        
             else:
+                data['uploaded_extra_plans'] = uploaded_extra_plans
                 unit_serializer = UnitDetailsSerializer(data=data)
 
             if unit_serializer.is_valid():
                 unit_serializer.save()
+                # if data['unit_id'] != "NULL":
+                #     updated_unit_instance = get_object_or_404(UnitDetails, id=data['unit_id'])
+
+                #     updated_uploaded_extra_plans = old_extra_plans + uploaded_extra_plans
+
+                #     updated_unit_instance.uploaded_extra_plans = updated_uploaded_extra_plans
+                #     updated_unit_instance.save()
+
                 return Response({"success": True, "data": unit_serializer.data}, status=status.HTTP_201_CREATED)
             else:
+                print(unit_serializer.errors)
                 return Response(unit_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:

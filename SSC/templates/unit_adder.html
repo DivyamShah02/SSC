@@ -406,6 +406,14 @@
                             name="unit_plan" accept="image/*">
                             <img id="img_unit_plan" src="" class="img-fluid pt-3" alt="" style="display: none;">
                         </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="uploaded_extra_plans">22) Upload Extra Plan</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;" class="form-control" id="uploaded_extra_plans"
+                            name="uploaded_extra_plans" accept="image/*" multiple>                                                        
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <div id="img_uploaded_extra_plans_div" class="row"></div>
+                        </div>
                         <div class="col-12 text-center">
                             <button type="button" class="btn btn-custom-primary" onclick="submit_form()">
                                 <b>Submit</b>
@@ -537,6 +545,23 @@
             
             unit_img.src = data['unit_plan']
             unit_img.style.display = 'block'
+
+            data['uploaded_extra_plans'].forEach((img_url, index) => {
+                const img_div = document.createElement('div');
+                img_div.className = 'col-4';
+                
+                const img = document.createElement('img');
+
+                img.id = `img_extra_plan_${index+1}`;
+                img.className = 'img-fluid pt-3';
+                img.alt = 'Extra Image';            
+                img.src = img_url;
+
+                img_div.appendChild(img);
+                document.getElementById('img_uploaded_extra_plans_div').appendChild(img_div);
+
+            });
+            
             toggleLiftInput(data['private_lifts'], true)
 
             if (data['unit_type'] != 'Simplex') {
@@ -566,6 +591,8 @@
             
             unit_img.src = data['unit_plan']
             unit_img.style.display = 'none'
+
+            document.getElementById('img_uploaded_extra_plans_div').innerHTML = '';
 
             toggleLiftInput(data['private_lifts'], true)
 

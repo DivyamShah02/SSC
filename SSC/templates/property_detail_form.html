@@ -52,11 +52,43 @@
     <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
         <div class="container">
             <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">                
                 <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
             </a>
+            <div class="row">
+                <div class="col-6">
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Square Second Consultancy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'property-inquiry-list' %}">Property Inquiry Form</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'property-detail-list' %}">Property Detail Form</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
+
     <!-- Navigation bar end -->
 
     <!-- Main content start -->
@@ -461,6 +493,27 @@
                         </div>
 
                     </div>
+
+                    <div class="col-12 text-center mt-2">
+                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom-primary"><b>Add Units</b></button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <!-- Project/Property Details end -->
+
+        <!-- Amenities Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Amenities</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="amenities" class="p-4 border border-top-0 rounded-bottom"
+                style="background-color: white;">
+                <div class="row">
                     <div class="col-md-12 row form-group">
                         <label class="form-label primary" for="buildingAmenities">29) Building amenities list</label>
                         <div class="col-md-3">
@@ -779,13 +832,9 @@
                             placeholder="Enter name">
                     </div>
 
-                    <div class="col-md-4 form-group">
+                    <!-- <div class="col-md-4 form-group">
                         <label class="form-label primary" for="centralAC">31) Central air conditioning
                             available?</label><br>
-                        <!-- <select class="form-select" id="centralAC" name="central_air_conditioning">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select> -->
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="central_air_conditioning"
                                 id="central_air_conditioning_Yes" value="Yes">
@@ -803,11 +852,16 @@
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_ducting" value="Only ducting">
+                            <label class="form-check-label" for="central_air_conditioning_ducting">Only compressor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
                                 id="central_air_conditioning_compressor" value="Only ducting and compressor">
                             <label class="form-check-label" for="central_air_conditioning_compressor">Only ducting and compressor</label>
                         </div>
 
-                    </div>
+                    </div> -->
                     <!-- <div class="col-md-4 form-group">
                         <label class="form-label primary" for="petFriendly">33) Is this project pet friendly?</label><br>
                         <div class="form-check form-check-inline">
@@ -823,7 +877,7 @@
 
                     </div> -->
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="spiritualAttraction">32) Any spiritual or religious
+                        <label class="form-label primary" for="spiritualAttraction">31) Any spiritual or religious
                             attraction in the project like  Gurudwara, Derasar, Mandir?</label><br>
                         <!-- <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
                             <option value="Yes">Yes</option>
@@ -853,13 +907,9 @@
                         <input type="text" class="form-control" id="spiritual_or_religious_attraction_text" name="spiritual_or_religious_attraction_text"
                             placeholder="Enter spiritual or religious attraction">
                     </div>
-                    <div class="col-md-4 form-group">
+                    <!-- <div class="col-md-4 form-group">
                         <label class="form-label primary" for="parkingType">33) Type of parking</label><br>
-                        <!-- <select class="form-select" id="parkingType" name="type_of_parking">
-                            <option value="Normal">Normal</option>
-                            <option value="Hydraulic">Hydraulic</option>
-                            <option value="Hydraulic with Valet">Hydraulic with Valet</option>
-                        </select> -->
+
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="type_of_parking"
                                 id="type_of_parking_Normal" value="Normal">
@@ -877,10 +927,10 @@
                                 Valet</label>
                         </div>
 
-                    </div>
+                    </div> -->
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sampleHouse">34) Sample House Ready?</label><br>
+                        <label class="form-label primary" for="sampleHouse">32) Sample House Ready?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="sample_house"
                                 id="sample_house_Yes" value="Yes" onclick="
@@ -903,11 +953,7 @@
                     <div class="col-md-4 form-group" id="sample_house_date_div" style="display: none;">
                         <label class="form-label primary" for="sample_house_date">By When will Sample House be ready?<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="sample_house_date" name="sample_house_date"
-                            placeholder="Enter spiritual or religious attraction">
-                    </div>
-
-                    <div class="col-12 text-center mt-2">
-                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom-primary"><b>Add Units</b></button>
+                            placeholder="Enter sample house date">
                     </div>
 
                 </div>
@@ -915,6 +961,7 @@
 
         </div>
         <!-- Project/Property Details end -->
+        
 
         <!-- Media start -->
         <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
@@ -930,7 +977,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">35) Brochures</label><br>
+                            <label class="form-label primary" for="removethis">33) Brochures</label><br>
                             <label for="brochure1" class="form-label">Brochure 1 (PDF -
                                 Required)</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
@@ -950,7 +997,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Property Images Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">36) Property Images (All Required)</label><br>
+                            <label class="form-label primary" for="removethis">34) Property Images (All Required)</label><br>
                             <label for="image1" class="form-label">Image 1</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
                                 class="form-control" id="image1" name="head_image" accept="image/*">
@@ -1004,15 +1051,30 @@
             <!-- Form body -->
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
-                    <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="perSqFtRate">37) Per Sq. Ft. rate on
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRate">35) Per Sq. Ft. rate on
                             saleable<span class="required"> *</span></label>
                         <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRate" name="per_sqft_rate_saleable" required
                             placeholder="Enter rate of Per Sq. Ft.">
                     </div>
+                    {% if has_penthouse == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRatePenthouse">Per Sq. Ft. rate on saleable for penthouse<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRatePenthouse" name="per_sqft_rate_saleable_penthouse" required
+                            placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+                    {% endif %}
+
+                    {% if has_duplex == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRateDuplex">Per Sq. Ft. rate on saleable for duplex<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRateDuplex" name="per_sqft_rate_saleable_duplex" required
+                            placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+                    {% endif %}
 
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">38) PLC Options<span class="required"> *</span></label>
+                        <label class="form-label primary" for="removethis">36) PLC Options<span class="required"> *</span></label>
                     </div>
 
                     <div class="col-md-6 col-lg-3 form-group">
@@ -1050,7 +1112,7 @@
                     </div> -->
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="floorRise">39) Floor rise</label><br>
+                        <label class="form-label primary" for="floorRise">37) Floor rise</label><br>
                         <button type="button" class="btn btn-custom-primary" id="addFloorRiseBtn">
                             Add Floor Rise <i id="floor_rise_saved" class=""></i>
                         </button>
@@ -1074,6 +1136,7 @@
                                             <tr>
                                                 <th>Floor Number</th>
                                                 <th>Price</th>
+                                                <th>Add Price</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -1092,38 +1155,38 @@
 
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developmentCharges">40) Development charges (AMC/Torrent
+                        <label class="form-label primary" for="developmentCharges">38) Development charges (AMC/Torrent
                             etc)<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="developmentCharges" name="development_charges" required
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="advanceMaintenance">41) Advance maintenance<span class="required"> *</span></label>
+                        <label class="form-label primary" for="advanceMaintenance">39) Advance maintenance<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="advanceMaintenance" name="advance_maintenance" required
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="maintenanceDeposit">42) Maintenance deposit<span class="required"> *</span></label>
+                        <label class="form-label primary" for="maintenanceDeposit">40) Maintenance deposit<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="maintenanceDeposit" name="maintenance_deposit" required
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="specificExpenses">43) Other specific expenses if any?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="specificExpenses">41) Other specific expenses if any?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="specificExpenses" name="other_specific_expenses" required
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">44) Sale deed value<span class="required"> *</span></label>
+                        <label class="form-label primary" for="saleDeedValue">42) Sale deed value<span class="required"> *</span></label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
                             placeholder="Enter sale deed value">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="gstApplicable">45) How much GST is applicable?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="gstApplicable">43) How much GST is applicable?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="loanAvailability">46) Loan availability?</label><br>
+                        <label class="form-label primary" for="loanAvailability">44) Loan availability?</label><br>
                         <!-- <select class="form-control" id="loanAvailability" name="loan_availability">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -1140,27 +1203,27 @@
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">47) Brokerage given per transaction (in %)</label>
+                        <label class="form-label primary" for="brokerage">45) Brokerage given per transaction (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
                             placeholder="Enter Brokerage given per transaction">
                     </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">48) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">46) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
                     <div class="col-md-12 row">
                         <!-- <div class="col-12 text-center">
                             <button type="button" onclick="window.location.href = `{% url 'unit-detail-form-list' %}?building_id={{building_id}}`;" id="unit_btn" class="btn btn-outline-dark" style="display: none"><b>Add Units</b></button>
-                        </div> -->
-                        <div class="col-12 text-center mt-2">
+                        </div> -->                        
+                        <div class="col text-center mt-2">
+                            <a type="button" id="view_property" class="btn btn-custom-outline-primary" style="display: none"><b>View Property Details</b></a>
+                        </div>
+                        <div class="col text-center mt-2">
                             <button type="button" onclick="submit_detail_form(false)" class="btn btn-custom"><b>Save Property
                                     Details</b></button>
                         </div>
-                        <div class="col-12 text-center mt-2">
-                            <a type="button" id="view_property" class="btn btn-custom-outline-primary" style="display: none"><b>View Property Details</b></a>
-                        </div>
-                        <div class="col-12 text-center mt-2">
+                        <div class="col text-center mt-2">
                             <button type="button" onclick="publish_building_data()" id="publish_btn" class="btn btn-custom-primary" style="display: none"><b>Publish Property Details</b></button>
                         </div>
                     </div>
@@ -1177,7 +1240,7 @@
     </div>
     <!-- Main content end -->
 
-    
+    <script src="/static/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -1208,6 +1271,7 @@
             // Populate new results
             data.forEach(item => {
                 console.log(item.group_name)
+                console.log(item)
                 const div = document.createElement('div');
                 div.classList.add('autocomplete-item');
                 div.textContent = item.group_name;
@@ -1217,19 +1281,23 @@
                     autocompleteList.innerHTML = ''; // Clear dropdown
                     // Automatically populate other fields
                     let new_item = {};
-                    new_item['group_name'] = item.group_name
-                    new_item['year_of_establishment'] = item.year_of_establishment
-                    new_item['no_of_projects_delivered'] = item.no_of_projects_delivered
-                    new_item['key_projects_1'] = item.key_projects_1
-                    new_item['key_projects_2'] = item.key_projects_2
-                    new_item['key_projects_3'] = item.key_projects_3
-                    new_item['key_projects_4'] = item.key_projects_4
-                    new_item['key_projects_5'] = item.key_projects_5
-                    new_item['key_promoters_1'] = item.key_promoters_1
-                    new_item['key_promoters_2'] = item.key_promoters_2
-                    new_item['key_promoters_3'] = item.key_promoters_3
-                    new_item['key_promoters_4'] = item.key_promoters_4
-                    new_item['key_promoters_5'] = item.key_promoters_5
+                    new_item['group_name'] = item.group_name;
+                    new_item['year_of_establishment'] = item.year_of_establishment;
+                    new_item['no_of_projects_delivered'] = item.no_of_projects_delivered;
+                    new_item['key_projects_1'] = item.key_projects_1;
+                    new_item['key_projects_2'] = item.key_projects_2;
+                    new_item['key_projects_3'] = item.key_projects_3;
+                    new_item['key_projects_4'] = item.key_projects_4;
+                    new_item['key_projects_5'] = item.key_projects_5;
+                    new_item['key_promoters_1'] = item.key_promoters_1;
+                    new_item['key_promoters_2'] = item.key_promoters_2;
+                    new_item['key_promoters_3'] = item.key_promoters_3;
+                    new_item['key_promoters_4'] = item.key_promoters_4;
+                    new_item['key_promoters_5'] = item.key_promoters_5;
+                    new_item['name'] = item.name;
+                    new_item['number_country_code'] = item.number_country_code;
+                    new_item['number'] = item.number;
+                    new_item['email'] = item.email;
                     setFormValues(new_item);
                 });
                 autocompleteList.appendChild(div);
@@ -1447,116 +1515,131 @@
                 var developer_history_form = document.getElementById('developer_history');
                 var contact_details_form = document.getElementById('contact_details');
                 var project_property_details_form = document.getElementById('project_property_details');
+                var amenities_form = document.getElementById('amenities');
                 var finance_form = document.getElementById('finance');
                 var document_form = document.getElementById('documentForm');
 
                 if (developer_history_form.reportValidity()) {
                     if (contact_details_form.reportValidity()) {
                         if (project_property_details_form.reportValidity()) {
-                            if (finance_form.reportValidity()) {
-                                if (document_form.reportValidity()) {
-                                    var form_developer_history = new FormData(document.getElementById('developer_history'));
-                                    var form_contact_details = new FormData(document.getElementById('contact_details'));
-                                    var form_project_property_details = new FormData(document.getElementById('project_property_details'));
-                                    var form_finance = new FormData(document.getElementById('finance'));
-                                    // var form_documents = new FormData(document.getElementById('documentForm'));
-    
-                                    form_developer_history.forEach((value, key) => {
-                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                            property_detail[key] = value;
-                                            return;
-                                        }
-                                        if (!Array.isArray(property_detail[key])) {
-                                            property_detail[key] = [property_detail[key]];
-                                        }
-                                        property_detail[key].push(value);
-                                    });
-    
-                                    form_contact_details.forEach((value, key) => {
-                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                            property_detail[key] = value;
-                                            return;
-                                        }
-                                        if (!Array.isArray(property_detail[key])) {
-                                            property_detail[key] = [property_detail[key]];
-                                        }
-                                        property_detail[key].push(value);
-                                    });
-    
-                                    form_project_property_details.forEach((value, key) => {
-                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                            property_detail[key] = value;
-                                            return;
-                                        }
-                                        if (!Array.isArray(property_detail[key])) {
-                                            property_detail[key] = [property_detail[key]];
-                                        }
-                                        property_detail[key].push(value);
-                                    });
-    
-                                    form_finance.forEach((value, key) => {
-                                        if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                            property_detail[key] = value;
-                                            return;
-                                        }
-                                        if (!Array.isArray(property_detail[key])) {
-                                            property_detail[key] = [property_detail[key]];
-                                        }
-                                        property_detail[key].push(value);
-                                    });
-    
-                                    // form_documents.forEach((value, key) => {
-                                    //     if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
-                                    //         property_detail[key] = value;
-                                    //         return;
-                                    //     }
-                                    //     if (!Array.isArray(property_detail[key])) {
-                                    //         property_detail[key] = [property_detail[key]];
-                                    //     }
-                                    //     property_detail[key].push(value);
-                                    // });
-    
-                                    try {
-                                        const response = await fetch("{% url 'property-detail-list' %}", {
-                                            method: 'POST',
-                                            headers: {
-                                                'Content-Type': 'application/json',
-                                                'X-CSRFToken': '{{csrf_token}}'
-                                            },
-                                            body: JSON.stringify(property_detail)
-                                        });
-                                        console.log(response)
-    
-                                        const data = await response.json();
-                                        console.log(data);
-                                        if (data.success == true) {
-                                            alert(`data added successfully to building_id ${data.building_id}!`)
-                                            if (unit_adder){
-                                                submit_document_form(data.building_db_id, `{% url 'unit-detail-form-list' %}`, `${data.building_id}`)
-                                                // window.location.href = `{% url 'unit-detail-form-list' %}?building_id=${data.building_id}`;
+                            if (amenities_form.reportValidity()) {
+                                    if (finance_form.reportValidity()) {
+                                        if (document_form.reportValidity()) {
+                                            var form_developer_history = new FormData(document.getElementById('developer_history'));
+                                            var form_contact_details = new FormData(document.getElementById('contact_details'));
+                                            var form_amenities = new FormData(document.getElementById('amenities'));
+                                            var form_project_property_details = new FormData(document.getElementById('project_property_details'));
+                                            var form_finance = new FormData(document.getElementById('finance'));
+                                            // var form_documents = new FormData(document.getElementById('documentForm'));
+            
+                                            form_developer_history.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                                    property_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(property_detail[key])) {
+                                                    property_detail[key] = [property_detail[key]];
+                                                }
+                                                property_detail[key].push(value);
+                                            });
+            
+                                            form_contact_details.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                                    property_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(property_detail[key])) {
+                                                    property_detail[key] = [property_detail[key]];
+                                                }
+                                                property_detail[key].push(value);
+                                            });
+            
+                                            form_amenities.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                                    property_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(property_detail[key])) {
+                                                    property_detail[key] = [property_detail[key]];
+                                                }
+                                                property_detail[key].push(value);
+                                            });
+
+                                            form_project_property_details.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                                    property_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(property_detail[key])) {
+                                                    property_detail[key] = [property_detail[key]];
+                                                }
+                                                property_detail[key].push(value);
+                                            });
+            
+                                            form_finance.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                                    property_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(property_detail[key])) {
+                                                    property_detail[key] = [property_detail[key]];
+                                                }
+                                                property_detail[key].push(value);
+                                            });
+            
+                                            // form_documents.forEach((value, key) => {
+                                            //     if (!Object.prototype.hasOwnProperty.call(property_detail, key)) {
+                                            //         property_detail[key] = value;
+                                            //         return;
+                                            //     }
+                                            //     if (!Array.isArray(property_detail[key])) {
+                                            //         property_detail[key] = [property_detail[key]];
+                                            //     }
+                                            //     property_detail[key].push(value);
+                                            // });
+            
+                                            try {
+                                                const response = await fetch("{% url 'property-detail-list' %}", {
+                                                    method: 'POST',
+                                                    headers: {
+                                                        'Content-Type': 'application/json',
+                                                        'X-CSRFToken': '{{csrf_token}}'
+                                                    },
+                                                    body: JSON.stringify(property_detail)
+                                                });
+                                                console.log(response)
+            
+                                                const data = await response.json();
+                                                console.log(data);
+                                                if (data.success == true) {
+                                                    alert(`data added successfully to building_id ${data.building_id}!`)
+                                                    if (unit_adder){
+                                                        submit_document_form(data.building_db_id, `{% url 'unit-detail-form-list' %}`, `${data.building_id}`)
+                                                        // window.location.href = `{% url 'unit-detail-form-list' %}?building_id=${data.building_id}`;
+                                                    }
+                                                    else{
+                                                        submit_document_form(data.building_db_id, `{% url 'property-detail-list' %}`, `${data.building_id}`)
+                                                        // window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                                    }
+                                                    
+                                                }
+                                                else {
+                                                    let floor_info = property_detail['floor_rise']
+                                                    property_detail = {}
+                                                    property_detail['floor_rise'] = floor_info
+                                                }
+            
                                             }
-                                            else{
-                                                submit_document_form(data.building_db_id, `{% url 'property-detail-list' %}`, `${data.building_id}`)
-                                                // window.location.href = `{% url 'property-detail-list' %}?building_id=${data.building_id}`;
+                                            catch (error) {
+                                                console.log(error)
+                                                let floor_info = property_detail['floor_rise']
+                                                property_detail = {}
+                                                property_detail['floor_rise'] = floor_info
                                             }
-                                            
                                         }
-                                        else {
-                                            let floor_info = property_detail['floor_rise']
-                                            property_detail = {}
-                                            property_detail['floor_rise'] = floor_info
-                                        }
-    
-                                    }
-                                    catch (error) {
-                                        console.log(error)
-                                        let floor_info = property_detail['floor_rise']
-                                        property_detail = {}
-                                        property_detail['floor_rise'] = floor_info
                                     }
                                 }
                             }
-                        }
                     }
                 }
             }    
@@ -1666,6 +1749,51 @@
                 priceInput.placeholder = 'Enter price...'
                 priceCell.appendChild(priceInput);
                 row.appendChild(priceCell);
+
+                let addPriceCell = document.createElement('td');
+                addPriceCell.className = 'd-flex align-items-center';
+                let addPriceInput = document.createElement('input');
+                addPriceInput.type = 'number';
+                addPriceInput.name = `addfloorPrice_${i}`;
+                addPriceInput.id = `addfloorPrice_${i}`;
+                addPriceInput.className = 'priceInput';
+                addPriceInput.classList.add('form-control', 'me-2')
+                addPriceInput.placeholder = 'Enter Additional price...';
+                addPriceCell.appendChild(addPriceInput);
+
+                let addBtn = document.createElement('button');
+                addBtn.textContent = 'Add';
+                addBtn.classList.add('btn', 'btn-outline-dark');
+                addBtn.type = 'button'
+                addBtn.setAttribute('data-floor', i);
+                addBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let AllPrice = document.querySelectorAll(`input[name^='floorPrice_']`);
+                        let price_to_be_added = document.getElementById(`addfloorPrice_${i}`).value;
+                        console.log(price_to_be_added);
+                        let base_price = document.getElementById(`floorPrice_${i}`).value;
+                        let index = 1;
+                        AllPrice.forEach(input => {
+                            let lastElement = String(input.id).split("_").pop();
+                            if (Number(lastElement) > i){
+                                // console.log(lastElement);
+                                let last_price = document.getElementById(`floorPrice_${index-1}`).value;
+                                console.log(last_price);
+                                document.getElementById(`floorPrice_${index}`).value = Number(last_price) + Number(price_to_be_added);
+                            }
+                            else {
+                            }
+                            index += 1;
+                        });
+                    }
+                });
+                if (i > 1) {
+                    addPriceCell.appendChild(addBtn);
+
+                }
+                
+                row.appendChild(addPriceCell);
+
 
 
                 // Action (Copy button)

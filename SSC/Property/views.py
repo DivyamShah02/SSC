@@ -33,9 +33,22 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
         if building_id:
             is_building_edit = True
 
+        all_units = UnitDetails.objects.filter(building_id=building_id)
+        has_penthouse = False
+        has_duplex = False
+
+        for unit in all_units:
+            if str(unit.unit_type) == 'Duplex':
+                has_duplex = True
+            
+            if str(unit.unit_type) == 'Penthouse':
+                has_penthouse = True
+
         data = {
             'is_building_edit':is_building_edit,
             'building_id':building_id,
+            'has_penthouse': has_penthouse,
+            'has_duplex': has_duplex,
         }
 
         return render(request, 'property_detail_form.html', data)
@@ -108,8 +121,18 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             for unit in all_units:
                 unit_obj = UnitDetails.objects.get(id=unit.id)
                 unit_obj.per_sqft_rate_saleable = building_serializer.data['per_sqft_rate_saleable']
+                unit_obj.per_sqft_rate_saleable_penthouse = building_serializer.data['per_sqft_rate_saleable_penthouse']
+                unit_obj.per_sqft_rate_saleable_duplex = building_serializer.data['per_sqft_rate_saleable_duplex']
+                
                 try:
                     unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable) * float(unit_obj.size_of_unit)
+
+                    if str(unit.unit_type) == 'Duplex':
+                        unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable_duplex) * float(unit_obj.size_of_unit)
+                    
+                    if str(unit.unit_type) == 'Penthouse':
+                        unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable_penthouse) * float(unit_obj.size_of_unit)
+
                 except:
                     unit_obj.base_price = 0
                 unit_obj.google_pin_lat = building_serializer.data['google_pin_lat']
@@ -230,7 +253,17 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
 
     @transaction.atomic
     def create(self, request):
+        # print(request.data.get('type_of_parking'))
         data = request.data.dict()
+        # for key in data.keys():
+        #     if isinstance(data[key], list) and key != 'amenities':
+        #         print(key)
+        #         print(data[key])
+        #         try:                
+        #             data[key] = ', '.join(data[key])
+        #         except:
+        #             pass
+
 
         try:
             # Handle file uploads
@@ -245,7 +278,12 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
             self.handle_file_uploads(data, request.FILES)
             try:
                 data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
-            
+                if str(data['unit_type']) == 'Duplex':
+                    data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_duplex'])
+                
+                if str(data['unit_type']) == 'Penthouse':
+                    data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_penthouse'])
+
             except:
                 data['base_price'] = 0
 

@@ -422,13 +422,25 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             size_of_unit = float(unit_data.get('size_of_unit'))
 
-            property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
+            property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))            
+            if str(unit_data.get('unit_type')) == 'Duplex':
+                property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable_duplex'))
+            
+            if str(unit_data.get('unit_type')) == 'Penthouse':
+                property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable_penthouse'))
+
             basic_price = round(property_unit_price/ 10000000, 2)
 
 
             size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
             per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable')) / 1000, 2)
+            if str(unit_data.get('unit_type')) == 'Duplex':
+                per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable_duplex')) / 1000, 2)
+            
+            if str(unit_data.get('unit_type')) == 'Penthouse':
+                per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable_penthouse')) / 1000, 2)
+
 
             # prev_ind = False
             # if ind-1 != 0:
@@ -499,15 +511,22 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text']
             overview_details = []
-            
             for key in overview_keys:
                 if key in unit_data.keys():
-                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
+                    if key == 'spiritual_or_religious_attraction_text':
+                        if building_data['spiritual_or_religious_attraction'] == 'Yes':
+                            overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':unit_data[key]})
+                    else:
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
                 
                 elif key in building_data.keys():
-                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
+                    if key == 'spiritual_or_religious_attraction_text':
+                        if building_data['spiritual_or_religious_attraction'] == 'Yes':
+                            overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':building_data[key]})
+                    else:
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
 
             
             destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
@@ -682,12 +701,24 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
             size_of_unit = float(unit_data.get('size_of_unit'))
 
             property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
+            if str(unit_data.get('unit_type')) == 'Duplex':
+                property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable_duplex'))
+            
+            if str(unit_data.get('unit_type')) == 'Penthouse':
+                property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable_penthouse'))
+
             basic_price = round(property_unit_price/ 10000000, 2)
 
 
             size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
             per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable')) / 1000, 2)
+            if str(unit_data.get('unit_type')) == 'Duplex':
+                per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable_duplex')) / 1000, 2)
+            
+            if str(unit_data.get('unit_type')) == 'Penthouse':
+                per_sqft_rate_saleable = round(float(unit_data.get('per_sqft_rate_saleable_penthouse')) / 1000, 2)
+
 
             floor_rise_str = building_data['floor_rise']
 
@@ -750,15 +781,23 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text']
             overview_details = []
             
             for key in overview_keys:
                 if key in unit_data.keys():
-                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
+                    if key == 'spiritual_or_religious_attraction_text':
+                        if building_data['spiritual_or_religious_attraction'] == 'Yes':
+                            overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':unit_data[key]})
+                    else:
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
                 
                 elif key in building_data.keys():
-                    overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
+                    if key == 'spiritual_or_religious_attraction_text':
+                        if building_data['spiritual_or_religious_attraction'] == 'Yes':
+                            overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':building_data[key]})
+                    else:
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
 
             
             destinations = [building_data['google_pin_lat'], building_data['google_pin_lng']]
@@ -944,12 +983,24 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 size_of_unit = float(unit_data.size_of_unit)
 
                 property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
+                if str(unit_data.get('unit_type')) == 'Duplex':
+                    property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_duplex)
+                
+                if str(unit_data.get('unit_type')) == 'Penthouse':
+                    property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_penthouse)
+
                 basic_price = round(property_unit_price/ 10000000, 2)
 
 
                 size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
                 per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
+                if str(unit_data.get('unit_type')) == 'Duplex':
+                    per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_duplex) / 1000, 2)
+                
+                if str(unit_data.get('unit_type')) == 'Penthouse':
+                    per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_penthouse) / 1000, 2)
+
 
                 
                 try:
@@ -1061,12 +1112,24 @@ class VisitPlanViewSet(viewsets.ViewSet):
 
                     size_of_unit = float(unit_data.size_of_unit)
                     property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
+                    if str(unit_data.get('unit_type')) == 'Duplex':
+                        property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_duplex)
+                    
+                    if str(unit_data.get('unit_type')) == 'Penthouse':
+                        property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_penthouse)
+
                     basic_price = round(property_unit_price/ 10000000, 2)
 
 
                     size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
                     per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
+                    if str(unit_data.get('unit_type')) == 'Duplex':
+                        per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_duplex) / 1000, 2)
+                    
+                    if str(unit_data.get('unit_type')) == 'Penthouse':
+                        per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_penthouse) / 1000, 2)
+
 
                     
                     try:

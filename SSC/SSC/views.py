@@ -9,6 +9,7 @@ from .cords import final_cords
 import requests
 import os
 from django.contrib.auth import authenticate, login, logout
+from Property.models import BuildingDetails, UnitDetails, Amenities
 
 import logging
 logger = logging.getLogger('SorterSession')
@@ -26,6 +27,21 @@ def not_found_500(request):
 
 def home(request):
     return render(request, 'index.html')
+
+def transfer_no_of_floors(request):
+    building_data = BuildingDetails.objects.all()
+    for building in building_data:
+        unit_data = UnitDetails.objects.filter(building_id=building.building_id)
+        for unit in unit_data:
+            unit_obj = UnitDetails.objects.get(id=unit.id)
+            unit_obj.no_of_floors = building.no_of_floors
+            print(building.type_of_parking)
+            unit_obj.type_of_parking = building.type_of_parking
+            unit_obj.central_air_conditioning = building.central_air_conditioning
+            unit_obj.save()
+        # unit_data.update(no_of_floors=building.no_of_floors)
+
+    return HttpResponse('Done')
 
 def temp_api(request):
     # all_units = UnitDetails.objects.all()

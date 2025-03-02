@@ -45,7 +45,10 @@ class BuildingDetails(models.Model):
     google_pin_lat = models.CharField(max_length=255, default="", null=True, blank=True)
     google_pin_lng = models.CharField(max_length=255, default="", null=True, blank=True)
     type_of_project = models.CharField(max_length=255, null=True, blank=True)
+    jodi_possible = models.BooleanField(default=False)
     per_sqft_rate_saleable = models.CharField(max_length=100, default='', null=True, blank=True)
+    per_sqft_rate_saleable_penthouse = models.CharField(max_length=100, null=True, blank=True)
+    per_sqft_rate_saleable_duplex = models.CharField(max_length=100, null=True, blank=True)
     type_of_apartments = models.CharField(max_length=255, null=True, blank=True)
 
     special_amenity_1 = models.CharField(max_length=255, default='', null=True, blank=True)
@@ -114,7 +117,13 @@ class UnitDetails(models.Model):
     servant_room_available = models.BooleanField(default=False)
     separate_puja_room_available = models.BooleanField(default=False)
     no_of_balconies = models.CharField(max_length=255, default=0, null=True, blank=True)
+    no_of_floors = models.CharField(max_length=255, default=0, null=True, blank=True)
     floor_to_ceiling = models.CharField(max_length=255, default=0, null=True, blank=True)
+
+    central_air_conditioning = models.CharField(max_length=255, default='', null=True, blank=True)
+    type_of_parking = models.CharField(max_length=255, null=True, blank=True)
+    count_of_normal = models.CharField(max_length=255, null=True, blank=True)
+    count_of_hydraulic = models.CharField(max_length=255, null=True, blank=True)
 
     private_terrace = models.BooleanField(default=False)
     carpet_size_terrace = models.CharField(max_length=255, default=0, null=True, blank=True)
@@ -132,6 +141,8 @@ class UnitDetails(models.Model):
 
     no_of_parking_allotted = models.CharField(max_length=255, default=0, null=True, blank=True)
     per_sqft_rate_saleable = models.CharField(max_length=100, null=True, blank=True)
+    per_sqft_rate_saleable_penthouse = models.CharField(max_length=100, null=True, blank=True)
+    per_sqft_rate_saleable_duplex = models.CharField(max_length=100, null=True, blank=True)
     # base_price = models.CharField(max_length=100, null=True, blank=True)
     base_price = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     google_pin_lat = models.CharField(max_length=255, default="", null=True, blank=True)

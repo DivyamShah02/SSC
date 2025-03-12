@@ -1129,19 +1129,21 @@
                                     <button type="button" class="btn-close" style="filter: invert(10);"
                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body p-5">
-                                    <table id="floorRiseTable" class="table table-striped table-hover"
-                                        style="border: 3px solid var(--primary-color); border-radius: 20px;">
-                                        <thead>
-                                            <tr>
-                                                <th>Floor Number</th>
-                                                <th>Price</th>
-                                                <th>Add Price</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="floor_rise_table"></tbody>
-                                    </table>
+                                <div class="modal-body p-3 p-md-5">
+                                    <div class="table-responsive">
+                                        <table id="floorRiseTable" class="table table-striped table-hover"
+                                            style="border: 3px solid var(--primary-color); border-radius: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Floor Number</th>
+                                                    <th>Price</th>
+                                                    <th>Add Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="floor_rise_table"></tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" id="floorrise_modal_close" class="btn btn-custom"
@@ -1185,12 +1187,8 @@
                         <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
-                    <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="loanAvailability">44) Loan availability?</label><br>
-                        <!-- <select class="form-control" id="loanAvailability" name="loan_availability">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select> -->
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="loanAvailability">44) Loan availability?</label><br>                       
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="loan_availability"
                                 id="loan_availability_Yes" value="Yes">
@@ -1201,14 +1199,14 @@
                                 id="loan_availability_No" value="No">
                             <label class="form-check-label" for="loan_availability_No">No</label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">45) Brokerage given per transaction (in %)</label>
+                        <label class="form-label primary" for="brokerage">44) Brokerage given per transaction (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
                             placeholder="Enter Brokerage given per transaction">
                     </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">46) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">45) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
@@ -1753,6 +1751,8 @@
                 let addPriceCell = document.createElement('td');
                 addPriceCell.className = 'd-flex align-items-center';
                 let addPriceInput = document.createElement('input');
+                addPriceInput.style.width = '200px';
+                addPriceInput.style.setProperty('width', '200px', 'important');
                 addPriceInput.type = 'number';
                 addPriceInput.name = `addfloorPrice_${i}`;
                 addPriceInput.id = `addfloorPrice_${i}`;

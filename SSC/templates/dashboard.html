@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/scc.css">
     <link rel="stylesheet" href="/static/css/loader.css">
+    <style>
+        .hidden-important {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,6 +35,7 @@
         <div class="mt-5 pt-5">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="container p-3">
+                    <input type="text" class="form-control dark-input" id="caseSearch" onkeyup="filterCases()" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
                     <table class="table table-striped">
                         <thead>
                           <tr>
@@ -42,10 +48,10 @@
                         </thead>
                         <tbody>
                             {% for building in final_building_data %}
-                            <tr>
-                              <th scope="row">1</th>
+                            <tr id="all-div-case-item-{{ forloop.counter }}">
+                              <th scope="row">{{ forloop.counter }}</th>
                               <td>{{building.building_id}}</td>
-                              <td>{{building.project_name}}</td>
+                              <td id="all-case-item-{{ forloop.counter }}">{{building.project_name}}</td>
                               <td><button class="btn btn-custom-primary" onclick="window.location = `{% url 'property-detail-list' %}?building_id={{building.building_id}}`">Building Details</button></td>
                               <td><button class="btn btn-custom" onclick="window.location = `{% url 'unit-detail-form-list' %}?building_id={{building.building_id}}`">Unit Details</button></td>
                             </tr>                            
@@ -62,6 +68,34 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <script>
+        function filterCases() {
+            console.log("Filtering cases...");
+            let input = document.getElementById("caseSearch").value.toLowerCase();
+            let cases = document.querySelectorAll("[id^='all-div-case-item-']");
+        
+            cases.forEach(caseItem => {
+                try{
+                    let caseNumber = caseItem.querySelector("[id^='all-case-item-']").innerText.toLowerCase();
+                    if (caseNumber.includes(input)) {
+                        caseItem.classList.remove("hidden-important");
+                    } else {
+                        caseItem.classList.add("hidden-important");                            
+                    }
+
+                    // let insuredName = caseItem.querySelector("[id^='all-case-insured-']").innerText.toLowerCase();
+                    // if (insuredName.includes(input)) {
+                    //     caseItem.classList.remove("hidden-important");
+                    // } else {
+                    //     caseItem.classList.add("hidden-important");                            
+                    // }
+                }
+                catch(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

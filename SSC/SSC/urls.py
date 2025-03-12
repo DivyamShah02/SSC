@@ -9,6 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('login/', ssc_login, name='login'),
+    
+    path('dashboard/', dashboard, name='dashboard'),
 
     path('', include('ClientDetail.urls')),
     path('', include('SorterSession.urls')),
@@ -17,7 +19,7 @@ urlpatterns = [
 
     path('temp/', temp_data, name='temp'),
     path('temp_api/', temp_api, name='temp_api'),
-    path('transfer_no_of_floors/', transfer_no_of_floors, name='transfer_no_of_floors'),
+    # path('transfer_no_of_floors/', transfer_no_of_floors, name='transfer_no_of_floors'),
     path('error_page/', handle_error_page, name='error_page')
 # ]
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

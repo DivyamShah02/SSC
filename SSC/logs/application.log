@@ -2270,3 +2270,114 @@ INFO 2025-03-03 00:37:35,806 basehttp "GET /static/css/style.css HTTP/1.1" 200 9
 INFO 2025-03-03 00:37:35,806 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
 WARNING 2025-03-03 00:37:37,591 log Not Found: /favicon.ico
 WARNING 2025-03-03 00:37:37,593 basehttp "GET /favicon.ico HTTP/1.1" 404 22266
+INFO 2025-03-03 00:51:53,151 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 97096
+INFO 2025-03-03 00:51:53,184 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-03 00:51:54,666 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 97096
+INFO 2025-03-03 00:51:54,725 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+WARNING 2025-03-03 00:51:55,591 log Not Found: /favicon.ico
+WARNING 2025-03-03 00:51:55,592 basehttp "GET /favicon.ico HTTP/1.1" 404 22266
+INFO 2025-03-04 09:57:51,881 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 302 0
+INFO 2025-03-04 09:57:51,922 basehttp "GET /login/?next=/view-properties/%3Find%3D1%26session_id%3D1 HTTP/1.1" 200 3995
+INFO 2025-03-04 09:57:51,948 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-04 09:57:51,971 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-03-04 09:58:01,729 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-04 09:58:10,182 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 97096
+INFO 2025-03-04 10:00:41,621 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101187
+INFO 2025-03-04 10:02:25,514 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101662
+INFO 2025-03-04 10:02:25,786 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-03-04 10:02:25,789 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-03-04 10:02:25,789 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-03-04 10:02:25,790 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-04 10:02:25,790 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-03-04 10:02:38,102 log Not Found: /favicon.ico
+WARNING 2025-03-04 10:02:38,103 basehttp "GET /favicon.ico HTTP/1.1" 404 22266
+INFO 2025-03-04 10:05:41,626 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101397
+INFO 2025-03-04 10:05:41,653 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-03-04 10:05:41,653 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-04 10:05:41,654 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-03-04 10:05:41,668 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-03-04 10:05:41,668 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-03-04 10:05:59,372 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101397
+WARNING 2025-03-04 10:06:01,637 log Not Found: /favicon.ico
+WARNING 2025-03-04 10:06:01,639 basehttp "GET /favicon.ico HTTP/1.1" 404 22266
+INFO 2025-03-04 10:06:28,200 basehttp "GET /view-properties/?ind=4&session_id=1 HTTP/1.1" 200 92078
+INFO 2025-03-04 10:07:05,808 basehttp "GET /view-properties/?ind=4&session_id=1 HTTP/1.1" 200 92078
+INFO 2025-03-04 10:07:20,644 basehttp "GET /view-properties/?ind=5&session_id=1 HTTP/1.1" 200 93721
+INFO 2025-03-04 10:20:54,210 basehttp "GET /admin/ HTTP/1.1" 200 9976
+WARNING 2025-03-04 10:20:54,422 log Not Found: /favicon.ico
+WARNING 2025-03-04 10:20:54,424 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+ERROR 2025-03-04 10:36:33,105 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 329, in dashboard
+    return render(request, 'dashboard.html', data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard.html
+ERROR 2025-03-04 10:36:33,109 basehttp "GET /dashboard/ HTTP/1.1" 500 103067
+ERROR 2025-03-04 10:36:33,549 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 329, in dashboard
+    return render(request, 'dashboard.html', data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard.html
+ERROR 2025-03-04 10:36:33,553 basehttp "GET /dashboard/ HTTP/1.1" 500 102793
+INFO 2025-03-04 10:37:09,774 basehttp "GET /dashboard/ HTTP/1.1" 200 1876
+INFO 2025-03-04 10:37:21,229 basehttp "GET /dashboard/ HTTP/1.1" 200 3046
+INFO 2025-03-04 10:38:59,168 basehttp "GET /dashboard/ HTTP/1.1" 200 14194
+INFO 2025-03-04 10:39:19,791 basehttp "GET /dashboard/ HTTP/1.1" 200 14427
+INFO 2025-03-04 10:39:38,826 basehttp "GET /dashboard/ HTTP/1.1" 200 14441
+INFO 2025-03-04 10:40:44,238 basehttp "GET /dashboard/ HTTP/1.1" 200 15809
+INFO 2025-03-04 10:40:51,338 basehttp "GET /dashboard/ HTTP/1.1" 200 16417
+INFO 2025-03-04 10:41:02,519 basehttp "GET /dashboard/ HTTP/1.1" 200 20065
+INFO 2025-03-04 10:41:09,792 basehttp "GET /dashboard/ HTTP/1.1" 200 19913
+INFO 2025-03-04 10:41:25,724 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 134253
+INFO 2025-03-04 10:41:26,414 basehttp "POST /property-copy/ HTTP/1.1" 200 3630
+WARNING 2025-03-04 10:41:26,458 log Not Found: /property-detail/null
+WARNING 2025-03-04 10:41:26,459 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-04 10:41:31,027 basehttp - Broken pipe from ('127.0.0.1', 51335)
+INFO 2025-03-04 10:41:55,334 basehttp "GET /dashboard/ HTTP/1.1" 200 20217
+INFO 2025-03-04 10:44:40,418 basehttp "GET /dashboard/ HTTP/1.1" 200 22573
+INFO 2025-03-04 10:44:41,119 basehttp "GET /dashboard/ HTTP/1.1" 200 22573
+INFO 2025-03-04 10:44:42,269 basehttp "GET /unit-details/?building_id=1037 HTTP/1.1" 200 56943
+INFO 2025-03-04 10:45:15,054 basehttp "GET /unit-details/?building_id=1037 HTTP/1.1" 200 56943
+INFO 2025-03-04 10:45:17,764 basehttp "GET /dashboard/ HTTP/1.1" 200 25043
+INFO 2025-03-04 10:45:19,382 basehttp "GET /property-detail/?building_id=1037 HTTP/1.1" 200 134253
+INFO 2025-03-04 10:45:21,917 basehttp "GET /property-detail/?building_id=1037 HTTP/1.1" 200 134253
+INFO 2025-03-04 10:45:22,529 basehttp - Broken pipe from ('127.0.0.1', 51365)
+INFO 2025-03-04 10:45:24,625 basehttp "POST /property-copy/ HTTP/1.1" 200 4499
+WARNING 2025-03-04 10:45:24,827 log Not Found: /property-detail/null
+WARNING 2025-03-04 10:45:24,828 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-04 10:45:40,175 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-03-04 10:45:40,185 basehttp "GET /login/ HTTP/1.1" 200 3959
+INFO 2025-03-04 10:45:40,369 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-04 10:45:40,380 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-03-04 10:45:40,382 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-03-04 10:45:40,388 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-03-04 10:45:40,392 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703

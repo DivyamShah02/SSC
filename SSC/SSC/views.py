@@ -286,3 +286,45 @@ def ssc_login(request):
 
         return render(request, 'login.html')
 
+def dashboard(request):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
+    
+    group_names = user.groups.values_list('name', flat=True)
+    if not user.is_staff:
+        if 'Building Detail' in group_names:
+            all_building_details = BuildingDetails.objects.filter(property_added_by=f'{request.user}')
+            final_building_data = []
+            for building in all_building_details:
+                temp_dict = {
+                    'building_id': building.building_id,
+                    'project_name': building.project_name
+                }
+                final_building_data.append(temp_dict)
+            data = {
+                'final_building_data': final_building_data[::-1],
+                'len_final_building_data': len(final_building_data)
+            }
+
+            return render(request, 'dashboard.html', data)
+
+        else:
+            return redirect('property-inquiry')
+
+    
+    all_building_details = BuildingDetails.objects.all()
+    final_building_data = []
+    for building in all_building_details:
+        temp_dict = {
+            'building_id': building.building_id,
+            'project_name': building.project_name
+        }
+        final_building_data.append(temp_dict)
+    data = {
+        'final_building_data': final_building_data[::-1],
+        'len_final_building_data': len(final_building_data)
+    }
+
+    return render(request, 'dashboard.html', data)
+

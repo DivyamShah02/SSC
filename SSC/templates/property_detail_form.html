@@ -1181,9 +1181,20 @@
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">42) Sale deed value<span class="required"> *</span></label>
-                        <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
-                            placeholder="Enter sale deed value">
+                        <label class="form-label primary" for="saleDeedValue">42) Sale deed value<span class="required"> *</span></label><br>
+                        <!-- <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
+                            placeholder="Enter sale deed value"> -->
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale_deed_value" id="sale_deed_value_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="sale_deed_value_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale_deed_value" id="sale_deed_value_No"
+                                value="No">
+                            <label class="form-check-label" for="sale_deed_value_No">No</label>
+                        </div>
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="gstApplicable">43) How much GST is applicable?<span class="required"> *</span></label>
@@ -1209,7 +1220,7 @@
                             placeholder="Enter Brokerage given per transaction">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">45)  Down payment due as on date (in %)</label>
+                        <label class="form-label primary" for="brokerage">45)  Payment due as on date (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="down_payment_as_on_date" name="down_payment_as_on_date"
                             placeholder="Enter Down payment due as on date">
                     </div>

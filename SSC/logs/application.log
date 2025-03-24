@@ -1,0 +1,52 @@
+INFO 2025-03-24 09:36:17,189 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 302 0
+INFO 2025-03-24 09:36:17,274 basehttp "GET /login/?next=/view-properties/%3Find%3D1%26session_id%3D1 HTTP/1.1" 200 3995
+INFO 2025-03-24 09:36:17,542 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-24 09:36:17,542 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-03-24 09:36:17,545 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-03-24 09:36:29,214 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-24 09:36:38,487 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96110
+INFO 2025-03-24 09:36:44,842 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96110
+INFO 2025-03-24 09:37:05,999 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96110
+INFO 2025-03-24 09:37:06,039 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-03-24 09:37:06,040 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-03-24 09:37:06,041 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-03-24 09:37:06,053 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-03-24 09:37:06,119 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-03-24 09:37:19,601 log Not Found: /favicon.ico
+WARNING 2025-03-24 09:37:19,602 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-03-24 09:40:13,181 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-03-24 09:40:20,952 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 84738
+INFO 2025-03-24 09:40:21,034 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 09:40:25,616 basehttp "GET /admin/Property/buildingdetails/?q=sie HTTP/1.1" 200 29237
+INFO 2025-03-24 09:40:25,652 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 09:40:29,443 basehttp "GET /admin/Property/buildingdetails/150/change/?_changelist_filters=q%3Dsie HTTP/1.1" 200 67262
+INFO 2025-03-24 09:40:29,477 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 09:40:58,493 basehttp "POST /admin/Property/buildingdetails/150/change/?_changelist_filters=q%3Dsie HTTP/1.1" 302 0
+INFO 2025-03-24 09:40:58,565 basehttp "GET /admin/Property/buildingdetails/?q=sie HTTP/1.1" 200 29483
+INFO 2025-03-24 09:40:58,599 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 09:41:05,577 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96062
+INFO 2025-03-24 09:42:12,330 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96062
+INFO 2025-03-24 09:44:18,986 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135640
+INFO 2025-03-24 09:44:23,803 basehttp "POST /property-copy/ HTTP/1.1" 200 3963
+WARNING 2025-03-24 09:44:25,198 log Not Found: /property-detail/null
+WARNING 2025-03-24 09:44:25,198 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-24 09:44:40,052 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-03-24 09:44:42,260 basehttp "POST /property-copy/ HTTP/1.1" 200 3963
+WARNING 2025-03-24 09:44:42,450 log Not Found: /property-detail/null
+WARNING 2025-03-24 09:44:42,450 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-24 09:44:46,442 basehttp "GET /property-detail/?building_id=1149 HTTP/1.1" 200 135644
+INFO 2025-03-24 09:44:49,192 basehttp "POST /property-copy/ HTTP/1.1" 200 3947
+WARNING 2025-03-24 09:44:49,447 log Not Found: /property-detail/null
+WARNING 2025-03-24 09:44:49,448 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-24 09:45:10,162 basehttp "POST /property-detail/ HTTP/1.1" 201 103
+INFO 2025-03-24 09:45:11,481 basehttp "POST /submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-03-24 09:45:11,501 basehttp "GET /property-detail/?building_id=1149 HTTP/1.1" 200 135644
+INFO 2025-03-24 09:45:11,598 basehttp "POST /property-copy/ HTTP/1.1" 200 3910
+WARNING 2025-03-24 09:45:11,646 log Not Found: /property-detail/null
+WARNING 2025-03-24 09:45:11,647 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-03-24 09:45:14,128 basehttp "GET /admin/Property/buildingdetails/150/change/?_changelist_filters=q%3Dsie HTTP/1.1" 200 67262
+INFO 2025-03-24 09:45:14,156 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 09:45:32,316 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-03-24 09:45:34,204 basehttp "POST /property-copy/ HTTP/1.1" 200 3963
+WARNING 2025-03-24 09:45:34,373 log Not Found: /property-detail/null
+WARNING 2025-03-24 09:45:34,373 basehttp "GET /property-detail/null HTTP/1.1" 404 22269

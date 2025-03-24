@@ -68,7 +68,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("{{main_property.head_image}}") no-repeat center center;
+        background: url("{{main_property.head_image|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -128,7 +128,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("{{main_property.sec_image_1}}") no-repeat center center;
+        background: url("{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -141,7 +141,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("{{main_property.sec_image_2}}") no-repeat center center;
+        background: url("{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -298,7 +298,7 @@
                     <!-- Main Image -->
                     <div class="primary-images-main-img">
                         <img src="{{main_property.head_image|default:'/static/img/Coming Soon.png'}}" alt="Main Project Image">
-                        <div class="overlay-text-main-img">The Verity</div>
+                        <!-- <div class="overlay-text-main-img">The Verity</div> -->
                     </div>
                     <!-- Right Column with Two Images -->
                     <div class="secondary-images-main-img">
@@ -933,7 +933,7 @@
                                             data-bs-toggle="tooltip" data-bs-placement="right"
                                             data-bs-custom-class="custom-tooltip"
                                             data-bs-title="₹{{basic_price}} Cr X {{main_property.sale_deed_value}}% X 5.9%"></i></td>
-                                        <th class="text-end py-3 px-4">₹<span id="govt_chargs_amt">{{government_charges}}</span> L</th>
+                                        <th class="text-end py-3 px-4">₹<span id="govt_chargs_amt"></span> L</th>
                                     </tr>
                                     <tr>
                                         <td class="px-4 py-3">GST ({{main_property.gst_applicable}}%)&nbsp;<i class="fas fa-circle-info text-secondary-ssc" 

@@ -511,7 +511,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text', 'down_payment_as_on_date']
             overview_details = []
             for key in overview_keys:
                 if key in unit_data.keys():
@@ -525,6 +525,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     if key == 'spiritual_or_religious_attraction_text':
                         if building_data['spiritual_or_religious_attraction'] == 'Yes':
                             overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':building_data[key]})
+                    elif key == 'down_payment_as_on_date':                       
+                        date_obj = datetime.fromisoformat(str(building_data['property_created_at']))
+                        month_name = date_obj.strftime("%B")
+                        # print(as_on_data.month)
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':f'{month_name}: {building_data[key]}%'})
                     else:
                         overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
 

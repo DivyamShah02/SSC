@@ -68,7 +68,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('{{main_property.head_image}}') no-repeat center center;
+        background: url("{{main_property.head_image}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -128,7 +128,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('{{main_property.sec_image_1}}') no-repeat center center;
+        background: url("{{main_property.sec_image_1}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -141,7 +141,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('{{main_property.sec_image_2}}') no-repeat center center;
+        background: url("{{main_property.sec_image_2}}") no-repeat center center;
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
@@ -221,7 +221,7 @@
                             style="cursor: pointer;">
                             {% endif %}
                             <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
-                            <img src="{{menu_property.property_img}}"
+                            <img src="{{menu_property.property_img|default:'/static/img/Coming Soon.png'}}"
                                 alt="Property Image"
                                 style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
                             <!-- <div class="golden-badge">Premium Property</div> -->
@@ -297,16 +297,16 @@
                 <div class="image-container-main-img">
                     <!-- Main Image -->
                     <div class="primary-images-main-img">
-                        <img src="{{main_property.head_image}}" alt="Main Project Image">
+                        <img src="{{main_property.head_image|default:'/static/img/Coming Soon.png'}}" alt="Main Project Image">
                         <div class="overlay-text-main-img">The Verity</div>
                     </div>
                     <!-- Right Column with Two Images -->
                     <div class="secondary-images-main-img">
                         <div class="secondary-images-main-img-one">
-                            <img src="{{main_property.sec_image_1}}" alt="Thumbnail 1">
+                            <img src="{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}" alt="Thumbnail 1">
                         </div>
                         <div class="secondary-images-main-img-two">
-                            <img src="{{main_property.sec_image_2}}" alt="Thumbnail 2">
+                            <img src="{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}" alt="Thumbnail 2">
                         </div>
                     </div>
                 </div>
@@ -537,7 +537,7 @@
                                             <h5 class="mt-2"><b>{{unit_data.unit_configuration}} Floor Plan</b></h5>
                                         </div>
                                         <div class="image-container">
-                                            <img src="{{unit_data.floor_plan}}" alt="Image 1" data-bs-toggle="modal"
+                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}" alt="Image 1" data-bs-toggle="modal"
                                                 data-bs-target="#tab-modal1">
                                         </div>
                                     </div>
@@ -548,7 +548,7 @@
                                             <h5 class="mt-2"><b>{{unit_data.unit_configuration}} Unit Plan</b></h5>
                                         </div>
                                         <div class="image-container">
-                                            <img src="{{unit_data.unit_plan}}" alt="Image 2" data-bs-toggle="modal"
+                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}" alt="Image 2" data-bs-toggle="modal"
                                                 data-bs-target="#tab-modal2">
                                         </div>
                                     </div>
@@ -575,7 +575,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <!-- Full-size Image -->
-                                            <img src="{{unit_data.floor_plan}}" alt="Full Size Image" class="img-fluid">
+                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}" alt="Full Size Image" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +592,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <!-- Full-size Image -->
-                                            <img src="{{unit_data.unit_plan}}" alt="Full Size Image" class="img-fluid">
+                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}" alt="Full Size Image" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>

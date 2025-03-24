@@ -88,6 +88,7 @@ class BuildingDetails(models.Model):
     sale_deed_value_min = models.CharField(max_length=20, default=0, blank=True, null=True)
     sale_deed_value_max = models.CharField(max_length=20, default=0, blank=True, null=True)
     brokerage = models.CharField(max_length=10, default=0, blank=True, null=True)
+    down_payment_as_on_date = models.CharField(max_length=10, default=0, blank=True, null=True)
     gst_applicable = models.CharField(max_length=20, default=0, blank=True, null=True)
     loan_availability = models.BooleanField(default=False)
     remarks = models.TextField(null=True, blank=True)

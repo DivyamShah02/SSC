@@ -70,7 +70,7 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Square Second Consultancy</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Square Second Consultants</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -82,6 +82,9 @@
                     {% endif %}
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'property-detail-list' %}">Property Detail Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard/">Dashboard</a>
                     </li>
                     </ul>
                 </div>
@@ -1205,8 +1208,13 @@
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
                             placeholder="Enter Brokerage given per transaction">
                     </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="brokerage">45)  Down payment due as on date (in %)</label>
+                        <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="down_payment_as_on_date" name="down_payment_as_on_date"
+                            placeholder="Enter Down payment due as on date">
+                    </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">45) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">46) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>

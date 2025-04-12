@@ -8193,3 +8193,292 @@ INFO 2025-03-24 10:19:40,372 basehttp "GET /view-properties/?ind=1&session_id=1 
 INFO 2025-03-24 10:20:15,843 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96436
 INFO 2025-03-24 10:21:17,452 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96412
 INFO 2025-03-24 10:22:15,596 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96416
+INFO 2025-04-07 23:09:08,228 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 302 0
+INFO 2025-04-07 23:09:08,241 basehttp "GET /login/?next=/property-inquiry/%3Fclient_id%3D1 HTTP/1.1" 200 3985
+INFO 2025-04-07 23:09:08,355 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-07 23:09:08,359 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-07 23:09:11,696 basehttp "GET /login/?next=/property-inquiry/%3Fclient_id%3D1 HTTP/1.1" 200 3985
+INFO 2025-04-07 23:09:11,724 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-07 23:09:11,724 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-07 23:09:11,724 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-07 23:09:11,726 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-07 23:09:11,726 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-04-07 23:09:11,933 log Not Found: /favicon.ico
+WARNING 2025-04-07 23:09:11,933 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-07 23:09:19,503 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:09:19,518 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111808
+INFO 2025-04-07 23:09:23,543 basehttp "POST /edit-client/ HTTP/1.1" 200 1798
+INFO 2025-04-07 23:09:58,122 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111820
+INFO 2025-04-07 23:10:00,736 basehttp "POST /edit-client/ HTTP/1.1" 200 1798
+INFO 2025-04-07 23:10:36,096 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96418
+INFO 2025-04-07 23:10:38,133 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96418
+INFO 2025-04-07 23:13:44,879 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96418
+INFO 2025-04-07 23:13:51,789 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96418
+INFO 2025-04-07 23:13:51,953 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-07 23:13:51,953 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-07 23:13:51,956 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-07 23:13:51,957 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-07 23:13:51,958 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+WARNING 2025-04-07 23:14:05,329 log Not Found: /favicon.ico
+WARNING 2025-04-07 23:14:05,331 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-07 23:15:47,508 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96404
+INFO 2025-04-07 23:16:42,971 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96418
+INFO 2025-04-07 23:18:19,036 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96404
+INFO 2025-04-07 23:19:20,600 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96494
+INFO 2025-04-07 23:19:34,634 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96496
+INFO 2025-04-07 23:20:04,411 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96411
+INFO 2025-04-07 23:20:09,011 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96411
+INFO 2025-04-07 23:20:09,114 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-07 23:20:09,118 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-07 23:20:09,122 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-07 23:20:09,129 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-07 23:20:09,131 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-04-07 23:20:15,488 log Not Found: /favicon.ico
+WARNING 2025-04-07 23:20:15,489 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-07 23:20:36,381 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96373
+INFO 2025-04-07 23:20:36,416 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-07 23:20:36,419 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-07 23:20:36,420 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-07 23:20:36,420 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-07 23:20:36,421 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-07 23:20:46,934 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 96373
+WARNING 2025-04-07 23:20:51,695 log Not Found: /favicon.ico
+WARNING 2025-04-07 23:20:51,696 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-07 23:21:39,815 basehttp "GET /admin/ HTTP/1.1" 200 10404
+INFO 2025-04-07 23:21:41,712 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 64925
+INFO 2025-04-07 23:21:41,781 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:21:46,648 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18215
+INFO 2025-04-07 23:21:46,675 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:21:53,335 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 64925
+INFO 2025-04-07 23:21:53,360 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:21:56,467 basehttp "GET /admin/Property/unitdetails/?q=382 HTTP/1.1" 200 15243
+INFO 2025-04-07 23:21:56,495 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:22:02,062 basehttp "GET /admin/Property/unitdetails/?q= HTTP/1.1" 200 67607
+INFO 2025-04-07 23:22:02,086 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:22:03,139 basehttp "GET /admin/Property/unitdetails/498/change/?_changelist_filters=q%3D HTTP/1.1" 200 40271
+INFO 2025-04-07 23:22:03,166 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:22:09,642 basehttp "GET /admin/Property/unitdetails/382/change/?_changelist_filters=q%3D HTTP/1.1" 200 40990
+INFO 2025-04-07 23:22:09,669 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:22:11,957 basehttp "GET /admin/Property/unitdetails/382/change/ HTTP/1.1" 200 40905
+INFO 2025-04-07 23:22:11,986 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:28:05,992 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 84738
+INFO 2025-04-07 23:28:06,046 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:28:07,350 basehttp "GET /admin/Property/buildingdetails/204/change/ HTTP/1.1" 200 66294
+INFO 2025-04-07 23:28:07,385 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:28:07,451 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19727
+INFO 2025-04-07 23:28:07,451 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9380
+INFO 2025-04-07 23:28:10,200 basehttp "GET /admin/Property/buildingdetails/1149/change/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:28:10,231 basehttp "GET /admin/ HTTP/1.1" 200 10586
+INFO 2025-04-07 23:28:10,263 basehttp "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 507
+INFO 2025-04-07 23:28:12,775 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 84738
+INFO 2025-04-07 23:28:12,805 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:28:26,104 basehttp "GET /admin/Property/buildingdetails/150/change/ HTTP/1.1" 200 68381
+INFO 2025-04-07 23:28:26,132 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:28:48,154 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 84738
+INFO 2025-04-07 23:28:48,917 basehttp "GET /admin/ HTTP/1.1" 200 10404
+INFO 2025-04-07 23:28:49,679 basehttp "GET /admin/Property/buildingdetails/204/change/ HTTP/1.1" 200 66294
+INFO 2025-04-07 23:28:50,514 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 84738
+INFO 2025-04-07 23:28:55,714 basehttp "GET /admin/Property/unitdetails/382/change/ HTTP/1.1" 200 40905
+INFO 2025-04-07 23:29:25,357 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 97600
+INFO 2025-04-07 23:31:27,483 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 97598
+INFO 2025-04-07 23:31:51,339 basehttp "GET /property-inquiry/?client_id=11 HTTP/1.1" 200 111821
+WARNING 2025-04-07 23:31:51,436 log Not Found: /edit-client/
+WARNING 2025-04-07 23:31:51,437 basehttp "POST /edit-client/ HTTP/1.1" 404 56
+INFO 2025-04-07 23:32:01,790 basehttp "GET /admin/ClientDetail/propertyinquiry/ HTTP/1.1" 200 16266
+INFO 2025-04-07 23:32:01,833 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:32:04,176 basehttp "GET /admin/ClientDetail/propertyinquiry/10/change/ HTTP/1.1" 200 39637
+INFO 2025-04-07 23:32:04,243 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:32:07,606 basehttp "GET /admin/ClientDetail/propertyinquiry/ HTTP/1.1" 200 16266
+INFO 2025-04-07 23:32:09,781 basehttp "GET /admin/ClientDetail/propertyinquiry/9/change/ HTTP/1.1" 200 39696
+INFO 2025-04-07 23:32:09,850 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:32:11,615 basehttp "GET /admin/ClientDetail/propertyinquiry/ HTTP/1.1" 200 16266
+INFO 2025-04-07 23:35:02,813 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:35:02,885 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4164
+INFO 2025-04-07 23:35:02,938 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-04-07 23:35:05,954 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-04-07 23:35:09,164 basehttp "GET /property-inquiry/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:35:09,172 basehttp "GET /login/?next=/property-inquiry/ HTTP/1.1" 200 3973
+INFO 2025-04-07 23:35:15,020 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:35:15,033 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
+INFO 2025-04-07 23:35:22,030 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-04-07 23:35:24,266 basehttp "GET /admin/ClientDetail/propertyinquiry/ HTTP/1.1" 200 19296
+INFO 2025-04-07 23:35:24,302 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:35:37,128 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 108239
+INFO 2025-04-07 23:35:38,902 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-04-07 23:35:41,470 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 17837
+INFO 2025-04-07 23:35:41,493 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:35:48,788 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-07 23:35:49,024 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-07 23:35:51,023 log Not Found: /property-detail/null
+WARNING 2025-04-07 23:35:51,024 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-07 23:35:51,226 basehttp "GET /property-inquiry/?client_id=11 HTTP/1.1" 200 111821
+INFO 2025-04-07 23:35:54,680 basehttp "POST /edit-client/ HTTP/1.1" 200 1791
+ERROR 2025-04-07 23:36:00,905 views Inquiry successfully saved. Client ID: 11
+INFO 2025-04-07 23:36:00,906 basehttp "POST /property-inquiry/ HTTP/1.1" 201 75
+ERROR 2025-04-07 23:36:00,924 sorting_logic Error updating client preferences: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 53, in update_client_preferences
+    timeline_value = int(client_data.get('time_to_seal_deal', 0))  # Assuming months
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+ERROR 2025-04-07 23:36:00,925 views Invalid data format: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 53, in update_client_preferences
+    timeline_value = int(client_data.get('time_to_seal_deal', 0))  # Assuming months
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 47, in create
+    updated_client_data = sorter.update_client_preferences(client_data=client_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\sorting_logic.py", line 66, in update_client_preferences
+    raise ValueError(f"Invalid data format: {str(e)}")
+ValueError: Invalid data format: invalid literal for int() with base 10: ''
+ERROR 2025-04-07 23:36:00,928 log Internal Server Error: /sort/
+ERROR 2025-04-07 23:36:00,928 basehttp "POST /sort/ HTTP/1.1" 500 91
+INFO 2025-04-07 23:37:13,060 basehttp "GET /property-inquiry/?client_id=11 HTTP/1.1" 200 111821
+INFO 2025-04-07 23:37:15,805 basehttp "POST /edit-client/ HTTP/1.1" 200 1791
+INFO 2025-04-07 23:38:19,407 basehttp "GET /property-inquiry/?client_id=11 HTTP/1.1" 200 111821
+INFO 2025-04-07 23:38:22,120 basehttp "POST /edit-client/ HTTP/1.1" 200 1791
+ERROR 2025-04-07 23:38:23,742 views Inquiry successfully saved. Client ID: 11
+INFO 2025-04-07 23:38:23,743 basehttp "POST /property-inquiry/ HTTP/1.1" 201 75
+INFO 2025-04-07 23:38:30,476 basehttp "POST /sort/ HTTP/1.1" 200 32
+INFO 2025-04-07 23:38:32,627 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 95256
+INFO 2025-04-07 23:38:44,670 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111820
+INFO 2025-04-07 23:38:46,741 basehttp "POST /edit-client/ HTTP/1.1" 200 1645
+INFO 2025-04-07 23:38:47,151 basehttp "GET /property-inquiry/?client_id=12 HTTP/1.1" 200 111821
+INFO 2025-04-07 23:38:49,670 basehttp "POST /edit-client/ HTTP/1.1" 200 1808
+ERROR 2025-04-07 23:38:54,961 views Inquiry successfully saved. Client ID: 12
+INFO 2025-04-07 23:38:54,962 basehttp "POST /property-inquiry/ HTTP/1.1" 201 75
+INFO 2025-04-07 23:38:55,022 basehttp "POST /sort/ HTTP/1.1" 200 32
+ERROR 2025-04-07 23:38:55,049 views list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 339, in list
+    property = properties_data[ind-1]
+               ~~~~~~~~~~~~~~~^^^^^^^
+IndexError: list index out of range
+INFO 2025-04-07 23:38:55,053 basehttp "GET /view-properties/?ind=1&session_id=12 HTTP/1.1" 302 0
+INFO 2025-04-07 23:38:55,058 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-07 23:40:04,961 basehttp "GET /property-inquiry/?client_id=12 HTTP/1.1" 200 111821
+INFO 2025-04-07 23:40:06,881 basehttp "POST /edit-client/ HTTP/1.1" 200 1808
+INFO 2025-04-07 23:54:12,794 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65012
+INFO 2025-04-07 23:54:12,825 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:54:18,044 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18975
+INFO 2025-04-07 23:54:18,070 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:54:23,681 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65012
+INFO 2025-04-07 23:54:23,710 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:54:24,455 basehttp "GET /admin/Property/unitdetails/826/change/ HTTP/1.1" 200 40374
+INFO 2025-04-07 23:54:24,485 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:54:29,378 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-07 23:54:29,404 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:54:48,875 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 108239
+INFO 2025-04-07 23:54:54,584 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18975
+INFO 2025-04-07 23:54:54,611 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:55:10,662 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 94735
+INFO 2025-04-07 23:55:10,688 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:55:19,223 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65012
+INFO 2025-04-07 23:55:19,249 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:55:20,865 basehttp "GET /admin/Property/unitdetails/824/change/ HTTP/1.1" 200 40316
+INFO 2025-04-07 23:55:20,891 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:55:23,609 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-07 23:55:23,644 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:55:42,913 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-07 23:55:43,047 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-07 23:55:43,175 log Not Found: /property-detail/null
+WARNING 2025-04-07 23:55:43,176 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-07 23:55:49,325 basehttp "GET /property-detail/?building_id=1085 HTTP/1.1" 200 135644
+INFO 2025-04-07 23:55:49,579 basehttp "POST /property-copy/ HTTP/1.1" 200 4348
+INFO 2025-04-07 23:55:52,758 basehttp "POST /property-detail/ HTTP/1.1" 201 102
+INFO 2025-04-07 23:55:53,555 basehttp "POST /submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-04-07 23:55:53,575 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 54356
+INFO 2025-04-07 23:56:06,484 basehttp "POST /unit-copy/ HTTP/1.1" 200 1408
+INFO 2025-04-07 23:56:08,911 basehttp "POST /unit-details/ HTTP/1.1" 201 1399
+INFO 2025-04-07 23:56:08,937 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 54356
+INFO 2025-04-07 23:56:15,303 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-07 23:56:15,330 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:56:16,246 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-07 23:56:16,283 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:56:16,893 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-07 23:56:16,928 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:56:17,044 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 23271
+INFO 2025-04-07 23:56:17,050 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 296030
+INFO 2025-04-07 23:56:17,053 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 355
+INFO 2025-04-07 23:56:17,057 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6392
+INFO 2025-04-07 23:56:17,062 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9337
+INFO 2025-04-07 23:56:17,062 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2960
+INFO 2025-04-07 23:56:17,066 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9218
+INFO 2025-04-07 23:56:17,067 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8280
+INFO 2025-04-07 23:56:17,067 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 8056
+INFO 2025-04-07 23:56:17,071 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1574
+INFO 2025-04-07 23:56:17,072 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 601
+INFO 2025-04-07 23:56:17,075 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2934
+INFO 2025-04-07 23:56:17,075 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1704
+INFO 2025-04-07 23:56:17,077 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 331297
+INFO 2025-04-07 23:56:17,083 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 18939
+INFO 2025-04-07 23:56:17,088 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3142
+INFO 2025-04-07 23:56:17,089 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 12157
+INFO 2025-04-07 23:56:17,094 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 622
+INFO 2025-04-07 23:56:17,118 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 334
+WARNING 2025-04-07 23:56:17,155 log Not Found: /favicon.ico
+WARNING 2025-04-07 23:56:17,155 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-07 23:57:08,116 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-07 23:57:10,202 basehttp "POST /unit-details/ HTTP/1.1" 201 1256
+INFO 2025-04-07 23:57:10,226 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 55654
+INFO 2025-04-07 23:57:15,199 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65005
+INFO 2025-04-07 23:57:15,227 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:57:16,717 basehttp "GET /admin/Property/unitdetails/828/change/ HTTP/1.1" 200 40292
+INFO 2025-04-07 23:57:16,748 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-07 23:59:21,645 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-07 23:59:24,182 basehttp "POST /unit-details/ HTTP/1.1" 201 1399
+INFO 2025-04-07 23:59:24,245 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 55654
+INFO 2025-04-07 23:59:33,251 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-07 23:59:45,364 basehttp "POST /unit-details/ HTTP/1.1" 201 1256
+INFO 2025-04-07 23:59:45,402 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:03:37,819 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-08 00:03:39,937 basehttp "POST /unit-details/ HTTP/1.1" 201 1392
+INFO 2025-04-08 00:03:40,014 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:04:03,890 basehttp "GET /admin/Property/unitdetails/828/change/ HTTP/1.1" 200 40292
+INFO 2025-04-08 00:04:03,917 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:04,496 basehttp "GET /admin/Property/unitdetails/828/change/ HTTP/1.1" 200 40292
+INFO 2025-04-08 00:04:04,524 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:09,008 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 64998
+INFO 2025-04-08 00:04:09,037 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:11,789 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18975
+INFO 2025-04-08 00:04:11,819 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:13,791 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 64998
+INFO 2025-04-08 00:04:13,817 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:14,938 basehttp "GET /admin/Property/unitdetails/829/change/ HTTP/1.1" 200 40292
+INFO 2025-04-08 00:04:14,966 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:19,918 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40970
+INFO 2025-04-08 00:04:19,949 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:04:36,911 basehttp "POST /unit-copy/ HTTP/1.1" 200 1397
+INFO 2025-04-08 00:04:39,316 basehttp "POST /unit-details/ HTTP/1.1" 201 1399
+INFO 2025-04-08 00:04:39,343 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:04:40,716 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-08 00:04:40,740 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 00:05:21,038 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:05:21,170 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-08 00:05:21,194 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-08 00:05:21,197 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-08 00:05:21,204 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-04-08 00:05:21,395 log Not Found: /favicon.ico
+WARNING 2025-04-08 00:05:21,396 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-08 00:05:25,075 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-08 00:05:28,605 basehttp "POST /unit-details/ HTTP/1.1" 201 1399
+INFO 2025-04-08 00:05:28,631 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:06:51,417 basehttp "POST /unit-copy/ HTTP/1.1" 200 1404
+INFO 2025-04-08 00:06:54,911 basehttp "POST /unit-details/ HTTP/1.1" 201 1392
+INFO 2025-04-08 00:06:54,981 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:07:27,252 basehttp "POST /unit-copy/ HTTP/1.1" 200 1397
+INFO 2025-04-08 00:07:29,745 basehttp "POST /unit-details/ HTTP/1.1" 201 1392
+INFO 2025-04-08 00:07:29,812 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:08:11,507 basehttp "POST /unit-copy/ HTTP/1.1" 200 1397
+INFO 2025-04-08 00:08:19,516 basehttp "POST /unit-details/ HTTP/1.1" 201 1399
+INFO 2025-04-08 00:08:19,565 basehttp "GET /unit-details/?building_id=1085 HTTP/1.1" 200 56952
+INFO 2025-04-08 00:08:27,858 basehttp "GET /admin/Property/unitdetails/241/change/ HTTP/1.1" 200 40977
+INFO 2025-04-08 00:08:27,883 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-08 09:19:32,996 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
+INFO 2025-04-08 09:19:33,279 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18975

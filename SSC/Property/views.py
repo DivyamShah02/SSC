@@ -91,7 +91,7 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             if data['copy_building_id'] != "NULL":
                 data['building_id'] = data['copy_building_id']
                 building_instance = get_object_or_404(BuildingDetails, building_id=data['copy_building_id'])
-                building_serializer = BuildingDetailsSerializer(building_instance, data=data)
+                building_serializer = BuildingDetailsSerializer(building_instance)
 
                 amenities_instance = get_object_or_404(Amenities, building_id=data['copy_building_id'])
 
@@ -125,13 +125,39 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
                 unit_obj.per_sqft_rate_saleable_duplex = building_serializer.data['per_sqft_rate_saleable_duplex']
                 
                 try:
-                    unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable) * float(unit_obj.size_of_unit)
+                    size_of_unit = float(unit_obj.size_of_unit)                   
+                    property_unit_price = float(unit_obj.per_sqft_rate_saleable) * size_of_unit
 
                     if str(unit.unit_type) == 'Duplex':
-                        unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable_duplex) * float(unit_obj.size_of_unit)
+                        property_unit_price = float(unit_obj.per_sqft_rate_saleable_duplex) * size_of_unit
                     
                     if str(unit.unit_type) == 'Penthouse':
-                        unit_obj.base_price = float(unit_obj.per_sqft_rate_saleable_penthouse) * float(unit_obj.size_of_unit)
+                        property_unit_price = float(unit_obj.per_sqft_rate_saleable_penthouse) * size_of_unit
+
+                    try:
+                        total_development_charges = size_of_unit * float(building_serializer.data['development_charges'])
+                    except:
+                        total_development_charges = 0
+                    
+                    try:                        
+                        total_advance_maintenance = size_of_unit * float(building_serializer.data['advance_maintenance'])
+                    except:
+                        total_advance_maintenance = 0
+
+                    try:
+                        total_maintenance_deposit = size_of_unit * float(building_serializer.data['maintenance_deposit'])
+                    except:
+                        total_maintenance_deposit = 0
+                    
+                    try:            
+                        total_other_specific_expenses = size_of_unit * float(building_serializer.data['other_specific_expenses'])
+                    except:
+                        total_other_specific_expenses = 0
+
+                    total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+                    print(property_unit_price, total_advance_maintenance, total_development_charges, total_maintenance_deposit, total_other_specific_expenses)
+                    unit_obj.base_price = total_property_unit_price
+                    property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
 
                 except:
                     unit_obj.base_price = 0
@@ -277,12 +303,52 @@ class UnitDetailFormViewSet(viewsets.ViewSet):
 
             self.handle_file_uploads(data, request.FILES)
             try:
-                data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
+                building_instance = get_object_or_404(BuildingDetails, building_id=data['building_id'])
+                building_serializer = BuildingDetailsSerializer(building_instance)
+
+                # data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
+                # if str(data['unit_type']) == 'Duplex':
+                #     data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_duplex'])
+                
+                # if str(data['unit_type']) == 'Penthouse':
+                #     data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_penthouse'])
+
+
+
+                size_of_unit = float(data['size_of_unit'])                   
+                property_unit_price = float(data['per_sqft_rate_saleable']) * size_of_unit
+
                 if str(data['unit_type']) == 'Duplex':
-                    data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_duplex'])
+                    property_unit_price = float(data['per_sqft_rate_saleable_duplex']) * size_of_unit
                 
                 if str(data['unit_type']) == 'Penthouse':
-                    data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_penthouse'])
+                    property_unit_price = float(data['per_sqft_rate_saleable_penthouse']) * size_of_unit
+
+                try:
+                    total_development_charges = size_of_unit * float(building_serializer.data['development_charges'])
+                except:
+                    total_development_charges = 0
+                
+                try:                        
+                    total_advance_maintenance = size_of_unit * float(building_serializer.data['advance_maintenance'])
+                except:
+                    total_advance_maintenance = 0
+
+                try:
+                    total_maintenance_deposit = size_of_unit * float(building_serializer.data['maintenance_deposit'])
+                except:
+                    total_maintenance_deposit = 0
+                
+                try:            
+                    total_other_specific_expenses = size_of_unit * float(building_serializer.data['other_specific_expenses'])
+                except:
+                    total_other_specific_expenses = 0
+
+                total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+                print(property_unit_price, total_advance_maintenance, total_development_charges, total_maintenance_deposit, total_other_specific_expenses)
+                data['base_price'] = total_property_unit_price
+                property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
+
 
             except:
                 data['base_price'] = 0

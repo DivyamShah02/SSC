@@ -49,9 +49,12 @@ class Sorter:
 
             # Timeline: add 15% in the time on the higher side
             if 'time_to_seal_deal' in client_data:
-                timeline_variation = float(self.config.client_data_variation.timeline_variation)
-                timeline_value = int(client_data.get('time_to_seal_deal', 0))  # Assuming months
-                updated_data['time_to_seal_deal'] = int(timeline_value * (1 + (timeline_variation / 100)))
+                try:
+                    timeline_variation = float(self.config.client_data_variation.timeline_variation)
+                    timeline_value = int(client_data.get('time_to_seal_deal', 0))  # Assuming months
+                    updated_data['time_to_seal_deal'] = int(timeline_value * (1 + (timeline_variation / 100)))
+                except:
+                    updated_data['time_to_seal_deal'] = 0
 
             # Format bedroom data
             bedrooms_list = client_data.get("bedrooms", "").split(', ')

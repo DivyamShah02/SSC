@@ -511,13 +511,25 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text', 'down_payment_as_on_date']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text', 'down_payment_as_on_date', 'no_of_attached_bathrooms', 'servant_room_available', 'central_air_conditioning', 'private_lifts']
             overview_details = []
-            for key in overview_keys:
+            for key in overview_keys:            
                 if key in unit_data.keys():
                     if key == 'spiritual_or_religious_attraction_text':
                         if building_data['spiritual_or_religious_attraction'] == 'Yes':
                             overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':unit_data[key]})
+                    elif key == 'type_of_parking':
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':', '.join(unit_data[key])})
+                    elif key == 'servant_room_available':
+                        if unit_data[key] == True:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'Yes'})
+                        else:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'No'})
+                    elif key == 'private_lifts':
+                        if unit_data[key] == True:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'Yes'})
+                        else:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'No'})                        
                     else:
                         overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
                 

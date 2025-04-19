@@ -44,6 +44,7 @@
                             <th scope="col">Property Name</th>
                             <th scope="col">Buiding details</th>
                             <th scope="col">Unit details</th>
+                            <th scope="col">View Property</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -54,6 +55,8 @@
                               <td id="all-case-item-{{ forloop.counter }}">{{building.project_name}}</td>
                               <td><button class="btn btn-custom-primary" onclick="window.location = `{% url 'property-detail-list' %}?building_id={{building.building_id}}`">Building Details</button></td>
                               <td><button class="btn btn-custom" onclick="window.location = `{% url 'unit-detail-form-list' %}?building_id={{building.building_id}}`">Unit Details</button></td>
+                              <!-- <td><button class="btn btn-custom-outline-primary" onclick="window.location = `{% url 'view-default-property-list' %}?unit_id={{building.unit_id}}`">View Property</button></td> -->
+                              <td><a class="btn btn-custom-outline-primary" href="{% url 'view-default-property-list' %}?unit_id={{building.unit_id}}">View Property</a></td>
                             </tr>                            
                             {% endfor %}
                         </tbody>

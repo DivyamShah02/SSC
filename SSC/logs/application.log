@@ -37,3 +37,591 @@ INFO 2025-04-19 11:57:50,700 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27
 INFO 2025-04-19 11:57:50,701 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
 WARNING 2025-04-19 11:57:54,527 log Not Found: /favicon.ico
 WARNING 2025-04-19 11:57:54,529 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-19 18:28:19,197 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-04-19 18:28:22,609 basehttp "GET /property-inquiry/ HTTP/1.1" 302 0
+INFO 2025-04-19 18:28:22,643 basehttp "GET /login/?next=/property-inquiry/ HTTP/1.1" 200 3973
+INFO 2025-04-19 18:28:30,160 basehttp "POST /login/ HTTP/1.1" 200 4232
+INFO 2025-04-19 18:28:39,427 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-04-19 18:28:39,441 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
+INFO 2025-04-19 18:28:48,561 basehttp "GET /property-inquiry/?client_id=11 HTTP/1.1" 200 111821
+INFO 2025-04-19 18:28:50,276 basehttp "POST /edit-client/ HTTP/1.1" 200 1791
+ERROR 2025-04-19 18:28:53,528 views Inquiry successfully saved. Client ID: 11
+INFO 2025-04-19 18:28:53,528 basehttp "POST /property-inquiry/ HTTP/1.1" 201 75
+INFO 2025-04-19 18:29:01,206 basehttp "POST /sort/ HTTP/1.1" 200 32
+INFO 2025-04-19 18:29:01,225 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 18:29:01,340 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-19 23:52:37,404 basehttp "POST /edit-client/ HTTP/1.1" 200 1791
+INFO 2025-04-19 23:52:45,464 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 23:52:45,470 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-19 23:52:54,333 basehttp "GET /view-properties/?ind=2&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 23:52:54,340 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-19 23:53:36,943 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 23:53:36,953 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-19 23:53:46,896 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-04-19 23:53:46,979 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:46,979 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:46,991 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:46,991 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:46,992 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:46,999 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-19 23:53:48,329 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 19968
+INFO 2025-04-19 23:53:48,383 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-19 23:53:52,939 basehttp "GET /admin/SorterSession/shortlistedproperty/11/change/ HTTP/1.1" 200 18881
+INFO 2025-04-19 23:53:53,013 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-19 23:53:53,109 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9218
+INFO 2025-04-19 23:53:53,109 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 601
+INFO 2025-04-19 23:53:53,113 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 622
+INFO 2025-04-19 23:53:53,114 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 12157
+INFO 2025-04-19 23:55:01,209 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 23:55:01,218 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+ERROR 2025-04-19 23:56:25,311 views Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 280, in list
+    selected_properties = json.loads(selected_properties_str.replace("'", '"'))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO 2025-04-19 23:56:25,326 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 302 0
+INFO 2025-04-19 23:56:25,339 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-19 23:57:34,540 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 98354
+INFO 2025-04-19 23:57:34,571 basehttp "GET /static/js/confetti.js HTTP/1.1" 304 0
+INFO 2025-04-19 23:57:42,346 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 00:01:53,612 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 98465
+INFO 2025-04-20 00:01:55,955 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 00:02:09,808 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 98465
+INFO 2025-04-20 00:02:09,900 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 00:02:09,931 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 00:02:09,961 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 00:02:09,976 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 00:02:09,976 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 00:02:10,003 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-04-20 00:02:10,027 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-04-20 00:02:13,070 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:02:13,070 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-20 00:02:29,817 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 00:04:26,729 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 98008
+INFO 2025-04-20 00:04:26,773 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 00:04:26,774 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 00:04:26,774 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 00:04:26,778 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 00:04:26,779 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 00:04:26,781 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-04-20 00:04:26,783 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-04-20 00:04:28,556 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:04:28,557 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-20 00:04:51,004 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 00:05:04,588 basehttp "GET /view-properties/?ind=3&session_id=11 HTTP/1.1" 200 96171
+INFO 2025-04-20 00:06:20,059 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 19968
+INFO 2025-04-20 00:06:20,121 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:06:34,183 basehttp "GET /view-properties/?ind=3&session_id=10 HTTP/1.1" 200 100156
+INFO 2025-04-20 00:15:37,519 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-04-20 00:15:39,969 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65009
+INFO 2025-04-20 00:15:40,033 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:15:43,687 basehttp "GET /admin/Property/unitdetails/975/change/ HTTP/1.1" 200 40943
+INFO 2025-04-20 00:15:43,718 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:15:51,034 basehttp "GET /update_unit_base_price HTTP/1.1" 301 0
+INFO 2025-04-20 00:16:09,381 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:16:18,488 basehttp "GET /admin/Property/unitdetails/975/change/ HTTP/1.1" 200 40943
+ERROR 2025-04-20 00:20:27,251 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 388, in update_unit_base_price
+    print(f'Yes: {unit.unit_id}')
+                  ^^^^^^^^^^^^
+AttributeError: 'UnitDetails' object has no attribute 'unit_id'
+ERROR 2025-04-20 00:20:27,255 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 68496
+ERROR 2025-04-20 00:20:45,176 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 385, in update_unit_base_price
+    print(float(unit.per_sqft_rate_saleable) * float(unit.size_of_unit))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+ERROR 2025-04-20 00:20:45,179 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 68850
+ERROR 2025-04-20 00:21:00,102 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 387, in update_unit_base_price
+    if unit.base_price > float(unit.per_sqft_rate_saleable) * float(unit.size_of_unit):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+ERROR 2025-04-20 00:21:00,104 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 68615
+ERROR 2025-04-20 00:21:01,564 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 387, in update_unit_base_price
+    if unit.base_price > float(unit.per_sqft_rate_saleable) * float(unit.size_of_unit):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+ERROR 2025-04-20 00:21:01,566 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 68478
+INFO 2025-04-20 00:22:09,439 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:23:07,905 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+ERROR 2025-04-20 00:26:34,440 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 385, in update_unit_base_price
+    building_data = BuildingDetails.objects.filter(building_id=unit_obj.building_id).first()
+                                                               ^^^^^^^^
+NameError: name 'unit_obj' is not defined
+ERROR 2025-04-20 00:26:34,444 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 69239
+ERROR 2025-04-20 00:26:50,082 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 388, in update_unit_base_price
+    print(float(building_serializer.data['advance_maintenance']))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ReturnDict' object has no attribute 'data'
+ERROR 2025-04-20 00:26:50,371 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 74818
+ERROR 2025-04-20 00:26:50,388 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 388, in update_unit_base_price
+    print(float(building_serializer.data['advance_maintenance']))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ReturnDict' object has no attribute 'data'
+INFO 2025-04-20 00:26:50,390 basehttp - Broken pipe from ('127.0.0.1', 55247)
+ERROR 2025-04-20 00:27:14,803 log Internal Server Error: /update_unit_base_price/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 388, in update_unit_base_price
+    print(float(building_serializer['advance_maintenance']))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+ERROR 2025-04-20 00:27:14,806 basehttp "GET /update_unit_base_price/ HTTP/1.1" 500 73605
+INFO 2025-04-20 00:28:55,863 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:29:05,863 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65009
+INFO 2025-04-20 00:29:05,897 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:29:07,976 basehttp "GET /admin/Property/unitdetails/992/change/ HTTP/1.1" 200 40215
+INFO 2025-04-20 00:29:08,004 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:29:17,018 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 99065
+INFO 2025-04-20 00:29:17,047 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:29:18,603 basehttp "GET /admin/Property/buildingdetails/424/change/ HTTP/1.1" 200 66774
+INFO 2025-04-20 00:29:18,638 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:29:18,739 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9380
+INFO 2025-04-20 00:29:18,741 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19727
+INFO 2025-04-20 00:29:18,790 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-04-20 00:29:18,791 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-04-20 00:32:28,448 basehttp "GET /property-detail/?building_id=1428 HTTP/1.1" 200 135751
+WARNING 2025-04-20 00:32:29,035 log Not Found: /property-copy/
+WARNING 2025-04-20 00:32:29,036 basehttp "POST /property-copy/ HTTP/1.1" 404 56
+WARNING 2025-04-20 00:32:29,112 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:32:29,113 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 00:37:36,058 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 26726
+INFO 2025-04-20 00:37:36,136 basehttp "GET /feedback/?unit_id=277&session_id=1 HTTP/1.1" 200 43
+INFO 2025-04-20 00:38:08,806 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:38:58,648 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:40:00,400 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:40:39,889 basehttp "GET /update_unit_base_price/ HTTP/1.1" 200 18
+INFO 2025-04-20 00:41:45,122 basehttp "GET /admin/Property/unitdetails/975/change/ HTTP/1.1" 200 40943
+INFO 2025-04-20 00:41:45,149 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 00:45:20,643 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-04-20 00:45:25,645 basehttp "GET /dashboard/ HTTP/1.1" 200 274700
+INFO 2025-04-20 00:45:28,345 basehttp "GET /property-detail/?building_id=1376 HTTP/1.1" 200 135637
+INFO 2025-04-20 00:45:32,294 basehttp "POST /property-copy/ HTTP/1.1" 200 3496
+WARNING 2025-04-20 00:45:32,471 log Not Found: /property-detail/null
+WARNING 2025-04-20 00:45:32,472 basehttp "GET /property-detail/null HTTP/1.1" 404 22466
+INFO 2025-04-20 00:45:38,655 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 88816
+INFO 2025-04-20 00:46:17,452 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84978
+INFO 2025-04-20 00:46:27,946 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84978
+INFO 2025-04-20 00:46:55,608 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84799
+INFO 2025-04-20 00:46:56,215 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 00:46:56,233 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 00:46:56,239 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 00:46:56,251 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 00:46:56,258 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 00:46:56,262 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-04-20 00:46:58,321 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:46:58,322 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 00:48:14,660 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84899
+INFO 2025-04-20 00:48:14,695 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 00:48:14,695 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 00:48:14,701 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 00:48:14,701 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 00:48:14,710 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 00:48:14,715 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-04-20 00:48:16,288 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:48:16,288 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 00:54:17,238 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84866
+INFO 2025-04-20 00:54:17,251 basehttp - Broken pipe from ('127.0.0.1', 56454)
+INFO 2025-04-20 00:55:20,301 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84866
+INFO 2025-04-20 00:55:20,493 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 00:55:20,501 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 00:55:20,502 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 00:55:20,503 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 00:55:20,505 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-04-20 00:55:20,507 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+WARNING 2025-04-20 00:55:22,458 log Not Found: /favicon.ico
+WARNING 2025-04-20 00:55:22,459 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 00:55:57,332 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84866
+INFO 2025-04-20 00:56:22,847 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84866
+INFO 2025-04-20 00:56:59,467 basehttp "GET /view-default-property/?unit_id=890 HTTP/1.1" 200 84866
+INFO 2025-04-20 00:57:09,780 basehttp "GET /dashboard/ HTTP/1.1" 200 274700
+INFO 2025-04-20 00:57:24,218 basehttp "GET /unit-details/?building_id=1371 HTTP/1.1" 200 54358
+INFO 2025-04-20 00:57:27,334 basehttp "GET /property-detail/?building_id=1371 HTTP/1.1" 200 135637
+INFO 2025-04-20 00:57:27,437 basehttp "POST /property-copy/ HTTP/1.1" 200 3401
+WARNING 2025-04-20 00:57:27,491 log Not Found: /property-detail/null
+WARNING 2025-04-20 00:57:27,492 basehttp "GET /property-detail/null HTTP/1.1" 404 22466
+INFO 2025-04-20 00:57:31,717 basehttp "GET /view-default-property/?unit_id=877 HTTP/1.1" 200 85143
+WARNING 2025-04-20 00:57:31,758 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153547.png
+WARNING 2025-04-20 00:57:31,763 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153634.png
+WARNING 2025-04-20 00:57:31,764 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153547.png HTTP/1.1" 404 22583
+WARNING 2025-04-20 00:57:31,764 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153634.png HTTP/1.1" 404 22583
+ERROR 2025-04-20 00:57:53,170 views Session ID is required.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 256, in list
+    raise ParseError("Session ID is required.")
+rest_framework.exceptions.ParseError: Session ID is required.
+INFO 2025-04-20 00:57:53,173 basehttp "GET /view-properties/?ind=1&session_id= HTTP/1.1" 302 0
+INFO 2025-04-20 00:57:53,178 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 00:58:36,359 basehttp "GET /view-default-property/?unit_id=878 HTTP/1.1" 200 85143
+WARNING 2025-04-20 00:58:36,404 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153849.png
+WARNING 2025-04-20 00:58:36,410 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153547.png
+WARNING 2025-04-20 00:58:36,411 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153849.png HTTP/1.1" 404 22583
+WARNING 2025-04-20 00:58:36,411 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153547.png HTTP/1.1" 404 22583
+INFO 2025-04-20 00:59:42,002 basehttp "GET /view-default-property/?unit_id=878 HTTP/1.1" 200 85143
+WARNING 2025-04-20 00:59:42,034 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153547.png
+WARNING 2025-04-20 00:59:42,041 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153849.png
+WARNING 2025-04-20 00:59:42,042 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153547.png HTTP/1.1" 404 22583
+WARNING 2025-04-20 00:59:42,042 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153849.png HTTP/1.1" 404 22583
+INFO 2025-04-20 01:00:02,418 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-04-20 01:00:05,058 basehttp "GET /admin/Property/unitdetails/ HTTP/1.1" 200 65009
+INFO 2025-04-20 01:00:05,104 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 01:00:06,482 basehttp "GET /admin/Property/unitdetails/989/change/ HTTP/1.1" 200 40244
+INFO 2025-04-20 01:00:06,523 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 01:00:11,341 basehttp "GET /admin/Property/unitdetails/877/change/ HTTP/1.1" 200 40969
+INFO 2025-04-20 01:00:11,367 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-20 01:03:15,790 basehttp "GET /view-default-property/?unit_id=878 HTTP/1.1" 200 85143
+WARNING 2025-04-20 01:03:15,829 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153547.png
+WARNING 2025-04-20 01:03:15,835 log Not Found: /view-default-property/plan/Screenshot_2025-04-11_153849.png
+WARNING 2025-04-20 01:03:15,836 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153547.png HTTP/1.1" 404 22583
+WARNING 2025-04-20 01:03:15,837 basehttp "GET /view-default-property/plan/Screenshot_2025-04-11_153849.png HTTP/1.1" 404 22583
+INFO 2025-04-20 01:04:44,667 basehttp "GET /view-default-property/?unit_id=878 HTTP/1.1" 200 85291
+INFO 2025-04-20 01:05:16,603 basehttp "GET /dashboard/ HTTP/1.1" 200 274700
+INFO 2025-04-20 01:05:25,578 basehttp "GET /property-detail/?building_id=1288 HTTP/1.1" 200 135637
+INFO 2025-04-20 01:05:30,532 basehttp "POST /property-copy/ HTTP/1.1" 200 3282
+WARNING 2025-04-20 01:05:30,701 log Not Found: /property-detail/null
+WARNING 2025-04-20 01:05:30,701 basehttp "GET /property-detail/null HTTP/1.1" 404 22466
+INFO 2025-04-20 01:05:34,122 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 84146
+ERROR 2025-04-20 01:05:40,735 views Session ID is required.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 256, in list
+    raise ParseError("Session ID is required.")
+rest_framework.exceptions.ParseError: Session ID is required.
+INFO 2025-04-20 01:05:40,737 basehttp "GET /view-properties/?ind=2&session_id= HTTP/1.1" 302 0
+INFO 2025-04-20 01:05:40,743 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 01:06:43,246 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 84134
+INFO 2025-04-20 01:06:43,432 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 01:06:43,434 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:06:43,453 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:06:43,455 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 01:06:43,463 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-04-20 01:06:43,467 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+WARNING 2025-04-20 01:06:49,337 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:06:49,338 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:06:54,033 basehttp "GET /view-default-property/?ind=1 HTTP/1.1" 302 0
+INFO 2025-04-20 01:06:54,037 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 01:07:43,243 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 84146
+INFO 2025-04-20 01:07:52,210 basehttp "GET /view-default-property/?unit_id=679 HTTP/1.1" 200 84152
+INFO 2025-04-20 01:11:12,610 basehttp "GET /dashboard/ HTTP/1.1" 200 339971
+INFO 2025-04-20 01:11:28,237 basehttp "GET /dashboard/ HTTP/1.1" 200 346659
+ERROR 2025-04-20 01:11:36,858 views Field 'id' expected a number but got ''.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 710, in list
+    unit_data_obj = UnitDetails.objects.get(id=unit_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+INFO 2025-04-20 01:11:36,956 basehttp "GET /view-default-property/?unit_id= HTTP/1.1" 302 0
+INFO 2025-04-20 01:11:36,961 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 01:12:32,247 basehttp "GET /dashboard/ HTTP/1.1" 200 346659
+ERROR 2025-04-20 01:12:35,573 views Field 'id' expected a number but got ''.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 710, in list
+    unit_data_obj = UnitDetails.objects.get(id=unit_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+INFO 2025-04-20 01:12:35,583 basehttp "GET /view-default-property/?unit_id= HTTP/1.1" 302 0
+INFO 2025-04-20 01:12:35,591 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 01:12:39,310 basehttp "GET /dashboard/ HTTP/1.1" 200 346659
+ERROR 2025-04-20 01:12:42,062 views Field 'id' expected a number but got ''.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 710, in list
+    unit_data_obj = UnitDetails.objects.get(id=unit_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+INFO 2025-04-20 01:12:42,065 basehttp "GET /view-default-property/?unit_id= HTTP/1.1" 302 0
+INFO 2025-04-20 01:12:42,071 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-04-20 01:13:36,387 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:13:37,490 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:13:37,637 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 01:13:37,638 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:13:37,654 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 01:13:37,655 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:13:37,657 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+WARNING 2025-04-20 01:13:37,849 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:13:37,849 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:14:18,645 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:14:22,300 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+ERROR 2025-04-20 01:15:00,311 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 325, in dashboard
+    'unit_id': UnitDetails.objects.filter(building_id=building.building_id).first().id,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR 2025-04-20 01:15:00,314 basehttp "GET /dashboard/ HTTP/1.1" 500 77073
+INFO 2025-04-20 01:16:48,806 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:16:55,402 basehttp "GET /view-default-property/?unit_id=984 HTTP/1.1" 200 85318
+INFO 2025-04-20 01:17:23,408 basehttp "GET /view-default-property/?unit_id=965 HTTP/1.1" 200 88722
+INFO 2025-04-20 01:18:52,176 basehttp "GET /property-detail/?building_id=1424 HTTP/1.1" 200 135637
+INFO 2025-04-20 01:18:53,477 basehttp "POST /property-copy/ HTTP/1.1" 200 4226
+WARNING 2025-04-20 01:18:53,715 log Not Found: /property-detail/null
+WARNING 2025-04-20 01:18:53,715 basehttp "GET /property-detail/null HTTP/1.1" 404 22466
+INFO 2025-04-20 01:19:09,058 basehttp "GET /property-detail/?building_id=1424 HTTP/1.1" 200 135637
+INFO 2025-04-20 01:19:09,268 basehttp "POST /property-copy/ HTTP/1.1" 200 4226
+WARNING 2025-04-20 01:19:09,320 log Not Found: /property-detail/null
+WARNING 2025-04-20 01:19:09,321 basehttp "GET /property-detail/null HTTP/1.1" 404 22466
+INFO 2025-04-20 01:19:41,779 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:20:41,985 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:20:43,498 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:20:44,938 basehttp "GET /dashboard/ HTTP/1.1" 200 408523
+INFO 2025-04-20 01:20:45,085 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:20:45,088 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 01:20:45,096 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 01:20:45,097 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:20:45,098 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+WARNING 2025-04-20 01:20:45,197 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:20:45,197 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:21:44,526 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:21:49,703 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:21:49,877 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:21:49,879 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:21:49,879 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 01:21:49,881 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 01:21:49,882 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-04-20 01:21:50,010 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:21:50,010 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:21:53,340 basehttp - Broken pipe from ('127.0.0.1', 57630)
+INFO 2025-04-20 01:21:53,945 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:21:53,987 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:21:53,987 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 01:21:53,988 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:21:53,988 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 01:21:53,988 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-04-20 01:21:54,160 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:21:54,160 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:21:55,755 basehttp "GET /dashboard/ HTTP/1.1" 200 410975
+INFO 2025-04-20 01:22:04,636 basehttp - Broken pipe from ('127.0.0.1', 57636)
+INFO 2025-04-20 01:22:09,403 basehttp - Broken pipe from ('127.0.0.1', 57627)
+INFO 2025-04-20 01:22:09,987 basehttp - Broken pipe from ('127.0.0.1', 57646)
+INFO 2025-04-20 01:22:10,113 basehttp "GET /view-default-property/?unit_id=993 HTTP/1.1" 200 94443
+INFO 2025-04-20 01:22:14,319 basehttp - Broken pipe from ('127.0.0.1', 57648)
+INFO 2025-04-20 01:23:16,020 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 112359
+INFO 2025-04-20 01:23:20,745 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 01:24:20,732 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 112365
+INFO 2025-04-20 01:24:20,767 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-20 01:24:20,789 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-20 01:24:20,794 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-20 01:24:20,802 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-20 01:24:20,802 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-20 01:24:21,679 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-04-20 01:24:21,688 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+WARNING 2025-04-20 01:24:23,497 log Not Found: /favicon.ico
+WARNING 2025-04-20 01:24:23,498 basehttp "GET /favicon.ico HTTP/1.1" 404 22439
+INFO 2025-04-20 01:24:24,184 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-04-20 01:24:30,554 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 26726
+INFO 2025-04-20 01:24:30,618 basehttp "GET /feedback/?unit_id=277&session_id=1 HTTP/1.1" 200 43
+INFO 2025-04-20 01:24:40,208 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 26726
+INFO 2025-04-20 01:24:40,245 basehttp "GET /feedback/?unit_id=277&session_id=1 HTTP/1.1" 200 43
+INFO 2025-04-20 01:24:53,384 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 26726
+INFO 2025-04-20 01:24:53,428 basehttp "GET /feedback/?unit_id=277&session_id=1 HTTP/1.1" 200 43
+INFO 2025-04-20 01:25:18,590 basehttp "GET /view-properties/?ind=1&session_id=11 HTTP/1.1" 200 98014
+INFO 2025-04-20 01:25:21,464 basehttp "GET /visit-plan/?session_id=11 HTTP/1.1" 200 24235
+INFO 2025-04-20 01:25:21,504 basehttp "GET /feedback/?unit_id=202&session_id=11 HTTP/1.1" 200 43
+INFO 2025-04-20 01:25:30,173 basehttp "GET /visit-plan/?session_id=11 HTTP/1.1" 200 24235
+INFO 2025-04-20 01:25:30,215 basehttp "GET /feedback/?unit_id=202&session_id=11 HTTP/1.1" 200 43
+INFO 2025-04-20 01:32:59,085 basehttp "GET /admin/Property/unitdetails/996/change/ HTTP/1.1" 200 40204
+INFO 2025-04-20 01:32:59,179 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

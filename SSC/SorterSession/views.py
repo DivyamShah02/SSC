@@ -266,26 +266,27 @@ class PropertyDetailViewset(viewsets.ViewSet):
             properties_data_str = session_data.get('properties', '')
             if not properties_data_str:
                 raise ParseError("No properties found in session data.")
-            
-            selected_properties_str = session_data.get('selected_properties', '')
-            if not selected_properties_str:
-                raise ParseError("No properties found in session data.")
-            
+
             try:
                 properties_data = json.loads(properties_data_str.replace("'", '"'))
             except json.JSONDecodeError:
                 raise ParseError("Error parsing properties data.")
             
+            selected_properties_str = session_data.get('selected_properties', '')
+            # if not selected_properties_str:
+            #     raise ParseError("No properties found in session data.")
+            
             try:
                 selected_properties = json.loads(selected_properties_str.replace("'", '"'))
             except json.JSONDecodeError:
-                raise ParseError("Error parsing properties data.")
+                selected_properties = []
 
             if not isinstance(properties_data, list):
                 raise ParseError("Properties data must be a list.")
             
             if not isinstance(selected_properties, list):
-                raise ParseError("selected_properties data must be a list.")
+                # raise ParseError("selected_properties data must be a list.")
+                selected_properties = []
 
             same_building_id = []
             menu_properties = []
@@ -584,7 +585,6 @@ class PropertyDetailViewset(viewsets.ViewSet):
             except:
                 duration_work = False
             
-            print(menu_properties)
 
             data = {
                 'success': True, 
@@ -636,15 +636,16 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
 
         except ParseError as e:
+            logger.error(e, exc_info=True)
             return redirect('error_page')
             return Response({'success': False, 'error': str(e)}, status=400)
 
         except NotFound as e:
+            logger.error(e, exc_info=True)
             return redirect('error_page')
             return Response({'success': False, 'error': str(e)}, status=404)
 
         except Exception as e:
-            # Catch any other unforeseen errors
             logger.error(e, exc_info=True)
             return redirect('error_page')
             return Response({'success': False, 'error': 'An unexpected error occurred.'}, status=500)
@@ -733,7 +734,6 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
             for amenity in amenties_data.keys():
                 if amenties_data[amenity] == True and type(amenties_data[amenity]) == bool:
-                    print(str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title())
                     all_amenties.append(str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title())
             size_of_unit = float(unit_data.get('size_of_unit'))
 
@@ -890,11 +890,37 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
             except:
                 duration_work = False
             
+            all_other_units = UnitDetails.objects.filter(building_id=building_id).exclude(id=unit_id)
+            if all_other_units:
+                same_building = True
+            else:
+                same_building = False
+
+            final_same_unit_details = []
+            
+            for i, other_unit_data in enumerate(all_other_units):
+                try:                 
+                    same_unit_detail = {
+                    'building_id': building_id,
+                    'size_of_unit': other_unit_data.size_of_unit,
+                    'carpet_area_rera': other_unit_data.carpet_area_rera,
+                    'ind': i+1,
+                    'unit_id': other_unit_data.id,
+                    } 
+
+                    final_same_unit_details.append(same_unit_detail)
+                
+                except Exception as e:
+                    print(e)
+                    logger.error(e, exc_info=True)
+                    pass
 
             data = {
                 'success': True,                
                 'amenties_data':amenties_data,
                 'all_amenties':all_amenties,
+                'final_same_unit_details':final_same_unit_details,
+                'same_building':same_building,
                 'default_amentity':True,
                 'property_unit_price_in_cr':property_unit_price_in_cr,
                 'total_property_unit_price':total_property_unit_price,
@@ -926,7 +952,7 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
                 'origins_work_lng':origins_work[1],
                 }
             
-            return render(request, 'property_detail_design.html', data)
+            return render(request, 'default_property_detail_design.html', data)
             return Response(data)
 
 
@@ -1338,10 +1364,10 @@ class VisitPlanViewSet(viewsets.ViewSet):
         plan = create_visit_plan(start_point, selected_properties_coords, start_datetime)
         visit_details = []
         for step in plan:
-            print(f"Visit property {step['property_id']} at {step['coords']}:\n"
-                    f"  Arrival_time: {step['arrival_time']}\n"
-                    f"  Arrival_date: {step['arrival_date']}\n"
-                    f"  Departure: {step['departure_time']}\n")
+            # print(f"Visit property {step['property_id']} at {step['coords']}:\n"
+            #         f"  Arrival_time: {step['arrival_time']}\n"
+            #         f"  Arrival_date: {step['arrival_date']}\n"
+            #         f"  Departure: {step['departure_time']}\n")
             temp_plan = {
                 'unit_id':step['property_id'],
                 'Arrival_time' : step['arrival_time'],
@@ -1622,9 +1648,6 @@ class FeedbackViewSet(viewsets.ViewSet):
         try:
             session_id = request.GET.get('session_id')
             unit_id = request.GET.get('unit_id')
-
-            print(session_id)
-            print(unit_id)
 
             try:
                 session_data_obj = ShortlistedProperty.objects.get(id=session_id)

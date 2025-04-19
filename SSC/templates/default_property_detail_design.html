@@ -273,10 +273,8 @@
 
     <div id="main-content" class="blur">
         <!-- Best result start -->
-        <div class="py-2 pt-3 text-center best-results" style="margin-top: 68px !important;">
-            Showing best property for <b class="text-primary-ssc"><u>{{client_data.name}}</u></b>
+        <div class="py-2 pt-3 text-center" style="margin-top: 68px !important;">            
         </div>
-        <!-- Best result end -->
 
         <!-- Basic Property Detail start -->
         <div class="mt-3 container">
@@ -420,7 +418,7 @@
                         style="z-index: 999; display: none; width: 20rem;">
                         {% for same_unit in final_same_unit_details %}
                         <div class="card my-2" style="border: 3px solid black; cursor: pointer;"
-                            onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}`">
+                            onclick="window.location = `{% url 'view-default-property-list' %}?unit_id={{same_unit.unit_id}}`">
                             <div class="card-body row">
                                 <div class="col-2">
                                     <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
@@ -1037,87 +1035,6 @@
             </div>
         </div>
 
-        <!-- Fixed Bottom Bar -->
-        <div class="fixed-bottom-bar">
-            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
-                <!-- Left Section -->
-                <div class="d-flex align-items-center mb-2 mb-md-0">
-                    <!-- Navigation Buttons -->
-                    {% if prev_ind == False %}
-                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-left"></i></button>
-                    {% else %}
-                    <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;"
-                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-left"></i></button>
-                    {% endif %}
-
-                    {% if next_ind == False %}
-                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-right"></i></button>
-                    {% else %}
-                    <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;"
-                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-right"></i></button>
-                    {% endif %}
-
-                    <!-- Property Details -->
-                    <div class="mx-3">
-                        <h5 class="text-primary-ssc"><b>{{main_property.project_name}}</b>
-                        </h5>
-                        <p><b>{{unit_data.unit_configuration}}</b></p>
-                    </div>
-                </div>
-
-                <!-- Right Section (Action Buttons) -->
-                <div class="justify-content-end">
-                    <a href="{{main_property.brochure_1}}" target="_blank"
-                        class="btn btn-light rounded-5 py-2 px-3 mx-2"><i class="fas fa-arrow-up-from-bracket"></i>
-                        Brochure</a>
-                    <a href="#" class="btn btn-danger rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
-                    <button onclick="save_property_for_visit('{{index}}', '{{session_id}}')" id="select_property"
-                        class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Select</b></button>
-                    <a onclick="window.location.href=`{% url 'visit-plan-list' %}?session_id={{session_id}}`;"
-                        class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
-                </div>
-            </div>
-            <!-- <div class="row m-0">
-                <div class="col-lg-1 col-md-2 col-6 p-0">
-                    {% if prev_ind == False %}
-                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-left"></i></button>
-                    {% else %}
-                    <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;"
-                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-left"></i></button>
-                    {% endif %}
-
-                    {% if next_ind == False %}
-                    <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-right"></i></button>
-                    {% else %}
-                    <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;"
-                        class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
-                            class="fa fa-arrow-right"></i></button>
-                    {% endif %}
-                </div>
-                <div class="col-lg-5 col-md-4 col-6 text-start p-0">
-                    <h5 class="text-primary-ssc"><b>{{main_property.project_name}}</b>
-                    </h5>
-                    <p><b>{{unit_data.unit_configuration}}</b></p>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 text-end">
-                    <a href="{{main_property.brochure_1}}" target="_blank" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
-                            class="fas fa-arrow-up-from-bracket"></i> Brochure</a>
-                    <a href="#" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
-                    <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
-                </div>
-            </div> -->
-        </div>
 
         <div class="container">
             <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
@@ -1513,8 +1430,8 @@
                     document.getElementById('select_property').innerHTML = '<b>Selected</b>';
                     document.getElementById('select_property').className = 'btn btn-success rounded-5 py-2 px-3 mx-2';
                     document.getElementById('select_property').disabled = true;
-                    // fun_confetti_start();
-                    // fun_confetti_stop();
+                    fun_confetti_start();
+                    fun_confetti_stop();
                 } else {
                     alert('Unable to select property.');
                     console.log(data);

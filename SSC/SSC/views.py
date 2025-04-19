@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from Property.models import BuildingDetails, UnitDetails, Amenities
+from Property.serializers import BuildingDetailsSerializer, UnitDetailsSerializer, AmenitiesSerializer
 from ClientDetail.models import PropertyInquiry
 from SorterSession.models import ShortlistedProperty
 import random
@@ -295,11 +296,17 @@ def dashboard(request):
     if not user.is_staff:
         if 'Building Detail' in group_names:
             all_building_details = BuildingDetails.objects.filter(property_added_by=f'{request.user}')
+            first_unit = UnitDetails.objects.filter(building_id=building.building_id).first()
+            if first_unit is None:
+                unit_id = None
+            else:
+                unit_id = first_unit.id
             final_building_data = []
             for building in all_building_details:
                 temp_dict = {
                     'building_id': building.building_id,
-                    'project_name': building.project_name
+                    'project_name': building.project_name,
+                    'unit_id': unit_id,
                 }
                 final_building_data.append(temp_dict)
             data = {
@@ -316,9 +323,15 @@ def dashboard(request):
     all_building_details = BuildingDetails.objects.all()
     final_building_data = []
     for building in all_building_details:
+        first_unit = UnitDetails.objects.filter(building_id=building.building_id).first()
+        if first_unit is None:
+            unit_id = None
+        else:
+            unit_id = first_unit.id
         temp_dict = {
             'building_id': building.building_id,
-            'project_name': building.project_name
+            'project_name': building.project_name,
+            'unit_id': unit_id,
         }
         final_building_data.append(temp_dict)
     data = {
@@ -328,3 +341,100 @@ def dashboard(request):
 
     return render(request, 'dashboard.html', data)
 
+def update_unit_base_price(request):
+    all_units = UnitDetails.objects.all()
+    for unit in all_units:
+        unit_obj = UnitDetails.objects.get(id=unit.id)   
+        building_data = BuildingDetails.objects.filter(building_id=unit_obj.building_id).first()
+        building_serializer = BuildingDetailsSerializer(building_data).data
+
+        try:
+            size_of_unit = float(unit_obj.size_of_unit)                   
+            property_unit_price = float(unit_obj.per_sqft_rate_saleable) * size_of_unit
+
+            if str(unit.unit_type) == 'Duplex':
+                property_unit_price = float(unit_obj.per_sqft_rate_saleable_duplex) * size_of_unit
+            
+            if str(unit.unit_type) == 'Penthouse':
+                property_unit_price = float(unit_obj.per_sqft_rate_saleable_penthouse) * size_of_unit
+
+            try:
+                if building_serializer['development_charges'] == None or building_serializer['development_charges'] == "":
+                    development_charges = 0
+                else:
+                    development_charges = float(building_serializer['development_charges'])
+                total_development_charges = size_of_unit * development_charges
+            except:
+                total_development_charges = 0
+            
+            try:
+                if building_serializer['advance_maintenance'] == None or building_serializer['advance_maintenance'] == "":
+                    advance_maintenance = 0
+                else:
+                    advance_maintenance = float(building_serializer['advance_maintenance'])
+                total_advance_maintenance = size_of_unit * advance_maintenance
+            except:
+                total_advance_maintenance = 0
+
+            try:
+                if building_serializer['maintenance_deposit'] == None or building_serializer['maintenance_deposit'] == "":
+                    maintenance_deposit = 0
+                else:
+                    maintenance_deposit = float(building_serializer['maintenance_deposit'])
+                total_maintenance_deposit = size_of_unit * maintenance_deposit
+            except:
+                total_maintenance_deposit = 0
+            
+            try:
+                if building_serializer['other_specific_expenses'] == None or building_serializer['other_specific_expenses'] == "":
+                    other_specific_expenses = 0
+                else:
+                    other_specific_expenses = float(building_serializer['other_specific_expenses'])
+                total_other_specific_expenses = size_of_unit * other_specific_expenses
+            except:
+                total_other_specific_expenses = 0
+
+            total_property_unit_price = property_unit_price + total_advance_maintenance + total_development_charges + total_maintenance_deposit + total_other_specific_expenses
+            print(property_unit_price, total_advance_maintenance, total_development_charges, total_maintenance_deposit, total_other_specific_expenses)
+            unit_obj.base_price = total_property_unit_price
+            property_unit_price_in_cr = round((total_property_unit_price) / 10000000, 2)
+
+        except:
+            unit_obj.base_price = 0
+        
+        unit_obj.save()
+
+    return HttpResponse('Base Price Updated')
+
+def update_unit_base_price_old(request):
+    all_units = UnitDetails.objects.all()
+    all_building = []
+    for unit in all_units:
+        building_data = BuildingDetails.objects.filter(building_id=unit.building_id).first()
+        building_serializer = BuildingDetailsSerializer(building_data).data
+        
+        # if building_serializer['advance_maintenance'] == None or building_serializer['advance_maintenance'] == "":
+        #     advance_maintenance = 0
+        # else:
+        #     advance_maintenance = float(building_serializer['advance_maintenance'])
+
+        # print(advance_maintenance)
+        
+
+        # print(unit.base_price)
+        # print(float(unit.per_sqft_rate_saleable) * float(unit.size_of_unit))
+
+        if unit.per_sqft_rate_saleable == None or unit.per_sqft_rate_saleable == "":
+            per_sqft_rate_saleable = 0
+        else:
+            per_sqft_rate_saleable = float(unit.per_sqft_rate_saleable)
+
+        if unit.base_price == float(per_sqft_rate_saleable) * float(unit.size_of_unit):
+            if unit.building_id not in all_building:
+                all_building.append(unit.building_id)
+                print(f'Yes: {unit.building_id}')
+    
+    print(all_building)
+    print(len(all_building))
+
+    return HttpResponse('Base Price Updated')

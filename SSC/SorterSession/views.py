@@ -267,13 +267,26 @@ class PropertyDetailViewset(viewsets.ViewSet):
             if not properties_data_str:
                 raise ParseError("No properties found in session data.")
             
+            selected_properties_str = session_data.get('selected_properties', '')
+            if not selected_properties_str:
+                raise ParseError("No properties found in session data.")
+            
             try:
                 properties_data = json.loads(properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+            
+            try:
+                selected_properties = json.loads(selected_properties_str.replace("'", '"'))
             except json.JSONDecodeError:
                 raise ParseError("Error parsing properties data.")
 
             if not isinstance(properties_data, list):
                 raise ParseError("Properties data must be a list.")
+            
+            if not isinstance(selected_properties, list):
+                raise ParseError("selected_properties data must be a list.")
+
             same_building_id = []
             menu_properties = []
             same_units = {}
@@ -281,6 +294,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
             for i, property in enumerate(properties_data[0:15]):
                 try:
                     unit_id = property.get('unit_id')
+                    
+                    property_selected = False
+                    if unit_id in selected_properties:
+                        property_selected = True
+                    
                     unit_data = UnitDetails.objects.get(id=unit_id)
                     
                     building_id = unit_data.building_id
@@ -301,7 +319,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         active_property = True
 
                     if building_id not in same_building_id:
-                        menu_properties.append({'unit_id':unit_id, 'building_id':building_id, 'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1})
+                        menu_properties.append({'unit_id':unit_id, 'building_id':building_id, 'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1, 'property_selected': property_selected})
                         same_building_id.append(building_id)
                         same_units[building_id] = []
                         same_units[building_id].append({
@@ -566,6 +584,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
             except:
                 duration_work = False
             
+            print(menu_properties)
 
             data = {
                 'success': True, 
@@ -1000,10 +1019,10 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 size_of_unit = float(unit_data.size_of_unit)
 
                 property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
-                if str(unit_data.get('unit_type')) == 'Duplex':
+                if str(unit_data.unit_type) == 'Duplex':
                     property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_duplex)
                 
-                if str(unit_data.get('unit_type')) == 'Penthouse':
+                if str(unit_data.unit_type) == 'Penthouse':
                     property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_penthouse)
 
                 basic_price = round(property_unit_price/ 10000000, 2)
@@ -1012,10 +1031,10 @@ class VisitPlanViewSet(viewsets.ViewSet):
                 size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
                 per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
-                if str(unit_data.get('unit_type')) == 'Duplex':
+                if str(unit_data.unit_type) == 'Duplex':
                     per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_duplex) / 1000, 2)
                 
-                if str(unit_data.get('unit_type')) == 'Penthouse':
+                if str(unit_data.unit_type) == 'Penthouse':
                     per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_penthouse) / 1000, 2)
 
 
@@ -1129,10 +1148,10 @@ class VisitPlanViewSet(viewsets.ViewSet):
 
                     size_of_unit = float(unit_data.size_of_unit)
                     property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable)
-                    if str(unit_data.get('unit_type')) == 'Duplex':
+                    if str(unit_data.unit_type) == 'Duplex':
                         property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_duplex)
                     
-                    if str(unit_data.get('unit_type')) == 'Penthouse':
+                    if str(unit_data.unit_type) == 'Penthouse':
                         property_unit_price = size_of_unit * float(unit_data.per_sqft_rate_saleable_penthouse)
 
                     basic_price = round(property_unit_price/ 10000000, 2)
@@ -1141,10 +1160,10 @@ class VisitPlanViewSet(viewsets.ViewSet):
                     size_of_unit_mtrs = round(size_of_unit * 10.76, 2)
 
                     per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable) / 1000, 2)
-                    if str(unit_data.get('unit_type')) == 'Duplex':
+                    if str(unit_data.unit_type) == 'Duplex':
                         per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_duplex) / 1000, 2)
                     
-                    if str(unit_data.get('unit_type')) == 'Penthouse':
+                    if str(unit_data.unit_type) == 'Penthouse':
                         per_sqft_rate_saleable = round(float(unit_data.per_sqft_rate_saleable_penthouse) / 1000, 2)
 
 

@@ -40,140 +40,148 @@
         }
     </style>
 
-<style>
-    .image-container-main-img {
-        display: flex;
-        border-radius: 15px;
-        width: 100%;
-        height: 400px; /* Adjust height as needed */
-        gap: 10px; /* Increased space between images for transparency */
-        background-color: transparent;
-    }
-
-    .primary-images-main-img {
-        flex: 2;
-        position: relative;
-        overflow: hidden;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .primary-images-main-img::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("{{main_property.head_image|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
-        background-size: cover;
-        filter: blur(20px);
-        z-index: -1;
-    }
-
-    .primary-images-main-img img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* Ensures the full image is shown */
-        z-index: 1;
-    }
-
-    .overlay-text-main-img {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 3px;
-        font-size: 14px;
-        z-index: 2;
-    }
-
-    .secondary-images-main-img {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Increased gap for transparency */
-    }
-
-    .secondary-images-main-img-one{
-        width: 100%;
-        height: calc(50% - 5px); /* Half height minus half of the gap */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        border-top-right-radius: 15px;
-    }
-    .secondary-images-main-img-two {
-        width: 100%;
-        height: calc(50% - 5px); /* Half height minus half of the gap */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        border-bottom-right-radius: 15px;
-    }
-
-    .secondary-images-main-img-one::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
-        background-size: cover;
-        filter: blur(20px);
-        z-index: -1;
-    }
-
-    .secondary-images-main-img-two::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
-        background-size: cover;
-        filter: blur(20px);
-        z-index: -1;
-    }
-
-    .secondary-images-main-img-one img,
-    .secondary-images-main-img-two img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* Ensures full image visibility */
-        z-index: 1;
-    }
-
-    @media (max-width: 992px) {
+    <style>
         .image-container-main-img {
-            flex-direction: column;
-            height: auto;
+            display: flex;
+            border-radius: 15px;
+            width: 100%;
+            height: 400px;
+            /* Adjust height as needed */
             gap: 10px;
+            /* Increased space between images for transparency */
+            background-color: transparent;
+        }
+
+        .primary-images-main-img {
+            flex: 2;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .primary-images-main-img::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{{main_property.head_image|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .primary-images-main-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures the full image is shown */
+            z-index: 1;
+        }
+
+        .overlay-text-main-img {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            z-index: 2;
         }
 
         .secondary-images-main-img {
-            flex-direction: row;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
+            /* Increased gap for transparency */
         }
 
-        .secondary-images-main-img-one,
-        .secondary-images-main-img-two {
-            height: 150px;
-            width: calc(50% - 5px);
+        .secondary-images-main-img-one {
+            width: 100%;
+            height: calc(50% - 5px);
+            /* Half height minus half of the gap */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-top-right-radius: 15px;
         }
-    }
-</style>
+
+        .secondary-images-main-img-two {
+            width: 100%;
+            height: calc(50% - 5px);
+            /* Half height minus half of the gap */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-bottom-right-radius: 15px;
+        }
+
+        .secondary-images-main-img-one::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .secondary-images-main-img-two::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}") no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .secondary-images-main-img-one img,
+        .secondary-images-main-img-two img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image visibility */
+            z-index: 1;
+        }
+
+        @media (max-width: 992px) {
+            .image-container-main-img {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+            }
+
+            .secondary-images-main-img {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .secondary-images-main-img-one,
+            .secondary-images-main-img-two {
+                height: 150px;
+                width: calc(50% - 5px);
+            }
+        }
+    </style>
 
 </head>
 
@@ -210,35 +218,56 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/dashboard/">Dashboard</a>
+                        </li>
+                    </ul>
                     {% for menu_property in menu_properties %}
+
                     {% if menu_property.active_property == True %}
-                    <div class="card mb-3 ssc-images primary-images"
+                    {% if menu_property.property_selected == True %}
+                    <div class="card mb-3 border-success ssc-images primary-images"
                         onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
-                        style="border: 4px black solid; cursor: pointer;">
+                        style="border: 4px solid; cursor: pointer;">
                         {% else %}
                         <div class="card mb-3 ssc-images primary-images"
                             onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
-                            style="cursor: pointer;">
+                            style="border: 4px black solid; cursor: pointer;">
                             {% endif %}
-                            <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
-                            <img src="{{menu_property.property_img|default:'/static/img/Coming Soon.png'}}"
-                                alt="Property Image"
-                                style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
-                            <!-- <div class="golden-badge">Premium Property</div> -->
-                            <div class="card-body">
-                                <h5 class="card-title">{{forloop.counter}}) - <u>{{menu_property.property_name}}</u></h5>
-                                <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
-                                <h5 class="card-title">₹ {{menu_property.property_basic_price}} Cr</h5>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        <!-- <form class="d-flex mt-3" role="search">
+
+                            {% else %}
+                            {% if menu_property.property_selected == True %}
+                            <div class="card mb-3 border-success ssc-images primary-images"
+                                onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                style="border: 4px solid; cursor: pointer;">
+                                {% else %}
+                                <div class="card mb-3 ssc-images primary-images"
+                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                    style="cursor: pointer;">
+                                    {% endif %}
+                                    {% endif %}
+
+                                    <!-- <img src="https://www.adanirealty.com/-/media/Project/Realty/Residential/Ahmedabad/Ambrosia/Carousel-Images/Outdoor/7_1980-X-1080_1.jpg" -->
+                                    <img src="{{menu_property.property_img|default:'/static/img/Coming Soon.png'}}"
+                                        alt="Property Image"
+                                        style="border-radius: 0% !important;  height: 250px; width: 100%; object-fit: cover;">
+                                    <!-- <div class="golden-badge">Premium Property</div> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{forloop.counter}}) -
+                                            <u>{{menu_property.property_name}}</u></h5>
+                                        <h6 class="card-title">By - {{menu_property.property_group_name}}</h6>
+                                        <h5 class="card-title">₹ {{menu_property.property_basic_price}} Cr</h5>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <!-- <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-custom-outline-primary" type="submit">Search</button>
                         </form> -->
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
     </nav>
     <!-- Navigation bar end -->
 
@@ -297,16 +326,19 @@
                 <div class="image-container-main-img">
                     <!-- Main Image -->
                     <div class="primary-images-main-img">
-                        <img src="{{main_property.head_image|default:'/static/img/Coming Soon.png'}}" alt="Main Project Image">
+                        <img src="{{main_property.head_image|default:'/static/img/Coming Soon.png'}}"
+                            alt="Main Project Image">
                         <!-- <div class="overlay-text-main-img">The Verity</div> -->
                     </div>
                     <!-- Right Column with Two Images -->
                     <div class="secondary-images-main-img">
                         <div class="secondary-images-main-img-one">
-                            <img src="{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}" alt="Thumbnail 1">
+                            <img src="{{main_property.sec_image_1|default:'/static/img/Coming Soon.png'}}"
+                                alt="Thumbnail 1">
                         </div>
                         <div class="secondary-images-main-img-two">
-                            <img src="{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}" alt="Thumbnail 2">
+                            <img src="{{main_property.sec_image_2|default:'/static/img/Coming Soon.png'}}"
+                                alt="Thumbnail 2">
                         </div>
                     </div>
                 </div>
@@ -375,24 +407,28 @@
                             {% if same_building == True %}
                             <div class="col-1 px-1">
                                 <br>
-                                <i class="fa fa-chevron-down" id="down-same-unit" style="cursor: pointer;" onclick="toggleSameUnit(true)"></i>
-                                <i class="fa fa-chevron-up" id="up-same-unit" style="cursor: pointer; display: none;" onclick="toggleSameUnit(false)"></i>
+                                <i class="fa fa-chevron-down" id="down-same-unit" style="cursor: pointer;"
+                                    onclick="toggleSameUnit(true)"></i>
+                                <i class="fa fa-chevron-up" id="up-same-unit" style="cursor: pointer; display: none;"
+                                    onclick="toggleSameUnit(false)"></i>
                             </div>
                             {% endif %}
                         </div>
                     </div>
                     {% if same_building == True %}
-                    <div class="position-absolute bg-white p-3" id="same_units_dropdown" style="z-index: 999; display: none; width: 20rem;">
+                    <div class="position-absolute bg-white p-3" id="same_units_dropdown"
+                        style="z-index: 999; display: none; width: 20rem;">
                         {% for same_unit in final_same_unit_details %}
                         <div class="card my-2" style="border: 3px solid black; cursor: pointer;"
-                        onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}`">
+                            onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}`">
                             <div class="card-body row">
                                 <div class="col-2">
                                     <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
                                 </div>
                                 <div class="col-10 px-4">
                                     <p class="card-text text-light-ssc m-0"><b>Unit Size</b></p>
-                                    <h5 class="card-title text-primary-ssc"><b>{{same_unit.size_of_unit}} Sq. Ft.</b></h5>
+                                    <h5 class="card-title text-primary-ssc"><b>{{same_unit.size_of_unit}} Sq. Ft.</b>
+                                    </h5>
                                     <!-- <p class="card-text text-light-ssc"><b>{{size_of_unit_mtrs}} Sq. Mtrs<span class="text-primary-ssc"></span></b></p> -->
                                     <p class="card-text text-light-ssc"><b>{{same_unit.carpet_area_rera}} Sq. Ft<span
                                                 class="text-primary-ssc"></span></b></p>
@@ -400,7 +436,7 @@
                             </div>
                         </div>
                         {% endfor %}
-                        
+
                     </div>
                     {% endif %}
                 </div>
@@ -537,8 +573,8 @@
                                             <h5 class="mt-2"><b>{{unit_data.unit_configuration}} Floor Plan</b></h5>
                                         </div>
                                         <div class="image-container">
-                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}" alt="Image 1" data-bs-toggle="modal"
-                                                data-bs-target="#tab-modal1">
+                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}"
+                                                alt="Image 1" data-bs-toggle="modal" data-bs-target="#tab-modal1">
                                         </div>
                                     </div>
 
@@ -548,19 +584,20 @@
                                             <h5 class="mt-2"><b>{{unit_data.unit_configuration}} Unit Plan</b></h5>
                                         </div>
                                         <div class="image-container">
-                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}" alt="Image 2" data-bs-toggle="modal"
-                                                data-bs-target="#tab-modal2">
+                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}"
+                                                alt="Image 2" data-bs-toggle="modal" data-bs-target="#tab-modal2">
                                         </div>
                                     </div>
-                                    
-                                    {% for extra_plan in unit_data.uploaded_extra_plans %}
-                                        {% if forloop.counter == 1 %}
-                                            <div class="col-12 text-end">
-                                                <p class="" data-bs-toggle="modal" data-bs-target="#tab-modal3" style="cursor: pointer;"><b><u>View All</u></b></p>                                        
-                                            </div>                                       
-                                        {% endif %}
 
-                                    {% endfor %}                                    
+                                    {% for extra_plan in unit_data.uploaded_extra_plans %}
+                                    {% if forloop.counter == 1 %}
+                                    <div class="col-12 text-end">
+                                        <p class="" data-bs-toggle="modal" data-bs-target="#tab-modal3"
+                                            style="cursor: pointer;"><b><u>View All</u></b></p>
+                                    </div>
+                                    {% endif %}
+
+                                    {% endfor %}
                                 </div>
                             </div>
 
@@ -569,13 +606,15 @@
                                 <div class="modal-dialog custom-size">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="tab-modal1Label">{{unit_data.unit_configuration}} Floor Plan</h5>
+                                            <h5 class="modal-title" id="tab-modal1Label">
+                                                {{unit_data.unit_configuration}} Floor Plan</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <!-- Full-size Image -->
-                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}" alt="Full Size Image" class="img-fluid">
+                                            <img src="{{unit_data.floor_plan|default:'/static/img/Coming Soon.png'}}"
+                                                alt="Full Size Image" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -586,48 +625,57 @@
                                 <div class="modal-dialog custom-size">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="tab-modal2Label">{{unit_data.unit_configuration}} Unit Plan</h5>
+                                            <h5 class="modal-title" id="tab-modal2Label">
+                                                {{unit_data.unit_configuration}} Unit Plan</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <!-- Full-size Image -->
-                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}" alt="Full Size Image" class="img-fluid">
+                                            <img src="{{unit_data.unit_plan|default:'/static/img/Coming Soon.png'}}"
+                                                alt="Full Size Image" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="modal fade" id="tab-modal3" tabindex="-1" aria-labelledby="tab-modal3Label" aria-hidden="true">
+                            <div class="modal fade" id="tab-modal3" tabindex="-1" aria-labelledby="tab-modal3Label"
+                                aria-hidden="true">
                                 <div class="modal-dialog custom-size">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="tab-modal3Label">{{unit_data.unit_configuration}} Plan</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <h5 class="modal-title" id="tab-modal3Label">
+                                                {{unit_data.unit_configuration}} Plan</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <!-- Carousel -->
                                             <div id="floorPlanCarousel" class="carousel slide" data-bs-ride="carousel">
-                                                <div class="carousel-inner">                                            
+                                                <div class="carousel-inner">
                                                     {% for extra_plan in unit_data.uploaded_extra_plans %}
-                                                        {% if forloop.counter == 1 %}
-                                                            <div class="carousel-item active">
-                                                                <img src="{{extra_plan}}" class="d-block w-100 img-fluid" alt="Floor Plan 3">
-                                                            </div>
-                                                        {% else %}
-                                                            <div class="carousel-item">
-                                                                <img src="{{extra_plan}}" class="d-block w-100 img-fluid" alt="Floor Plan 3">
-                                                            </div>
-                                                        {% endif %}
+                                                    {% if forloop.counter == 1 %}
+                                                    <div class="carousel-item active">
+                                                        <img src="{{extra_plan}}" class="d-block w-100 img-fluid"
+                                                            alt="Floor Plan 3">
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="carousel-item">
+                                                        <img src="{{extra_plan}}" class="d-block w-100 img-fluid"
+                                                            alt="Floor Plan 3">
+                                                    </div>
+                                                    {% endif %}
 
                                                     {% endfor %}
                                                 </div>
                                                 <!-- Carousel controls (previous and next buttons) -->
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#floorPlanCarousel" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#floorPlanCarousel" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#floorPlanCarousel" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#floorPlanCarousel" data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </button>
@@ -636,7 +684,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                         </div>
                         <!-- Floor plan end -->
@@ -977,7 +1025,7 @@
                                         <td class="">{{field.key}}</td>
                                         <th>{{field.value}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                     </tr>
-                                    {% endfor %}                                    
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -1004,7 +1052,7 @@
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-left"></i></button>
                     {% endif %}
-    
+
                     {% if next_ind == False %}
                     <button disabled class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-right"></i></button>
@@ -1014,7 +1062,7 @@
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-right"></i></button>
                     {% endif %}
-    
+
                     <!-- Property Details -->
                     <div class="mx-3">
                         <h5 class="text-primary-ssc"><b>{{main_property.project_name}}</b>
@@ -1025,11 +1073,14 @@
 
                 <!-- Right Section (Action Buttons) -->
                 <div class="justify-content-end">
-                    <a href="{{main_property.brochure_1}}" target="_blank" class="btn btn-light rounded-5 py-2 px-3 mx-2"><i
-                        class="fas fa-arrow-up-from-bracket"></i> Brochure</a>
-                <a href="#" class="btn btn-danger rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
-                <a onclick="save_property_for_visit('{{index}}', '{{session_id}}')" class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Select</b></a>
-                <a onclick="window.location.href=`{% url 'visit-plan-list' %}?session_id={{session_id}}`;" class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
+                    <a href="{{main_property.brochure_1}}" target="_blank"
+                        class="btn btn-light rounded-5 py-2 px-3 mx-2"><i class="fas fa-arrow-up-from-bracket"></i>
+                        Brochure</a>
+                    <a href="#" class="btn btn-danger rounded-5 py-2 px-3 mx-2"><b>Hide</b></a>
+                    <button onclick="save_property_for_visit('{{index}}', '{{session_id}}')" id="select_property"
+                        class="btn btn-custom rounded-5 py-2 px-3 mx-2"><b>Select</b></button>
+                    <a onclick="window.location.href=`{% url 'visit-plan-list' %}?session_id={{session_id}}`;"
+                        class="btn btn-custom-primary rounded-5 py-2 px-3 mx-2"><b>Plan A Visit</b></a>
                 </div>
             </div>
             <!-- <div class="row m-0">
@@ -1077,6 +1128,7 @@
     <input type="hidden" name="" id="lat_cord" value="{{lat_cord}}">
     <input type="hidden" name="" id="lng_cord" value="{{lng_cord}}">
     <script src="/static/js/script.js"></script>
+    <script src="/static/js/confetti.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -1117,7 +1169,7 @@
         let directionsService;
         let directionsRenderers = []; // Array to hold multiple directions renderers
         let defaultLocation;
-        
+
         let routeColors = [
             "#FF5733", // Orange-red
             "#33FF57", // Green
@@ -1213,7 +1265,7 @@
                             // document.getElementById('commute-searchbox').style.display = 'none'
                             document.getElementById('place-search').value = ''
                         });
-                    
+
                     setTimeout(addStylelabel, 1000);
                 }
 
@@ -1253,7 +1305,7 @@
                 origin: defaultLocation,
                 destination: destination,
                 travelMode: 'DRIVING',
-            }, function(response, status) {
+            }, function (response, status) {
                 if (status === 'OK') {
                     directionsRenderer.setDirections(response);
                     routeIndex++;
@@ -1354,11 +1406,11 @@
             const destination_sch = { lat: Number('{{origins_sch_lat}}'), lng: Number('{{origins_sch_lng}}') };
             calculateRoute(destination_sch);
             addMarker(destination_sch, '{{sch_info}}');
-            
+
             const destination_work = { lat: Number('{{origins_work_lat}}'), lng: Number('{{origins_work_lng}}') };
             calculateRoute(destination_work);
             addMarker(destination_work, '{{work_info}}');
-            
+
             setTimeout(addStylelabel, 1000);
             toggle_loader();
         };
@@ -1453,7 +1505,7 @@
             let property_unit_price_in_cr = Math.round((total_property_amt / 100) * 100) / 100;
             document.getElementById('total_property_amt').innerText = property_unit_price_in_cr
         }
-    
+
         async function save_property_for_visit(index, session_id) {
             try {
                 const response = await fetch("{% url 'select-property-list' %}", {  // Use the appropriate URL for your API endpoint
@@ -1462,19 +1514,24 @@
                         'Content-Type': 'application/json',
                         'X-CSRFToken': '{{csrf_token}}'
                     },
-                    body: JSON.stringify({ 
+                    body: JSON.stringify({
                         "ind": index,
-                        "session_id": session_id 
+                        "session_id": session_id
                     })
                 });
 
                 const data = await response.json();
                 if (data.success === true) {
-                    console.log(data.success);
+                    document.getElementById('select_property').innerHTML = '<b>Selected</b>';
+                    document.getElementById('select_property').disabled = true;
+                    fun_confetti_start();
+                    fun_confetti_stop();
                 } else {
-                    console.log(data.success);
+                    alert('Unable to select property.');
+                    console.log(data);
                 }
             } catch (error) {
+                alert('Unable to select property.');
                 console.error("Error submitting document form: ", error);
             }
         }
@@ -1491,6 +1548,18 @@
                 document.getElementById('up-same-unit').style.display = 'none';
             }
         }
+
+        const fun_confetti_start = () => {
+            setTimeout(function () {
+                confetti.start()
+            }, 1000);
+        };
+
+        const fun_confetti_stop = () => {
+            setTimeout(function () {
+                confetti.stop()
+            }, 5000);
+        };        
 
     </script>
 

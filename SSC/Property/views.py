@@ -91,7 +91,8 @@ class PropertyDetailFormViewSet(viewsets.ViewSet):
             if data['copy_building_id'] != "NULL":
                 data['building_id'] = data['copy_building_id']
                 building_instance = get_object_or_404(BuildingDetails, building_id=data['copy_building_id'])
-                building_serializer = BuildingDetailsSerializer(building_instance)
+                # building_serializer = BuildingDetailsSerializer(building_instance)
+                building_serializer = BuildingDetailsSerializer(building_instance, data=data)
 
                 amenities_instance = get_object_or_404(Amenities, building_id=data['copy_building_id'])
 

@@ -8482,3 +8482,163 @@ INFO 2025-04-08 00:08:27,858 basehttp "GET /admin/Property/unitdetails/241/chang
 INFO 2025-04-08 00:08:27,883 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-04-08 09:19:32,996 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
 INFO 2025-04-08 09:19:33,279 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 18975
+INFO 2025-04-14 17:28:56,751 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-04-14 17:28:56,902 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-14 17:28:56,909 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-14 17:28:56,915 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-14 17:28:56,931 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-14 17:29:00,856 basehttp "GET /property-detail/ HTTP/1.1" 302 0
+INFO 2025-04-14 17:29:00,884 basehttp "GET /login/?next=/property-detail/ HTTP/1.1" 200 3972
+INFO 2025-04-14 17:29:06,540 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-04-14 17:29:06,656 basehttp "GET /property-detail/ HTTP/1.1" 200 135595
+INFO 2025-04-14 17:29:10,024 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:29:13,400 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:29:13,607 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:29:13,608 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-14 17:29:14,041 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:29:14,070 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-14 17:29:14,070 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-14 17:29:14,071 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-14 17:29:14,089 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-04-14 17:29:14,561 log Not Found: /favicon.ico
+WARNING 2025-04-14 17:29:14,562 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-14 17:29:16,039 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:29:16,193 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:29:16,193 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+ERROR 2025-04-14 17:29:20,324 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 114, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:29:20,327 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:29:20,328 basehttp "POST /property-detail/ HTTP/1.1" 500 141
+INFO 2025-04-14 17:30:10,309 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:30:10,684 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+WARNING 2025-04-14 17:30:14,147 log Not Found: /favicon.ico
+WARNING 2025-04-14 17:30:14,147 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-14 17:30:27,504 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:30:27,637 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-14 17:30:27,641 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-14 17:30:27,650 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-14 17:30:27,650 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+WARNING 2025-04-14 17:30:28,071 log Not Found: /favicon.ico
+WARNING 2025-04-14 17:30:28,071 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-14 17:30:30,690 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:30:30,878 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:30:30,879 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+ERROR 2025-04-14 17:30:34,190 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 114, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:30:34,193 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:30:34,194 basehttp "POST /property-detail/ HTTP/1.1" 500 142
+INFO 2025-04-14 17:30:58,262 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:31:01,181 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:31:01,329 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:31:01,330 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-14 17:31:05,251 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:31:05,400 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:31:05,438 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:31:05,439 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-14 17:31:13,966 basehttp "GET /property-detail/?building_id=1001 HTTP/1.1" 200 135644
+INFO 2025-04-14 17:31:15,530 basehttp "POST /property-copy/ HTTP/1.1" 200 4020
+WARNING 2025-04-14 17:31:15,678 log Not Found: /property-detail/null
+WARNING 2025-04-14 17:31:15,678 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+ERROR 2025-04-14 17:31:20,020 log Internal Server Error: /property-detail/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 114, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:31:20,025 basehttp "POST /property-detail/ HTTP/1.1" 500 120930
+ERROR 2025-04-14 17:33:21,831 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 115, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:33:21,833 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:33:21,834 basehttp "POST /property-detail/ HTTP/1.1" 500 141
+ERROR 2025-04-14 17:34:16,037 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 116, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:34:16,039 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:34:16,040 basehttp "POST /property-detail/ HTTP/1.1" 500 141
+ERROR 2025-04-14 17:35:02,842 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 115, in create
+    print(building_serializer.is_valid())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:35:02,846 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:35:02,846 basehttp "POST /property-detail/ HTTP/1.1" 500 141
+WARNING 2025-04-14 17:35:57,102 log Bad Request: /property-detail/
+WARNING 2025-04-14 17:35:57,103 basehttp "POST /property-detail/ HTTP/1.1" 400 113
+WARNING 2025-04-14 17:36:51,553 log Bad Request: /property-detail/
+WARNING 2025-04-14 17:36:51,554 basehttp "POST /property-detail/ HTTP/1.1" 400 113
+WARNING 2025-04-14 17:37:19,362 log Bad Request: /property-detail/
+WARNING 2025-04-14 17:37:19,363 basehttp "POST /property-detail/ HTTP/1.1" 400 113
+ERROR 2025-04-14 17:48:45,509 views Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Property\views.py", line 114, in create
+    if not building_serializer.is_valid():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\serializers.py", line 216, in is_valid
+    assert hasattr(self, 'initial_data'), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+ERROR 2025-04-14 17:48:45,511 log Internal Server Error: /property-detail/
+ERROR 2025-04-14 17:48:45,511 basehttp "POST /property-detail/ HTTP/1.1" 500 141
+INFO 2025-04-14 17:49:02,241 basehttp "POST /property-detail/ HTTP/1.1" 201 101
+INFO 2025-04-14 17:49:06,969 basehttp "POST /submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-04-14 17:49:07,078 basehttp "GET /unit-details/?building_id=1001 HTTP/1.1" 200 54348
+INFO 2025-04-15 17:59:04,048 basehttp "GET /dashboard/ HTTP/1.1" 200 227965
+INFO 2025-04-15 17:59:04,145 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+WARNING 2025-04-15 17:59:04,279 log Not Found: /favicon.ico
+WARNING 2025-04-15 17:59:04,280 basehttp "GET /favicon.ico HTTP/1.1" 404 22242

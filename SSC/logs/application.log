@@ -1,0 +1,39 @@
+INFO 2025-04-19 11:52:19,546 basehttp "GET / HTTP/1.1" 200 2062
+WARNING 2025-04-19 11:52:19,692 log Not Found: /favicon.ico
+WARNING 2025-04-19 11:52:19,693 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-19 11:52:20,982 basehttp "GET /dashboard/ HTTP/1.1" 200 227965
+INFO 2025-04-19 11:52:25,136 basehttp "GET /property-detail/?building_id=1351 HTTP/1.1" 200 135637
+INFO 2025-04-19 11:52:25,329 basehttp "POST /property-copy/ HTTP/1.1" 200 2875
+WARNING 2025-04-19 11:52:25,395 log Not Found: /property-detail/null
+WARNING 2025-04-19 11:52:25,396 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-19 11:52:32,853 basehttp "GET /view-default-property/?unit_id=819 HTTP/1.1" 200 81250
+INFO 2025-04-19 11:52:32,884 basehttp "GET /static/js/confetti.js HTTP/1.1" 304 0
+INFO 2025-04-19 11:52:51,574 basehttp "GET /property-detail/?building_id=1288 HTTP/1.1" 200 135637
+INFO 2025-04-19 11:52:55,220 basehttp "POST /property-copy/ HTTP/1.1" 200 3282
+WARNING 2025-04-19 11:52:55,361 log Not Found: /property-detail/null
+WARNING 2025-04-19 11:52:55,362 basehttp "GET /property-detail/null HTTP/1.1" 404 22269
+INFO 2025-04-19 11:52:58,321 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 83728
+INFO 2025-04-19 11:54:07,392 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 83714
+INFO 2025-04-19 11:54:07,412 basehttp "GET /static/js/confetti.js HTTP/1.1" 304 0
+INFO 2025-04-19 11:54:27,310 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 83714
+INFO 2025-04-19 11:54:27,377 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-19 11:54:27,378 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-19 11:54:27,381 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-04-19 11:54:27,383 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-19 11:54:27,403 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-19 11:54:28,565 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-04-19 11:54:29,664 log Not Found: /favicon.ico
+WARNING 2025-04-19 11:54:29,664 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-19 11:56:15,955 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 85252
+INFO 2025-04-19 11:56:15,979 basehttp "GET /static/js/confetti.js HTTP/1.1" 304 0
+WARNING 2025-04-19 11:56:16,690 log Not Found: /favicon.ico
+WARNING 2025-04-19 11:56:16,692 basehttp "GET /favicon.ico HTTP/1.1" 404 22242
+INFO 2025-04-19 11:57:50,507 basehttp "GET /view-default-property/?unit_id=678 HTTP/1.1" 200 85248
+INFO 2025-04-19 11:57:50,691 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-04-19 11:57:50,697 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-04-19 11:57:50,697 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-04-19 11:57:50,699 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-04-19 11:57:50,700 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-04-19 11:57:50,701 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-04-19 11:57:54,527 log Not Found: /favicon.ico
+WARNING 2025-04-19 11:57:54,529 basehttp "GET /favicon.ico HTTP/1.1" 404 22242

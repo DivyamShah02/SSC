@@ -733,7 +733,8 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
             for amenity in amenties_data.keys():
                 if amenties_data[amenity] == True and type(amenties_data[amenity]) == bool:
-                    all_amenties.append(amenity)
+                    print(str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title())
+                    all_amenties.append(str(amenity).replace('_d_', '-').replace('_s_',' / ').replace('_',' ').title())
             size_of_unit = float(unit_data.get('size_of_unit'))
 
             property_unit_price = size_of_unit * float(unit_data.get('per_sqft_rate_saleable'))
@@ -817,14 +818,42 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
             is_ready_to_move = self.is_date_in_past(date_str=str(building_data['age_of_property_by_developer']))
 
-            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text']
+            # overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text']
+            overview_keys = ['year_of_establishment','location_of_project','no_of_projects_delivered','plot_area','no_of_blocks','no_of_floors','no_of_basements','no_of_parking_allotted','type_of_parking','construction_company', 'spiritual_or_religious_attraction_text', 'down_payment_as_on_date', 'no_of_attached_bathrooms', 'servant_room_available', 'central_air_conditioning', 'private_lifts']            
             overview_details = []
             
-            for key in overview_keys:
+            # for key in overview_keys:
+            #     if key in unit_data.keys():
+            #         if key == 'spiritual_or_religious_attraction_text':
+            #             if building_data['spiritual_or_religious_attraction'] == 'Yes':
+            #                 overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':unit_data[key]})
+            #         else:
+            #             overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
+                
+            #     elif key in building_data.keys():
+            #         if key == 'spiritual_or_religious_attraction_text':
+            #             if building_data['spiritual_or_religious_attraction'] == 'Yes':
+            #                 overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':building_data[key]})
+            #         else:
+            #             overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
+
+            for key in overview_keys:            
                 if key in unit_data.keys():
                     if key == 'spiritual_or_religious_attraction_text':
                         if building_data['spiritual_or_religious_attraction'] == 'Yes':
                             overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':unit_data[key]})
+                    elif key == 'type_of_parking':
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':', '.join(unit_data[key])})
+                    elif key == 'servant_room_available':
+                        if unit_data[key] == True:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'Yes'})
+                        else:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'No'})
+                    elif key == 'private_lifts':
+                        if unit_data[key] == True:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'Yes'})
+                        else:
+                            overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':'No'})                        
                     else:
                         overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':unit_data[key]})
                 
@@ -832,6 +861,11 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
                     if key == 'spiritual_or_religious_attraction_text':
                         if building_data['spiritual_or_religious_attraction'] == 'Yes':
                             overview_details.append({'key':str('spiritual_or_religious_attraction').replace('_', ' ').title(), 'value':building_data[key]})
+                    elif key == 'down_payment_as_on_date':                       
+                        date_obj = datetime.fromisoformat(str(building_data['property_created_at']))
+                        month_name = date_obj.strftime("%B")
+                        # print(as_on_data.month)
+                        overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':f'{month_name}: {building_data[key]}%'})
                     else:
                         overview_details.append({'key':str(key).replace('_', ' ').title(), 'value':building_data[key]})
 

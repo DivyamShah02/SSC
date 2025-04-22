@@ -295,14 +295,14 @@ def dashboard(request):
     group_names = user.groups.values_list('name', flat=True)
     if not user.is_staff:
         if 'Building Detail' in group_names:
-            all_building_details = BuildingDetails.objects.filter(property_added_by=f'{request.user}')
-            first_unit = UnitDetails.objects.filter(building_id=building.building_id).first()
-            if first_unit is None:
-                unit_id = None
-            else:
-                unit_id = first_unit.id
+            all_building_details = BuildingDetails.objects.filter(property_added_by=f'{request.user}')            
             final_building_data = []
             for building in all_building_details:
+                first_unit = UnitDetails.objects.filter(building_id=building.building_id).first()
+                if first_unit is None:
+                    unit_id = None
+                else:
+                    unit_id = first_unit.id
                 temp_dict = {
                     'building_id': building.building_id,
                     'project_name': building.project_name,
@@ -438,3 +438,11 @@ def update_unit_base_price_old(request):
     print(len(all_building))
 
     return HttpResponse('Base Price Updated')
+
+def update_added_by(request):
+    all_building_data = BuildingDetails.objects.filter(property_added_by='dhruv@ssc.com')
+    for building in all_building_data:
+        building_obj = BuildingDetails.objects.get(id=building.id)
+        building_obj.property_added_by = 'tejas@ssc.com'
+        building_obj.save()
+    return HttpResponse('Added By Updated')

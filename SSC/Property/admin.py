@@ -3,7 +3,7 @@ from .models import BuildingDetails, UnitDetails, Amenities
 
 class AdminBuildingDetails(admin.ModelAdmin):
     list_display = ('building_id', 'project_name', 'group_name', 'year_of_establishment', 'name', 'number', 'type_of_apartments')
-    list_filter = ('group_name', 'area_of_project')
+    list_filter = ('group_name', 'area_of_project', 'sample_house', 'property_added_by')
     search_fields = ('project_name', 'building_id', 'area_of_project')
 admin.site.register(BuildingDetails, AdminBuildingDetails)
 

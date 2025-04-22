@@ -20,6 +20,7 @@ urlpatterns = [
     path('temp/', temp_data, name='temp'),
     path('temp_api/', temp_api, name='temp_api'),
     path('update_unit_base_price/', update_unit_base_price, name='update_unit_base_price'),
+    path('update_added_by', update_added_by, name='update_added_by'),
     # path('transfer_no_of_floors/', transfer_no_of_floors, name='transfer_no_of_floors'),
     path('error_page/', handle_error_page, name='error_page')
 # ]

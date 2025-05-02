@@ -47,6 +47,10 @@ class Sorter:
                 updated_data['budget_min'] = min_budget * (1 + (min_variation / 100))
                 updated_data['budget_max'] = max_budget * (1 + (max_variation / 100))
 
+            else:
+                updated_data['budget_min'] = min_budget
+                updated_data['budget_max'] = max_budget
+
             # Timeline: add 15% in the time on the higher side
             if 'time_to_seal_deal' in client_data:
                 try:

@@ -40,7 +40,7 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
             return render(request, 'property_inquiry_form.html', data)
         except Exception as e:
             logger.error(f"Error rendering inquiry form: {str(e)}")
-            return Response({"success": False, "message": "An error occurred while loading the form."}, 
+            return Response({"success": False, "message": "An error occurred while loading the form."},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def create(self, request):
@@ -66,35 +66,35 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
             if serializer.is_valid():
                 serializer.save()
                 logger.error(f"Inquiry successfully saved. Client ID: {serializer.data['id']}")
-                return Response({"success": True, 
-                                 "message": "Inquiry submitted successfully!", 
-                                 "client_id": serializer.data['id']}, 
+                return Response({"success": True,
+                                 "message": "Inquiry submitted successfully!",
+                                 "client_id": serializer.data['id']},
                                 status=status.HTTP_201_CREATED)
 
             logger.error(f"Validation errors: {serializer.errors}")
-            return Response({"success": False, 
-                             "message": serializer.errors}, 
+            return Response({"success": False,
+                             "message": serializer.errors},
                             status=status.HTTP_400_BAD_REQUEST)
 
         except ValidationError as ve:
             logger.error(f"Validation Error: {str(ve)}")
-            return Response({"success": False, 
-                             "message": "Validation error occurred.", 
-                             "details": str(ve)}, 
+            return Response({"success": False,
+                             "message": "Validation error occurred.",
+                             "details": str(ve)},
                             status=status.HTTP_400_BAD_REQUEST)
 
         except DatabaseError as db_err:
             logger.error(f"Database Error: {str(db_err)}")
-            return Response({"success": False, 
-                             "message": "A database error occurred.", 
-                             "details": str(db_err)}, 
+            return Response({"success": False,
+                             "message": "A database error occurred.",
+                             "details": str(db_err)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e:
             logger.error(f"Unexpected error: {str(e)}")
-            return Response({"success": False, 
-                             "message": "An unexpected error occurred.", 
-                             "details": str(e)}, 
+            return Response({"success": False,
+                             "message": "An unexpected error occurred.",
+                             "details": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class EditClientDataViewSet(viewsets.ViewSet):
@@ -114,13 +114,19 @@ class EditClientDataViewSet(viewsets.ViewSet):
                     client_data[multiple_values_field] = [str(client_data[multiple_values_field])]
 
 
-            school_area = str(client_data['school_area']).split('|')
-            school_area_info = get_address(school_area[0], school_area[1])
-            client_data['school_area_info'] = school_area_info
-            
-            workplace_area = str(client_data['workplace_area']).split('|')
-            workplace_area_info = get_address(workplace_area[0], workplace_area[1])
-            client_data['workplace_area_info'] = workplace_area_info
+            try:
+                school_area = str(client_data['school_area']).split('|')
+                school_area_info = get_address(school_area[0], school_area[1])
+                client_data['school_area_info'] = school_area_info
+            except:
+                client_data['school_area_info'] = None
+            try:
+
+                workplace_area = str(client_data['workplace_area']).split('|')
+                workplace_area_info = get_address(workplace_area[0], workplace_area[1])
+                client_data['workplace_area_info'] = workplace_area_info
+            except:
+                client_data['workplace_area_info'] = None
 
             pref_loc_address = []
             for pref_loc in client_data['preferred_locations']:
@@ -137,7 +143,7 @@ class EditClientDataViewSet(viewsets.ViewSet):
 
                 pref_loc_address.append({'lat':pref_loc_cord[0],'lng':pref_loc_cord[1],'name':loc_address})
 
-            client_data['pref_loc_address'] = pref_loc_address    
+            client_data['pref_loc_address'] = pref_loc_address
 
             return Response({'success': True, 'client_data': client_data}, status=status.HTTP_200_OK)
         return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)

@@ -399,6 +399,16 @@ class PropertyDetailViewset(viewsets.ViewSet):
 
 
             try:
+                building_get_data = BuildingDetails.objects.get(building_id=building_id)
+                rera_by_when = building_get_data.rera_by_when
+                rera_approved = is_month_current_or_past(rera_by_when)
+                building_get_data.rera_approved = rera_approved
+                building_get_data.save()
+            
+            except:
+                pass
+
+            try:
                 building_data_obj = BuildingDetails.objects.get(building_id=building_id)
             except BuildingDetails.DoesNotExist:
                 raise NotFound(f"Building with id {building_id} not found.")
@@ -715,6 +725,17 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
 
             # Fetch building data
             building_id = unit_data.get('building_id')
+
+            try:
+                building_get_data = BuildingDetails.objects.get(building_id=building_id)
+                rera_by_when = building_get_data.rera_by_when
+                rera_approved = is_month_current_or_past(rera_by_when)
+                building_get_data.rera_approved = rera_approved
+                building_get_data.save()
+            
+            except:
+                pass
+
             try:
                 building_data_obj = BuildingDetails.objects.get(building_id=building_id)
             except BuildingDetails.DoesNotExist:
@@ -974,6 +995,18 @@ class PropertyDefaultDetailViewset(viewsets.ViewSet):
         input_date = datetime.strptime(date_str, "%m-%Y")
         current_date = datetime.now().replace(day=1)
         return input_date < current_date
+
+
+def is_month_current_or_past(month_year_str):
+    # Parse input string into month and year
+    input_date = datetime.strptime(month_year_str, "%m-%Y")
+    
+    # Get the current month and year
+    current_date = datetime.today()
+
+    # Check if input month is the same or before the current month-year
+    return (input_date.year < current_date.year) or \
+           (input_date.year == current_date.year and input_date.month <= current_date.month)
 
 
 class GetDistanceViewset(viewsets.ViewSet):

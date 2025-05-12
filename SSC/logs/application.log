@@ -1013,3 +1013,28 @@ INFO 2025-05-08 11:47:17,436 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-05-08 11:50:17,781 basehttp "POST /admin/Property/buildingdetails/44/change/?_changelist_filters=q%3D1043 HTTP/1.1" 302 0
 INFO 2025-05-08 11:50:17,866 basehttp "GET /admin/Property/buildingdetails/?q=1043 HTTP/1.1" 200 48189
 INFO 2025-05-08 11:50:17,911 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-12 23:26:48,012 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-12 23:26:48,279 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4164
+WARNING 2025-05-12 23:26:48,475 log Not Found: /favicon.ico
+WARNING 2025-05-12 23:26:48,476 basehttp "GET /favicon.ico HTTP/1.1" 404 22621
+INFO 2025-05-12 23:26:49,816 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-12 23:26:49,902 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-12 23:26:49,903 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-12 23:26:49,943 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-12 23:26:49,944 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-12 23:26:51,924 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-12 23:26:51,945 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-12 23:26:51,945 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-12 23:26:51,945 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-12 23:26:51,945 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-05-12 23:26:52,051 log Not Found: /favicon.ico
+WARNING 2025-05-12 23:26:52,052 basehttp "GET /favicon.ico HTTP/1.1" 404 22621
+INFO 2025-05-12 23:26:58,739 basehttp "GET /property-inquiry/ HTTP/1.1" 302 0
+INFO 2025-05-12 23:26:58,768 basehttp "GET /login/?next=/property-inquiry/ HTTP/1.1" 200 3973
+INFO 2025-05-12 23:26:58,819 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-12 23:27:04,293 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-05-12 23:27:04,381 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
+INFO 2025-05-12 23:28:08,131 basehttp "GET /dashboard/ HTTP/1.1" 200 472508
+INFO 2025-05-12 23:28:12,118 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91412
+INFO 2025-05-12 23:28:12,187 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-05-12 23:28:12,191 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739

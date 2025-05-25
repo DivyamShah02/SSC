@@ -272,21 +272,30 @@ class PropertyDetailViewset(viewsets.ViewSet):
             except json.JSONDecodeError:
                 raise ParseError("Error parsing properties data.")
             
-            selected_properties_str = session_data.get('selected_properties', '')
-            # if not selected_properties_str:
-            #     raise ParseError("No properties found in session data.")
+            if not isinstance(properties_data, list):
+                raise ParseError("Properties data must be a list.")
             
+            selected_properties_str = session_data.get('selected_properties', '')
             try:
                 selected_properties = json.loads(selected_properties_str.replace("'", '"'))
             except json.JSONDecodeError:
                 selected_properties = []
 
-            if not isinstance(properties_data, list):
-                raise ParseError("Properties data must be a list.")
-            
             if not isinstance(selected_properties, list):
                 # raise ParseError("selected_properties data must be a list.")
                 selected_properties = []
+
+
+            hidden_properties_str = session_data.get('hidden_properties', '')
+            try:
+                hidden_properties = json.loads(hidden_properties_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                hidden_properties = []
+
+            if not isinstance(hidden_properties, list):
+                # raise ParseError("hidden_properties data must be a list.")
+                hidden_properties = []
+
 
             same_building_id = []
             menu_properties = []
@@ -300,6 +309,11 @@ class PropertyDetailViewset(viewsets.ViewSet):
                     if unit_id in selected_properties:
                         property_selected = True
                     
+                    property_hidden = False
+                    if unit_id in hidden_properties:
+                        property_hidden = True
+                    
+
                     unit_data = UnitDetails.objects.get(id=unit_id)
                     
                     building_id = unit_data.building_id
@@ -320,7 +334,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                         active_property = True
 
                     if building_id not in same_building_id:
-                        menu_properties.append({'unit_id':unit_id, 'building_id':building_id, 'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1, 'property_selected': property_selected})
+                        menu_properties.append({'unit_id':unit_id, 'building_id':building_id, 'property_name':property_name, 'property_group_name':property_group_name, 'active_property':active_property, 'property_img':property_img, 'property_basic_price':property_basic_price, 'ind':i+1, 'property_selected': property_selected, 'property_hidden': property_hidden})
                         same_building_id.append(building_id)
                         same_units[building_id] = []
                         same_units[building_id].append({
@@ -1066,6 +1080,39 @@ class SelectPropertyViewSet(viewsets.ViewSet):
 
         return Response({'success':True}, status=200)
 
+class HidePropertyViewSet(viewsets.ViewSet):
+    def create(self, request):
+        session_id = request.data.get('session_id')
+        ind = request.data.get('ind')
+
+        try:
+            session_data_obj = ShortlistedProperty.objects.get(id=session_id)
+        except ShortlistedProperty.DoesNotExist:
+            raise NotFound(f"Session with id {session_id} not found.")
+        session_data = ShortlistedPropertySerializer(session_data_obj).data
+
+        hidden_properties_data_str = session_data.get('hidden_properties', '')
+
+        if hidden_properties_data_str != '':
+            try:
+                hidden_properties = json.loads(hidden_properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                raise ParseError("Error parsing properties data.")
+        else:
+            hidden_properties = []
+
+        properties_data_str = session_data.get('properties', '')
+        properties = json.loads(properties_data_str.replace("'", '"'))
+
+        hidden_property = properties[int(ind)-1]['unit_id']
+
+        if hidden_property not in hidden_properties:
+            hidden_properties.append(hidden_property)
+
+        session_data_obj.hidden_properties = f'{hidden_properties}'
+        session_data_obj.save()
+
+        return Response({'success':True}, status=200)
 
 class VisitPlanViewSet(viewsets.ViewSet):
     

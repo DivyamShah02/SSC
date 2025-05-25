@@ -1,7 +1,8 @@
 from django.db import models
-
+from django.utils import timezone
 
 class PropertyInquiry(models.Model):
+    inquiry_created_at = models.DateTimeField(default=timezone.now)    
     # Personal Information
     inquiry_added_by = models.CharField(max_length=255, null=True, blank=True)
     name = models.CharField(max_length=100)

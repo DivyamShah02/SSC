@@ -11,6 +11,7 @@ import requests
 import os
 from django.contrib.auth import authenticate, login, logout
 from Property.models import BuildingDetails, UnitDetails, Amenities
+from datetime import datetime
 
 import logging
 logger = logging.getLogger('SorterSession')
@@ -340,6 +341,61 @@ def dashboard(request):
     }
 
     return render(request, 'dashboard.html', data)
+
+def client_dashboard(request):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
+    
+    all_inquiries = PropertyInquiry.objects.all()
+    final_inquiry_data = []
+    for inquiry in all_inquiries:
+        temp_dict = {
+            'id': inquiry.id,
+            'name': inquiry.name,
+            'email': inquiry.email,
+            'phone_number': inquiry.number,
+            'inquiry_created_at': inquiry.inquiry_created_at.strftime('%d/%m/%Y - %H:%M:%S'),
+        }
+        shortlist_property = ShortlistedProperty.objects.filter(client_id=inquiry.id).first()
+        if shortlist_property:
+            temp_dict['shortlist_property'] = True
+            temp_dict['shortlist_id'] = shortlist_property.id
+            try:
+                dt = datetime.strptime(str(shortlist_property.start_visit_time_date), '%Y-%m-%d|%H:%M')
+                temp_dict['start_visit_time_date'] = dt.strftime('%d/%m/%Y - %H:%M:%S')
+            except:
+                temp_dict['start_visit_time_date'] = 'Not Scheduled'
+
+            selected_properties_str = shortlist_property.selected_properties
+            try:
+                selected_properties = json.loads(selected_properties_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                selected_properties = []
+            temp_dict['selected_properties'] = len(selected_properties)
+
+            feedback_str = shortlist_property.feedback
+            try:
+                feedbacks = json.loads(feedback_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                feedbacks = []
+            temp_dict['visit_completed'] = len(feedbacks)
+
+
+        else:
+            temp_dict['shortlist_property'] = False
+            temp_dict['shortlist_id'] = None
+            temp_dict['selected_properties'] = 0
+            temp_dict['start_visit_time_date'] = 'Not Scheduled'
+            temp_dict['visit_completed'] = 0
+
+        final_inquiry_data.append(temp_dict)
+    
+    data = {
+        'final_inquiry_data': final_inquiry_data[::-1],
+        'len_final_inquiry_data': len(final_inquiry_data)
+    }
+    return render(request, 'client_dashboard.html', data)
 
 def update_unit_base_price(request):
     all_units = UnitDetails.objects.all()

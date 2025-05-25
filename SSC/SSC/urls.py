@@ -11,6 +11,7 @@ urlpatterns = [
     path('login/', ssc_login, name='login'),
     
     path('dashboard/', dashboard, name='dashboard'),
+    path('client_dashboard/', client_dashboard, name='client_dashboard'),
 
     path('', include('ClientDetail.urls')),
     path('', include('SorterSession.urls')),

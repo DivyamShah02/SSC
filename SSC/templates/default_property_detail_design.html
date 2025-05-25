@@ -199,11 +199,26 @@
             <a class="navbar-brand" href="#">
                 <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
             </a>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-6">
-                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                    <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4>
                 </div>
                 <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div> -->
+            <div class="row align-items-center">
+                <div class="col-6 d-flex justify-content-start align-items-center">
+                        <a href="{{main_property.brochure_1}}" target="_blank"
+                        class="btn btn-light rounded-5 py-2 px-3 mx-2 text-nowrap d-inline-flex align-items-center">
+                            <i class="fas fa-arrow-up-from-bracket me-2"></i> Brochure
+                        </a>            
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
                         aria-label="Toggle navigation">
@@ -286,6 +301,10 @@
                         <span class="rera-badge"><i class="fas fa-check"></i> RERA</span>
                         {% endif %}
                         <div class="developer-name">By - {{main_property.group_name}}</div>
+                        <a href="{{main_property.brochure_1}}" target="_blank"
+                            class="btn btn-light rounded-3 py-2 px-3 mt-2 border-3 border-black text-nowrap">
+                            <i class="fas fa-arrow-up-from-bracket me-2"></i> Brochure
+                        </a>   
                     </div>
                     <div class="col-12 col-md-6 text-start text-md-end">
                         <div class="property-name"><i class="text-primary-ssc fa fa-location-dot"></i>

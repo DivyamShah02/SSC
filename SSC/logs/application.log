@@ -1038,3 +1038,325 @@ INFO 2025-05-12 23:28:08,131 basehttp "GET /dashboard/ HTTP/1.1" 200 472508
 INFO 2025-05-12 23:28:12,118 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91412
 INFO 2025-05-12 23:28:12,187 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
 INFO 2025-05-12 23:28:12,191 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-05-12 23:31:30,531 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91617
+WARNING 2025-05-12 23:31:36,557 log Not Found: /view-default-property/None
+WARNING 2025-05-12 23:31:36,557 basehttp "GET /view-default-property/None HTTP/1.1" 404 22666
+INFO 2025-05-12 23:31:56,206 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91629
+INFO 2025-05-12 23:32:11,583 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91622
+INFO 2025-05-12 23:32:25,594 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91637
+INFO 2025-05-12 23:32:32,245 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91433
+INFO 2025-05-12 23:32:44,099 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91424
+INFO 2025-05-12 23:33:02,381 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91603
+INFO 2025-05-12 23:33:07,289 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91612
+INFO 2025-05-12 23:33:58,509 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91646
+INFO 2025-05-12 23:34:00,459 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91646
+WARNING 2025-05-12 23:34:04,363 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-12 23:34:04,363 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 22732
+INFO 2025-05-12 23:34:58,412 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91710
+WARNING 2025-05-12 23:35:01,724 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-12 23:35:01,725 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 22732
+INFO 2025-05-12 23:36:31,567 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92001
+INFO 2025-05-12 23:36:39,767 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92007
+INFO 2025-05-12 23:36:47,451 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92001
+INFO 2025-05-12 23:37:24,574 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92005
+INFO 2025-05-12 23:37:35,545 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91972
+INFO 2025-05-12 23:37:36,764 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91972
+INFO 2025-05-12 23:37:44,999 basehttp - Broken pipe from ('127.0.0.1', 50118)
+INFO 2025-05-12 23:37:45,649 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91967
+INFO 2025-05-12 23:38:08,211 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91969
+INFO 2025-05-12 23:38:10,329 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91969
+INFO 2025-05-12 23:38:10,369 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-12 23:38:10,370 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-12 23:38:10,371 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-12 23:38:10,375 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-12 23:38:10,383 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-12 23:38:10,387 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-05-12 23:38:10,400 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-05-12 23:38:11,918 log Not Found: /favicon.ico
+WARNING 2025-05-12 23:38:11,918 basehttp "GET /favicon.ico HTTP/1.1" 404 22621
+INFO 2025-05-12 23:39:10,736 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91969
+INFO 2025-05-12 23:39:18,850 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91967
+INFO 2025-05-12 23:39:41,767 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91967
+INFO 2025-05-12 23:40:05,236 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91972
+INFO 2025-05-12 23:40:17,455 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 91994
+WARNING 2025-05-12 23:40:29,351 log Not Found: /view-default-property/None
+WARNING 2025-05-12 23:40:29,352 basehttp "GET /view-default-property/None HTTP/1.1" 404 22666
+INFO 2025-05-12 23:45:21,142 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92610
+INFO 2025-05-12 23:45:23,177 basehttp "GET /view-default-property/?unit_id=1156 HTTP/1.1" 200 92610
+INFO 2025-05-12 23:45:23,208 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-12 23:45:23,209 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-12 23:45:23,209 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-12 23:45:23,209 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-12 23:45:23,210 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-12 23:45:23,212 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-05-12 23:45:23,213 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-05-12 23:45:24,693 log Not Found: /favicon.ico
+WARNING 2025-05-12 23:45:24,694 basehttp "GET /favicon.ico HTTP/1.1" 404 22621
+INFO 2025-05-12 23:51:28,874 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-12 23:51:40,304 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101778
+INFO 2025-05-12 23:52:36,872 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 101974
+INFO 2025-05-12 23:52:36,918 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-12 23:52:36,918 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-12 23:52:36,919 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-05-12 23:52:36,919 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-12 23:52:36,919 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-12 23:52:36,922 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-05-12 23:52:41,317 log Not Found: /favicon.ico
+WARNING 2025-05-12 23:52:41,318 basehttp "GET /favicon.ico HTTP/1.1" 404 22621
+INFO 2025-05-12 23:52:54,079 basehttp "POST /select-property/ HTTP/1.1" 200 16
+INFO 2025-05-12 23:52:58,360 basehttp "GET /view-properties/?ind=2&session_id=1 HTTP/1.1" 200 105482
+INFO 2025-05-12 23:53:11,175 basehttp "GET /view-properties/?ind=2&session_id=1 HTTP/1.1" 200 105482
+INFO 2025-05-12 23:57:32,463 basehttp "GET /view-properties/?ind=2&session_id=1 HTTP/1.1" 200 107395
+INFO 2025-05-13 00:00:44,786 basehttp "GET /view-properties/?ind=2&session_id=1 HTTP/1.1" 200 107382
+INFO 2025-05-13 00:00:44,786 basehttp - Broken pipe from ('127.0.0.1', 50597)
+INFO 2025-05-13 00:00:45,039 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-13 00:00:45,041 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-13 00:00:45,054 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-13 00:00:45,060 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-13 00:00:45,077 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-05-13 00:00:45,079 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-05-13 00:00:53,905 log Not Found: /favicon.ico
+WARNING 2025-05-13 00:00:53,906 basehttp "GET /favicon.ico HTTP/1.1" 404 23383
+INFO 2025-05-13 00:00:56,122 basehttp "POST /hide-property/ HTTP/1.1" 200 16
+INFO 2025-05-13 00:00:58,763 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 200 105817
+INFO 2025-05-13 00:01:02,768 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-13 00:01:03,075 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-05-13 00:01:03,112 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 334
+INFO 2025-05-13 00:01:03,113 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 383
+INFO 2025-05-13 00:01:10,940 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 36594
+INFO 2025-05-13 00:01:10,991 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 7221
+INFO 2025-05-13 00:01:10,994 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6392
+INFO 2025-05-13 00:01:10,997 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 355
+INFO 2025-05-13 00:01:10,998 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 8056
+INFO 2025-05-13 00:01:10,998 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9337
+INFO 2025-05-13 00:01:11,001 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1574
+INFO 2025-05-13 00:01:11,009 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8280
+INFO 2025-05-13 00:01:11,011 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 296030
+INFO 2025-05-13 00:01:11,020 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 331297
+INFO 2025-05-13 00:01:11,028 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 1008
+INFO 2025-05-13 00:01:11,053 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-13 00:01:11,088 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 334
+INFO 2025-05-13 00:01:13,412 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 22388
+INFO 2025-05-13 00:01:13,447 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 601
+INFO 2025-05-13 00:01:13,448 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9218
+INFO 2025-05-13 00:01:13,449 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-13 00:01:13,453 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 622
+INFO 2025-05-13 00:01:13,454 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 12157
+INFO 2025-05-13 00:08:27,224 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 200 107801
+INFO 2025-05-13 00:09:11,672 basehttp - Broken pipe from ('127.0.0.1', 50705)
+INFO 2025-05-13 00:09:14,484 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 200 105817
+INFO 2025-05-13 00:09:14,656 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-13 00:09:14,663 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+INFO 2025-05-13 00:09:14,665 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-13 00:09:14,695 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-13 00:09:14,696 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-13 00:09:14,700 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-13 00:09:14,702 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-05-13 00:09:23,043 log Not Found: /favicon.ico
+WARNING 2025-05-13 00:09:23,044 basehttp "GET /favicon.ico HTTP/1.1" 404 23383
+INFO 2025-05-13 00:09:50,279 basehttp - Broken pipe from ('127.0.0.1', 50732)
+INFO 2025-05-13 00:09:50,507 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 200 104650
+INFO 2025-05-13 00:09:50,548 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-13 00:09:50,549 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-13 00:09:50,549 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-13 00:09:50,550 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-13 00:09:50,551 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-05-13 00:09:50,551 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-13 00:09:50,557 basehttp "GET /static/img/Coming%20Soon.png HTTP/1.1" 200 158739
+WARNING 2025-05-13 00:09:55,740 log Not Found: /favicon.ico
+WARNING 2025-05-13 00:09:55,741 basehttp "GET /favicon.ico HTTP/1.1" 404 23383
+ERROR 2025-05-13 00:11:48,993 views Invalid block tag on line 233: 'elseif', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elseif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 658, in list
+    return render(request, 'property_detail_design.html', data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 233: 'elseif', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+INFO 2025-05-13 00:11:49,139 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 302 0
+INFO 2025-05-13 00:11:49,146 basehttp "GET /error_page/ HTTP/1.1" 200 2814
+INFO 2025-05-13 00:12:36,460 basehttp "GET /view-properties/?ind=2&session_id=1 HTTP/1.1" 200 106231
+INFO 2025-05-13 00:12:51,635 basehttp "GET /view-properties/?ind=3&session_id=1 HTTP/1.1" 200 104699
+INFO 2025-05-13 00:13:09,358 basehttp "GET /view-properties/?ind=4&session_id=1 HTTP/1.1" 200 113371
+INFO 2025-05-13 10:52:24,919 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 22388
+INFO 2025-05-13 17:06:05,069 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 22388
+WARNING 2025-05-13 17:06:05,347 log Not Found: /favicon.ico
+WARNING 2025-05-13 17:06:05,347 basehttp "GET /favicon.ico HTTP/1.1" 404 23383
+INFO 2025-05-26 00:26:54,392 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-26 00:26:54,562 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-26 00:26:54,563 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-26 00:26:54,577 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-26 00:26:54,580 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-26 00:26:57,707 basehttp "GET /property-inquiry/ HTTP/1.1" 302 0
+INFO 2025-05-26 00:26:57,743 basehttp "GET /login/?next=/property-inquiry/ HTTP/1.1" 200 3973
+INFO 2025-05-26 00:26:57,797 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-05-26 00:27:03,724 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-05-26 00:27:03,806 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111776
+INFO 2025-05-26 00:27:12,069 basehttp "GET /dashboard/ HTTP/1.1" 200 472508
+INFO 2025-05-26 00:37:12,836 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-26 00:37:13,020 basehttp "GET /admin/ HTTP/1.1" 200 9976
+INFO 2025-05-26 00:37:16,842 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 36594
+INFO 2025-05-26 00:37:16,875 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:37:18,941 basehttp "GET /admin/SorterSession/shortlistedproperty/19/change/ HTTP/1.1" 200 23144
+INFO 2025-05-26 00:37:18,981 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:39:52,214 basehttp "GET /admin/SorterSession/shortlistedproperty/ HTTP/1.1" 200 36594
+INFO 2025-05-26 00:39:52,244 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:39:54,319 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 22388
+INFO 2025-05-26 00:39:54,352 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:40:00,267 basehttp "GET / HTTP/1.1" 200 2062
+INFO 2025-05-26 00:40:07,171 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111820
+INFO 2025-05-26 00:40:08,738 basehttp "POST /edit-client/ HTTP/1.1" 200 1894
+INFO 2025-05-26 00:40:20,858 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 102749
+INFO 2025-05-26 00:40:20,946 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-05-26 00:40:27,216 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 24332
+INFO 2025-05-26 00:40:27,319 basehttp "GET /feedback/?unit_id=279&session_id=1 HTTP/1.1" 200 43
+INFO 2025-05-26 00:40:42,268 basehttp "POST /visit-plan/ HTTP/1.1" 200 16
+INFO 2025-05-26 00:40:42,303 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 26734
+INFO 2025-05-26 00:40:42,354 basehttp "GET /feedback/?unit_id=279&session_id=1 HTTP/1.1" 200 43
+INFO 2025-05-26 00:40:51,177 basehttp "POST /final-visit-plan/ HTTP/1.1" 200 16
+INFO 2025-05-26 00:40:51,215 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 80303
+INFO 2025-05-26 00:40:51,251 basehttp "GET /feedback/?unit_id=279&session_id=1 HTTP/1.1" 200 43
+INFO 2025-05-26 00:40:53,886 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 22636
+INFO 2025-05-26 00:40:53,916 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:41:02,842 basehttp "GET /feedback/?unit_id=279&session_id=1 HTTP/1.1" 200 43
+INFO 2025-05-26 00:41:27,978 basehttp "POST /feedback/ HTTP/1.1" 200 16
+INFO 2025-05-26 00:41:28,014 basehttp "GET /visit-plan/?session_id=1 HTTP/1.1" 200 80303
+INFO 2025-05-26 00:41:28,063 basehttp "GET /feedback/?unit_id=279&session_id=1 HTTP/1.1" 200 375
+INFO 2025-05-26 00:41:30,255 basehttp "GET /admin/SorterSession/shortlistedproperty/1/change/ HTTP/1.1" 200 23327
+INFO 2025-05-26 00:41:30,280 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-26 00:48:07,026 basehttp "GET /client_dashboard HTTP/1.1" 301 0
+ERROR 2025-05-26 00:48:07,166 log Internal Server Error: /client_dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 356, in client_dashboard
+    'phone_number': inquiry.phone_number,
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PropertyInquiry' object has no attribute 'phone_number'
+ERROR 2025-05-26 00:48:07,172 basehttp "GET /client_dashboard/ HTTP/1.1" 500 69481
+INFO 2025-05-26 00:48:36,608 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22141
+WARNING 2025-05-26 00:49:02,376 log Bad Request: /visit-plan/
+WARNING 2025-05-26 00:49:02,377 basehttp "GET /visit-plan/?session_id= HTTP/1.1" 400 7029
+INFO 2025-05-26 00:49:30,064 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22176
+INFO 2025-05-26 00:49:30,377 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22176
+INFO 2025-05-26 00:49:30,532 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-05-26 00:49:30,549 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-05-26 00:49:30,556 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-05-26 00:49:30,563 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-05-26 00:49:30,564 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-05-26 00:49:30,616 log Not Found: /favicon.ico
+WARNING 2025-05-26 00:49:30,617 basehttp "GET /favicon.ico HTTP/1.1" 404 23568
+INFO 2025-05-26 00:49:33,577 basehttp "GET /visit-plan/?session_id=22 HTTP/1.1" 200 205196
+INFO 2025-05-26 00:49:33,689 basehttp "GET /feedback/?unit_id=30&session_id=22 HTTP/1.1" 200 374
+INFO 2025-05-26 00:49:33,690 basehttp "GET /feedback/?unit_id=117&session_id=22 HTTP/1.1" 200 43
+INFO 2025-05-26 00:49:33,697 basehttp "GET /feedback/?unit_id=305&session_id=22 HTTP/1.1" 200 43
+INFO 2025-05-26 00:50:39,308 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22230
+ERROR 2025-05-26 00:54:11,752 log Internal Server Error: /client_dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 364, in client_dashboard
+    dt = datetime.strptime(str(shortlist_property.start_visit_time_date), '%Y-%m-%d|%H:%M')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '' does not match format '%Y-%m-%d|%H:%M'
+ERROR 2025-05-26 00:54:11,756 basehttp "GET /client_dashboard/ HTTP/1.1" 500 82629
+ERROR 2025-05-26 00:54:43,319 log Internal Server Error: /client_dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 365, in client_dashboard
+    dt = datetime.strptime(str(shortlist_property.start_visit_time_date), '%Y-%m-%d|%H:%M')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '' does not match format '%Y-%m-%d|%H:%M'
+ERROR 2025-05-26 00:54:43,322 basehttp "GET /client_dashboard/ HTTP/1.1" 500 82635
+INFO 2025-05-26 00:55:18,954 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22265
+INFO 2025-05-26 00:56:42,473 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22460
+WARNING 2025-05-26 00:56:52,346 log Bad Request: /visit-plan/
+WARNING 2025-05-26 00:56:52,347 basehttp "GET /visit-plan/?session_id=20 HTTP/1.1" 400 7054
+INFO 2025-05-26 01:06:35,168 basehttp "GET /client_dashboard/ HTTP/1.1" 200 22460

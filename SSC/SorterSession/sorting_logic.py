@@ -122,6 +122,7 @@ class Sorter:
                             unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
                             base_price__gte=budget_min,
                             base_price__lte=budget_max,
+                            no_of_attached_bathrooms=int(updated_client_data.get('attached_washrooms', 0)),
                             active=True
                             )
                         for property in property_unit_matched:
@@ -173,17 +174,49 @@ class Sorter:
         else:
             amenities_data = AmenitiesSerializer(amenities_data_obj).data
 
-        score += self._score_attached_washrooms(client_preferences, unit_data)
-        score += self._score_floor_preference(client_preferences, property_data)
-        score += self._score_servant_room(unit_data)
-        score += self._score_flat_preference(client_preferences, property_data)
-        score += self._score_religious_place(client_preferences, property_data)
-        score += self._score_private_elevator(unit_data)
-        score += self._score_central_ac(client_preferences, property_data)
-        score += self._score_parking(client_preferences, unit_data)
-        score += self._score_stack_parking(client_preferences, property_data)
-        score += self._score_amenities(client_preferences, amenities_data)
-        score += self._score_age_of_property(client_preferences, property_data)
+        try:
+            score += self._score_attached_washrooms(client_preferences, unit_data)
+        except:
+            pass
+        try:
+            score += self._score_floor_preference(client_preferences, property_data)
+        except:
+            pass
+        try:
+            score += self._score_servant_room(unit_data)
+        except:
+            pass
+        try:
+            score += self._score_flat_preference(client_preferences, property_data)
+        except:
+            pass
+        # try:
+        #     score += self._score_religious_place(client_preferences, property_data)
+        # except:
+        #     pass
+
+        # score += self._score_private_elevator(unit_data)
+
+        # try:
+        #     score += self._score_central_ac(client_preferences, property_data)
+        # except:
+        #     pass
+        # try:
+        #     score += self._score_parking(client_preferences, unit_data)
+        # except:
+        #     pass
+        # try:
+        #     score += self._score_stack_parking(client_preferences, property_data)
+        # except:
+        #     pass
+        # try:
+        #     score += self._score_amenities(client_preferences, amenities_data)
+        # except:
+        #     pass
+        try:
+            score += self._score_age_of_property(client_preferences, property_data)
+        except:
+            pass
 
         return {'unit_id': unit_id, 'score': score}
 
@@ -199,18 +232,21 @@ class Sorter:
             return int(self.config.scoring.attached_washroom_less)
 
     def _score_floor_preference(self, client_preferences, property_data):
-        if str(client_preferences.get('floor_preference', '')) != 'Above 21' and str(client_preferences.get('floor_preference', '')) != 'Flexible':
-            client_floor_range = client_preferences.get('floor_preference', '').split('to')
-            client_floor_range = [str(client_floor_range[0]).strip(), str(client_floor_range[1]).strip()]
-            property_total_floors = int(property_data.get('no_of_floors', 0))
+        try:
+            if str(client_preferences.get('floor_preference', '')) != 'Above 21' and str(client_preferences.get('floor_preference', '')) != 'Flexible':
+                client_floor_range = client_preferences.get('floor_preference', '').split('to')
+                client_floor_range = [str(client_floor_range[0]).strip(), str(client_floor_range[1]).strip()]
+                property_total_floors = int(property_data.get('no_of_floors', 0))
 
-            if len(client_floor_range) == 2:
-                if property_total_floors >= int(client_floor_range[0]) and property_total_floors <= int(client_floor_range[1]):
-                    return int(self.config.scoring.floor_preference_exact)
-                else:
-                    return int(self.config.scoring.floor_preference_other)
+                if len(client_floor_range) == 2:
+                    if property_total_floors >= int(client_floor_range[0]) and property_total_floors <= int(client_floor_range[1]):
+                        return int(self.config.scoring.floor_preference_exact)
+                    else:
+                        return int(self.config.scoring.floor_preference_other)
 
-        return int(self.config.scoring.floor_preference_exact)
+            return int(self.config.scoring.floor_preference_exact)
+        except:
+            return 0
 
     def _score_servant_room(self, unit_data):
         return int(self.config.scoring.servant_room) if unit_data.get('servant_room_available') else 0

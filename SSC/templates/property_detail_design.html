@@ -220,38 +220,48 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/dashboard/">Dashboard</a>
+                            <a class="nav-link active" href="/property-inquiry/?client_id={{client_data.id}}">Inquiry Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/">Dashboard</a>
                         </li>
                     </ul>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="filterBy">Filter By</label>
+                        <select class="form-select" id="filterBy" name="filterBy">
+                            <option value="base_price">Price</option>
+                            <option value="distance">Area</option>
+                        </select>
+                    </div>
                     {% for menu_property in menu_properties %}
 
                         {% if menu_property.active_property == True %}
                             {% if menu_property.property_selected == True %}
                                 <div class="card mb-3 border-success ssc-images primary-images"
-                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                     style="border: 4px solid; cursor: pointer;">
                             {% elif menu_property.property_hidden == True %}
                                 <div class="card mb-3 border-danger ssc-images primary-images"
-                                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                         style="border: 4px solid; cursor: pointer;">
                             {% else %}
                                 <div class="card mb-3 ssc-images primary-images"
-                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                     style="border: 4px black solid; cursor: pointer;">
                             {% endif %}
 
                         {% else %}
                             {% if menu_property.property_selected == True %}
                                 <div class="card mb-3 border-success ssc-images primary-images"
-                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                     style="border: 4px solid; cursor: pointer;">
                             {% elif menu_property.property_hidden == True %}
                                 <div class="card mb-3 border-danger ssc-images primary-images"
-                                            onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                            onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                             style="border: 4px solid; cursor: pointer;">
                             {% else %}
                                 <div class="card mb-3 ssc-images primary-images"
-                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}`;"
+                                    onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{menu_property.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                                     style="cursor: pointer;">
                             {% endif %}
 
@@ -429,7 +439,7 @@
                         style="z-index: 999; display: none; width: 20rem;">
                         {% for same_unit in final_same_unit_details %}
                         <div class="card my-2" style="border: 3px solid black; cursor: pointer;"
-                            onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}`">
+                            onclick="window.location = `{% url 'view-properties-list' %}?ind={{same_unit.ind}}&session_id={{session_id}}&filter_by={{filter_by}}`">
                             <div class="card-body row">
                                 <div class="col-2">
                                     <h4 class="pt-2"><i class="fas fa-maximize text-secondary-ssc"></i></h4>
@@ -1057,7 +1067,7 @@
                             class="fa fa-arrow-left"></i></button>
                     {% else %}
                     <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;"
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-left"></i></button>
                     {% endif %}
@@ -1067,7 +1077,7 @@
                             class="fa fa-arrow-right"></i></button>
                     {% else %}
                     <button id="next_property_btn"
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;"
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-right"></i></button>
                     {% endif %}
@@ -1103,7 +1113,7 @@
                             class="fa fa-arrow-left"></i></button>
                     {% else %}
                     <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}`;"
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{prev_ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-left"></i></button>
                     {% endif %}
@@ -1113,7 +1123,7 @@
                             class="fa fa-arrow-right"></i></button>
                     {% else %}
                     <button
-                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}`;"
+                        onclick="window.location.href=`{% url 'view-properties-list' %}?ind={{next_ind}}&session_id={{session_id}}&filter_by={{filter_by}}`;"
                         class="btn btn-dark rounded-5 mx-1" style="border-radius: 100% !important;"><i
                             class="fa fa-arrow-right"></i></button>
                     {% endif %}
@@ -1414,6 +1424,24 @@
             addMarker(destination_work, '{{work_info}}');
 
             setTimeout(addStylelabel, 1000);
+
+            const filterSelect = document.getElementById('filterBy');
+            filterSelect.value = '{{filter_by}}';
+            filterSelect.addEventListener('change', function () {
+                const selectedValue = this.value;
+                console.log('Selected option:', selectedValue);
+                window.location.href = `{% url 'view-properties-list' %}?ind={{index}}&session_id={{session_id}}&filter_by=${selectedValue}`;
+                // You can call any function or logic based on the selection
+                // if (selectedValue === 'base_price') {
+                //     // handle price filter
+                //     window.location.href = "{% url 'view-properties-list' %}?ind={{index}}&session_id={{session_id}}&filter_by=base_price";
+                // } else if (selectedValue === 'distance') {
+                //     // handle area filter
+                //     console.log('Filter by Area selected');
+                //     window.location.href = "{% url 'view-properties-list' %}?ind={{index}}&session_id={{session_id}}&filter_by=distance";
+                // }
+            });
+
             toggle_loader();
         };
 

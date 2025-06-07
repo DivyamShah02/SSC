@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>Short Property Inquiry Form</title>
+</head>
+
+
+<body>
+     <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
+     </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+            <div class="row">
+                <div class="col-6">
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Square Second Consultants</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'property-inquiry-list' %}">Property Inquiry Form</a>
+                    </li>
+                    <li class="nav-item">
+                        {% if user.is_staff %}
+                        <a class="nav-link" href="{% url 'property-detail-list' %}">Property Detail Form</a>
+                        {% endif %}
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation bar end -->
+
+    <!-- Main content start -->
+    <div id="main-content" class="blur">
+        <!-- Personal Infomation start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Personal Information</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="personal_information" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <input type="hidden" class="form-control" id="copy_client_id" value="NULL" placeholder=""
+                        name="copy_client_id">
+                    <!-- Customer Name -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="name" class="form-label primary">1) Name<span class="required"> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+                        <!-- autofocus -->
+                    </div>
+    
+                    <!-- Mobile Number -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="number" class="form-label primary">2) Number<span class="required"> *</span>
+                        </label>
+                        <div class="row input-group">
+                            <div class="col-lg-3 col-md-4 col-5">
+                                <select name="country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                  </select>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-7">
+                                <input type="number" max="9999999999" minlength="10" class="form-control" id="number" name="number" placeholder="Mobile number" required>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- WhatsApp Number -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="whatsapp" class="form-label primary">3) WhatsApp <small class="required" style="cursor: pointer;" onclick="copy_number()"><u>(copy number)</u></small>
+                            <!-- <span class="required"> *</span> -->
+                        </label>
+                        <div class="row input-group">
+                            <div class="col-lg-3 col-md-4 col-5">
+                                <select name="whatsapp_country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                  </select>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-7">
+                                <input type="number" max="9999999999" minlength="10" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp number">                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="email" class="form-label primary">4) Email Address
+                            <!-- <span class="required"> *</span> -->
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                    </div>
+    
+                    <!-- Profession -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="profession" class="form-label primary">5) Profession
+                            <!-- <span class="required"> *</span> -->
+                        </label>
+                        <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter profession">
+                    </div>
+    
+                    <!-- Current Residence -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="residence" class="form-label primary">6) Current Residence
+                            <!-- <span class="required"> *</span> -->
+                        </label>
+                        <input type="text" class="form-control" id="residence" name="residence" placeholder="Local area, Society">
+                    </div>
+
+                    <!-- Reference -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 form-group">
+                        <label for="reference" class="form-label primary">7) Reference
+                            <!-- <span class="required"> *</span> -->
+                        </label>
+                        <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference person name">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Personal Infomation end -->
+    
+        <!-- Family Demographics start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Family Demographics and Lifestyle</h4>
+            </div>
+    
+            <!-- Form body -->
+            <form id="family_demographics" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+
+                <div class="row">
+                    <!-- Do you have pets? -->
+                    <!-- <div class="col-md-6 form-group">
+                        <label class="form-label primary">10) Do you have pets?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="have_pets" id="petsYes" value="yes">
+                            <label class="form-check-label" for="petsYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="have_pets" id="petsNo" value="no">
+                            <label class="form-check-label" for="petsNo">No</label>
+                        </div>
+                    </div> -->
+
+                    <!-- Carpet Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="current_residence_area" class="form-label primary">10) What is the carpet area of your current residence?<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft." required>
+                    </div>
+        
+                    <!-- Religious Place Preference -->
+                    <div class="col-md-12 form-group">
+                        <label class="form-label primary">11) Do you prefer derasar / mandir / gurudwara near your house?<span class="required"> *</span></label><br>
+                        <div class="row">
+                            <div class="col-12 col-md-3 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="derasar" name="religious_preference" value="derasar" required>
+                                    <label class="form-check-label ml-1" for="derasar">Derasar</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="mandir" name="religious_preference" value="mandir" required>
+                                    <label class="form-check-label ml-1" for="mandir">Mandir</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="gurudwara" name="religious_preference" value="gurudwara" required>
+                                    <label class="form-check-label ml-1" for="gurudwara">Gurudwara</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="maybe" name="religious_preference" value="maybe" required>
+                                    <label class="form-check-label ml-1" for="maybe">Maybe</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id=" Not_preferred" name="religious_preference" value="Not preferred" required>
+                                    <label class="form-check-label ml-1" for=" Not_preferred"> Not preferred</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workplace Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="workplace_area" class="form-label primary">12) In which area is your workplace?</label>
+                        <input type="text" class="form-control" id="workplace_area" placeholder="Enter location", name="workplace_area_info">
+                        <input type="hidden" id="workplace_area_value" name="workplace_area">
+                    </div>
+
+                    <!-- Children School Area -->
+                    <div class="col-md-6 form-group">
+                        <label for="school_area" class="form-label primary">13) In which area do your children go to school?</label>
+                        <input type="text" class="form-control" id="school_area" placeholder="Enter location" name="school_area_info">
+                        <input type="hidden" id="school_area_value" name="school_area">
+                    </div>
+    
+                    <!-- Top 3 Preferred Locations -->
+                    <div class="col-md-12 col-lg-6 form-group">
+                        <label for="preferred_locations" id="preferred_locations_label" class="form-label primary">14) What are your top 3 preferred locations?<span class="required"> *</span></label>
+                        <br>
+                        <input type="hidden" id="no_of_locations" value="0">
+                        <div id="preferred-location">
+                            
+                        </div>
+                        <div id="preferred_locations_inputs">
+
+                        </div>
+                        
+                        <input type="text" class="form-control" id="place-search" placeholder="Enter locations (e.g., Bopal, Shilaj)">
+                        <!-- <button class="btn btn-custom-outline-primary">Select Location</button> -->
+                    </div>                         
+                </div>
+            </form>
+    
+        </div>
+        <!-- Family Demographics end -->
+    
+        <!-- House Specifications start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>House Specifications</h4>
+            </div>
+    
+            <form id="house_specificaiton" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Bedrooms and Washrooms -->
+                    <div class="col-md-12 col-lg-6 form-group">
+                        <label for="bedrooms" class="form-label primary">19) What type of house are you looking for?</label>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="unit_type" value="Simplex" id="Simplex">
+                                    <label class="form-check-label" for="Simplex">Simplex</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="unit_type" value="Duplex" id="Duplex">
+                                    <label class="form-check-label" for="Duplex">Duplex</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="unit_type" value="Triplex" id="Triplex">
+                                    <label class="form-check-label" for="Triplex">Triplex</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="unit_type" value="Penthouse" id="Penthouse">
+                                    <label class="form-check-label" for="Penthouse">Penthouse</label>
+                                </div>
+                            </div>
+    
+                        </div>   
+                    </div>
+
+                    <div class="col-md-12 col-lg-6 form-group">
+                        <label for="bedrooms" class="form-label primary" id="bedrooms_label">20) How many bedrooms do you need?<span class="required"> *</span></label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="1_bhk" id="1_bhk">
+                                    <label class="form-check-label" for="1_bhk">1 BHK</label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="2_bhk" id="2_bhk">
+                                    <label class="form-check-label" for="2_bhk">2 BHK</label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="3_bhk" id="3_bhk">
+                                    <label class="form-check-label" for="3_bhk">3 BHK</label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="4_bhk" id="4_bhk">
+                                    <label class="form-check-label" for="4_bhk">4 BHK</label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="5_bhk" id="5_bhk">
+                                    <label class="form-check-label" for="5_bhk">5 BHK</label>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="bedrooms" value="6_bhk" id="6_bhk">
+                                    <label class="form-check-label" for="6_bhk">6 BHK</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label for="attached_washrooms" class="form-label primary">21) How many attached washrooms should your house have?<span class="required"> *</span></label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_1" value="1" required>
+                            <label class="form-check-label" for="attached_washrooms_1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_2" value="2" required>
+                            <label class="form-check-label" for="attached_washrooms_2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_3" value="3" required>
+                            <label class="form-check-label" for="attached_washrooms_3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_4" value="4" required>
+                            <label class="form-check-label" for="attached_washrooms_4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_5" value="5" required>
+                            <label class="form-check-label" for="attached_washrooms_5">5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_6" value="6" required>
+                            <label class="form-check-label" for="attached_washrooms_6">6</label>
+                        </div>
+                        <!-- <select id="attached_washrooms" name="attached_washrooms" class="form-select">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select> -->
+                    </div>
+
+                    <!-- Servant room and Puja room -->
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">22) Are you looking for a house with a servant room?<span class="required"> *</span></label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="servant_room" id="servantRoomYes" value="yes" required>
+                            <label class="form-check-label" for="servantRoomYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="servant_room" id="servantRoomNo" value="no" required>
+                            <label class="form-check-label" for="servantRoomNo">No</label>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 form-group">
+                        <label class="form-label primary">23) Do you want a separate puja room?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomYes" value="yes">
+                            <label class="form-check-label" for="pujaRoomYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomNo" value="no">
+                            <label class="form-check-label" for="pujaRoomNo">No</label>
+                        </div>
+                    </div>
+    
+                    <!-- Minimum carpet area -->
+                    <div class="col-md-6 form-group">
+                        <label for="min_carpet_area" class="form-label primary">24) What should be the minimum carpet area of the new property?<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft." required>
+                    </div>
+                </div>
+            </form>
+    
+        </div>
+        <!-- House Specifications end -->
+    
+        <!-- Building Preferences start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Building Preferences</h4>
+            </div>
+    
+            <form id="building_preferences" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">                
+                <!-- <div class="row mb-4">
+                    <label class="form-label primary">32) What type of society do you prefer?</label>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Small low rise (40 to 60 units)" id="society1">
+                            <label class="form-check-label" for="society1">Small low rise (40 to 60 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Single block high end (70 - 100 units)" id="society2">
+                            <label class="form-check-label" for="society2">Single block high end (70 - 100 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Mid-sized gated community (120 to 300 units)" id="society3">
+                            <label class="form-check-label" for="society3">Mid-sized gated community (120 to 300 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Large gated community (350 to 800 units)" id="society4">
+                            <label class="form-check-label" for="society4">Large gated community (350 to 800 units)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="society_type" value="Township" id="society5">
+                            <label class="form-check-label" for="society5">Township</label>
+                        </div>
+                    </div>
+                </div> -->
+    
+                <div class="row mb-4">
+                    <label class="form-label primary">31) What are the 5 must-have amenities?</label>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="central_park_s_garden" id="amenity1">
+                            <label class="form-check-label" for="amenity1">Central Park / Garden</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="mini_theatre" id="amenity2">
+                            <label class="form-check-label" for="amenity2">Mini Theatre</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="senior_citizen_sit_d_outs" id="amenity3">
+                            <label class="form-check-label" for="amenity3">Senior Citizen Sit-Outs</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="mud_play_zone" id="amenity4">
+                            <label class="form-check-label" for="amenity4">Mud Play Zone</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="multi_d_purpose_court" id="amenity5">
+                            <label class="form-check-label" for="amenity5">Multi-Purpose Court</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="indoor_games" id="amenity6">
+                            <label class="form-check-label" for="amenity6">Indoor Games</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="walking_s_jogging_track" id="amenity7">
+                            <label class="form-check-label" for="amenity7">Walking / Jogging Track</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="drivers_lounge" id="amenity8">
+                            <label class="form-check-label" for="amenity8">Drivers Lounge</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="visitors_parking" id="amenity9">
+                            <label class="form-check-label" for="amenity9">Visitors Parking</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="activity_room" id="amenity10">
+                            <label class="form-check-label" for="amenity10">Activity Room</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="yoga_room" id="amenity11">
+                            <label class="form-check-label" for="amenity11">Yoga Room</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="house_keeping_lounge" id="amenity12">
+                            <label class="form-check-label" for="amenity12">House Keeping Lounge</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="gymnasium" id="amenity13">
+                            <label class="form-check-label" for="amenity13">Gymnasium</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="library_s_reading_room" id="amenity14">
+                            <label class="form-check-label" for="amenity14">Library / Reading Room</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="steam_sauna" id="amenity15">
+                            <label class="form-check-label" for="amenity15">Steam Sauna</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="on_site_waste_management" id="amenity16">
+                            <label class="form-check-label" for="amenity16">On Site Waste Management</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="splash_pool" id="amenity17">
+                            <label class="form-check-label" for="amenity17">Splash Pool</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="daycare_center" id="amenity18">
+                            <label class="form-check-label" for="amenity18">Daycare Center</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="massage_room" id="amenity19">
+                            <label class="form-check-label" for="amenity19">Massage Room</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="solar_for_common_area" id="amenity20">
+                            <label class="form-check-label" for="amenity20">Solar For Common Area</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="outdoor_swimming_pool" id="amenity21">
+                            <label class="form-check-label" for="amenity21">Outdoor Swimming Pool</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="guest_rooms" id="amenity22">
+                            <label class="form-check-label" for="amenity22">Guest Rooms</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="jacuzzi" id="amenity23">
+                            <label class="form-check-label" for="amenity23">Jacuzzi</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="ev_charging_stations" id="amenity24">
+                            <label class="form-check-label" for="amenity24">Ev Charging Stations</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="indoor_swimming_pool" id="amenity25">
+                            <label class="form-check-label" for="amenity25">Indoor Swimming Pool</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="co_d_working_space" id="amenity26">
+                            <label class="form-check-label" for="amenity26">Co-Working Space</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="cafeteria" id="amenity27">
+                            <label class="form-check-label" for="amenity27">Cafeteria</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="green_building_rated" id="amenity28">
+                            <label class="form-check-label" for="amenity28">Green Building Rated</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="multi_d_purpose_hall" id="amenity29">
+                            <label class="form-check-label" for="amenity29">Multi-Purpose Hall</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="skating_s_cycling_ring" id="amenity30">
+                            <label class="form-check-label" for="amenity30">Skating / Cycling Ring</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="card_room" id="amenity31">
+                            <label class="form-check-label" for="amenity31">Card Room</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <!-- <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="delete_amenty" id="amenity32">
+                            <label class="form-check-label" for="amenity32">Delete Amenty</label>
+                        </div> -->
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="banquet_hall" id="amenity33">
+                            <label class="form-check-label" for="amenity33">Banquet Hall</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="gazebo_sit_outs" id="amenity34">
+                            <label class="form-check-label" for="amenity34">Gazebo Sit Outs</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="toddler_play_zone" id="amenity35">
+                            <label class="form-check-label" for="amenity35">Toddler Play Zone</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3">
+                        <!-- <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="amenities" value="delete_amenty" id="amenity36">
+                            <label class="form-check-label" for="amenity36">Delete Amenty</label>
+                        </div> -->
+                    </div>
+                    
+                </div>
+            </form>
+    
+        </div>
+        <!-- Building Preferences end -->
+    
+        <!-- Finance start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 68px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Finance</h4>
+            </div>
+    
+            <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row mb-3">                    
+                                        <div class="col-md-12">
+                        <label for="minCr" class="form-label primary">32) What is your budget range for a house excluding interior cost and govt. charges? (in Cr)</label>
+    
+                    </div>
+                    <div class="row col-md-12">
+                        <div class="col-md-6 form-group mb-5" style="display: none;">
+                            <label for="maxCr" class="form-label">Min *</label>
+                            <input type="number" min="0" step="0.01" class="form-control" id="minCr" name="budget_min" placeholder="1" required value="0">
+                        </div>
+                        <div class="col-md-12 form-group mb-5">
+                            <!-- <label for="maxCr" class="form-label">Max *</label> -->
+                            <input type="number" min="0" step="0.01" class="form-control" id="maxCr" name="budget_max" placeholder="5" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
+                        <label for="percentage" class="form-label primary">33) How much down payment will you be able to make in % from the maximum range?<span class="required"> *</span></label>
+                        <div class="row col-md-12">
+                            <div class="col-md-6">
+                                <input type="number" min="0" step="0.01" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage" required>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-12 col-lg-6 form-group mb-5">
+                        <label for="loanAmount" class="form-label primary">34) Are you going to avail a home loan for this deal? What is the approved amount?*</label>
+                        <input type="number" min="1" step="0.01" class="form-control" id="loanAmount" name="loan_approved_amount" placeholder="Enter Amount">
+                    </div>
+            
+                    <div class="col-md-12 text-center">
+                        <button type="button" onclick="submit_inquiry_form()" class="btn btn-custom">Show Properties</button>
+                </div>
+            </div>
+    
+            </form>
+        
+        </div>
+        <!-- Finance end -->
+    
+        <div class="container mt-3">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+    </div>
+    <!-- Main content end -->
+
+    <script src="/static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places" async defer></script>
+
+    <script>
+        function initAutocomplete() {
+            const input = document.getElementById('place-search');
+
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                const numberOfChildren = document.getElementById('preferred-location').childElementCount;
+
+                if (numberOfChildren <= 2){
+                    document.getElementById('place-search').classList.remove('form-control-error')
+                    // Get the place details from the autocomplete object
+                    const place = autocomplete.getPlace();
+                    if (place.geometry) {
+                        const destinationLat = place.geometry.location.lat();
+                        const destinationLng = place.geometry.location.lng();
+                        const name = place.name;
+
+                        console.log(destinationLat);
+                        console.log(destinationLng);
+                        console.log(name);
+
+                        addPrefferedLocation(destinationLat, destinationLng, name, numberOfChildren)
+
+                        input.value = ''
+
+                    }
+
+                }
+                else{
+                    console.log('count more than 3')
+                    document.getElementById('place-search').classList.add('form-control-error')
+                    
+                }
+
+            });
+        }
+
+        function addPrefferedLocation(destinationLat, destinationLng, name, numberOfChildren) {
+            if (document.getElementById(name)) {
+                console.log('Element exists!');
+                document.getElementById('place-search').classList.add('form-control-error')
+            }
+            else {
+                const preferredElement = document.getElementById('preferred-location'); // Adjust the selector if needed
+
+                // Create the new <li> element
+                const newlocationElement = document.createElement('span');
+                newlocationElement.id = `${name}`;
+
+                // Set the HTML content of the <li> element
+                newlocationElement.innerHTML = `
+                    <label for="place-search" class="form-label badge rounded-pill text-bg-primary text-bg-primary-ssc">${name} <i <i onclick="document.getElementById('${name}').remove();document.getElementById('${name}_${numberOfChildren}').remove()" class="text-primary-ssc fa fa-xmark fa-lg" style="cursor: pointer;"></i></label>
+                `;
+
+                // Append the new <li> element to the <ul>
+                preferredElement.appendChild(newlocationElement);
+
+                const preferredElement_input = document.getElementById('preferred_locations_inputs');
+                const numberOfChildren_input = preferredElement_input.childElementCount;
+
+                const newlocationElement_input = document.createElement('input');
+                newlocationElement_input.id = `${name}_${numberOfChildren_input}`;
+                newlocationElement_input.value = `${destinationLat}|${destinationLng}`
+                newlocationElement_input.name = `preferred_locations`
+                newlocationElement_input.type = 'hidden'
+
+                // Append the new <li> element to the <ul>
+                preferredElement_input.appendChild(newlocationElement_input);
+
+            }
+        }
+
+        function initAutocomplete_school() {
+            // Reference to the input element
+            const input = document.getElementById('school_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    // Print latitude and longitude
+                    console.log('from school')
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                    document.getElementById('school_area_value').value = `${lat}|${lng}`
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
+            });
+        }
+
+        function initAutocomplete_workplace() {
+            // Reference to the input element
+            const input = document.getElementById('workplace_area');
+
+            // Create the autocomplete object
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            // Add a listener to capture the selected place
+            autocomplete.addListener('place_changed', function() {
+                // Get the place details from the autocomplete object
+                const place = autocomplete.getPlace();
+                if (place.geometry) {
+                    console.log('place.location.geometry')
+                    console.log(place.geometry)
+                    const lat = place.geometry.location.lat();
+                    const lng = place.geometry.location.lng();
+
+                    // Print latitude and longitude
+                    console.log('from school')
+                    console.log('Selected place:', place.name);
+                    console.log('Latitude:', lat);
+                    console.log('Longitude:', lng);
+                    document.getElementById('workplace_area_value').value = `${lat}|${lng}`
+                }
+
+                // Log the selected place details
+                console.log('Selected place:', place);
+            });
+        }
+
+        async function submit_inquiry_form() {
+            toggle_loader()
+
+            const isValid = validateForm();
+            const isAnyCheckboxChecked = AnyCheckboxChecked('bedrooms', 'bedrooms_label');
+            const isLocationAdded = LocationAdded();
+
+            if (isValid && isAnyCheckboxChecked && isLocationAdded) {
+                var personal_information_form = document.getElementById('personal_information');
+                var family_demographics_form = document.getElementById('family_demographics');
+                var house_specificaiton_form = document.getElementById('house_specificaiton');
+                var building_preferences_form = document.getElementById('building_preferences');
+                var finance_form = document.getElementById('finance');
+
+                if (personal_information_form.reportValidity()){
+                    if (family_demographics_form.reportValidity()){
+                        if (house_specificaiton_form.reportValidity()){
+                            if (building_preferences_form.reportValidity()){
+                                if (finance_form.reportValidity()){
+                                    var form_personal_information = new FormData(document.getElementById('personal_information'));
+                                    var form_family_demographics = new FormData(document.getElementById('family_demographics'));
+                                    var form_house_specificaiton = new FormData(document.getElementById('house_specificaiton'));
+                                    var form_building_preferences = new FormData(document.getElementById('building_preferences'));
+                                    var form_finance = new FormData(document.getElementById('finance'));
+                            
+                                    // Convert FormData to JSON
+                                    var object = {};
+                                    
+                                    form_personal_information.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_family_demographics.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_house_specificaiton.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_building_preferences.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    form_finance.forEach((value, key) => {
+                                        if (!Object.prototype.hasOwnProperty.call(object, key)) {
+                                            object[key] = value;
+                                            return;
+                                        }
+                                        if (!Array.isArray(object[key])) {
+                                            object[key] = [object[key]];
+                                        }
+                                        object[key].push(value);
+                                    });
+                            
+                                    console.log(JSON.stringify(object))
+                                    try{
+                                        const response = await fetch("{% url 'property-inquiry-list' %}", {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'X-CSRFToken': '{{csrf_token}}'
+                                            },
+                                            body: JSON.stringify(object)
+                                        });
+                                            
+                                        const data = await response.json();
+                                        console.log(JSON.stringify(data, null, 2))
+                                        if (data.success == true){
+                                            console.log(data.client_id)
+                                            const cleint_id = data.client_id
+                                            sort_property(cleint_id)
+                                            toggle_loader()
+                                        }
+                                        else{
+                            
+                                        }
+                            
+                                    }
+                                    catch (error) {
+                                        console.log(error.message)
+                                    }
+                                    
+                                }
+                    
+                            }
+                
+                        }
+                        
+                    }
+
+                }
+
+            }
+            toggle_loader()
+
+        }
+
+        function AnyCheckboxChecked(option_name, label_id) {
+            document.getElementById(label_id).classList.remove('red-border-btn')
+            var checkboxes = document.querySelectorAll(`input[name="${option_name}"]`);
+            var isChecked = Array.prototype.slice.call(checkboxes).some(function(checkbox) {
+                return checkbox.checked;
+            });
+            if (!isChecked){ 
+                let label_ele = document.getElementById(label_id)
+                document.querySelector(`input[name="${option_name}"]`).focus();
+                label_ele.focus();
+                label_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                label_ele.classList.add('red-border-btn')
+            }
+            return isChecked;
+        }
+
+        function validateForm() {
+            
+            const inputs = document.querySelectorAll('input');
+            let invalidInputs = [];
+
+            // Remove red-border-btn class from all inputs
+            inputs.forEach(input => {
+                input.classList.remove('red-border-btn');
+            });
+
+            // Check validity of each input and collect IDs of invalid ones
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    invalidInputs.push(input.id);
+                    input.classList.add('red-border-btn');  // Add red border class
+                }
+            });
+
+            // If all inputs are valid, proceed
+            if (invalidInputs.length === 0) {
+                return true;
+            } else {
+                console.log("Invalid inputs:", invalidInputs);
+                return false;
+            }
+        }
+
+        function LocationAdded() {
+            let location_input = document.getElementsByName('preferred_locations').length > 0;
+            document.getElementById('preferred_locations_label').classList.remove('red-border-btn');
+            if (location_input) {
+                return true;
+            }
+            else {
+                document.getElementById('preferred_locations_label').classList.add('red-border-btn');
+                return false;
+            }
+
+        }
+
+        async function sort_property(client_id) {
+            try{
+                const client_id_s = client_id
+                const response = await fetch("{% url 'sort-list' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({
+                        'id':client_id_s
+                    })
+                });
+
+                const data = await response.json();
+                console.log(JSON.stringify(data, null, 2))
+                if (data.success == true){
+                    const session_id = data.session_id
+                    window.location.href=`{% url 'view-properties-list' %}?ind=1&session_id=${session_id}`;
+                }
+                else{
+                    console.log(data)
+
+                }
+
+            }
+            catch (error) {
+                console.log(error.message)
+            }
+
+        }
+
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            document.getElementById('spinner-text').classList.toggle('add-display-block');
+        }
+
+        function toggle_preloader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+        }
+
+        const bedroom_checkboxes = document.querySelectorAll('input[name="bedrooms"]');
+        const bedroom_maxSelection = 2;
+
+        bedroom_checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedBoxes = document.querySelectorAll('input[name="bedrooms"]:checked');
+                if (checkedBoxes.length > bedroom_maxSelection) {
+                    checkbox.checked = false;
+                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
+                }
+            });
+        });
+
+        const amenities_checkboxes = document.querySelectorAll('input[name="amenities"]');
+        const amenities_maxSelection = 5;
+
+        amenities_checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedBoxes = document.querySelectorAll('input[name="amenities"]:checked');
+                if (checkedBoxes.length > amenities_maxSelection) {
+                    checkbox.checked = false;
+                    // alert('You can only select a maximum of ' + maxSelection + ' bedrooms.');
+                }
+            });
+        });
+
+
+        window.onload = function() {
+            initAutocomplete();
+            initAutocomplete_school();
+            initAutocomplete_workplace();
+            toggle_preloader();
+        };
+
+    </script>
+
+    <script>
+        async function copy_client_details(client_id) {
+            toggle_preloader();
+            const data = await get_client_data(client_id);
+            console.log(data)
+            setFormValues(data);
+            const preffered_locations = data['pref_loc_address'];
+            preffered_locations.forEach(location => {
+                console.log(location.name);
+                const numberOfChildren = document.getElementById('preferred-location').childElementCount;
+                addPrefferedLocation(location.lat, location.lng, location.name, numberOfChildren);
+            });
+            document.getElementById('copy_client_id').value = client_id;
+            toggle_preloader();
+        }
+
+        async function get_client_data(client_id) {
+            try {
+                const response = await fetch("{% url 'edit-client-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({"client_id":`${client_id}`})
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    return data.client_data
+                } else {
+                    alert('Error in getting client details: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error in getting client details: ", error);
+            }
+        }
+    
+        function setFormValues(data) {
+            // Loop through each key-value pair in the dictionary (data)
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    // Find the input element(s) where name attribute matches the key
+                    const input = document.querySelector(`[name="${key}"]`);
+                    const inputs = document.querySelectorAll(`[name="${key}"]`);
+
+                    if (input) {
+                        if (input.type === 'radio') {
+                            // If the input is a radio button group, loop through all radio buttons
+                            inputs.forEach(radio => {
+                                // Check for true/false values and map them to 'Yes'/'No'
+                                if ((data[key] === true || data[key] === "true") && radio.value.toLowerCase() === 'yes') {
+                                    radio.checked = true;  // Select the "Yes" radio button
+                                } else if ((data[key] === false || data[key] === "false") && radio.value.toLowerCase() === 'no') {
+                                    radio.checked = true;  // Select the "No" radio button
+                                } else if (radio.value === data[key]) {
+                                    // For other radio buttons, match by value
+                                    radio.checked = true;
+                                }
+                            });
+                        } else if (input.type === 'checkbox') {
+                            // Handle checkboxes
+                            if (Array.isArray(data[key])) {
+                                // If the data is an array, check each checkbox that matches
+                                inputs.forEach(checkbox => {
+                                    checkbox.checked = data[key].includes(checkbox.value);
+                                });
+                            } else {
+                                // If it's a single value, just check/uncheck the box
+                                input.checked = data[key] === true || data[key] === "true";
+                            }
+                        } else if (input.type === 'file') {
+                            const file_input = document.querySelector(`[id="${key}"]`);
+                            if (file_input) {
+                                if (file_input.tagName === 'A' && data[key] !== null) {
+                                    let file_input_obj = document.getElementById(key)
+                                    file_input_obj.style.display = 'block';
+                                    file_input_obj.href = data[key]
+                                    file_input_obj.innerText = String(data[key]).split('/').pop();
+                                } else {
+                                    let file_input_obj = document.getElementById(key)
+                                    file_input_obj.style.display = 'block';
+                                    file_input_obj.src = data[key]
+                                }
+                            }
+                        } else {
+                            input.value = data[key];
+                        }
+                    }
+                }
+            }
+
+        }
+
+        '{% if is_client_edit == True %}'
+        copy_client_details('{{client_id}}')
+        '{% endif %}'
+    </script>
+
+    <script>
+        const numberInputs = document.querySelectorAll('input[type=number]');
+
+        numberInputs.forEach(function(input) {
+            input.addEventListener('wheel', function(event) {
+                event.preventDefault();
+            });
+            input.addEventListener('input', function() {
+                const min = input.min !== '' ? parseFloat(input.min) : 0;  // Default min to 0 if not set
+                if (input.value < min) {
+                    input.value = min;
+                }
+            });
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-') {
+                    e.preventDefault();  // Block invalid characters
+                }
+            });
+        });
+
+        function copy_number() {
+            document.getElementById('whatsapp').value = document.getElementById('number').value;
+        }
+
+    </script>
+</body>
+</html>

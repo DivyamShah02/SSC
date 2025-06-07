@@ -18,6 +18,7 @@ from django.http import HttpResponse
 import json
 import ast
 from datetime import datetime
+from geopy.distance import geodesic
 
 from .sorting_logic import Sorter
 from .library.DistanceCalculator import get_distance, get_address
@@ -47,6 +48,8 @@ class SorterViewSet(viewsets.ViewSet):
             updated_client_data = sorter.update_client_preferences(client_data=client_data)
             validated_properties = sorter.get_pre_validated_property(updated_client_data=updated_client_data)
             sorted_data = sorter.generate_property_list(updated_client_data=updated_client_data, validated_properties=validated_properties)
+            distance_sorted_data = self.order_property_as_per_location(preferred_coords_string=client_data.get('preferred_locations', ''), unit_score_list=sorted_data[0:15])
+            base_price_sorted_data = self.get_units_sorted_by_base_price(unit_id_list=sorted_data[0:15])
 
             session_already_exists = ShortlistedProperty.objects.filter(client_id=inquiry_id).first()
             if session_already_exists:
@@ -54,8 +57,12 @@ class SorterViewSet(viewsets.ViewSet):
 
                 edit_session.number = client_data.get('number','')
                 edit_session.name = client_data.get('name','')
+                
                 edit_session.properties = sorted_data
-                edit_session.selected_properties = ''
+                edit_session.distance_order_properties = distance_sorted_data
+                edit_session.base_price_order_properties = base_price_sorted_data
+                
+                # edit_session.selected_properties = ''
                 edit_session.visit_details = ''
                 edit_session.start_visit_time_date = ''
                 edit_session.visit_start_coords = ''
@@ -72,7 +79,9 @@ class SorterViewSet(viewsets.ViewSet):
                       client_id=inquiry_id,
                       number=client_data.get('number',''),
                       name=client_data.get('name',''),
-                      properties=sorted_data
+                      properties=sorted_data,
+                      distance_order_properties=distance_sorted_data,
+                      base_price_order_properties=base_price_sorted_data,
                  )
 
                  new_session.save()
@@ -89,6 +98,64 @@ class SorterViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error(e, exc_info=True)
             return Response({'success': False, 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+    def order_property_as_per_location(self, preferred_coords_string, unit_score_list):
+        preferred_coords = [
+            tuple(map(float, coord.strip().split('|')))
+            for coord in preferred_coords_string.split(',')
+        ]
+        
+        unit_scores_map = {item['unit_id']: item['score'] for item in unit_score_list}
+        unit_ids = list(unit_scores_map.keys())
+        units = UnitDetails.objects.filter(id__in=unit_ids)
+
+        # Step 2: Find nearest preferred coord for each unit
+        unit_assignment = {}
+        for unit in units:
+            unit_coord = (unit.google_pin_lat, unit.google_pin_lng)
+            min_distance = float('inf')
+            best_index = -1
+
+            for idx, pref_coord in enumerate(preferred_coords):
+                dist = geodesic(unit_coord, pref_coord).meters
+                if dist < min_distance:
+                    min_distance = dist
+                    best_index = idx
+
+            unit_assignment[unit.id] = {
+                "unit_id": unit.id,
+                "score": unit_scores_map[unit.id],
+                "distance": round(min_distance, 2),
+                "preferred_coord_index": best_index
+            }
+
+        # Step 3: Group units by preferred_coord_index
+        grouped = {i: [] for i in range(len(preferred_coords))}
+        for unit_data in unit_assignment.values():
+            grouped[unit_data["preferred_coord_index"]].append(unit_data)
+
+        # Step 4: Sort each group by score (descending), then distance (ascending), and flatten result
+        final_result = []
+        for i in range(len(preferred_coords)):
+            sorted_group = sorted(grouped[i], key=lambda x: (-x["score"], x["distance"]))
+            final_result.extend(sorted_group)
+
+        return final_result
+
+    def get_units_sorted_by_base_price(self, unit_id_list):
+        unit_lst = [unit_id['unit_id'] for unit_id in unit_id_list]
+        units = UnitDetails.objects.filter(id__in=unit_lst)
+        result = []
+        for unit in units:
+            result.append({
+                "unit_id": unit.id,
+                "base_price": float(unit.base_price),
+            })
+
+        # Sort by base_price ascending
+        result.sort(key=lambda x: x["base_price"])
+        return result
 
 
 class PropertyViewset(viewsets.ViewSet):
@@ -244,6 +311,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
         try:
             session_id = request.GET.get('session_id')
             ind = request.GET.get('ind')
+            filter_by = request.GET.get('filter_by', '')
 
             if not ind:
                 raise ParseError("Property Index is required.")
@@ -263,7 +331,15 @@ class PropertyDetailViewset(viewsets.ViewSet):
             session_data = ShortlistedPropertySerializer(session_data_obj).data
 
             # Parse properties from session data
-            properties_data_str = session_data.get('properties', '')
+            if filter_by == 'distance':
+                properties_data_str = session_data.get('distance_order_properties', '')
+
+            elif filter_by == 'base_price':
+                properties_data_str = session_data.get('base_price_order_properties', '')
+
+            else:
+                properties_data_str = session_data.get('properties', '')
+            
             if not properties_data_str:
                 raise ParseError("No properties found in session data.")
 
@@ -653,6 +729,7 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 'origins_sch_lng':origins_sch[1],
                 'origins_work_lat':origins_work[0],
                 'origins_work_lng':origins_work[1],
+                'filter_by': filter_by
                 }
             
             return render(request, 'property_detail_design.html', data)

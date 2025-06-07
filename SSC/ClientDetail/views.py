@@ -97,6 +97,34 @@ class PropertyInquiryViewSet(viewsets.ViewSet):
                              "details": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+class ShortPropertyInquiryViewSet(viewsets.ViewSet):
+
+    @method_decorator(login_required(login_url='/login/'))
+    def list(self, request):
+        try:
+            user = request.user
+            group_names = user.groups.values_list('name', flat=True)
+
+            if not user.is_staff:
+                if str(group_names[0]) != 'Property Inquiry':
+                    return redirect('error_page')
+
+            client_id = request.GET.get('client_id')
+            is_client_edit = False
+            if client_id:
+                is_client_edit = True
+            data = {
+                'is_client_edit':is_client_edit,
+                'client_id':client_id
+            }
+
+            return render(request, 'short_property_inquiry_form.html', data)
+        except Exception as e:
+            logger.error(f"Error rendering inquiry form: {str(e)}")
+            return Response({"success": False, "message": "An error occurred while loading the form."},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 class EditClientDataViewSet(viewsets.ViewSet):
 
     def create(self, request):

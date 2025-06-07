@@ -46,6 +46,7 @@
                             <th scope="col">Visit date</th>
                             <th scope="col">Visits completed</th>
                             <th scope="col">Feedback page link</th>
+                            <th scope="col">Shortlisted properties</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -62,6 +63,7 @@
                               {% else %}
                               <td><button class="btn btn-custom-primary" disabled>Feedback</button></td>
                               {% endif %}
+                              <td><button class="btn btn-custom" onclick="window.location = `{% url 'view-properties-list' %}?ind=1&session_id={{inquiry.shortlist_id}}`;">Shortlisted properties</button></td>
                             </tr>                            
                             {% endfor %}
                         </tbody>

@@ -9,6 +9,8 @@ class ShortlistedProperty(models.Model):
     number = models.CharField(null=True, blank=True, max_length=15)
     properties = models.TextField(null=True, blank=True)
     selected_properties = models.TextField(null=True, blank=True, default='')
+    distance_order_properties = models.TextField(null=True, blank=True, default='')
+    base_price_order_properties = models.TextField(null=True, blank=True, default='')
     hidden_properties = models.TextField(null=True, blank=True, default='')
     visit_details = models.TextField(null=True, blank=True, default='')
     start_visit_time_date = models.CharField(null=True, blank=True, default='', max_length=255)

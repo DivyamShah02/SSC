@@ -6,12 +6,14 @@ from ClientDetail.models import PropertyInquiry
 from SorterSession.models import ShortlistedProperty
 import random
 import json
+from geopy.distance import geodesic
 from .cords import final_cords
 import requests
 import os
 from django.contrib.auth import authenticate, login, logout
 from Property.models import BuildingDetails, UnitDetails, Amenities
 from datetime import datetime
+from .download import export_selected_models_to_excel
 
 import logging
 logger = logging.getLogger('SorterSession')
@@ -502,3 +504,92 @@ def update_added_by(request):
         building_obj.property_added_by = 'tejas@ssc.com'
         building_obj.save()
     return HttpResponse('Added By Updated')
+
+def update_distance_order(request):
+    all_sorter = ShortlistedProperty.objects.all()
+    for client in all_sorter:
+        client_obj = ShortlistedProperty.objects.get(id=client.id)
+        client_info_obj = PropertyInquiry.objects.filter(id=client.client_id).first()
+        if client_obj.distance_order_properties == None or client_obj.distance_order_properties == "":
+        # if True:
+            client_obj.distance_order_properties = ''
+
+            properties_data_str = client_obj.properties
+            try:
+                properties_data = json.loads(properties_data_str.replace("'", '"'))
+            except json.JSONDecodeError:
+                properties_data = []
+            
+
+            distance_sorted_data = order_property_as_per_location(preferred_coords_string=client_info_obj.preferred_locations, unit_score_list=properties_data[0:15])
+            base_price_sorted_data = get_units_sorted_by_base_price(unit_id_list=properties_data[0:15])
+
+
+            client_obj.distance_order_properties = distance_sorted_data
+            client_obj.base_price_order_properties = base_price_sorted_data
+
+        client_obj.save()
+    return HttpResponse('Distance Order Updated')
+
+def order_property_as_per_location(preferred_coords_string, unit_score_list):
+        preferred_coords = [
+            tuple(map(float, coord.strip().split('|')))
+            for coord in preferred_coords_string.split(',')
+        ]
+        
+        unit_scores_map = {item['unit_id']: item['score'] for item in unit_score_list}
+        unit_ids = list(unit_scores_map.keys())
+        units = UnitDetails.objects.filter(id__in=unit_ids)
+
+        # Step 2: Find nearest preferred coord for each unit
+        unit_assignment = {}
+        for unit in units:
+            unit_coord = (unit.google_pin_lat, unit.google_pin_lng)
+            min_distance = float('inf')
+            best_index = -1
+
+            for idx, pref_coord in enumerate(preferred_coords):
+                dist = geodesic(unit_coord, pref_coord).meters
+                if dist < min_distance:
+                    min_distance = dist
+                    best_index = idx
+
+            unit_assignment[unit.id] = {
+                "unit_id": unit.id,
+                "score": unit_scores_map[unit.id],
+                "distance": round(min_distance, 2),
+                "preferred_coord_index": best_index
+            }
+
+        # Step 3: Group units by preferred_coord_index
+        grouped = {i: [] for i in range(len(preferred_coords))}
+        for unit_data in unit_assignment.values():
+            grouped[unit_data["preferred_coord_index"]].append(unit_data)
+
+        # Step 4: Sort each group by score (descending), then distance (ascending), and flatten result
+        final_result = []
+        for i in range(len(preferred_coords)):
+            sorted_group = sorted(grouped[i], key=lambda x: (-x["score"], x["distance"]))
+            final_result.extend(sorted_group)
+
+        return final_result
+
+def get_units_sorted_by_base_price(unit_id_list):
+    unit_lst = [unit_id['unit_id'] for unit_id in unit_id_list]
+    units = UnitDetails.objects.filter(id__in=unit_lst)
+    result = []
+    for unit in units:
+        result.append({
+            "unit_id": unit.id,
+            "base_price": float(unit.base_price),
+        })
+
+    # Sort by base_price ascending
+    result.sort(key=lambda x: x["base_price"])
+    return result
+
+def download_models(request):
+    export_selected_models_to_excel(model_list=[BuildingDetails, UnitDetails, Amenities])
+
+    return HttpResponse('hello')
+

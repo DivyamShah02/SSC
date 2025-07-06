@@ -47,7 +47,8 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'property-inquiry-list' %}">Property Inquiry Form</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'property-inquiry-list' %}">Property Inquiry Form</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'short-property-inquiry-list' %}">Short Property Inquiry Form</a>
                     </li>
                     <li class="nav-item">
                         {% if user.is_staff %}
@@ -179,13 +180,13 @@
 
                     <!-- Carpet Area -->
                     <div class="col-md-6 form-group">
-                        <label for="current_residence_area" class="form-label primary">10) What is the carpet area of your current residence?<span class="required"> *</span></label>
+                        <label for="current_residence_area" class="form-label primary">8) What is the carpet area of your current residence?<span class="required"> *</span></label>
                         <input type="number" class="form-control" min="0" id="current_residence_area" name="current_residence_area" placeholder="Enter area in Sq. Ft." required>
                     </div>
         
                     <!-- Religious Place Preference -->
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary">11) Do you prefer derasar / mandir / gurudwara near your house?<span class="required"> *</span></label><br>
+                        <label class="form-label primary">9) Do you prefer derasar / mandir / gurudwara near your house?<span class="required"> *</span></label><br>
                         <div class="row">
                             <div class="col-12 col-md-3 col-lg-2">
                                 <div class="form-check form-check-inline">
@@ -222,21 +223,21 @@
 
                     <!-- Workplace Area -->
                     <div class="col-md-6 form-group">
-                        <label for="workplace_area" class="form-label primary">12) In which area is your workplace?</label>
+                        <label for="workplace_area" class="form-label primary">10) In which area is your workplace?</label>
                         <input type="text" class="form-control" id="workplace_area" placeholder="Enter location", name="workplace_area_info">
                         <input type="hidden" id="workplace_area_value" name="workplace_area">
                     </div>
 
                     <!-- Children School Area -->
                     <div class="col-md-6 form-group">
-                        <label for="school_area" class="form-label primary">13) In which area do your children go to school?</label>
+                        <label for="school_area" class="form-label primary">11) In which area do your children go to school?</label>
                         <input type="text" class="form-control" id="school_area" placeholder="Enter location" name="school_area_info">
                         <input type="hidden" id="school_area_value" name="school_area">
                     </div>
     
                     <!-- Top 3 Preferred Locations -->
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="preferred_locations" id="preferred_locations_label" class="form-label primary">14) What are your top 3 preferred locations?<span class="required"> *</span></label>
+                        <label for="preferred_locations" id="preferred_locations_label" class="form-label primary">12) What are your top 3 preferred locations?<span class="required"> *</span></label>
                         <br>
                         <input type="hidden" id="no_of_locations" value="0">
                         <div id="preferred-location">
@@ -265,7 +266,7 @@
                 <div class="row">
                     <!-- Bedrooms and Washrooms -->
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="bedrooms" class="form-label primary">19) What type of house are you looking for?</label>
+                        <label for="bedrooms" class="form-label primary">13) What type of house are you looking for?</label>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-check">
@@ -296,7 +297,7 @@
                     </div>
 
                     <div class="col-md-12 col-lg-6 form-group">
-                        <label for="bedrooms" class="form-label primary" id="bedrooms_label">20) How many bedrooms do you need?<span class="required"> *</span></label>
+                        <label for="bedrooms" class="form-label primary" id="bedrooms_label">14) How many bedrooms do you need?<span class="required"> *</span></label>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-check">
@@ -344,7 +345,7 @@
                     </div>
     
                     <div class="col-md-6 form-group">
-                        <label for="attached_washrooms" class="form-label primary">21) How many attached washrooms should your house have?<span class="required"> *</span></label><br>
+                        <label for="attached_washrooms" class="form-label primary">15) How many attached washrooms should your house have?<span class="required"> *</span></label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="attached_washrooms" id="attached_washrooms_1" value="1" required>
                             <label class="form-check-label" for="attached_washrooms_1">1</label>
@@ -380,7 +381,7 @@
 
                     <!-- Servant room and Puja room -->
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary">22) Are you looking for a house with a servant room?<span class="required"> *</span></label><br>
+                        <label class="form-label primary">16) Are you looking for a house with a servant room?<span class="required"> *</span></label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="servant_room" id="servantRoomYes" value="yes" required>
                             <label class="form-check-label" for="servantRoomYes">Yes</label>
@@ -392,7 +393,7 @@
                     </div>
     
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary">23) Do you want a separate puja room?</label><br>
+                        <label class="form-label primary">17) Do you want a separate puja room?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="puja_room" id="pujaRoomYes" value="yes">
                             <label class="form-check-label" for="pujaRoomYes">Yes</label>
@@ -405,7 +406,7 @@
     
                     <!-- Minimum carpet area -->
                     <div class="col-md-6 form-group">
-                        <label for="min_carpet_area" class="form-label primary">24) What should be the minimum carpet area of the new property?<span class="required"> *</span></label>
+                        <label for="min_carpet_area" class="form-label primary">18) What should be the minimum carpet area of the new property?<span class="required"> *</span></label>
                         <input type="number" min="1" class="form-control" id="min_carpet_area" name="min_carpet_area" placeholder="Enter area in Sq. Ft." required>
                     </div>
                 </div>
@@ -421,42 +422,48 @@
             </div>
     
             <form id="building_preferences" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">                
-                <!-- <div class="row mb-4">
-                    <label class="form-label primary">32) What type of society do you prefer?</label>
+                            <div class="row mb-4">
+                    <label class="form-label primary">19) What should be the age of property that you are looking for?<span class="required"> *</span></label>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="society_type" value="Small low rise (40 to 60 units)" id="society1">
-                            <label class="form-check-label" for="society1">Small low rise (40 to 60 units)</label>
+                            <input class="form-check-input" type="radio" name="property_age" value="12 to 36 months old" id="age1" required>
+                            <label class="form-check-label" for="age1">12 to 36 months old</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="society_type" value="Single block high end (70 - 100 units)" id="society2">
-                            <label class="form-check-label" for="society2">Single block high end (70 - 100 units)</label>
+                            <input class="form-check-input" type="radio" name="property_age" value="0 to 12 months old" id="age2" required>
+                            <label class="form-check-label" for="age2">0 to 12 months old</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="society_type" value="Mid-sized gated community (120 to 300 units)" id="society3">
-                            <label class="form-check-label" for="society3">Mid-sized gated community (120 to 300 units)</label>
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 6 - 12 months" id="age3" required>
+                            <label class="form-check-label" for="age3">Upcoming 6 - 12 months</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="society_type" value="Large gated community (350 to 800 units)" id="society4">
-                            <label class="form-check-label" for="society4">Large gated community (350 to 800 units)</label>
+                            <input class="form-check-input" type="radio" name="property_age" value="Upcoming 12 to 36 months" id="age4" required>
+                            <label class="form-check-label" for="age4">Upcoming 12 to 36 months</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="society_type" value="Township" id="society5">
-                            <label class="form-check-label" for="society5">Township</label>
+                            <input class="form-check-input" type="radio" name="property_age" value="36 to 48 months" id="age5" required>
+                            <label class="form-check-label" for="age5">36 to 48 months</label>
                         </div>
                     </div>
-                </div> -->
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_age" value="Flexible" id="age6" required>
+                            <label class="form-check-label" for="age6">Flexible</label>
+                        </div>
+                    </div>
+                </div>
     
                 <div class="row mb-4">
-                    <label class="form-label primary">31) What are the 5 must-have amenities?</label>
+                    <label class="form-label primary">20) What are the 5 must-have amenities?</label>
                     <div class="col-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="amenities" value="central_park_s_garden" id="amenity1">
@@ -759,7 +766,7 @@
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row mb-3">                    
                                         <div class="col-md-12">
-                        <label for="minCr" class="form-label primary">32) What is your budget range for a house excluding interior cost and govt. charges? (in Cr)</label>
+                        <label for="minCr" class="form-label primary">21) What is your budget range for a house excluding interior cost and govt. charges? (in Cr)</label>
     
                     </div>
                     <div class="row col-md-12">
@@ -774,7 +781,7 @@
                     </div>
 
                     <div class="col-md-12 col-lg-6 form-group mb-5">
-                        <label for="percentage" class="form-label primary">33) How much down payment will you be able to make in % from the maximum range?<span class="required"> *</span></label>
+                        <label for="percentage" class="form-label primary">22) How much down payment will you be able to make in % from the maximum range?<span class="required"> *</span></label>
                         <div class="row col-md-12">
                             <div class="col-md-6">
                                 <input type="number" min="0" step="0.01" class="form-control" id="percentage" name="down_payment_percentage" placeholder="Enter Percentage" required>
@@ -783,7 +790,7 @@
                     </div>
             
                     <div class="col-md-12 col-lg-6 form-group mb-5">
-                        <label for="loanAmount" class="form-label primary">34) Are you going to avail a home loan for this deal? What is the approved amount?*</label>
+                        <label for="loanAmount" class="form-label primary">23) Are you going to avail a home loan for this deal? What is the approved amount?*</label>
                         <input type="number" min="1" step="0.01" class="form-control" id="loanAmount" name="loan_approved_amount" placeholder="Enter Amount">
                     </div>
             

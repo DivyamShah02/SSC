@@ -4006,3 +4006,23 @@ INFO 2025-07-04 12:23:09,017 basehttp "GET /static/js/script.js HTTP/1.1" 200 59
 INFO 2025-07-04 12:23:14,908 basehttp "POST /login/ HTTP/1.1" 302 0
 INFO 2025-07-04 12:23:14,991 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111454
 INFO 2025-07-04 12:23:22,302 basehttp "GET /dashboard/ HTTP/1.1" 200 572150
+INFO 2025-07-04 12:25:39,721 basehttp "GET / HTTP/1.1" 200 2267
+INFO 2025-07-04 12:25:41,878 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88324
+INFO 2025-07-04 12:31:51,310 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88322
+WARNING 2025-07-04 12:32:32,391 log Not Found: /shop/
+WARNING 2025-07-04 12:32:32,392 basehttp "GET /shop/ HTTP/1.1" 404 24727
+INFO 2025-07-04 12:32:45,284 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 104460
+INFO 2025-07-04 12:32:45,385 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-07-04 12:35:04,873 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 104582
+INFO 2025-07-04 12:35:12,755 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111498
+INFO 2025-07-04 12:35:13,854 basehttp "GET /short-property-inquiry/?client_id=1 HTTP/1.1" 200 88366
+INFO 2025-07-04 12:35:14,055 basehttp "POST /edit-client/ HTTP/1.1" 200 1894
+INFO 2025-07-04 12:35:15,113 basehttp "POST /edit-client/ HTTP/1.1" 200 1894
+INFO 2025-07-04 12:35:57,736 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88457
+INFO 2025-07-04 12:36:09,474 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88450
+INFO 2025-07-04 12:36:13,514 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111454
+INFO 2025-07-04 12:36:33,495 basehttp "GET /property-inquiry/?client_id=1 HTTP/1.1" 200 111626
+INFO 2025-07-04 12:36:34,903 basehttp "POST /edit-client/ HTTP/1.1" 200 1894
+INFO 2025-07-04 12:36:37,372 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88450
+INFO 2025-07-04 12:36:39,717 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111582
+INFO 2025-07-04 12:36:43,442 basehttp "GET /short-property-inquiry/ HTTP/1.1" 200 88450

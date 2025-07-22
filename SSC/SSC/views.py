@@ -521,8 +521,10 @@ def update_distance_order(request):
                 properties_data = []
             
 
-            distance_sorted_data = order_property_as_per_location(preferred_coords_string=client_info_obj.preferred_locations, unit_score_list=properties_data[0:15])
-            base_price_sorted_data = get_units_sorted_by_base_price(unit_id_list=properties_data[0:15])
+            # distance_sorted_data = order_property_as_per_location(preferred_coords_string=client_info_obj.preferred_locations, unit_score_list=properties_data[0:15])
+            distance_sorted_data = order_property_as_per_location(preferred_coords_string=client_info_obj.preferred_locations, unit_score_list=properties_data)
+            # base_price_sorted_data = get_units_sorted_by_base_price(unit_id_list=properties_data[0:15])
+            base_price_sorted_data = get_units_sorted_by_base_price(unit_id_list=properties_data)
 
 
             client_obj.distance_order_properties = distance_sorted_data

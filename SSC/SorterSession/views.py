@@ -48,8 +48,10 @@ class SorterViewSet(viewsets.ViewSet):
             updated_client_data = sorter.update_client_preferences(client_data=client_data)
             validated_properties = sorter.get_pre_validated_property(updated_client_data=updated_client_data)
             sorted_data = sorter.generate_property_list(updated_client_data=updated_client_data, validated_properties=validated_properties)
-            distance_sorted_data = self.order_property_as_per_location(preferred_coords_string=client_data.get('preferred_locations', ''), unit_score_list=sorted_data[0:15])
-            base_price_sorted_data = self.get_units_sorted_by_base_price(unit_id_list=sorted_data[0:15])
+            # distance_sorted_data = self.order_property_as_per_location(preferred_coords_string=client_data.get('preferred_locations', ''), unit_score_list=sorted_data[0:15])
+            distance_sorted_data = self.order_property_as_per_location(preferred_coords_string=client_data.get('preferred_locations', ''), unit_score_list=sorted_data)
+            # base_price_sorted_data = self.get_units_sorted_by_base_price(unit_id_list=sorted_data[0:15])
+            base_price_sorted_data = self.get_units_sorted_by_base_price(unit_id_list=sorted_data)
 
             session_already_exists = ShortlistedProperty.objects.filter(client_id=inquiry_id).first()
             if session_already_exists:
@@ -184,7 +186,8 @@ class PropertyViewset(viewsets.ViewSet):
                 raise ParseError("Properties data must be a list.")
 
             all_properties = []
-            for property in properties_data[0:15]:
+            # for property in properties_data[0:15]:
+            for property in properties_data:
                 try:
                     unit_id = property.get('unit_id')
                     if not unit_id:
@@ -317,8 +320,9 @@ class PropertyDetailViewset(viewsets.ViewSet):
                 raise ParseError("Property Index is required.")
             
             ind = int(ind)
-            if ind > 15 or ind <= 0:
-                return Response({'status':False, 'message':f'Property Index cannot be more than 15 and cannot be less than 1'})
+            # if ind > 15 or ind <= 0:
+            if ind <= 0:
+                return Response({'status':False, 'message':f'Property Index cannot be less than 1'})
 
             if not session_id:
                 raise ParseError("Session ID is required.")
@@ -376,8 +380,9 @@ class PropertyDetailViewset(viewsets.ViewSet):
             same_building_id = []
             menu_properties = []
             same_units = {}
-            
-            for i, property in enumerate(properties_data[0:15]):
+
+            # for i, property in enumerate(properties_data[0:15]):
+            for i, property in enumerate(properties_data):
                 try:
                     unit_id = property.get('unit_id')
                     

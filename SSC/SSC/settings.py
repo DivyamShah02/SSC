@@ -60,6 +60,11 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
+        'Bunglow': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
         'SorterSession': {
             'handlers': ['file'],
             'level': 'INFO',
@@ -101,6 +106,7 @@ INSTALLED_APPS = [
     'Property',
     'SorterSession',
     'storages',
+    'Bunglows',
 ]
 
 MIDDLEWARE = [

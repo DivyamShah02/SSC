@@ -1,0 +1,255 @@
+INFO 2025-07-25 22:13:59,385 basehttp "GET / HTTP/1.1" 200 2267
+INFO 2025-07-25 22:13:59,533 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-07-25 22:13:59,541 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-25 22:14:01,543 basehttp "GET /property-detail/ HTTP/1.1" 302 0
+INFO 2025-07-25 22:14:01,572 basehttp "GET /login/?next=/property-detail/ HTTP/1.1" 200 3972
+INFO 2025-07-25 22:14:01,622 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-25 22:14:09,612 basehttp "POST /login/ HTTP/1.1" 200 4231
+INFO 2025-07-25 22:14:18,434 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-25 22:14:18,544 basehttp "GET /property-detail/ HTTP/1.1" 200 135588
+INFO 2025-07-25 22:14:19,782 basehttp "GET /property-detail/ HTTP/1.1" 200 135588
+INFO 2025-07-25 22:14:19,811 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-25 22:14:19,812 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-25 22:14:19,823 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-25 22:14:19,823 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+WARNING 2025-07-25 22:14:20,287 log Not Found: /favicon.ico
+WARNING 2025-07-25 22:14:20,289 basehttp "GET /favicon.ico HTTP/1.1" 404 24745
+INFO 2025-07-25 22:14:27,384 basehttp "GET /property-detail/ HTTP/1.1" 302 0
+INFO 2025-07-25 22:14:27,392 basehttp "GET /login/?next=/property-detail/ HTTP/1.1" 200 3972
+INFO 2025-07-25 22:14:27,460 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-07-25 22:14:27,461 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-25 22:14:27,463 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-25 22:14:27,464 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-25 22:14:27,469 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-07-25 22:14:27,788 log Not Found: /favicon.ico
+WARNING 2025-07-25 22:14:27,789 basehttp "GET /favicon.ico HTTP/1.1" 404 24745
+INFO 2025-07-25 22:14:39,983 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-25 22:14:39,995 basehttp "GET /property-detail/ HTTP/1.1" 200 135588
+INFO 2025-07-25 23:50:27,487 basehttp "GET / HTTP/1.1" 200 2267
+INFO 2025-07-25 23:50:31,868 basehttp "GET /property-inquiry/ HTTP/1.1" 200 111582
+INFO 2025-07-25 23:50:39,010 basehttp "GET /property-detail/ HTTP/1.1" 200 135588
+WARNING 2025-07-25 23:50:47,915 log Not Found: /bunglow-detail/
+WARNING 2025-07-25 23:50:47,915 basehttp "GET /bunglow-detail/ HTTP/1.1" 404 24757
+INFO 2025-07-25 23:51:37,909 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 135605
+ERROR 2025-07-25 23:56:07,833 log Internal Server Error: /bunglow-detail/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Bunglows\views.py", line 54, in list
+    return render(request, 'bunglow_detail_form.html', data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'bunglow-inquiry-list' not found. 'bunglow-inquiry-list' is not a valid view function or pattern name.
+ERROR 2025-07-25 23:56:07,843 basehttp "GET /bunglow-detail/ HTTP/1.1" 500 177041
+INFO 2025-07-25 23:57:48,890 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 135518
+INFO 2025-07-25 23:58:02,790 basehttp "GET /admin/ HTTP/1.1" 200 12259
+INFO 2025-07-25 23:58:06,524 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 13647
+INFO 2025-07-25 23:58:06,586 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:07,950 basehttp "GET /admin/Bunglows/bunglowamenities/ HTTP/1.1" 200 12082
+INFO 2025-07-25 23:58:07,986 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:09,635 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 13647
+INFO 2025-07-25 23:58:09,669 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:12,888 basehttp "GET /admin/Property/amenities/ HTTP/1.1" 200 40583
+INFO 2025-07-25 23:58:12,920 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:15,064 basehttp "GET /admin/Property/amenities/602/change/ HTTP/1.1" 200 31857
+INFO 2025-07-25 23:58:15,099 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:18,166 basehttp "GET /admin/Property/amenities/ HTTP/1.1" 200 40583
+INFO 2025-07-25 23:58:19,852 basehttp "GET /admin/Property/amenities/546/change/ HTTP/1.1" 200 31913
+INFO 2025-07-25 23:58:19,887 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:22,140 basehttp "GET /admin/Property/amenities/ HTTP/1.1" 200 40583
+INFO 2025-07-25 23:58:26,678 basehttp "GET /admin/Property/buildingdetails/ HTTP/1.1" 200 110647
+INFO 2025-07-25 23:58:26,713 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:28,761 basehttp "GET /admin/Bunglows/bunglowamenities/ HTTP/1.1" 200 12082
+INFO 2025-07-25 23:58:28,795 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:29,492 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 13647
+INFO 2025-07-25 23:58:29,524 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:58:30,346 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 13187
+INFO 2025-07-25 23:58:30,379 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 23:59:02,672 basehttp "GET /bunglow-autocomplete-name/?q=D HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:02,954 basehttp "GET /bunglow-autocomplete-name/?q=Dy HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:03,163 basehttp "GET /bunglow-autocomplete-name/?q=Dyn HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:03,251 basehttp "GET /bunglow-autocomplete-name/?q=Dyna HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:03,518 basehttp "GET /bunglow-autocomplete-name/?q=Dynam HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:03,665 basehttp "GET /bunglow-autocomplete-name/?q=Dynami HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:03,868 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:04,162 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:04,451 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20L HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:04,659 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20La HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:04,806 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20Lab HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:04,971 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20Labx HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:05,716 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20Lab HTTP/1.1" 200 2
+INFO 2025-07-25 23:59:05,824 basehttp "GET /bunglow-autocomplete-name/?q=Dynamic%20Labz HTTP/1.1" 200 2
+WARNING 2025-07-26 00:01:37,298 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:01:37,305 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:08:24,180 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 135525
+WARNING 2025-07-26 00:08:24,241 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:08:24,246 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:08:24,334 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-26 00:08:24,353 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-26 00:08:24,360 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-26 00:08:24,361 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+WARNING 2025-07-26 00:08:24,761 log Not Found: /favicon.ico
+WARNING 2025-07-26 00:08:24,762 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 00:08:25,158 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 135525
+WARNING 2025-07-26 00:08:25,198 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:08:25,200 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:08:25,202 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-26 00:08:25,202 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-26 00:08:25,203 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-26 00:08:25,204 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-26 00:08:25,736 log Not Found: /favicon.ico
+WARNING 2025-07-26 00:08:25,737 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 00:08:27,373 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 135525
+WARNING 2025-07-26 00:08:27,410 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:08:27,414 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:08:27,416 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-26 00:08:27,417 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-26 00:08:27,417 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-26 00:08:27,418 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-26 00:08:27,950 log Not Found: /favicon.ico
+WARNING 2025-07-26 00:08:27,951 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 00:08:32,247 basehttp "GET /bunglow-autocomplete-name/?q=f HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,253 basehttp "GET /bunglow-autocomplete-name/?q=fz HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,272 basehttp "GET /bunglow-autocomplete-name/?q=fzd HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,272 basehttp "GET /bunglow-autocomplete-name/?q=fzdv HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,300 basehttp "GET /bunglow-autocomplete-name/?q=fzdves HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,305 basehttp "GET /bunglow-autocomplete-name/?q=fzdvesg HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,315 basehttp "GET /bunglow-autocomplete-name/?q=fzdvesgt HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,316 basehttp "GET /bunglow-autocomplete-name/?q=fzdve HTTP/1.1" 200 2
+INFO 2025-07-26 00:08:32,322 basehttp "GET /bunglow-autocomplete-name/?q=fzdvesgtr HTTP/1.1" 200 2
+ERROR 2025-07-26 00:09:33,174 views 'amenities'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Bunglows\views.py", line 82, in create
+    if type(data['amenities']) != list:
+            ~~~~^^^^^^^^^^^^^
+KeyError: 'amenities'
+INFO 2025-07-26 00:09:33,202 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-26 00:09:35,485 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-26 00:09:35,505 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 51768
+WARNING 2025-07-26 00:09:35,565 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:09:35,567 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:09:48,591 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 13187
+INFO 2025-07-26 00:09:48,621 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 00:09:51,539 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 13187
+INFO 2025-07-26 00:09:51,566 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 00:09:54,804 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 16368
+INFO 2025-07-26 00:09:54,832 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 00:11:11,429 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1377
+INFO 2025-07-26 00:11:11,477 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 53052
+WARNING 2025-07-26 00:11:11,522 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:11:11,523 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:11:59,817 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 15609
+INFO 2025-07-26 00:11:59,848 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 00:12:01,714 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 16368
+INFO 2025-07-26 00:12:01,746 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 00:12:06,630 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1382
+INFO 2025-07-26 00:12:10,734 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1382
+INFO 2025-07-26 00:12:21,136 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 135574
+WARNING 2025-07-26 00:12:21,171 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:12:21,171 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:12:21,337 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2278
+INFO 2025-07-26 00:12:52,305 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 135575
+WARNING 2025-07-26 00:12:52,342 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:12:52,343 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:12:52,457 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2278
+WARNING 2025-07-26 00:12:52,534 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 00:12:52,534 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-26 00:12:53,390 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 135575
+WARNING 2025-07-26 00:12:53,430 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:12:53,431 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:12:53,437 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-26 00:12:53,438 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-26 00:12:53,439 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-26 00:12:53,440 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-26 00:12:53,908 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2278
+WARNING 2025-07-26 00:12:53,984 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 00:12:53,985 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+WARNING 2025-07-26 00:12:54,018 log Not Found: /favicon.ico
+WARNING 2025-07-26 00:12:54,019 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 00:14:07,086 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-26 00:14:10,132 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 135575
+WARNING 2025-07-26 00:14:10,174 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:14:10,175 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:14:10,349 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2601
+WARNING 2025-07-26 00:14:10,418 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 00:14:10,418 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-26 00:14:16,426 basehttp - Broken pipe from ('127.0.0.1', 53708)
+INFO 2025-07-26 00:14:21,485 basehttp "POST /bunglow-publish/ HTTP/1.1" 200 56
+INFO 2025-07-26 00:14:22,864 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 135575
+WARNING 2025-07-26 00:14:22,907 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:14:22,908 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:14:24,335 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2757
+WARNING 2025-07-26 00:14:24,471 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 00:14:24,472 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-26 00:14:49,571 basehttp "GET /view-default-property/?unit_id=1 HTTP/1.1" 200 99217
+WARNING 2025-07-26 00:14:49,616 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:14:49,617 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:14:49,619 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+WARNING 2025-07-26 00:14:52,173 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 00:14:52,173 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 00:14:53,852 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2757
+WARNING 2025-07-26 00:14:54,000 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 00:14:54,000 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983

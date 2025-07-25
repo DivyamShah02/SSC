@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/loader.css">
+    <title>Bunglow Detail Form</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        .pac-container {
+            z-index: 2001 !important;
+            /* Ensure autocomplete dropdown is above the modal */
+        }
+        #autocomplete-list {
+            border: 1px solid #ddd;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background: white;
+            z-index: 1000;
+        }
+        .autocomplete-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .autocomplete-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="spinner" class="spinner-container p-2" style="background-color: rgba(255, 255, 255, 0.293) !important; border-radius: 30%;">
+        <div class="spinner"></div>
+        <div id="spinner-text" class="loading-text text-center">Fetching best properties<br>for you...</div>
+    </div>
+
+    <!-- Navigation bar start -->
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <a class="navbar-brand" href="#">                
+                <img src="/static/img/Logo.svg" alt="Square Second Consultancy">
+            </a>
+            <div class="row">
+                <div class="col-6">
+                    <!-- <h4 class="mt-1" style="cursor: pointer;"><i class="fas fa-magnifying-glass"></i></h4> -->
+                </div>
+                <div class="col-6">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Square Second Consultants</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'property-inquiry-list' %}">Bunglow Inquiry Form</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'bunglow-detail-list' %}">Bunglow Detail Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard/">Dashboard</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation bar end -->
+
+    <!-- Main content start -->
+    <div id="main-content" class="blur">
+        <!-- Developer History start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Developer History</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="developer_history" class="p-4 border border-top-0 rounded-bottom"
+                style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developerGroupName">1) Name of the group<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="developerGroupName" name="group_name" required
+                            placeholder="Enter name">
+                            <div id="autocomplete-list"></div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="yearOfEstablishment">2) Year of establishment</label>
+                        <input type="number" class="form-control" id="yearOfEstablishment" name="year_of_establishment"
+                            placeholder="2000">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectsDelivered">3) No. of projects delivered</label>
+                        <input type="number" class="form-control" id="projectsDelivered" name="no_of_projects_delivered"
+                            placeholder="15">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="keyProjects">4) Key projects</label>
+                        <input type="text" class="form-control" id="key_projects_1" name="key_projects_1"
+                            placeholder="Key Project 1">
+                        <input type="text" class="form-control" id="key_projects_2" name="key_projects_2"
+                            placeholder="Key Project 2">
+                        <input type="text" class="form-control" id="key_projects_3" name="key_projects_3"
+                            placeholder="Key Project 3">
+                        <input type="text" class="form-control" id="key_projects_4" name="key_projects_4"
+                            placeholder="Key Project 4">
+                        <input type="text" class="form-control" id="key_projects_5" name="key_projects_5"
+                            placeholder="Key Project 5">
+
+                        <!-- <textarea class="form-control" id="keyProjects" name="key_projects" rows="3"></textarea> -->
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="keyPromoters">5) Key promoters</label>
+                        <input type="text" class="form-control" id="key_promoters_1" name="key_promoters_1"
+                            placeholder="Key Promoter 1">
+                        <input type="text" class="form-control" id="key_promoters_2" name="key_promoters_2"
+                            placeholder="Key Promoter 2">
+                        <input type="text" class="form-control" id="key_promoters_3" name="key_promoters_3"
+                            placeholder="Key Promoter 3">
+                        <input type="text" class="form-control" id="key_promoters_4" name="key_promoters_4"
+                            placeholder="Key Promoter 4">
+                        <input type="text" class="form-control" id="key_promoters_5" name="key_promoters_5"
+                            placeholder="Key Promoter 5">
+
+                        <!-- <textarea class="form-control" id="keyPromoters" name="key_promoters" rows="3"></textarea> -->
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Developer History end -->
+
+        <!-- Contact Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Contact Details</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="contact_details" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <!-- Customer Name -->
+                    <!-- <div class="col-md-4 form-group">
+                        <label for="developerGroupName" class="form-label">
+                            Customer Name<span class=""> *</span>
+                        </label>
+                        <input type="text" class="form-control" id="developerGroupName" name="group_name" placeholder="Enter name" >
+                    </div> -->
+                    <!-- autofocus -->
+
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="contactName">6) Name</label>
+                        <input type="text" class="form-control" id="contactName" name="name"
+                            placeholder="Enter contact name">
+                    </div>
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="contactNumber">7) Number</label>
+                        <div class="row input-group">
+                            <div class="col-4 pe-0">
+                                <select name="number_country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                  </select>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" max="9999999999" class="form-control" id="contactNumber" name="number"
+                                    placeholder="Enter contact number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="contactEmail">8) Email</label>
+                        <input type="email" class="form-control" id="contactEmail" name="email"
+                            placeholder="Enter contact email">
+                    </div>
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="alternateName">9) Alternate name</label>
+                        <input type="text" class="form-control" id="alternateName" name="alternate_name"
+                            placeholder="Enter alternate name">
+                    </div>
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="alternateNumber">10) Alternate number</label>
+                        <div class="row input-group">
+                            <div class="col-4 pe-0">
+                                <select name="alternate_number_country_code" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option value="+91" selected>+91 </option>
+                                    <option value="+1">+1</option><option value="+1242">+1242</option><option value="+1246">+1246</option><option value="+1264">+1264</option><option value="+1268">+1268</option><option value="+1284">+1284</option><option value="+1340">+1340</option><option value="+1441">+1441</option><option value="+1473">+1473</option><option value="+1649">+1649</option><option value="+1664">+1664</option><option value="+1670">+1670</option><option value="+1671">+1671</option><option value="+1684">+1684</option><option value="+1758">+1758</option><option value="+1767">+1767</option><option value="+1784">+1784</option><option value="+1849">+1849</option><option value="+1868">+1868</option><option value="+1869">+1869</option><option value="+1876">+1876</option><option value="+1939">+1939</option><option value="+20">+20</option><option value="+211">+211</option><option value="+212">+212</option><option value="+213">+213</option><option value="+216">+216</option><option value="+218">+218</option><option value="+220">+220</option><option value="+221">+221</option><option value="+222">+222</option><option value="+223">+223</option><option value="+224">+224</option><option value="+225">+225</option><option value="+226">+226</option><option value="+227">+227</option><option value="+228">+228</option><option value="+229">+229</option><option value="+230">+230</option><option value="+231">+231</option><option value="+232">+232</option><option value="+233">+233</option><option value="+234">+234</option><option value="+235">+235</option><option value="+236">+236</option><option value="+237">+237</option><option value="+238">+238</option><option value="+239">+239</option><option value="+240">+240</option><option value="+241">+241</option><option value="+242">+242</option><option value="+243">+243</option><option value="+244">+244</option><option value="+245">+245</option><option value="+246">+246</option><option value="+248">+248</option><option value="+249">+249</option><option value="+250">+250</option><option value="+251">+251</option><option value="+252">+252</option><option value="+253">+253</option><option value="+254">+254</option><option value="+255">+255</option><option value="+256">+256</option><option value="+257">+257</option><option value="+258">+258</option><option value="+260">+260</option><option value="+261">+261</option><option value="+262">+262</option><option value="+262">+262</option><option value="+262">+262</option><option value="+263">+263</option><option value="+264">+264</option><option value="+265">+265</option><option value="+266">+266</option><option value="+267">+267</option><option value="+268">+268</option><option value="+269">+269</option><option value="+27">+27</option><option value="+290">+290</option><option value="+291">+291</option><option value="+297">+297</option><option value="+298">+298</option><option value="+299">+299</option><option value="+30">+30</option><option value="+31">+31</option><option value="+32">+32</option><option value="+33">+33</option><option value="+34">+34</option><option value="+345">+345</option><option value="+350">+350</option><option value="+351">+351</option><option value="+352">+352</option><option value="+353">+353</option><option value="+354">+354</option><option value="+355">+355</option><option value="+356">+356</option><option value="+357">+357</option><option value="+358">+358</option><option value="+358">+358</option><option value="+359">+359</option><option value="+36">+36</option><option value="+370">+370</option><option value="+371">+371</option><option value="+372">+372</option><option value="+373">+373</option><option value="+374">+374</option><option value="+375">+375</option><option value="+376">+376</option><option value="+377">+377</option><option value="+378">+378</option><option value="+379">+379</option><option value="+380">+380</option><option value="+381">+381</option><option value="+382">+382</option><option value="+383">+383</option><option value="+385">+385</option><option value="+386">+386</option><option value="+387">+387</option><option value="+389">+389</option><option value="+39">+39</option><option value="+40">+40</option><option value="+41">+41</option><option value="+420">+420</option><option value="+421">+421</option><option value="+423">+423</option><option value="+43">+43</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+44">+44</option><option value="+45">+45</option><option value="+46">+46</option><option value="+47">+47</option><option value="+47">+47</option><option value="+47">+47</option><option value="+48">+48</option><option value="+49">+49</option><option value="+500">+500</option><option value="+500">+500</option><option value="+501">+501</option><option value="+502">+502</option><option value="+503">+503</option><option value="+504">+504</option><option value="+505">+505</option><option value="+506">+506</option><option value="+507">+507</option><option value="+508">+508</option><option value="+509">+509</option><option value="+51">+51</option><option value="+52">+52</option><option value="+53">+53</option><option value="+54">+54</option><option value="+55">+55</option><option value="+56">+56</option><option value="+57">+57</option><option value="+58">+58</option><option value="+590">+590</option><option value="+590">+590</option><option value="+590">+590</option><option value="+591">+591</option><option value="+592">+592</option><option value="+593">+593</option><option value="+594">+594</option><option value="+595">+595</option><option value="+596">+596</option><option value="+597">+597</option><option value="+598">+598</option><option value="+599">+599</option><option value="+60">+60</option><option value="+61">+61</option><option value="+61">+61</option><option value="+61">+61</option><option value="+62">+62</option><option value="+63">+63</option><option value="+64">+64</option><option value="+64">+64</option><option value="+65">+65</option><option value="+66">+66</option><option value="+670">+670</option><option value="+672">+672</option><option value="+672">+672</option><option value="+672">+672</option><option value="+673">+673</option><option value="+674">+674</option><option value="+675">+675</option><option value="+676">+676</option><option value="+677">+677</option><option value="+678">+678</option><option value="+679">+679</option><option value="+680">+680</option><option value="+681">+681</option><option value="+682">+682</option><option value="+683">+683</option><option value="+685">+685</option><option value="+686">+686</option><option value="+687">+687</option><option value="+688">+688</option><option value="+689">+689</option><option value="+690">+690</option><option value="+691">+691</option><option value="+692">+692</option><option value="+7">+7</option><option value="+7">+7</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+850">+850</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+856">+856</option><option value="+86">+86</option><option value="+880">+880</option><option value="+886">+886</option><option value="+90">+90</option><option value="+92">+92</option><option value="+93">+93</option><option value="+94">+94</option><option value="+95">+95</option><option value="+960">+960</option><option value="+961">+961</option><option value="+962">+962</option><option value="+963">+963</option><option value="+964">+964</option><option value="+965">+965</option><option value="+966">+966</option><option value="+967">+967</option><option value="+968">+968</option><option value="+970">+970</option><option value="+971">+971</option><option value="+972">+972</option><option value="+973">+973</option><option value="+974">+974</option><option value="+975">+975</option><option value="+976">+976</option><option value="+977">+977</option><option value="+98">+98</option><option value="+992">+992</option><option value="+993">+993</option><option value="+994">+994</option><option value="+995">+995</option><option value="+996">+996</option><option value="+998">+998</option>
+                                </select>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" max="9999999999" class="form-control" id="alternateNumber" name="alternate_number"
+                                    placeholder="Enter alternate number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 form-group">
+                        <label class="form-label primary" for="alternateEmail">11) Alternate Email</label>
+                        <input type="email" class="form-control" id="alternateEmail" name="alternate_email"
+                            placeholder="Enter alternate email">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Contact Details end -->
+
+        <!-- Project/Bunglow Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Project/Bunglow Details</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="project_bunglow_details" class="p-4 border border-top-0 rounded-bottom"
+                style="background-color: white;">
+                <div class="row">
+                    <input type="hidden" class="form-control" id="copy_bunglow_id" value="NULL" placeholder=""
+                        name="copy_bunglow_id">
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectId">Project/bunglow ID</label>
+                        <input type="text" class="form-control" id="projectId" name="project_id" >
+                    </div> -->
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectName">12) Project Name<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectName" name="project_name" required
+                            placeholder="Enter project name">
+                    </div>
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developedBy">13) Developed by<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="developedBy" name="developed_by" required
+                            placeholder="Builder group name">
+                    </div> -->
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectLocation">13) Area location (one word)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectLocation" name="area_of_project" required
+                            placeholder="Area of project">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectLocation">14) Location of the project
+                            (Address)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="projectLocation" name="location_of_project" required
+                            placeholder="Address of project">
+                    </div>                    
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="googlePin">15) Google pin (fetch current location)<span class="required"> *</span></label>
+                        <input type="hidden" class="form-control" id="googlePin" name="google_Pin"
+                            placeholder="Fetch current location" value="No">
+                        <button type="button" class="btn btn-custom-primary" data-bs-toggle="modal"
+                            data-bs-target="#mapModal" id="location_btn">
+                            Open Map Selector <i id="locaiton_saved" class=""></i>
+                        </button>
+
+                        <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog custom-size">
+                                <div class="modal-content">
+                                    <div class="modal-header"
+                                        style="background-color: var(--primary-color); color: white;">
+                                        <h1 class="modal-title fs-5" id="mapModalLabel">Select a Location</h1>
+                                        <button type="button" class="btn-close" style="filter: invert(10);"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Map -->
+                                        <div class="p-3 row">
+                                            <div class="col-12 col-md-6">
+                                                <input id="searchBox" class="form-control" type="text"
+                                                    placeholder="Enter an address"
+                                                    style="border: 3px var(--primary-color) solid; border-radius: 7px;">
+                                            </div>
+                                        </div>
+                                        <!-- Search Box -->
+                                        <div id="map" style="border-radius: 0 !important;"></div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="currentLocationBtn" class="btn btn-secondary">Get
+                                            Current Location</button>
+
+                                        <button type="button" id="location_modal_close" class="btn btn-custom"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-custom-primary" id="saveLocationBtn">Save
+                                            Location</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="projectType">16) Type of Project <span class="required"> *</span></label><br>
+                        <!-- <br> -->
+                        <!-- <label for="why_buy_house" class="form-label">Select<span class=""> *</span></label> -->
+                        <!-- <select class="form-select" id="projectType" name="type_of_project">
+                            <option value="Residential apartments">Residential apartments</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Mix">Mix</option>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project"
+                                id="type_of_project_Residential" value="Residential" required>
+                            <label class="form-check-label" for="type_of_project_Residential">Residential</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project"
+                                id="type_of_project_Commercial" value="Commercial" required>
+                            <label class="form-check-label" for="type_of_project_Commercial">Commercial</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type_of_project" id="type_of_project_Mix"
+                                value="Mix" required>
+                            <label class="form-check-label" for="type_of_project_Mix">Mix</label>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 form-group">
+                        <label class="form-label primary" for="bedrooms" id="bedrooms">17) Type of apartments (multiple choice)<span class="required"> *</span></label>
+
+                        <!-- <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="1_bhk" id="1_bhk">
+                                <label class="form-check-label" for="1_bhk">1 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="2_bhk"
+                                    id="2_bhk">
+                                <label class="form-check-label" for="2_bhk">2 BHK</label>
+                            </div>
+                        </div> -->
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="1_bhk"
+                                    id="1_bhk">
+                                <label class="form-check-label" for="1_bhk">1 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="2_bhk"
+                                    id="2_bhk">
+                                <label class="form-check-label" for="2_bhk">2 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="3_bhk"
+                                    id="3_bhk">
+                                <label class="form-check-label" for="3_bhk">3 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="4_bhk"
+                                    id="4_bhk">
+                                <label class="form-check-label" for="4_bhk">4 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="5_bhk"
+                                    id="5_bhk">
+                                <label class="form-check-label" for="5_bhk">5 BHK</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="6_bhk"
+                                    id="6_bhk">
+                                <label class="form-check-label" for="6_bhk">6 BHK</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="possession_by">Possession By (MM/YY)</label>
+                        <input type="text" class="form-control" id="possession_by" placeholder="Age of the bunglow"
+                            name="possession_by">
+                    </div> -->
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="ageOfBunglowDeveloper">18) Possession date as per Developer (MM/YY)<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="ageOfBunglowDeveloper" required
+                            placeholder="Possession date as per Developer" name="age_of_bunglow_by_developer">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="ageOfBunglowRERA">19) Possession date as per RERA (MM/YY)</label>
+                        <input type="text" class="form-control" id="ageOfBunglowRERA" name="age_of_bunglow_rera"
+                            placeholder="Possession date as per RERA">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="jodiPossible">20) RERA Approved?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_Yes" onclick="toggleReraDate(false)"
+                                value="Yes">
+                            <label class="form-check-label" for="rera_approved_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_No" onclick="toggleReraDate(true)"
+                                value="No">
+                            <label class="form-check-label" for="rera_approved_No">No</label>
+                        </div>
+
+                        <div id="rera_by_when_que" class="pt-3" style="display: none;">
+                            <label class="form-label primary" for="rera_by_when">&nbsp;&nbsp;By When is RERA expected?</label>
+                            <input type="text" class="form-control" id="rera_by_when" name="rera_by_when"
+                            placeholder="Possession date as per RERA">
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plotArea">21) Plot area of the project FP/Net (In Sq Yd)</label>
+                        <input type="number" min="1" class="form-control" id="plotArea" name="plot_area"
+                            placeholder="Enter plot area">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="architect">22) Architect<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="architect" name="architect" required
+                            placeholder="Enter Architect name">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="constructionCompany">23) Construction company</label>
+                        <input type="text" class="form-control" id="constructionCompany" name="construction_company"
+                            placeholder="Enter construction company name">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBlocks">24) Total no. of Blocks<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfBlocks" name="no_of_blocks" required
+                            placeholder="Enter number of blocks">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfUnits">25) Total no. Units<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfUnits" name="no_of_units" required
+                            placeholder="Enter number of units">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfFloors">26) Total no. Floors<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfFloors" name="no_of_floors" required
+                            placeholder="Enter number of floors">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBasements">27) Levels of Basements<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="numberOfBasements" name="no_of_basements" required
+                            placeholder="Enter number of basements">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="jodiPossible">28) Jodi possible?</label><br>
+                        <!-- <select class="form-select" id="jodiPossible" name="jodi_possible">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="jodi_possible_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_No"
+                                value="No">
+                            <label class="form-check-label" for="jodi_possible_No">No</label>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 text-center mt-2">
+                        <button type="button" onclick="submit_detail_form(true)" class="btn btn-custom-primary"><b>Add Units</b></button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <!-- Project/Bunglow Details end -->
+
+        <!-- Amenities Details start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Amenities</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="amenities" class="p-4 border border-top-0 rounded-bottom"
+                style="background-color: white;">
+                <div class="row">
+                    <div class="col-md-12 row form-group">
+                        <label class="form-label primary" for="buildingAmenities">29) Building amenities list</label>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="central_park_s_garden" id="amenity1">
+                                <label class="form-check-label" for="amenity1">Central Park / Garden</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="mini_theatre" id="amenity2">
+                                <label class="form-check-label" for="amenity2">Mini Theatre</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="senior_citizen_sit_d_outs" id="amenity3">
+                                <label class="form-check-label" for="amenity3">Senior Citizen Sit-Outs</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="mud_play_zone" id="amenity4">
+                                <label class="form-check-label" for="amenity4">Mud Play Zone</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="multi_d_purpose_court" id="amenity5">
+                                <label class="form-check-label" for="amenity5">Multi-Purpose Court</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="indoor_games" id="amenity6">
+                                <label class="form-check-label" for="amenity6">Indoor Games</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="walking_s_jogging_track" id="amenity7">
+                                <label class="form-check-label" for="amenity7">Walking / Jogging Track</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="drivers_lounge" id="amenity8">
+                                <label class="form-check-label" for="amenity8">Drivers Lounge</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="visitors_parking" id="amenity9">
+                                <label class="form-check-label" for="amenity9">Visitors Parking</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="activity_room" id="amenity10">
+                                <label class="form-check-label" for="amenity10">Activity Room</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="yoga_room" id="amenity11">
+                                <label class="form-check-label" for="amenity11">Yoga Room</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="house_keeping_lounge" id="amenity12">
+                                <label class="form-check-label" for="amenity12">House Keeping Lounge</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="gymnasium" id="amenity13">
+                                <label class="form-check-label" for="amenity13">Gymnasium</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="library_s_reading_room" id="amenity14">
+                                <label class="form-check-label" for="amenity14">Library / Reading Room</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="steam_sauna" id="amenity15">
+                                <label class="form-check-label" for="amenity15">Steam Sauna</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="on_site_waste_management" id="amenity16">
+                                <label class="form-check-label" for="amenity16">On Site Waste Management</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="splash_pool" id="amenity17">
+                                <label class="form-check-label" for="amenity17">Splash Pool</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="daycare_center" id="amenity18">
+                                <label class="form-check-label" for="amenity18">Daycare Center</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="massage_room" id="amenity19">
+                                <label class="form-check-label" for="amenity19">Massage Room</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="solar_for_common_area" id="amenity20">
+                                <label class="form-check-label" for="amenity20">Solar For Common Area</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="outdoor_swimming_pool" id="amenity21">
+                                <label class="form-check-label" for="amenity21">Outdoor Swimming Pool</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="guest_rooms" id="amenity22">
+                                <label class="form-check-label" for="amenity22">Guest Rooms</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="jacuzzi" id="amenity23">
+                                <label class="form-check-label" for="amenity23">Jacuzzi</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="ev_charging_stations" id="amenity24">
+                                <label class="form-check-label" for="amenity24">Ev Charging Stations</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="indoor_swimming_pool" id="amenity25">
+                                <label class="form-check-label" for="amenity25">Indoor Swimming Pool</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="co_d_working_space" id="amenity26">
+                                <label class="form-check-label" for="amenity26">Co-Working Space</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="cafeteria" id="amenity27">
+                                <label class="form-check-label" for="amenity27">Cafeteria</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="green_building_rated" id="amenity28">
+                                <label class="form-check-label" for="amenity28">Green Building Rated</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="multi_d_purpose_hall" id="amenity29">
+                                <label class="form-check-label" for="amenity29">Multi-Purpose Hall</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="skating_s_cycling_ring" id="amenity30">
+                                <label class="form-check-label" for="amenity30">Skating / Cycling Ring</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="card_room" id="amenity31">
+                                <label class="form-check-label" for="amenity31">Card Room</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="delete_amenty" id="amenity32">
+                                <label class="form-check-label" for="amenity32">Delete Amenty</label>
+                            </div> -->
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="banquet_hall" id="amenity33">
+                                <label class="form-check-label" for="amenity33">Banquet Hall</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="gazebo_sit_outs" id="amenity34">
+                                <label class="form-check-label" for="amenity34">Gazebo Sit Outs</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="toddler_play_zone" id="amenity35">
+                                <label class="form-check-label" for="amenity35">Toddler Play Zone</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="amenities"
+                                    value="delete_amenty" id="amenity36">
+                                <label class="form-check-label" for="amenity36">Delete Amenty</label>
+                            </div> -->
+                        </div>
+
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label primary" for="removethis">30) Special Amenities</label>
+                    </div>
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="special_amenity_1" class="form-label">Amenity 1</label>
+                        <input type="text" class="form-control" id="special_amenity_1" name="special_amenity_1"
+                            placeholder="Enter name">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="special_amenity_2" class="form-label">Amenity 2</label>
+                        <input type="text" class="form-control" id="special_amenity_2" name="special_amenity_2"
+                            placeholder="Enter name">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="special_amenity_3" class="form-label">Amenity 3</label>
+                        <input type="text" class="form-control" id="special_amenity_3" name="special_amenity_3"
+                            placeholder="Enter name">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="special_amenity_4" class="form-label">Amenity 4</label>
+                        <input type="text" class="form-control" id="special_amenity_4" name="special_amenity_4"
+                            placeholder="Enter name">
+                    </div>
+
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="centralAC">31) Central air conditioning
+                            available?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_Yes" value="Yes">
+                            <label class="form-check-label" for="central_air_conditioning_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_No" value="No">
+                            <label class="form-check-label" for="central_air_conditioning_No">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_ducting" value="Only ducting">
+                            <label class="form-check-label" for="central_air_conditioning_ducting">Only ducting</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_ducting" value="Only ducting">
+                            <label class="form-check-label" for="central_air_conditioning_ducting">Only compressor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="central_air_conditioning"
+                                id="central_air_conditioning_compressor" value="Only ducting and compressor">
+                            <label class="form-check-label" for="central_air_conditioning_compressor">Only ducting and compressor</label>
+                        </div>
+
+                    </div> -->
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="petFriendly">33) Is this project pet friendly?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="pet_friendly_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_No"
+                                value="No">
+                            <label class="form-check-label" for="pet_friendly_No">No</label>
+                        </div>
+
+                    </div> -->
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="spiritualAttraction">31) Any spiritual or religious
+                            attraction in the project like  Gurudwara, Derasar, Mandir?</label><br>
+                        <!-- <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select> -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
+                                id="spiritual_or_religious_attraction_Yes" value="Yes" onclick="
+                                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = '';
+                                document.getElementById('spiritual_or_religious_attraction_text').required = true;
+                                document.getElementById('spiritual_or_religious_attraction_text').value = '';">
+                            <label class="form-check-label" for="spiritual_or_religious_attraction_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="spiritual_or_religious_attraction"
+                                id="spiritual_or_religious_attraction_No" value="No" onclick="
+                                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = 'none';
+                                document.getElementById('spiritual_or_religious_attraction_text').required = false;
+                                document.getElementById('spiritual_or_religious_attraction_text').value = '';"
+                                >
+                            <label class="form-check-label" for="spiritual_or_religious_attraction_No">No</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group" id="spiritual_or_religious_attraction_text_div" style="display: none;">
+                        <label class="form-label primary" for="spiritual_or_religious_attraction_text">Which spiritual or religious attraction<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="spiritual_or_religious_attraction_text" name="spiritual_or_religious_attraction_text"
+                            placeholder="Enter spiritual or religious attraction">
+                    </div>
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="parkingType">33) Type of parking</label><br>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="type_of_parking"
+                                id="type_of_parking_Normal" value="Normal">
+                            <label class="form-check-label" for="type_of_parking_Normal">Normal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="type_of_parking"
+                                id="type_of_parking_Hydraulic" value="Hydraulic">
+                            <label class="form-check-label" for="type_of_parking_Hydraulic">Hydraulic</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="type_of_parking"
+                                id="type_of_parking_Hydraulic_with_Valet" value="Hydraulic with Valet">
+                            <label class="form-check-label" for="type_of_parking_Hydraulic_with_Valet">Hydraulic with
+                                Valet</label>
+                        </div>
+
+                    </div> -->
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="sampleHouse">32) Sample House Ready?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sample_house"
+                                id="sample_house_Yes" value="Yes" onclick="
+                                document.getElementById('sample_house_date_div').style.display = 'none';
+                                document.getElementById('sample_house_date').required = false;
+                                document.getElementById('sample_house_date').value = '';">
+                            <label class="form-check-label" for="sample_house_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sample_house"
+                                id="sample_house_No" value="No" onclick="
+                                document.getElementById('sample_house_date_div').style.display = '';
+                                document.getElementById('sample_house_date').required = true;
+                                document.getElementById('sample_house_date').value = '';"
+                                >
+                            <label class="form-check-label" for="sample_house_No">No</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 form-group" id="sample_house_date_div" style="display: none;">
+                        <label class="form-label primary" for="sample_house_date">By When will Sample House be ready?<span class="required"> *</span></label>
+                        <input type="text" class="form-control" id="sample_house_date" name="sample_house_date"
+                            placeholder="Enter sample house date">
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <!-- Project/Bunglow Details end -->
+        
+
+        <!-- Media start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Media</h4>
+            </div>
+
+            <form id="documentForm" method="post" action="{% url 'bunglow-submit-document-form-list' %}" class="p-4 border border-top-0 rounded-bottom" enctype="multipart/form-data"
+                style="background-color: white;">
+                {%csrf_token%}                
+                <div class="row">
+                    <input type="hidden" name="bunglow_id" id="building_db_id">
+                    <div class="col-12 col-md-6">
+                        <!-- Brochures Section -->
+                        <div class="mb-3">
+                            <label class="form-label primary" for="removethis">33) Brochures</label><br>
+                            <label for="brochure1" class="form-label">Brochure 1 (PDF -
+                                Required)</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="brochure1" name="brochure_1" accept="application/pdf">
+                            <a style="color: var(--primary-color); display: none;" id="brochure_1"></a>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="brochure2" class="form-label">Brochure 2 (PDF -
+                                Optional)</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="brochure2" name="brochure_2" accept="application/pdf">
+                            <a style="color: var(--primary-color); display: none;" id="brochure_2"></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <!-- Bunglow Images Section -->
+                        <div class="mb-3">
+                            <label class="form-label primary" for="removethis">34) Bunglow Images (All Required)</label><br>
+                            <label for="image1" class="form-label">Image 1</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image1" name="head_image" accept="image/*">
+                            <img id="head_image" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image2" class="form-label">Image 2</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image2" name="sec_image_1" accept="image/*">
+                            <img id="sec_image_1" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image3" class="form-label">Image 3</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image3" name="sec_image_2" accept="image/*">
+                            <img id="sec_image_2" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image4" class="form-label">Image 4</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image4" name="sec_image_3" accept="image/*">
+                            <img id="sec_image_3" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image5" class="form-label">Image 5</label>
+                            <input type="file" style="border: var(--primary-color) 2px solid !important;"
+                                class="form-control" id="image5" name="sec_image_4" accept="image/*">
+                            <img id="sec_image_4" src="" class="img-fluid pt-3" alt="" style="display: none;">
+                        </div>
+
+                    </div>
+                    <input type="hidden" name="redirect_url_id" id="redirect_url_id">
+                    <input type="hidden" name="building_ssc_id" id="building_ssc_id">
+                    <button type="submit" style="display: none;" id="submit_document_form_btn">Submit</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- Media end -->
+
+        <!-- Finance start -->
+        <div class="scc-section container py-2 pt-3" style="margin-top: 90px !important;">
+            <div class="p-3 m-0" style="background-color: var(--primary-color); color: white;">
+                <h4>Finance</h4>
+            </div>
+
+            <!-- Form body -->
+            <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
+                <div class="row">
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRate">35) Per Sq. Ft. rate on
+                            saleable<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRate" name="per_sqft_rate_saleable" required
+                            placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+                    {% if has_penthouse == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRatePenthouse">Per Sq. Ft. rate on saleable for penthouse<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRatePenthouse" name="per_sqft_rate_saleable_penthouse" required
+                            placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+                    {% endif %}
+
+                    {% if has_duplex == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRateDuplex">Per Sq. Ft. rate on saleable for duplex<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRateDuplex" name="per_sqft_rate_saleable_duplex" required
+                            placeholder="Enter rate of Per Sq. Ft.">
+                    </div>
+                    {% endif %}
+
+                    <div class="col-12">
+                        <label class="form-label primary" for="removethis">36) PLC Options<span class="required"> *</span></label>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_garden" class="form-label">Garden</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_garden" value="0" required
+                            name="plc_garden" placeholder="20">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_road_facing" class="form-label">Road Facing</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_road_facing" value="0" required
+                            name="plc_road_facing" placeholder="50">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_corner" class="form-label">Corner</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_corner" value="0" required
+                            name="plc_corner" placeholder="40">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <label for="plcOptions_others" class="form-label">Others</label>
+                        <input type="number" class="form-control" min="0" id="plcOptions_others" value="0" required
+                            name="plc_others" placeholder="02">
+                    </div>
+
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="plcOptions">PLC Options</label><br>
+                        <select class="form-select" id="plcOptions" name="plcOptions">
+                            <option value="Garden">Garden</option>
+                            <option value="Road Facing">Road Facing</option>
+                            <option value="Corner">Corner</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div> -->
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="floorRise">37) Floor rise</label><br>
+                        <button type="button" class="btn btn-custom-primary" id="addFloorRiseBtn">
+                            Add Floor Rise <i id="floor_rise_saved" class=""></i>
+                        </button>
+
+                        <button type="button" data-bs-toggle="modal" style="display: none;" data-bs-target="#floorrisemodal" id="addFloorRiseBtn_open_mpdal"></button>
+                    </div>
+
+                    <div class="modal fade" id="floorrisemodal" tabindex="-1" aria-labelledby="floorrisemodalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                                    <h1 class="modal-title fs-5" id="floorrisemodalLabel">Floor Rise Prices</h1>
+                                    <button type="button" class="btn-close" style="filter: invert(10);"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-3 p-md-5">
+                                    <div class="table-responsive">
+                                        <table id="floorRiseTable" class="table table-striped table-hover"
+                                            style="border: 3px solid var(--primary-color); border-radius: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Floor Number</th>
+                                                    <th>Price</th>
+                                                    <th>Add Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="floor_rise_table"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="floorrise_modal_close" class="btn btn-custom"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-custom-primary" id="saveChangesBtn">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="developmentCharges">38) Development charges (AMC/Torrent
+                            etc)<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="developmentCharges" name="development_charges" required
+                            placeholder="Enter development charges">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="advanceMaintenance">39) Advance maintenance<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="advanceMaintenance" name="advance_maintenance" required
+                            placeholder="Enter advance maintenance">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="maintenanceDeposit">40) Maintenance deposit<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="maintenanceDeposit" name="maintenance_deposit" required
+                            placeholder="Enter maintenance deposit">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="specificExpenses">41) Other specific expenses if any?<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="specificExpenses" name="other_specific_expenses" required
+                            placeholder="Enter details">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="saleDeedValue">42) Flexible<span class="required"> *</span></label><br>
+                        <!-- <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
+                            placeholder="Enter sale deed value"> -->
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale_deed_value" id="sale_deed_value_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="sale_deed_value_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale_deed_value" id="sale_deed_value_No"
+                                value="No">
+                            <label class="form-check-label" for="sale_deed_value_No">No</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="gstApplicable">43) How much GST is applicable?<span class="required"> *</span></label>
+                        <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
+                            placeholder="Enter GST">
+                    </div>
+                    <!-- <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="loanAvailability">44) Loan availability?</label><br>                       
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="loan_availability"
+                                id="loan_availability_Yes" value="Yes">
+                            <label class="form-check-label" for="loan_availability_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="loan_availability"
+                                id="loan_availability_No" value="No">
+                            <label class="form-check-label" for="loan_availability_No">No</label>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="brokerage">44) Brokerage given per transaction (in %)</label>
+                        <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
+                            placeholder="Enter Brokerage given per transaction">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="brokerage">45)  Payment due as on date (in %)</label>
+                        <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="down_payment_as_on_date" name="down_payment_as_on_date"
+                            placeholder="Enter Down payment due as on date">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label class="form-label primary" for="remarks">46) Remarks if any</label>
+                        <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
+                    </div>
+                    <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
+                    <div class="col-md-12 row">
+                        <!-- <div class="col-12 text-center">
+                            <button type="button" onclick="window.location.href = `{% url 'bunglow-unit-detail-form-list' %}?bunglow_id={{bunglow_id}}`;" id="unit_btn" class="btn btn-outline-dark" style="display: none"><b>Add Units</b></button>
+                        </div> -->                        
+                        <div class="col text-center mt-2">
+                            <a type="button" id="view_bunglow" class="btn btn-custom-outline-primary" style="display: none"><b>View Bunglow Details</b></a>
+                        </div>
+                        <div class="col text-center mt-2">
+                            <button type="button" onclick="submit_detail_form(false)" class="btn btn-custom"><b>Save Bunglow
+                                    Details</b></button>
+                        </div>
+                        <div class="col text-center mt-2">
+                            <button type="button" onclick="publish_building_data()" id="publish_btn" class="btn btn-custom-primary" style="display: none"><b>Publish Bunglow Details</b></button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <!-- Finance end -->
+
+        <div class="container mt-3">
+            <p class="text-primary-ssc"><b>&copy; 2024 Square Second</b></p>
+        </div>
+    </div>
+    <!-- Main content end -->
+
+    <script src="/static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcRWpebJJ-1GyUv8NkMPVizMtqLWBHotk&libraries=places"></script>
+
+    <script>
+        const input = document.getElementById('developerGroupName');
+        const autocompleteList = document.getElementById('autocomplete-list');
+
+        input.addEventListener('input', async () => {
+            const query = input.value;
+            if (!query) {
+                autocompleteList.innerHTML = '';
+                return;
+            }
+
+            const response = await fetch(`{% url 'bunglow-autocomplete-name-list' %}?q=${query}`);
+            const data = await response.json();
+
+            // Clear previous results
+            autocompleteList.innerHTML = '';
+
+            // Populate new results
+            data.forEach(item => {
+                console.log(item.group_name)
+                console.log(item)
+                const div = document.createElement('div');
+                div.classList.add('autocomplete-item');
+                div.textContent = item.group_name;
+                div.dataset.id = item.id;  // Save additional data like ID
+                div.addEventListener('click', () => {
+                    input.value = item.name;
+                    autocompleteList.innerHTML = ''; // Clear dropdown
+                    // Automatically populate other fields
+                    let new_item = {};
+                    new_item['group_name'] = item.group_name;
+                    new_item['year_of_establishment'] = item.year_of_establishment;
+                    new_item['no_of_projects_delivered'] = item.no_of_projects_delivered;
+                    new_item['key_projects_1'] = item.key_projects_1;
+                    new_item['key_projects_2'] = item.key_projects_2;
+                    new_item['key_projects_3'] = item.key_projects_3;
+                    new_item['key_projects_4'] = item.key_projects_4;
+                    new_item['key_projects_5'] = item.key_projects_5;
+                    new_item['key_promoters_1'] = item.key_promoters_1;
+                    new_item['key_promoters_2'] = item.key_promoters_2;
+                    new_item['key_promoters_3'] = item.key_promoters_3;
+                    new_item['key_promoters_4'] = item.key_promoters_4;
+                    new_item['key_promoters_5'] = item.key_promoters_5;
+                    new_item['name'] = item.name;
+                    new_item['number_country_code'] = item.number_country_code;
+                    new_item['number'] = item.number;
+                    new_item['email'] = item.email;
+                    setFormValues(new_item);
+                });
+                autocompleteList.appendChild(div);
+            });
+        });
+
+    </script>
+
+    <script>
+        let map, marker, searchBox;
+
+        function initMap() {
+            const initialLocation = { lat: 23.022505, lng: 72.5713621 }; // Set a default location
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: initialLocation,
+                zoom: 8
+            });
+
+            marker = new google.maps.Marker({
+                position: initialLocation,
+                map: map,
+                draggable: true
+            });
+
+            // Create the search box and link it to the input field
+            searchBox = new google.maps.places.SearchBox(document.getElementById('searchBox'));
+
+            // Bias the search results towards the current map's viewport
+            map.addListener('bounds_changed', () => {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            searchBox.addListener('places_changed', () => {
+                const places = searchBox.getPlaces();
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Get the first place's location and set it to the map and marker
+                const place = places[0];
+                if (!place.geometry || !place.geometry.location) {
+                    return;
+                }
+
+                map.setCenter(place.geometry.location);
+                marker.setPosition(place.geometry.location);
+                map.setZoom(15);
+            });
+
+            // Update the search box with the address when the marker is moved
+            marker.addListener('dragend', () => {
+                const latlng = marker.getPosition();
+                const geocoder = new google.maps.Geocoder();
+
+                geocoder.geocode({ location: latlng }, (results, status) => {
+                    if (status === 'OK') {
+                        if (results[0]) {
+                            document.getElementById('searchBox').value = results[0].formatted_address;
+                        }
+                    }
+                });
+            });
+        }
+
+        // Load the map when the modal is shown
+        $('#mapModal').on('shown.bs.modal', function () {
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(marker.getPosition());  // Re-center the map on the marker
+        });
+
+        // Save location button click handler
+        document.getElementById('saveLocationBtn').addEventListener('click', () => {
+            const lat = marker.getPosition().lat();
+            const lng = marker.getPosition().lng();
+            // alert(`Selected Location: Latitude: ${lat}, Longitude: ${lng}`);
+            document.getElementById('googlePin').value = `${lat}|${lng}`
+            document.getElementById('location_btn').classList.remove('red-border-btn')
+            document.getElementById('location_modal_close').click()
+            document.getElementById('locaiton_saved').classList.add('fa', 'fa-check')
+            // You can send the location data to your backend here
+        });
+
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const currentLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // Set the map center and marker position to current location
+                    map.setCenter(currentLocation);
+                    map.setZoom(15);  // Zoom in to the current location
+                    marker.setPosition(currentLocation);
+
+                    // Reverse geocode to get the address and update the search box
+                    const geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ location: currentLocation }, (results, status) => {
+                        if (status === 'OK') {
+                            if (results[0]) {
+                                document.getElementById('searchBox').value = results[0].formatted_address;
+                            } else {
+
+                            }
+                        }
+                    });
+                }, () => {
+                    alert("Geolocation failed or is not supported by this browser.");
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        // Add event listener to the button
+        document.getElementById('currentLocationBtn').addEventListener('click', getCurrentLocation);
+
+        function setLocation(lat, lng) {
+            const newLocation = { lat: lat, lng: lng };
+
+            // Set the map center and marker position to the new location
+            map.setCenter(newLocation);
+            map.setZoom(15);  // Zoom in to the new location
+            marker.setPosition(newLocation);
+
+            // Reverse geocode to get the address and update the search box
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ location: newLocation }, (results, status) => {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        document.getElementById('searchBox').value = results[0].formatted_address;
+                    } else {
+                    }
+
+                    // Automatically press the Save button
+                    document.getElementById('saveLocationBtn').click();
+                } else {
+                    console.error('Geocode failed: ' + status);
+                }
+            });
+        }
+
+    </script>
+
+    <script>
+        let bunglow_detail = {}
+
+        $('#yearOfEstablishment').datepicker({
+            format: "yyyy",
+            startView: "years",
+            minViewMode: "years",
+            autoclose: true
+        });
+
+        $('#ageOfBunglowDeveloper').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+
+        $('#ageOfBunglowRERA').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+
+        $('#rera_by_when').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+
+
+        $('#possession_by').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+
+        $('#sample_house_date').datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            autoclose: true
+        });
+        document.addEventListener("input", function (event) {
+            // Check if the event target is an input element
+            if (event.target.tagName === "INPUT") {
+                // Check if it has the 'red-border-btn' class
+                if (event.target.classList.contains("red-border-btn")) {
+                    // Remove the class
+                    event.target.classList.remove("red-border-btn");
+                    console.log("Removed 'red-border-btn' class from:", event.target);
+                }
+            }
+        });
+
+
+        async function submit_detail_form(unit_adder) {
+            toggle_preloader()
+            const isValid = validateForm(unit_adder);
+            const isLocationAdded = check_location_added();
+            const isAnyCheckboxChecked = AnyCheckboxChecked('type_of_apartments', 'bedrooms');
+
+            if (unit_adder) {
+                removeRequiredFromIgnored();
+            }
+
+            if (isValid && isLocationAdded && isAnyCheckboxChecked) {
+                var developer_history_form = document.getElementById('developer_history');
+                var contact_details_form = document.getElementById('contact_details');
+                var project_bunglow_details_form = document.getElementById('project_bunglow_details');
+                var amenities_form = document.getElementById('amenities');
+                var finance_form = document.getElementById('finance');
+                var document_form = document.getElementById('documentForm');
+
+                if (developer_history_form.reportValidity()) {
+                    if (contact_details_form.reportValidity()) {
+                        if (project_bunglow_details_form.reportValidity()) {
+                            if (amenities_form.reportValidity()) {
+                                    if (finance_form.reportValidity()) {
+                                        if (document_form.reportValidity()) {
+                                            var form_developer_history = new FormData(document.getElementById('developer_history'));
+                                            var form_contact_details = new FormData(document.getElementById('contact_details'));
+                                            var form_amenities = new FormData(document.getElementById('amenities'));
+                                            var form_project_bunglow_details = new FormData(document.getElementById('project_bunglow_details'));
+                                            var form_finance = new FormData(document.getElementById('finance'));
+                                            // var form_documents = new FormData(document.getElementById('documentForm'));
+            
+                                            form_developer_history.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                                    bunglow_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(bunglow_detail[key])) {
+                                                    bunglow_detail[key] = [bunglow_detail[key]];
+                                                }
+                                                bunglow_detail[key].push(value);
+                                            });
+            
+                                            form_contact_details.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                                    bunglow_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(bunglow_detail[key])) {
+                                                    bunglow_detail[key] = [bunglow_detail[key]];
+                                                }
+                                                bunglow_detail[key].push(value);
+                                            });
+            
+                                            form_amenities.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                                    bunglow_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(bunglow_detail[key])) {
+                                                    bunglow_detail[key] = [bunglow_detail[key]];
+                                                }
+                                                bunglow_detail[key].push(value);
+                                            });
+
+                                            form_project_bunglow_details.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                                    bunglow_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(bunglow_detail[key])) {
+                                                    bunglow_detail[key] = [bunglow_detail[key]];
+                                                }
+                                                bunglow_detail[key].push(value);
+                                            });
+            
+                                            form_finance.forEach((value, key) => {
+                                                if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                                    bunglow_detail[key] = value;
+                                                    return;
+                                                }
+                                                if (!Array.isArray(bunglow_detail[key])) {
+                                                    bunglow_detail[key] = [bunglow_detail[key]];
+                                                }
+                                                bunglow_detail[key].push(value);
+                                            });
+            
+                                            // form_documents.forEach((value, key) => {
+                                            //     if (!Object.prototype.hasOwnProperty.call(bunglow_detail, key)) {
+                                            //         bunglow_detail[key] = value;
+                                            //         return;
+                                            //     }
+                                            //     if (!Array.isArray(bunglow_detail[key])) {
+                                            //         bunglow_detail[key] = [bunglow_detail[key]];
+                                            //     }
+                                            //     bunglow_detail[key].push(value);
+                                            // });
+            
+                                            try {
+                                                const response = await fetch("{% url 'bunglow-detail-list' %}", {
+                                                    method: 'POST',
+                                                    headers: {
+                                                        'Content-Type': 'application/json',
+                                                        'X-CSRFToken': '{{csrf_token}}'
+                                                    },
+                                                    body: JSON.stringify(bunglow_detail)
+                                                });
+                                                console.log(response)
+            
+                                                const data = await response.json();
+                                                console.log(data);
+                                                if (data.success == true) {
+                                                    alert(`data added successfully to bunglow_id ${data.bunglow_id}!`)
+                                                    if (unit_adder){
+                                                        submit_document_form(data.building_db_id, `{% url 'bunglow-unit-detail-form-list' %}`, `${data.bunglow_id}`)
+                                                        // window.location.href = `{% url 'bunglow-unit-detail-form-list' %}?bunglow_id=${data.bunglow_id}`;
+                                                    }
+                                                    else{
+                                                        submit_document_form(data.building_db_id, `{% url 'bunglow-detail-list' %}`, `${data.bunglow_id}`)
+                                                        // window.location.href = `{% url 'bunglow-detail-list' %}?bunglow_id=${data.bunglow_id}`;
+                                                    }
+                                                    
+                                                }
+                                                else {
+                                                    let floor_info = bunglow_detail['floor_rise']
+                                                    bunglow_detail = {}
+                                                    bunglow_detail['floor_rise'] = floor_info
+                                                }
+            
+                                            }
+                                            catch (error) {
+                                                console.log(error)
+                                                let floor_info = bunglow_detail['floor_rise']
+                                                bunglow_detail = {}
+                                                bunglow_detail['floor_rise'] = floor_info
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                    }
+                }
+            }    
+            toggle_preloader()
+
+        }
+
+        function removeRequiredFromIgnored() {
+            const elements = document.querySelectorAll('.ignore_initial_save');
+        
+            elements.forEach(element => {
+                element.removeAttribute('required');
+            });
+        }
+
+        async function submit_document_form_old(bunglow_id) {
+            toggle_preloader();
+
+            var document_form = document.getElementById('documentForm');
+
+            if (document_form.reportValidity()) {
+                var formData = new FormData(document_form);
+
+                // Append the bunglow_id to the FormData
+                formData.append('bunglow_id', bunglow_id);
+
+                try {
+                    const response = await fetch("{% url 'bunglow-submit-document-form-list' %}", {  // Use the appropriate URL for your API endpoint
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': '{{csrf_token}}'
+                        },
+                        body: formData  // Send the FormData object
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success === true) {
+                        toggle_preloader();
+                        return;
+                    } else {
+                        alert('Error in submitting documents: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error("Error submitting document form: ", error);
+                }
+            } else {
+                alert("Please fill all the fields in the document form correctly.");
+            }
+
+            toggle_preloader();
+        }
+
+        function submit_document_form(bunglow_id, redirect_url_id, building_ssc_id) {
+
+            var document_form = document.getElementById('documentForm');
+
+            if (document_form.reportValidity()) {
+                document.getElementById('building_db_id').value = bunglow_id;
+                document.getElementById('redirect_url_id').value = redirect_url_id;
+                console.log(redirect_url_id);
+                document.getElementById('building_ssc_id').value = building_ssc_id;
+                document.getElementById('submit_document_form_btn').click();
+
+            } else {
+                alert("Please fill all the fields in the document form correctly.");
+            }
+
+        }
+
+        function toggle_loader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+            document.getElementById('spinner-text').classList.toggle('add-display-block');
+        }
+
+        function toggle_preloader() {
+            document.getElementById('main-content').classList.toggle('blur');
+            document.getElementById('spinner').classList.toggle('spinner-container');
+        }
+
+        function create_table_floor_rise(totalFloors) {
+
+            // Clear previous rows if any
+            let tableBody = document.getElementById('floor_rise_table');
+            tableBody.innerHTML = '';
+
+            // Create table rows dynamically based on floor number
+            for (let i = 1; i <= totalFloors; i++) {
+                let row = document.createElement('tr');
+                row.id = `floor_rise_tr_${i}`
+
+                // Floor Number (pre-filled)
+                let floorCell = document.createElement('td');
+                // floorCell.textContent = i;
+                floorCell.innerHTML = `<b>${i}</b>`
+                row.appendChild(floorCell);
+
+                // Price Input
+                let priceCell = document.createElement('td');
+                let priceInput = document.createElement('input');
+                priceInput.type = 'number';
+                priceInput.name = `floorPrice_${i}`;
+                priceInput.id = `floorPrice_${i}`;
+                priceInput.className = 'priceInput';
+                priceInput.classList.add('form-control')
+                priceInput.placeholder = 'Enter price...'
+                priceCell.appendChild(priceInput);
+                row.appendChild(priceCell);
+
+                let addPriceCell = document.createElement('td');
+                addPriceCell.className = 'd-flex align-items-center';
+                let addPriceInput = document.createElement('input');
+                addPriceInput.style.width = '200px';
+                addPriceInput.style.setProperty('width', '200px', 'important');
+                addPriceInput.type = 'number';
+                addPriceInput.name = `addfloorPrice_${i}`;
+                addPriceInput.id = `addfloorPrice_${i}`;
+                addPriceInput.className = 'priceInput';
+                addPriceInput.classList.add('form-control', 'me-2')
+                addPriceInput.placeholder = 'Enter Additional price...';
+                addPriceCell.appendChild(addPriceInput);
+
+                let addBtn = document.createElement('button');
+                addBtn.textContent = 'Add';
+                addBtn.classList.add('btn', 'btn-outline-dark');
+                addBtn.type = 'button'
+                addBtn.setAttribute('data-floor', i);
+                addBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let AllPrice = document.querySelectorAll(`input[name^='floorPrice_']`);
+                        let price_to_be_added = document.getElementById(`addfloorPrice_${i}`).value;
+                        console.log(price_to_be_added);
+                        let base_price = document.getElementById(`floorPrice_${i}`).value;
+                        let index = 1;
+                        AllPrice.forEach(input => {
+                            let lastElement = String(input.id).split("_").pop();
+                            if (Number(lastElement) > i){
+                                // console.log(lastElement);
+                                let last_price = document.getElementById(`floorPrice_${index-1}`).value;
+                                console.log(last_price);
+                                document.getElementById(`floorPrice_${index}`).value = Number(last_price) + Number(price_to_be_added);
+                            }
+                            else {
+                            }
+                            index += 1;
+                        });
+                    }
+                });
+                if (i > 1) {
+                    addPriceCell.appendChild(addBtn);
+
+                }
+                
+                row.appendChild(addPriceCell);
+
+
+
+                // Action (Copy button)
+                let actionCell = document.createElement('td');
+                let copyBtn = document.createElement('button');
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.add('btn', 'btn-outline-dark');
+                copyBtn.type = 'button'
+                copyBtn.setAttribute('data-floor', i);
+                copyBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
+                        priceInput.value = prevPrice;
+                    }
+                });
+                if (i > 1) {
+                    actionCell.appendChild(copyBtn);
+
+                }
+                row.appendChild(actionCell);
+
+                // Append the row to the table body
+                tableBody.appendChild(row);
+            }
+
+        }
+
+        document.getElementById('addFloorRiseBtn').addEventListener('click', function () {
+            const floor_number_ele = document.getElementById('numberOfFloors')
+            let totalFloors = floor_number_ele.value;
+            const file_input = document.querySelector(`[id="floor_rise_tr_${totalFloors}"]`);
+            if (file_input) { 
+                document.getElementById('addFloorRiseBtn_open_mpdal').click()
+
+            }
+            else {
+                if (!totalFloors || totalFloors <= 0) {
+                    alert("Please enter a valid number of floors.");
+                    setTimeout(function() {
+                        floor_number_ele.focus();
+                        floor_number_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 0);
+                    return;
+                }
+                create_table_floor_rise(totalFloors)
+                document.getElementById('addFloorRiseBtn_open_mpdal').click()
+            }
+        });
+
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            let prices = [];
+            let totalFloors = document.getElementById('numberOfFloors').value;
+
+            for (let i = 1; i <= totalFloors; i++) {
+                let price = document.querySelector(`input[name=floorPrice_${i}]`).value;
+                prices.push({ floor: i, price: price });
+            }
+
+
+            bunglow_detail['floor_rise'] = prices
+            document.getElementById('floorrise_modal_close').click()
+            document.getElementById('floor_rise_saved').classList.add('fa', 'fa-check')
+
+        });
+
+        function check_location_added() {
+            value_googlepin = document.getElementById('googlePin').value;
+            if (value_googlepin === 'No'){
+                let location_btn = document.getElementById('location_btn')
+                location_btn.classList.toggle('red-border-btn')
+                location_btn.focus();
+                location_btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function AnyCheckboxChecked(option_name, label_id) {
+            document.getElementById(label_id).classList.remove('red-border-btn')
+            var checkboxes = document.querySelectorAll(`input[name="${option_name}"]`);
+            var isChecked = Array.prototype.slice.call(checkboxes).some(function(checkbox) {
+                return checkbox.checked;
+            });
+            if (!isChecked){ 
+                let label_ele = document.getElementById(label_id)
+                document.querySelector(`input[name="${option_name}"]`).focus();
+                label_ele.focus();
+                label_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                label_ele.classList.add('red-border-btn')
+            }
+            return isChecked;
+        }
+
+        function validateForm(unit_adder) {
+            
+            const inputs = document.querySelectorAll('input');
+            let invalidInputs = [];
+
+            // Remove red-border-btn class from all inputs
+            inputs.forEach(input => {
+                input.classList.remove('red-border-btn');
+            });
+
+            // Check validity of each input and collect IDs of invalid ones
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    if (unit_adder) {
+                        if (!input.classList.contains('ignore_initial_save')) {
+                            invalidInputs.push(input.id);
+                            input.classList.add('red-border-btn');  // Add red border class
+                        }
+                    }
+                    else {
+                        invalidInputs.push(input.id);
+                        input.classList.add('red-border-btn');  // Add red border class
+                    }
+                }
+            });
+
+            // If all inputs are valid, proceed
+            if (invalidInputs.length === 0) {
+                return true;
+            } else {
+                console.log("Invalid inputs:", invalidInputs);
+                return false;
+            }
+        }
+
+        window.onload = function () {
+            toggle_preloader();
+            initMap();
+        };
+
+    </script>
+
+    <script>
+        let building_db_id
+        async function copy_building_details(bunglow_id) {
+            toggle_preloader();
+            const data = await get_building_data(bunglow_id);
+            create_table_floor_rise(data['no_of_floors']);
+            setFormValues(data);
+            setLocation(Number(data['google_pin_lat']), Number(data['google_pin_lng']));
+            document.getElementById('saveChangesBtn').click();
+            document.getElementById('copy_bunglow_id').value = bunglow_id;
+            document.getElementById('publish_btn').style.display = 'initial';
+            // document.getElementById('unit_btn').style.display = 'initial';
+            building_db_id = data['id']
+            if (data['unit_unactive'] === true){
+                document.getElementById('note_p').style.display = 'block';
+                document.getElementById('note_span').innerText = data['note'];
+            }
+            if (data['one_unit_added'] === true){
+                let view_bunglow_btn = document.getElementById('view_bunglow');
+                view_bunglow_btn.style.display = '';
+                view_bunglow_btn.href = `{% url 'view-default-property-list' %}?unit_id=${data['one_unit_id']}`
+            }
+            if (data['rera_approved']) {}
+            else {
+                toggleReraDate(true);
+            }
+            if (data['spiritual_or_religious_attraction'] === 'Yes') {
+                document.getElementById('spiritual_or_religious_attraction_text_div').style.display = '';
+                document.getElementById('spiritual_or_religious_attraction_text').required = true;
+                document.getElementById('spiritual_or_religious_attraction_text').value = data['spiritual_or_religious_attraction_text'];
+            }
+
+            if (data['sample_house'] === false) {
+                document.getElementById('sample_house_date_div').style.display = '';
+                document.getElementById('sample_house_date').required = true;
+                document.getElementById('sample_house_date').value = data['sample_house_date'];
+            }
+            toggle_preloader();
+        }
+
+        async function get_building_data(bunglow_id) {
+            try {
+                const response = await fetch("{% url 'bunglow-copy-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({ "bunglow_id": `${bunglow_id}` })
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    return data.building_data
+                } else {
+                    alert('Error in getting unit details: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error submitting document form: ", error);
+            }
+        }
+
+        async function publish_building_data() {
+            try {
+                const response = await fetch("{% url 'bunglow-publish-list' %}", {  // Use the appropriate URL for your API endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{csrf_token}}'
+                    },
+                    body: JSON.stringify({ "building_db_id": `${building_db_id}` })
+                });
+
+                const data = await response.json();
+                if (data.success === true) {
+                    alert('Successfully Published building')
+                    location.reload()
+                } else {
+                    alert('Error in publishing building: ' + data.message);
+                }
+            } catch (error) {
+                console.error("Error in publishing building: ", error);
+            }
+        }
+
+        function setFormValues(data) {
+            // Loop through each key-value pair in the dictionary (data)
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    // Find the input element(s) where name attribute matches the key
+                    const input = document.querySelector(`[name="${key}"]`);
+                    const inputs = document.querySelectorAll(`[name="${key}"]`);
+
+                    if (input) {
+                        if (input.type === 'radio') {
+                            // If the input is a radio button group, loop through all radio buttons
+                            inputs.forEach(radio => {
+                                // Check for true/false values and map them to 'Yes'/'No'
+                                if ((data[key] === true || data[key] === "true") && radio.value.toLowerCase() === 'yes') {
+                                    radio.checked = true;  // Select the "Yes" radio button
+                                } else if ((data[key] === false || data[key] === "false") && radio.value.toLowerCase() === 'no') {
+                                    radio.checked = true;  // Select the "No" radio button
+                                } else if (radio.value === data[key]) {
+                                    // For other radio buttons, match by value
+                                    radio.checked = true;
+                                }
+                            });
+                        } else if (input.type === 'checkbox') {
+                            // Handle checkboxes
+                            if (Array.isArray(data[key])) {
+                                // If the data is an array, check each checkbox that matches
+                                inputs.forEach(checkbox => {
+                                    checkbox.checked = data[key].includes(checkbox.value);
+                                });
+                            } else {
+                                // If it's a single value, just check/uncheck the box
+                                input.checked = data[key] === true || data[key] === "true";
+                            }
+                        } else if (input.type === 'file') {
+                            const file_input = document.querySelector(`[id="${key}"]`);
+                            if (file_input) {
+                                if (file_input.tagName === 'A' && data[key] !== null) {
+                                    let file_input_obj = document.getElementById(key)
+                                    file_input_obj.style.display = 'block';
+                                    file_input_obj.href = data[key]
+                                    file_input_obj.innerText = String(data[key]).split('/').pop();
+                                } else {
+                                    let file_input_obj = document.getElementById(key)
+                                    file_input_obj.style.display = 'block';
+                                    file_input_obj.src = data[key]
+                                }
+                            }
+                        } else {
+                            input.value = data[key];
+                        }
+                    }
+                }
+            }
+
+        }
+
+        '{% if is_building_edit == True %}'
+        copy_building_details('{{bunglow_id}}')
+        '{% endif %}'
+
+        function toggleReraDate(show) {
+            const rera_by_when_que = document.getElementById('rera_by_when_que');
+            if (show) {
+                rera_by_when_que.style.display = 'block';
+            }
+            else {
+                rera_by_when_que.style.display = 'none';
+                document.getElementById('rera_by_when').value = '';
+            }
+        }
+
+    </script>
+
+    <script>
+        const numberInputs = document.querySelectorAll('input[type=number]');
+
+        numberInputs.forEach(function(input) {
+            input.addEventListener('wheel', function(event) {
+                event.preventDefault();
+            });
+            input.addEventListener('input', function() {
+                const min = input.min !== '' ? parseFloat(input.min) : 0;  // Default min to 0 if not set
+                if (input.value < min) {
+                    input.value = min;
+                }
+            });
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-') {
+                    e.preventDefault();  // Block invalid characters
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

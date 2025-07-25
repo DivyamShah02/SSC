@@ -156,6 +156,12 @@
                                         <label class="form-check-label" for="unit_configuration_6_BHK">6 BHK</label>
                                     </div>
                                 </div>
+                                <div class="col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="unit_configuration" id="unit_configuration_7_BHK" value="7 BHK" required>
+                                        <label class="form-check-label" for="unit_configuration_7_BHK">7 BHK</label>
+                                    </div>
+                                </div>
 
                             </div>
                             <!-- <select class="form-select" id="unitTypes" name="unit_configuration">
@@ -184,13 +190,7 @@
                                         <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Triplex" value="Triplex" required onclick="toggleTerraceAvailable(true)">
                                         <label class="form-check-label" for="unit_type_Triplex">Triplex</label>
                                     </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="unit_type" id="unit_type_Penthouse" value="Penthouse" required onclick="toggleTerraceAvailable(true)">
-                                        <label class="form-check-label" for="unit_type_Penthouse">Penthouse</label>
-                                    </div>
-                                </div>
+                                </div>                               
                             </div>
                             <!-- <select class="form-select" id="layoutTypes" name="unit_type">
                                 <option value="Simplex">Simplex</option>
@@ -223,10 +223,33 @@
                                 placeholder="Enter series of unit">
                         </div>
                         <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="phase">4) Phase</label>
+                            <input type="text" class="form-control" id="phase" name="phase"
+                                placeholder="Enter phase">
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="type">5) Type</label>
+                            <input type="text" class="form-control" id="type" name="type"
+                                placeholder="Enter type">
+                        </div>
+
+                        <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfUnit">4) Size of the unit
                                 (SBU in Sq Ft.)<span class="required"> *</span></label>
                             <input type="number" class="form-control" id="sizeOfUnit" name="size_of_unit" required
                                 placeholder="Enter size of unit">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfUnitMin"
+                                placeholder="Min" name="size_of_unit_min">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="sizeOfUnitMax"
+                                placeholder="Max" name="size_of_unit_max">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="carpetArea">5) Carpet area as per
@@ -234,6 +257,12 @@
                             <input type="text" class="form-control" id="carpetArea" name="carpet_area_rera" required
                                 placeholder="Enter carpet area as per RERA">
                         </div>
+                        <div class="col-md-4 form-group">
+                            <label class="form-label primary" for="constructionSize">6) Construction Size (in Sq Yd)<span class="required"> *</span></label>
+                            <input type="text" class="form-control" id="constructionSize" name="construction_size_sq_yd" required
+                                placeholder="Enter construction size in Sq Yd">
+                        </div>
+
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="unitsPerFloor">6) No. of floors</label>
                             <input type="number" class="form-control" id="noOfFloor"
@@ -252,7 +281,7 @@
                                 placeholder="Enter nubmer of lifts per floor" name="no_of_lifts_per_floor">
                         </div>
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="privateLifts">9) Private lifts available?</label><br>
+                            <label class="form-label primary" for="privateLifts">9) Private lift in bungalow?</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="private_lifts" id="private_lifts_yes" value="Yes" onclick="toggleLiftInput(true, false)">
                                 <label class="form-check-label" for="private_lifts_yes">Yes</label>
@@ -278,20 +307,36 @@
                                 placeholder="Enter number of private lifts" name="no_private_lifts">
                         </div> -->
                         <div class="col-md-4 form-group">
-                            <label class="form-label primary" for="commonTerrace">10) Common terrace accessible?</label><br>
+                            <label class="form-label primary" for="SolarAvailableOnRoofTop ">10) Solar available on roof top ?</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="common_terrace_accessible" id="common_terrace_accessible_yes" value="Yes">
-                                <label class="form-check-label" for="common_terrace_accessible_yes">Yes</label>
+                                <input class="form-check-input" type="radio" name="solar_available_on_roof_top" id="solar_available_on_roof_top_yes" value="Yes">
+                                <label class="form-check-label" for="solar_available_on_roof_top_yes">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="common_terrace_accessible" id="common_terrace_accessible_no" value="No">
-                                <label class="form-check-label" for="common_terrace_accessible_no">No</label>
+                                <input class="form-check-input" type="radio" name="solar_available_on_roof_top" id="solar_available_on_roof_top_no" value="No">
+                                <label class="form-check-label" for="solar_available_on_roof_top_no">No</label>
+                            </div>                            
+                        </div>
+                        <div class="col-md-4 form-group" id="basementAvailable">
+                            <label class="form-label primary" for="basement">Basement available?</label><br>
+                            
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="basement" id="basement_yes" value="Yes" onclick="toggleBasement(true)">
+                                <label class="form-check-label" for="basement_yes">Yes</label>
                             </div>
-                            <!-- <select class="form-select" id="commonTerrace" name="common_terrace_accessible">
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select> -->
-                        </div>                            
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="basement" id="basement_no" value="No" onclick="toggleBasement(false)">
+                                <label class="form-check-label" for="basement_no">No</label>
+                            </div>
+
+                            <div id="basement_levels_input" class="pt-3" style="display: none;">
+                                <label class="form-label primary" for="basement_levels">&nbsp;&nbsp;How many levels?</label>
+                                <input type="number" class="form-control" id="basement_levels"
+                                    placeholder="Enter number of basement levels" name="basement_levels" min="1">
+                            </div>
+                        </div>
+
                         <div class="col-md-4 form-group">
                             <label class="form-label primary" for="sizeOfMainBalcony">11) Size of main
                                 balcony<small style="color: var(--secondary-color);"> (L X W in Ft)</small></label>
@@ -602,9 +647,18 @@
             }
         }
 
-
         function toggleTerrace(show) {
             const privateTerrace = document.getElementById('carpet_size_of_private_terrace');
+            if (show) {
+                privateTerrace.style.display = 'block';
+            }
+            else {
+                privateTerrace.style.display = 'none';
+            }
+        }
+
+        function toggleBasement(show) {
+            const privateTerrace = document.getElementById('basement_levels_input');
             if (show) {
                 privateTerrace.style.display = 'block';
             }
@@ -688,6 +742,10 @@
                     toggleTerrace(true);
                 }
             }
+
+            if (data['basement']) {
+                    toggleBasement(true);
+                }
 
             toggle_preloader();
         }

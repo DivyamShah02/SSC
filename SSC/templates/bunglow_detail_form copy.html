@@ -510,31 +510,48 @@
                         <input type="text" class="form-control" id="landscape_architect" name="landscape_architect" required
                             placeholder="Enter Landscape Architect name">
                     </div>
-                    <!-- <div class="col-md-4 form-group">
+                    <div class="col-md-4 form-group">
                         <label class="form-label primary" for="constructionCompany">23) Construction company</label>
                         <input type="text" class="form-control" id="constructionCompany" name="construction_company"
                             placeholder="Enter construction company name">
-                    </div> -->
+                    </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="constructionType">23) Construction <span class="required"> *</span></label><br>
-
+                        <label class="form-label primary" for="numberOfBlocks">24) Total no. of Blocks<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfBlocks" name="no_of_blocks" required
+                            placeholder="Enter number of blocks">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfUnits">25) Total no. Units<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfUnits" name="no_of_units" required
+                            placeholder="Enter number of units">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfFloors">26) Total no. Floors<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="1" id="numberOfFloors" name="no_of_floors" required
+                            placeholder="Enter number of floors">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="numberOfBasements">27) Levels of Basements<span class="required"> *</span></label>
+                        <input type="number" class="form-control" min="0" id="numberOfBasements" name="no_of_basements" required
+                            placeholder="Enter number of basements">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="jodiPossible">28) Jodi possible?</label><br>
+                        <!-- <select class="form-select" id="jodiPossible" name="jodi_possible">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select> -->
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="construction"
-                                id="construction_inhouse" value="Inhouse only" required>
-                            <label class="form-check-label" for="construction_inhouse">Inhouse only</label>
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_Yes"
+                                value="Yes">
+                            <label class="form-check-label" for="jodi_possible_Yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jodi_possible" id="jodi_possible_No"
+                                value="No">
+                            <label class="form-check-label" for="jodi_possible_No">No</label>
                         </div>
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="construction"
-                                id="construction_on_buyer" value="On buyer" required>
-                            <label class="form-check-label" for="construction_on_buyer">On buyer</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="construction"
-                                id="construction_flexible" value="Flexible" required>
-                            <label class="form-check-label" for="construction_flexible">Flexible</label>
-                        </div>
                     </div>
 
                     <div class="col-12 text-center mt-2">
@@ -1094,31 +1111,27 @@
             <!-- Form body -->
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
-                    <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="plotRate">35) Plot Rate per Sq Yd <span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="plotRate" required
-                        placeholder="Enter Plot Rate per Sq Yd" name="per_sqft_rate_saleable">
-                            <!-- placeholder="Enter Plot Rate per Sq Yd" name="plot_rate_per_sq_yd"> -->
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRate">35) Per Sq. Ft. rate on
+                            saleable<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRate" name="per_sqft_rate_saleable" required
+                            placeholder="Enter rate of Per Sq. Ft.">
                     </div>
-
-                    <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="constructionRate">36) Construction Rate per Sq Yd <span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="constructionRate" required
-                            placeholder="Enter Construction Rate per Sq Yd" name="construction_rate_per_sq_yd">
+                    {% if has_penthouse == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRatePenthouse">Per Sq. Ft. rate on saleable for penthouse<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRatePenthouse" name="per_sqft_rate_saleable_penthouse" required
+                            placeholder="Enter rate of Per Sq. Ft.">
                     </div>
+                    {% endif %}
 
-                    <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="sbuPlot">21) SBU on Plot <span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="sbuPlot" required
-                            placeholder="Enter SBU on Plot" name="sbu_on_plot">
+                    {% if has_duplex == True %}
+                    <div class="col form-group">
+                        <label class="form-label primary" for="perSqFtRateDuplex">Per Sq. Ft. rate on saleable for duplex<span class="required"> *</span></label>
+                        <input type="number" min="1" class="form-control ignore_initial_save" id="perSqFtRateDuplex" name="per_sqft_rate_saleable_duplex" required
+                            placeholder="Enter rate of Per Sq. Ft.">
                     </div>
-
-                    <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="sbuConstruction">22) SBU on Construction <span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="sbuConstruction" required
-                            placeholder="Enter SBU on Construction" name="sbu_on_construction">
-                    </div>
-
+                    {% endif %}
 
                     <div class="col-12">
                         <label class="form-label primary" for="removethis">36) PLC Options<span class="required"> *</span></label>
@@ -1156,7 +1169,52 @@
                             <option value="Corner">Corner</option>
                             <option value="Others">Others</option>
                         </select>
-                    </div> -->                    
+                    </div> -->
+
+                    <div class="col-md-4 form-group">
+                        <label class="form-label primary" for="floorRise">37) Floor rise</label><br>
+                        <button type="button" class="btn btn-custom-primary" id="addFloorRiseBtn">
+                            Add Floor Rise <i id="floor_rise_saved" class=""></i>
+                        </button>
+
+                        <button type="button" data-bs-toggle="modal" style="display: none;" data-bs-target="#floorrisemodal" id="addFloorRiseBtn_open_mpdal"></button>
+                    </div>
+
+                    <div class="modal fade" id="floorrisemodal" tabindex="-1" aria-labelledby="floorrisemodalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog custom-size">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                                    <h1 class="modal-title fs-5" id="floorrisemodalLabel">Floor Rise Prices</h1>
+                                    <button type="button" class="btn-close" style="filter: invert(10);"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-3 p-md-5">
+                                    <div class="table-responsive">
+                                        <table id="floorRiseTable" class="table table-striped table-hover"
+                                            style="border: 3px solid var(--primary-color); border-radius: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Floor Number</th>
+                                                    <th>Price</th>
+                                                    <th>Add Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="floor_rise_table"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="floorrise_modal_close" class="btn btn-custom"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-custom-primary" id="saveChangesBtn">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="developmentCharges">38) Development charges (AMC/Torrent
@@ -1639,14 +1697,18 @@
                                                     }
                                                     
                                                 }
-                                                else {                                                    
-                                                    bunglow_detail = {}                                            
+                                                else {
+                                                    let floor_info = bunglow_detail['floor_rise']
+                                                    bunglow_detail = {}
+                                                    bunglow_detail['floor_rise'] = floor_info
                                                 }
             
                                             }
                                             catch (error) {
                                                 console.log(error)
-                                                bunglow_detail = {}                                                
+                                                let floor_info = bunglow_detail['floor_rise']
+                                                bunglow_detail = {}
+                                                bunglow_detail['floor_rise'] = floor_info
                                             }
                                         }
                                     }
@@ -1732,7 +1794,147 @@
             document.getElementById('main-content').classList.toggle('blur');
             document.getElementById('spinner').classList.toggle('spinner-container');
         }
-       
+
+        function create_table_floor_rise(totalFloors) {
+
+            // Clear previous rows if any
+            let tableBody = document.getElementById('floor_rise_table');
+            tableBody.innerHTML = '';
+
+            // Create table rows dynamically based on floor number
+            for (let i = 1; i <= totalFloors; i++) {
+                let row = document.createElement('tr');
+                row.id = `floor_rise_tr_${i}`
+
+                // Floor Number (pre-filled)
+                let floorCell = document.createElement('td');
+                // floorCell.textContent = i;
+                floorCell.innerHTML = `<b>${i}</b>`
+                row.appendChild(floorCell);
+
+                // Price Input
+                let priceCell = document.createElement('td');
+                let priceInput = document.createElement('input');
+                priceInput.type = 'number';
+                priceInput.name = `floorPrice_${i}`;
+                priceInput.id = `floorPrice_${i}`;
+                priceInput.className = 'priceInput';
+                priceInput.classList.add('form-control')
+                priceInput.placeholder = 'Enter price...'
+                priceCell.appendChild(priceInput);
+                row.appendChild(priceCell);
+
+                let addPriceCell = document.createElement('td');
+                addPriceCell.className = 'd-flex align-items-center';
+                let addPriceInput = document.createElement('input');
+                addPriceInput.style.width = '200px';
+                addPriceInput.style.setProperty('width', '200px', 'important');
+                addPriceInput.type = 'number';
+                addPriceInput.name = `addfloorPrice_${i}`;
+                addPriceInput.id = `addfloorPrice_${i}`;
+                addPriceInput.className = 'priceInput';
+                addPriceInput.classList.add('form-control', 'me-2')
+                addPriceInput.placeholder = 'Enter Additional price...';
+                addPriceCell.appendChild(addPriceInput);
+
+                let addBtn = document.createElement('button');
+                addBtn.textContent = 'Add';
+                addBtn.classList.add('btn', 'btn-outline-dark');
+                addBtn.type = 'button'
+                addBtn.setAttribute('data-floor', i);
+                addBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let AllPrice = document.querySelectorAll(`input[name^='floorPrice_']`);
+                        let price_to_be_added = document.getElementById(`addfloorPrice_${i}`).value;
+                        console.log(price_to_be_added);
+                        let base_price = document.getElementById(`floorPrice_${i}`).value;
+                        let index = 1;
+                        AllPrice.forEach(input => {
+                            let lastElement = String(input.id).split("_").pop();
+                            if (Number(lastElement) > i){
+                                // console.log(lastElement);
+                                let last_price = document.getElementById(`floorPrice_${index-1}`).value;
+                                console.log(last_price);
+                                document.getElementById(`floorPrice_${index}`).value = Number(last_price) + Number(price_to_be_added);
+                            }
+                            else {
+                            }
+                            index += 1;
+                        });
+                    }
+                });
+                if (i > 1) {
+                    addPriceCell.appendChild(addBtn);
+
+                }
+                
+                row.appendChild(addPriceCell);
+
+
+
+                // Action (Copy button)
+                let actionCell = document.createElement('td');
+                let copyBtn = document.createElement('button');
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.add('btn', 'btn-outline-dark');
+                copyBtn.type = 'button'
+                copyBtn.setAttribute('data-floor', i);
+                copyBtn.addEventListener('click', function () {
+                    if (i > 1) {
+                        let prevPrice = document.querySelector(`input[name=floorPrice_${i - 1}]`).value;
+                        priceInput.value = prevPrice;
+                    }
+                });
+                if (i > 1) {
+                    actionCell.appendChild(copyBtn);
+
+                }
+                row.appendChild(actionCell);
+
+                // Append the row to the table body
+                tableBody.appendChild(row);
+            }
+
+        }
+
+        document.getElementById('addFloorRiseBtn').addEventListener('click', function () {
+            const floor_number_ele = document.getElementById('numberOfFloors')
+            let totalFloors = floor_number_ele.value;
+            const file_input = document.querySelector(`[id="floor_rise_tr_${totalFloors}"]`);
+            if (file_input) { 
+                document.getElementById('addFloorRiseBtn_open_mpdal').click()
+
+            }
+            else {
+                if (!totalFloors || totalFloors <= 0) {
+                    alert("Please enter a valid number of floors.");
+                    setTimeout(function() {
+                        floor_number_ele.focus();
+                        floor_number_ele.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 0);
+                    return;
+                }
+                create_table_floor_rise(totalFloors)
+                document.getElementById('addFloorRiseBtn_open_mpdal').click()
+            }
+        });
+
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            let prices = [];
+            let totalFloors = document.getElementById('numberOfFloors').value;
+
+            for (let i = 1; i <= totalFloors; i++) {
+                let price = document.querySelector(`input[name=floorPrice_${i}]`).value;
+                prices.push({ floor: i, price: price });
+            }
+
+
+            bunglow_detail['floor_rise'] = prices
+            document.getElementById('floorrise_modal_close').click()
+            document.getElementById('floor_rise_saved').classList.add('fa', 'fa-check')
+
+        });
+
         function check_location_added() {
             value_googlepin = document.getElementById('googlePin').value;
             if (value_googlepin === 'No'){
@@ -1810,9 +2012,10 @@
         async function copy_building_details(bunglow_id) {
             toggle_preloader();
             const data = await get_building_data(bunglow_id);
+            create_table_floor_rise(data['no_of_floors']);
             setFormValues(data);
             setLocation(Number(data['google_pin_lat']), Number(data['google_pin_lng']));
-
+            document.getElementById('saveChangesBtn').click();
             document.getElementById('copy_bunglow_id').value = bunglow_id;
             document.getElementById('publish_btn').style.display = 'initial';
             // document.getElementById('unit_btn').style.display = 'initial';

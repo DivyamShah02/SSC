@@ -64,8 +64,6 @@ class BunglowDetailFormViewSet(viewsets.ViewSet):
                     except:
                         pass
 
-            data['floor_rise'] = str(data.get('floor_rise', ''))
-
             # data['number'] = data['number_country_code'] + " " + data['number']
             # data['alternate_number'] = data['alternate_number_country_code'] + " " + data['alternate_number']
 
@@ -193,14 +191,15 @@ class BunglowCopyDataViewSet(viewsets.ViewSet):
             building_data = BunglowDetailsSerializer(building_data_obj).data
 
             for i in building_data:
-                if "," in str(building_data[i]) and 'floor_rise' != i:
+                if "," in str(building_data[i]):
+                    print(i)
                     building_data[i] = [str(j).strip() for j in str(building_data[i]).split(',')]
             # TODO
             try:
                 if type(building_data['type_of_apartments']) != list:
                     building_data['type_of_apartments'] = building_data['type_of_apartments'].split()
             except:
-                pass
+                pass            
             try:
                 if type(building_data['type_of_parking']) != list:
                     building_data['type_of_parking'] = building_data['type_of_parking'].split()
@@ -215,17 +214,6 @@ class BunglowCopyDataViewSet(viewsets.ViewSet):
             for amenity in amenities_data:
                 if amenities_data[amenity]:
                     building_data['amenities'].append(amenity)
-
-            floor_rise_str = building_data['floor_rise']
-            # TODO
-            try:
-                floor_rise = ast.literal_eval(floor_rise_str)
-                building_data['floor_rise'] = floor_rise
-                for floor in floor_rise:
-                    building_data[f'floorPrice_{floor["floor"]}'] = floor['price']
-
-            except:
-                pass
 
             unit_unactive = False
             one_unit_added = False
@@ -306,15 +294,6 @@ class BunglowUnitDetailFormViewSet(viewsets.ViewSet):
             try:
                 building_instance = get_object_or_404(BunglowDetails, bunglow_id=data['bunglow_id'])
                 building_serializer = BunglowDetailsSerializer(building_instance)
-
-                # data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable'])
-                # if str(data['unit_type']) == 'Duplex':
-                #     data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_duplex'])
-                
-                # if str(data['unit_type']) == 'Penthouse':
-                #     data['base_price'] = float(data['size_of_unit']) * float(data['per_sqft_rate_saleable_penthouse'])
-
-
 
                 size_of_unit = float(data['size_of_unit'])                   
                 bunglow_unit_price = float(data['per_sqft_rate_saleable']) * size_of_unit

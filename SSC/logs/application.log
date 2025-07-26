@@ -687,3 +687,97 @@ WARNING 2025-07-26 02:49:54,058 basehttp "GET /.well-known/appspecific/com.chrom
 INFO 2025-07-26 02:49:55,359 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
 WARNING 2025-07-26 02:49:55,382 log Not Found: /bunglow-detail/null
 WARNING 2025-07-26 02:49:55,383 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-26 12:37:25,694 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 129147
+WARNING 2025-07-26 12:37:26,914 log Not Found: /favicon.ico
+WARNING 2025-07-26 12:37:26,915 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 12:37:30,672 basehttp "GET /bunglow-autocomplete-name/?q=ds HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,680 basehttp "GET /bunglow-autocomplete-name/?q=dsr HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,749 basehttp "GET /bunglow-autocomplete-name/?q=dsrth HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,749 basehttp "GET /bunglow-autocomplete-name/?q=dsrt HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,914 basehttp "GET /bunglow-autocomplete-name/?q=dsrth HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,957 basehttp "GET /bunglow-autocomplete-name/?q=dsrth%20h HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,979 basehttp "GET /bunglow-autocomplete-name/?q=dsrth%20hr HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:30,995 basehttp "GET /bunglow-autocomplete-name/?q=dsrth%20hrt HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:31,045 basehttp "GET /bunglow-autocomplete-name/?q=dsrth%20hrts HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:33,393 basehttp "GET /bunglow-autocomplete-name/?q=d HTTP/1.1" 200 2538
+INFO 2025-07-26 12:37:47,656 basehttp "GET /bunglow-autocomplete-name/?q=g HTTP/1.1" 200 2538
+INFO 2025-07-26 12:37:47,707 basehttp "GET /bunglow-autocomplete-name/?q=gr HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:47,785 basehttp "GET /bunglow-autocomplete-name/?q=gre HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:47,814 basehttp "GET /bunglow-autocomplete-name/?q=gres HTTP/1.1" 200 2
+INFO 2025-07-26 12:37:47,902 basehttp "GET /bunglow-autocomplete-name/?q=gresg HTTP/1.1" 200 2
+WARNING 2025-07-26 12:40:19,399 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:40:19,400 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 12:40:20,989 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 129147
+WARNING 2025-07-26 12:40:21,045 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:40:21,046 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 12:40:25,955 basehttp "GET /bunglow-autocomplete-name/?q=bh HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:25,955 basehttp "GET /bunglow-autocomplete-name/?q=b HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:25,961 basehttp "GET /bunglow-autocomplete-name/?q=bhu HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:25,965 basehttp "GET /bunglow-autocomplete-name/?q=bhus HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:25,970 basehttp "GET /bunglow-autocomplete-name/?q=bhuso HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:26,213 basehttp "GET /bunglow-autocomplete-name/?q=bhusoo HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:26,257 basehttp "GET /bunglow-autocomplete-name/?q=bhusoob HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:26,257 basehttp "GET /bunglow-autocomplete-name/?q=bhusoobhu HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:26,260 basehttp "GET /bunglow-autocomplete-name/?q=bhusoobh HTTP/1.1" 200 2
+INFO 2025-07-26 12:40:26,453 basehttp "GET /bunglow-autocomplete-name/?q=bhusoobhu HTTP/1.1" 200 2
+WARNING 2025-07-26 12:44:02,926 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:44:02,927 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+WARNING 2025-07-26 12:44:02,938 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:44:02,938 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 12:44:04,481 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 129227
+WARNING 2025-07-26 12:44:04,535 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:44:04,536 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 12:44:04,659 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-26 12:44:04,662 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-26 12:44:04,663 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-07-26 12:44:04,665 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+WARNING 2025-07-26 12:44:05,385 log Not Found: /favicon.ico
+WARNING 2025-07-26 12:44:05,386 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-26 12:44:06,834 basehttp "GET /bunglow-autocomplete-name/?q= HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:06,870 basehttp "GET /bunglow-autocomplete-name/?q=%20h HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:06,876 basehttp "GET /bunglow-autocomplete-name/?q=%20hj HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:07,415 basehttp "GET /bunglow-autocomplete-name/?q=%20hjh HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:07,432 basehttp "GET /bunglow-autocomplete-name/?q=%20hjhb HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:07,439 basehttp "GET /bunglow-autocomplete-name/?q=%20hjhbu HTTP/1.1" 200 2
+INFO 2025-07-26 12:44:07,442 basehttp "GET /bunglow-autocomplete-name/?q=%20hjhbuo HTTP/1.1" 200 2
+ERROR 2025-07-26 12:44:54,825 views 'amenities'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Bunglows\views.py", line 80, in create
+    if type(data['amenities']) != list:
+            ~~~~^^^^^^^^^^^^^
+KeyError: 'amenities'
+INFO 2025-07-26 12:44:54,860 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-26 12:44:57,618 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-26 12:44:57,638 basehttp "GET /bunglow-unit-details/?bunglow_id=1001 HTTP/1.1" 200 55075
+WARNING 2025-07-26 12:44:57,720 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 12:44:57,721 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 13:05:10,355 basehttp "GET /bunglow-detail/?bunglow_id=1001 HTTP/1.1" 200 129276
+WARNING 2025-07-26 13:05:10,411 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-26 13:05:10,412 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-26 13:05:10,568 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2467
+WARNING 2025-07-26 13:05:10,648 log Not Found: /bunglow-detail/null
+WARNING 2025-07-26 13:05:10,650 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+ERROR 2025-07-26 13:07:13,223 views UnitDetails matching query does not exist.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 398, in list
+    unit_data = UnitDetails.objects.get(id=unit_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+Property.models.UnitDetails.DoesNotExist: UnitDetails matching query does not exist.
+ERROR 2025-07-26 13:07:13,296 views UnitDetails matching query does not exist.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SorterSession\views.py", line 398, in list
+    unit_data = UnitDetails.objects.get(id=unit_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+Property.models.UnitDetails.DoesNotExist: UnitDetails matching query does not exist.
+INFO 2025-07-26 13:07:22,227 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 145135
+INFO 2025-07-26 13:07:22,291 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220

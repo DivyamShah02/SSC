@@ -244,20 +244,12 @@
                 <div class="row">
                     <input type="hidden" class="form-control" id="copy_bunglow_id" value="NULL" placeholder=""
                         name="copy_bunglow_id">
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="projectId">Project/bunglow ID</label>
-                        <input type="text" class="form-control" id="projectId" name="project_id" >
-                    </div> -->
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectName">12) Project Name<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="projectName" name="project_name" required
                             placeholder="Enter project name">
                     </div>
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developedBy">13) Developed by<span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="developedBy" name="developed_by" required
-                            placeholder="Builder group name">
-                    </div> -->
+
                     <div class="col-md-4 form-group">
                         <label class="form-label primary" for="projectLocation">13) Area location (one word)<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="projectLocation" name="area_of_project" required
@@ -344,23 +336,8 @@
                         </div>
 
                     </div>
-                    <div class="row col-md-12 form-group">
+                    <div class="row col-md-12 form-group" id="type_of_apartments_element">
                         <label class="form-label primary" for="bedrooms" id="bedrooms">17) Type of apartments (multiple choice)<span class="required"> *</span></label>
-
-                        <!-- <div class="col-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="1_bhk" id="1_bhk">
-                                <label class="form-check-label" for="1_bhk">1 BHK</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="type_of_apartments" value="2_bhk"
-                                    id="2_bhk">
-                                <label class="form-check-label" for="2_bhk">2 BHK</label>
-                            </div>
-                        </div> -->
 
                         <div class="col-md-2">
                             <div class="form-check">
@@ -417,11 +394,9 @@
                                 <label class="form-check-label" for="7_bhk">7 BHK</label>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="landZone">17) Land Zone <span class="required"> *</span></label><br>
+                        <label class="form-label primary" for="landZone">18) Land Zone <span class="required"> *</span></label><br>
 
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="land_zone"
@@ -460,23 +435,19 @@
                         </div>
                     </div>
 
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="possession_by">Possession By (MM/YY)</label>
-                        <input type="text" class="form-control" id="possession_by" placeholder="Age of the bunglow"
-                            name="possession_by">
-                    </div> -->
+
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="ageOfBunglowDeveloper">18) Possession date as per Developer (MM/YY)<span class="required"> *</span></label>
+                        <label class="form-label primary" for="ageOfBunglowDeveloper">19) Possession date as per Developer (MM/YY)<span class="required"> *</span></label>
                         <input type="text" class="form-control" id="ageOfBunglowDeveloper" required
                             placeholder="Possession date as per Developer" name="age_of_bunglow_by_developer">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="ageOfBunglowRERA">19) Possession date as per RERA (MM/YY)</label>
+                        <label class="form-label primary" for="ageOfBunglowRERA">20) Possession date as per RERA (MM/YY)</label>
                         <input type="text" class="form-control" id="ageOfBunglowRERA" name="age_of_bunglow_rera"
                             placeholder="Possession date as per RERA">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="jodiPossible">20) RERA Approved?</label><br>
+                        <label class="form-label primary" for="jodiPossible">21) RERA Approved?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="rera_approved" id="rera_approved_Yes" onclick="toggleReraDate(false)"
                                 value="Yes">
@@ -496,27 +467,22 @@
 
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="plotArea">21) Plot area of the project FP/Net (In Sq Yd)</label>
+                        <label class="form-label primary" for="plotArea">22) Plot area of the project FP/Net (In Sq Yd)</label>
                         <input type="number" min="1" class="form-control" id="plotArea" name="plot_area"
                             placeholder="Enter plot area">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="project_architect">22) Project Architect<span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="project_architect" name="project_architect" required
+                        <label class="form-label primary" for="project_architect">23) Project Architect</label>
+                        <input type="text" class="form-control" id="project_architect" name="project_architect"
                             placeholder="Enter Project Architect name">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="landscape_architect">22) Landscape Architect<span class="required"> *</span></label>
-                        <input type="text" class="form-control" id="landscape_architect" name="landscape_architect" required
+                        <label class="form-label primary" for="landscape_architect">24) Landscape Architect</label>
+                        <input type="text" class="form-control" id="landscape_architect" name="landscape_architect"
                             placeholder="Enter Landscape Architect name">
                     </div>
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="constructionCompany">23) Construction company</label>
-                        <input type="text" class="form-control" id="constructionCompany" name="construction_company"
-                            placeholder="Enter construction company name">
-                    </div> -->
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="constructionType">23) Construction <span class="required"> *</span></label><br>
+                        <label class="form-label primary" for="constructionType">25) Construction <span class="required"> *</span></label><br>
 
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="construction"
@@ -558,7 +524,7 @@
                 style="background-color: white;">
                 <div class="row">
                     <div class="col-md-12 row form-group">
-                        <label class="form-label primary" for="buildingAmenities">29) Building amenities list</label>
+                        <label class="form-label primary" for="buildingAmenities">26) Building amenities list</label>
                         <div class="col-md-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="amenities"
@@ -849,7 +815,7 @@
 
                     </div>
                     <div class="col-12">
-                        <label class="form-label primary" for="removethis">30) Special Amenities</label>
+                        <label class="form-label primary" for="removethis">27) Special Amenities</label>
                     </div>
                     <div class="col-md-6 col-lg-3 form-group">
                         <label for="special_amenity_1" class="form-label">Amenity 1</label>
@@ -875,52 +841,8 @@
                             placeholder="Enter name">
                     </div>
 
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="centralAC">31) Central air conditioning
-                            available?</label><br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning"
-                                id="central_air_conditioning_Yes" value="Yes">
-                            <label class="form-check-label" for="central_air_conditioning_Yes">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning"
-                                id="central_air_conditioning_No" value="No">
-                            <label class="form-check-label" for="central_air_conditioning_No">No</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning"
-                                id="central_air_conditioning_ducting" value="Only ducting">
-                            <label class="form-check-label" for="central_air_conditioning_ducting">Only ducting</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning"
-                                id="central_air_conditioning_ducting" value="Only ducting">
-                            <label class="form-check-label" for="central_air_conditioning_ducting">Only compressor</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="central_air_conditioning"
-                                id="central_air_conditioning_compressor" value="Only ducting and compressor">
-                            <label class="form-check-label" for="central_air_conditioning_compressor">Only ducting and compressor</label>
-                        </div>
-
-                    </div> -->
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="petFriendly">33) Is this project pet friendly?</label><br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_Yes"
-                                value="Yes">
-                            <label class="form-check-label" for="pet_friendly_Yes">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pet_friendly" id="pet_friendly_No"
-                                value="No">
-                            <label class="form-check-label" for="pet_friendly_No">No</label>
-                        </div>
-
-                    </div> -->
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="spiritualAttraction">31) Any spiritual or religious
+                        <label class="form-label primary" for="spiritualAttraction">28) Any spiritual or religious
                             attraction in the project like  Gurudwara, Derasar, Mandir?</label><br>
                         <!-- <select class="form-select" id="spiritualAttraction" name="spiritual_or_religious_attraction">
                             <option value="Yes">Yes</option>
@@ -950,30 +872,9 @@
                         <input type="text" class="form-control" id="spiritual_or_religious_attraction_text" name="spiritual_or_religious_attraction_text"
                             placeholder="Enter spiritual or religious attraction">
                     </div>
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="parkingType">33) Type of parking</label><br>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="type_of_parking"
-                                id="type_of_parking_Normal" value="Normal">
-                            <label class="form-check-label" for="type_of_parking_Normal">Normal</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="type_of_parking"
-                                id="type_of_parking_Hydraulic" value="Hydraulic">
-                            <label class="form-check-label" for="type_of_parking_Hydraulic">Hydraulic</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="type_of_parking"
-                                id="type_of_parking_Hydraulic_with_Valet" value="Hydraulic with Valet">
-                            <label class="form-check-label" for="type_of_parking_Hydraulic_with_Valet">Hydraulic with
-                                Valet</label>
-                        </div>
-
-                    </div> -->
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="sampleHouse">32) Sample House Ready?</label><br>
+                        <label class="form-label primary" for="sampleHouse">29) Sample House Ready?</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="sample_house"
                                 id="sample_house_Yes" value="Yes" onclick="
@@ -1020,7 +921,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Brochures Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">33) Brochures</label><br>
+                            <label class="form-label primary" for="removethis">30) Brochures</label><br>
                             <label for="brochure1" class="form-label">Brochure 1 (PDF -
                                 Required)</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
@@ -1040,7 +941,7 @@
                     <div class="col-12 col-md-6">
                         <!-- Bunglow Images Section -->
                         <div class="mb-3">
-                            <label class="form-label primary" for="removethis">34) Bunglow Images (All Required)</label><br>
+                            <label class="form-label primary" for="removethis">31) Bunglow Images (All Required)</label><br>
                             <label for="image1" class="form-label">Image 1</label>
                             <input type="file" style="border: var(--primary-color) 2px solid !important;"
                                 class="form-control" id="image1" name="head_image" accept="image/*">
@@ -1095,26 +996,26 @@
             <form id="finance" class="p-4 border border-top-0 rounded-bottom" style="background-color: white;">
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="plotRate">35) Plot Rate per Sq Yd <span class="required"> *</span></label>
+                        <label class="form-label primary" for="plotRate">32) Plot Rate per Sq Yd <span class="required"> *</span></label>
                         <input type="text" class="form-control ignore_initial_save" id="plotRate" required
                         placeholder="Enter Plot Rate per Sq Yd" name="per_sqft_rate_saleable">
                             <!-- placeholder="Enter Plot Rate per Sq Yd" name="plot_rate_per_sq_yd"> -->
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="constructionRate">36) Construction Rate per Sq Yd <span class="required"> *</span></label>
+                        <label class="form-label primary" for="constructionRate">33) Construction Rate per Sq Yd <span class="required"> *</span></label>
                         <input type="text" class="form-control ignore_initial_save" id="constructionRate" required
                             placeholder="Enter Construction Rate per Sq Yd" name="construction_rate_per_sq_yd">
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="sbuPlot">21) SBU on Plot <span class="required"> *</span></label>
+                        <label class="form-label primary" for="sbuPlot">34) SBU on Plot <span class="required"> *</span></label>
                         <input type="text" class="form-control ignore_initial_save" id="sbuPlot" required
                             placeholder="Enter SBU on Plot" name="sbu_on_plot">
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label class="form-label primary" for="sbuConstruction">22) SBU on Construction <span class="required"> *</span></label>
+                        <label class="form-label primary" for="sbuConstruction">35) SBU on Construction <span class="required"> *</span></label>
                         <input type="text" class="form-control ignore_initial_save" id="sbuConstruction" required
                             placeholder="Enter SBU on Construction" name="sbu_on_construction">
                     </div>
@@ -1146,41 +1047,31 @@
                         <label for="plcOptions_others" class="form-label">Others</label>
                         <input type="number" class="form-control" min="0" id="plcOptions_others" value="0" required
                             name="plc_others" placeholder="02">
-                    </div>
-
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="plcOptions">PLC Options</label><br>
-                        <select class="form-select" id="plcOptions" name="plcOptions">
-                            <option value="Garden">Garden</option>
-                            <option value="Road Facing">Road Facing</option>
-                            <option value="Corner">Corner</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div> -->                    
+                    </div>                   
 
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="developmentCharges">38) Development charges (AMC/Torrent
+                        <label class="form-label primary" for="developmentCharges">37) Development charges (AMC/Torrent
                             etc)<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="developmentCharges" name="development_charges" required
                             placeholder="Enter development charges">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="advanceMaintenance">39) Advance maintenance<span class="required"> *</span></label>
+                        <label class="form-label primary" for="advanceMaintenance">38) Advance maintenance<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="advanceMaintenance" name="advance_maintenance" required
                             placeholder="Enter advance maintenance">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="maintenanceDeposit">40) Maintenance deposit<span class="required"> *</span></label>
+                        <label class="form-label primary" for="maintenanceDeposit">39) Maintenance deposit<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="maintenanceDeposit" name="maintenance_deposit" required
                             placeholder="Enter maintenance deposit">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="specificExpenses">41) Other specific expenses if any?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="specificExpenses">40) Other specific expenses if any?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="specificExpenses" name="other_specific_expenses" required
                             placeholder="Enter details">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="saleDeedValue">42) Flexible<span class="required"> *</span></label><br>
+                        <label class="form-label primary" for="saleDeedValue">41) Flexible<span class="required"> *</span></label><br>
                         <!-- <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="saleDeedValue" name="sale_deed_value" required
                             placeholder="Enter sale deed value"> -->
 
@@ -1196,35 +1087,23 @@
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="gstApplicable">43) How much GST is applicable?<span class="required"> *</span></label>
+                        <label class="form-label primary" for="gstApplicable">42) How much GST is applicable?<span class="required"> *</span></label>
                         <input type="number" min="0" class="form-control ignore_initial_save" id="gstApplicable" name="gst_applicable" required
                             placeholder="Enter GST">
                     </div>
-                    <!-- <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="loanAvailability">44) Loan availability?</label><br>                       
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="loan_availability"
-                                id="loan_availability_Yes" value="Yes">
-                            <label class="form-check-label" for="loan_availability_Yes">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="loan_availability"
-                                id="loan_availability_No" value="No">
-                            <label class="form-check-label" for="loan_availability_No">No</label>
-                        </div>
-                    </div> -->
+                    
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">44) Brokerage given per transaction (in %)</label>
+                        <label class="form-label primary" for="brokerage">43) Brokerage given per transaction (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="brokerage" name="brokerage"
                             placeholder="Enter Brokerage given per transaction">
                     </div>
                     <div class="col-md-4 form-group">
-                        <label class="form-label primary" for="brokerage">45)  Payment due as on date (in %)</label>
+                        <label class="form-label primary" for="brokerage">44)  Payment due as on date (in %)</label>
                         <input type="number" min="0" max="100" class="form-control ignore_initial_save" id="down_payment_as_on_date" name="down_payment_as_on_date"
                             placeholder="Enter Down payment due as on date">
                     </div>
                     <div class="col-md-12 form-group">
-                        <label class="form-label primary" for="remarks">46) Remarks if any</label>
+                        <label class="form-label primary" for="remarks">45) Remarks if any</label>
                         <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
                     </div>
                     <p class="text-danger" id="note_p" style="display: none;"><b><u>*Note : <span id="note_span">All units are not active, please Publish</span></u></b></p>
@@ -1521,7 +1400,13 @@
             toggle_preloader()
             const isValid = validateForm(unit_adder);
             const isLocationAdded = check_location_added();
-            const isAnyCheckboxChecked = AnyCheckboxChecked('type_of_apartments', 'bedrooms');
+            let isAnyCheckboxChecked = true
+            const selectedProjectType = document.querySelector('input[name="type_of_project"]:checked');
+
+            if (selectedProjectType && selectedProjectType.value !== 'Plot') {
+                isAnyCheckboxChecked = AnyCheckboxChecked('type_of_apartments', 'bedrooms');
+            }
+            // const isAnyCheckboxChecked = AnyCheckboxChecked('type_of_apartments', 'bedrooms');
 
             if (unit_adder) {
                 removeRequiredFromIgnored();
@@ -1841,6 +1726,7 @@
                 document.getElementById('sample_house_date').required = true;
                 document.getElementById('sample_house_date').value = data['sample_house_date'];
             }
+            toggleApartmentsSection();
             toggle_preloader();
         }
 
@@ -1982,6 +1868,29 @@
             });
         });
 
+    </script>
+
+    <script>
+        const projectTypeRadios = document.querySelectorAll('input[name="type_of_project"]');
+        const apartmentsElement = document.getElementById("type_of_apartments_element");
+
+        function toggleApartmentsSection() {
+            const selected = document.querySelector('input[name="type_of_project"]:checked');
+            if (selected && selected.value === "Plot") {
+                apartmentsElement.style.display = "none";
+            } else {
+                apartmentsElement.style.display = "";
+            }
+        }
+
+        // Run once on page load (in case pre-filled)
+        toggleApartmentsSection();
+
+        // Attach change listeners to all project type radio buttons
+        projectTypeRadios.forEach(radio => {
+            radio.addEventListener("change", toggleApartmentsSection);
+        });
+    
     </script>
 
 

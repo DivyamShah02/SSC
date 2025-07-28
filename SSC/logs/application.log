@@ -781,3 +781,276 @@ Traceback (most recent call last):
 Property.models.UnitDetails.DoesNotExist: UnitDetails matching query does not exist.
 INFO 2025-07-26 13:07:22,227 basehttp "GET /view-properties/?ind=1&session_id=1 HTTP/1.1" 200 145135
 INFO 2025-07-26 13:07:22,291 basehttp "GET /static/js/confetti.js HTTP/1.1" 200 7220
+INFO 2025-07-28 14:06:15,121 basehttp "GET / HTTP/1.1" 200 2267
+INFO 2025-07-28 14:06:42,444 basehttp "GET / HTTP/1.1" 200 2356
+INFO 2025-07-28 14:06:44,298 basehttp "GET /bunglow-detail/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:06:44,306 basehttp "GET /login/?next=/bunglow-detail/ HTTP/1.1" 200 3971
+INFO 2025-07-28 14:06:51,101 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:06:51,118 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 129145
+INFO 2025-07-28 14:06:55,752 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129194
+INFO 2025-07-28 14:06:59,665 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:06:59,709 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:06:59,709 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:07:04,744 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:07:05,503 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:07:05,608 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:07:24,862 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1510
+INFO 2025-07-28 14:07:49,906 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1510
+INFO 2025-07-28 14:08:05,232 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1497
+INFO 2025-07-28 14:08:05,272 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:08:17,104 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:08:54,054 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1502
+INFO 2025-07-28 14:09:03,351 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1497
+INFO 2025-07-28 14:09:03,389 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:09:06,256 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:11:33,792 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1502
+INFO 2025-07-28 14:11:41,249 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1497
+INFO 2025-07-28 14:11:41,306 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50009
+INFO 2025-07-28 14:15:20,026 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50150
+INFO 2025-07-28 14:15:20,176 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:15:20,181 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:15:20,182 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:15:20,183 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:15:20,375 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:15:20,376 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:15:20,821 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50150
+INFO 2025-07-28 14:15:20,849 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:15:20,849 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:15:20,849 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:15:20,850 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:15:21,068 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:15:21,069 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:15:23,919 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1502
+INFO 2025-07-28 14:15:32,718 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1506
+INFO 2025-07-28 14:15:32,748 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50159
+INFO 2025-07-28 14:15:52,358 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129194
+INFO 2025-07-28 14:15:53,723 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:15:53,741 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:15:53,742 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:19:50,269 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129403
+INFO 2025-07-28 14:19:51,783 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:19:51,797 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:19:51,799 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:19:53,177 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129403
+INFO 2025-07-28 14:19:53,217 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:19:53,218 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:19:53,218 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:19:53,219 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:19:54,067 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:19:54,068 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:19:55,392 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:19:55,410 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:19:55,410 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:20:04,857 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129398
+INFO 2025-07-28 14:20:06,297 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:20:06,333 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:20:06,334 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:22:58,636 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129592
+INFO 2025-07-28 14:23:00,488 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:23:00,507 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:23:00,508 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:23:01,264 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129592
+INFO 2025-07-28 14:23:01,309 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:23:01,312 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:23:01,313 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:23:01,313 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:23:01,767 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:23:01,769 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:23:02,977 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:23:02,993 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:23:02,994 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:23:28,744 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129592
+INFO 2025-07-28 14:23:30,497 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:23:30,517 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:23:30,518 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:23:43,255 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129595
+INFO 2025-07-28 14:23:43,283 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:23:43,284 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:23:43,285 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:23:43,285 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:23:44,056 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:23:44,057 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:23:45,263 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:23:45,278 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:23:45,279 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+WARNING 2025-07-28 14:24:04,092 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:24:04,092 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:24:46,040 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129633
+WARNING 2025-07-28 14:24:46,077 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:24:46,079 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:24:46,081 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:24:46,082 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:24:46,084 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:24:46,085 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:24:46,722 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:24:46,723 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:24:47,936 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2850
+WARNING 2025-07-28 14:24:47,974 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:24:47,974 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:25:15,675 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:25:17,266 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:25:17,286 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50159
+WARNING 2025-07-28 14:25:17,329 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:17,330 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+WARNING 2025-07-28 14:25:20,726 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:20,727 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+WARNING 2025-07-28 14:25:20,803 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:20,803 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:25:21,858 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129633
+WARNING 2025-07-28 14:25:21,890 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:21,890 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:25:23,288 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:25:23,309 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:25:23,310 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:25:54,750 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129710
+WARNING 2025-07-28 14:25:54,780 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:54,780 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:25:54,788 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:25:54,788 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:25:54,788 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:25:54,790 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:25:55,321 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:25:55,363 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:25:56,597 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:25:56,616 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:25:56,616 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:25:57,586 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129710
+WARNING 2025-07-28 14:25:57,632 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:25:57,635 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:25:57,635 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:25:57,639 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:25:57,642 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:25:57,644 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:25:58,174 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:25:58,176 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:25:59,371 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:25:59,389 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:25:59,390 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:26:01,614 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:26:03,186 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:26:03,207 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50159
+WARNING 2025-07-28 14:26:03,252 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:26:03,253 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+WARNING 2025-07-28 14:26:06,644 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:26:06,645 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+WARNING 2025-07-28 14:26:06,688 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:26:06,689 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:26:07,480 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129710
+WARNING 2025-07-28 14:26:07,513 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:26:07,514 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:26:09,075 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:26:09,097 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:26:09,098 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+WARNING 2025-07-28 14:42:38,998 log Not Found: /admin/UserDetail/user/
+WARNING 2025-07-28 14:42:38,999 basehttp "GET /admin/UserDetail/user/ HTTP/1.1" 404 7602
+INFO 2025-07-28 14:50:19,674 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129737
+WARNING 2025-07-28 14:50:19,713 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:50:19,714 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:50:21,752 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:50:21,772 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:50:21,772 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:50:23,569 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129737
+WARNING 2025-07-28 14:50:23,598 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:50:23,599 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:50:23,607 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:50:23,610 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:50:23,611 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:50:23,611 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:50:24,394 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:50:24,395 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:50:25,669 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:50:25,691 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:50:25,691 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:50:35,974 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:50:37,230 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:50:37,257 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50159
+WARNING 2025-07-28 14:50:37,301 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:50:37,302 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:50:40,070 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129737
+WARNING 2025-07-28 14:50:40,115 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:50:40,116 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:50:40,263 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:50:40,395 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:50:40,397 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:51:15,617 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129776
+WARNING 2025-07-28 14:51:15,644 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:51:15,644 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:51:15,763 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:51:15,836 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:51:15,836 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:51:20,952 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129776
+WARNING 2025-07-28 14:51:20,984 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:51:20,984 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:51:20,993 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:51:20,994 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:51:20,994 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:51:20,995 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:51:21,551 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:51:21,552 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:51:22,725 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:51:22,744 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:51:22,745 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:52:24,308 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129637
+WARNING 2025-07-28 14:52:24,346 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:52:24,348 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:52:24,350 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-07-28 14:52:24,350 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-07-28 14:52:24,351 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-07-28 14:52:24,351 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-07-28 14:52:24,994 log Not Found: /favicon.ico
+WARNING 2025-07-28 14:52:24,994 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-07-28 14:52:26,705 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2849
+WARNING 2025-07-28 14:52:26,724 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:52:26,724 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:52:31,957 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:52:32,692 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:52:32,715 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 50159
+WARNING 2025-07-28 14:52:32,760 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:52:32,761 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:52:35,017 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129637
+WARNING 2025-07-28 14:52:35,063 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:52:35,063 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:52:35,183 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:52:35,226 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:52:35,226 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:52:47,359 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 129637
+WARNING 2025-07-28 14:52:47,393 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:52:47,393 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:52:47,500 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:52:47,574 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:52:47,575 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:57:11,807 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 122012
+WARNING 2025-07-28 14:57:11,837 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:57:11,838 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 14:57:13,860 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2858
+WARNING 2025-07-28 14:57:13,877 log Not Found: /bunglow-detail/null
+WARNING 2025-07-28 14:57:13,878 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 30983
+INFO 2025-07-28 14:58:25,591 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 14:58:26,318 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 14:58:26,429 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 49452
+WARNING 2025-07-28 14:58:26,479 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 14:58:26,479 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 15:00:56,339 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 49453
+WARNING 2025-07-28 15:00:56,364 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-28 15:00:56,365 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 31070
+INFO 2025-07-28 15:01:03,434 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1515
+INFO 2025-07-28 15:12:01,194 basehttp "GET / HTTP/1.1" 200 2356
+INFO 2025-07-28 15:12:03,789 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 121963
+INFO 2025-07-28 15:12:08,665 basehttp "GET /bunglow-autocomplete-name/?q=st HTTP/1.1" 200 2
+INFO 2025-07-28 15:12:08,666 basehttp "GET /bunglow-autocomplete-name/?q=sth HTTP/1.1" 200 2
+INFO 2025-07-28 15:12:08,672 basehttp "GET /bunglow-autocomplete-name/?q=sthr HTTP/1.1" 200 2
+INFO 2025-07-28 15:12:11,685 basehttp "GET /bunglow-autocomplete-name/?q=s HTTP/1.1" 200 2545
+ERROR 2025-07-28 15:12:50,804 views 'amenities'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Bunglows\views.py", line 80, in create
+    if type(data['amenities']) != list:
+            ~~~~^^^^^^^^^^^^^
+KeyError: 'amenities'
+INFO 2025-07-28 15:12:50,830 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-07-28 15:12:51,992 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-07-28 15:12:52,009 basehttp "GET /bunglow-unit-details/?bunglow_id=1002 HTTP/1.1" 200 46871
+INFO 2025-07-28 15:14:03,921 basehttp "POST /bunglow-unit-details/ HTTP/1.1" 201 1365
+INFO 2025-07-28 15:14:03,975 basehttp "GET /bunglow-unit-details/?bunglow_id=1002 HTTP/1.1" 200 48164
+INFO 2025-07-28 15:14:06,554 basehttp "POST /bunglow-unit-copy/ HTTP/1.1" 200 1370
+WARNING 2025-07-28 15:14:06,615 log Not Found: /bunglow-unit-details/null
+WARNING 2025-07-28 15:14:06,615 basehttp "GET /bunglow-unit-details/null HTTP/1.1" 404 31001

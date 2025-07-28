@@ -116,8 +116,6 @@ class BunglowUnitDetails(models.Model):
     unit_configuration = models.CharField(max_length=255, null=True, blank=True)
     unit_type = models.CharField(max_length=255, null=True, blank=True)
     unit_series = models.CharField(max_length=255, default='', null=True, blank=True)
-    phase = models.CharField(max_length=255, default='', null=True, blank=True)
-    type = models.CharField(max_length=255, default='', null=True, blank=True)
     no_of_units_per_floor = models.CharField(max_length=255, default=0, null=True, blank=True)
     no_of_lifts_per_floor = models.CharField(max_length=255, default=0, null=True, blank=True)
     private_lifts = models.BooleanField(default=False)

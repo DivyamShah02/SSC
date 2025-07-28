@@ -122,7 +122,7 @@ class Sorter:
                             unit_configuration__icontains=bedroom, size_of_unit__gte=min_carpet_area, unit_type__icontains=unit_type,
                             base_price__gte=budget_min,
                             base_price__lte=budget_max,
-                            no_of_attached_bathrooms=int(updated_client_data.get('attached_washrooms', 0)),
+                            no_of_attached_bathrooms__gte=int(updated_client_data.get('attached_washrooms', 0)),
                             active=True
                             )
                         for property in property_unit_matched:

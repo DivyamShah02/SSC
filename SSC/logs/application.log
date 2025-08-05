@@ -1056,3 +1056,318 @@ WARNING 2025-07-28 15:14:06,615 log Not Found: /bunglow-unit-details/null
 WARNING 2025-07-28 15:14:06,615 basehttp "GET /bunglow-unit-details/null HTTP/1.1" 404 31001
 WARNING 2025-07-28 16:51:07,510 log Not Found: /case-detail/
 WARNING 2025-07-28 16:51:07,511 basehttp "GET /case-detail/?case_id=DC3176094836 HTTP/1.1" 404 30983
+INFO 2025-08-05 09:29:43,891 basehttp "GET / HTTP/1.1" 200 2356
+INFO 2025-08-05 09:29:44,105 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:29:44,108 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-08-05 09:29:44,109 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-08-05 09:29:44,113 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+WARNING 2025-08-05 09:29:44,214 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:29:44,215 basehttp "GET /favicon.ico HTTP/1.1" 404 30959
+INFO 2025-08-05 09:32:33,803 basehttp "GET /bunglow_dashboard HTTP/1.1" 301 0
+INFO 2025-08-05 09:32:33,831 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-05 09:32:33,844 basehttp "GET /login/ HTTP/1.1" 200 3959
+INFO 2025-08-05 09:32:33,891 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+ERROR 2025-08-05 09:32:52,011 views Reverse for 'None' not found. 'None' is not a valid view function or pattern name.
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 279, in ssc_login
+    return redirect(next_url)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'None' not found. 'None' is not a valid view function or pattern name.
+INFO 2025-08-05 09:32:52,058 basehttp "POST /login/ HTTP/1.1" 200 3955
+ERROR 2025-08-05 09:32:58,647 log Internal Server Error: /bunglow_dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 384, in bunglow_dashboard
+    first_unit = BunglowUnitDetails.objects.filter(building_id=building.building_id).first()
+                                                               ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BunglowDetails' object has no attribute 'building_id'
+ERROR 2025-08-05 09:32:58,652 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 500 69454
+INFO 2025-08-05 09:33:37,113 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:33:51,382 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:33:55,730 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:33:56,286 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:33:59,032 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:33:59,192 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-08-05 09:33:59,199 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-08-05 09:33:59,203 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-08-05 09:33:59,206 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:33:59,208 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-08-05 09:33:59,276 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:33:59,277 basehttp "GET /favicon.ico HTTP/1.1" 404 31146
+INFO 2025-08-05 09:34:09,134 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:34:09,560 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:34:09,585 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-08-05 09:34:09,585 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-08-05 09:34:09,585 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-08-05 09:34:09,586 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:34:09,586 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-08-05 09:34:09,671 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:34:09,672 basehttp "GET /favicon.ico HTTP/1.1" 404 31146
+INFO 2025-08-05 09:34:09,832 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9791
+INFO 2025-08-05 09:34:09,853 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-08-05 09:34:09,854 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-08-05 09:34:09,854 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-08-05 09:34:09,854 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:34:09,855 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-08-05 09:34:09,992 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:34:09,993 basehttp "GET /favicon.ico HTTP/1.1" 404 31146
+INFO 2025-08-05 09:34:33,345 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9851
+INFO 2025-08-05 09:34:33,491 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-08-05 09:34:33,494 basehttp "GET /static/css/scc.css HTTP/1.1" 200 318
+INFO 2025-08-05 09:34:33,515 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:34:33,527 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-08-05 09:34:33,530 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+WARNING 2025-08-05 09:34:33,560 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:34:33,560 basehttp "GET /favicon.ico HTTP/1.1" 404 31146
+INFO 2025-08-05 09:34:59,642 basehttp "GET /property-detail/?bunglow_id=1005 HTTP/1.1" 200 135588
+INFO 2025-08-05 09:35:11,693 basehttp "GET / HTTP/1.1" 200 2356
+INFO 2025-08-05 09:35:13,298 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 121963
+INFO 2025-08-05 09:35:16,166 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 122012
+INFO 2025-08-05 09:35:20,238 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2811
+WARNING 2025-08-05 09:35:20,282 log Not Found: /bunglow-detail/null
+WARNING 2025-08-05 09:35:20,283 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 31170
+INFO 2025-08-05 09:35:30,155 basehttp "GET / HTTP/1.1" 200 2356
+INFO 2025-08-05 09:36:14,854 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 122012
+INFO 2025-08-05 09:36:15,085 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2811
+WARNING 2025-08-05 09:36:15,125 log Not Found: /bunglow-detail/null
+WARNING 2025-08-05 09:36:15,126 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 31170
+INFO 2025-08-05 09:36:26,466 basehttp "GET /bunglow-detail/?bunglow_id=1000 HTTP/1.1" 200 122012
+INFO 2025-08-05 09:36:26,539 basehttp "GET /static/css/loader.css HTTP/1.1" 200 1343
+INFO 2025-08-05 09:36:26,540 basehttp "GET /static/js/script.js HTTP/1.1" 200 597
+INFO 2025-08-05 09:36:26,542 basehttp "GET /static/img/Logo.svg HTTP/1.1" 200 27703
+INFO 2025-08-05 09:36:26,543 basehttp "GET /static/css/style.css HTTP/1.1" 200 8795
+INFO 2025-08-05 09:36:27,262 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2811
+WARNING 2025-08-05 09:36:27,302 log Not Found: /bunglow-detail/null
+WARNING 2025-08-05 09:36:27,316 log Not Found: /favicon.ico
+WARNING 2025-08-05 09:36:27,317 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 31170
+WARNING 2025-08-05 09:36:27,317 basehttp "GET /favicon.ico HTTP/1.1" 404 31146
+INFO 2025-08-05 09:36:30,733 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 99
+INFO 2025-08-05 09:36:31,974 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-08-05 09:36:32,008 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 200 49444
+ERROR 2025-08-05 09:37:09,393 log Internal Server Error: /bunglow_dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 400, in bunglow_dashboard
+    return render(request, 'bunglow_dashboard.html', data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'bunglow-unit-details-list' not found. 'bunglow-unit-details-list' is not a valid view function or pattern name.
+ERROR 2025-08-05 09:37:09,401 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 500 144772
+INFO 2025-08-05 09:37:32,819 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9893
+INFO 2025-08-05 09:37:34,825 basehttp "GET /bunglow-unit-details/?bunglow_id=1005 HTTP/1.1" 200 46903
+INFO 2025-08-05 09:37:39,195 basehttp "GET /bunglow-detail/?bunglow_id=1001 HTTP/1.1" 200 122012
+INFO 2025-08-05 09:37:42,478 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2842
+INFO 2025-08-05 09:44:07,297 basehttp "GET /admin/ HTTP/1.1" 200 12259
+INFO 2025-08-05 09:44:07,315 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,317 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,318 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,324 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,326 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,326 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,330 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,338 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:07,338 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,102 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20978
+INFO 2025-08-05 09:44:10,138 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,138 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,142 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,142 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,143 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,143 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,147 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,150 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,151 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,153 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,164 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,177 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:44:10,211 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:10,212 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:44:16,379 basehttp "GET /admin/Bunglows/bunglowunitdetails/11/change/ HTTP/1.1" 200 45823
+INFO 2025-08-05 09:44:16,413 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:45:55,537 basehttp "GET /update_bunglow_id HTTP/1.1" 301 0
+ERROR 2025-08-05 09:45:55,622 log Internal Server Error: /update_bunglow_id/
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\SSC\views.py", line 666, in update_bunglow_id
+    unit_obj = BunglowUnitDetails.objects.get(bunglow_id=numeric_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Divyam Shah\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+Bunglows.models.BunglowUnitDetails.MultipleObjectsReturned: get() returned more than one BunglowUnitDetails -- it returned 2!
+ERROR 2025-08-05 09:45:55,626 basehttp "GET /update_bunglow_id/ HTTP/1.1" 500 78608
+INFO 2025-08-05 09:48:11,740 basehttp "GET /update_bunglow_id/ HTTP/1.1" 200 5
+INFO 2025-08-05 09:48:13,946 basehttp "GET /admin/ HTTP/1.1" 200 12259
+INFO 2025-08-05 09:48:16,145 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20987
+INFO 2025-08-05 09:48:16,185 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:48:24,329 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 19865
+INFO 2025-08-05 09:48:24,363 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:48:31,368 basehttp "GET /admin/Bunglows/bunglowdetails/1/change/ HTTP/1.1" 200 72802
+INFO 2025-08-05 09:48:31,405 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:48:36,117 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20987
+INFO 2025-08-05 09:48:36,164 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:48:51,878 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20987
+INFO 2025-08-05 09:48:51,904 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:48:56,597 basehttp "GET /admin/Bunglows/bunglowunitdetails/1/change/ HTTP/1.1" 200 45919
+INFO 2025-08-05 09:48:56,637 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:01,650 basehttp "POST /admin/Bunglows/bunglowunitdetails/1/change/ HTTP/1.1" 302 0
+INFO 2025-08-05 09:49:01,713 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 21225
+INFO 2025-08-05 09:49:01,753 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:01,772 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-08-05 09:49:04,488 basehttp "GET /admin/Bunglows/bunglowunitdetails/2/change/ HTTP/1.1" 200 45277
+INFO 2025-08-05 09:49:04,527 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:08,566 basehttp "POST /admin/Bunglows/bunglowunitdetails/2/change/ HTTP/1.1" 302 0
+INFO 2025-08-05 09:49:08,629 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 21226
+INFO 2025-08-05 09:49:08,673 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:11,801 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 19865
+INFO 2025-08-05 09:49:11,836 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:17,210 basehttp "GET /admin/Bunglows/bunglowamenities/ HTTP/1.1" 200 14747
+INFO 2025-08-05 09:49:17,248 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:44,833 basehttp "GET /update_bunglow_id/ HTTP/1.1" 200 5
+INFO 2025-08-05 09:49:45,856 basehttp "GET /admin/Bunglows/bunglowamenities/ HTTP/1.1" 200 14759
+INFO 2025-08-05 09:49:45,885 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:48,887 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 19865
+INFO 2025-08-05 09:49:48,928 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:50,717 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20989
+INFO 2025-08-05 09:49:50,749 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:52,336 basehttp "GET /admin/Bunglows/bunglowunitdetails/ HTTP/1.1" 200 20989
+INFO 2025-08-05 09:49:52,366 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:53,854 basehttp "GET /admin/Bunglows/bunglowamenities/ HTTP/1.1" 200 14759
+INFO 2025-08-05 09:49:53,899 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-05 09:49:55,068 basehttp "GET /admin/Bunglows/bunglowdetails/ HTTP/1.1" 200 19865
+INFO 2025-08-05 09:49:55,104 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-05 09:50:02,776 log Not Found: /bunglow-unit-details/
+WARNING 2025-08-05 09:50:02,777 basehttp "GET /bunglow-unit-details/?bunglow_id=1000 HTTP/1.1" 404 8362
+INFO 2025-08-05 09:50:02,974 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121462
+INFO 2025-08-05 09:50:02,978 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1846
+INFO 2025-08-05 09:50:02,983 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39685
+INFO 2025-08-05 09:50:02,986 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-08-05 09:50:02,987 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13660
+INFO 2025-08-05 09:50:02,990 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3663
+INFO 2025-08-05 09:50:02,992 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1315
+INFO 2025-08-05 09:50:02,993 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 62
+INFO 2025-08-05 09:50:02,993 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1234
+INFO 2025-08-05 09:50:02,995 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 846
+INFO 2025-08-05 09:50:02,995 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3929
+INFO 2025-08-05 09:50:03,006 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-08-05 09:50:05,721 basehttp "GET /bunglow-unit-details/?bunglow_id=B1000 HTTP/1.1" 200 49446
+INFO 2025-08-05 09:50:08,953 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 9911
+INFO 2025-08-05 09:50:10,722 basehttp "GET /bunglow-detail/?bunglow_id=B1005 HTTP/1.1" 200 122014
+INFO 2025-08-05 09:50:10,857 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2429
+WARNING 2025-08-05 09:50:10,916 log Not Found: /bunglow-detail/null
+WARNING 2025-08-05 09:50:10,918 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 31357
+INFO 2025-08-05 09:51:23,761 basehttp "GET /bunglow-detail/ HTTP/1.1" 200 121963
+INFO 2025-08-05 09:51:29,799 basehttp "GET /bunglow-autocomplete-name/?q=oh HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:29,804 basehttp "GET /bunglow-autocomplete-name/?q=ohbu HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:29,804 basehttp "GET /bunglow-autocomplete-name/?q=ohb HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:32,252 basehttp "GET /bunglow-autocomplete-name/?q=ohb HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:32,448 basehttp "GET /bunglow-autocomplete-name/?q=oh HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:35,583 basehttp "GET /bunglow-autocomplete-name/?q=ac HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:36,212 basehttp "GET /bunglow-autocomplete-name/?q=cv HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:36,745 basehttp "GET /bunglow-autocomplete-name/?q=cr HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:39,607 basehttp "GET /bunglow-autocomplete-name/?q=o HTTP/1.1" 200 12125
+INFO 2025-08-05 09:51:39,640 basehttp "GET /bunglow-autocomplete-name/?q=r HTTP/1.1" 200 14663
+INFO 2025-08-05 09:51:39,671 basehttp "GET /bunglow-autocomplete-name/?q=t HTTP/1.1" 200 7666
+INFO 2025-08-05 09:51:39,694 basehttp "GET /bunglow-autocomplete-name/?q=td HTTP/1.1" 200 5128
+INFO 2025-08-05 09:51:39,726 basehttp "GET /bunglow-autocomplete-name/?q=o HTTP/1.1" 200 12125
+INFO 2025-08-05 09:51:39,740 basehttp "GET /bunglow-autocomplete-name/?q=tds HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:39,765 basehttp "GET /bunglow-autocomplete-name/?q=tdsr HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:39,781 basehttp "GET /bunglow-autocomplete-name/?q=tdsrt HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:39,797 basehttp "GET /bunglow-autocomplete-name/?q=tdsrth HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:40,266 basehttp "GET /bunglow-autocomplete-name/?q=h HTTP/1.1" 200 9550
+INFO 2025-08-05 09:51:40,430 basehttp "GET /bunglow-autocomplete-name/?q=tdsrt HTTP/1.1" 200 2
+INFO 2025-08-05 09:51:41,563 basehttp "GET /bunglow-autocomplete-name/?q=a HTTP/1.1" 200 9550
+INFO 2025-08-05 09:51:41,582 basehttp "GET /bunglow-autocomplete-name/?q=a HTTP/1.1" 200 9550
+INFO 2025-08-05 09:51:41,604 basehttp "GET /bunglow-autocomplete-name/?q=a HTTP/1.1" 200 9550
+INFO 2025-08-05 09:51:43,392 basehttp "GET /bunglow-autocomplete-name/?q=as HTTP/1.1" 200 5128
+INFO 2025-08-05 09:51:44,219 basehttp "GET /bunglow-autocomplete-name/?q=c HTTP/1.1" 200 2576
+INFO 2025-08-05 09:51:44,245 basehttp "GET /bunglow-autocomplete-name/?q=c HTTP/1.1" 200 2576
+INFO 2025-08-05 09:51:44,266 basehttp "GET /bunglow-autocomplete-name/?q=c HTTP/1.1" 200 2576
+INFO 2025-08-05 09:51:44,665 basehttp "GET /bunglow-autocomplete-name/?q=e HTTP/1.1" 200 7302
+ERROR 2025-08-05 09:52:16,312 views 'amenities'
+Traceback (most recent call last):
+  File "C:\Users\Divyam Shah\OneDrive\Desktop\Dynamic Labz\Clients\Clients\Square Second Consultancy\SSC\SSC\Bunglows\views.py", line 80, in create
+    if type(data['amenities']) != list:
+            ~~~~^^^^^^^^^^^^^
+KeyError: 'amenities'
+INFO 2025-08-05 09:52:16,345 basehttp "POST /bunglow-detail/ HTTP/1.1" 201 100
+INFO 2025-08-05 09:52:17,935 basehttp "POST /bunglow-submit-document-form/ HTTP/1.1" 302 0
+INFO 2025-08-05 09:52:17,956 basehttp "GET /bunglow-unit-details/?bunglow_id=B1006 HTTP/1.1" 200 46876
+INFO 2025-08-05 09:52:21,546 basehttp "GET /bunglow-detail/?bunglow_id=B1006 HTTP/1.1" 200 122014
+INFO 2025-08-05 09:52:21,663 basehttp "POST /bunglow-copy/ HTTP/1.1" 200 2467
+WARNING 2025-08-05 09:52:21,719 log Not Found: /bunglow-detail/null
+WARNING 2025-08-05 09:52:21,719 basehttp "GET /bunglow-detail/null HTTP/1.1" 404 31357
+INFO 2025-08-05 09:53:05,503 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10929
+INFO 2025-08-05 09:53:08,457 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10929
+INFO 2025-08-05 09:53:15,863 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10930
+INFO 2025-08-05 09:53:22,543 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10929
+INFO 2025-08-05 09:53:22,931 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10929
+INFO 2025-08-05 09:53:29,744 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10949
+INFO 2025-08-05 09:53:30,250 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10949
+INFO 2025-08-05 09:53:54,686 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10949
+INFO 2025-08-05 09:54:23,114 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10941
+INFO 2025-08-05 09:54:41,385 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10941
+INFO 2025-08-05 09:55:08,534 basehttp "GET / HTTP/1.1" 200 2455
+INFO 2025-08-05 09:55:10,134 basehttp "GET /bunglow_dashboard/ HTTP/1.1" 200 10941

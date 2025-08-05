@@ -69,10 +69,10 @@ class BunglowDetailFormViewSet(viewsets.ViewSet):
 
             try:
                 last_bunglow = BunglowDetails.objects.latest('id')
-                bunglow_id = int(last_bunglow.bunglow_id) + 1
-            
+                last_id_num = int(last_bunglow.bunglow_id.replace('B', ''))
+                bunglow_id = f"B{last_id_num + 1}"
             except BunglowDetails.DoesNotExist:
-                bunglow_id = 1000
+                bunglow_id = "B1000"
 
             google_pin = data['google_Pin'].split('|')
             data['google_pin_lat'], data['google_pin_lng'] = google_pin

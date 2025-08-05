@@ -12,6 +12,7 @@ import requests
 import os
 from django.contrib.auth import authenticate, login, logout
 from Property.models import BuildingDetails, UnitDetails, Amenities
+from Bunglows.models import *
 from datetime import datetime
 from .download import export_selected_models_to_excel
 
@@ -344,6 +345,60 @@ def dashboard(request):
 
     return render(request, 'dashboard.html', data)
 
+def bunglow_dashboard(request):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
+    
+    group_names = user.groups.values_list('name', flat=True)
+    if not user.is_staff:
+        if 'Building Detail' in group_names:
+            all_building_details = BunglowDetails.objects.filter(property_added_by=f'{request.user}')            
+            final_building_data = []
+            for building in all_building_details:
+                first_unit = BunglowUnitDetails.objects.filter(bunglow_id=building.bunglow_id).first()
+                if first_unit is None:
+                    unit_id = None
+                else:
+                    unit_id = first_unit.id
+                temp_dict = {
+                    'bunglow_id': building.bunglow_id,
+                    'project_name': building.project_name,
+                    'unit_id': unit_id,
+                }
+                final_building_data.append(temp_dict)
+            data = {
+                'final_building_data': final_building_data[::-1],
+                'len_final_building_data': len(final_building_data)
+            }
+
+            return render(request, 'bunglow_dashboard.html', data)
+
+        else:
+            return redirect('property-inquiry')
+
+    
+    all_building_details = BunglowDetails.objects.all()
+    final_building_data = []
+    for building in all_building_details:
+        first_unit = BunglowUnitDetails.objects.filter(bunglow_id=building.bunglow_id).first()
+        if first_unit is None:
+            unit_id = None
+        else:
+            unit_id = first_unit.id
+        temp_dict = {
+            'bunglow_id': building.bunglow_id,
+            'project_name': building.project_name,
+            'unit_id': unit_id,
+        }
+        final_building_data.append(temp_dict)
+    data = {
+        'final_building_data': final_building_data[::-1],
+        'len_final_building_data': len(final_building_data)
+    }
+
+    return render(request, 'bunglow_dashboard.html', data)
+
 def client_dashboard(request):
     user = request.user
     if not user.is_authenticated:
@@ -594,4 +649,43 @@ def download_models(request):
     export_selected_models_to_excel(model_list=[BuildingDetails, UnitDetails, Amenities])
 
     return HttpResponse('hello')
+
+
+def update_bunglow_id(request):
+    updated_count = 0
+    bungalows = BunglowDetails.objects.all()
+
+    for bungalow in bungalows:
+        if not str(bungalow.bunglow_id).startswith('B'):
+            try:
+                numeric_id = int(bungalow.bunglow_id)
+                bungalow.bunglow_id = f'B{numeric_id}'
+                bungalow.save()
+                updated_count += 1
+
+                unit_obj = BunglowUnitDetails.objects.filter(bunglow_id=numeric_id)
+                for unit_d in unit_obj:
+                    unit_d_obj = BunglowUnitDetails.objects.get(id=unit_d.id)                    
+                    unit_d_obj.bunglow_id = f'B{numeric_id}'
+                    unit_d_obj.save()
+
+            except ValueError:
+                # If bunglow_id isn't a clean number, skip it or log
+                continue
+    
+
+    bungalows_amenities = BunglowAmenities.objects.all()
+    for bungalow in bungalows_amenities:
+        if not str(bungalow.bunglow_id).startswith('B'):
+            try:
+                numeric_id = int(bungalow.bunglow_id)
+                bungalow.bunglow_id = f'B{numeric_id}'
+                bungalow.save()
+                updated_count += 1
+
+            except ValueError:
+                # If bunglow_id isn't a clean number, skip it or log
+                continue
+
+    return HttpResponse('Hello')
 

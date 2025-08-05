@@ -11,6 +11,7 @@ urlpatterns = [
     path('login/', ssc_login, name='login'),
     
     path('dashboard/', dashboard, name='dashboard'),
+    path('bunglow_dashboard/', bunglow_dashboard, name='bunglow_dashboard'),
     path('client_dashboard/', client_dashboard, name='client_dashboard'),
 
     path('', include('ClientDetail.urls')),
@@ -26,6 +27,8 @@ urlpatterns = [
     path('update_distance_order/', update_distance_order, name='update_distance_order'),
     
     path('download_excels/', download_models, name='download_models'),
+    
+    path('update_bunglow_id/', update_bunglow_id, name='update_bunglow_id'),
     # path('transfer_no_of_floors/', transfer_no_of_floors, name='transfer_no_of_floors'),
     path('error_page/', handle_error_page, name='error_page')
 # ]

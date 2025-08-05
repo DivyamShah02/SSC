@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="container">        
+    <div class="container">
         <!-- Navigation bar start -->
         <nav class="navbar bg-body-tertiary fixed-top" style="background-color: white !important;">
             <div class="container">
@@ -33,7 +33,7 @@
         </nav>
         <!-- Navigation bar end -->
         <div class="mt-5 pt-5">
-            <h3 class="text-center">Property Details Dashboard</h3>
+        <h3 class="text-center">Bunglow Details Dashboard</h3>
             <div class="d-flex justify-content-center align-items-center">
                 <div class="container p-3">
                     <input type="text" class="form-control dark-input" id="caseSearch" onkeyup="filterCases()" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
@@ -41,9 +41,9 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Building Id</th>
+                            <th scope="col">Bunglow Id</th>
                             <th scope="col">Property Name</th>
-                            <th scope="col">Building details</th>
+                            <th scope="col">Bunglow details</th>
                             <th scope="col">Unit details</th>
                             <th scope="col">View Property</th>
                           </tr>
@@ -52,10 +52,10 @@
                             {% for building in final_building_data %}
                             <tr id="all-div-case-item-{{ forloop.counter }}">
                               <th scope="row">{{ forloop.counter }}</th>
-                              <td>{{building.building_id}}</td>
+                              <td>{{building.bunglow_id}}</td>
                               <td id="all-case-item-{{ forloop.counter }}">{{building.project_name}}</td>
-                              <td><button class="btn btn-custom-primary" onclick="window.location = `{% url 'property-detail-list' %}?building_id={{building.building_id}}`">Building Details</button></td>
-                              <td><button class="btn btn-custom" onclick="window.location = `{% url 'unit-detail-form-list' %}?building_id={{building.building_id}}`">Unit Details</button></td>
+                              <td><button class="btn btn-custom-primary" onclick="window.location = `{% url 'bunglow-detail-list' %}?bunglow_id={{building.bunglow_id}}`">Bunglow Details</button></td>
+                              <td><button class="btn btn-custom" onclick="window.location = `{% url 'bunglow-unit-detail-form-list' %}?bunglow_id={{building.bunglow_id}}`">Unit Details</button></td>
                               <!-- <td><button class="btn btn-custom-outline-primary" onclick="window.location = `{% url 'view-default-property-list' %}?unit_id={{building.unit_id}}`">View Property</button></td> -->
                               <td><a class="btn btn-custom-outline-primary" href="{% url 'view-default-property-list' %}?unit_id={{building.unit_id}}">View Property</a></td>
                             </tr>                            
